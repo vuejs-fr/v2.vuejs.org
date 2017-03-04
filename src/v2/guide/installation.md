@@ -11,7 +11,7 @@ ro_gz_size: "18.71"
 
 ### Compatibilité
 
-Vue **ne** supporte **pas** IE8 et les versions antérieures, car il utilise des fonctionnalités ECMAScript 5 qui ne peuvent pas être émulées sur IE8. Cela dit, Vue supporte tous les [navigateurs compatibles ECMAScript 5](http://caniuse.com/#feat=es5).
+<p class="tip">**Cette page est en cours de traduction française. Revenez une autre fois pour lire une traduction achevée ou [participez à la traduction française ici](https://github.com/vuejs-fr/vuejs.org).**</p>Vue **ne** supporte **pas** IE8 et les versions antérieures, car il utilise des fonctionnalités ECMAScript 5 qui ne peuvent pas être émulées sur IE8. Cela dit, Vue supporte tous les [navigateurs compatibles ECMAScript 5](http://caniuse.com/#feat=es5).
 
 ### Notes de version
 
@@ -63,7 +63,7 @@ $ npm run dev
 
 ## Explication des différents *builds*
 
-Dans le [dossier `dist/` du package NPM](https://unpkg.com/vue@latest/dist/) vous trouverrez plusieurs *builds* différent de Vue.js. Voici un aperçu des différences entre chacun d'eux :
+Dans le [dossier `dist/` du package NPM](https://unpkg.com/vue@latest/dist/) vous trouverrez plusieurs *builds* différents de Vue.js. Voici un aperçu des différences entre chacun d'eux :
 
 | | UMD | CommonJS | ES Module |
 | --- | --- | --- | --- |
@@ -74,24 +74,24 @@ Dans le [dossier `dist/` du package NPM](https://unpkg.com/vue@latest/dist/) vou
 
 ### Termes
 
-- **Full**: Ce *builds* contient le *Compiler* ainsi que le *Runtime*.
+- **Full**: des *builds* qui contiennent la partie Compiler ainsi que la version Runtime.
 
-- **Compiler**: ce code est responsable de compiler les chaîne de caractère de template en des fonctions de rendu en JavaScript.
+- **Compiler**: du code qui est responsable de compiler les chaînes de caractère de template en des fonctions de rendu en JavaScript.
 
-- **Runtime**: ce code est responsable de la création des instances de Vue, de faire le rendu et les modifications du DOM virtuel, C'est à dire tout sauf ce que fait le *Compiler*.
+- **Runtime**: du code qui est responsable de la création des instances de Vue, de faire le rendu et les modifications du DOM virtuel, C'est à dire tout sauf ce que fait la partie Compiler.
 
-- **[UMD](https://github.com/umdjs/umd)**: Les *builds* UMD peuvent être utiliser dans un navigateur directement avec la balise `<script>`. Le fichier par défaut du CDN Unpkg à l'adresse [https://unpkg.com/vue](https://unpkg.com/vue) est le *build* UMD Runtime + Compiler (`vue.js`).
+- **[UMD](https://github.com/umdjs/umd)**: Les *builds* UMD peuvent être utilisés dans un navigateur directement avec la balise `<script>`. Le fichier par défaut du CDN Unpkg à l'adresse [https://unpkg.com/vue](https://unpkg.com/vue) est le *build* UMD Runtime + Compiler (`vue.js`).
 
 - **[CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1)**: Les *builds* CommonJS sont prévus pour une utilisation avec les vieux outils de *bundle* comme [browserify](http://browserify.org/) ou [webpack 1](https://webpack.github.io). Le fichier par défaut pour ces outils (`pkg.main`) est le *build* CommonJS Runtime (`vue.runtime.common.js`).
 
-- **[ES Module](http://exploringjs.com/es6/ch_modules.html)**: Le *build* ES module est prévu pour une utilisation avec les outils de *bundle* moderne comme [webpack 2](https://webpack.js.org) ou [rollup](http://rollupjs.org/). Le fichier par défaut pour ses outils (`pkg.module`) est le *build* ES Module Runtime (`vue.runtime.esm.js`).
+- **[ES Module](http://exploringjs.com/es6/ch_modules.html)**: Les *builds* ES module sont prévus pour une utilisation avec les outils de *bundle* modernes comme [webpack 2](https://webpack.js.org) ou [rollup](http://rollupjs.org/). Le fichier par défaut pour ses outils (`pkg.module`) est le *build* ES Module Runtime (`vue.runtime.esm.js`).
 
-### Runtime + Compiler vs. Runtime seulement
+### Runtime + Compiler vs. Runtime seul
 
-Si vous avez besoin de compiler des templates en temps réel (ex. : passer une chaîne de caractère à l'option `template`, ou monter un élément en vous en servant de sa représentation HTML dans le DOM comme template) vous aurez besoin du compilateur et donc du *build* Full :
+Si vous avez besoin de compiler des templates en temps réel (ex. : passer une chaîne de caractère à l'option `template`, ou monter un élément en vous servant de sa représentation HTML dans le DOM comme template) vous aurez besoin du compilateur et donc du *build* Full :
 
 ``` js
-// ceci requier un compilateur
+// ceci a besoin d'un compilateur
 new Vue({
   template: `<div>{{ hi }}</div>`
 })
