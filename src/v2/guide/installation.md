@@ -155,7 +155,7 @@ Les modes développement et production sont écrit en dure dans les *builds* UMD
 
 Les *builds* CommonJS et ES Module sont prévus pour les outils de *bundle*, donc nous ne fournissons pas de version minifié pour eux. Vous aurez à votre charge de minifier le *bundle* final vous-même.
 
-Les *builds* CommonJS et ES Module contienne une utilisation de `process.env.NODE_ENV` pour déterminer le mode qu'ils doivent suivre. Vous devriez utiliser une configuration d'outil de *bundle* approprié pour remplacer ses variables afin de contrôler avec quel mode Vue doit être exécuté. En remplaçant `process.env.NODE_ENV` avec une chaîne de caractère littérale permet aux outils de minification comme UglifyJS de complètement retirer les pends de code réservé au développement, réduisant ainsi la taille du fichier final.
+Les *builds* CommonJS et ES Module contiennent une utilisation de `process.env.NODE_ENV` pour déterminer le mode qu'ils doivent suivre. Vous devriez utiliser une configuration d'outil de *bundle* appropriée pour remplacer ces variables afin de contrôler avec quel mode Vue doit être exécuté. Remplacer `process.env.NODE_ENV` avec une chaîne de caractère littérale permet aux outils de minification comme UglifyJS de complètement retirer les pends de code réservés au développement, réduisant ainsi la taille du fichier final.
 
 #### Webpack
 
@@ -196,13 +196,13 @@ rollup({
 
 #### Browserify
 
-Appliquez une transformation [envify](https://github.com/hughsk/envify) globale à votre bundle.
+Appliquez une transformation [envify](https://github.com/hughsk/envify) globale à votre *bundle*.
 
 ``` bash
 NODE_ENV=production browserify -g envify -e main.js | uglifyjs -c -m > build.js
 ```
 
-Référez vous également aux [conseils de déploient en production](deployment.html).
+Référez vous également aux [conseils de déploiment en production](deployment.html).
 
 ### Environnements CSP
 
