@@ -93,8 +93,9 @@ import MyComponent from './MyComponent.vue'
 
 // Fonction utilitaire qui monte et retourne le texte rendu
 function getRenderedText (Component, propsData) {
+  const mount = document.createElement('div')
   const Ctor = Vue.extend(Component)
-  const vm = new Ctor({ propsData: propsData }).$mount()
+  const vm = new Ctor({ el: mount, propsData: propsData })
   return vm.$el.textContent
 }
 
