@@ -307,13 +307,13 @@ De notre expérience, il est toujours mieux de _toujours_ ajouter une clé uniqu
 
 ### Éviter `v-if` avec `v-for` <sup data-p="a">essentiel</sup>
 
-**N'utiliser jamais `v-if` sur le même élément que `v-for`.**
+**N'utilisez jamais `v-if` sur le même élément que `v-for`.**
 
 Il y a deux utilisations courantes qui seraient tentantes :
 
-- Pour filtrer des éléments dans une liste (par ex. `v-for="user in users" v-if="user.isActive"`) Dans ce cas, remplacez `users` pas ure nouvelle propriété calculée qui retourne votre liste filtrée (par ex. `activeUsers`).
+- Pour filtrer des éléments dans une liste (par ex. `v-for="user in users" v-if="user.isActive"`). Dans ce cas, remplacez `users` par ure nouvelle propriété calculée qui retourne votre liste filtrée (par ex. `activeUsers`).
 
-- Pour ne pas rendre une liste si elle ne doit pas être affichée (par ex. `v-for="user in users" v-if="shouldShowUsers"`). Dans ce cas, déplacez `v-if` dans un élément englobant (par ex. `ul` ou `ol`).
+- Pour ne pas faire le rendu d'une liste si elle ne doit pas être affichée (par ex. `v-for="user in users" v-if="shouldShowUsers"`). Dans ce cas, déplacez `v-if` dans un élément englobant (par ex. `ul` ou `ol`).
 
 {% raw %}
 <details>
@@ -322,7 +322,7 @@ Il y a deux utilisations courantes qui seraient tentantes :
 </summary>
 {% endraw %}
 
-Quand vu transforme les directives, `v-for` a une priorité plus élevée que `v-if`, donc ce template :
+Quand Vue transforme les directives, `v-for` a une priorité plus élevée que `v-if`. Ce template :
 
 ``` html
 <ul>
@@ -336,7 +336,7 @@ Quand vu transforme les directives, `v-for` a une priorité plus élevée que `v
 </ul>
 ```
 
-Est évalué de manière similaire à :
+est évalué de manière similaire à :
 
 ``` js
 this.users.map(function (user) {
@@ -346,7 +346,7 @@ this.users.map(function (user) {
 })
 ```
 
-Donc même si nous faisont le rendu pour une petite portion d'utilisateur, nous allons devoir itérer sur la liste à chaque nouveau rendu, que l'état actif ou non de l'utilisateur ai changé.
+Donc même si nous faisons le rendu pour une petite portion d'utilisateur, nous allons devoir itérer sur la liste à chaque nouveau rendu, que l'état actif de l'utilisateur ait changé ou non.
 
 En itérant sur une propriété calculée à la place, comme ici :
 
@@ -371,11 +371,11 @@ computed: {
 </ul>
 ```
 
-Nous obtenons les béféfices suivants :
+nous obtenons les béféfices suivants :
 
-- La liste filtré sera _seulement_ réévaluée si il y a un changement dans le tableau `users`, rendant le filtrage plus performant.
-- En utilisant `v-for="user in activeUsers"`, nous itérons _seulemente_ sur les utilisateur pendant le rendu, le rendant plus performant.
-- La partie logique est maintenant découplée de la couche présentation rendant la maintenance (changement, ajout de logique) plus facile.
+- La liste filtrée sera _seulement_ réévaluée si il y a un changement dans le tableau `users`, rendant le filtrage plus performant.
+- En utilisant `v-for="user in activeUsers"`, nous itérons _seulement_ sur les utilisateurs pendant le rendu, le rendant plus performant.
+- La partie logique est maintenant découplée de la couche présentation, rendant la maintenance (changement, ajout de logique) plus facile.
 
 Nous obtenons des bénéfices similaires en changeant :
 
