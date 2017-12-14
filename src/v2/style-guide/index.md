@@ -371,7 +371,7 @@ computed: {
 </ul>
 ```
 
-nous obtenons les béféfices suivants :
+nous obtenons les bénéfices suivants :
 
 - La liste filtrée sera _seulement_ réévaluée si il y a un changement dans le tableau `users`, rendant le filtrage plus performant.
 - En utilisant `v-for="user in activeUsers"`, nous itérons _seulement_ sur les utilisateurs pendant le rendu, le rendant plus performant.
@@ -404,7 +404,7 @@ par :
 </ul>
 ```
 
-En délpaçant le `v-if` sur un élément englobant, nous ne vérifions plus `shouldShowUsers` pour _chaque_ utilisateur dans la liste. À la place, nous le vérifions une fois et n'évaluons pas  `v-for` si `shouldShowUsers` est `false`.
+En déplaçant le `v-if` sur un élément englobant, nous ne vérifions plus `shouldShowUsers` pour _chaque_ utilisateur dans la liste. À la place, nous le vérifions une fois et n'évaluons pas  `v-for` si `shouldShowUsers` est `false`.
 
 {% raw %}</details>{% endraw %}
 

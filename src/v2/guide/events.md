@@ -286,7 +286,7 @@ Par exemple :
 
 > Nouveau dans la 2.5.0+
 
-Le modificateur `.exact` permet le contrôle de la combinaison de touches système exact requises pour déclencher le gestionnaire d'évènement.
+Le modificateur `.exact` permet le contrôle de la combinaison de touches système exacte requise pour déclencher le gestionnaire d'évènements.
 
 ``` html
 <!-- ceci va aussi émettre un évènement si les touches Alt et Shift sont pressées -->
@@ -295,7 +295,7 @@ Le modificateur `.exact` permet le contrôle de la combinaison de touches systè
 <!-- ceci va émettre un évènement seulement si la touche Ctrl est pressée sans aucune autre touche -->
 <button @click.ctrl.exact="onCtrlClick">A</button>
 
-<!-- this will only fire when no system modifiers are pressed -->
+<!-- ceci va émettre un évènement si aucune touche n'est pressée -->
 <button @click.exact="onClick">A</button>
 ```
 
