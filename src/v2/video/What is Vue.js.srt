@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:02,418
-- Depuis ses 10 dernière années
+- Depuis ses 10 dernières années
 nos pages web sont devenues
 
 2
@@ -72,7 +72,7 @@ seulement sur certaines parties
 
 16
 00:00:41,627 --> 00:00:44,381
-pour une experience
+pour une expérience
 interactive plus riche.
 
 17
@@ -117,7 +117,7 @@ pour faire le rendu de la page.
 
 26
 00:01:04,269 --> 00:01:06,260
-Construisons maintemant
+Construisons maintenant
 avec Vue
 
 27
@@ -139,7 +139,7 @@ Nous n'allons pas voir comment utiliser Vue,
 
 31
 00:01:15,301 --> 00:01:16,981
-mais juste introduires quelques conceptes
+mais juste introduire quelques concepts
 
 32
 00:01:16,981 --> 00:01:19,460
@@ -191,7 +191,7 @@ Et comme prévu, ça marche.
 43
 00:01:46,945 --> 00:01:50,695
 Plutôt sympa, mais la magie de Vue
-commence quand les données changes.
+commence quand les données changent.
 
 44
 00:01:50,695 --> 00:01:51,975
@@ -199,7 +199,7 @@ Dans la console
 
 45
 00:01:51,975 --> 00:01:54,735
-changons la valeur du produit.
+changeons la valeur du produit.
 
 46
 00:01:54,735 --> 00:01:57,324
@@ -212,11 +212,11 @@ Vue met automatiquement à jour le HTML.
 
 48
 00:01:59,953 --> 00:02:01,745
-C'est parceque Vue est réactif,
+C'est parce que Vue est réactif,
 
 49
 00:02:01,745 --> 00:02:03,273
-donc si nos données changes,
+donc si nos données changent,
 
 50
 00:02:03,273 --> 00:02:05,193
@@ -228,7 +228,7 @@ partout ou elles sont utilisées dans la page.
 
 52
 00:02:07,255 --> 00:02:10,305
-Cela fonctionne pour toutes sorte de données,
+Cela fonctionne pour toute sorte de données,
 pas seulement pour les chaines de caractères.
 
 53
@@ -276,16 +276,16 @@ en partant d'une liste vide
 
 63
 00:02:34,815 --> 00:02:37,433
-alimentée depuis une base de donnée
+alimentée depuis une base de données
 avec un appel d'API.
 
 64
 00:02:37,433 --> 00:02:38,863
-Quand notre app est crée,
+Quand notre app est créée,
 
 65
 00:02:38,863 --> 00:02:41,866
-Nous allons récupérer les derniers
+nous allons récupérer les derniers
 produits en provenance de l'API.
 
 66
@@ -307,7 +307,7 @@ Vous pouvez voir sur la page
 70
 00:02:48,281 --> 00:02:51,435
 chaque élément de la liste
-montre l'object retourné.
+montre l'objet retourné.
 
 71
 00:02:51,435 --> 00:02:53,474
@@ -319,7 +319,7 @@ donc affichons cela d'une autre manière.
 
 73
 00:02:56,265 --> 00:02:59,643
-On va afficher la quantité et le nom.
+On va afficher la quantité et le nom,
 
 74
 00:02:59,643 --> 00:03:02,265
@@ -391,7 +391,7 @@ Et depuis le navigateur, on peut voir
 89
 00:03:41,851 --> 00:03:45,308
 que toutes les quantités
-sont correctements affichées.
+sont correctement affichées.
 
 90
 00:03:45,308 --> 00:03:47,588
@@ -431,7 +431,7 @@ et notre total également, comme espéré.
 98
 00:04:07,940 --> 00:04:10,410
 Maintenant, ajoutons de
-l'intéractivité sur la page
+l'interactivité sur la page
 
 99
 00:04:10,410 --> 00:04:12,346
@@ -476,7 +476,7 @@ Cliquer sur ce bouton beaucoup
 108
 00:04:31,860 --> 00:04:33,890
 de fois risque d'être fatiguant,
-nous préfererions mettre
+nous préfèrerions mettre
 
 109
 00:04:33,890 --> 00:04:37,719
@@ -486,11 +486,11 @@ directement à la main ?
 110
 00:04:37,719 --> 00:04:40,580
 Créons donc un nouveau champ
-et attachons y la quantité
+et attachons-y la quantité
 
 111
 00:04:40,580 --> 00:04:43,867
-de notrec produit avec
+de notre produit avec
 la directive `v-model`
 
 112
@@ -503,7 +503,7 @@ Maintenant je peux entrer
 
 114
 00:04:48,060 --> 00:04:52,450
-la quantité total et
+la quantité totale et
 voir sa mise à jour directement.
 
 115
@@ -542,7 +542,7 @@ nouveau projet simple et rapide.
 
 123
 00:05:15,828 --> 00:05:18,879
-Nous pourions utiliser des
+Nous pourrions utiliser des
 composants Vue monofichier
 
 124
@@ -555,7 +555,7 @@ et du CSS à portée limitée.
 
 126
 00:05:25,599 --> 00:05:28,926
-- Bonjour, c'est Evan You, createur de Vue.js.
+- Bonjour, c'est Evan You, créateur de Vue.js.
 
 127
 00:05:28,926 --> 00:05:31,587
@@ -585,4 +585,4 @@ notre documentation aujourd'hui.
 
 133
 00:05:42,457 --> 00:05:44,708
-Je pense que vous allez aprécier Vue.
+Je pense que vous allez apprécier Vue.
