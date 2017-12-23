@@ -48,7 +48,7 @@ performant et versatile
 11
 00:00:27,829 --> 00:00:29,860
 à la prise en main progressive
-qui permet
+qui permet d'écrire
 
 12
 00:00:29,860 --> 00:00:33,381
@@ -109,7 +109,7 @@ ayant chacun sa propre partie,
 
 24
 00:01:00,000 --> 00:01:02,291
-HTML CSS, et JavaScript nécessaire
+HTML CSS, et JavaScript nécessaires
 
 25
 00:01:02,291 --> 00:01:04,269
