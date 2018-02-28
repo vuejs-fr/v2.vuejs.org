@@ -304,7 +304,7 @@ Par exemple :
 Le modificateur `.exact` permet le contrôle de la combinaison de touches système exacte requise pour déclencher le gestionnaire d'évènements.
 
 ``` html
-<!-- ceci va aussi émettre un évènement si les touches Alt et Shift sont pressées -->
+<!-- ceci va aussi émettre un évènement si les touches Ctrl et Shift sont pressées -->
 <button @click.ctrl="onClick">A</button>
 
 <!-- ceci va émettre un évènement seulement si la touche Ctrl est pressée sans aucune autre touche -->
