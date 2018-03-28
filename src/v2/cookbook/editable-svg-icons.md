@@ -166,4 +166,4 @@ Quelques outils annexes qui pourront vous aider:
 * [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)
 * [svgo-loader](https://github.com/rpominov/svgo-loader)
 
-Ces outils compilent les SVG en même temps que le bundle webpack, mais rendent la modification des icônes plus compliquée à chaud. En effet, la balise `<use>` réagit bizarrement sous certains navigateurs avec les dessins complexes. ls génèrent aussi deux propriétés `viewBox` imbriqués avec deux systèmes de coordonnées. Cela peut rendre l'implémentation plus délicate.
+Ces outils compilent les SVG en même temps que le bundle webpack, mais rendent la modification des icônes plus compliquée à chaud. En effet, la balise `<use>` réagit bizarrement sous certains navigateurs avec les dessins complexes. Ils génèrent aussi deux propriétés `viewBox` imbriqués avec deux systèmes de coordonnées. Cela peut rendre l'implémentation plus délicate.
