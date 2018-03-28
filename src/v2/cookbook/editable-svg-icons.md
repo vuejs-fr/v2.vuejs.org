@@ -1,20 +1,20 @@
 ---
-title: Système d'Icônes SVG Éditable (FR)
+title: Système d'Icônes SVG Éditable
 type: cookbook
 order: 4
 ---
 
-## Exemple de Base
+## Exemple de base
 
-<p>Il existe plusieurs façons de construire un système d'icônes SVG. Une, en particulier, permet d'utiliser toute la puissance de Vue. Cette méthode consiste a créer des composants icônes modifiable. Voici quelques-uns des avantages</p>
+<p>Il y a plusieurs façons de créer un système d'icônes SVG. Une méthode qui tire parti des capacités de Vue est de créer des icônes en ligne éditables en tant que composants. Voici quelques avantages à procéder ainsi :</p>
 
 * Les icônes sont faciles à éditer à la volée
-* On peut les animer
+* Elles sont animables
 * On peut utiliser des `props` et des `defaults` pour les dimensionner ou les modifier.
 * Tout est dans le html, aucune requête http supplémentaire
-* Elles peuvent facilement être rendue accessible dynamiquement
+* Elles peuvent facilement être rendues accessibles dynamiquement
 
-Créons d'abord un dossier pour stocker nos icônes. Donnons a nos icônes leurs des noms normalisés. Cela facilitera leurs appels plus tard.
+Créons d'abord un dossier pour stocker tous nos icônes. Donnons à nos icônes des noms normalisés. Cela facilitera leurs appels plus tard.
 
 > components/icons/IconBox.vue
 > components/icons/IconCalendar.vue
@@ -43,7 +43,7 @@ Commençons par créer un composant icône de base (`IconBase.vue`) disposant d'
 </template>
 ```
 
-Ce composant peut être utilisé tel quel - le seul paramètre à vérifier sera le `viewBox` qui dépendra de celui de vos icônes. Dans l'icône de base, les paramètres `width`, `height`, `iconColor` et `iconName` sont des props pour pouvoir les piloter selon les besoins. La prop `iconName` sera utilisée comme le contenu de la balise `<titre>` et de l'attribut `id` de notre icône SVG pour assurer l'accessibilité. 
+Ce composant peut être utilisé tel quel, le seul paramètre à vérifier sera le `viewBox` qui dépendra de celui de vos icônes. Dans l'icône de base, les paramètres `width`, `height`, `iconColor` et `iconName` sont des props pour pouvoir les piloter selon les besoins. La prop `iconName` sera utilisée comme le contenu de la balise `<titre>` et de l'attribut `id` de notre icône SVG pour assurer l'accessibilité. 
 
 Le `<script>` du composant icône de base ressemble a ça. Remarquons les valeurs par défaut. Notre icône sera toujours affichée avec les mêmes hauteur/largeur partout sauf si on les force à changer. 
 
@@ -93,7 +93,7 @@ Et si on souhaite afficher l'icône dans d'autres tailles:
 
 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/Screen%20Shot%202018-01-01%20at%204.51.40%20PM.png" width="450" />
 
-## Icônes Animables
+## Icônes animables
 
 Mettre des icônes SVG dans des composants devient clé dès que l'on souhaite les animer. D'autant plus quand cette animation se passe lors d'une interaction. Les SVG `inline` sont la forme de SVG la mieux supportée. Voici comment animer une icône lors d'un click:
 
@@ -151,19 +151,19 @@ Nous avons ajouté des attributs `ref` aux groupes de paths pour pouvoir les ani
 
 D'autres exemples d'animations sont disponibles dans le dépôt [ici](https://github.com/sdras/vue-sample-svg-icons/)
 
-## Remarques Additionelles
+## Remarques additionnelles
 
-Les designers changent d'avis. Les besoins produit aussi. Conserver la logique pour l'ensemble des icons dans un seul composant de base nous permettra de mettre a jour toutes les icônes en modifiant un seul fichier. Même en utilisant un icon loader, il existe des situations où recréer ou éditer chaque SVG devient nécessaire si on souhaite la même modification sur chaque icône. Grace à cette méthode, on s'évitera des souffrances et beaucoup de temps perdu.
+Les designers changent d'avis. Les besoins produit aussi. Conserver la logique pour l'ensemble des icons dans un seul composant de base nous permettra de mettre a jour toutes les icônes en modifiant un seul fichier. Même en utilisant un icon loader, il existe des situations où recréer ou éditer chaque SVG devient nécessaire si on souhaite la même modification sur chaque icône. Cette méthode nous économisera du temps.
 
-## Quand eviter ce pattern
+## Quand éviter ce pattern
 
-Ce système d'icônes est particulièrement utile quand la plupart des icônes du site sont différentes ou utilisées différemment. Si la même icône est répétée de nombreuses fois sur la même page, il peut être plus malin de définir un sprite SVG contenant des `<symbol/>` entre des balises `<defs>` et de les référencer dans des balises `<use>`.
+Ce système d'icônes est particulièrement utile quand la plupart des icônes du site sont différentes ou utilisées différemment. Si la même icône est utilisée de nombreuses fois sur la même page (par exemple, une table géante avec une icône de suppression sur chaque ligne), il peut être plus malin de définir un sprite SVG contenant des `<symbol/>` entre des balises `<defs>` et de les référencer dans des balises `<use>`.
 
-## Alternative possibles
+## Alternatives possibles
 
 Quelques outils annexes qui pourront vous aider:
 
 * [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)
 * [svgo-loader](https://github.com/rpominov/svgo-loader)
 
-Ces outils compilent les SVG en même temps que le bundle webpack, mais rendent la modification des icônes plus compliquée à chaud. En effet, la balise `<use>` réagit bizarrement sous certains navigateurs avec les dessins complexes. De plus, deux `viewBox` l'un dans l'autre, sont spécifies, donc deux systèmes de coordonnées relatives. Cela peut rendre l'implémentation plus ardue.
+Ces outils compilent les SVG en même temps que le bundle webpack, mais rendent la modification des icônes plus compliquée à chaud. En effet, la balise `<use>` réagit bizarrement sous certains navigateurs avec les dessins complexes. ls génèrent aussi deux propriétés `viewBox` imbriqués avec deux systèmes de coordonnées. Cela peut rendre l'implémentation plus délicate.
