@@ -153,7 +153,7 @@ D'autres exemples d'animations sont disponibles dans le dépôt [ici](https://gi
 
 ## Remarques additionnelles
 
-Les designers changent d'avis. Les besoins produit aussi. Conserver la logique pour l'ensemble des icons dans un seul composant de base nous permettra de mettre a jour toutes les icônes en modifiant un seul fichier. Même en utilisant un icon loader, il existe des situations où recréer ou éditer chaque SVG devient nécessaire si on souhaite la même modification sur chaque icône. Cette méthode nous économisera du temps.
+Les designers changent d'avis. Les besoins produit aussi. Conserver la logique pour l'ensemble des icons dans un seul composant de base nous permettra de mettre a jour toutes les icônes en modifiant un seul fichier. Même en utilisant un _icon loader_, il existe des situations où recréer ou éditer chaque SVG devient nécessaire si on souhaite la même modification sur chaque icône. Cette méthode nous économisera du temps.
 
 ## Quand éviter ce pattern
 
