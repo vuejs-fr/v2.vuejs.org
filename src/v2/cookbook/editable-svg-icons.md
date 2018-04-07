@@ -14,7 +14,7 @@ order: 4
 * Tout est dans le html, aucune requête http supplémentaire
 * Elles peuvent facilement être rendues accessibles dynamiquement
 
-Créons d'abord un dossier pour stocker tous nos icônes. Donnons à nos icônes des noms normalisés. Cela facilitera leurs appels plus tard.
+Créons d'abord un dossier pour stocker toutes nos icônes. Donnons des noms normalisés à nos icônes, cela permettra ensuite de les appeler plus facilement.
 
 > components/icons/IconBox.vue
 > components/icons/IconCalendar.vue
@@ -72,19 +72,19 @@ export default {
 
 La valeur `currentColor` de la prop `iconColor` donne aux icônes la couleur - `fill` - du texte qui l'encadre. On peut modifier cette couleur simplement en passant une prop au composant.
 
-Voici un exemple d'utilisation, avec le contenu de `IconWrite.vue` comme path du SVG:
+Voici un exemple d'utilisation, avec le contenu de `IconWrite.vue` comme path du SVG :
 
 ```html
 <icon-base icon-name="write"><icon-write /></icon-base>
 ```
 
-Et si on souhaite afficher l'icône dans d'autres tailles:
+Et si on souhaite afficher l'icône dans d'autres tailles :
 
 ```html
 <p>
   <!-- on peut lui passer une `width` et une `height` plus petite grace aux props -->
   <icon-base width="12" height="12" icon-name="write"><icon-write /></icon-base>
-  <!-- ou ne rien passer du tout et utiliser la width par défaut: 18 -->
+  <!-- ou ne rien passer du tout et utiliser la width par défaut : 18 -->
   <icon-base icon-name="write"><icon-write /></icon-base>
   <!-- ou même l'agrandir :) -->
   <icon-base width="30" height="30" icon-name="write"><icon-write /></icon-base>
@@ -95,7 +95,7 @@ Et si on souhaite afficher l'icône dans d'autres tailles:
 
 ## Icônes animables
 
-Mettre des icônes SVG dans des composants devient clé dès que l'on souhaite les animer. D'autant plus quand cette animation se passe lors d'une interaction. Les SVG `inline` sont la forme de SVG la mieux supportée. Voici comment animer une icône lors d'un click:
+Mettre des icônes SVG dans des composants devient clé dès que l'on souhaite les animer. D'autant plus quand cette animation se passe lors d'une interaction. Les SVG `inline` sont la forme de SVG la mieux supportée. Voici comment animer une icône lors d'un click :
 
 ```html
 <template>
@@ -145,7 +145,7 @@ export default {
 
 Nous avons ajouté des attributs `ref` aux groupes de paths pour pouvoir les animer. Comme les deux cotés des ciseaux s'anime en même temps, nous allons écrire une fonction réutilisable a qui nous allons passer des `ref`. Nous pouvons compter sur GreenSock pour gérer la compatibilité de l'animation entre navigateurs notamment le problème de `transform-origin`.
 
-<p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Système d'icônes SVG Éditables: Animation" class="codepen">Voir le Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/">Système d'icones SVG Editables: Animation</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Système d'icônes SVG Éditables : Animation" class="codepen">Voir le Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/">Système d'icones SVG Editables: Animation</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 <p style="margin-top:-30px">Pas trop dur! Et en plus, super facile a modifier à la volée!!</p>
 
@@ -161,7 +161,7 @@ Ce système d'icônes est particulièrement utile quand la plupart des icônes d
 
 ## Alternatives possibles
 
-Quelques outils annexes qui pourront vous aider:
+Quelques outils annexes qui pourront vous aider :
 
 * [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)
 * [svgo-loader](https://github.com/rpominov/svgo-loader)
