@@ -1,20 +1,20 @@
 ---
-title: Système d'Icônes SVG Éditable
+title: Système d'Icônes SVG Dynamique
 type: cookbook
 order: 4
 ---
 
 ## Exemple de base
 
-<p>Il y a plusieurs façons de créer un système d'icônes SVG. Une méthode qui tire parti des capacités de Vue est de créer des icônes en ligne éditables en tant que composants. Voici quelques avantages à procéder ainsi :</p>
+<p>Il y a plusieurs façons de créer un système d'icônes SVG. Une méthode qui tire parti des capacités de Vue est de créer des icônes en ligne modifiable en tant que composants. Voici quelques avantages à procéder ainsi :</p>
 
-* Les icônes sont faciles à éditer à la volée
+* Les icônes sont faciles à modifier à la volée
 * Elles sont animables
-* On peut utiliser des `props` et des `defaults` pour les dimensionner ou les modifier.
-* Tout est dans le html, aucune requête http supplémentaire
-* Elles peuvent facilement être rendues accessibles dynamiquement
+* On peut utiliser des `props` et des `defaults` pour les dimensionner ou les modifier
+* Elles sont écrites dans le code HTML, donc aucune requête HTTP n'est nécessaire
+* Elles peuvent être rendues accessibles dynamiquement
 
-Créons d'abord un dossier pour stocker toutes nos icônes. Donnons des noms normalisés à nos icônes, cela permettra ensuite de les appeler plus facilement.
+D'abord on crée un dossier pour stocker toutes nos icônes, puis on les nomme suivant une convention pour pouvoir les appeler facilement.
 
 > components/icons/IconBox.vue
 > components/icons/IconCalendar.vue
@@ -24,7 +24,7 @@ Voici un exemple du système une fois terminé. [https://github.com/sdras/vue-sa
 
 ![Documentation site](https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/screendocs.jpg 'Docs demo')
 
-Commençons par créer un composant icône de base (`IconBase.vue`) disposant d'un `slot`.
+Créons un composant icône de base (`IconBase.vue`) disposant d'un `slot`.
 
 ```html
 <template>
@@ -145,7 +145,7 @@ export default {
 
 Nous avons ajouté des attributs `ref` aux groupes de paths pour pouvoir les animer. Comme les deux cotés des ciseaux s'anime en même temps, nous allons écrire une fonction réutilisable a qui nous allons passer des `ref`. Nous pouvons compter sur GreenSock pour gérer la compatibilité de l'animation entre navigateurs notamment le problème de `transform-origin`.
 
-<p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Système d'icônes SVG Éditables : Animation" class="codepen">Voir le Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/">Système d'icones SVG Editables: Animation</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Système d'icônes SVG Dynamique : Animation" class="codepen">Voir le Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/">Système d'icones SVG Editables: Animation</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 <p style="margin-top:-30px">Pas trop dur! Et en plus, super facile a modifier à la volée!!</p>
 
@@ -153,17 +153,17 @@ D'autres exemples d'animations sont disponibles dans le dépôt [ici](https://gi
 
 ## Remarques additionnelles
 
-Les designers changent d'avis. Les besoins produit aussi. Conserver la logique pour l'ensemble des icônes dans un seul composant de base nous permettra de mettre a jour toutes les icônes en modifiant un seul fichier. Même en utilisant un _icon loader_, il existe des situations où recréer ou éditer chaque SVG devient nécessaire si on souhaite la même modification sur chaque icône. Cette méthode nous économisera du temps.
+Les designers peuvent changer d'avis. Les exigences du produit peuvent aussi évoluer. Conserver la logique pour l'ensemble des icônes dans un seul composant de base nous permettra de mettre a jour toutes les icônes en modifiant un seul fichier. Même en utilisant un _icon loader_, il existe des situations où recréer ou modifier chaque SVG devient nécessaire si on souhaite la même modification sur chaque icône. Cette méthode peut vous éviter ces contrariétés et vous faire gagner du temps.
 
 ## Quand éviter ce pattern
 
-Ce système d'icônes est particulièrement utile quand la plupart des icônes du site sont différentes ou utilisées différemment. Si la même icône est utilisée de nombreuses fois sur la même page (par exemple, une table géante avec une icône de suppression sur chaque ligne), il peut être plus malin de définir un sprite SVG contenant des `<symbol/>` entre des balises `<defs>` et de les référencer dans des balises `<use>`.
+Ce système d'icônes est particulièrement utile quand vous avez un certain nombre d'icônes qui sont utilisées de différentes façons à travers votre site. Si la même icône est utilisée de nombreuses fois sur la même page (par exemple, une table géante avec une icône de suppression sur chaque ligne), il peut être plus malin de définir un _sprite_ SVG contenant des `<symbol/>` entre des balises `<defs>` et de les référencer dans des balises `<use>`.
 
-## Alternatives possibles
+## Patterns alternatifs
 
-Quelques outils annexes qui pourront vous aider :
+Quelques autres outils pour aider à gérer le chargement d'icônes SVG :
 
 * [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)
 * [svgo-loader](https://github.com/rpominov/svgo-loader)
 
-Ces outils compilent les SVG en même temps que le bundle webpack, mais rendent la modification des icônes plus compliquée à chaud. En effet, la balise `<use>` réagit bizarrement sous certains navigateurs avec les dessins complexes. Ils génèrent aussi deux propriétés `viewBox` imbriqués avec deux systèmes de coordonnées. Cela peut rendre l'implémentation plus délicate.
+Ces outils compilent les SVG en même temps que le bundle webpack, mais rendent la modification des icônes plus compliquée à l'exécution. En effet, la balise `<use>` réagit bizarrement sous certains navigateurs avec les dessins complexes. Ils génèrent aussi deux propriétés `viewBox` imbriqués avec deux systèmes de coordonnées. Cela peut rendre l'implémentation plus délicate.
