@@ -8,7 +8,7 @@ order: 6
 
 <p>Les tests unitaires sont une étape fondamentale du développement de logiciel. Ces tests permettent d'exécuter chaque unité de code isolée du reste du logiciel. Ils facilitent l'ajout de nouvelles fonctionnalités, la détection et la réparation de bugs. Les [composants monofichiers](../guide/single-file-components.html) de Vue rendent ce processus de test relativement facile. Tester notre code nous permettra d'ajouter des fonctionnalités sans risquer de casser l'existant. Nous pourrons en plus mieux expliquer ce que le composant est censé faire.</p>
 
-Cet exemple simple vérifie qu'un texte est affiché:
+Cet exemple simple vérifie qu'un texte est affiché :
 
 ```html
 <template>
@@ -66,11 +66,11 @@ test('Foo', () => {
 })
 ```
 
-Le code ci-dessus montre comment tester l'apparition d'un message d'erreur si le username n'est pas assez long. Il nous donne une idée de ce en quoi consistent les tests unitaires de composants VueJs: On render le composant, on lui fournit des données, puis on vérifie que le rendu correspond au données.
+Le code ci-dessus montre comment tester l'apparition d'un message d'erreur si le username n'est pas assez long. Il nous donne une idée de ce en quoi consistent les tests unitaires de composants VueJs : On render le composant, on lui fournit des données, puis on vérifie que le rendu correspond au données.
 
 ## Pourquoi tester?
 
-Quelques-un des avantages à tester ses composants:
+Quelques-un des avantages à tester ses composants :
 
 - Les tests documentent comment le composant doit fonctionner
 - Ils évitent d'avoir à re-tester manuellement après chaque changement du code
@@ -86,19 +86,19 @@ Le package officiel pour tester les composant Vue est [Vue Test Utils](https://g
 
 ## Exemple concret
 
-Un bon test unitaire se doit d'être:
+Un bon test unitaire se doit d'être :
 
 - Court à l'exécution
 - Facile à comprendre
 - Tester un seul comportement à la fois
 
-Reprenons l'exemple précédent, et ajoutons y le concept de <a href="https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)">factory function</a> pour rendre nos tests plus compacts et plus clairs. Le composant devra donc:
+Reprenons l'exemple précédent, et ajoutons y le concept de <a href="https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)">factory function</a> pour rendre nos tests plus compacts et plus clairs. Le composant devra donc :
 
 - Afficher un message 'Bienvenue sur le tutoriel VueJs'.
 - Demander a l'utilisateur son username
 - Afficher une erreur si le username fait moins de 7 caractères
 
-Voyons d'abord le code du composant:
+Voyons d'abord le code du composant :
 
 ```html
 <template>
@@ -106,7 +106,7 @@ Voyons d'abord le code du composant:
     <div class="message">
       {{ message }}
     </div>
-    Entrez un username: <input v-model="username">
+    Entrez un username : <input v-model="username">
     <div 
       v-if="error"
       class="error"
@@ -136,7 +136,7 @@ export default {
 </script>
 ```
 
-Ce que l'on doit tester:
+Ce que l'on doit tester :
 
 - le `message` est il affiché?
 - si `error` est `true`, `<div class="error">` devrait être visible
@@ -169,19 +169,19 @@ describe('Foo', () => {
 })
 ```
 
-Ce premier test n'est pas parfait. On peut y voir plusieurs problèmes: 
+Ce premier test n'est pas parfait. On peut y voir plusieurs problèmes : 
 
 - Un seul test vérifie plusieurs comportements
 - Difficile de distinguer different statuts et ce qui devrait être affiché
 
-L'exemple ci-dessous rend ce test un peu meilleur:
+L'exemple ci-dessous rend ce test un peu meilleur :
 
 - ne fait qu'un seul test par `it`
 - a une description claire et concise de chaque test
 - ne fournit que le minimum de données nécessaires au test
 - rassemble le code dupliqué (création du `wrapper` et mise à jour du `username`) dans une fonction `factory`
 
-*Test amelioré*:
+*Test amelioré* :
 ```js
 import { shallow } from '@vue/test-utils'
 import Foo from './Foo'
@@ -219,7 +219,7 @@ describe('Foo', () => {
 })
 ```
 
-À noter:
+À noter :
 
 Au début du code, on déclare la fonction `factory` qui prend l'objet `values` et en construit le `data` pour renvoyer une nouvelle instance de `wrapper`. Du coup, plus besoin de dupliquer `const wrapper = shallow(Foo)` dans chaque test. Un autre avantage important: Quand des composants plus complexes vont devoir être testés, le `mock` ou le `stub` d'une méthode ou d'une propriété calculée pourront facilement être mutualisés dans cette `factory`.
 
