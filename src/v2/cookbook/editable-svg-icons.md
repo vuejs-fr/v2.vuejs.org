@@ -107,13 +107,13 @@ Mettre des icônes SVG dans des composants devient clé dès que l'on souhaite l
     aria-labelledby="ciseaux"
     role="presentation"
     >
-    <title id="scissors" lang="fr">Icône de ciseaux animée</title>
+    <title id="ciseaux" lang="fr">Icône de ciseaux animée</title>
     <path id="bk" fill="#fff" d="M0 0h100v100H0z"/>
-    <g ref="leftscissor">
+    <g ref="ciseauxgauche">
       <path d="M..."/>
       ...
     </g>
-    <g ref="rightscissor">
+    <g ref="ciseauxdroit">
       <path d="M..."/>
       ...
     </g>
@@ -127,8 +127,8 @@ import { TweenMax, Sine } from 'gsap'
 export default {
   methods: {
     startScissors() {
-      this.scissorAnim(this.$refs.rightscissor, 30)
-      this.scissorAnim(this.$refs.leftscissor, -30)
+      this.scissorAnim(this.$refs.ciseauxdroit, 30)
+      this.scissorAnim(this.$refs.ciseauxgauche, -30)
     },
     scissorAnim(el, rot) {
       TweenMax.to(el, 0.25, {
@@ -145,7 +145,7 @@ export default {
 
 Nous avons ajouté des attributs `ref` aux groupes de paths pour pouvoir les animer. Comme les deux cotés des ciseaux s'anime en même temps, nous allons écrire une fonction réutilisable a qui nous allons passer des `ref`. Nous pouvons compter sur GreenSock pour gérer la compatibilité de l'animation entre navigateurs notamment le problème de `transform-origin`.
 
-<p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Système d'icônes SVG Dynamique : Animation" class="codepen">Voir le Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/">Système d'icones SVG Editables: Animation</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Système d'icônes SVG Dynamique : Animation" class="codepen">Voir le Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/">Système d'icônes SVG Dynamique: Animation</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 <p style="margin-top:-30px">Pas trop dur! Et en plus, super facile a modifier à la volée!!</p>
 
@@ -153,7 +153,7 @@ D'autres exemples d'animations sont disponibles dans le dépôt [ici](https://gi
 
 ## Remarques additionnelles
 
-Les designers peuvent changer d'avis. Les exigences du produit peuvent aussi évoluer. Conserver la logique pour l'ensemble des icônes dans un seul composant de base nous permettra de mettre a jour toutes les icônes en modifiant un seul fichier. Même en utilisant un _icon loader_, il existe des situations où recréer ou modifier chaque SVG devient nécessaire si on souhaite la même modification sur chaque icône. Cette méthode peut vous éviter ces contrariétés et vous faire gagner du temps.
+Les designers peuvent changer d'avis. Les exigences du produit peuvent aussi évoluer. Conserver la logique pour l'ensemble des icônes dans un seul composant de base nous permettra de mettre a jour toutes les icônes en modifiant un seul fichier. Même en utilisant un _icon loader_, il existe des situations où recréer ou modifier chaque SVG devient nécessaire si on souhaite la même modification sur tous les icônes. Cette méthode peut vous éviter ces contrariétés et vous faire gagner du temps.
 
 ## Quand éviter ce pattern
 
