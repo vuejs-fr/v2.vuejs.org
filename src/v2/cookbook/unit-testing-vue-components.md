@@ -35,7 +35,7 @@ export default {
   computed: {
     error () {
       return this.username.trim().length < 7
-        ? 'Entrez un nom plus long SVP'
+        ? 'Veuillez entrez un nom plus long'
         : ''
     }
   }
@@ -88,14 +88,14 @@ Le package officiel pour tester les composant Vue est [Vue Test Utils](https://g
 
 Un bon test unitaire se doit d'être :
 
-- Court à l'exécution
+- Rapide à l'exécution
 - Facile à comprendre
-- Tester un seul comportement à la fois
+- Tester un _seul comportement à la fois_
 
 Reprenons l'exemple précédent, et ajoutons y le concept de <a href="https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)">factory function</a> pour rendre nos tests plus compacts et plus clairs. Le composant devra donc :
 
 - Afficher un message 'Bienvenue sur le tutoriel VueJs'.
-- Demander a l'utilisateur son username
+- Demander à l'utilisateur son username
 - Afficher une erreur si le username fait moins de 7 caractères
 
 Voyons d'abord le code du composant :
