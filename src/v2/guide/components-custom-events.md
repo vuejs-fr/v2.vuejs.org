@@ -134,7 +134,7 @@ Vue.component('base-input', {
 
 > Nouveauté de la 2.3.0+
 
-Dans certains cas, nous pouvons avoir besoin d'une "liaison à double sens" (*two-way binding*) pour une prop. Malheureusement, une vraie liaison à double sens peut créer des problèmes de maintenance, car les composants enfant peuvent faire muter le parent sans que la source de cette mutation soit explicite que ce soit dans le parent ou l'enfant.
+Dans certains cas, nous pouvons avoir besoin d'une « liaison à double sens » (*two-way binding*) pour une prop. Malheureusement, une vraie liaison à double sens peut créer des problèmes de maintenance, car les composants enfant peuvent faire muter le parent sans que la source de cette mutation soit explicite que ce soit dans le parent ou l'enfant.
 
 C'est pourquoi à la place, nous recommandons d'émettre des événements en suivant le modèle `update:mon-nom-de-prop`. Par exemple, dans un composant hypothétique avec une prop `titre`, nous pourrions communiquer l'intention d'assigner une nouvelle valeur avec :
 
