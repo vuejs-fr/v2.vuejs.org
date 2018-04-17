@@ -1,12 +1,12 @@
 ---
-title: Composants Dynamiques & Async
+title: Composants dynamiques & async
 type: guide
 order: 105
 ---
 
 > Cette page présume que vous connaissez déjà les bases des [Composants](components.html). Lisez cette section en premier si vous découvrez les composants.
 
-## `keep-alive` avec les Composants Dynamiques
+## `keep-alive` avec les composants dynamiques
 
 Précédemment, nous avons utilisé l'attribut `is` pour basculer entre des composants dans une interface avec des onglets :
 
@@ -81,7 +81,7 @@ Vue.component('tab-posts', {
   '
 })
 Vue.component('tab-archive', {
-  template: '<div>Composant Archive</div>'
+  template: '<div>Composant archive</div>'
 })
 new Vue({
   el: '#dynamic-component-demo',
@@ -199,14 +199,14 @@ Désormais, l'onglet _Posts_ conserve son état (le post sélectionné) même lo
 
 Pour plus de détails sur `<keep-alive>`, consultez la [référence API](../api/#keep-alive).
 
-## Composants Async
+## Composants async
 
 Dans de grosses applications, nous pouvons avoir besoin de diviser l'application en morceaux plus petits et charger un composant depuis le serveur seulement lorsque celui-ci est requis. Pour rendre cela plus facile, Vue vous permet de définir un composant en tant que fonction usine qui va résoudre de façon asynchrone la définition de votre composant. Vue déclenchera la fonction usine seulement lorsque le rendu du composant est nécessaire, et mettra en cache le résultat pour les futurs nouveaux rendus. Par exemple :
 
 ``` js
 Vue.component('exemple-async', function (resolve, reject) {
   setTimeout(function () {
-    // Passe la définition du composant au callback `resolve`
+    // Passe la définition du composant à la fonction de rappel `resolve`
     resolve({
       template: '<div>Je suis asynchrone !</div>'
     })
