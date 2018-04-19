@@ -4,7 +4,7 @@ type: guide
 order: 11
 ---
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 ## Les composants, qu’est-ce que c’est ?
 
 Les composants sont l'une des plus puissantes fonctionnalités de Vue. Ils vous permettent d'étendre les éléments de base du HTML pour encapsuler du code réutilisable. À un haut niveau, les composants sont des éléments personnalisables auxquels le compilateur de Vue attache un comportement. Dans certains cas, ils peuvent aussi apparaitre comme des éléments HTML natifs étendus avec l'attribut spécial `is`.
@@ -16,11 +16,11 @@ Tous les composants Vue sont également des instances de Vue. Ils acceptent le m
 ### Inscription globale
 
 Nous avons appris dans les sections précédentes que nous pouvions créer une nouvelle instance de Vue avec :
-=======
+≠≠≠≠≠≠≠
 ## Exemple de base
 
 Voici un exemple de composant Vue :
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ``` js
 // Définition d'un nouveau composant appelé `button-counter`
@@ -34,11 +34,11 @@ Vue.component('button-counter', {
 })
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Pour inscrire un composant global, vous pouvez utiliser `Vue.component(tagName, options)`. Par exemple :
-=======
+≠≠≠≠≠≠≠
 Les composants sont des instances de Vue réutilisable avec un nom : dans notre cas `<button-counter>`. Nous pouvons utiliser ce composant en tant qu'élément persommalisé à l'intérieure d'une instance de Vue racie créée avec `new Vue` :
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ```html
 <div id="components-demo">
@@ -46,7 +46,7 @@ Les composants sont des instances de Vue réutilisable avec un nom : dans notre 
 </div>
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 <p class="tip">Notez que Vue ne vous force pas à respecter les [règles du W3C](https://www.w3.org/TR/custom-elements/#concepts) en ce qui concerne les noms de balises personnalisées (tout en minuscules, obligation de contenir un trait d'union) bien que suivre cette convention est considéré comme une bonne pratique.</p>
 
 Une fois inscrit, un composant peut être utilisé dans le template d'une instance en tant qu'élément personnalisé, `<my-component></my-component>`. Assurez-vous que le composant soit inscrit **avant** l'instanciation de l'instance racine de Vue. Voici un exemple complet :
@@ -61,7 +61,7 @@ Une fois inscrit, un composant peut être utilisé dans le template d'une instan
 // inscrire
 Vue.component('my-component', {
   template: '<div>Un composant personnalisé !</div>'
-=======
+≠≠≠≠≠≠≠
 ```js
 new Vue({ el: '#components-demo' })
 ```
@@ -78,13 +78,13 @@ Vue.component('button-counter', {
     }
   },
   template: '<button v-on:click="count += 1">Vous m\'avez cliquez {{ count }} fois.</button>'
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 })
 new Vue({ el: '#components-demo' })
 </script>
 {% endraw %}
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 // créer une instance racine
 new Vue({
   el: '#example'
@@ -96,7 +96,7 @@ Ce qui donnera comme rendu :
 ``` html
 <div id="example">
   <div>Un composant personnalisé !</div>
-=======
+≠≠≠≠≠≠≠
 Puisque les composants sont des instances de Vue réutilisables, ils acceptent les mêmes option que `new Vue` comme `data`, `computed`, `watch`, `methods`, et les hooks du cycle de vie. Les seules exceptions sont quelques options spécifique à la racine comme `el`.
 
 ## Réutilisation de composants
@@ -108,7 +108,7 @@ Les composants peuvent être réutilisés autant de fois que souhaité :
   <button-counter></button-counter>
   <button-counter></button-counter>
   <button-counter></button-counter>
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 </div>
 ```
 
@@ -119,7 +119,7 @@ Les composants peuvent être réutilisés autant de fois que souhaité :
   <button-counter></button-counter>
 </div>
 <script>
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Vue.component('my-component', {
   template: '<div>Un composant personnalisé !</div>'
 })
@@ -134,7 +134,7 @@ Vous n'êtes pas obligé d'inscrire chaque composant de manière globale. Vous p
 ``` js
 var Child = {
   template: '<div>Un composant personnalisé !</div>'
-=======
+≠≠≠≠≠≠≠
 new Vue({ el: '#components-demo2' })
 </script>
 {% endraw %}
@@ -148,29 +148,29 @@ Quand vous définissez le composant `<button-counter>`, vous devez faire attenti
 ```js
 data: {
   count: 0
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 }
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 new Vue({
   // ...
   components: {
     // <my-component> ne sera disponible que dans le template parent
     'my-component': Child
-=======
+≠≠≠≠≠≠≠
 À la place, **l'option `data` d'un composant doit être une fonction**, ainsi chaque instance peut maintenir sa propre copie indépendante d'objet de données :
 
 ```js
 data: function () {
   return {
     count: 0
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
   }
 }
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 La même encapsulation s’applique pour les autres fonctionnalités de Vue pouvant être inscrites, comme les directives.
 
 ### Limitations de l'analyse d'un template à partir du DOM
@@ -178,7 +178,7 @@ La même encapsulation s’applique pour les autres fonctionnalités de Vue pouv
 Quand vous utilisez le DOM en tant que template (par ex. : en utilisant l'option `el` pour monter un élément avec du contenu existant), vous êtes sujet à plusieurs restrictions dépendantes de la façon dont fonctionne le HTML, car Vue peut uniquement récupérer le contenu du template **après** qu'il ait été analysé et normalisé. Des éléments tels que `<ul>`, `<ol>`, `<table>` et `<select>` ont notamment des restrictions sur les éléments que l'on peut trouver à l'intérieur, et plusieurs éléments comme `<option>` ne peuvent apparaître qu'à l'intérieur de certains éléments.
 
 Ceci est problématique quand on utilise des composants personnalisés avec des éléments qui ont ces restrictions, par exemple :
-=======
+≠≠≠≠≠≠≠
 Si Vue n'avait pas cette règle, cliquer sur un bouton affecterait les données de _toutes les autres instances_, comme ci-dessous :
 
 {% raw %}
@@ -206,15 +206,15 @@ new Vue({ el: '#components-demo3' })
 Il est commun pour une application d'être organisée en un arbre de composants imbriqués :
 
 ![Arbre de composant](/images/components.png)
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 Par exemple, vous pouvez avoir des composant pour l'en-tête, la barre latérale, la zone de contenu ; chacun contenant lui aussi d'autres composants pour la navigations, les liens, les billets de blog, etc.
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Le composant personnalisé `<my-row>` sera évalué comme du contenu invalide, ce qui causera des erreurs dans les éventuels rendus en sortie. Une solution de contournement est d'utiliser l'attribut spécial `is` :
-=======
+≠≠≠≠≠≠≠
 Pour utiliser ces composants dans des templates, ils doivent être enregistrés pour que Vue les connaissent. Il y a deux types d'enregistrement de composant : **globale** et **locale**. Jusqu'ici, nous avons uniquement enregistrés des composants globallement en utilisant `Vue.component` :
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ```js
 Vue.component('my-component-name', {
@@ -222,7 +222,7 @@ Vue.component('my-component-name', {
 })
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 **Il est à noter que ces limitations n'existent pas si vous utilisez des templates sous forme de chaine de caractères en provenance d'une des sources suivantes** :
 
 - les balises `<script type="text/x-template">`
@@ -266,7 +266,7 @@ Vue.component('simple-counter', {
     return data
   }
 })
-=======
+≠≠≠≠≠≠≠
 Les composants enregistrés globallement peuvent être utilisé dans le template de n'importe quelle instance racine de Vue (`new Vue`) créer après coup, ainsi que dans les sous-composants de l'arbre des composants de cette instance de Vue.
 
 C'est tout ce que vous avez besoin de savoir à propos de l'enregistrement pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos de l'[Enregistrement de composant](components-registration.html).
@@ -287,7 +287,7 @@ Vue.component('blog-post', {
 Un composant peut avoir autant de props que vous le souhaitez et par défaut, n'importe quelle valeur peut être passé à une prop. Dans le template ci-dessus, vous devriez voir cette valeur dans l'instance du composant, comme pour `data`.
 
 Une fois une prop enregistrée, vous pouvez lui passer des données en tant qu'attribut personnalisé comme ceci :
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ```html
 <blog-post title="Mon initiation avec Vue"></blog-post>
@@ -310,11 +310,11 @@ new Vue({ el: '#blog-post-demo' })
 </script>
 {% endraw %}
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Puisque nos trois instances de composant partagent le même objet `data`, l'incrémentation d'un compteur les incrémentera tous ! Aie. Corrigeons cela en retournant un nouvel objet de données :
-=======
+≠≠≠≠≠≠≠
 Dans une application typique, cependant, vous préferreriez avoir un tableau de billets dans `data` :
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ```js
 new Vue({
@@ -329,11 +329,11 @@ new Vue({
 })
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Maintenant tous nos compteurs ont leur propre état interne :
-=======
+≠≠≠≠≠≠≠
 Maintenant, faisont le rendu d'un composant pour chacun :
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ```html
 <blog-post
@@ -343,19 +343,19 @@ Maintenant, faisont le rendu d'un composant pour chacun :
 ></blog-post>
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 ### Composition de composants
 
 Les composants sont destinés à être utilisés ensemble, le plus souvent dans une relation parent-enfant : le composant A peut utiliser le composant B dans son propre template. Ils vont inévitablement avoir besoin de communiquer les uns avec les autres : le parent peut avoir besoin de passer des données à l'enfant, et l'enfant peut avoir besoin d'informer le parent que quelque chose s'est produit à l'intérieur. Cependant, il est également très important de garder le parent et l'enfant aussi découplés que possible via une interface clairement définie. Cela assure que le code de chaque composant peut être écrit de manière relativement isolée, cela les rend plus maintenables et potentiellement plus simples à réutiliser.
 
 Dans Vue.js, la relation parent-enfant peut être résumée ainsi : **descente de props, remontée d'évènements**. Le parent passe les données à l'enfant via les **props**, et l'enfant envoie des messages à son parent via les **évènements**. Voyons comment cela fonctionne ci-dessous.
-=======
+≠≠≠≠≠≠≠
 Vous voyez au-dessus que nous pouvons utiliser `v-bind` pour dynamiquement passer des props. Cela est particulièrement utile quand vous ne connaissez pas exactement le contenu dont vous êtes entrain de faire le rendu à l'avance, comme dans le cas de [récupération de billets depuis une API](https://jsfiddle.net/chrisvfritz/sbLgr0ad).
 
 C'est tout ce que vous avez besoin de savoir à propos des props pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [props](components-props.html).
 
 ## A Single Root Element
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 When building out a `<blog-post>` component, your template will eventually contain more than just the title:
 
@@ -363,7 +363,7 @@ When building out a `<blog-post>` component, your template will eventually conta
 <h3>{{ post.title }}</h3>
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 ### Passer des données avec props
 
 Chaque instance de composant a sa propre **portée isolée**. Cela signifie qu'on ne peut (et ne devrait) pas directement référencer des données du parent dans un template de composant enfant. Les données doivent être passées aux composants enfants en utilisant **props**.
@@ -393,7 +393,7 @@ Résultat :
   <child message="bonjour !"></child>
 </div>
 <script>
-=======
+≠≠≠≠≠≠≠
 At the very least, you'll want to include the post's content:
 
 ```html
@@ -417,7 +417,7 @@ As we develop our `<blog-post>` component, some features may require communicati
 In the parent, we can support this feature by adding a `postFontSize` data property:
 
 ```js
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 new Vue({
   el: '#blog-posts-events-demo',
   data: {
@@ -427,7 +427,7 @@ new Vue({
 })
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Les attributs HTML sont insensibles à la casse, donc quand vous utilisez des templates qui ne sont pas des chaines de caractères, le nom de la prop en camelCase a besoin de son équivalent en kebab-case (délimité par des traits d'union) :
 
 ``` js
@@ -448,7 +448,7 @@ Encore une fois, si vous utilisez les templates sous forme de chaine de caractè
 ### Props dynamiques
 
 Tout comme la liaison d'un attribut ordinaire avec une expression, nous pouvons aussi utiliser `v-bind` pour dynamiquement lier les props aux données de leurs parents. À chaque fois que les données sont mises à jour dans le parent, elles seront également mises à jour dans l'enfant :
-=======
+≠≠≠≠≠≠≠
 Which can be used in the template to control the font size of all blog posts:
 
 ```html
@@ -483,7 +483,7 @@ Vue.component('blog-post', {
 <p class="tip">The above example and some future ones use JavaScript's [template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to make multi-line templates more readable. These are not supported by Internet Explorer (IE), so if you must support IE and are not transpiling (e.g. with Babel or TypeScript), use [newline escapes](https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript/) instead.</p>
 
 The problem is, this button doesn't do anything:
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ```html
 <button>
@@ -491,7 +491,7 @@ The problem is, this button doesn't do anything:
 </button>
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 ``` js
 new Vue({
   el: '#prop-example-2',
@@ -502,7 +502,7 @@ new Vue({
 ```
 
 Vous pouvez aussi utiliser la syntaxe abrégée pour `v-bind`:
-=======
+≠≠≠≠≠≠≠
 When we click on the button, we need to communicate to the parent that it should enlarge the text of all posts. Fortunately, Vue instances provide a custom events system to solve this problem. To emit an event to the parent, we can call the built-in [**`$emit`** method](../api/#Instance-Methods-Events), passing the name of the event:
 
 ```html
@@ -512,7 +512,7 @@ When we click on the button, we need to communicate to the parent that it should
 ```
 
 Then on our blog post, we can listen for this event with `v-on`, just as we would with a native DOM event:
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ```html
 <blog-post
@@ -521,11 +521,11 @@ Then on our blog post, we can listen for this event with `v-on`, just as we woul
 ></blog-post>
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Résultat :
 
-=======
->>>>>>> upstream/master
+≠≠≠≠≠≠≠
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 {% raw %}
 <div id="blog-posts-events-demo" class="demo">
   <div :style="{ fontSize: postFontSize + 'em' }">
@@ -553,7 +553,7 @@ Vue.component('blog-post', {
 new Vue({
   el: '#blog-posts-events-demo',
   data: {
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
     parentMsg: 'Message venant du parent'
   },
   components: {
@@ -561,20 +561,20 @@ new Vue({
       props: ['myMessage'],
       template: '<span>{{ myMessage }}</span>'
     }
-=======
+≠≠≠≠≠≠≠
     posts: [
       { id: 1, title: 'My journey with Vue', content: '...content...' },
       { id: 2, title: 'Blogging with Vue', content: '...content...' },
       { id: 3, title: 'Why Vue is so fun', content: '...content...' }
     ],
     postFontSize: 1
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
   }
 })
 </script>
 {% endraw %}
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Si vous souhaitez passer toutes les propriétés dans un objet en tant que props, vous devez utiliser `v-bind` sans arguments  (`v-bind` au lieu de `v-bind:prop-name`). Par exemple, avec un objet `todo` :
 
 ``` js
@@ -585,11 +585,11 @@ todo: {
 ```
 
 Alors :
-=======
+≠≠≠≠≠≠≠
 ### Emitting a Value With an Event
 
 It's sometimes useful to emit a specific value with an event. For example, we may want the `<blog-post>` component to be in charge of how much to enlarge the text by. In those cases, we can use `$emit`'s 2nd parameter to provide this value:
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ```html
 <button v-on:click="$emit('enlarge-text', 0.1)">
@@ -597,11 +597,11 @@ It's sometimes useful to emit a specific value with an event. For example, we ma
 </button>
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Est équivalent à :
-=======
+≠≠≠≠≠≠≠
 Then when we listen to the event in the parent, we can access the emitted event's value with `$event`:
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ```html
 <blog-post
@@ -610,7 +610,7 @@ Then when we listen to the event in the parent, we can access the emitted event'
 ></blog-post>
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 ### Littérale vs. Dynamique
 
 Une erreur répandue chez les débutants est d'essayer de passer un nombre en utilisant la syntaxe littérale :
@@ -642,7 +642,7 @@ Il y a habituellement deux cas où il est tentant de changer une prop :
 Les réponses correctes pour ces cas d'utilisation sont :
 
 1. Définir une propriété de donnée locale qui utilise la valeur initiale de la prop comme une valeur d'initialisation :
-=======
+≠≠≠≠≠≠≠
 Or, if the event handler is a method:
 
 ```html
@@ -669,24 +669,24 @@ Custom events can also be used to create custom inputs that work with `v-model`.
 ```html
 <input v-model="searchText">
 ```
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 does the same thing as:
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 2. Définir une propriété calculée qui est calculée à partir de la valeur de la prop :
-=======
+≠≠≠≠≠≠≠
 ```html
 <input
   v-bind:value="searchText"
   v-on:input="searchText = $event.target.value"
 >
 ```
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 When used on a component, `v-model` instead does this:
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 <p class="tip">Notez que les objets et tableaux en JavaScript sont passés par référence, aussi si la prop est un tableau ou un objet, modifier l'objet ou le tableau lui-même à l'intérieur de l'enfant **va** affecter l'état du parent.</p>
 
 ### Validation de prop
@@ -751,7 +751,7 @@ Un attribut non-prop est un attribut qui est passé au composant, mais qui n'a p
 Bien que définir explicitement les props soit conseillé pour passer les informations à un composant enfant, les auteurs des bibliothèques de composant ne suivent pas forcément cette règle dans leurs composants. C'est pour cela que les composants peuvent accepter des attributs arbitraires, qui sont ajoutés à l'élément racine du composant.
 
 Par exemple, imaginez que nous utilisions un composant tiers `bs-date-input` avec un plugin Bootstrap qui nécessite un attribut `data-3d-date-picker` sur l'`input`. Nous pouvons ajouter cet attribut dans l'instance de notre composant :
-=======
+≠≠≠≠≠≠≠
 ``` html
 <custom-input
   v-bind:value="searchText"
@@ -789,7 +789,7 @@ That's all you need to know about custom component events for now, but once you'
 ## Content Distribution with Slots
 
 Just like with HTML elements, it's often useful to be able to pass content to a component, like this:
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ``` html
 <alert-box>
@@ -797,13 +797,13 @@ Just like with HTML elements, it's often useful to be able to pass content to a 
 </alert-box>
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Et l'attribut `data-3d-date-picker="true"` sera automatiquement ajouté à l'élément racine de `bs-date-input`.
 
 ## Remplacement et merge avec des attributs existants
 
 Imaginez que ceci est un template pour `bs-date-input`:
-=======
+≠≠≠≠≠≠≠
 Which might render something like:
 
 {% raw %}
@@ -833,7 +833,7 @@ new Vue({ el: '#slots-demo' })
 {% endraw %}
 
 Fortunately, this task is made very simple by Vue's custom `<slot>` element:
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ```js
 Vue.component('alert-box', {
@@ -846,15 +846,15 @@ Vue.component('alert-box', {
 })
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Pour ajouter un thème spécifique à notre plugin date picker, nous allons avoir besoin d'ajouter une classe, comme cela :
-=======
+≠≠≠≠≠≠≠
 As you'll see above, we just add the slot where we want it to go -- and that's it. We're done!
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 That's all you need to know about slots for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on [Slots](components-slots.html).
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Dans ce cas, deux valeurs différentes pour `class` sont définies :
 
 - `form-control`, qui est la classe du composant dans ce template
@@ -880,7 +880,7 @@ De plus, un composant parent peut écouter des évènements émis depuis un comp
 <p class="tip">Vous ne pouvez pas utiliser `$on` pour écouter les évènements émis par les enfants. Vous devez utiliser `v-on` directement dans le template, comme dans l'exemple ci-dessous.</p>
 
 Voici un exemple :
-=======
+≠≠≠≠≠≠≠
 ## Dynamic Components
 
 Sometimes, it's useful to dynamically switch between components, like in a tabbed interface:
@@ -963,7 +963,7 @@ That's all you need to know about dynamic components for now, but once you've fi
 Some HTML elements, such as `<ul>`, `<ol>`, `<table>` and `<select>` have restrictions on what elements can appear inside them, and some elements such as `<li>`, `<tr>`, and `<option>` can only appear inside certain other elements.
 
 This will lead to issues when using components with elements that have such restrictions. For example:
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 ``` html
 <table>
@@ -979,7 +979,7 @@ The custom component `<blog-post-row>` will be hoisted out as invalid content, c
 </table>
 ```
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 {% raw %}
 <div id="counter-event-example" class="demo">
   <p>{{ total }}</p>
@@ -1148,17 +1148,17 @@ Les évènements personnalisés peuvent aussi être utilisés pour créer des ch
 ```
 
 est juste du sucre syntaxique pour :
-=======
+≠≠≠≠≠≠≠
 It should be noted that **this limitation does _not_ apply if you are using string templates from one of the following sources**:
 
 - String templates (e.g. `template: '...'`)
 - [Single-file (`.vue`) components](single-file-components.html)
 - [`<script type="text/x-template">`](components-edge-cases.html#X-Templates)
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
 
 That's all you need to know about dynamic components for now -- and actually, the end of Vue's _Essentials_. Congratulations! There's still more to learn, but first, we recommend taking a break to play with Vue yourself and build something fun.
 
-<<<<<<< HEAD
+≤≤≤≤≤≤≤≤ OLD TRANSLATION
 Quand il est utilisé avec un composant, cela peut être simplifié par :
 
 ``` html
@@ -1899,6 +1899,6 @@ Vue.component('terms-of-service', {
   `
 })
 ```
-=======
+≠≠≠≠≠≠≠
 Once you feel comfortable with the knowledge you've just digested, we recommend coming back to read the full guide on [Dynamic & Async Components](components-dynamic-async.html), as well as the other pages in the Components In-Depth section of the sidebar.
->>>>>>> upstream/master
+≥≥≥≥≥≥≥ CURRENT TRANSLATION
