@@ -1,61 +1,61 @@
 ---
-title: Handling Edge Cases
+title: Gérer les cas limites
 type: guide
 order: 106
 ---
 
-> This page assumes you've already read the [Components Basics](components.html). Read that first if you are new to components.
+> Cette page présume que vous connaissez déjà les bases sur les [Composants](components.html). Lisez cette section en premier si vous découvrez les composants.
 
-<p class="tip">All the features on this page document the handling of edge cases, meaning unusual situations that sometimes require bending Vue's rules a little. Note however, that they all have disadvantages or situations where they could be dangerous. These are noted in each case, so keep them in mind when deciding to use each feature.</p>
+<p class="tip">Toutes les fonctionnalités sur cette page documentent la gestion de cas limites, c'est-à-dire des situations peu ordinaires qui requièrent parfois de contourner légèrement les règles de Vue. Notez cependant qu'elles ont toutes des inconvénients ou des situations où elles peuvent s'avérer dangereuses. Celles-si sont décrites dans chaque cas, donc gardez-les en tête quand vous décidez d'utiliser chaque fonctionnalité.</p>
 
-## Element & Component Access
+## Élément et accès au composant
 
-<p>Cette page est en cours de traduction mais vous pouvez en trouver une ancienne version <a href="https://fr.vuejs.org/v2/guide/components.html">ici</a>. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>In most cases, it's best to avoid reaching into other component instances or manually manipulating DOM elements. There are cases, however, when it can be appropriate.</p>
+Dans la plupart des cas, il vaut mieux éviter d'accéder à d'autres instances de composant ou de manipuler manuellement des éléments du DOM. Cependant, il y a des cas où cela peut être approprié.
 
-### Accessing the Root Instance
+### Accéder à l'instance racine
 
-In every subcomponent of a `new Vue` instance, this root instance can be accessed with the `$root` property. For example, in this root instance:
+Dans chaque sous-composant d'une nouvelle instance de Vue (`new Vue`), on peut accéder à cette instance racine via la propriété `$root`. Par exemple, dans cette instance racine :
 
 ```js
-// The root Vue instance
+// l'instance Vue racine
 new Vue({
   data: {
     foo: 1
   },
   computed: {
     bar: function () { /* ... */ }
-  }
+  },
   methods: {
     baz: function () { /* ... */ }
   }
 })
 ```
 
-All subcomponents will now be able to access this instance and use it as a global store:
+Tous les sous-composants pourront accéder à cette instance et l'utiliser comme un espace de stockage global :
 
 ```js
-// Get root data
+// Récupérer une donnée de la racine
 this.$root.foo
 
-// Set root data
+// Affecter une donnée de la racine
 this.$root.foo = 2
 
-// Access root computed properties
+// Accéder aux propriétés calculées de la racine
 this.$root.bar
 
-// Call root methods
+// Appeler des méthodes de la racine
 this.$root.baz()
 ```
 
-<p class="tip">This can be convenient for demos or very small apps with a handful of components. However, the pattern does not scale well to medium or large-scale applications, so we strongly recommend using <a href="https://github.com/vuejs/vuex">Vuex</a> to manage state in most cases.</p>
+<p class="tip">Cela peut être pratique pour des démos ou des applications très petites avec une poignée de composants. Cependant, ce pattern se prête mal aux applications de moyenne à grande échelle, c'est pourquoi nous recommandons fortement d'utiliser <a href="https://github.com/vuejs/vuex">Vuex</a> pour gérer l'état dans la plupart des cas.</p>
 
-### Accessing the Parent Component Instance
+### Accéder à l'instance de composant parente
 
-Similar to `$root`, the `$parent` property can be used to access the parent instance from a child. This can be tempting to reach for as a lazy alternative to passing data with a prop.
+Comme `$root`, la propriété `$parent` peut être utilisée pour accéder à l'instance parente à partir d'un enfant. Il peut être tentant de l'utiliser par fainéantise plutôt que de passer les données via une prop.
 
-<p class="tip">In most cases, reaching into the parent makes your application more difficult to debug and understand, especially if you mutate data in the parent. When looking at that component later, it will be very difficult to figure out where that mutation came from.</p>
+<p class="tip">Dans la plupart des cas, accéder au parent rend votre application plus difficile à déboguer et à comprendre, surtout si vous mutez des données dans le parent. En regardant ce composant plus tard, il sera très difficile de découvrir d'où vient cette mutation.</p>
 
-There are cases however, particularly shared component libraries, when this _might_ be appropriate. For example, in abstract components that interact with JavaScript APIs instead of rendering HTML, like these hypothetical Google Maps components:
+Il y a des cas cependant où cela _pourrait_ être approprié, notamment dans des bibliothèques de composants liés entre eux. Par exemple, dans des composants abstraits qui interagissent avec des APIs JavaScript plutôt que de produire du HTML, tels que ces composants Google Maps :
 
 ```html
 <google-map>
@@ -63,9 +63,9 @@ There are cases however, particularly shared component libraries, when this _mig
 </google-map>
 ```
 
-The `<google-map>` component might define a `map` property that all subcomponents need access to. In this case `<google-map-markers>` might want to access that map with something like `this.$parent.getMap`, in order to add a set of markers to it. You can see this pattern [in action here](https://jsfiddle.net/chrisvfritz/ttzutdxh/).
+Le composant `<google-map>` peut définir une propriété `map` à laquelle tous les sous-composants ont besoin d'accéder. Dans ce cas, `<google-map-markers>` peut vouloir accéder à cette carte avec quelque-chose comme `this.$parent.getMap`, afin d'ajouter des marqueurs dessus. Vous pouvez voir ce pattern [en démonstration ici](https://jsfiddle.net/chrisvfritz/ttzutdxh/).
 
-Keep in mind, however, that components built with this pattern are still inherently fragile. For example, imagine we add a new `<google-map-region>` component and when `<google-map-markers>` appears within that, it should only render markers that fall within that region:
+Gardez en tête, toutefois, que les composants conçus avec ce pattern sont toujours intrinsèquement fragiles. Par exemple, imaginons que nous ajoutons un nouveau composant `<google-map-region>` et que lorsque `<google-map-markers>` apparaît à l'intérieur, il affiche uniquement les marqueurs de cette région :
 
 ```html
 <google-map>
@@ -75,58 +75,58 @@ Keep in mind, however, that components built with this pattern are still inheren
 </google-map>
 ```
 
-Then inside `<google-map-markers>` you might find yourself reaching for a hack like this:
+Alors, à l'intérieur de `<google-map-markers>`, vous pourriez vous retrouver à devoir recourir à des bricolages comme ceci:
 
 ```js
 var map = this.$parent.map || this.$parent.$parent.map
 ```
 
-This has quickly gotten out of hand. That's why to provide context information to descendent components arbitrarily deep, we instead recommend [dependency injection](#Dependency-Injection).
+Cela a rapidement dérapé. C'est pourquoi nous recommandons plutôt d'utiliser l'[injection de dépendances](#Dependency-Injection) pour fournir des informations contextuelles à des composants enfants à un niveau de profondeur arbitraire.
 
-### Accessing Child Component Instances & Child Elements
+### Accéder à des instances de composants enfants et des éléments enfants
 
-Despite the existence of props and events, sometimes you might still need to directly access a child component in JavaScript. To achieve this you can assign a reference ID to the child component using the `ref` attribute. For example:
+Malgré l'existence des props et des événements, parfois vous pouvez toujours avoir besoin d'accéder directement à un composant enfant en JavaScript. Pour y parvenir, vous pouvez assigner un ID référence au composant enfant en utilisant l'attribut `ref`. Par exemple :
 
 ```html
 <base-input ref="usernameInput"></base-input>
 ```
 
-Now in the component where you've defined this `ref`, you can use:
+Ensuite, dans le composant où vous avez défini cette `ref`, vous pouvez utiliser :
 
 ```js
 this.$refs.usernameInput
 ```
 
-to access the `<base-input>` instance. This may be useful when you want to, for example, programmatically focus this input from a parent. In that case, the `<base-input>` component may similarly use a `ref` to provide access to specific elements inside it, such as:
+pour accéder à l'instance `<base-input>`. Cela peut être utile si vous voulez, par exemple, donner programmatiquement le focus à ce champ depuis le parent. Dans ce cas, le composant `<base-input>` peut de la même façon utiliser une `ref` pour fournir l'accès à des éléments spécifiques à l'intérieur, tels que :
 
 ```html
 <input ref="input">
 ```
 
-And even define methods for use by the parent:
+Et même définir des méthodes à utiliser par le parent :
 
 ```js
 methods: {
-  // Used to focus the input from the parent
+  // utilisé pour mettre le focus sur ce champ à partir du parent
   focus: function () {
     this.$refs.input.focus()
   }
 }
 ```
 
-Thus allowing the parent component to focus the input inside `<base-input>` with:
+Et ainsi permettre au composant parent de mettre le focus sur le champ à l'intérieur de `<base-input>` avec :
 
 ```js
 this.$refs.usernameInput.focus()
 ```
 
-When `ref` is used together with `v-for`, the ref you get will be an array containing the child components mirroring the data source.
+Quand `ref` est utilisé conjointement avec `v-for`, la ref que vous obtenez sera une `Array` contenant les composants enfants reflétant les données source.
 
-<p class="tip"><code>$refs</code> are only populated after the component has been rendered, and they are not reactive. It is only meant as an escape hatch for direct child manipulation - you should avoid accessing <code>$refs</code> from within templates or computed properties.</p>
+<p class="tip">Les références <code>$refs</code> sont renseignées seulement après le rendu initial du composant, et elles ne sont pas réactives. Il s'agit seulement d'une trappe de sortie pour faire de la manipulation directe d'enfants - vous devriez éviter d'accéder aux <code>$refs</code> depuis l'intérieur de templates ou depuis des propriétés calculées.</p>
 
-### Dependency Injection
+### Injection de dépendances
 
-Earlier, when we described [Accessing the Parent Component Instance](#Accessing-the-Parent-Component-Instance), we showed an example like this:
+Précédemment, quand nous avons décrit l'[accès à l'instance de composant parente](#Accessing-the-Parent-Component-Instance), nous avons montré un exemple comme ceci :
 
 ```html
 <google-map>
@@ -136,9 +136,9 @@ Earlier, when we described [Accessing the Parent Component Instance](#Accessing-
 </google-map>
 ```
 
-In this component, all descendants of `<google-map>` needed access to a `getMap` method, in order to know which map to interact with. Unfortunately, using the `$parent` property didn't scale well to more deeply nested components. That's where dependency injection can be useful, using two new instance options: `provide` and `inject`.
+Dans ce composant, tous les descendants de `<google-map>` avaient besoin d'accéder à une méthode `getMap`, afin de savoir avec quelle carte interagir. Malheusement, utiliser la propriété `$parent` s'adapte mal avec des composants imbriqués plus profondément. C'est là où l'injection de dépendances peut s'avérer utile, en utilisant deux nouvelles options d'instance : `provide` et `inject`.
 
-The `provide` options allows us to specify the data/methods we want to **provide** to descendent components. In this case, that's the `getMap` method inside `<google-map>`:
+Les options `provide` nous permettent de spécifier quelles données/méthodes nous voulons **fournir** aux composants descendants. Dans ce cas, il s'agit de la méthode `getMap` à l'intérieur de `<google-map>`:
 
 ```js
 provide: function () {
@@ -148,22 +148,22 @@ provide: function () {
 }
 ```
 
-Then in any descendants, we can use the `inject` option to receive specific properties we'd like to add to that instance:
+Ensuite, dans n'importe quel descendant, nous pouvons utiliser l'option `inject` pour récupérer des propriétés spécifiques que nous voulons ajouter à cette instance :
 
 ```js
 inject: ['getMap']
 ```
 
-You can see the [full example here](https://jsfiddle.net/chrisvfritz/tdv8dt3s/). The advantage over using `$parent` is that we can access `getMap` in _any_ descendant component, without exposing the entire instance of `<google-map>`. This allows us to more safely keep developing that component, without fear that we might change/remove something that a child component is relying on. The interface between these components remains clearly defined, just as with `props`.
+Vous pouvez voir l'[exemple complet ici](https://jsfiddle.net/chrisvfritz/tdv8dt3s/). L'avantage par rapport à `$parent` est que nous pouvons accéder à `getMap` dans _n'importe quel_ composant descendant, sans avoir à exposer l'instance entière de `<google-map>`. Cela nous permet de continuer à développer ce composant de façon plus sûre, sans crainte de devoir changer/supprimer quelque-chose sur lequel repose un composant enfant. L'interface entre ces composants reste clairement définie, tout comme avec les `props`.
 
-In fact, you can think of dependency injection as sort of "long-range props", except:
+En fait, vous pouvez vous représenter l'injection de dépendances comme une sorte de « props à longue distance », sauf que :
 
-* ancestor components don't need to know which descendants use the properties it provides
-* descendant components don't know need to know where injected properties are coming from
+* les composants ancêtres n'ont pas besoin de connaître quels descendants utilisent les propriétés qu'ils fournissent
+* les composants descendants n'ont pas besoin de savoir d'où proviennent les propriétés injectées
 
-<p class="tip">However, there are downsides to dependency injection. It couples components in your application to the way they're currently organized, making refactoring more difficult. Provided properties are also not reactive. This is by design, because using them to create a central data store scales just as poorly as <a href="#Accessing-the-Root-Instance">using <code>$root</code></a> for the same purpose. If the properties you want to share are specific to your app, rather than generic, or if you ever want to update provided data inside ancestors, then that's a good sign that you probably need a real state management solution like <a href="https://github.com/vuejs/vuex">Vuex</a> instead.</p>
+<p class="tip">Cependant, il y a des inconvénents à l'injection de dépendances. Cela vient entériner la manière dont les composants sont actuellement organisés dans votre application, rendant plus difficile le remaniement de code. De plus, les propriétés fournies avec `provide` ne sont pas réactives. Cela a été intentionnellement conçu de cette façon, car les utiliser pour créer un espace de stockage global est tout aussi peu évolutif que <a href="#Accessing-the-Root-Instance">d'utiliser <code>$root</code></a> dans le même but. Si les propriétés que vous voulez partager sont spécifiques à votre application et non génériques, ou si jamais vous voulez mettre à jour des données fournies par des ancêtres, alors c'est un signe que vous avez probablement besoin d'une réelle solution de gestion d'état telle que <a href="https://github.com/vuejs/vuex">Vuex</a> à la place.</p>
 
-Learn more about dependency injection in [the API doc](https://vuejs.org/v2/api/#provide-inject).
+Apprenez-en plus sur l'injection de dépendances dans [la documentation de l'API](https://vuejs.org/v2/api/#provide-inject).
 
 ## Programmatic Event Listeners
 
