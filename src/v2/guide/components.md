@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
 title: Composants
-=======
-title: Components Basics
->>>>>>> upstream/master
 type: guide
 order: 11
 ---
@@ -21,27 +17,27 @@ Tous les composants Vue sont également des instances de Vue. Ils acceptent le m
 
 Nous avons appris dans les sections précédentes que nous pouvions créer une nouvelle instance de Vue avec :
 =======
-## Base Example
+## Exemple de base
 
-Here's an example of a Vue component:
+Voici un exemple de composant Vue :
 >>>>>>> upstream/master
 
 ``` js
-// Define a new component called button-counter
+// Définition d'un nouveau composant appelé `button-counter`
 Vue.component('button-counter', {
   data: function () {
     return {
       count: 0
     }
   },
-  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+  template: '<button v-on:click="count++">Vous m\'avez cliquez {{ count }} fois.</button>'
 })
 ```
 
 <<<<<<< HEAD
 Pour inscrire un composant global, vous pouvez utiliser `Vue.component(tagName, options)`. Par exemple :
 =======
-Components are reusable Vue instances with a name: in this case, `<button-counter>`. We can use this component as a custom element inside a root Vue instance created with `new Vue`:
+Les composants sont des instances de Vue réutilisable avec un nom : dans notre cas `<button-counter>`. Nous pouvons utiliser ce composant en tant qu'élément persommalisé à l'intérieure d'une instance de Vue racie créée avec `new Vue` :
 >>>>>>> upstream/master
 
 ```html
@@ -81,7 +77,7 @@ Vue.component('button-counter', {
       count: 0
     }
   },
-  template: '<button v-on:click="count += 1">You clicked me {{ count }} times.</button>'
+  template: '<button v-on:click="count += 1">Vous m\'avez cliquez {{ count }} fois.</button>'
 >>>>>>> upstream/master
 })
 new Vue({ el: '#components-demo' })
@@ -101,11 +97,11 @@ Ce qui donnera comme rendu :
 <div id="example">
   <div>Un composant personnalisé !</div>
 =======
-Since components are reusable Vue instances, they accept the same options as `new Vue`, such as `data`, `computed`, `watch`, `methods`, and lifecycle hooks. The only exceptions are a few root-specific options like `el`.
+Puisque les composants sont des instances de Vue réutilisables, ils acceptent les mêmes option que `new Vue` comme `data`, `computed`, `watch`, `methods`, et les hooks du cycle de vie. Les seules exceptions sont quelques options spécifique à la racine comme `el`.
 
-## Reusing Components
+## Réutilisation de composants
 
-Components can be reused as many times as you want:
+Les composants peuvent être réutilisés autant de fois que souhaité :
 
 ```html
 <div id="components-demo">
@@ -143,11 +139,11 @@ new Vue({ el: '#components-demo2' })
 </script>
 {% endraw %}
 
-Notice that when clicking on the buttons, each one maintains its own, separate `count`. That's because each time you use a component, a new **instance** of it is created.
+Notez que lors du clique sur les boutons, chacun d'entre eux maintient sont propre conteur séparé des autres. C'est parceque chaque fois que vous utilisez un composant, une nouvelle **instance** est créée.
 
-### `data` Must Be a Function
+### `data` doit être une fonction
 
-When we defined the `<button-counter>` component, you may have noticed that `data` wasn't directly provided an object, like this:
+Quand vous définissez le composant `<button-counter>`, vous devez faire attention que `data` ne soit pas directement fourni en tant qu'objet, comme ceci :
 
 ```js
 data: {
@@ -163,7 +159,7 @@ new Vue({
     // <my-component> ne sera disponible que dans le template parent
     'my-component': Child
 =======
-Instead, **a component's `data` option must be a function**, so that each instance can maintain an independent copy of the returned data object:
+À la place, **l'option `data` d'un composant doit être une fonction**, ainsi chaque instance peut maintenir sa propre copie indépendante d'objet de données :
 
 ```js
 data: function () {
@@ -183,7 +179,7 @@ Quand vous utilisez le DOM en tant que template (par ex. : en utilisant l'option
 
 Ceci est problématique quand on utilise des composants personnalisés avec des éléments qui ont ces restrictions, par exemple :
 =======
-If Vue didn't have this rule, clicking on one button would affect the data of _all other instances_, like below:
+Si Vue n'avait pas cette règle, cliquer sur un bouton affecterait les données de _toutes les autres instances_, comme ci-dessous :
 
 {% raw %}
 <div id="components-demo3" class="demo">
@@ -199,25 +195,25 @@ Vue.component('button-counter2', {
   data: function () {
     return buttonCounter2Data
   },
-  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+  template: '<button v-on:click="count++">Vous m\'avez cliquez {{ count }} fois.</button>'
 })
 new Vue({ el: '#components-demo3' })
 </script>
 {% endraw %}
 
-## Organizing Components
+## Organisation des composants
 
-It's common for an app to be organized into a tree of nested components:
+Il est commun pour une application d'être organisée en un arbre de composants imbriqués :
 
-![Component Tree](/images/components.png)
+![Arbre de composant](/images/components.png)
 >>>>>>> upstream/master
 
-For example, you might have components for a header, sidebar, and content area, each typically containing other components for navigation links, blog posts, etc.
+Par exemple, vous pouvez avoir des composant pour l'en-tête, la barre latérale, la zone de contenu ; chacun contenant lui aussi d'autres composants pour la navigations, les liens, les billets de blog, etc.
 
 <<<<<<< HEAD
 Le composant personnalisé `<my-row>` sera évalué comme du contenu invalide, ce qui causera des erreurs dans les éventuels rendus en sortie. Une solution de contournement est d'utiliser l'attribut spécial `is` :
 =======
-To use these components in templates, they must be registered so that Vue knows about them. There are two types of component registration: **global** and **local**. So far, we've only registered components globally, using `Vue.component`:
+Pour utiliser ces composants dans des templates, ils doivent être enregistrés pour que Vue les connaissent. Il y a deux types d'enregistrement de composant : **globale** et **locale**. Jusqu'ici, nous avons uniquement enregistrés des composants globallement en utilisant `Vue.component` :
 >>>>>>> upstream/master
 
 ```js
@@ -271,15 +267,15 @@ Vue.component('simple-counter', {
   }
 })
 =======
-Globally registered components can be used in the template of any root Vue instance (`new Vue`) created afterwards -- and even inside all subcomponents of that Vue instance's component tree.
+Les composants enregistrés globallement peuvent être utilisé dans le template de n'importe quelle instance racine de Vue (`new Vue`) créer après coup, ainsi que dans les sous-composants de l'arbre des composants de cette instance de Vue.
 
-That's all you need to know about registration for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on [Component Registration](components-registration.html).
+C'est tout ce que vous avez besoin de savoir à propos de l'enregistrement pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos de l'[Enregistrement de composant](components-registration.html).
 
-## Passing Data to Child Components with Props
+## Passer des données aux composants enfant avec les props
 
-Earlier, we mentioned creating a component for blog posts. The problem is, that component won't be useful unless you can pass data to it, such as the title and content of the specific post we want to display. That's where props come in.
+Plus tôt, nous avons mentionné la création d'un composant pour des billets de blog. Le problème est, que ce composant ne sera utile que s'il ont peu lui passer des données, comme le titre ou le contenu pour un billet spécifique à afficher. C'est ici que les props interviennent.
 
-Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance. To pass a title to our blog post component, we can include it in the list of props this component accepts, using a `props` option:
+Les props sont des attributs personnalisables que vous pouvez enregistrer dans un composant. Quand une valeur est passé à un attribut prop, elle devient une propriété de l'instance du composant. Pour passer un titre à notre billet de blog, nous devont l'inclure dans une liste de props que ce composant accepte, en utilisant l'option `props` :
 
 ```js
 Vue.component('blog-post', {
@@ -288,22 +284,22 @@ Vue.component('blog-post', {
 })
 ```
 
-A component can have as many props as you'd like and by default, any value can be passed to any prop. In the template above, you'll see that we can access this value on the component instance, just like with `data`.
+Un composant peut avoir autant de props que vous le souhaitez et par défaut, n'importe quelle valeur peut être passé à une prop. Dans le template ci-dessus, vous devriez voir cette valeur dans l'instance du composant, comme pour `data`.
 
-Once a prop is registered, you can pass data to it as a custom attribute, like this:
+Une fois une prop enregistrée, vous pouvez lui passer des données en tant qu'attribut personnalisé comme ceci :
 >>>>>>> upstream/master
 
 ```html
-<blog-post title="My journey with Vue"></blog-post>
-<blog-post title="Blogging with Vue"></blog-post>
-<blog-post title="Why Vue is so fun"></blog-post>
+<blog-post title="Mon initiation avec Vue"></blog-post>
+<blog-post title="Blogger avec Vue"></blog-post>
+<blog-post title="Pourquoi Vue est tellement cool"></blog-post>
 ```
 
 {% raw %}
 <div id="blog-post-demo" class="demo">
-  <blog-post1 title="My journey with Vue"></blog-post1>
-  <blog-post1 title="Blogging with Vue"></blog-post1>
-  <blog-post1 title="Why Vue is so fun"></blog-post1>
+  <blog-post1 title="Mon initiation avec Vue"></blog-post1>
+  <blog-post1 title="Blogger avec Vue"></blog-post1>
+  <blog-post1 title="Pourquoi Vue est tellement cool"></blog-post1>
 </div>
 <script>
 Vue.component('blog-post1', {
@@ -317,7 +313,7 @@ new Vue({ el: '#blog-post-demo' })
 <<<<<<< HEAD
 Puisque nos trois instances de composant partagent le même objet `data`, l'incrémentation d'un compteur les incrémentera tous ! Aie. Corrigeons cela en retournant un nouvel objet de données :
 =======
-In a typical app, however, you'll likely have an array of posts in `data`:
+Dans une application typique, cependant, vous préferreriez avoir un tableau de billets dans `data` :
 >>>>>>> upstream/master
 
 ```js
@@ -325,9 +321,9 @@ new Vue({
   el: '#blog-post-demo',
   data: {
     posts: [
-      { id: 1, title: 'My journey with Vue' },
-      { id: 2, title: 'Blogging with Vue' },
-      { id: 3, title: 'Why Vue is so fun' },
+      { id: 1, title: 'Mon initiation avec Vue' },
+      { id: 2, title: 'Blogger avec Vue' },
+      { id: 3, title: 'Pourquoi Vue est tellement cool' },
     ]
   }
 })
@@ -336,7 +332,7 @@ new Vue({
 <<<<<<< HEAD
 Maintenant tous nos compteurs ont leur propre état interne :
 =======
-Then want to render a component for each one:
+Maintenant, faisont le rendu d'un composant pour chacun :
 >>>>>>> upstream/master
 
 ```html
@@ -354,9 +350,9 @@ Les composants sont destinés à être utilisés ensemble, le plus souvent dans 
 
 Dans Vue.js, la relation parent-enfant peut être résumée ainsi : **descente de props, remontée d'évènements**. Le parent passe les données à l'enfant via les **props**, et l'enfant envoie des messages à son parent via les **évènements**. Voyons comment cela fonctionne ci-dessous.
 =======
-Above, you'll see that we can use `v-bind` to dynamically pass props. This is especially useful when you don't know the exact content you're going to render ahead of time, like when [fetching posts from an API](https://jsfiddle.net/chrisvfritz/sbLgr0ad).
+Vous voyez au-dessus que nous pouvons utiliser `v-bind` pour dynamiquement passer des props. Cela est particulièrement utile quand vous ne connaissez pas exactement le contenu dont vous êtes entrain de faire le rendu à l'avance, comme dans le cas de [récupération de billets depuis une API](https://jsfiddle.net/chrisvfritz/sbLgr0ad).
 
-That's all you need to know about props for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on [Props](components-props.html).
+C'est tout ce que vous avez besoin de savoir à propos des props pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [props](components-props.html).
 
 ## A Single Root Element
 >>>>>>> upstream/master
