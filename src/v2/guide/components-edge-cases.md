@@ -81,7 +81,7 @@ Alors, à l'intérieur de `<google-map-markers>`, vous pourriez vous retrouver �
 var map = this.$parent.map || this.$parent.$parent.map
 ```
 
-Cela a rapidement dérapé. C'est pourquoi nous recommandons plutôt d'utiliser l'[injection de dépendances](#Dependency-Injection) pour fournir des informations contextuelles à des composants enfants à un niveau de profondeur arbitraire.
+Cela a rapidement mal tourné. C'est pourquoi nous recommandons plutôt d'utiliser l'[injection de dépendances](#Dependency-Injection) pour fournir des informations contextuelles à des composants enfants à un niveau de profondeur arbitraire.
 
 ### Accéder à des instances de composants enfants et des éléments enfants
 
@@ -165,39 +165,39 @@ En fait, vous pouvez vous représenter l'injection de dépendances comme une sor
 
 Apprenez-en plus sur l'injection de dépendances dans [la documentation de l'API](https://vuejs.org/v2/api/#provide-inject).
 
-## Programmatic Event Listeners
+## Écouteurs d'événements programmatiques
 
-So far, you've seen uses of `$emit`, listened to with `v-on`, but Vue instances also offer other methods in its events interface. We can:
+Jusqu'à présent, vous avez vu des utilisations de `$emit`, écoutés avec `v-on`, mais les instances de Vue proposent aussi d'autres méthodes dans leur interface d'événements. Nous pouvons :
 
-- Listen for an event with `$on(eventName, eventHandler)`
-- Listen for an event only once with `$once(eventName, eventHandler)`
-- Stop listening for an event with `$off(eventName, eventHandler)`
+- Écouter un événement avec `$on(eventName, eventHandler)`
+- Écouter un événement une seule fois avec `$once(eventName, eventHandler)`
+- Arrêter d'écouter un événement avec `$off(eventName, eventHandler)`
 
-You normally won't have to use these, but they're available for cases when you need to manually listen for events on a component instance. They can also be useful as a code organization tool. For example, you may often see this pattern for integrating a 3rd-party library:
+Vous n'aurez pas à les utiliser normalement, mais ils sont disponibles dans les cas où vous avez besoin d'écouter manuellement des événements sur une instance de composant. Ils peuvent aussi être utiles comme outil d'organisation de code. Par exemple, vous pouvez souvent voir ce pattern pour intégrer une bibliothèque tierce :
 
 ```js
-// Attach the datepicker to an input once
-// it's mounted to the DOM.
+// Attache un sélecteur de date à un champ
+// une fois celui-ci monté sur le DOM.
 mounted: function () {
-  // Pikaday is a 3rd-party datepicker library
+  // Pikaday est une bibliothèque tierce de sélecteur de date
   this.picker = new Pikaday({
     field: this.$refs.input,
     format: 'YYYY-MM-DD'
   })
 },
-// Right before the component is destroyed,
-// also destroy the datepicker.
+// Juste avant que le composant soit détruit,
+// on détruit également le sélecteur de date.
 beforeDestroy: function () {
   this.picker.destroy()
 }
 ```
 
-This has two potential issues:
+Il y a deux problèmes potentiels :
 
-- It requires saving the `picker` to the component instance, when it's possible that only lifecycle hooks need access to it. This isn't terrible, but it could be considered clutter.
-- Our setup code is kept separate from our cleanup code, making it more difficult to programmatically clean up anything we set up.
+- Cela requiert d'enregistrer le `picker` dans l'instance de composant, alors qu'il est possible que seuls les hooks de cycle de vie aient besoin d'y accéder. Ce n'est pas très grave, mais cela peut être considéré comme de l'encombrement.
+- Notre code de montage du composant est séparé du code de nettoyage, ce qui rend plus difficile de nettoyer programmatiquement tout ce que nous avons mis en place avant.
 
-You could resolve both issues with a programmatic listener:
+Vous pouvez résoudre ces deux problèmes avec un écouteur programmatique :
 
 ```js
 mounted: function () {
@@ -212,7 +212,7 @@ mounted: function () {
 }
 ```
 
-Using this strategy, we could even use Pikaday with several input elements, with each new instance automatically cleaning up after itself:
+En utilisant cette stratégie, nous pouvons même utiliser Pikaday sur plusieurs champs, avec chaque nouvelle instance qui nettoiera automatiquement après son passage :
 
 ```js
 mounted: function () {
@@ -233,42 +233,42 @@ methods: {
 }
 ```
 
-See [this fiddle](https://jsfiddle.net/chrisvfritz/1Leb7up8/) for the full code. Note, however, that if you find yourself having to do a lot of setup and cleanup within a single component, the best solution will usually be to create more modular components. In this case, we'd recommend creating a reusable `<input-datepicker>` component.
+Consultez [ce fiddle](https://jsfiddle.net/chrisvfritz/1Leb7up8/) pour le code complet. Notez cependant que si vous vous trouvez à devoir faire beaucoup de code de montage et de nettoyage au sein d'un seul composant, la meilleure solution sera souvent de créer des composants plus modulaires. Dans le cas présent, nous recommanderions de créer un composant réutilisable `<input-datepicker>`.
 
-To learn more about programmatic listeners, check out the API for [Events Instance Methods](https://vuejs.org/v2/api/#Instance-Methods-Events).
+Pour en apprendre plus sur les écouteurs programmatiques, allez voir l'API des [méthodes d'événements d'une instance](https://vuejs.org/v2/api/#Instance-Methods-Events).
 
-<p class="tip">Note that Vue's event system is different from the browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget">EventTarget API</a>. Though they work similarly, <code>$emit</code>, <code>$on</code>, and <code>$off</code> are <strong>not</strong> aliases for <code>dispatchEvent</code>, <code>addEventListener</code>, and <code>removeEventListener</code>.</p>
+<p class="tip">Notez que le système d'événements de Vue est différent de celui de <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget">l'API EventTarget</a> du navigateur. Bien qu'ils fonctionnent de façon similaire, <code>$emit</code>, <code>$on</code>, et <code>$off</code> ne sont <strong>pas</strong> des alias pour <code>dispatchEvent</code>, <code>addEventListener</code>, et <code>removeEventListener</code>.</p>
 
-## Circular References
+## Références circulaires
 
-### Recursive Components
+### Composants récursifs
 
-Components can recursively invoke themselves in their own template. However, they can only do so with the `name` option:
+Les composants peuvent récursivement s'invoquer eux-mêmes dans leur propre template. Cependant, ils peuvent seulement le faire avec l'option `name` :
 
 ``` js
-name: 'unique-name-of-my-component'
+name: 'nom-unique-de-mon-composant'
 ```
 
-When you register a component globally using `Vue.component`, the global ID is automatically set as the component's `name` option.
+Quand vous inscrivez globalement un composant en utilisant `Vue.component`, l'ID global est automatiquement assigné comme option `name` du composant.
 
 ``` js
-Vue.component('unique-name-of-my-component', {
+Vue.component('nom-unique-de-mon-composant', {
   // ...
 })
 ```
 
-If you're not careful, recursive components can also lead to infinite loops:
+Si vous n'êtes pas prudents, les composants récursifs peuvent mener à des boucles infinies :
 
 ``` js
 name: 'stack-overflow',
 template: '<div><stack-overflow></stack-overflow></div>'
 ```
 
-A component like the above will result in a "max stack size exceeded" error, so make sure recursive invocation is conditional (i.e. uses a `v-if` that will eventually be `false`).
+Un composant comme ci-dessus résultera en une erreur « Taille maximale de la pile dépassée », donc assurez-vous de rendre conditionnelle l'invocation récursive (p.ex. avec un `v-if` qui sera `false` à la fin).
 
-### Circular References Between Components
+### Références circulaires entre composants
 
-Let's say you're building a file directory tree, like in Finder or File Explorer. You might have a `tree-folder` component with this template:
+Supposons que vous construisez un arbre de répertoires de fichiers, comme le Finder ou l'explorateur de fichiers. Vous pourriez avoir un composant `tree-folder` avec ce template :
 
 ``` html
 <p>
@@ -277,7 +277,7 @@ Let's say you're building a file directory tree, like in Finder or File Explorer
 </p>
 ```
 
-Then a `tree-folder-contents` component with this template:
+Puis un composant `tree-folder-contents` avec ce template:
 
 ``` html
 <ul>
@@ -288,17 +288,17 @@ Then a `tree-folder-contents` component with this template:
 </ul>
 ```
 
-When you look closely, you'll see that these components will actually be each other's descendent _and_ ancestor in the render tree - a paradox! When registering components globally with `Vue.component`, this paradox is resolved for you automatically. If that's you, you can stop reading here.
+Si vous regardez de plus près, vous verrez que ces composants sont en fait les descendants __et__ ancêtres l'un de l'autre dans l'arbre de rendu - un paradoxe ! Quand vous inscrivez des composants globalement avec `Vue.component`, ce paradoxe est résolu automatiquement pour vous. Si c'est votre cas, vous pouvez arrêter de lire ici.
 
-However, if you're requiring/importing components using a __module system__, e.g. via Webpack or Browserify, you'll get an error:
+Cependant, si vous importez des composants en utilisant un __système de modules__, p.ex. via Webpack ou Browserify, vous aurez une erreur :
 
 ```
 Failed to mount component: template or render function not defined.
 ```
 
-To explain what's happening, let's call our components A and B. The module system sees that it needs A, but first A needs B, but B needs A, but A needs B, etc. It's stuck in a loop, not knowing how to fully resolve either component without first resolving the other. To fix this, we need to give the module system a point at which it can say, "A needs B _eventually_, but there's no need to resolve B first."
+Pour expliquer ce qui se passe, appelons nos composants A et B. Le système de modules sait qu'il a besoin de A, mais A a d'abord besoin de B, mais B a besoin de A, mais A a besoin de B, etc. Il est alors bloqué dans une boucle, ne sachant pas comment résoudre un composant sans devoir d'abord résoudre l'autre. Pour corriger cela, nous devons donner au système de modules un point où il peut dire, "A aura _prochainement_ besoin de B, mais il n'y a pas besoin de résoudre B en premier."
 
-In our case, let's make that point the `tree-folder` component. We know the child that creates the paradox is the `tree-folder-contents` component, so we'll wait until the `beforeCreate` lifecycle hook to register it:
+Dans notre cas, faisons de ce point le composant `tree-folder`. Nous savons que l'enfant qui crée le paradoxe est le composant `tree-folder-contents`, donc nous allons attendre le hook de cycle de vie `beforeCreate` avant de l'inscrire :
 
 ``` js
 beforeCreate: function () {
@@ -306,7 +306,7 @@ beforeCreate: function () {
 }
 ```
 
-Or alternatively, you could use Webpack's asynchronous `import` when you register the component locally:
+Ou comme alternative, vous pouvez utiliser l'`import` asynchrone de Webpack lorsque vous inscrivez le composant localement :
 
 ``` js
 components: {
@@ -314,28 +314,28 @@ components: {
 }
 ```
 
-Problem solved!
+Problème résolu !
 
-## Alternate Template Definitions
+## Définitions alternatives de template
 
-### Inline Templates
+### Templates inline
 
-When the `inline-template` special attribute is present on a child component, the component will use its inner content as its template, rather than treating it as distributed content. This allows more flexible template-authoring.
+Quand l'attribut spécial `inline-template` est présent sur un composant enfant, le composant utilisera son contenu interne comme template, plutôt que de le traiter comme contenu distribué. Cela permet plus de flexibilité dans la création de templates.
 
 ``` html
 <my-component inline-template>
   <div>
-    <p>These are compiled as the component's own template.</p>
-    <p>Not parent's transclusion content.</p>
+    <p>Ces éléments sont compilés en tant que propre template du composant.</p>
+    <p>Et non le contenu du parent par transclusion.</p>
   </div>
 </my-component>
 ```
 
-<p class="tip">However, <code>inline-template</code> makes the scope of your templates harder to reason about. As a best practice, prefer defining templates inside the component using the <code>template</code> option or in a <code>&lt;template&gt;</code> element in a <code>.vue</code> file.</p>
+<p class="tip">Cependant, <code>inline-template</code> rend le scope de vos templates plus difficile à appréhender. Une bonne pratique est de préférer la définition de templates à l'intérieur du composant en utilisant l'option <code>template</code> ou dans un élément <code>&lt;template&gt;</code> dans un fichier <code>.vue</code>.</p>
 
 ### X-Templates
 
-Another way to define templates is inside of a script element with the type `text/x-template`, then referencing the template by an id. For example:
+Une autre façon de définir des templates est à l'intérieur d'un élément script avec le type `text/x-template`, puis en référencant le template par un id. Par exemple :
 
 ``` html
 <script type="text/x-template" id="hello-world-template">
@@ -349,33 +349,33 @@ Vue.component('hello-world', {
 })
 ```
 
-<p class="tip">These can be useful for demos with large templates or in extremely small applications, but should otherwise be avoided, because they separate templates from the rest of the component definition.</p>
+<p class="tip">Ce type de templates peut être utile pour des démos avec de gros templates ou dans des applications extrêmements petites, mais sinon il doit être évité, car ils séparent les templates du reste de la définition du composant.</p>
 
-## Controlling Updates
+## Contrôler les mises à jour
 
-Thanks to Vue's Reactivity system, it always knows when to update (if you use it correctly). There are edge cases, however, when you might want to force an update, despite the fact that no reactive data has changed. Then there are other cases when you might want to prevent unnecessary updates.
+Grâce au système de réactivité de Vue, le framework sait toujours quand mettre à jour la vue (si vous l'utilisez correctement). Il y a des cas particuliers, cependant, où vous pouvez vouloir forcer une mise à jour, malgré le fait qu'aucune donnée réactive n'a changé. De plus, il y a d'autres cas où vous voudrez empêcher des mises à jour non nécessaires.
 
-### Forcing an Update
+### Forcer une mise à jour
 
-<p class="tip">If you find yourself needing to force an update in Vue, in 99.99% of cases, you've made a mistake somewhere.</p>
+<p class="tip">Si vous vous trouvez à vouloir forcer une mise à jour dans Vue, dans 99,99% des cas, vous avez fait une erreur quelque-part.</p>
 
-You may not have accounted for change detection caveats [with arrays](https://vuejs.org/v2/guide/list.html#Caveats) or [objects](https://vuejs.org/v2/guide/list.html#Object-Change-Detection-Caveats), or you may be relying on state that isn't tracked by Vue's reactivity system, e.g. with `data`.
+Vous n'avez peut-être pas pris en compte les avertissements pour la détection des changements [avec des `Array`](https://vuejs.org/v2/guide/list.html#Caveats) ou [des objets](https://vuejs.org/v2/guide/list.html#Object-Change-Detection-Caveats), ou alors vous vous reposez sur des propriétés d'état qui ne sont pas traquées par le système de réactivité de Vue, c-à-d. dans `data`.
 
-However, if you've ruled out the above and find yourself in this extremely rare situation of having to manually force an update, you can do so with [`$forceUpdate`](../api/#vm-forceUpdate).
+Cependant, si vous exclu toutes les options précédentes et que vous vous trouvez dans cette situation extrêmement rare où vous avez à forcer manuellement une mise à jour, vous pouvez le faire avec [`$forceUpdate`](../api/#vm-forceUpdate).
 
-### Cheap Static Components with `v-once`
+### Composants statiques économes avec `v-once`
 
-Rendering plain HTML elements is very fast in Vue, but sometimes you might have a component that contains **a lot** of static content. In these cases, you can ensure that it's only evaluated once and then cached by adding the `v-once` directive to the root element, like this:
-
+Faire le rendu d'éléments HTML statiques est très rapide dans Vue, mais parfois vous pouvez avoir un composant qui contient **une grande quantité** de contenu statique. Dans ces cas, vous pouvez vous assurer qu'il ne sera évalué qu'une seule fois puis mis en cache en ajoutant la directive `v-once` à l'élément racine, comme ceci :
+ 
 ``` js
-Vue.component('terms-of-service', {
+Vue.component('conditions-d-utilisation', {
   template: `
     <div v-once>
-      <h1>Terms of Service</h1>
-      ... a lot of static content ...
+      <h1>Conditions d'utilisation</h1>
+      ... un tas de contenu statique ...
     </div>
   `
 })
 ```
 
-<p class="tip">Once again, try not to overuse this pattern. While convenient in those rare cases when you have to render a lot of static content, it's simply not necessary unless you actually notice slow rendering -- plus, it could cause a lot of confusion later. For example, imagine another developer who's not familiar with <code>v-once</code> or simply misses it in the template. They might spend hours trying to figure out why the template isn't updating correctly.</p>
+<p class="tip">Encore une fois, essayez de ne pas surutiliser ce pattern. Bien qu'il soit pratique dans les rares cas où vous avez à faire le rendu de beaucoup de contenu statique, il n'est simplement pas nécessaire à moins que vous constatez effectivement un temps de rendu plutôt long - de plus, il peut causer beaucoup de confusion plus tard. Par exemple, imaginez un autre développeur qui n'est pas familier avec <code>v-once</code> ou simplement qui ne l'a pas remarqué dans le template. Il peut passer des heures à essayer de comprendre pourquoi le template ne se met pas à jour correctement.</p>
