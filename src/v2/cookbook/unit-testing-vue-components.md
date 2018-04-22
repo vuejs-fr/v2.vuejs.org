@@ -4,9 +4,9 @@ type: cookbook
 order: 6
 ---
 
-## Exemple simple
+## Exemple de base
 
-<p>Les tests unitaires sont une étape fondamentale du développement de logiciel. Ces tests permettent d'exécuter chaque unité de code isolée du reste du logiciel. Ils facilitent l'ajout de nouvelles fonctionnalités, la détection et la réparation de bugs. Les [composants monofichiers](../guide/single-file-components.html) de Vue rendent ce processus de test relativement facile. Tester notre code nous permettra d'ajouter des fonctionnalités sans risquer de casser l'existant. Nous pourrons en plus mieux expliquer ce que le composant est censé faire.</p>
+<p>Les tests unitaires sont une étape fondamentale du développement de logiciel. Ces tests permettent d'exécuter chaque unité de code isolée du reste du logiciel. Ils facilitent l'ajout de nouvelles fonctionnalités, la détection et la correction de bugs. Les [composants monofichiers](../guide/single-file-components.html) de Vue rendent ce processus de test relativement facile. Cela vous permet d'ajouter des fonctionnalités sans risquer de casser l'existant. De plus, cela aide les autres développeurs à comprendre votre composant.</p>
 
 Cet exemple simple vérifie qu'un texte est affiché :
 
