@@ -104,16 +104,16 @@ Mettre des icônes SVG dans des composants devient clé dès que l'on souhaite l
     viewBox="0 0 100 100"
     width="100"
     height="100"
-    aria-labelledby="ciseaux"
+    aria-labelledby="scissors"
     role="presentation"
     >
-    <title id="ciseaux" lang="fr">Icône de ciseaux animée</title>
+    <title id="scissors" lang="en">Scissors Animated Icon</title>
     <path id="bk" fill="#fff" d="M0 0h100v100H0z"/>
-    <g ref="lamegauche">
+    <g ref="leftscissor">
       <path d="M..."/>
       ...
     </g>
-    <g ref="lamedroite">
+    <g ref="rightscissor">
       <path d="M..."/>
       ...
     </g>
@@ -127,8 +127,8 @@ import { TweenMax, Sine } from 'gsap'
 export default {
   methods: {
     startScissors() {
-      this.scissorAnim(this.$refs.lamedroite, 30)
-      this.scissorAnim(this.$refs.lamegauche, -30)
+      this.scissorAnim(this.$refs.rightscissor, 30)
+      this.scissorAnim(this.$refs.leftscissor, -30)
     },
     scissorAnim(el, rot) {
       TweenMax.to(el, 0.25, {
