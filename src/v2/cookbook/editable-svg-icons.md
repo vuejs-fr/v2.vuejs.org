@@ -109,11 +109,11 @@ Mettre des icônes SVG dans des composants devient clé dès que l'on souhaite l
     >
     <title id="ciseaux" lang="fr">Icône de ciseaux animée</title>
     <path id="bk" fill="#fff" d="M0 0h100v100H0z"/>
-    <g ref="ciseauxgauche">
+    <g ref="lamegauche">
       <path d="M..."/>
       ...
     </g>
-    <g ref="ciseauxdroit">
+    <g ref="lamedroite">
       <path d="M..."/>
       ...
     </g>
@@ -127,8 +127,8 @@ import { TweenMax, Sine } from 'gsap'
 export default {
   methods: {
     startScissors() {
-      this.scissorAnim(this.$refs.ciseauxdroit, 30)
-      this.scissorAnim(this.$refs.ciseauxgauche, -30)
+      this.scissorAnim(this.$refs.lamedroite, 30)
+      this.scissorAnim(this.$refs.lamegauche, -30)
     },
     scissorAnim(el, rot) {
       TweenMax.to(el, 0.25, {
