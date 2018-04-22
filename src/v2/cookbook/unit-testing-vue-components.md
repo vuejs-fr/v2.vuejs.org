@@ -162,7 +162,7 @@ describe('Foo', () => {
   // Testons que l'erreur est bien renderée
   expect(wrapper.find('.error').exists()).toBeTruthy()
 
-  // changeons le `username` et verifions que l'erreur a disparu
+  // Changeons le `username` et vérifions que l'érreur a disparu
   wrapper.setData({ username: 'Lachlan' })
   expect(wrapper.find('.error').exists()).toBeFalsy()
   })
