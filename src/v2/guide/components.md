@@ -487,9 +487,9 @@ Comme vous pouvez le constater plus haut, nous avons seulement ajouter un slot l
 
 C'est tout ce que vous avez besoin de savoir à propos des slot pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [slots](components-slots.html).
 
-## Dynamic Components
+## Composants dynamiques
 
-Sometimes, it's useful to dynamically switch between components, like in a tabbed interface:
+Parfois, il est utile de dynamiquement interchanger des composants, comme dans une interface à onglet :
 
 {% raw %}
 <div id="dynamic-component-demo" class="demo">
@@ -548,27 +548,27 @@ new Vue({
 </style>
 {% endraw %}
 
-The above is made possible by Vue's `<component>` element with the `is` special attribute:
+Ce qu'il y a ci-dessus est rendu possible grâce à l'élément `<component>` de Vue avec l'attribut spécial `is` :
 
 ```html
 <!-- Component changes when currentTabComponent changes -->
 <component v-bind:is="currentTabComponent"></component>
 ```
 
-In the example above, `currentTabComponent` can contain either:
+Dans l'exemple ci-dessus, `currentTabComponent` peut contenir soit :
 
-- the name of a registered component, or
-- a component's options object
+- le nom du composant enregistré, ou
+- un object d'option de composant
 
-See [this fiddle](https://jsfiddle.net/chrisvfritz/o3nycadu/) to experiment with the full code, or [this version](https://jsfiddle.net/chrisvfritz/b2qj69o1/) for an example binding to a component's options object, instead of its registered name.
+Regardez [ce fiddle](https://jsfiddle.net/chrisvfritz/o3nycadu/) pour expérimenter cela avec un code complet, ou [cette version](https://jsfiddle.net/chrisvfritz/b2qj69o1/) pour un exemple lié à un objet d'option de composant plutôt qu'à un nom enregistré.
 
-That's all you need to know about dynamic components for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on [Dynamic & Async Components](components-dynamic-async.html).
+C'est tout ce que vous avez besoin de savoir à propos des slot pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [Composants dynamiques et asynchrones](components-dynamic-async.html).
 
-## DOM Template Parsing Caveats
+## Cas particuliers de l'analyse des templates de DOM
 
-Some HTML elements, such as `<ul>`, `<ol>`, `<table>` and `<select>` have restrictions on what elements can appear inside them, and some elements such as `<li>`, `<tr>`, and `<option>` can only appear inside certain other elements.
+PLusieurs éléments HTML, comme `<ul>`, `<ol>`, `<table>` et `<select>` ont des restrictions en ce qui concerne les éléments à l'intérieur desquels ils apparaissent. D'autres éléments quand à eux, tel que `<li>`, `<tr>`, ou `<option>` peuvent uniquement être placé à l'intérieur de certain élément parent uniquement.
 
-This will lead to issues when using components with elements that have such restrictions. For example:
+Cela mène à des problèmes quand vous utilisez des composants avec des éléments qui ont ces restrictions. Par exemple :
 
 ``` html
 <table>
@@ -576,7 +576,7 @@ This will lead to issues when using components with elements that have such rest
 </table>
 ```
 
-The custom component `<blog-post-row>` will be hoisted out as invalid content, causing errors in the eventual rendered output. Fortunately, the `is` special attribute offers a workaround:
+Le composant personnalisé `<blog-post-row>` sera considéré comme un contenu invalide, causant des erreurs dans les rendus éventuels en sortie. Heureusement, l'attribut spécial `is` offre un moyen de contournement :
 
 ``` html
 <table>
@@ -584,12 +584,12 @@ The custom component `<blog-post-row>` will be hoisted out as invalid content, c
 </table>
 ```
 
-It should be noted that **this limitation does _not_ apply if you are using string templates from one of the following sources**:
+Il doit être noté que **cette limitation _n'_affecte _pas_ les templates sous forme de chaîne de caractères provenant d'une des sources suivantes** :
 
-- String templates (e.g. `template: '...'`)
-- [Single-file (`.vue`) components](single-file-components.html)
+- Un template de chaine de caractères (par ex. `template: '...'`),
+- [Les composants monofichier (`.vue`)](single-file-components.html)
 - [`<script type="text/x-template">`](components-edge-cases.html#X-Templates)
 
-That's all you need to know about dynamic components for now -- and actually, the end of Vue's _Essentials_. Congratulations! There's still more to learn, but first, we recommend taking a break to play with Vue yourself and build something fun.
+C'est tout ce que vous avez besoin de savoir à propos des cas particuliers pour le moment. Vous voilà arrivé à la fin de l'_Essentiel_ de Vue. Félicitation ! Il reste encore beaucoup à apprendre, mais d'abord, nous vous recommandons de faire une pause pour jouer avec Vue par vous même et construire quelque chose d'amusant.
 
-Once you feel comfortable with the knowledge you've just digested, we recommend coming back to read the full guide on [Dynamic & Async Components](components-dynamic-async.html), as well as the other pages in the Components In-Depth section of the sidebar.
+Une fois que vous vous sentirez à l'aise avec les connaissances que vous venez fraichement d'acquerir, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [Composants dynamiques et asynchrones](components-dynamic-async.html), ainsi également, que les autres pages dans la partie Au cœur des composants de la barre de navigation latérale.
