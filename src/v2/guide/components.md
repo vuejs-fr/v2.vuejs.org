@@ -430,8 +430,6 @@ Maintenant `v-model` fonctionnera parfaitement avec le composant :
 <custom-input v-model="searchText"></custom-input>
 ```
 
-That's all you need to know about custom component events for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on [Custom Events](components-custom-events.html).
-
 C'est tout ce que vous avez besoin de savoir à propos des événements pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [événements personnalisés](components-custom-events.html).
 
 ## Distribution de contenu avec les slots
