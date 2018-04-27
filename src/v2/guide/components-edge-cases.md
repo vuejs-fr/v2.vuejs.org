@@ -120,13 +120,13 @@ Et ainsi permettre au composant parent de mettre le focus sur le champ à l'int�
 this.$refs.usernameInput.focus()
 ```
 
-Quand `ref` est utilisé conjointement avec `v-for`, la ref que vous obtenez sera une `Array` contenant les composants enfants reflétant les données source.
+Quand `ref` est utilisé conjointement avec `v-for`, la ref que vous obtenez sera un `Array` contenant les composants enfants reflétant les données source.
 
 <p class="tip">Les références <code>$refs</code> sont renseignées seulement après le rendu initial du composant, et elles ne sont pas réactives. Il s'agit seulement d'une trappe de sortie pour faire de la manipulation directe d'enfants - vous devriez éviter d'accéder aux <code>$refs</code> depuis l'intérieur de templates ou depuis des propriétés calculées.</p>
 
 ### Injection de dépendances
 
-Précédemment, quand nous avons décrit l'[accès à l'instance de composant parente](#Accessing-the-Parent-Component-Instance), nous avons montré un exemple comme ceci :
+Précédemment, quand nous avons décrit l'[accès à l'instance de composant parente](#Acceder-a-l’instance-de-composant-parente), nous avons montré un exemple comme ceci :
 
 ```html
 <google-map>
@@ -161,7 +161,7 @@ En fait, vous pouvez vous représenter l'injection de dépendances comme une sor
 * les composants ancêtres n'ont pas besoin de connaître quels descendants utilisent les propriétés qu'ils fournissent
 * les composants descendants n'ont pas besoin de savoir d'où proviennent les propriétés injectées
 
-<p class="tip">Cependant, il y a des inconvénents à l'injection de dépendances. Cela vient entériner la manière dont les composants sont actuellement organisés dans votre application, rendant plus difficile le remaniement de code. De plus, les propriétés fournies avec `provide` ne sont pas réactives. Cela a été intentionnellement conçu de cette façon, car les utiliser pour créer un espace de stockage global est tout aussi peu évolutif que <a href="#Accessing-the-Root-Instance">d'utiliser <code>$root</code></a> dans le même but. Si les propriétés que vous voulez partager sont spécifiques à votre application et non génériques, ou si jamais vous voulez mettre à jour des données fournies par des ancêtres, alors c'est un signe que vous avez probablement besoin d'une réelle solution de gestion d'état telle que <a href="https://github.com/vuejs/vuex">Vuex</a> à la place.</p>
+<p class="tip">Cependant, il y a des inconvénents à l'injection de dépendances. Cela vient entériner la manière dont les composants sont actuellement organisés dans votre application, rendant plus difficile le remaniement de code. De plus, les propriétés fournies avec `provide` ne sont pas réactives. Cela a été intentionnellement conçu de cette façon, car les utiliser pour créer un espace de stockage global est tout aussi peu évolutif que <a href="#Acceder-a-l’instance-de-composant-parente">d'utiliser <code>$root</code></a> dans le même but. Si les propriétés que vous voulez partager sont spécifiques à votre application et non génériques, ou si jamais vous voulez mettre à jour des données fournies par des ancêtres, alors c'est un signe que vous avez probablement besoin d'une réelle solution de gestion d'état telle que <a href="https://github.com/vuejs/vuex">Vuex</a> à la place.</p>
 
 Apprenez-en plus sur l'injection de dépendances dans [la documentation de l'API](https://vuejs.org/v2/api/#provide-inject).
 
@@ -237,7 +237,7 @@ Consultez [ce fiddle](https://jsfiddle.net/chrisvfritz/1Leb7up8/) pour le code c
 
 Pour en apprendre plus sur les écouteurs programmatiques, allez voir l'API des [méthodes d'événements d'une instance](https://vuejs.org/v2/api/#Instance-Methods-Events).
 
-<p class="tip">Notez que le système d'événements de Vue est différent de celui de <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget">l'API EventTarget</a> du navigateur. Bien qu'ils fonctionnent de façon similaire, <code>$emit</code>, <code>$on</code>, et <code>$off</code> ne sont <strong>pas</strong> des alias pour <code>dispatchEvent</code>, <code>addEventListener</code>, et <code>removeEventListener</code>.</p>
+<p class="tip">Notez que le système d'événements de Vue est différent de celui de <a href="https://developer.mozilla.org/fr/docs/Web/API/EventTarget">l'API EventTarget</a> du navigateur. Bien qu'ils fonctionnent de façon similaire, <code>$emit</code>, <code>$on</code>, et <code>$off</code> ne sont <strong>pas</strong> des alias pour <code>dispatchEvent</code>, <code>addEventListener</code>, et <code>removeEventListener</code>.</p>
 
 ## Références circulaires
 
@@ -264,7 +264,7 @@ name: 'stack-overflow',
 template: '<div><stack-overflow></stack-overflow></div>'
 ```
 
-Un composant comme ci-dessus résultera en une erreur « Taille maximale de la pile dépassée », donc assurez-vous de rendre conditionnelle l'invocation récursive (p.ex. avec un `v-if` qui sera `false` à la fin).
+Un composant comme ci-dessus résultera en une erreur « Taille maximale de la pile dépassée », donc assurez-vous de rendre conditionnelle l'invocation récursive (par ex. avec un `v-if` qui sera `false` à la fin).
 
 ### Références circulaires entre composants
 
@@ -331,7 +331,7 @@ Quand l'attribut spécial `inline-template` est présent sur un composant enfant
 </my-component>
 ```
 
-<p class="tip">Cependant, <code>inline-template</code> rend le scope de vos templates plus difficile à appréhender. Une bonne pratique est de préférer la définition de templates à l'intérieur du composant en utilisant l'option <code>template</code> ou dans un élément <code>&lt;template&gt;</code> dans un fichier <code>.vue</code>.</p>
+<p class="tip">Cependant, <code>inline-template</code> rend la portée de vos templates plus difficile à appréhender. Une bonne pratique est de préférer la définition de templates à l'intérieur du composant en utilisant l'option <code>template</code> ou dans un élément <code>&lt;template&gt;</code> dans un fichier <code>.vue</code>.</p>
 
 ### X-Templates
 
@@ -361,7 +361,7 @@ Grâce au système de réactivité de Vue, le framework sait toujours quand mett
 
 Vous n'avez peut-être pas pris en compte les avertissements pour la détection des changements [avec des `Array`](https://vuejs.org/v2/guide/list.html#Caveats) ou [des objets](https://vuejs.org/v2/guide/list.html#Object-Change-Detection-Caveats), ou alors vous vous reposez sur des propriétés d'état qui ne sont pas traquées par le système de réactivité de Vue, c-à-d. dans `data`.
 
-Cependant, si vous exclu toutes les options précédentes et que vous vous trouvez dans cette situation extrêmement rare où vous avez à forcer manuellement une mise à jour, vous pouvez le faire avec [`$forceUpdate`](../api/#vm-forceUpdate).
+Cependant, si vous avez exclu toutes les options précédentes et que vous vous trouvez dans cette situation extrêmement rare où vous avez à forcer manuellement une mise à jour, vous pouvez le faire avec [`$forceUpdate`](../api/#vm-forceUpdate).
 
 ### Composants statiques économes avec `v-once`
 
