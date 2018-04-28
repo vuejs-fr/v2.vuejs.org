@@ -6,11 +6,11 @@ order: 4
 
 ## Exemple de base
 
-<p>Il y a plusieurs façons de créer un système d'icônes SVG. Une méthode qui tire parti des capacités de Vue est de créer des icônes inline modifiables en tant que composants. Voici quelques avantages à procéder ainsi :</p>
+<p>Il y a plusieurs façons de créer un système d'icônes SVG. Une méthode qui tire parti des capacités de Vue est de créer des icônes directement modifiables dans le DOM HTML en tant que composants. Voici quelques avantages à procéder ainsi :</p>
 
 * les icônes sont faciles à modifier à la volée
-* elles sont animables
-* on peut utiliser des `props` et des `defaults` pour les dimensionner ou les modifier
+* elles peuvent être animées
+* on peut utiliser des `props` et des `defaults` pour changer leurs dimensions ou les modifier
 * elles sont écrites dans le code HTML, donc aucune requête HTTP n'est nécessaire
 * elles peuvent être rendues accessibles dynamiquement
 
@@ -147,7 +147,7 @@ Nous avons ajouté des attributs `ref` aux groupes de paths pour pouvoir les ani
 
 <p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Système d'icônes SVG Dynamique : Animation" class="codepen">Voir le Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/">Système d'icônes SVG Dynamique: Animation</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-<p style="margin-top:-30px">Pas trop dur ! Et en plus, super facile à modifier lorsque à la volée.</p>
+<p style="margin-top:-30px">Pas trop dur ! Et en plus, facile à modifier à la volée.</p>
 
 D'autres exemples d'animations sont disponibles dans le dépôt [ici](https://github.com/sdras/vue-sample-svg-icons/)
 
