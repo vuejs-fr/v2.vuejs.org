@@ -20,7 +20,7 @@ Vue.component('button-counter', {
 })
 ```
 
-Les composants sont des instances de Vue réutilisable avec un nom : dans notre cas `<button-counter>`. Nous pouvons utiliser ce composant en tant qu'élément persommalisé à l'intérieure d'une instance de Vue racie créée avec `new Vue` :
+Les composants sont des instances de Vue réutilisables avec un nom : dans notre cas `<button-counter>`. Nous pouvons utiliser ce composant en tant qu'élément personnalisé à l'intérieure d'une instance de Vue racine créée avec `new Vue` :
 
 ```html
 <div id="components-demo">
@@ -49,7 +49,7 @@ new Vue({ el: '#components-demo' })
 </script>
 {% endraw %}
 
-Puisque les composants sont des instances de Vue réutilisables, ils acceptent les mêmes option que `new Vue` comme `data`, `computed`, `watch`, `methods`, et les hooks du cycle de vie. Les seules exceptions sont quelques options spécifique à la racine comme `el`.
+Puisque les composants sont des instances de Vue réutilisables, ils acceptent les mêmes option que `new Vue` comme `data`, `computed`, `watch`, `methods`, et les hooks du cycle de vie. Les seules exceptions sont quelques options spécifiques à la racine comme `el`.
 
 ## Réutilisation de composants
 
@@ -74,7 +74,7 @@ new Vue({ el: '#components-demo2' })
 </script>
 {% endraw %}
 
-Notez que lors du clique sur les boutons, chacun d'entre eux maintient sont propre conteur séparé des autres. C'est parceque chaque fois que vous utilisez un composant, une nouvelle **instance** est créée.
+Notez que lors du clique sur les boutons, chacun d'entre eux maintient sont propre compteur séparé des autres. C'est parce que chaque fois que vous utilisez un composant, une nouvelle **instance** est créée.
 
 ### `data` doit être une fonction
 
@@ -124,9 +124,9 @@ Il est commun pour une application d'être organisée en un arbre de composants 
 
 ![Arbre de composant](/images/components.png)
 
-Par exemple, vous pouvez avoir des composant pour l'en-tête, la barre latérale, la zone de contenu ; chacun contenant lui aussi d'autres composants pour la navigations, les liens, les billets de blog, etc.
+Par exemple, vous pouvez avoir des composants pour l'en-tête, la barre latérale, la zone de contenu ; chacun contenant lui aussi d'autres composants pour la navigation, les liens, les billets de blog, etc.
 
-Pour utiliser ces composants dans des templates, ils doivent être enregistrés pour que Vue les connaissent. Il y a deux types d'enregistrement de composant : **globale** et **locale**. Jusqu'ici, nous avons uniquement enregistrés des composants globallement en utilisant `Vue.component` :
+Pour utiliser ces composants dans des templates, ils doivent être enregistrés pour que Vue les connaissent. Il y a deux types d'enregistrement de composant : **global** et **local**. Jusqu'ici, nous avons uniquement enregistrés des composants globalement en utilisant `Vue.component` :
 
 ```js
 Vue.component('my-component-name', {
@@ -134,15 +134,15 @@ Vue.component('my-component-name', {
 })
 ```
 
-Les composants enregistrés globallement peuvent être utilisé dans le template de n'importe quelle instance racine de Vue (`new Vue`) créer après coup, ainsi que dans les sous-composants de l'arbre des composants de cette instance de Vue.
+Les composants enregistrés globalement peuvent être utilisés dans le template de n'importe quelle instance racine de Vue (`new Vue`) créée après coup, ainsi que dans les sous-composants de l'arbre des composants de cette instance de Vue.
 
-C'est tout ce que vous avez besoin de savoir à propos de l'enregistrement pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos de l'[Enregistrement de composant](components-registration.html).
+C'est tout ce que vous avez besoin de savoir à propos de l'enregistrement pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos de l'[Enregistrement de composant](components-registration.html).
 
-## Passer des données aux composants enfant avec les props
+## Passer des données aux composants enfants avec les props
 
-Plus tôt, nous avons mentionné la création d'un composant pour des billets de blog. Le problème est, que ce composant ne sera utile que s'il ont peu lui passer des données, comme le titre ou le contenu pour un billet spécifique à afficher. C'est ici que les props interviennent.
+Plus tôt, nous avons mentionné la création d'un composant pour des billets de blog. Le problème est que ce composant ne sera utile que s'il ont peut lui passer des données, comme le titre ou le contenu pour un billet spécifique à afficher. C'est ici que les props interviennent.
 
-Les props sont des attributs personnalisables que vous pouvez enregistrer dans un composant. Quand une valeur est passé à un attribut prop, elle devient une propriété de l'instance du composant. Pour passer un titre à notre billet de blog, nous devont l'inclure dans une liste de props que ce composant accepte, en utilisant l'option `props` :
+Les props sont des attributs personnalisables que vous pouvez enregistrer dans un composant. Quand une valeur est passée à un attribut prop, elle devient une propriété de l'instance du composant. Pour passer un titre à notre billet de blog, nous devons l'inclure dans une liste de props que ce composant accepte, en utilisant l'option `props` :
 
 ```js
 Vue.component('blog-post', {
@@ -151,7 +151,7 @@ Vue.component('blog-post', {
 })
 ```
 
-Un composant peut avoir autant de props que vous le souhaitez et par défaut, n'importe quelle valeur peut être passé à une prop. Dans le template ci-dessus, vous devriez voir cette valeur dans l'instance du composant, comme pour `data`.
+Un composant peut avoir autant de props que vous le souhaitez et par défaut, n'importe quelle valeur peut être passée à une prop. Dans le template ci-dessus, vous devriez voir cette valeur dans l'instance du composant, comme pour `data`.
 
 Une fois une prop enregistrée, vous pouvez lui passer des données en tant qu'attribut personnalisé comme ceci :
 
@@ -191,7 +191,7 @@ new Vue({
 })
 ```
 
-Maintenant, faisont le rendu d'un composant pour chacun :
+Maintenant, faisons le rendu d'un composant pour chacun :
 
 ```html
 <blog-post
@@ -203,7 +203,7 @@ Maintenant, faisont le rendu d'un composant pour chacun :
 
 Vous voyez au-dessus que nous pouvons utiliser `v-bind` pour dynamiquement passer des props. Cela est particulièrement utile quand vous ne connaissez pas exactement le contenu dont vous êtes entrain de faire le rendu à l'avance, comme dans le cas de [récupération de billets depuis une API](https://jsfiddle.net/chrisvfritz/sbLgr0ad).
 
-C'est tout ce que vous avez besoin de savoir à propos des props pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [props](components-props.html).
+C'est tout ce que vous avez besoin de savoir à propos des props pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des [props](components-props.html).
 
 ## Un élément racine unique
 
@@ -231,7 +231,7 @@ Si vous essayez cela dans votre template cependant, Vue va afficher une erreur, 
 
 ## Envoyer des messages aux parents avec les événements
 
-Lors de notre développement du composant `<blog-post>`, plusieurs fonctionnalités vont demander de communiquer des informations au parent. Par exemple, nous pourrions décider d'inclure une fonctionnlité d'accessibilité pour élargir le texte du billet de blog, alors que le reste de la page resterait dans sa taille par défaut :
+Lors de notre développement du composant `<blog-post>`, plusieurs fonctionnalités vont demander de communiquer des informations au parent. Par exemple, nous pourrions décider d'inclure une fonctionnalité d'accessibilité pour élargir le texte du billet de blog, alors que le reste de la page resterait dans sa taille par défaut :
 
 Dans le parent, nous pouvons supporter cette fonctionnalité en ajoutant une propriété de donnée `postFontSize` :
 
@@ -276,7 +276,7 @@ Vue.component('blog-post', {
 })
 ```
 
-<p class="tip">L'exemple ci-dessus et plusieurs exemple futur utilise une chaîne de caractère JavaScript appelée [modèles de libellés](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) permettant des templates multiligne plus lisibles. Ceux-ci ne sont pas supporter dans Internet Explorer (IE), aussi, si vous souhaitez supporter IE sans utiliser de transpilleur (p. ex. Babel ou TypeScript), [échappez le caractère de nouvelle ligne](https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript) à la place.</p>
+<p class="tip">L'exemple ci-dessus et plusieurs exemples futurs utilisent une chaîne de caractère JavaScript appelée [modèles de libellés](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) permettant des templates multilignes plus lisibles. Ceux-ci ne sont pas supporté dans Internet Explorer (IE), aussi, si vous souhaitez supporter IE sans utiliser de transpilleur (p. ex. Babel ou TypeScript), [échappez le caractère de nouvelle ligne](https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript) à la place.</p>
 
 Le problème est que le bouton ne fait rien du tout :
 
@@ -286,7 +286,7 @@ Le problème est que le bouton ne fait rien du tout :
 </button>
 ```
 
-Quand nous cliquons sur le bouton, nous avons besoin de communiquer au parent qu'il devrait élargir le texte de tous les billets. Heureusement, l'instance de Vue fournit un système d'événements personnalisable pour résoudre ce problème. Pour émettre un événement au parent, nous devons appeler la [méthode préconçue **`$emit`**](../api/#Methodes-et-Evenements-d’Instance), en lui passant le nom de l'événement :
+Quand nous cliquons sur le bouton, nous avons besoin de communiquer au parent qu'il devrait élargir le texte de tous les billets. Heureusement, l'instance de Vue fournit un système d'événements personnalisables pour résoudre ce problème. Pour émettre un événement au parent, nous devons appeler la [méthode préconçue **`$emit`**](../api/#Methodes-et-Evenements-d’Instance), en lui passant le nom de l'événement :
 
 ```html
 <button v-on:click="$emit('enlarge-text')">
@@ -381,7 +381,7 @@ methods: {
 
 ### Utiliser `v-model` sur les composants
 
-Les événements personnalisé peuvent aussi être utiliser pour créer des champs qui fonctionnent avec `v-model`. Rappelez vous cela :
+Les événements personnalisés peuvent aussi être utilisé pour créer des champs qui fonctionnent avec `v-model`. Rappelez vous cela :
 
 ```html
 <input v-model="searchText">
@@ -430,7 +430,7 @@ Maintenant `v-model` fonctionnera parfaitement avec le composant :
 <custom-input v-model="searchText"></custom-input>
 ```
 
-C'est tout ce que vous avez besoin de savoir à propos des événements pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [événements personnalisés](components-custom-events.html).
+C'est tout ce que vous avez besoin de savoir à propos des événements pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des [événements personnalisés](components-custom-events.html).
 
 ## Distribution de contenu avec les slots
 
@@ -483,13 +483,13 @@ Vue.component('alert-box', {
 })
 ```
 
-Comme vous pouvez le constater plus haut, nous avons seulement ajouter un slot là où nous souhaitions faire attérir le contenu - et c'est tout. C'est fait !
+Comme vous pouvez le constater plus haut, nous avons seulement ajouter un slot là où nous souhaitions faire atterrir le contenu - et c'est tout. C'est fait !
 
-C'est tout ce que vous avez besoin de savoir à propos des slot pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [slots](components-slots.html).
+C'est tout ce que vous avez besoin de savoir à propos des slots pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [slots](components-slots.html).
 
 ## Composants dynamiques
 
-Parfois, il est utile de dynamiquement interchanger des composants, comme dans une interface à onglet :
+Parfois, il est utile de dynamiquement inter-changer des composants, comme dans une interface à onglet :
 
 {% raw %}
 <div id="dynamic-component-demo" class="demo">
@@ -562,11 +562,11 @@ Dans l'exemple ci-dessus, `currentTabComponent` peut contenir soit :
 
 Regardez [ce fiddle](https://jsfiddle.net/chrisvfritz/o3nycadu/) pour expérimenter cela avec un code complet, ou [cette version](https://jsfiddle.net/chrisvfritz/b2qj69o1/) pour un exemple lié à un objet d'option de composant plutôt qu'à un nom enregistré.
 
-C'est tout ce que vous avez besoin de savoir à propos des slot pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [Composants dynamiques et asynchrones](components-dynamic-async.html).
+C'est tout ce que vous avez besoin de savoir à propos des slot pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des [Composants dynamiques et asynchrones](components-dynamic-async.html).
 
 ## Cas particuliers de l'analyse des templates de DOM
 
-PLusieurs éléments HTML, comme `<ul>`, `<ol>`, `<table>` et `<select>` ont des restrictions en ce qui concerne les éléments à l'intérieur desquels ils apparaissent. D'autres éléments quand à eux, tel que `<li>`, `<tr>`, ou `<option>` peuvent uniquement être placé à l'intérieur de certain élément parent uniquement.
+PLusieurs éléments HTML, comme `<ul>`, `<ol>`, `<table>` et `<select>` ont des restrictions en ce qui concerne les éléments à l'intérieur desquels ils apparaissent. D'autres éléments quand à eux, tel que `<li>`, `<tr>`, ou `<option>` peuvent uniquement être placés à l'intérieur de certains éléments parents uniquement.
 
 Cela mène à des problèmes quand vous utilisez des composants avec des éléments qui ont ces restrictions. Par exemple :
 
@@ -592,4 +592,4 @@ Il doit être noté que **cette limitation _n'_affecte _pas_ les templates sous 
 
 C'est tout ce que vous avez besoin de savoir à propos des cas particuliers pour le moment. Vous voilà arrivé à la fin de l'_Essentiel_ de Vue. Félicitation ! Il reste encore beaucoup à apprendre, mais d'abord, nous vous recommandons de faire une pause pour jouer avec Vue par vous même et construire quelque chose d'amusant.
 
-Une fois que vous vous sentirez à l'aise avec les connaissances que vous venez fraichement d'acquerir, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [Composants dynamiques et asynchrones](components-dynamic-async.html), ainsi également, que les autres pages dans la partie Au cœur des composants de la barre de navigation latérale.
+Une fois que vous vous sentirez à l'aise avec les connaissances que vous venez fraîchement d’acquérir, nous vous recommandons de revenir pour lire le guide complet à propos des [Composants dynamiques et asynchrones](components-dynamic-async.html) ainsi que les autres pages dans la partie Au cœur des composants de la barre de navigation latérale.
