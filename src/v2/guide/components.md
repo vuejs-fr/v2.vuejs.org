@@ -176,7 +176,7 @@ new Vue({ el: '#blog-post-demo' })
 </script>
 {% endraw %}
 
-Dans une application typique, cependant, vous préferreriez avoir un tableau de billets dans `data` :
+Dans une application typique, cependant, vous préfèreriez avoir un tableau de billets dans `data` :
 
 ```js
 new Vue({
@@ -201,7 +201,7 @@ Maintenant, faisons le rendu d'un composant pour chacun :
 ></blog-post>
 ```
 
-Vous voyez au-dessus que nous pouvons utiliser `v-bind` pour dynamiquement passer des props. Cela est particulièrement utile quand vous ne connaissez pas exactement le contenu dont vous êtes entrain de faire le rendu à l'avance, comme dans le cas de [récupération de billets depuis une API](https://jsfiddle.net/chrisvfritz/sbLgr0ad).
+Vous voyez au-dessus que nous pouvons utiliser `v-bind` pour dynamiquement passer des props. Cela est particulièrement utile quand vous ne connaissez pas exactement le contenu dont vous êtes en train de faire le rendu à l'avance, comme dans le cas de [récupération de billets depuis une API](https://jsfiddle.net/chrisvfritz/sbLgr0ad).
 
 C'est tout ce que vous avez besoin de savoir à propos des props pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des [props](components-props.html).
 
@@ -229,7 +229,7 @@ Si vous essayez cela dans votre template cependant, Vue va afficher une erreur, 
 </div>
 ```
 
-## Envoyer des messages aux parents avec les événements
+## Envoyer des messages aux parents avec les évènements
 
 Lors de notre développement du composant `<blog-post>`, plusieurs fonctionnalités vont demander de communiquer des informations au parent. Par exemple, nous pourrions décider d'inclure une fonctionnalité d'accessibilité pour élargir le texte du billet de blog, alors que le reste de la page resterait dans sa taille par défaut :
 
@@ -276,7 +276,7 @@ Vue.component('blog-post', {
 })
 ```
 
-<p class="tip">L'exemple ci-dessus et plusieurs exemples futurs utilisent une chaîne de caractère JavaScript appelée [modèles de libellés](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) permettant des templates multilignes plus lisibles. Ceux-ci ne sont pas supporté dans Internet Explorer (IE), aussi, si vous souhaitez supporter IE sans utiliser de transpilleur (p. ex. Babel ou TypeScript), [échappez le caractère de nouvelle ligne](https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript) à la place.</p>
+<p class="tip">L'exemple ci-dessus et plusieurs exemples futurs utilisent une chaine de caractère JavaScript appelée [modèles de libellés](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) permettant des templates multilignes plus lisibles. Ceux-ci ne sont pas supportés dans Internet Explorer (IE), aussi, si vous souhaitez supporter IE sans utiliser de transpilleur (p. ex. Babel ou TypeScript), [échappez le caractère de nouvelle ligne](https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript) à la place.</p>
 
 Le problème est que le bouton ne fait rien du tout :
 
@@ -286,7 +286,7 @@ Le problème est que le bouton ne fait rien du tout :
 </button>
 ```
 
-Quand nous cliquons sur le bouton, nous avons besoin de communiquer au parent qu'il devrait élargir le texte de tous les billets. Heureusement, l'instance de Vue fournit un système d'événements personnalisables pour résoudre ce problème. Pour émettre un événement au parent, nous devons appeler la [méthode préconçue **`$emit`**](../api/#Methodes-et-Evenements-d’Instance), en lui passant le nom de l'événement :
+Quand nous cliquons sur le bouton, nous avons besoin de communiquer au parent qu'il devrait élargir le texte de tous les billets. Heureusement, l'instance de Vue fournit un système d'évènements personnalisables pour résoudre ce problème. Pour émettre un évènement au parent, nous devons appeler la [méthode préconçue **`$emit`**](../api/#Methodes-et-Evenements-d’Instance), en lui passant le nom de l'évènement :
 
 ```html
 <button v-on:click="$emit('enlarge-text')">
@@ -294,7 +294,7 @@ Quand nous cliquons sur le bouton, nous avons besoin de communiquer au parent qu
 </button>
 ```
 
-Quand nous somme sur notre billet de blog, nous pouvons écouter cet événement avec `v-on`, exactement comme nous le ferrions avec un événement natif du DOM :
+Quand nous somme sur notre billet de blog, nous pouvons écouter cet évènement avec `v-on`, exactement comme nous le ferrions avec un évènement natif du DOM :
 
 ```html
 <blog-post
@@ -341,9 +341,9 @@ new Vue({
 </script>
 {% endraw %}
 
-### Émettre une valeur avec un événement
+### Émettre une valeur avec un évènement
 
-Il est parfois utile d'émettre une valeur spécifique avec un événement. Par exemple, nous pourrions vouloir que le composant `<blog-post>` soit en charge de comment élargir le texte. Dans ce cas, nous pouvons utiliser `$emit` en second paramètre pour fournir cette valeur :
+Il est parfois utile d'émettre une valeur spécifique avec un évènement. Par exemple, nous pourrions vouloir que le composant `<blog-post>` soit en charge de comment élargir le texte. Dans ce cas, nous pouvons utiliser `$emit` en second paramètre pour fournir cette valeur :
 
 ```html
 <button v-on:click="$emit('enlarge-text', 0.1)">
@@ -351,7 +351,7 @@ Il est parfois utile d'émettre une valeur spécifique avec un événement. Par 
 </button>
 ```
 
-Puis quand nous écoutons l'événement dans le parent, nous pouvons accéder à la valeur de l'événement émise avec `$event` :
+Puis quand nous écoutons l'évènement dans le parent, nous pouvons accéder à la valeur de l'évènement émise avec `$event` :
 
 ```html
 <blog-post
@@ -360,7 +360,7 @@ Puis quand nous écoutons l'événement dans le parent, nous pouvons accéder à
 ></blog-post>
 ```
 
-Ou, si le gestionnaire d'événement est une méthode :
+Ou, si le gestionnaire d'évènement est une méthode :
 
 ```html
 <blog-post
@@ -381,7 +381,7 @@ methods: {
 
 ### Utiliser `v-model` sur les composants
 
-Les événements personnalisés peuvent aussi être utilisé pour créer des champs qui fonctionnent avec `v-model`. Rappelez vous cela :
+Les évènements personnalisés peuvent aussi être utilisés pour créer des champs qui fonctionnent avec `v-model`. Rappelez-vous cela :
 
 ```html
 <input v-model="searchText">
@@ -396,7 +396,7 @@ réalise la même chose que :
 >
 ```
 
-Quand il est utiliser sur un composant, `v-model` fait plutôt cela :
+Quand il est utilisé sur un composant, `v-model` fait plutôt cela :
 
 ``` html
 <custom-input
@@ -408,7 +408,7 @@ Quand il est utiliser sur un composant, `v-model` fait plutôt cela :
 Pour que cela puisse fonctionner, la balise `<input>` à l'intérieur du composant doit :
 
 - Lier l'attribut `value` à la prop `value`
-- Et sur l'`input`, émettre son propre événement personnalisé `input` avec la nouvelle valeur
+- Et sur l'`input`, émettre son propre évènement personnalisé `input` avec la nouvelle valeur
 
 Voici un exemple en action :
 
@@ -430,7 +430,7 @@ Maintenant `v-model` fonctionnera parfaitement avec le composant :
 <custom-input v-model="searchText"></custom-input>
 ```
 
-C'est tout ce que vous avez besoin de savoir à propos des événements pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des [événements personnalisés](components-custom-events.html).
+C'est tout ce que vous avez besoin de savoir à propos des évènements pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des [évènements personnalisés](components-custom-events.html).
 
 ## Distribution de contenu avec les slots
 
@@ -584,7 +584,7 @@ Le composant personnalisé `<blog-post-row>` sera considéré comme un contenu i
 </table>
 ```
 
-Il doit être noté que **cette limitation _n'_affecte _pas_ les templates sous forme de chaîne de caractères provenant d'une des sources suivantes** :
+Il doit être noté que **cette limitation _n'_affecte _pas_ les templates sous forme de chaine de caractères provenant d'une des sources suivantes** :
 
 - Un template de chaine de caractères (par ex. `template: '...'`),
 - [Les composants monofichier (`.vue`)](single-file-components.html)
