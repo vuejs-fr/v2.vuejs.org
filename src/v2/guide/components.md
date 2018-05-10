@@ -49,7 +49,7 @@ new Vue({ el: '#components-demo' })
 </script>
 {% endraw %}
 
-Puisque les composants sont des instances de Vue réutilisables, ils acceptent les mêmes option que `new Vue` comme `data`, `computed`, `watch`, `methods`, et les hooks du cycle de vie. Les seules exceptions sont quelques options spécifiques à la racine comme `el`.
+Puisque les composants sont des instances de Vue réutilisables, ils acceptent les mêmes options que `new Vue` comme `data`, `computed`, `watch`, `methods`, et les hooks du cycle de vie. Les seules exceptions sont quelques options spécifiques à la racine comme `el`.
 
 ## Réutilisation de composants
 
@@ -74,7 +74,7 @@ new Vue({ el: '#components-demo2' })
 </script>
 {% endraw %}
 
-Notez que lors du clique sur les boutons, chacun d'entre eux maintient sont propre compteur séparé des autres. C'est parce que chaque fois que vous utilisez un composant, une nouvelle **instance** est créée.
+Notez que lors du clique sur les boutons, chacun d'entre eux maintient son propre compteur séparé des autres. C'est parce que chaque fois que vous utilisez un composant, une nouvelle **instance** est créée.
 
 ### `data` doit être une fonction
 
@@ -124,9 +124,9 @@ Il est commun pour une application d'être organisée en un arbre de composants 
 
 ![Arbre de composant](/images/components.png)
 
-Par exemple, vous pouvez avoir des composants pour l'en-tête, la barre latérale, la zone de contenu ; chacun contenant lui aussi d'autres composants pour la navigation, les liens, les billets de blog, etc.
+Par exemple, vous pouvez avoir des composants pour l'entête, la barre latérale, la zone de contenu ; chacun contenant lui aussi d'autres composants pour la navigation, les liens, les billets de blog, etc.
 
-Pour utiliser ces composants dans des templates, ils doivent être enregistrés pour que Vue les connaissent. Il y a deux types d'enregistrement de composant : **global** et **local**. Jusqu'ici, nous avons uniquement enregistrés des composants globalement en utilisant `Vue.component` :
+Pour utiliser ces composants dans des templates, ils doivent être enregistrés pour que Vue les connaissent. Il y a deux types d'enregistrement de composant : **global** et **local**. Jusqu'ici, nous avons uniquement enregistré des composants globalement en utilisant `Vue.component` :
 
 ```js
 Vue.component('my-component-name', {
@@ -140,7 +140,7 @@ C'est tout ce que vous avez besoin de savoir à propos de l'enregistrement pour 
 
 ## Passer des données aux composants enfants avec les props
 
-Plus tôt, nous avons mentionné la création d'un composant pour des billets de blog. Le problème est que ce composant ne sera utile que s'il ont peut lui passer des données, comme le titre ou le contenu pour un billet spécifique à afficher. C'est ici que les props interviennent.
+Plus tôt, nous avons mentionné la création d'un composant pour des billets de blog. Le problème est que ce composant ne sera utile que si l'on peut lui passer des données, comme le titre ou le contenu pour un billet spécifique à afficher. C'est ici que les props interviennent.
 
 Les props sont des attributs personnalisables que vous pouvez enregistrer dans un composant. Quand une valeur est passée à un attribut prop, elle devient une propriété de l'instance du composant. Pour passer un titre à notre billet de blog, nous devons l'inclure dans une liste de props que ce composant accepte, en utilisant l'option `props` :
 
@@ -483,13 +483,13 @@ Vue.component('alert-box', {
 })
 ```
 
-Comme vous pouvez le constater plus haut, nous avons seulement ajouter un slot là où nous souhaitions faire atterrir le contenu - et c'est tout. C'est fait !
+Comme vous pouvez le constater plus haut, nous avons seulement ajouté un slot là où nous souhaitions faire atterrir le contenu - et c'est tout. C'est fait !
 
 C'est tout ce que vous avez besoin de savoir à propos des slots pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir plus tard pour lire le guide complet à propos des [slots](components-slots.html).
 
 ## Composants dynamiques
 
-Parfois, il est utile de dynamiquement inter-changer des composants, comme dans une interface à onglet :
+Parfois, il est utile de dynamiquement interchanger des composants, comme dans une interface à onglet :
 
 {% raw %}
 <div id="dynamic-component-demo" class="demo">
@@ -558,7 +558,7 @@ Ce qu'il y a ci-dessus est rendu possible grâce à l'élément `<component>` de
 Dans l'exemple ci-dessus, `currentTabComponent` peut contenir soit :
 
 - le nom du composant enregistré, ou
-- un object d'option de composant
+- un objet d'option de composant
 
 Regardez [ce fiddle](https://jsfiddle.net/chrisvfritz/o3nycadu/) pour expérimenter cela avec un code complet, ou [cette version](https://jsfiddle.net/chrisvfritz/b2qj69o1/) pour un exemple lié à un objet d'option de composant plutôt qu'à un nom enregistré.
 
@@ -566,7 +566,7 @@ C'est tout ce que vous avez besoin de savoir à propos des slot pour le moment, 
 
 ## Cas particuliers de l'analyse des templates de DOM
 
-PLusieurs éléments HTML, comme `<ul>`, `<ol>`, `<table>` et `<select>` ont des restrictions en ce qui concerne les éléments à l'intérieur desquels ils apparaissent. D'autres éléments quand à eux, tel que `<li>`, `<tr>`, ou `<option>` peuvent uniquement être placés à l'intérieur de certains éléments parents uniquement.
+Plusieurs éléments HTML, comme `<ul>`, `<ol>`, `<table>` et `<select>` ont des restrictions en ce qui concerne les éléments à l'intérieur desquels ils apparaissent. D'autres éléments quant à eux, tel que `<li>`, `<tr>`, ou `<option>` peuvent uniquement être placés à l'intérieur de certains éléments parents uniquement.
 
 Cela mène à des problèmes quand vous utilisez des composants avec des éléments qui ont ces restrictions. Par exemple :
 
@@ -592,4 +592,4 @@ Il doit être noté que **cette limitation _n'_affecte _pas_ les templates sous 
 
 C'est tout ce que vous avez besoin de savoir à propos des cas particuliers pour le moment. Vous voilà arrivé à la fin de l'_Essentiel_ de Vue. Félicitation ! Il reste encore beaucoup à apprendre, mais d'abord, nous vous recommandons de faire une pause pour jouer avec Vue par vous même et construire quelque chose d'amusant.
 
-Une fois que vous vous sentirez à l'aise avec les connaissances que vous venez fraîchement d’acquérir, nous vous recommandons de revenir pour lire le guide complet à propos des [Composants dynamiques et asynchrones](components-dynamic-async.html) ainsi que les autres pages dans la partie Au cœur des composants de la barre de navigation latérale.
+Une fois que vous vous sentirez à l'aise avec les connaissances que vous venez fraichement d’acquérir, nous vous recommandons de revenir pour lire le guide complet à propos des [Composants dynamiques et asynchrones](components-dynamic-async.html) ainsi que les autres pages dans la partie Au cœur des composants de la barre de navigation latérale.
