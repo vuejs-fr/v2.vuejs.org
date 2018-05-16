@@ -228,7 +228,7 @@ Les composants sont destinés à être utilisés ensemble, le plus souvent dans 
 
 Dans Vue.js, la relation parent-enfant peut être résumée ainsi : **descente de props, remontée d'évènements**. Le parent passe les données à l'enfant via les **props**, et l'enfant envoie des messages à son parent via les **évènements**. Voyons comment cela fonctionne ci-dessous.
 
-Par exemple,  vous pouvez avoir des composants pour un en-tête, une barre latérale et une zone de contenu, chacun contenant généralement d'autres composants pour les liens de navigation, les articles de blog, etc.
+Par exemple,  vous pouvez avoir des composants pour un entête, une barre latérale et une zone de contenu, chacun contenant généralement d'autres composants pour les liens de navigation, les articles de blog, etc.
 
 Pour utiliser ces composants dans les templates, ils doivent être enregistrés afin que Vue les connaisse. Il existe deux types d'enregistrement de composants : **global** et **local**. Jusqu'à présent, nous avons seulement enregistré des composants globalement, en utilisant `Vue.component`:
 
