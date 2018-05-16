@@ -180,7 +180,7 @@ new Vue({ el: '#components-demo2' })
 
 Puisque nos trois instances de composant partagent le même objet `data`, l'incrémentation d'un compteur les incrémentera tous ! Aie. Corrigeons cela en retournant un nouvel objet de données :
 
-### `data` Must Be a Function
+### `data` doit être une fonction
 
 Lorsque nous avons défini le composant `<button-counter>`, vous avez peut-être remarqué que `data` ne remplissait pas directement un objet, comme ceci :
 
@@ -190,7 +190,7 @@ data: {
 }
 ```
 
-À la place, **un attribut du composant `data` doit être une fonction**, afin que chaque instance puisse conserver une copie indépendante de l'objet retourné :
+À la place, **la propriété du composant `data` doit être une fonction**, afin que chaque instance puisse conserver une copie indépendante de l'objet retourné :
 
 ```js
 data: function () {
