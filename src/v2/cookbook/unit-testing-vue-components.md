@@ -14,7 +14,7 @@ Cet exemple simple vérifie qu'un texte est affiché :
 <template>
   <div>
     <input v-model="username">
-    <div 
+    <div
       v-if="error"
       class="error"
     >
@@ -44,26 +44,26 @@ export default {
 ```
 
 ```js
-import { shallow } from '@vue/test-utils'
+import { shallow } from "@vue/test-utils";
 
-test('Foo', () => {
+test("Foo", () => {
   // render the component
-  const wrapper = shallow(Hello)
+  const wrapper = shallow(Hello);
 
   // should not allow for `username` less than 7 characters, excludes whitespace
-  wrapper.setData({ username: ' '.repeat(7) })
+  wrapper.setData({ username: " ".repeat(7) });
 
   // assert the error is rendered
-  expect(wrapper.find('.error').exists()).toBe(true)
+  expect(wrapper.find(".error").exists()).toBe(true);
 
   // update the name to be long enough
   wrapper.setData({
-    username: 'Lachlan'
-  })
+    username: "Lachlan"
+  });
 
   // assert the error has gone away
-  expect(wrapper.find('.error').exists()).toBe(false)
-})
+  expect(wrapper.find(".error").exists()).toBe(false);
+});
 ```
 
 Le code ci-dessus montre comment tester l'apparition d'un message d'erreur si le username n'est pas assez long. Il nous donne une idée de ce en quoi consistent les tests unitaires de composants VueJs : On render le composant, on lui fournit des données, puis on vérifie que le rendu correspond au données.
@@ -72,31 +72,31 @@ Le code ci-dessus montre comment tester l'apparition d'un message d'erreur si le
 
 Quelques-un des avantages à tester ses composants :
 
-- Les tests documentent comment le composant doit fonctionner
-- Ils évitent d'avoir à re-tester manuellement après chaque changement du code
-- Ils réduisent le risque de régression quand on ajoute des fonctionnalités
-- Ils améliorent l'architecture du code
-- Ils facilitent le refactoring
+* Les tests documentent comment le composant doit fonctionner
+* Ils évitent d'avoir à re-tester manuellement après chaque changement du code
+* Ils réduisent le risque de régression quand on ajoute des fonctionnalités
+* Ils améliorent l'architecture du code
+* Ils facilitent le refactoring
 
-Dans les équipes ou les développeurs sont nombreux, les tests automatiques permettent de maintenir une codebase volumineuse à moindre effort.
+Dans les équipes où les développeurs sont nombreux, les tests automatiques permettent de maintenir une codebase volumineuse à moindre effort.
 
 #### Pour commencer
 
-Le package officiel pour tester les composant Vue est [Vue Test Utils](https://github.com/vuejs/vue-test-utils). Le template `webpack` pour [vue-cli](https://github.com/vuejs/vue-cli) contient soit Karma soit Jest. Ces deux test runners sont très bien supportés par VueJs. On peut trouver quelques [guides](https://vue-test-utils.vuejs.org/fr/guides/) dans la documentation des Vue Test Utils.
+Le package officiel pour tester les composants Vue est [Vue Test Utils](https://github.com/vuejs/vue-test-utils). Le template `webpack` pour [vue-cli](https://github.com/vuejs/vue-cli) contient soit Karma soit Jest. Ces deux test runners sont très bien supportés par VueJs. On peut trouver quelques [guides](https://vue-test-utils.vuejs.org/fr/guides/) dans la documentation de Vue Test Utils.
 
 ## Exemple concret
 
 Un bon test unitaire se doit d'être :
 
-- Rapide à l'exécution
-- Facile à comprendre
-- Tester un _seul comportement à la fois_
+* Rapide à l'exécution
+* Facile à comprendre
+* Tester un _seul comportement à la fois_
 
 Reprenons l'exemple précédent, et ajoutons y le concept de <a href="https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)">factory function</a> pour rendre nos tests plus compacts et plus clairs. Le composant devra donc :
 
-- Afficher un message 'Bienvenue sur le tutoriel VueJs'.
-- Demander à l'utilisateur son username
-- Afficher une erreur si le username fait moins de 7 caractères
+* Afficher un message 'Bienvenue sur le tutoriel VueJs'.
+* Demander à l'utilisateur son username
+* Afficher une erreur si le username fait moins de 7 caractères
 
 Voyons d'abord le code du composant :
 
@@ -107,7 +107,7 @@ Voyons d'abord le code du composant :
       {{ message }}
     </div>
     Entrez un username : <input v-model="username">
-    <div 
+    <div
       v-if="error"
       class="error"
     >
@@ -138,85 +138,88 @@ export default {
 
 Ce que l'on doit tester :
 
-- le `message` est il affiché?
-- si `error` est `true`, `<div class="error">` devrait être visible
-- si `error` est `false`, `<div class="error">` ne devrait pas être présent
+* le `message` est il affiché?
+* si `error` est `true`, `<div class="error">` devrait être visible
+* si `error` est `false`, `<div class="error">` ne devrait pas être présent
 
 Et enfin la version naïve de nos tests
 
 ```js
-import { shallow } from '@vue/test-utils'
+import { shallow } from "@vue/test-utils";
 
-describe('Foo', () => {
-  it('renders a message and responds correctly to user input', () => {
-      const wrapper = shallow(Foo, {
-    data: {
-      message: 'Hello World',
-      username: ''
-    }
-  })
+describe("Foo", () => {
+  it("renders a message and responds correctly to user input", () => {
+    const wrapper = shallow(Foo, {
+      data: {
+        message: "Hello World",
+        username: ""
+      }
+    });
 
-  // Vérifions que le message est affiché
-  expect(wrapper.find('.message').text()).toEqual('Hello World')
+    // Vérifions que le message est affiché
+    expect(wrapper.find(".message").text()).toEqual("Hello World");
 
-  // Testons que l'erreur est bien renderée
-  expect(wrapper.find('.error').exists()).toBeTruthy()
+    // Testons que l'erreur est bien renderée
+    expect(wrapper.find(".error").exists()).toBeTruthy();
 
-  // Changeons le `username` et vérifions que l'érreur a disparu
-  wrapper.setData({ username: 'Lachlan' })
-  expect(wrapper.find('.error').exists()).toBeFalsy()
-  })
-})
+    // Changeons le `username` et vérifions que l'érreur a disparu
+    wrapper.setData({ username: "Lachlan" });
+    expect(wrapper.find(".error").exists()).toBeFalsy();
+  });
+});
 ```
 
-Ce premier test n'est pas parfait. On peut y voir plusieurs problèmes : 
+Ce premier test n'est pas parfait. On peut y voir plusieurs problèmes :
 
-- Un seul test vérifie plusieurs comportements
-- Difficile de distinguer different statuts et ce qui devrait être affiché
+* Un seul test vérifie plusieurs comportements
+* Difficile de distinguer different statuts et ce qui devrait être affiché
 
 L'exemple ci-dessous rend ce test un peu meilleur :
 
-- ne fait qu'un seul test par `it`
-- a une description claire et concise de chaque test
-- ne fournit que le minimum de données nécessaires au test
-- rassemble le code dupliqué (création du `wrapper` et mise à jour du `username`) dans une fonction `factory`
+* ne fait qu'un seul test par `it`
+* a une description claire et concise de chaque test
+* ne fournit que le minimum de données nécessaires au test
+* rassemble le code dupliqué (création du `wrapper` et mise à jour du `username`) dans une fonction `factory`
 
-*Test amelioré* :
+_Test amelioré_ :
+
 ```js
-import { shallow } from '@vue/test-utils'
-import Foo from './Foo'
+import { shallow } from "@vue/test-utils";
+import Foo from "./Foo";
 
 const factory = (values = {}) => {
   return shallow(Foo, {
-    data: { ...values  }
-  })
-}
+    data: { ...values }
+  });
+};
 
-describe('Foo', () => {
-  it('renders a welcome message', () => {
-    const wrapper = factory()
+describe("Foo", () => {
+  it("renders a welcome message", () => {
+    const wrapper = factory();
 
-    expect(wrapper.find('.message').text()).toEqual("Welcome to the Vue.js cookbook")
-  })
+    expect(wrapper.find(".message").text()).toEqual(
+      "Welcome to the Vue.js cookbook"
+    );
+  });
 
-  it('renders an error when username is less than 7 characters', () => {
-    const wrapper = factory({ username: ''  })
+  it("renders an error when username is less than 7 characters", () => {
+    const wrapper = factory({ username: "" });
 
-    expect(wrapper.find('.error').exists()).toBeTruthy()
-  })
+    expect(wrapper.find(".error").exists()).toBeTruthy();
+  });
 
-  it('renders an error when username is whitespace', () => {
-    const wrapper = factory({ username: ' '.repeat(7) })
+  it("renders an error when username is whitespace", () => {
+    const wrapper = factory({ username: " ".repeat(7) });
 
-    expect(wrapper.find('.error').exists()).toBeTruthy()
-  })
+    expect(wrapper.find(".error").exists()).toBeTruthy();
+  });
 
-  it('does not render an error when username is 7 characters or more', () => {
-    const wrapper = factory({ username: 'Lachlan'  })
+  it("does not render an error when username is 7 characters or more", () => {
+    const wrapper = factory({ username: "Lachlan" });
 
-    expect(wrapper.find('.error').exists()).toBeFalsy()
-  })
-})
+    expect(wrapper.find(".error").exists()).toBeFalsy();
+  });
+});
 ```
 
 À noter :
@@ -227,9 +230,9 @@ Au début du code, on déclare la fonction `factory` qui prend l'objet `values` 
 
 Le test précédent est assez simple. En pratique on souhaitera souvent vérifier d'autres comportements comme :
 
-- appeler une API
-- faire des `commit` ou des `dispatch` de mutations ou d'actions a un store `Vuex`
-- tester l'interactivité
+* appeler une API
+* faire des `commit` ou des `dispatch` de mutations ou d'actions a un store `Vuex`
+* tester l'interactivité
 
 Plusieurs d'exemples illustrant ce genre de tests sont disponibles dans les [guides](https://vue-test-utils.vuejs.org/fr/guides/) de Vue Test Utils.
 
