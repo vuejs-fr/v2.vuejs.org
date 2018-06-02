@@ -43,7 +43,7 @@ Créons un composant icône de base (`IconBase.vue`) disposant d'un `slot`.
 </template>
 ```
 
-Ce composant peut être utilisé tel quel, le seul paramètre à vérifier sera le `viewBox` qui dépendra de celui de vos icônes. Dans l'icône de base, les paramètres `width`, `height`, `iconColor` et `iconName` sont des props pour pouvoir les piloter selon les besoins. La prop `iconName` sera utilisée comme le contenu de la balise `<titre>` et de l'attribut `id` de notre icône SVG pour assurer l'accessibilité. 
+Ce composant peut être utilisé tel quel, le seul paramètre à vérifier sera le `viewBox` qui dépendra de celui de vos icônes. Dans l'icône de base, les paramètres `width`, `height`, `iconColor` et `iconName` sont des props pour pouvoir les piloter selon les besoins. La prop `iconName` sera utilisée comme le contenu de la balise `<title>` et de l'attribut `id` de notre icône SVG pour assurer l'accessibilité. 
 
 Le `<script>` du composant icône de base ressemble à ça. Remarquons les valeurs par défaut. Notre icône sera toujours affichée avec les mêmes hauteur/largeur partout sauf si on les force à changer. 
 
@@ -95,7 +95,7 @@ Et si on souhaite afficher l'icône dans d'autres tailles :
 
 ## Icônes animables
 
-Mettre des icônes SVG dans des composants devient clé dès que l'on souhaite les animer. D'autant plus quand cette animation se passe lors d'une interaction. Les SVG `inline` sont la forme de SVG la mieux supportée. Voici comment animer une icône lors d'un clic :
+Mettre des icônes SVG dans des composants devient nécessaire lorsque l'on souhaite les animer. D'autant plus quand cette animation se passe lors d'une interaction. Les SVG `inline` sont la forme de SVG la mieux supportée. Voici comment animer une icône lors d'un clic :
 
 ```html
 <template>
@@ -143,13 +143,13 @@ export default {
 }
 ```
 
-Nous avons ajouté des attributs `ref` aux groupes de paths pour pouvoir les animer. Comme les deux cotés des ciseaux s'anime en même temps, nous allons écrire une fonction réutilisable a qui nous allons passer des `ref`. Nous pouvons compter sur GreenSock pour gérer la compatibilité de l'animation entre navigateurs notamment le problème de `transform-origin`.
+Nous avons ajouté des attributs `ref` aux groupes de paths pour pouvoir les animer. Comme les deux cotés des ciseaux s'animent en même temps, nous allons écrire une fonction réutilisable à qui nous allons passer des `ref`. Nous pouvons compter sur GreenSock pour gérer la compatibilité de l'animation entre navigateurs notamment le problème de `transform-origin`.
 
 <p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Système d'icônes SVG Dynamique : Animation" class="codepen">Voir le Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/">Système d'icônes SVG Dynamique: Animation</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 <p style="margin-top:-30px">Pas trop dur ! Et en plus, facile à modifier à la volée.</p>
 
-D'autres exemples d'animations sont disponibles dans le dépôt [ici](https://github.com/sdras/vue-sample-svg-icons/)
+D'autres exemples d'animations sont disponibles dans le [dépôt](https://github.com/sdras/vue-sample-svg-icons/)
 
 ## Remarques additionnelles
 
@@ -157,7 +157,7 @@ Les designers peuvent changer d'avis. Les exigences du produit peuvent aussi év
 
 ## Quand éviter ce pattern
 
-Ce système d'icônes est particulièrement utile quand vous avez un certain nombre d'icônes qui sont utilisées de différentes façons à travers votre site. Si la même icône est utilisée de nombreuses fois sur la même page (par exemple, une table géante avec une icône de suppression sur chaque ligne), il peut être plus malin de définir un _sprite_ SVG contenant des `<symbol/>` entre des balises `<defs>` et de les référencer dans des balises `<use>`.
+Ce système est particulièrement utile quand vous avez un grand nombre d'icônes utilisées de façons différentes à travers votre site. Si la même icône est utilisée de nombreuses fois sur la même page (par exemple, un tableau avec une icône de suppression sur chaque ligne), il peut être plus optimsé de définir un _sprite_ SVG contenant des `<symbol/>` entre des balises `<defs>` et de les référencer dans des balises `<use>`.
 
 ## Patterns alternatifs
 
