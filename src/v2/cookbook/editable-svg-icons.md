@@ -143,7 +143,7 @@ export default {
 }
 ```
 
-Nous avons ajouté des attributs `ref` aux groupes de paths pour pouvoir les animer. Comme les deux cotés des ciseaux s'animent en même temps, nous allons écrire une fonction réutilisable à qui nous allons passer des `ref`. Nous pouvons compter sur GreenSock pour gérer la compatibilité de l'animation entre navigateurs notamment le problème de `transform-origin`.
+Nous avons ajouté des attributs `ref` aux groupes de paths pour pouvoir les animer. Comme les deux cotés des ciseaux s'animent en même temps, nous allons écrire une fonction réutilisable à qui nous allons passer des `ref`. Nous pouvons utiliser GreenSock pour gérer la compatibilité de l'animation entre navigateurs notamment le problème de `transform-origin`.
 
 <p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Système d'icônes SVG Dynamique : Animation" class="codepen">Voir le Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/">Système d'icônes SVG Dynamique: Animation</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
