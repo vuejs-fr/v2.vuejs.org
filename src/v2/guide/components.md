@@ -86,7 +86,7 @@ data: {
 }
 ```
 
-À la place, **l'option `data` d'un composant doit être une fonction**, ainsi chaque instance peut maintenir sa propre copie indépendante d'objet de données :
+À la place, **la propriété du composant `data` doit être une fonction**, afin que chaque instance puisse conserver une copie indépendante de l'objet retourné :
 
 ```js
 data: function () {
