@@ -130,9 +130,9 @@ Une autre option que les développeurs Vue auront bientôt est l'utilisation de 
 
 MobX est devenu populaire dans la communauté React et utilise actuellement un système de réactivité identique à Vue. Dans une certaine mesure, le workflow React + MobX peut être considéré comme plus verbeux que Vue. Donc si vous utilisez cette combinaison et qu'elle vous plait, passer sur Vue est probablement la prochaine étape logique.
 
-### Preact and Other React-Like Libraries
+### Preact et les autres bibliothèques de type React
 
-React-like libraries usually try to share as much of their API and ecosystem with React as is feasible. For that reason, the vast majority of comparisons above will also apply to them. The main difference will typically be a reduced ecosystem, often significantly, compared to React. Since these libraries cannot be 100% compatible with everything in the React ecosystem, some tooling and companion libraries may not be usable. Or, even if they appear to work, they could break at any time unless your specific React-like library is officially supported on par with React.
+Les bibliothèques de type React essayent généralement de partager le plus possible leur API et leur écosystème avec React. Pour cette raison, la grande majorité des comparaisons ci-dessus leur seront également applicables. La principale différence sera généralement un écosystème réduit, souvent de manière significative, par rapport à React. Étant donné que ces bibliothèques ne peuvent pas être 100% compatibles dans l'écosystème React, certaines bibliothèques d'outils et de compagnons ne peuvent pas être utilisables. Ou, même s'ils semblent fonctionner, ils peuvent se bloquer à tout moment à moins que votre bibliothèque spécifique de type React ne soit officiellement supportée par React.
 
 ## AngularJS (Angular 1)
 
@@ -182,7 +182,7 @@ Les deux frameworks sont exceptionnellement rapides avec des métriques similair
 
 ### Taille
 
-Les versions récentes d'Angular, avec une [compilation anticipée](https://fr.wikipedia.org/wiki/Compilation_anticip%C3%A9e) et du [tree-shaking](https://en.wikipedia.org/wiki/Tree_shaking) sont capables de diminuer leurs tailles considérablement. Cependant, un projet complet Vue 2, avec Vuex et Vue Router inclus (~30ko gzippé), est toujours significativement plus léger qu'une application avec compilation anticipée et générée par `angular-cli` (~65ko gzippée).
+Les versions récentes d'Angular, avec une [compilation anticipée](https://fr.wikipedia.org/wiki/Compilation_anticip%C3%A9e) et du [tree-shaking](https://en.wikipedia.org/wiki/Tree_shaking), sont capables de diminuer considérablement leurs taille en sortie. Cependant, un projet complet Vue 2, avec Vuex et Vue Router inclus (~30ko gzippé), est toujours significativement plus léger qu'une application avec compilation anticipée et générée par `angular-cli` (~65ko gzippée).
 
 ### Flexibilité
 

@@ -1606,7 +1606,7 @@ type: api
   Vue.component('welcome-button', {
     template: `
       <button v-on:click="$emit('welcome')">
-        Cliquez-moi pour être accueilli
+        Cliquez-moi pour être salué
       </button>
     `
   })
@@ -1634,7 +1634,7 @@ type: api
     Vue.component('welcome-button', {
       template: `
         <button v-on:click="$emit('welcome')">
-          Cliquez-moi pour être accueilli
+          Cliquez-moi pour être salué
         </button>
       `
     })

@@ -148,7 +148,7 @@ Et enfin la version naïve de nos tests
 import { shallowMount } from '@vue/test-utils'
 
 describe('Foo', () => {
-  it('renders a message and responds correctly to user input', () => {
+  it('restitue un message et répond correctement à la saisie de l\'utilisateur', () => {
       const wrapper = shallowMount(Foo, {
     data: {
       message: 'Hello World',
@@ -156,13 +156,13 @@ describe('Foo', () => {
     }
   })
 
-  // see if the message renders
+  // vérifie si le message est restitué
   expect(wrapper.find('.message').text()).toEqual('Hello World')
 
-  // assert the error is rendered
+  // vérifie que `error` est rendue
   expect(wrapper.find('.error').exists()).toBeTruthy()
 
-  // update the `username` and assert error is no longer rendered
+  // et à jour `username` et vérifie que `error` n'est plus rendu
   wrapper.setData({ username: 'Lachlan' })
   expect(wrapper.find('.error').exists()).toBeFalsy()
   })
@@ -224,7 +224,7 @@ describe("Foo", () => {
 
 À noter :
 
-Au début du code, on déclare la fonction `factory` qui prend l'objet `values` et en construit le `data` pour renvoyer une nouvelle instance de `wrapper`. Du coup, plus besoin de dupliquer `const wrapper = shallowMount(Foo)` dans chaque test. Un autre avantage important : Quand des composants plus complexes vont devoir être testés, le `mock` ou le `stub` d'une méthode ou d'une propriété calculée pourront facilement être mutualisés dans cette `factory`.
+Au début du code, on déclare la fonction `factory` qui prend l'objet `values` et en construit le `data` pour renvoyer une nouvelle instance de `wrapper`. Du coup, plus besoin de dupliquer `const wrapper = shallowMount(Foo)` dans chaque test. Un autre avantage important : quand des composants plus complexes vont devoir être testés, le `mock` ou le `stub` d'une méthode ou d'une propriété calculée pourront facilement être mutualisés dans cette `factory`.
 
 ## Pour aller plus loin
 
@@ -234,7 +234,7 @@ Le test précédent est assez simple. En pratique on souhaitera souvent vérifie
 * faire des `commit` ou des `dispatch` de mutations ou d'actions a un store `Vuex`
 * tester l'interactivité
 
-There are more complete examples showing such tests in the Vue Test Utils [guides](https://vue-test-utils.vuejs.org/guides/).
+Il existe des exemples plus complets illustrant ce genre de tests dans les guides de Vue Util Utils [guides](https://vue-test-utils.vuejs.org/guides/).
 
 Vue Test Utils et le gigantesque ecosystème JavaScript fournissant plein d’outils facilitant une couverture de test proche de 100%. Mais les tests unitaires ne sont qu’une partie de la pyramide de tests. On peut y inclure des tests d’intégration (e2e ou end to end), et du snapshot testing. Les tests unitaires sont les plus petits et les plus simples des tests - Ils vérifient les plus petites unités de travail, isolant ainsi chaque partie d’un même composant.
 

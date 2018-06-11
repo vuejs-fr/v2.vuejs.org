@@ -229,7 +229,7 @@ Si vous essayez cela dans votre template cependant, Vue va afficher une erreur, 
 </div>
 ```
 
-À mesure que nos composants grandissent, ils ne sera plus question uniquement d'un titre et d'un contenu pour le billet, mais également de la date de publication, des commentaires et bien plus. Définir une prop pour chaque information indépendemment pourrait devenir gênant :
+À mesure que nos composants grandissent, il ne sera plus question uniquement d'un titre et d'un contenu pour le billet, mais également de la date de publication, des commentaires et bien plus. Définir une prop indépendamment pour chaque information pourrait devenir gênant :
 
 ```html
 <blog-post
@@ -264,7 +264,7 @@ Vue.component('blog-post', {
 })
 ```
 
-<p class="tip">L'exemple ci-dessus et plusieurs futurs exemples utilisent une chaine de caractère JavaScript appelée [modèles de libellés](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) permettant des templates multilignes plus lisibles. Ceux-ci ne sont pas supportés dans Internet Explorer (IE), aussi, si vous souhaitez supporter IE sans utiliser de transpilleur (p. ex. Babel ou TypeScript), [échappez le caractère de nouvelle ligne](https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript) à la place.</p>
+<p class="tip">L'exemple ci-dessus et plusieurs exemples par la suite utilisent une chaîne de caractères JavaScript appelée [modèles de libellés](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) (« template string ») permettant des templates multilignes plus lisibles. Ceux-ci ne sont pas supportés dans Internet Explorer (IE), aussi, si vous souhaitez supporter IE sans utiliser de transpilateur (p. ex. Babel ou TypeScript), [ajoutez un caractère d'échappement à chaque nouvelle ligne](https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript) à la place.</p>
 
 Maintenant, chaque fois qu'une nouvelle propriété sera ajoutée à l'objet `post`, elle sera automatiquement disponible dans `<blog-post>`.
 
