@@ -182,7 +182,7 @@ Les deux frameworks sont exceptionnellement rapides avec des métriques similair
 
 ### Taille
 
-Les versions récentes d'Angular, avec une [compilation anticipée](https://fr.wikipedia.org/wiki/Compilation_anticip%C3%A9e) et du [tree-shaking](https://en.wikipedia.org/wiki/Tree_shaking), sont capables de diminuer considérablement leurs taille en sortie. Cependant, un projet complet Vue 2, avec Vuex et Vue Router inclus (~30ko gzippé), est toujours significativement plus léger qu'une application avec compilation anticipée et générée par `angular-cli` (~65ko gzippée).
+Les versions récentes d'Angular, avec une [compilation anticipée](https://fr.wikipedia.org/wiki/Compilation_anticip%C3%A9e) et du [tree-shaking](https://en.wikipedia.org/wiki/Tree_shaking), sont capables de diminuer considérablement leurs tailles en sortie. Cependant, un projet complet Vue 2, avec Vuex et Vue Router inclus (~30ko gzippé), est toujours significativement plus léger qu'une application avec compilation anticipée et générée par `angular-cli` (~65ko gzippée).
 
 ### Flexibilité
 
