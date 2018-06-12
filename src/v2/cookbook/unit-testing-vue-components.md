@@ -162,7 +162,7 @@ describe('Foo', () => {
   // vérifie que `error` est rendue
   expect(wrapper.find('.error').exists()).toBeTruthy()
 
-  // et à jour `username` et vérifie que `error` n'est plus rendu
+  // met à jour `username` et vérifie que `error` n'est plus rendu
   wrapper.setData({ username: 'Lachlan' })
   expect(wrapper.find('.error').exists()).toBeFalsy()
   })
@@ -234,7 +234,7 @@ Le test précédent est assez simple. En pratique on souhaitera souvent vérifie
 * faire des `commit` ou des `dispatch` de mutations ou d'actions a un store `Vuex`
 * tester l'interactivité
 
-Il existe des exemples plus complets illustrant ce genre de tests dans les guides de Vue Util Utils [guides](https://vue-test-utils.vuejs.org/guides/).
+Il existe des exemples plus complets illustrant ce genre de tests dans les [guides](https://vue-test-utils.vuejs.org/guides/) de Vue Test Utils.
 
 Vue Test Utils et le gigantesque ecosystème JavaScript fournissant plein d’outils facilitant une couverture de test proche de 100%. Mais les tests unitaires ne sont qu’une partie de la pyramide de tests. On peut y inclure des tests d’intégration (e2e ou end to end), et du snapshot testing. Les tests unitaires sont les plus petits et les plus simples des tests - Ils vérifient les plus petites unités de travail, isolant ainsi chaque partie d’un même composant.
 

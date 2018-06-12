@@ -475,7 +475,7 @@ Exactement comme les éléments HTML, il est souvent utile de passer du contenu 
 
 ``` html
 <alert-box>
-  Quelque chose c'est mal passé.
+  Quelque chose s'est mal passé.
 </alert-box>
 ```
 
@@ -484,7 +484,7 @@ Qui pourrait faire le rendu de quelque chose comme :
 {% raw %}
 <div id="slots-demo" class="demo">
   <alert-box>
-    Quelque chose c'est mal passé.
+    Quelque chose s'est mal passé.
   </alert-box>
 </div>
 <script>
