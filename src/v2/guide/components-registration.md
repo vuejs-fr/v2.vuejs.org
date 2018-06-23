@@ -6,9 +6,9 @@ order: 101
 
 > This page assumes you've already read the [Components Basics](components.html). Read that first if you are new to components.
 
-## Component Names
+## Les noms de composant
 
-<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>Lors de la création de composant, il faudra toujours spécifier un nom. Par exemple, la declaration se fera comme suit:</p>
+<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>Lors de la création de composant, il faudra toujours spécifier un nom. Par exemple, la declaration se fera comme suit: </p>
 
 ```js
 Vue.component('my-component-name', { /* ... */ })
@@ -16,7 +16,7 @@ Vue.component('my-component-name', { /* ... */ })
 
 Le nom du composant est le premier argument de `Vue.component`.
 
-Le nom que vous donnez à un composant peut dépendre de l'endroit où vous avez l'intention de l'utiliser. Lorsque vous utilisez un composant directement dans le DOM (par opposition à un modèle de chaîne ou un [composant-monofichiers](single-file-components.html)), nous vous recommandons fortement de suivre [les règles du W3C](https://www.w3.org/TR/custom-elements/#concepts) pour les noms de balises personnalisés (tout en minuscules, contenir un trait d'union). Cela vous permet d'éviter les conflits avec les éléments HTML actuels et futurs.
+Le nom que vous donnez à un composant peut dépendre de l'endroit où vous avez l'intention de l'utiliser. Lorsque vous utilisez un composant directement dans le DOM (par opposition à un modèle de chaîne ou un [composant monofichiers](single-file-components.html)), nous vous recommandons fortement de suivre [les règles du W3C](https://www.w3.org/TR/custom-elements/#concepts) pour les noms de balises personnalisés (tout en minuscules, contenir un trait d'union). Cela vous permet d'éviter les conflits avec les éléments HTML actuels et futurs.
 
 Vous pouvez voir d'autres recommandations pour les noms de composants dans le [Guide des Conventions](../style-guide/#Base-component-names-strongly-recommended).
 
