@@ -8,17 +8,17 @@ order: 101
 
 ## Component Names
 
-<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>When registering a component, it will always be given a name. For example, in the global registration we've seen so far:</p>
+<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>Lors de la création de composant, il faudra toujours spécifier un nom. Par exemple, la declaration se fera comme suit:</p>
 
 ```js
 Vue.component('my-component-name', { /* ... */ })
 ```
 
-The component's name is the first argument of `Vue.component`.
+Le nom du composant est le premier argument de `Vue.component`.
 
-The name you give a component may depend on where you intend to use it. When using a component directly in the DOM (as opposed to in a string template or [single-file component](single-file-components.html)), we strongly recommend following the [W3C rules](https://www.w3.org/TR/custom-elements/#concepts) for custom tag names (all-lowercase, must contain a hyphen). This helps you avoid conflicts with current and future HTML elements.
+Le nom que vous donnez à un composant peut dépendre de l'endroit où vous avez l'intention de l'utiliser. Lorsque vous utilisez un composant directement dans le DOM (par opposition à un modèle de chaîne ou un [composant-monofichiers](single-file-components.html)), nous vous recommandons fortement de suivre [les règles du W3C](https://www.w3.org/TR/custom-elements/#concepts) pour les noms de balises personnalisés (tout en minuscules, contenir un trait d'union). Cela vous permet d'éviter les conflits avec les éléments HTML actuels et futurs.
 
-You can see other recommendations for component names in the [Style Guide](../style-guide/#Base-component-names-strongly-recommended).
+Vous pouvez voir d'autres recommandations pour les noms de composants dans le [Guide des Conventions](../style-guide/#Base-component-names-strongly-recommended).
 
 ### Name Casing
 
