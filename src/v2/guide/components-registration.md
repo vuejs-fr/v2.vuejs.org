@@ -20,25 +20,25 @@ Le nom que vous donnez à un composant peut dépendre de l'endroit où vous avez
 
 Vous pouvez voir d'autres recommandations pour les noms de composants dans le [Guide des Conventions](../style-guide/#Base-component-names-strongly-recommended).
 
-### Name Casing
+### Les cas de nom
 
-You have two options when defining component names:
+Vous avez deux options pour définir vos noms de composant:
 
-#### With kebab-case
+#### Avec kebab-case
 
 ```js
 Vue.component('my-component-name', { /* ... */ })
 ```
 
-When defining a component with kebab-case, you must also use kebab-case when referencing its custom element, such as in `<my-component-name>`.
+Lors de la définition d'un composant avec kebab-case, vous devez également utiliser kebab-case lors du référencement de l'élément, comme ceci `<my-component-name>`.
 
-#### With PascalCase
+#### Avec PascalCase
 
 ```js
 Vue.component('MyComponentName', { /* ... */ })
 ```
 
-When defining a component with PascalCase, you can use either case when referencing its custom element. That means both `<my-component-name>` and `<MyComponentName>` are acceptable. Note, however, that only kebab-case names are valid directly in the DOM (i.e. non-string templates).
+Lors de la définition d'un composant avec PascalCase, vous pouvez utiliser l'un ou l'autre cas lors du référencement de l'élément. Cela signifie que `<my-component-name>` et `<MyComponentName>` sont acceptable. A noter, cependant, que seuls les noms en kebab-case sont directement valides dans le DOM (c.-à-d. la forme non-chaine).
 
 ## Global Registration
 
