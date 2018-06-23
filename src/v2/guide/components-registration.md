@@ -40,9 +40,9 @@ Vue.component('MyComponentName', { /* ... */ })
 
 Lors de la définition d'un composant avec PascalCase, vous pouvez utiliser l'un ou l'autre cas lors du référencement de l'élément. Cela signifie que `<my-component-name>` et `<MyComponentName>` sont acceptable. A noter, cependant, que seuls les noms en kebab-case sont directement valides dans le DOM (c.-à-d. la forme non-chaine).
 
-## Global Registration
+## Création Globale
 
-So far, we've only created components using `Vue.component`:
+Jusque là, nous avons crée des composants seulement avec la manière suivante: `Vue.component`: 
 
 ```js
 Vue.component('my-component-name', {
@@ -50,7 +50,7 @@ Vue.component('my-component-name', {
 })
 ```
 
-These components are **globally registered**. That means they can be used in the template of any root Vue instance (`new Vue`) created after registration. For example:
+Ces composants sont **enregistrés globalement**. Cela signifie qu'ils peuvent être utilisés dans le template de n'importe quelle instance Vue (`new Vue`) créée après. Par exemple: 
 
 ```js
 Vue.component('component-a', { /* ... */ })
@@ -68,7 +68,7 @@ new Vue({ el: '#app' })
 </div>
 ```
 
-This even applies to all subcomponents, meaning all three of these components will also be available _inside each other_.
+Cela s'applique même à tous les sous-composants, ce qui signifie que ces trois composants seront également disponibles _l'un dans l'autre_.
 
 ## Local Registration
 
