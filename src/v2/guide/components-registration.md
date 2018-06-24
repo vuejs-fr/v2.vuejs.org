@@ -70,11 +70,11 @@ new Vue({ el: '#app' })
 
 Cela s'applique même à tous les sous-composants, ce qui signifie que ces trois composants seront également disponibles _l'un dans l'autre_.
 
-## Local Registration
+## Création Locale
 
-Global registration often isn't ideal. For example, if you're using a build system like Webpack, globally registering all components means that even if you stop using a component, it could still be included in your final build. This unnecessarily increases the amount of JavaScript your users have to download.
+La création globale n'est souvent pas idéale. Par exemple, si vous utilisez un système de build comme Webpack, la création glabale de composants fait que même si vous arrêtez d'utiliser un composant, il peut toujours être inclus dans votre build final. Cela augmente inutilement la quantité de JavaScript que vos utilisateurs doivent télécharger.
 
-In these cases, you can define your components as plain JavaScript objects:
+Dans ce cas, vous pouvez définir vos composants en tant qu'objets JavaScript simples:
 
 ```js
 var ComponentA = { /* ... */ }
@@ -82,7 +82,7 @@ var ComponentB = { /* ... */ }
 var ComponentC = { /* ... */ }
 ```
 
-Then define the components you'd like to use in a `components` option:
+Puis définissez les composants que vous souhaitez utiliser dans l'option `components`: 
 
 ```js
 new Vue({
@@ -94,9 +94,9 @@ new Vue({
 })
 ```
 
-For each property in the `components` object, the key will be the name of the custom element, while the value will contain the options object for the component.
+Pour chaque propriété de l'objet `components`, la clé sera le nom de l'élément personnalisé, tandis que la valeur contiendra l'objet d'options du composant.
 
-Note that **locally registered components are _not_ also available in subcomponents**. For example, if you wanted `ComponentA` to be available in `ComponentB`, you'd have to use:
+Notez que **les composants crées localement ne sont _pas_ disponibles dans les sous-composants**. Par exemple, si vous voulez que `ComponentA` soit disponible dans `ComponentB`, vous devez utiliser:
 
 ```js
 var ComponentA = { /* ... */ }
@@ -109,7 +109,7 @@ var ComponentB = {
 }
 ```
 
-Or if you're using ES2015 modules, such as through Babel and Webpack, that might look more like:
+Ou si vous utilisez des modules ES2015, tels que Babel et Webpack, cela pourrait plus ressembler à:
 
 ```js
 import ComponentA from './ComponentA.vue'
@@ -122,10 +122,10 @@ export default {
 }
 ```
 
-Note that in ES2015+, placing a variable name like `ComponentA` inside an object is shorthand for `ComponentA: ComponentA`, meaning the name of the variable is both:
+Notez que dans ES2015+, placer un nom de variable comme `ComponentA` dans un objet est un raccourci à `ComponentA: ComponentA`, signifiant que le nom de la variable est à la fois:
 
-- the custom element name to use in the template, and
-- the name of the variable containing the component options
+- le nom de l'élément personnalisé à utiliser dans le template, et
+- le nom de la variable contenant les options du composant
 
 ## Module Systems
 
