@@ -127,15 +127,15 @@ Notez que dans ES2015+, placer un nom de variable comme `ComponentA` dans un obj
 - le nom de l'élément personnalisé à utiliser dans le template, et
 - le nom de la variable contenant les options du composant
 
-## Module Systems
+## Systèmes de module
 
-If you're not using a module system with `import`/`require`, you can probably skip this section for now. If you are, we have some special instructions and tips just for you.
+Si vous n'utilisez pas un système de module avec `import`/`require`, vous pouvez probablement ignorer cette section pour l'instant. Si oui, nous avons quelques instructions spéciales et conseils pour vous.
 
-### Local Registration in a Module System
+### Création locale dans un système de module
 
-If you're still here, then it's likely you're using a module system, such as with Babel and Webpack. In these cases, we recommend creating a `components` directory, with each component in its own file.
+Si vous êtes toujours là, il est probable que vous utilisiez un système de modules, comme avec Babel et Webpack. Dans ces cas, nous recommandons de créer un répertoire `components`, avec chaque composant dans son propre fichier.
 
-Then you'll need to import each component you'd like to use, before you locally register it. For example, in a hypothetical `ComponentB.js` or `ComponentB.vue` file:
+Ensuite, vous devrez importer chaque composant que vous souhaitez utiliser avant de l'enregistrer localement. Par exemple, dans un fichier hypothétique `ComponentB.js` or `ComponentB.vue`:
 
 ```js
 import ComponentA from './ComponentA'
@@ -150,13 +150,13 @@ export default {
 }
 ```
 
-Now both `ComponentA` and `ComponentC` can be used inside `ComponentB`'s template.
+Maintenant, et `ComponentA` et `ComponentC` peuvent être utilisés dams le template du composant `ComponentB`.
 
-### Automatic Global Registration of Base Components
+### Enregistrement globale automatique des composents de base
 
-Many of your components will be relatively generic, possibly only wrapping an element like an input or a button. We sometimes refer to these as [base components](../style-guide/#Base-component-names-strongly-recommended) and they tend to be used very frequently across your components.
+La plupart de vos composants seront relativement génériques, ce qui ne fera qu'englober un élément comme un champs ou un bouton. Nous nous référons parfois à ces [composants de base](../style-guide/#Base-component-names-strongly-recommended) et ils ont tendance à être utilisés très fréquemment à travers vos composants.
 
-The result is that many components may include long lists of base components:
+Le résultat est que de nombreux composants peuvent inclure de longues listes de composants de base:
 
 ```js
 import BaseButton from './BaseButton.vue'
