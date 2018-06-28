@@ -72,7 +72,7 @@ Cela s'applique même à tous les sous-composants, ce qui signifie que ces trois
 
 ## Création Locale
 
-La création globale n'est souvent pas idéale. Par exemple, si vous utilisez un système de build comme Webpack, la création glabale de composants fait que même si vous arrêtez d'utiliser un composant, il peut toujours être inclus dans votre build final. Cela augmente inutilement la quantité de JavaScript que vos utilisateurs doivent télécharger.
+La création globale n'est souvent pas idéale. Par exemple, si vous utilisez un système de build comme Webpack, la création globale de composants fait que même si vous arrêtez d'utiliser un composant, il peut toujours être inclus dans votre build final. Cela augmente inutilement la quantité de JavaScript que vos utilisateurs doivent télécharger.
 
 Dans ce cas, vous pouvez définir vos composants en tant qu'objets JavaScript simples:
 
