@@ -172,7 +172,7 @@ export default {
 }
 ```
 
-Just to support relatively little markup in a template:
+Juste pour supporter relativement peu de balisage dans un template:
 
 ```html
 <BaseInput
@@ -184,7 +184,7 @@ Just to support relatively little markup in a template:
 </BaseButton>
 ```
 
-Fortunately, if you're using Webpack (or [Vue CLI 3+](https://github.com/vuejs/vue-cli), which uses Webpack internally), you can use `require.context` to globally register only these very common base components. Here's an example of the code you might use to globally import base components in your app's entry file (e.g. `src/main.js`):
+Heureusement, si vous utilisez Webpack (ou [Vue CLI 3+](https://github.com/vuejs/vue-cli), qui utilise Webpack en interne), vous pouvez utiliser `require.context` pour enregistrer globalement précisément ces composants de base très courants. Voici un exemple de code que vous pouvez utiliser pour importer globalement des composants de base dans le fichier d'entrée de votre application. (p. ex. `src/main.js`):
 
 ```js
 import Vue from 'vue'
@@ -192,35 +192,35 @@ import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 
 const requireComponent = require.context(
-  // The relative path of the components folder
+  // Le chemin relatif du dossier composants
   './components',
-  // Whether or not to look in subfolders
+  // Suivre ou non les sous-dossiers
   false,
-  // The regular expression used to match base component filenames
+  // L'expression régulière utilisée pour matcher les noms de fichiers de composant de base
   /Base[A-Z]\w+\.(vue|js)$/
 )
 
 requireComponent.keys().forEach(fileName => {
-  // Get component config
+  // Récupérer la configuration du composent
   const componentConfig = requireComponent(fileName)
 
-  // Get PascalCase name of component
+  // Récupérer le nom du composent en PascalCase
   const componentName = upperFirst(
     camelCase(
-      // Strip the leading `'./` and extension from the filename
+      // Enlever la chaine `'. /` et l'extension du nom de fichier
       fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
     )
   )
 
-  // Register component globally
+  // Créer un composant global
   Vue.component(
     componentName,
-    // Look for the component options on `.default`, which will
-    // exist if the component was exported with `export default`,
-    // otherwise fall back to module's root.
+    // Chercher les options du composant dans `.default`, qui 
+    // existera si le composant a été exporté avec `export default`,
+    // sinon revenez à la racine du module.
     componentConfig.default || componentConfig
   )
 })
 ```
 
-Remember that **global registration must take place before the root Vue instance is created (with `new Vue`)**. [Here's an example](https://github.com/chrisvfritz/vue-enterprise-boilerplate/blob/master/src/components/_globals.js) of this pattern in a real project context.
+N'oubliez pas que **la création globale doit avoir lieu avant la création de l'instance racine Vue (avec `new Vue`)**. [Voici un exemple](https://github.com/chrisvfritz/vue-enterprise-boilerplate/blob/master/src/components/_globals.js) de ce modèle dans un contexte de projet réel.
