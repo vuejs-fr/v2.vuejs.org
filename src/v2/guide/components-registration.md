@@ -184,7 +184,7 @@ Juste pour supporter relativement peu de balisage dans un template:
 </BaseButton>
 ```
 
-Heureusement, si vous utilisez Webpack (ou [Vue CLI 3+](https://github.com/vuejs/vue-cli), qui utilise Webpack en interne), vous pouvez utiliser `require.context` pour enregistrer globalement précisément ces composants de base très courants. Voici un exemple de code que vous pouvez utiliser pour importer globalement des composants de base dans le fichier d'entrée de votre application. (p. ex. `src/main.js`):
+Heureusement, si vous utilisez Webpack (ou [Vue CLI 3+](https://github.com/vuejs/vue-cli), qui utilise Webpack en interne), vous pouvez utiliser `require.context` pour enregistrer globalement précisément ces composants de base très courants. Voici un exemple de code que vous pouvez utiliser pour importer globalement des composants de base dans le fichier d'entrée de votre application. (ex. `src/main.js`):
 
 ```js
 import Vue from 'vue'
