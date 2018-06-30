@@ -22,7 +22,7 @@ Vous pouvez voir d'autres recommandations pour les noms de composants dans le gu
 
 ### La casse des noms
 
-Vous avez deux options pour définir vos noms de composant:
+Vous avez deux options pour définir vos noms de composant :
 
 #### Avec kebab-case
 
@@ -70,11 +70,11 @@ new Vue({ el: '#app' })
 
 Cela s'applique même à tous les sous-composants, ce qui signifie que ces trois composants seront également disponibles _l'un dans l'autre_.
 
-## Création local
+## Création locale
 
 La création globale n'est souvent pas idéale. Par exemple, si vous utilisez un système de build comme webpack, la création globale de composants fait que même si vous arrêtez d'utiliser un composant, il peut toujours être inclus dans votre build final. Cela augmente inutilement la quantité de JavaScript que vos utilisateurs doivent télécharger.
 
-Dans ce cas, vous pouvez définir vos composants en tant qu'objets JavaScript simples:
+Dans ce cas, vous pouvez définir vos composants en tant qu'objets JavaScript simples :
 
 ```js
 var ComponentA = { /* ... */ }
@@ -96,7 +96,7 @@ new Vue({
 
 Pour chaque propriété de l'objet `components`, la clé sera le nom de l'élément personnalisé, tandis que la valeur contiendra l'objet d'options du composant.
 
-Notez que **les composants créés localement ne sont _pas_ disponibles dans les sous-composants**. Par exemple, si vous voulez que `ComponentA` soit disponible dans `ComponentB`, vous devez utiliser:
+Notez que **les composants créés localement ne sont _pas_ disponibles dans les sous-composants**. Par exemple, si vous voulez que `ComponentA` soit disponible dans `ComponentB`, vous devez utiliser :
 
 ```js
 var ComponentA = { /* ... */ }
@@ -109,7 +109,7 @@ var ComponentB = {
 }
 ```
 
-Ou si vous utilisez des modules ES2015, tels que Babel et webpack, cela pourrait plus ressembler à:
+Ou si vous utilisez des modules ES2015, tels que Babel et webpack, cela pourrait plus ressembler à :
 
 ```js
 import ComponentA from './ComponentA.vue'
@@ -122,7 +122,7 @@ export default {
 }
 ```
 
-Notez que dans ES2015+, placer un nom de variable comme `ComponentA` dans un objet est un raccourci à `ComponentA: ComponentA`, signifiant que le nom de la variable est à la fois:
+Notez que dans ES2015+, placer un nom de variable comme `ComponentA` dans un objet est un raccourci à `ComponentA: ComponentA`, signifiant que le nom de la variable est à la fois :
 
 - le nom de l'élément personnalisé à utiliser dans le template et
 - le nom de la variable contenant les options du composant
@@ -135,7 +135,7 @@ Si vous n'utilisez pas un système de module avec `import`/`require`, vous pouve
 
 Si vous êtes toujours là, il est probable que vous utilisiez un système de modules, comme avec Babel et webpack. Dans ces cas, nous recommandons de créer un répertoire `components`, avec chaque composant dans son propre fichier.
 
-Ensuite, vous devrez importer chaque composant que vous souhaitez utiliser avant de l'enregistrer localement. Par exemple, dans un fichier hypothétique `ComponentB.js` ou `ComponentB.vue`:
+Ensuite, vous devrez importer chaque composant que vous souhaitez utiliser avant de l'enregistrer localement. Par exemple, dans un fichier hypothétique `ComponentB.js` ou `ComponentB.vue` :
 
 ```js
 import ComponentA from './ComponentA'
@@ -156,7 +156,7 @@ Maintenant, et `ComponentA` et `ComponentC` peuvent être utilisés dans le temp
 
 La plupart de vos composants seront relativement génériques, ce qui ne fera qu'englober un élément comme un champ ou un bouton. Nous nous référons parfois à ces [composants de base](../style-guide/#Base-de-nom-de-composant-fortement-recommande) et ils ont tendance à être utilisés très fréquemment à travers vos composants.
 
-Le résultat est que de nombreux composants peuvent inclure de longues listes de composants de base:
+Le résultat est que de nombreux composants peuvent inclure de longues listes de composants de base :
 
 ```js
 import BaseButton from './BaseButton.vue'
@@ -172,7 +172,7 @@ export default {
 }
 ```
 
-Juste pour supporter relativement peu de balise dans un template:
+Juste pour supporter relativement peu de balise dans un template :
 
 ```html
 <BaseInput
@@ -184,7 +184,7 @@ Juste pour supporter relativement peu de balise dans un template:
 </BaseButton>
 ```
 
-Heureusement, si vous utilisez webpack (ou [Vue CLI 3+](https://github.com/vuejs/vue-cli), qui utilise webpack en interne), vous pouvez utiliser `require.context` pour enregistrer globalement précisément ces composants de base très courants. Voici un exemple de code que vous pouvez utiliser pour importer globalement des composants de base dans le fichier d'entrée de votre application. (ex. `src/main.js`):
+Heureusement, si vous utilisez webpack (ou [Vue CLI 3+](https://github.com/vuejs/vue-cli), qui utilise webpack en interne), vous pouvez utiliser `require.context` pour enregistrer globalement précisément ces composants de base très courants. Voici un exemple de code que vous pouvez utiliser pour importer globalement des composants de base dans le fichier d'entrée de votre application. (ex. `src/main.js`) :
 
 ```js
 import Vue from 'vue'
@@ -207,7 +207,7 @@ requireComponent.keys().forEach(fileName => {
   // Récupérer le nom du composent en PascalCase
   const componentName = upperFirst(
     camelCase(
-      // Enlever la chaine `'. /` et l'extension du nom de fichier
+      // Enlever la chaine `'./` et l'extension du nom de fichier
       fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
     )
   )
