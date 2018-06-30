@@ -1600,7 +1600,6 @@ type: api
 
 - **Exemples:**
 
-
   Utiliser `$emit` avec un nom d'évènement :
 
   ```js

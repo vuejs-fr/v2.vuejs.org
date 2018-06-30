@@ -29,7 +29,7 @@ Maintenant nous avons :
 
 Et comme promis, nous pouvons aussi utiliser des préprocesseurs tels que Pug, Babel (avec les modules ES2015), et Stylus pour obtenir des composants plus lisibles et plus riches en fonctionnalités.
 
-<a href="https://gist.github.com/chrisvfritz/1c9f2daea9bc078dcb47e9a82e5f7587" target="_blank"><img src="/images/vue-component-with-preprocessors.png" alt="xemple d'un composant pour un seul fichier avec des préprocesseurs (cliquez pour voir le code sous forme de texte)" style="display: block; margin: 30px auto;"></a>
+<a href="https://gist.github.com/chrisvfritz/1c9f2daea9bc078dcb47e9a82e5f7587" target="_blank"><img src="/images/vue-component-with-preprocessors.png" alt="Exemple d'un composant pour un seul fichier avec des préprocesseurs (cliquez pour voir le code sous forme de texte)" style="display: block; margin: 30px auto;"></a>
 
 Ces langages spécifiques ne sont que des exemples; vous pourriez tout aussi aisément utiliser Bublé, Typescript, SCSS, PostCSS - ou tout autre préprocesseur qui vous aide à être productif. Si vous utilisez webpack avec `vue-loader`, vous aurez aussi un outil de premier choix pour les modules CSS.
 

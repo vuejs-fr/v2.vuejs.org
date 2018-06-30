@@ -268,43 +268,6 @@ Vue.component('blog-post', {
 
 Maintenant, chaque fois qu'une nouvelle propriété sera ajoutée à l'objet `post`, elle sera automatiquement disponible dans `<blog-post>`.
 
-```html
-<blog-post
-  v-for="post in posts"
-  v-bind:key="post.id"
-  v-bind:title="post.title"
-  v-bind:content="post.content"
-  v-bind:publishedAt="post.publishedAt"
-  v-bind:comments="post.comments"
-></blog-post>
-```
-
-Le temps sera alors venu de refactoriser le composant `<blog-post>` pour accepter une propriété `post` unique à la place :
-
-```html
-<blog-post
-  v-for="post in posts"
-  v-bind:key="post.id"
-  v-bind:post="post"
-></blog-post>
-```
-
-```js
-Vue.component('blog-post', {
-  props: ['post'],
-  template: `
-    <div class="blog-post">
-      <h3>{{ post.title }}</h3>
-      <div v-html="post.content"></div>
-    </div>
-  `
-})
-```
-
-<p class="tip">L'exemple ci-dessus et plusieurs exemples par la suite utilisent une chaîne de caractères JavaScript appelée [modèles de libellés](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) (« template string ») permettant des templates multilignes plus lisibles. Ceux-ci ne sont pas supportés dans Internet Explorer (IE), aussi, si vous souhaitez supporter IE sans utiliser de transpilateur (p. ex. Babel ou TypeScript), [ajoutez un caractère d'échappement à chaque nouvelle ligne](https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript) à la place.</p>
-
-Maintenant, chaque fois qu'une nouvelle propriété sera ajoutée à l'objet `post`, elle sera automatiquement disponible dans `<blog-post>`.
-
 ## Envoyer des messages aux parents avec les évènements
 
 Lors de notre développement du composant `<blog-post>`, plusieurs fonctionnalités vont demander de communiquer des informations au parent. Par exemple, nous pourrions décider d'inclure une fonctionnalité d'accessibilité pour élargir le texte du billet de blog, alors que le reste de la page resterait dans sa taille par défaut :
