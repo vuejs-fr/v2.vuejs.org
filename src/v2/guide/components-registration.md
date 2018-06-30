@@ -1,14 +1,14 @@
 ---
-title: Component Registration (EN)
+title: Création de composants
 type: guide
 order: 101
 ---
 
-> This page assumes you've already read the [Components Basics](components.html). Read that first if you are new to components.
+> Cette page suppose que vous avez déjà lu les principes de base des [composants](components.html). Lisez cela en premier si vous êtes nouveau aux composants.
 
 ## Les noms de composant
 
-<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>Lors de la création de composant, il faudra toujours spécifier un nom. Par exemple, la declaration se fera comme suit: </p>
+Lors de la création de composant, il faudra toujours spécifier un nom. Par exemple, la declaration se fera comme suit : 
 
 ```js
 Vue.component('my-component-name', { /* ... */ })
@@ -16,11 +16,11 @@ Vue.component('my-component-name', { /* ... */ })
 
 Le nom du composant est le premier argument de `Vue.component`.
 
-Le nom que vous donnez à un composant peut dépendre de l'endroit où vous avez l'intention de l'utiliser. Lorsque vous utilisez un composant directement dans le DOM (par opposition à un modèle de chaîne ou un [composant monofichiers](single-file-components.html)), nous vous recommandons fortement de suivre [les règles du W3C](https://www.w3.org/TR/custom-elements/#concepts) pour les noms de balises personnalisés (tout en minuscules, contenir un trait d'union). Cela vous permet d'éviter les conflits avec les éléments HTML actuels et futurs.
+Le nom que vous donnez à un composant peut dépendre de l'endroit où vous avez l'intention de l'utiliser. Lorsque vous utilisez un composant directement dans le DOM (par opposition à une chaîne ou un [composant monofichiers](single-file-components.html)), nous vous recommandons fortement de suivre [les règles du W3C](https://www.w3.org/TR/custom-elements/#concepts) pour les noms de balises personnalisés (tout en minuscules, contenir un trait d'union). Cela vous permet d'éviter les conflits avec les éléments HTML actuels et futurs.
 
-Vous pouvez voir d'autres recommandations pour les noms de composants dans le [Guide des Conventions](../style-guide/#Base-component-names-strongly-recommended).
+Vous pouvez voir d'autres recommandations pour les noms de composants dans le guide des [Conventions](../style-guide/#Base-component-names-strongly-recommended).
 
-### Les cas de nom
+### La casse des noms
 
 Vous avez deux options pour définir vos noms de composant:
 
@@ -38,11 +38,11 @@ Lors de la définition d'un composant avec kebab-case, vous devez également uti
 Vue.component('MyComponentName', { /* ... */ })
 ```
 
-Lors de la définition d'un composant avec PascalCase, vous pouvez utiliser l'un ou l'autre cas lors du référencement de l'élément. Cela signifie que `<my-component-name>` et `<MyComponentName>` sont acceptable. A noter, cependant, que seuls les noms en kebab-case sont directement valides dans le DOM (c.-à-d. la forme non-chaine).
+Lors de la définition d'un composant avec PascalCase, vous pouvez utiliser l'un ou l'autre cas lors du référencement de l'élément. Cela signifie que `<my-component-name>` et `<MyComponentName>` sont acceptables. À noter, cependant, que seuls les noms en kebab-case sont directement valides dans le DOM (c.-à-d. la forme non-chaine).
 
-## Création Globale
+## Création globale
 
-Jusque là, nous avons crée des composants seulement avec la manière suivante: `Vue.component`: 
+Jusque là, nous avons créé des composants seulement avec la manière suivante : `Vue.component` : 
 
 ```js
 Vue.component('my-component-name', {
@@ -50,7 +50,7 @@ Vue.component('my-component-name', {
 })
 ```
 
-Ces composants sont **enregistrés globalement**. Cela signifie qu'ils peuvent être utilisés dans le template de n'importe quelle instance Vue (`new Vue`) créée après. Par exemple: 
+Ces composants sont **enregistrés globalement**. Cela signifie qu'ils peuvent être utilisés dans le template de n'importe quelle instance Vue (`new Vue`) créée après. Par exemple : 
 
 ```js
 Vue.component('component-a', { /* ... */ })
@@ -70,9 +70,9 @@ new Vue({ el: '#app' })
 
 Cela s'applique même à tous les sous-composants, ce qui signifie que ces trois composants seront également disponibles _l'un dans l'autre_.
 
-## Création Locale
+## Création local
 
-La création globale n'est souvent pas idéale. Par exemple, si vous utilisez un système de build comme Webpack, la création globale de composants fait que même si vous arrêtez d'utiliser un composant, il peut toujours être inclus dans votre build final. Cela augmente inutilement la quantité de JavaScript que vos utilisateurs doivent télécharger.
+La création globale n'est souvent pas idéale. Par exemple, si vous utilisez un système de build comme webpack, la création globale de composants fait que même si vous arrêtez d'utiliser un composant, il peut toujours être inclus dans votre build final. Cela augmente inutilement la quantité de JavaScript que vos utilisateurs doivent télécharger.
 
 Dans ce cas, vous pouvez définir vos composants en tant qu'objets JavaScript simples:
 
@@ -82,7 +82,7 @@ var ComponentB = { /* ... */ }
 var ComponentC = { /* ... */ }
 ```
 
-Puis définissez les composants que vous souhaitez utiliser dans l'option `components`: 
+Puis définissez les composants que vous souhaitez utiliser dans l'option `components` : 
 
 ```js
 new Vue({
@@ -96,7 +96,7 @@ new Vue({
 
 Pour chaque propriété de l'objet `components`, la clé sera le nom de l'élément personnalisé, tandis que la valeur contiendra l'objet d'options du composant.
 
-Notez que **les composants crées localement ne sont _pas_ disponibles dans les sous-composants**. Par exemple, si vous voulez que `ComponentA` soit disponible dans `ComponentB`, vous devez utiliser:
+Notez que **les composants créés localement ne sont _pas_ disponibles dans les sous-composants**. Par exemple, si vous voulez que `ComponentA` soit disponible dans `ComponentB`, vous devez utiliser:
 
 ```js
 var ComponentA = { /* ... */ }
@@ -109,7 +109,7 @@ var ComponentB = {
 }
 ```
 
-Ou si vous utilisez des modules ES2015, tels que Babel et Webpack, cela pourrait plus ressembler à:
+Ou si vous utilisez des modules ES2015, tels que Babel et webpack, cela pourrait plus ressembler à:
 
 ```js
 import ComponentA from './ComponentA.vue'
@@ -124,7 +124,7 @@ export default {
 
 Notez que dans ES2015+, placer un nom de variable comme `ComponentA` dans un objet est un raccourci à `ComponentA: ComponentA`, signifiant que le nom de la variable est à la fois:
 
-- le nom de l'élément personnalisé à utiliser dans le template, et
+- le nom de l'élément personnalisé à utiliser dans le template et
 - le nom de la variable contenant les options du composant
 
 ## Systèmes de module
@@ -133,9 +133,9 @@ Si vous n'utilisez pas un système de module avec `import`/`require`, vous pouve
 
 ### Création locale dans un système de module
 
-Si vous êtes toujours là, il est probable que vous utilisiez un système de modules, comme avec Babel et Webpack. Dans ces cas, nous recommandons de créer un répertoire `components`, avec chaque composant dans son propre fichier.
+Si vous êtes toujours là, il est probable que vous utilisiez un système de modules, comme avec Babel et webpack. Dans ces cas, nous recommandons de créer un répertoire `components`, avec chaque composant dans son propre fichier.
 
-Ensuite, vous devrez importer chaque composant que vous souhaitez utiliser avant de l'enregistrer localement. Par exemple, dans un fichier hypothétique `ComponentB.js` or `ComponentB.vue`:
+Ensuite, vous devrez importer chaque composant que vous souhaitez utiliser avant de l'enregistrer localement. Par exemple, dans un fichier hypothétique `ComponentB.js` ou `ComponentB.vue`:
 
 ```js
 import ComponentA from './ComponentA'
@@ -150,11 +150,11 @@ export default {
 }
 ```
 
-Maintenant, et `ComponentA` et `ComponentC` peuvent être utilisés dams le template du composant `ComponentB`.
+Maintenant, et `ComponentA` et `ComponentC` peuvent être utilisés dans le template du composant `ComponentB`.
 
-### Enregistrement globale automatique des composents de base
+### Enregistrement global automatique des composents de base
 
-La plupart de vos composants seront relativement génériques, ce qui ne fera qu'englober un élément comme un champs ou un bouton. Nous nous référons parfois à ces [composants de base](../style-guide/#Base-component-names-strongly-recommended) et ils ont tendance à être utilisés très fréquemment à travers vos composants.
+La plupart de vos composants seront relativement génériques, ce qui ne fera qu'englober un élément comme un champ ou un bouton. Nous nous référons parfois à ces [composants de base](../style-guide/#Base-de-nom-de-composant-fortement-recommande) et ils ont tendance à être utilisés très fréquemment à travers vos composants.
 
 Le résultat est que de nombreux composants peuvent inclure de longues listes de composants de base:
 
@@ -172,7 +172,7 @@ export default {
 }
 ```
 
-Juste pour supporter relativement peu de balisage dans un template:
+Juste pour supporter relativement peu de balise dans un template:
 
 ```html
 <BaseInput
@@ -184,7 +184,7 @@ Juste pour supporter relativement peu de balisage dans un template:
 </BaseButton>
 ```
 
-Heureusement, si vous utilisez Webpack (ou [Vue CLI 3+](https://github.com/vuejs/vue-cli), qui utilise Webpack en interne), vous pouvez utiliser `require.context` pour enregistrer globalement précisément ces composants de base très courants. Voici un exemple de code que vous pouvez utiliser pour importer globalement des composants de base dans le fichier d'entrée de votre application. (ex. `src/main.js`):
+Heureusement, si vous utilisez webpack (ou [Vue CLI 3+](https://github.com/vuejs/vue-cli), qui utilise webpack en interne), vous pouvez utiliser `require.context` pour enregistrer globalement précisément ces composants de base très courants. Voici un exemple de code que vous pouvez utiliser pour importer globalement des composants de base dans le fichier d'entrée de votre application. (ex. `src/main.js`):
 
 ```js
 import Vue from 'vue'
@@ -196,7 +196,7 @@ const requireComponent = require.context(
   './components',
   // Suivre ou non les sous-dossiers
   false,
-  // L'expression régulière utilisée pour matcher les noms de fichiers de composant de base
+  // L'expression régulière utilisée pour faire concorder les noms de fichiers de composant de base
   /Base[A-Z]\w+\.(vue|js)$/
 )
 
