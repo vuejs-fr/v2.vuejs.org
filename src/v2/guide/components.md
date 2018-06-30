@@ -185,7 +185,7 @@ new Vue({
     posts: [
       { id: 1, title: 'Mon initiation avec Vue' },
       { id: 2, title: 'Blogger avec Vue' },
-      { id: 3, title: 'Pourquoi Vue est tellement cool' },
+      { id: 3, title: 'Pourquoi Vue est tellement cool' }
     ]
   }
 })
@@ -230,6 +230,45 @@ Si vous essayez cela dans votre template cependant, Vue va afficher une erreur, 
 ```
 
 À mesure que nos composants grandissent, il ne sera plus question uniquement d'un titre et d'un contenu pour le billet, mais également de la date de publication, des commentaires et bien plus. Définir une prop indépendamment pour chaque information pourrait devenir gênant :
+
+```html
+<blog-post
+  v-for="post in posts"
+  v-bind:key="post.id"
+  v-bind:title="post.title"
+  v-bind:content="post.content"
+  v-bind:publishedAt="post.publishedAt"
+  v-bind:comments="post.comments"
+></blog-post>
+```
+
+So this might be a good time to refactor the `<blog-post>` component to accept a single `post` prop instead:
+
+```html
+<blog-post
+  v-for="post in posts"
+  v-bind:key="post.id"
+  v-bind:post="post"
+></blog-post>
+```
+
+```js
+Vue.component('blog-post', {
+  props: ['post'],
+  template: `
+    <div class="blog-post">
+      <h3>{{ post.title }}</h3>
+      <div v-html="post.content"></div>
+    </div>
+  `
+})
+```
+
+<p class="tip">The above example and some future ones use JavaScript's [template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to make multi-line templates more readable. These are not supported by Internet Explorer (IE), so if you must support IE and are not transpiling (e.g. with Babel or TypeScript), use [newline escapes](https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript/) instead.</p>
+
+Now, whenever a new property is added to `post` objects, it will automatically be available inside `<blog-post>`.
+
+## Sending Messages to Parents with Events
 
 ```html
 <blog-post
