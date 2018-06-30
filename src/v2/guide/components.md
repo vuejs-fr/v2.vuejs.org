@@ -242,7 +242,7 @@ Si vous essayez cela dans votre template cependant, Vue va afficher une erreur, 
 ></blog-post>
 ```
 
-So this might be a good time to refactor the `<blog-post>` component to accept a single `post` prop instead:
+Le temps sera alors venu de refactoriser le composant `<blog-post>` pour accepter une propriété `post` unique à la place :
 
 ```html
 <blog-post
@@ -264,11 +264,9 @@ Vue.component('blog-post', {
 })
 ```
 
-<p class="tip">The above example and some future ones use JavaScript's [template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to make multi-line templates more readable. These are not supported by Internet Explorer (IE), so if you must support IE and are not transpiling (e.g. with Babel or TypeScript), use [newline escapes](https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript/) instead.</p>
+<p class="tip">L'exemple ci-dessus et plusieurs exemples par la suite utilisent une chaîne de caractères JavaScript appelée [modèles de libellés](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) (« template string ») permettant des templates multilignes plus lisibles. Ceux-ci ne sont pas supportés dans Internet Explorer (IE), aussi, si vous souhaitez supporter IE sans utiliser de transpilateur (p. ex. Babel ou TypeScript), [ajoutez un caractère d'échappement à chaque nouvelle ligne](https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript) à la place.</p>
 
-Now, whenever a new property is added to `post` objects, it will automatically be available inside `<blog-post>`.
-
-## Sending Messages to Parents with Events
+Maintenant, chaque fois qu'une nouvelle propriété sera ajoutée à l'objet `post`, elle sera automatiquement disponible dans `<blog-post>`.
 
 ```html
 <blog-post
