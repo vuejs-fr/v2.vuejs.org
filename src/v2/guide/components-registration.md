@@ -8,7 +8,7 @@ order: 101
 
 ## Les noms de composant
 
-Lors de la création de composant, il faudra toujours spécifier un nom. Par exemple, la declaration se fera comme suit : 
+Lors de la création de composants, il faudra toujours spécifier un nom. Par exemple, la déclaration se fera comme suit : 
 
 ```js
 Vue.component('my-component-name', { /* ... */ })
@@ -152,7 +152,7 @@ export default {
 
 Maintenant, et `ComponentA` et `ComponentC` peuvent être utilisés dans le template du composant `ComponentB`.
 
-### Enregistrement global automatique des composents de base
+### Enregistrement global automatique des composants de base
 
 La plupart de vos composants seront relativement génériques, ce qui ne fera qu'englober un élément comme un champ ou un bouton. Nous nous référons parfois à ces [composants de base](../style-guide/#Base-de-nom-de-composant-fortement-recommande) et ils ont tendance à être utilisés très fréquemment à travers vos composants.
 
