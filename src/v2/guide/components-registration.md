@@ -38,7 +38,7 @@ Lors de la définition d'un composant avec kebab-case, vous devez également uti
 Vue.component('MyComponentName', { /* ... */ })
 ```
 
-Lors de la définition d'un composant avec PascalCase, vous pouvez utiliser l'un ou l'autre cas lors du référencement de l'élément. Cela signifie que `<my-component-name>` et `<MyComponentName>` sont acceptables. À noter, cependant, que seuls les noms en kebab-case sont directement valides dans le DOM (c.-à-d. la forme non-chaine).
+Lors de la définition d'un composant avec PascalCase, vous pouvez utiliser l'un ou l'autre cas lors du référencement de l'élément. Cela signifie que `<my-component-name>` et `<MyComponentName>` sont acceptables. À noter, cependant, que seuls les noms en kebab-case sont directement valides dans le DOM (c.-à-d. la forme non-chaîne).
 
 ## Création globale
 
@@ -207,7 +207,7 @@ requireComponent.keys().forEach(fileName => {
   // Récupérer le nom du composent en PascalCase
   const componentName = upperFirst(
     camelCase(
-      // Enlever la chaine `'./` et l'extension du nom de fichier
+      // Enlever la chaîne `'./` et l'extension du nom de fichier
       fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
     )
   )
