@@ -16,7 +16,7 @@ Vue.component('my-component-name', { /* ... */ })
 
 Le nom du composant est le premier argument de `Vue.component`.
 
-Le nom que vous donnez à un composant peut dépendre de l'endroit où vous avez l'intention de l'utiliser. Lorsque vous utilisez un composant directement dans le DOM (par opposition à une chaîne ou un [composant monofichiers](single-file-components.html)), nous vous recommandons fortement de suivre [les règles du W3C](https://www.w3.org/TR/custom-elements/#concepts) pour les noms de balises personnalisés (tout en minuscules, contenir un trait d'union). Cela vous permet d'éviter les conflits avec les éléments HTML actuels et futurs.
+Le nom que vous donnez à un composant peut dépendre de l'endroit où vous avez l'intention de l'utiliser. Lorsque vous utilisez un composant directement dans le DOM (par opposition à une chaine ou un [composant monofichiers](single-file-components.html)), nous vous recommandons fortement de suivre [les règles du W3C](https://www.w3.org/TR/custom-elements/#concepts) pour les noms de balises personnalisés (tout en minuscules, contenir un trait d'union). Cela vous permet d'éviter les conflits avec les éléments HTML actuels et futurs.
 
 Vous pouvez voir d'autres recommandations pour les noms de composants dans le guide des [Conventions](../style-guide/#Base-component-names-strongly-recommended).
 
@@ -38,7 +38,7 @@ Lors de la définition d'un composant avec kebab-case, vous devez également uti
 Vue.component('MyComponentName', { /* ... */ })
 ```
 
-Lors de la définition d'un composant avec PascalCase, vous pouvez utiliser l'un ou l'autre cas lors du référencement de l'élément. Cela signifie que `<my-component-name>` et `<MyComponentName>` sont acceptables. À noter, cependant, que seuls les noms en kebab-case sont directement valides dans le DOM (c.-à-d. la forme non-chaîne).
+Lors de la définition d'un composant avec PascalCase, vous pouvez utiliser l'un ou l'autre cas lors du référencement de l'élément. Cela signifie que `<my-component-name>` et `<MyComponentName>` sont acceptables. À noter, cependant, que seuls les noms en kebab-case sont directement valides dans le DOM (c.-à-d. la forme non-chaine).
 
 ## Création globale
 
@@ -207,7 +207,7 @@ requireComponent.keys().forEach(fileName => {
   // Récupérer le nom du composent en PascalCase
   const componentName = upperFirst(
     camelCase(
-      // Enlever la chaîne `'./` et l'extension du nom de fichier
+      // Enlever la chaine `'./` et l'extension du nom de fichier
       fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
     )
   )
