@@ -4,11 +4,11 @@ type: guide
 order: 102
 ---
 
-> Cette page suppose que vous avez déjà lu les principes de base des [composants](components.html). Lisez [cette partie](components.html) en premier si les composants sont quelque chose de nouveau pour vous.
+> Cette page suppose que vous avez déjà lu les principes de base des [composants](components.html). Lisez-les en premier si les composants sont quelque chose de nouveau pour vous.
 
 ## Casse des props (camelCase vs. kebab-case)
 
-Les noms d'attributs HTML sont insensibles à la casse, aussi les navigateurs interpréteront de la même manière les majuscules et les minuscules. Cela signifie que pour l'utilisation des templates directement dans le DOM les props en camelCase doivent utiliser leur équivalent kebab-case (délimités par des tirets) :
+Les noms d'attributs HTML sont insensibles à la casse, aussi les navigateurs interprèteront de la même manière les majuscules et les minuscules. Cela signifie que pour l'utilisation des templates directement dans le DOM, les props en camelCase doivent utiliser leur équivalent kebab-case (délimités par des tirets) :
 
 ``` js
 Vue.component('blog-post', {
@@ -55,7 +55,7 @@ Plus tôt, vous avez vu comment passer des props de manière statique comme ceci
 <blog-post title="Mon initiation avec Vue"></blog-post>
 ```
 
-vous avez également vu qu'il était possible d'affecter des props dynamiquement avec `v-bind` comme ceci :
+Vous avez également vu qu'il était possible d'affecter des props dynamiquement avec `v-bind` comme ceci :
 
 ```html
 <!-- Affecter dynamiquement la valeur d'une variable -->
@@ -144,9 +144,9 @@ sera équivalent à :
 
 Toutes les données forment **un flux de donnée descendant unidirectionnel (« one-way-down binding »)** entre la propriété enfant et la propriété parente : quand la propriété du parent est mise à jour, cela va mettre à jour celle de l'enfant mais pas l'inverse. Cela empêche un composant enfant de muter accidentellement l'état du parent, ce qui rendrait le flux de données de votre application difficile à appréhender.
 
-De plus, chaque fois que le composant parent est mis à jour, toutes les props du composant enfant vont être mises à jour avec les dernières valeurs. Cela signifie que vous ne devriez **pas** essayer du muter une prop depuis l'intérieur d'un composant. Si vous le faite, Vue lancera un avertissement dans la console.
+De plus, chaque fois que le composant parent est mis à jour, toutes les props du composant enfant vont être mises à jour avec les dernières valeurs. Cela signifie que vous ne devriez **pas** essayer du muter une prop depuis l'intérieur d'un composant. Si vous le faites, Vue lancera un avertissement dans la console.
 
-Il y a couramment deux cas où vous seriez tenter de muter une prop :
+Il y a couramment deux cas où vous seriez tenté de muter une prop :
 
 1. **La prop est seulement utilisée pour passer une valeur initiale ; le composant enfant doit seulement l'utiliser comme donnée de propriété local.** Dans ce cas, le mieux est de définir une propriété locale qui utilise la prop comme valeur initiale :
 
@@ -170,11 +170,11 @@ Il y a couramment deux cas où vous seriez tenter de muter une prop :
   }
   ```
 
-<p class="tip">Notez que les objets et les tableaux en JavaScript sont passés par référence, ce qui signifie que si la prop est un objet ou un tableau, muter l'objet ou le tableu lui-même dans l'enfant **va** affecter l'état du parent.</p>
+<p class="tip">Notez que les objets et les tableaux en JavaScript sont passés par référence, ce qui signifie que si la prop est un objet ou un tableau, muter l'objet ou le tableau lui-même dans l'enfant **va** affecter l'état du parent.</p>
 
 ## Validation des props
 
-Les composants peuvent spécifier des conditions requises pour leurs props, comme les types que nous avons déjà vu. Si les conditions requises ne sont pas validées, Vue va vous en avertir dans la console JavaScript du navigateur. Cela est particulièrement utile quand on développe un composant destiné à être utilisé par les autres.
+Les composants peuvent spécifier des conditions requises pour leurs props, comme les types que nous avons déjà vus. Si les conditions requises ne sont pas validées, Vue va vous en avertir dans la console JavaScript du navigateur. Cela est particulièrement utile quand on développe un composant destiné à être utilisé par les autres.
 
 Pour spécifier des validations de prop, vous pouvez fournir un objet avec les conditions de validation pour les valeurs des `props` plutôt qu'un tableau de chaine de caractère. Par exemple :
 
@@ -232,7 +232,7 @@ Le `type` peut être l'un des constructeurs natifs suivants :
 - Function
 - Symbol
 
-En plus, `type` peut aussi être une fonction constructeur personnalisée et l'assertion pourra être testée avec `instanceof`. Par exemple, avec la fonction constructeur existante suivante :
+De plus, `type` peut aussi être une fonction constructeur personnalisée et l'assertion pourra être testée avec `instanceof`. Par exemple, avec la fonction constructeur existante suivante :
 
 ```js
 function Person (firstName, lastName) {
@@ -259,7 +259,7 @@ Un attribut non prop est un attribut passé à un composant mais qui n'a pas de 
 
 Bien que définir explicitement les props soit préféré pour passer des informations à un composant enfant, les auteurs de bibliothèques ne peuvent pas deviner dans quel contexte leur composant va être utilisé. C'est pourquoi il est possible qu'un composant puisse accepter des attributs arbitraires qui seront ajoutés sur l'élément racine du composant.
 
-Par exemple, imaginez que vous utilisiez un composant tiers `bootstrap-date-input` avec un plugin Bootstrap qui nécessite un `data-date-picker` attribut sul l'`input`. Nous pouvons ajouter cet attribut à notre instance de composant :
+Par exemple, imaginez que vous utilisiez un composant tiers `bootstrap-date-input` avec un plugin Bootstrap qui nécessite un `data-date-picker` attribut sur l'`input`. Nous pouvons ajouter cet attribut à notre instance de composant :
 
 ``` html
 <bootstrap-date-input data-date-picker="activated"></bootstrap-date-input>
@@ -289,7 +289,7 @@ Dans ce cas, deux valeurs différentes de `class` sont définies :
 - `form-control`, qui va être appliqué dans le template du composant,
 - `date-picker-theme-dark`, qui va être passé au composant depuis son parent.
 
-Pour la plupard des attributs, la valeur fournie par le composant va remplacé la valeur définie par le composant. Aussi par exemple, passer `type="text"` va remplacer `type="date"` et probablement tout casser ! Heureusement, les attributs `class` et `style` sont plus malins. Ces deux valeurs sont fusionnées, fournissant la valeur finale `form-control date-picker-theme-dark`.
+Pour la plupart des attributs, la valeur fournie par le composant va remplacer la valeur définie par le composant. Aussi par exemple, passer `type="text"` va remplacer `type="date"` et probablement tout casser ! Heureusement, les attributs `class` et `style` sont plus malins. Ces deux valeurs sont fusionnées, fournissant la valeur finale `form-control date-picker-theme-dark`.
 
 ### Désactiver l'héritage d'attribut
 
@@ -302,12 +302,12 @@ Vue.component('my-component', {
 })
 ```
 
-Cela est particulièrement utile avec l'utilisation combinée de la propriété d'instance `$attrs` qui contient les noms et valeurs passées à un composant comme ceci :
+Cela est particulièrement utile avec l'utilisation combinée de la propriété d'instance `$attrs` qui contient les noms et valeurs passés à un composant comme ceci :
 
 ```js
 {
   class: 'username-input',
-  placeholder: 'Enter your username'
+  placeholder: 'Entrez votre nom d'utilisateur'
 }
 ```
 
@@ -336,6 +336,6 @@ Ce modèle vous permet d'utiliser des composants de base comme des éléments HT
 <base-input
   v-model="username"
   class="username-input"
-  placeholder="Enter your username"
+  placeholder="Entrez votre nom d'utilisateur"
 ></base-input>
 ```
