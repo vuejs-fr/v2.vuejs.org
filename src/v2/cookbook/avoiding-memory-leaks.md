@@ -76,7 +76,7 @@ new Vue({
 })
 ```
 
-Pour voir cette fuite de mémoire en action, ouvrez [l'exemple CodePen](https://codepen.io/freeman-g/pen/qobpxo) avec Chrome et ensuite ouvrez le gestionnaire de tâches de Chrome. Pour ouvrir le gestionnaire de tâches sur Mac, cliquer sur Fenêtre > Gestionnaire de Tâches ou sur Windows, utiliser le raccourci Shift+Esc. Maintenant, cliquer sur le bouton montrer/cacher à peu près 50 fois. Vous devriez voir l'utilisation de la mémoire dans le gestionnaire de tâches de Chrome qui augmente sans jamais être nettoyer.
+Pour voir cette fuite de mémoire en action, ouvrez [l'exemple CodePen](https://codepen.io/freeman-g/pen/qobpxo) avec Chrome et ensuite ouvrez le gestionnaire de tâches de Chrome. Pour ouvrir le gestionnaire de tâches sur Mac, cliquer sur Fenêtre > Gestionnaire de Tâches ou sur Windows, utiliser le raccourci Shift+Esc. Maintenant, cliquer sur le bouton montrer/cacher à peu près 50 fois. Vous devriez voir l'utilisation de la mémoire dans le gestionnaire de tâches de Chrome qui augmente sans jamais être nettoyée.
 
 ![Exemple de fuite de mémoire](/images/memory-leak-example.png)
 
@@ -132,7 +132,7 @@ new Vue({
 
 ## Pourquoi doit-on gérer la mémoire
 
-La gestion de la mémoire et les testes de performance peuvent facilement être négligés dans l'envie de livrer rapidement, néanmoins, utiliser peu de mémoire est toujours important pour l'expérience utilisateur.
+La gestion de la mémoire et les tests de performance peuvent facilement être négligés dans l'envie de livrer rapidement, néanmoins, utiliser peu de mémoire est toujours important pour l'expérience utilisateur.
 
 Considérer les types d'appareils que vos utilisateurs peuvent utiliser et quelle utilisation en font-ils. Utilisent-ils des ordinateurs portables avec peu de mémoire ou des appareils mobiles? Est-ce qu'ils font beaucoup de navigation à l'intérieur de votre application? Si c'est le cas, une bonne gestion de la mémoire peut aider à éviter de crasher le navigateur de l'utilisateur. Même si ce n'est pas le cas, vous pouvez toujours avoir une dégradation des performances sur une longue période d'utilisation de votre app si vous ne faites pas attention.
 
@@ -150,7 +150,7 @@ beforeDestroy: function () {
 }
 ```
 
-## Modèle altérnatifs
+## Modèles alternatifs
 
 Nous avons discuté de la gestion de mémoire quand on enlève des éléments, mais qu'arrive-t-il quand on veut intentionnellement garder l'état et les éléments dans la mémoire? Dans ce cas, on peut utiliser le composant [keep-alive](/v2/api/#keep-alive).
 
@@ -165,7 +165,7 @@ Quand on enveloppe un composant avec `keep-alive`, son état est préservé et d
 ```
 Cette technique peut être utile pour améliorer l'expérience utilisateur. Par exemple, imaginez qu'un utilisateur commence à écrire un texte sur une page et ensuite change de page. Si l'utilisateur revient sur la première page, son texte sera toujours là.
 
-Quand on utilise kee-alive, on a accès à deux lifecycle hooks de plus: `activated` et `deactivated`. Si on veut nettoyer ou changer les données quand un keep-alive composant est enlevé, on peut le faire dans le hook `deactivated`.
+Quand on utilise keep-alive, on a accès à deux lifecycle hooks de plus: `activated` et `deactivated`. Si on veut nettoyer ou changer les données quand un keep-alive composant est enlevé, on peut le faire dans le hook `deactivated`.
 
 ```js
 deactivated: function () {
@@ -175,4 +175,4 @@ deactivated: function () {
 
 ## Conclusion
 
-Vue permet de facilement développer de magnifiques, réactives applications JavaScript, mais vous devez toujours faire attention aux fuites de mémoire. Ces fuites vont souvent survenir quand on utilise des bibliothèques additionnel qui manipulent la DOM en dehors de Vue. Soyez sure de tester votre application pour les fuites de mémoire et faites attention de bien nettoyer vos composants si nécessaire.
+Vue permet de facilement développer de magnifiques, réactives applications JavaScript, mais vous devez toujours faire attention aux fuites de mémoire. Ces fuites vont souvent survenir quand on utilise des bibliothèques additionnelles qui manipulent la DOM en dehors de Vue. Soyez sure de tester votre application pour les fuites de mémoire et faites attention de bien nettoyer vos composants si nécessaire.
