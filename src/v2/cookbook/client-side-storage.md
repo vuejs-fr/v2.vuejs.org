@@ -1,14 +1,14 @@
 ---
-title: Stockage coté client
+title: Stockage côté client
 type: cookbook
 order: 11
 ---
 
 ## Exemple de base
 
-Le stockage coté client est un excellent moyen de rapidement ajouter un gain de pérformance à une application. En stockant les données sur le navigateur, on peut récupérer ces données sans passer par le serveur chaque fois que l'utilisateur en a besoin. Bien que très utile hors ligne, même en ligne les utilisateurs peuvent bénéficier d'une utilisation locale plutôt que d'utiliser un serveur distant. Le stockage coté client peut être fait avec les [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies), le [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) (techniquement "Web Storage"), une [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), et [WebSQL](https://www.w3.org/TR/webdatabase/) (une méthode périmée qui ne devrait plus être utilisée dans de nouveaux projets).
+Le stockage côté client est un excellent moyen de rapidement ajouter un gain de pérformance à une application. En stockant les données sur le navigateur, on peut récupérer ces données sans passer par le serveur chaque fois que l'utilisateur en a besoin. Bien que très utile hors ligne, même en ligne les utilisateurs peuvent bénéficier d'une utilisation locale plutôt que d'utiliser un serveur distant. Le stockage côté client peut être fait avec les [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies), le [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) (techniquement "Web Storage"), une [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), et [WebSQL](https://www.w3.org/TR/webdatabase/) (une méthode périmée qui ne devrait plus être utilisée dans de nouveaux projets).
 
-Dans ce livre de recettes on va se concentrer sur le Local Storage, le moyen de stockage le plus simple. Le Local Storage utilise un système de clé/valeur pour stocker les données. Il est limité au stockage de simples valeurs mais des données plus complexe peuvent être stockées si on est prêt à encoder et décoder les valeurs en JSON. En général, Le Local Storage est approprié pour des petits groupes de données qu'on voudrait garder en mémoire, comme des préférences ou les informations d'un formulaire. De plus grosses données avec une structure plus complexe feraient mieux d'être stockées sur une IndexedDB.
+Dans ce cookbook on va se concentrer sur le Local Storage, le moyen de stockage le plus simple. Le Local Storage utilise un système de clé/valeur pour stocker les données. Il est limité au stockage de simples valeurs mais des données plus complexe peuvent être stockées si on est prêt à encoder et décoder les valeurs en JSON. En général, Le Local Storage est approprié pour des petits groupes de données qu'on voudrait garder en mémoire, comme des préférences ou les informations d'un formulaire. De plus grosses données avec une structure plus complexe feraient mieux d'être stockées sur une IndexedDB.
 
 Commençons par un simple exemple basé sur un formulaire:
 
@@ -46,7 +46,7 @@ Vous pouvez le tester vous-même ici:
 <p data-height="265" data-theme-id="0" data-slug-hash="KodaKb" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/KodaKb/">test du localstorage</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-Écrivez quelque chose dans le formulaire et rechargez la page. Vous remarquerez que la valeur que vous aviez écrit va s'afficher automatiquement. N'oubliez pas que votre navigateur a d'excellents outils de développement pour inspecter le stockage coté client. Voici un exemple sur Firefox:
+Écrivez quelque chose dans le formulaire et rechargez la page. Vous remarquerez que la valeur que vous aviez écrit va s'afficher automatiquement. N'oubliez pas que votre navigateur a d'excellents outils de développement pour inspecter le stockage côté client. Voici un exemple sur Firefox:
 
 ![Stockage devtools sur Firefox](/images/devtools-storage.png)
 
@@ -168,7 +168,7 @@ const app = new Vue({
 })
 ```
 
-Dans cette application, on a utilisé l'API Local Storage à la place d'un accès "direct". Les deux marchent mais utiliser l'API est générallement la méthode préférée. `mounted` doit récupérer et parser la valeur en JSON. Si il y a un problème, on peut assumer que les données sont corrompues et les supprimer. (N'oubliez pas, quand votre application utilise le stockage coté client, l'utilisateur y a accès et peut modifier les modifier à volonter.)
+Dans cette application, on a utilisé l'API Local Storage à la place d'un accès "direct". Les deux marchent mais utiliser l'API est générallement la méthode préférée. `mounted` doit récupérer et parser la valeur en JSON. Si il y a un problème, on peut assumer que les données sont corrompues et les supprimer. (N'oubliez pas, quand votre application utilise le stockage côté client, l'utilisateur y a accès et peut modifier les modifier à volonter.)
 
 Nous avons trois méthodes pour s'occuper de nos chats. `addCat` et `removeCat` s'occupe de mettre à jour les données de Vue stockées dans `this.cats`. Ensuite elles appellent `saveCats` qui s'occupe de sérialiser et sauver les données. Vous pouvez vous amuser avec la version ci-dessous.
 
