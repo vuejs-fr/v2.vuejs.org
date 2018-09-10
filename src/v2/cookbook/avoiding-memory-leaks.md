@@ -12,7 +12,7 @@ Les fuites de mémoire dans les applications Vue ne viennent pas de Vue, elles p
 
 ## Exemple
 
-L'exemple suivant montre une fuite de mémoire causée par l'utilisation de la bibliothèque [Choices.js](https://github.com/jshjohnson/Choices) dans un composant Vue et pas proprement nettoyée. Plus tard nous verrons comment enlever l'empreinte de Choices.js et éviter les fuites de mémoire.
+L'exemple suivant montre une fuite de mémoire causée par l'utilisation de la bibliothèque [Choices.js](https://github.com/jshjohnson/Choices) dans un composant Vue où le nettoyage n'est pas fait proprement. Plus tard nous verrons comment enlever l'empreinte de Choices.js et éviter les fuites de mémoire.
 
 Dans l'exemple ci-dessous, on ajoute énormément d'options dans un select et ensuite on utilise un bouton montrer/cacher avec une directive [v-if](/v2/guide/conditional.html) pour l'ajouter et l'enlever de la DOM virtuel. Le problème avec cet exemple est que la directive `v-if` enlève l'élément parent de la DOM, mais on ne nettoie pas les pièces additionnelles de la DOM créées par Choices.js, ce qui crée une fuite de mémoire.
 
@@ -134,7 +134,7 @@ new Vue({
 
 La gestion de la mémoire et les tests de performance peuvent facilement être négligés dans l'envie de livrer rapidement, néanmoins, utiliser peu de mémoire est toujours important pour l'expérience utilisateur.
 
-Considérer les types d'appareils que vos utilisateurs peuvent utiliser et quelle utilisation en font-ils. Utilisent-ils des ordinateurs portables avec peu de mémoire ou des appareils mobiles? Est-ce qu'ils font beaucoup de navigation à l'intérieur de votre application? Si c'est le cas, une bonne gestion de la mémoire peut aider à éviter de crasher le navigateur de l'utilisateur. Même si ce n'est pas le cas, vous pouvez toujours avoir une dégradation des performances sur une longue période d'utilisation de votre app si vous ne faites pas attention.
+Considérer les types d'appareils que vos utilisateurs peuvent utiliser et quelle utilisation en font-ils. Utilisent-ils des ordinateurs portables avec peu de mémoire ou des appareils mobiles ? Est-ce qu'ils font beaucoup de navigation à l'intérieur de votre application ? Si c'est le cas, une bonne gestion de la mémoire peut aider à éviter de crasher le navigateur de l'utilisateur. Même si ce n'est pas le cas, vous pouvez toujours avoir une dégradation des performances sur une longue période d'utilisation de votre app si vous ne faites pas attention.
 
 ## Cas pratique
 
@@ -152,7 +152,7 @@ beforeDestroy: function () {
 
 ## Modèles alternatifs
 
-Nous avons discuté de la gestion de mémoire quand on enlève des éléments, mais qu'arrive-t-il quand on veut intentionnellement garder l'état et les éléments dans la mémoire? Dans ce cas, on peut utiliser le composant [keep-alive](/v2/api/#keep-alive).
+Nous avons discuté de la gestion de mémoire quand on enlève des éléments, mais qu'arrive-t-il quand on veut intentionnellement garder l'état et les éléments dans la mémoire ? Dans ce cas, on peut utiliser le composant [keep-alive](/v2/api/#keep-alive).
 
 Quand on enveloppe un composant avec `keep-alive`, son état est préservé et donc gardé en mémoire.
 
