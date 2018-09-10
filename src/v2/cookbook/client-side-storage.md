@@ -6,9 +6,9 @@ order: 11
 
 ## Exemple de base
 
-Le stockage côté client est un excellent moyen de rapidement ajouter un gain de pérformance à une application. En stockant les données sur le navigateur, on peut récupérer ces données sans passer par le serveur chaque fois que l'utilisateur en a besoin. Bien que très utile hors ligne, même en ligne les utilisateurs peuvent bénéficier d'une utilisation locale plutôt que d'utiliser un serveur distant. Le stockage côté client peut être fait avec les [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies), le [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) (techniquement "Web Storage"), une [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), et [WebSQL](https://www.w3.org/TR/webdatabase/) (une méthode périmée qui ne devrait plus être utilisée dans de nouveaux projets).
+Le stockage côté client est un excellent moyen de rapidement ajouter un gain de performance à une application. En stockant les données sur le navigateur, on peut récupérer ces données sans passer par le serveur chaque fois que l'utilisateur en a besoin. Bien que très utile hors-ligne, même en ligne les utilisateurs peuvent bénéficier d'une utilisation locale plutôt que d'utiliser un serveur distant. Le stockage côté client peut être fait avec les [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies), le [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) (techniquement "Web Storage"), une [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), et [WebSQL](https://www.w3.org/TR/webdatabase/) (une méthode périmée qui ne devrait plus être utilisée dans de nouveaux projets).
 
-Dans ce cookbook on va se concentrer sur le Local Storage, le moyen de stockage le plus simple. Le Local Storage utilise un système de clé/valeur pour stocker les données. Il est limité au stockage de simples valeurs mais des données plus complexe peuvent être stockées si on est prêt à encoder et décoder les valeurs en JSON. En général, Le Local Storage est approprié pour des petits groupes de données qu'on voudrait garder en mémoire, comme des préférences ou les informations d'un formulaire. De plus grosses données avec une structure plus complexe feraient mieux d'être stockées sur une IndexedDB.
+Dans ce cookbook on va se concentrer sur le Local Storage, le moyen de stockage le plus simple. Le Local Storage utilise un système de clé/valeur pour stocker les données. Il est limité au stockage de simples valeurs mais des données plus complexes peuvent être stockées si on est prêt à encoder et décoder les valeurs en JSON. En général, Le Local Storage est approprié pour des petits groupes de données qu'on voudrait garder en mémoire, comme des préférences ou les informations d'un formulaire. De plus grosses données avec une structure plus complexe feraient mieux d'être stockées sur une IndexedDB.
 
 Commençons par un simple exemple basé sur un formulaire:
 
@@ -46,7 +46,7 @@ Vous pouvez le tester vous-même ici:
 <p data-height="265" data-theme-id="0" data-slug-hash="KodaKb" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/KodaKb/">test du localstorage</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-Écrivez quelque chose dans le formulaire et rechargez la page. Vous remarquerez que la valeur que vous aviez écrit va s'afficher automatiquement. N'oubliez pas que votre navigateur a d'excellents outils de développement pour inspecter le stockage côté client. Voici un exemple sur Firefox:
+Écrivez quelque chose dans le formulaire et rechargez la page. Vous remarquerez que la valeur que vous aviez écrite va s'afficher automatiquement. N'oubliez pas que votre navigateur a d'excellents outils de développement pour inspecter le stockage côté client. Voici un exemple sur Firefox:
 
 ![Stockage devtools sur Firefox](/images/devtools-storage.png)
 
@@ -54,7 +54,7 @@ Ici sur Chrome:
 
 ![Stockage devtools sur Chrome](/images/devtools-storage-chrome.png)
 
-Finallement, un exemple sur Microsoft Edge. Notez que vous pouvez trouver le valeurs stockées sous l'onglet Debugger.
+Finalement, un exemple sur Microsoft Edge. Notez que vous pouvez trouver les valeurs stockées sous l'onglet Debugger.
 
 ![Stockage devtools sur Edge](/images/devtools-storage-edge.png)
 
@@ -74,7 +74,7 @@ Immédiatement stocker une valeur peut ne pas être recommandé. Considérons un
 </div>
 ```
 
-Maintenant on a deux champs (encore, liés à une instance de Vue) mais maintenant il y a un bouton en plus qui lance un fonction `persist`. Regardons le JavaScript.
+Maintenant on a deux champs (encore, liés à une instance de Vue) mais maintenant il y a un bouton en plus qui lance une fonction `persist`. Regardons le JavaScript.
 
 ``` js
 const app = new Vue({
@@ -101,7 +101,7 @@ const app = new Vue({
 })
 ```
 
-Comme avant, `mounted` est utilisé pour charger les données, si elles existent. Cette fois, les données sont sauvées seulement si le bouton est cliqué. On pourrait aussi faire des validations ou transformations ici avant de stocker les données. On pourrait aussi stocker une date représentant le moment ou les données on été sauvées. Vous pouvez essayer cette version ci-dessous.
+Comme avant, `mounted` est utilisé pour charger les données, si elles existent. Cette fois, les données sont sauvées seulement si le bouton est cliqué. On pourrait aussi faire des validations ou transformations ici avant de stocker les données. On pourrait aussi stocker une date représentant le moment ou les données ont été sauvées. Vous pouvez essayer cette version ci-dessous.
 
 <p data-height="265" data-theme-id="0" data-slug-hash="rdOjLN" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage 2" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/rdOjLN/">test du localstorage 2</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -168,16 +168,16 @@ const app = new Vue({
 })
 ```
 
-Dans cette application, on a utilisé l'API Local Storage à la place d'un accès "direct". Les deux marchent mais utiliser l'API est générallement la méthode préférée. `mounted` doit récupérer et parser la valeur en JSON. Si il y a un problème, on peut assumer que les données sont corrompues et les supprimer. (N'oubliez pas, quand votre application utilise le stockage côté client, l'utilisateur y a accès et peut modifier les modifier à volonter.)
+Dans cette application, on a utilisé l'API Local Storage à la place d'un accès "direct". Les deux marchent mais utiliser l'API est généralement la méthode préférée. `mounted` doit récupérer et parser la valeur en JSON. S'il y a un problème, on peut assumer que les données sont corrompues et les supprimer. (N'oubliez pas, quand votre application utilise le stockage côté client, l'utilisateur y a accès et peut modifier les modifier à volonté.)
 
-Nous avons trois méthodes pour s'occuper de nos chats. `addCat` et `removeCat` s'occupe de mettre à jour les données de Vue stockées dans `this.cats`. Ensuite elles appellent `saveCats` qui s'occupe de sérialiser et sauver les données. Vous pouvez vous amuser avec la version ci-dessous.
+Nous avons trois méthodes pour s'occuper de nos chats. `addCat` et `removeCat` s'occupent de mettre à jour les données de Vue stockées dans `this.cats`. Ensuite elles appellent `saveCats` qui s'occupe de sérialiser et sauver les données. Vous pouvez vous amuser avec la version ci-dessous.
 
 <p data-height="265" data-theme-id="0" data-slug-hash="qoYbyW" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="localstorage, complex" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/qoYbyW/">localstorage, complexe</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-## Modèles altérnatifs
+## Modèles alternatifs
 
-Bien que l'API Local Storage est relativement simple, il manque quelques fonctions basiques qui seraient utile dans beaucoup d'applications. Les plugins suivants utilise le Local Storage et facilite son utilisation, tout en ajoutant quelques fonctionnalités comme les valeurs par défaut.
+Bien que l'API Local Storage est relativement simple, il manque quelques fonctions basiques qui seraient utiles dans beaucoup d'applications. Les plugins suivants utilisent le Local Storage et facilitent son utilisation, tout en ajoutant quelques fonctionnalités comme les valeurs par défaut.
 
 * [vue-local-storage](https://github.com/pinguinjkeke/vue-local-storage)
 * [vue-reactive-storage](https://github.com/ropbla9/vue-reactive-storage)
@@ -185,4 +185,4 @@ Bien que l'API Local Storage est relativement simple, il manque quelques fonctio
 
 ## Conclusion
 
-Bien que le navigateur ne va jamais remplacer un système de stockage de données sur serveur, avoir plusieurs possibilités de sauver ces données localement peu être un énorme boost de pérformance pour votre application. Travailler avec dans Vue.js le rend encore plus puissant.
+Bien que le navigateur ne va jamais remplacer un système de stockage de données sur serveur, avoir plusieurs possibilités de sauver ces données localement peut être un énorme boost de performance pour votre application. Travailler avec dans Vue.js le rend encore plus puissant.
