@@ -101,7 +101,7 @@ const app = new Vue({
 })
 ```
 
-Comme avant, `mounted` est utilisé pour charger les données, si elles existent. Cette fois, les données sont sauvées seulement si le bouton est cliqué. On pourrait aussi faire des validations ou transformations ici avant de stocker les données. On pourrait aussi stocker une date représentant le moment ou les données ont été sauvées. Vous pouvez essayer cette version ci-dessous.
+Comme avant, `mounted` est utilisé pour charger les données, si elles existent. Cette fois, les données sont sauvées seulement si le bouton est cliqué. On pourrait aussi faire des validations ou transformations ici avant de stocker les données. On pourrait aussi stocker une date représentant le moment ou les données ont été sauvées. Avec ces métadonnées, la fonction `mounted` pourrait vérifier si il faut encore stocker les valeurs. Vous pouvez essayer cette version ci-dessous.
 
 <p data-height="265" data-theme-id="0" data-slug-hash="rdOjLN" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage 2" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/rdOjLN/">test du localstorage 2</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
