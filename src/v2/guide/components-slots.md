@@ -6,12 +6,11 @@ order: 104
 
 > Cette page suppose que vous avez déjà lu les principes de base des [composants](components.html). Lisez-les en premier si les composants sont quelque chose de nouveau pour vous.
 
-## Les "Slot content" ou "Emplacements enfant"
+## Les « Slot content » ou « Contenu de slot »
 
-Vue implémente une logique de distribution des noeuds. Elle s'inspire du [Brouillon de spécification des WebComponents](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md) du W3C.
+Vue implémente une API de distribution de contenu inspiré du [Brouillon de spécification des WebComponents](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md) utilisant l'élément `<slot>` comme zone d'atterissage pour la distribution du contenu.
 
-Cette fonctionnalité permet d'organiser, avec l'utilisation des éléments `<slot>`, la distribution des noeuds enfant :
-
+Celà vous permet de composer vos composant ainsi :
 ``` html
 <navigation-link url="/profile">
   Mon profil
@@ -29,7 +28,7 @@ Dans le template `<navigation-link>`, nous aurons :
 </a>
 ```
 
-Lors du cycle de rendu du composent, l'élément `<slot>` est remplacé par "Mon profil". Les `<slot>` peuvent contenir de l'HTML :
+Lors du cycle de rendu du composent, l'élément `<slot>` est remplacé par « Mon profil ». Les éléments `<slot>` peuvent contenir n'importe quel code de template, incluant le HTML :
 
 ``` html
 <navigation-link url="/profile">
@@ -49,7 +48,7 @@ Ou encore faire appel à d'autres composants :
 </navigation-link>
 ```
 
-**Attention :** Si `<navigation-link>` ne contient **pas** d'élément `<slot>`, le contenu enfant sera simplement ignoré.
+Si `<navigation-link>` ne contient **pas** d'élément `<slot>`, le contenu enfant sera simplement ignoré.
 
 ## Les Slots nommés
 
@@ -69,7 +68,7 @@ Dans certains cas, il peut être interessant d'avoir plusieurs éléments `<slot
 </div>
 ```
 
-Dans le cas suivant, nous avons besoin de plusieurs éléments `<slot>` "nommés" avec un attribut `name` afin qu'ils soient clairement désignés et positionnés :
+Dans le cas suivant, l'élément `<slot>` à un l'attribut spécial `name` , qui peut être utilisé pour désigner des slots additionnels :
 
 ``` html
 <div class="container">
@@ -77,7 +76,6 @@ Dans le cas suivant, nous avons besoin de plusieurs éléments `<slot>` "nommés
     <slot name="header"></slot>
   </header>
   <main>
-    <!-- Ce slot est le slot par défaut -->
     <slot></slot>
   </main>
   <footer>
@@ -86,60 +84,56 @@ Dans le cas suivant, nous avons besoin de plusieurs éléments `<slot>` "nommés
 </div>
 ```
 
-Afin de distribuer le contenu dans les éléments `<slot>` appropriés, il suffit d'utiliser l'attribut réservé `slot` sur un élément du `<template>` du composant parent :
-
-``` html
-<base-layout>
-  <h1 slot="header">Le titre de ma page</h1>
-
-  <p>Un paragraphe pour le slot par défaut</p>
-  <p>Un autre paragraphe pour le slot par défaut</p>
-
-  <p slot="footer">Le pied de ma page</p>
-</base-layout>
-```
-
-Pour grouper plusieurs éléments dans un slot, il suffit d'utiliser une balise `<template>` directement dans le `<template>` du composant parent :
+Afin de distribuer le contenu dans les éléments `<slot>` appropriés, il suffit d'utiliser l'attribut réservé `slot` sur un élément `<template>` du composant parent :
 
 ```html
 <base-layout>
   <template slot="header">
     <h1>Le titre de ma page</h1>
-    <button>Menu</button>
   </template>
 
-  <p>Un paragraphe pour le slot par défaut</p>
-  <p>Un autre paragraphe pour le slot par défaut</p>
+  <p>Un paragraphe pour le slot par défaut.</p>
+  <p>Un autre paragraphe.</p>
 
   <template slot="footer">
-    <p>Le pied de ma page</p>
-    <a href="mailto:me@mail.com">Contactez moi</a>
+    <p>Ici les infos de contact</p>
   </template>
 </base-layout>
 ```
 
-**Attention :** Il ne peut y avoir qu'un seul **default slot** qui n'a pas d'attribut `name`. Dans l'exemple précédent, le rendu HTML produit sera :
+Ou utiliser l'attribut `slot` directement sur un élément normal:
+
+``` html
+<base-layout>
+  <h1 slot="header">Le titre de ma page</h1>
+
+  <p>Un paragraphe pour le slot par défaut.</p>
+  <p>Un autre paragraphe.</p>
+
+  <p slot="footer">Ici les infos de contact</p>
+</base-layout>
+```
+
+Il ne peut y avoir qu'un seul **default slot** qui recevra tous les éléments qui ne correspondent à aucun des slots nommés. Dans l'exemple précédent, le rendu HTML produit sera :
 
 ``` html
 <div class="container">
   <header>
     <h1>Le titre de ma page</h1>
-    <button>Menu</button>
   </header>
   <main>
-    <p>Un paragraphe pour le slot par défaut</p>
-    <p>Un autre paragraphe pour le slot par défaut</p>
+    <p>Un paragraphe pour le slot par défaut.</p>
+    <p>Un autre paragraphe.</p>
   </main>
   <footer>
-    <p>Le pied de ma page</p>
-    <a href="mailto:me@mail.com">Contactez moi</a>
+    <p>Ici les infos de contact</p>
   </footer>
 </div>
 ```
 
 ## Les slots avec contenu par défaut
 
-Dans certains cas, il peut être interessant de fournir un contenu par défaut pour vos slots. Par exemple, qu'un composant `<submit-button>` contienne le texte 'Envoyer' par défaut et que ce contenu soit facilement modifié par 'Sauvegarder', 'Télécharger', ...
+Dans certains cas, il peut être interessant de fournir un contenu par défaut pour vos slots. Par exemple, qu'un composant `<submit-button>` contienne le texte 'Envoyer' par défaut et que ce contenu soit facilement modifié par 'Sauvegarder', 'Télécharger', ou autre.
 
 Pour procéder de la sorte, il est possible de spécifier le contenu par défaut d'une balise `<slot>`.
 
@@ -153,7 +147,7 @@ Si le `<slot>` est rempli dans le composant parent, le contenu par défaut est r
 
 ## Scope de compilation du template
 
-Dans le cas suivant, la donnée dans le slot est utilisée de cette manière :
+Quand on utilise de la donnée dans le slot, comme dans l'exemple suivant :
 
 ``` html
 <navigation-link url="/profile">
@@ -161,15 +155,15 @@ Dans le cas suivant, la donnée dans le slot est utilisée de cette manière :
 </navigation-link>
 ```
 
-Le `<slot>` bénéficie des mêmes propriétés d'instance (même "scope" ou "contexte") que le reste du template parent. Le `<slot>` **ne** bénéficie en aucun cas des éléments du "scope" de l'instance de `<navigation-link>`. Par exemple, tenter d'accéder à la props `url` ne fonctionnera pas. A titre de règle générale, souvenez vous que :
+Le `<slot>` bénéficie des mêmes propriétés d'instance (même « scope » ou « contexte ») que le reste du template parent. Le `<slot>` **ne** bénéficie en aucun cas des éléments du « scope » de l'instance de `<navigation-link>`. Par exemple, tenter d'accéder à la props `url` ne fonctionnera pas. A titre de règle générale, souvenez vous que :
 
-> Tout ce qui est compilé dans le `<template>` parent accède au contexte parent. Tout ce qui est compilé dans le `<template>` enfant accède au contexte enfant.
+> Tout ce qui est dans le `<template>` parent est compilé dans le contexte parent. Tout ce qui est dans le `<template>` enfant est compilé dans le contexte enfant.
 
 ## Les slots scopés (ou slots avec accès au child scope)
 
 > Nouveauté en 2.1.0+
 
-Dans certains cas, il peut être interessant lors de l'utilisation d'un composant avec éléments `<slot>` réutilisables, de bénéficier du scope du composant enfant. Voici l'exemple d'un composant `<todo-list>` dont le `<template>` est :
+Dans certains cas, il peut être interessant lors de l'utilisation d'un composant avec éléments `<slot>` réutilisables, d'accéder à de la donnée du scope du composant enfant. Voici l'exemple d'un composant `<todo-list>` dont le `<template>` est :
 
 ```html
 <ul>
@@ -182,9 +176,9 @@ Dans certains cas, il peut être interessant lors de l'utilisation d'un composan
 </ul>
 ```
 
-Dans certaines parties de l'application, il serait interessant de personnaliser le rendu pour chaque éléments de la liste, en concervant `todo.text`. C'est possible avec les slots scopés.
+Dans certaines parties de l'application, il serait interessant de personnaliser le rendu pour chaque éléments de la liste, plutôt que d'afficher seulement `todo.text`. C'est possible avec les slots scopés.
 
-Pour utiliser cette fonctionnalité, nous allons englober le contenu du rendu d'élément de liste avec un élément `<slot>`, et fournir un jeu de donnée  via la directive `v-bind` (dans notre cas, l'objet `todo`) :
+Pour utiliser cette fonctionnalité, nous allons englober le contenu du rendu d'élément de liste avec un élément `<slot>`, et fournir un jeu de donnée provenant de son contexte : dans notre cas, l'objet `todo`) :
 
 ```html
 <ul>
@@ -202,7 +196,7 @@ Pour utiliser cette fonctionnalité, nous allons englober le contenu du rendu d'
 </ul>
 ```
 
-Lorsqu'on utiliser le composant `<todo-list>`, il devient alors possible de fournir un `<template>` de rendu des éléments de la liste et il est possible d'accèder à la donnée du `slot` avec l'attribut `slot-scope` :
+Lorsqu'on utiliser le composant `<todo-list>`, il devient alors possible de fournir de façon optionnelle un `<template>` alternatif de rendu des éléments de la liste, et d'accèder à la donnée du `slot` enfant avec l'attribut `slot-scope` :
 
 ```html
 <todo-list v-bind:todos="todos">
@@ -218,13 +212,9 @@ Lorsqu'on utiliser le composant `<todo-list>`, il devient alors possible de four
 
 > Dans 2.5.0+, `slot-scope` n'est plus limité aux éléments  `<template>` et peut être utilisé sur n'importe quel élément ou composant (`<div>`, `<my-component>`, ...)
 
-### Affectation par décomposition du `slot-scope` [Affecter par décomposition](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition)
+### Affectation par décomposition du `slot-scope`
 
-`slot-scope` peut actuellement recevoir une expression JavaScript valide quoi pourrait apparaitre en argument de définition d'une fonction.
-Attention cependant, cette fonctionnalité est soumise à l'utilisation des environnements suivants :
-[Composants monofichiers](single-file-components.html) ou [Navigateurs modernes](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#Compatibilité_des_navigateurs)
-
-Exemple :
+La valeur de l'attribut `slot-scope` peut actuellement recevoir une expression JavaScript valide qui pourrait apparaitre en argument de définition d'une fonction. Attention cependant, cette fonctionnalité est soumise à l'utilisation des environnements suivants : [Composants monofichiers](single-file-components.html) ou [Navigateurs modernes](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#Compatibilité_des_navigateurs) vous pouvez alors utiliser [Affecter par décomposition (ES2015)](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition) dans l'expression, de cette manière :
 
 ```html
 <todo-list v-bind:todos="todos">

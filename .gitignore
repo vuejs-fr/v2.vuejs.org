@@ -6,6 +6,5 @@ node_modules/
 public/
 .deploy*/
 src/_drafts
-
 # Idea folder
 .idea
