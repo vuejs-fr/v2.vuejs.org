@@ -178,8 +178,7 @@ Dans certains cas, il peut être intéressant lors de l'utilisation d'un composa
 
 Dans certaines parties de l'application, il serait intéressant de personnaliser le rendu pour chaque élément de la liste, plutôt que d'afficher seulement `todo.text`. C'est possible avec les slots scopés.
 
-Pour utiliser cette fonctionnalité, 
-nous allons englober le contenu des todos dans un élément `<slot>`, et lui fournir des données appartenant/pertinentes à son contexte : dans notre cas, l'objet `todo`) :
+Pour utiliser cette fonctionnalité, nous allons englober le contenu des todos dans un élément `<slot>`, et lui fournir des données appartenant/pertinentes à son contexte : dans notre cas, l'objet `todo`) :
 
 ```html
 <ul>
