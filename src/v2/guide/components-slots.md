@@ -10,7 +10,7 @@ order: 104
 
 Vue implémente une API de distribution de contenu inspirée du [Brouillon de spécification des WebComponents](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md) utilisant l'élément `<slot>` comme zone de distribution de contenu.
 
-Cela vous permet de composer vos composant ainsi :
+Cela vous permet de composer vos composants ainsi :
 ``` html
 <navigation-link url="/profile">
   Mon profil
