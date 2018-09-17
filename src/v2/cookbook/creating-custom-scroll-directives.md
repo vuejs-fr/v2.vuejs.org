@@ -152,6 +152,6 @@ Nous pouvons alors utiliser cette animation directement dans le `<template>`, en
 
 ## Alternative
 
-Les directives personnalisées sont extrèmement utiles, mais vous pouvez trouver des situations dans lesquelles vous aurez besoin de quelque chose de très spécifique, qui existe déjà dans des librairies de défilement et que vous ne souhaitez pas réécrire totalement vous-même.  
+Les directives personnalisées sont extrêmement utiles, mais vous pouvez trouver des situations dans lesquelles vous aurez besoin de quelque chose de très spécifique, qui existe déjà dans des librairies de défilement et que vous ne souhaitez pas réécrire totalement vous-même.  
 
 [Scrollmagic](http://scrollmagic.io/) est doté d'un écosysteme très riche, une très bonne documentation ainsi que des démos à explorer. Cela inclus de façon non exhaustive, des cas comme [l'effet parallax](http://scrollmagic.io/examples/advanced/parallax_scrolling.html), [Épingler en cascade](http://scrollmagic.io/examples/expert/cascading_pins.html), [Recouvrement de section](http://scrollmagic.io/examples/basic/section_wipes_natural.html), et [responsive duration](http://scrollmagic.io/examples/basic/responsive_duration.html).
