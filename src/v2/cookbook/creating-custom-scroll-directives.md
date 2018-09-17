@@ -1,12 +1,12 @@
 ---
-title: Créer un directive de défilement personnalisée
+title: Créer une directive de défilement personnalisée
 type: cookbook
 order: 7
 ---
 
 ## Exemple de base
 
-Plus d'une fois nous avons besoin d'introduire un comportemant, en particulier d'animation, lors du défilement d'un site. Il y a plusieurs façons d'y parvenir mais le plus simple, en évitant d'accumuler les dépendances, est d'utiliser une [Directives personnalisées](https://fr.vuejs.org/v2/guide/custom-directive.html) pour créer un « hook » qui sera déclenché lors du défilement.
+Plus d'une fois nous avons besoin d'introduire un comportement, en particulier d'animation, lors du défilement d'un site. Il y a plusieurs façons d'y parvenir mais le plus simple, en évitant d'accumuler les dépendances, est d'utiliser une [Directives personnalisées](https://fr.vuejs.org/v2/guide/custom-directive.html) pour créer un « hook » qui sera déclenché lors du défilement.
 
 ```js
 Vue.directive('scroll', {
@@ -98,13 +98,13 @@ Nous devons retirer la transition CSS de l'exemple précédent puisque dans cett
 
 ## Le bénéfice de l'utilisation des directives personnalisées
 
-Vue est riche en option pour les directive, ce qui permet de couvrir la majorité des cas d'utilisation, ce qui permet d'améliorer la production et l'expérience de développement. Mais pour certains « cas limite » qui ne seraient pas couverts par le framework, ce sera à vous de réaliser la directive qui repondra parfaitement à vos besoins.
+Vue est riche en option pour les directives, ce qui permet de couvrir la majorité des cas d'utilisation, ce qui permet d'améliorer la production et l'expérience de développement. Mais pour certains « cas limite » qui ne seraient pas couverts par le framework, ce sera à vous de réaliser la directive qui répondra parfaitement à vos besoins.
 
-Ajouter et retirer des « Evenements Scroll » sur un élément est un bon cas d'utilisation de cette technique, parce qu'a l'image des autres directives, elle est nécessairement liée à un élément sinon, il faudrait trouver l'élément dans le DOM. Ce modèle évite d'avoir besoin de parcourir le DOM et conserve une logique évènementielle avec le noeud auquel il fait référence.
+Ajouter et retirer des « évènements de défilement/scroll » sur un élément est un bon cas d'utilisation de cette technique, parce qu'à l'image des autres directives, elle est nécessairement liée à un élément sinon, il faudrait trouver l'élément dans le DOM. Ce modèle évite d'avoir besoin de parcourir le DOM et conserve une logique évènementielle avec le noeud auquel il fait référence.
 
 ## Exemple concret : Utiliser une directive de défilement personnalisée pour animer en cascade
 
-Au cours de la création de vos sites, vous constaterez que vous réutilisez régulièrement les mêmes logiques d'animation à plusieurs endroits. C'est simple, nous allons créer une directive super spécifique ? Et bien, typiquement si nous souhaitons pouvoir la réutiliser, nous devons la rendre _légèrement_ personalisable pour chaque cas d'utilisation.
+Au cours de la création de vos sites, vous constaterez que vous réutilisez régulièrement les mêmes logiques d'animation à plusieurs endroits. C'est simple, nous allons créer une directive super spécifique ? Et bien, typiquement si nous souhaitons pouvoir la réutiliser, nous devons la rendre _légèrement_ personnalisable pour chaque cas d'utilisation.
 
 Afin de conserver un code concis et lisible, nous allons transmettre des arguments prédéfinis, tels que le point de départ et de fin d'animation au fur et à mesure que nous parcourons la page.
 
@@ -113,7 +113,7 @@ Afin de conserver un code concis et lisible, nous allons transmettre des argumen
 <p data-height="500" data-theme-id="5162" data-slug-hash="c8c55e3e0bba997350551dd747119100" data-default-tab="result" data-user="sdras" data-embed-version="2" data-pen-title="Scrolling Example- Using Custom Directives in Vue" class="codepen">See the Pen <a href="https://codepen.io/sdras/pen/c8c55e3e0bba997350551dd747119100/">Scrolling Example- Using Custom Directives in Vue</a> by Sarah Drasner (<a href="https://codepen.io/sdras">@sdras</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-Dans la démo ci-dessus, chaqu'une des sections comporte deux différents types d'animation déclenchées lors du défilement : Une animation type « morphing » et une animation type « dessin » qui anime individuellement chaqu'un des `<path>` du SVG. Réutilisons ces deux animation pour créer une directive personnalisée pour chaqu'un des cas. Les arguments qui seront transmis vont nous aider à garder l'ensemble simple et réutilisable.
+Dans la démo ci-dessus, chacune des sections comporte deux différents types d'animations déclenchés lors du défilement : Une animation type « morphing » et une animation type « dessin » qui anime individuellement chaqu'un des `<path>` du SVG. Réutilisons ces deux animation pour créer une directive personnalisée pour chaqu'un des cas. Les arguments qui seront transmis vont nous aider à garder l'ensemble simple et réutilisable.
 
 Pour analyser l'exemple de l'animation « morphing », nous aurons besoin d'indiquer ou l'animation commence et termine ainsi que la valeur du `<path>` qui va permettre le calcul du morphing. Ces arguments sont définis via `binding.value.foo` :
 
@@ -154,4 +154,4 @@ Nous pouvons alors utiliser cette animation directement dans le `<template>`, en
 
 Les directives personnalisées sont extrèmement utiles, mais vous pouvez trouver des situations dans lesquelles vous aurez besoin de quelque chose de très spécifique, qui existe déjà dans des librairies de défilement et que vous ne souhaitez pas réécrire totalement vous-même.  
 
-[Scrollmagic](http://scrollmagic.io/) est doté d'un écosystem très riche, une très bonne documentation ainsi que des démos à explorer. Celà inclus de façon non exaustive, des cas comme [l'effet parallax](http://scrollmagic.io/examples/advanced/parallax_scrolling.html), [Epingler en cascade](http://scrollmagic.io/examples/expert/cascading_pins.html), [Recouvrement de section](http://scrollmagic.io/examples/basic/section_wipes_natural.html), et [responsive duration](http://scrollmagic.io/examples/basic/responsive_duration.html).
+[Scrollmagic](http://scrollmagic.io/) est doté d'un écosysteme très riche, une très bonne documentation ainsi que des démos à explorer. Cela inclus de façon non exhaustive, des cas comme [l'effet parallax](http://scrollmagic.io/examples/advanced/parallax_scrolling.html), [Épingler en cascade](http://scrollmagic.io/examples/expert/cascading_pins.html), [Recouvrement de section](http://scrollmagic.io/examples/basic/section_wipes_natural.html), et [responsive duration](http://scrollmagic.io/examples/basic/responsive_duration.html).
