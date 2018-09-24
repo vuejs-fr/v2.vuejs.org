@@ -4,7 +4,7 @@ type: cookbook
 order: 13
 ---
 
-## Exemple simple
+## Exemple
 
 Vous avez construit votre app Vue.js en utilisant le magnifique [Vue.js webpack template](https://github.com/vuejs-templates/webpack) et maintenant vous voulez vraiment impressionner vos collègues en montrant que vous pouvez aussi l'exécuter dans un container Docker.
 
@@ -25,7 +25,7 @@ COPY package*.json ./
 # installe les dépendances du projet
 RUN npm install
 
-# copie les fichiers et dossiers du project dans le dossier de travail (par exemple : le dossier 'app')
+# copie les fichiers et dossiers du projet dans le dossier de travail (par exemple : le dossier 'app')
 COPY . .
 
 # construit l'app pour la production en la minifiant
@@ -77,10 +77,10 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-Regardons qu'est-ce qu'il ce passe ici :
+Regardons ce qu'il se passe ici :
 * nous avons fragmenté notre `Dockerfile` original en plusieurs étapes en utilisant la fonction [multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/) de Docker;
-* la première étape est responsable de la création d'un artefact prêt pour la production de notre app Vue.js;
-* la deuxième étape est responsable du service de notre artefact en utilisant NGINX.
+* la première étape est responsable de la création d'un artéfact prêt pour la production de notre app Vue.js;
+* la deuxième étape est responsable du service de notre artéfact en utilisant NGINX.
 
 Maintenant, construisons l'image Docker de notre app Vue.js :
 
@@ -98,32 +98,32 @@ On devrait avoir accès à notre app sur `localhost:8080`.
 
 ## Contexte additionnel
 
-Si vous lisez ce tutoriel, il y a des chances que vous savez déjà pourquoi vous avez décidé de dockeriser votre app Vue.js. Mais si vous avez simplement atterrit sur cette page après avoir cliqué sur le bouton `j'ai de la chance` de Google, laissez moi partager quelques bonnes raisons de le faire.
+Si vous lisez ce tutoriel, il y a des chances que vous savez déjà pourquoi vous avez décidé de dockeriser votre app Vue.js. Mais si vous avez simplement atterri sur cette page après avoir cliqué sur le bouton `j'ai de la chance` de Google, laissez-moi partager quelques bonnes raisons de le faire.
 
 La tendance actuelle est de créer des applications en utilisant l'approche [Cloud-Native](https://pivotal.io/cloud-native) qui tourne autour des mots suivant :
 * Microservices
-* DevOps (Développement Opérationnel)
+* DevOps (Développement opérationnel)
 * Continuous Delivery
 
 Regardons comment ces concepts affectent notre décision de dockeriser notre app Vue.js.
 
 ### Les effets des microservices
 
-En adoptant le [style d'architectural des microservices](https://martinfowler.com/microservices/), on finit par construire une seule application comme une suite de petits services, chaque service est lancé de manière indépendante et communique avec des mécanismes léger. Ces services sont construits autour des besoins du business et sont déployés indépendamment via des méthodes de déploiement automatisées.
+En adoptant le [style d'architectural des microservices](https://martinfowler.com/microservices/), on finit par construire une seule application comme une suite de petits services, chaque service est lancé de manière indépendante et communique avec des mécanismes légers. Ces services sont construits autour des besoins du bizness et sont déployés indépendamment via des méthodes de déploiement automatisées.
 
 Alors, utiliser cette approche architecturale implique dans la plupart des cas de développer et livrer notre front-end comme un service indépendant.
 
 ### Les effets du DevOps
 
-L'adoption de la culture, des outils et des pratiques d’ingénierie agile [DevOps](https://martinfowler.com/bliki/DevOpsCulture.html) a, entre autres, le bon effet d'augmenter la collaboration entre les rôles de développement et des opérations. Un des principaux problèmes dans le passé (et encore aujourd'hui parfois) est que l'équipe de développement tend à être intéressée par les opérations et la maintenance du système une fois que ça a été donné à l'équipe d'intégration (DevOps), et cette dernière tend à ne pas être vraiment au courant du but du système, et donc est réticente à satisfaire les besoins opérationnels du système (aussi appelé "les caprices des développeurs")
+L'adoption de la culture, des outils et des pratiques d’ingénierie agile [DevOps](https://martinfowler.com/bliki/DevOpsCulture.html) a, entre autres, le bon effet d'augmenter la collaboration entre les rôles de développement et des opérations. Un des principaux problèmes dans le passé (et encore aujourd'hui parfois) est que l'équipe de développement tend à être intéressée par les opérations et la maintenance du système une fois que ça a été donné à l'équipe d'intégration (DevOps), et cette dernière tend à ne pas être vraiment au courant du but du système, et donc est réticente à satisfaire les besoins opérationnels du système (aussi appelé "les caprices des développeurs").
 
-livrer notre app Vue.js avec une image Docker aide à réduire, sinon supprimer totalement, les différences entre lancer le service sur l'ordinateur d'un développeur, un environnement de production ou n'importe quel autre environnement.
+Livrer notre app Vue.js avec une image Docker aide à réduire, sinon supprimer totalement, les différences entre lancer le service sur l'ordinateur d'un développeur, un environnement de production ou n'importe quel autre environnement.
 
-### Les effets du déploiement continue (Continuous Delivery)
+### Les effets du déploiement continu (Continuous Delivery)
 
-En utilisant le [déploiement continue](https://martinfowler.com/bliki/ContinuousDelivery.html) on construit nos logiciels de manière à ce qu'ils puissent potentiellement être déployés en production n'importe quand. Ces pratiques d'ingénierie sont permises grâce à ce qui est normalement appelé le [pipeline de déploiement continue](https://martinfowler.com/bliki/DeploymentPipeline.html). Le but d'un pipeline de déploiement continue est de fragmenté notre build en plusieurs étapes (par exemple : la compilation, les tests unitaires, les tests d’intégration, les tests de performance, etc) et laisser chaque étape vérifier notre artefact de build quand notre logiciel change. Chaque étape augmente notre confiance dans la stabilité du build de notre artefact, et donc, réduit le risque de casser quelque chose en production (ou n'importe quel autre environnement).
+En utilisant le [déploiement continu](https://martinfowler.com/bliki/ContinuousDelivery.html) on construit nos logiciels de manière à ce qu'ils puissent potentiellement être déployés en production n'importe quand. Ces pratiques d'ingénierie sont permises grâce à ce qui est normalement appelé le [pipeline de déploiement continu](https://martinfowler.com/bliki/DeploymentPipeline.html). Le but d'un pipeline de déploiement continu est de fragmenter notre build en plusieurs étapes (par exemple : la compilation, les tests unitaires, les tests d’intégration, les tests de performance, etc.) et laisser chaque étape vérifier notre artéfact de build quand notre logiciel change. Chaque étape augmente notre confiance dans la stabilité du build de notre artéfact, et donc, réduit le risque de casser quelque chose en production (ou n'importe quel autre environnement).
 
-Alors, créer une image Docker pour notre app Vue.js est une bonne chose car ça représente notre artefact de build final, le même artefact qui va être utilisé localement pour le développement et qui peut être utilisé pour le déploiement en production avec confiance.
+Alors, créer une image Docker pour notre app Vue.js est une bonne chose car ça représente notre artéfact de build final, le même artéfact qui va être utilisé localement pour le développement et qui peut être utilisé pour le déploiement en production avec confiance.
 
 ## Modèles alternatifs
 
