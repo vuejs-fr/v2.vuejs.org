@@ -1,16 +1,16 @@
 ---
-title: Using Axios to Consume APIs (EN)
+title: Utiliser Axios pour consommer des API
 type: cookbook
 order: 9
 ---
 
 ## Base Example
 
-<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>There are many times when building application for the web that you may want to consume and display data from an API. There are several ways to do so, but a very popular approach is to use [axios](https://github.com/axios/axios), a promise-based HTTP client.</p>
+<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>Lors de la création d'une application Web, il est fréquent que vous souhaitiez utiliser et afficher les données provenant d'une API. Il existe plusieurs manières de le faire, mais une approche très populaire consiste à utiliser [axios](https://github.com/axios/axios), un client HTTP basé sur les Promesses.</p>
 
-In this exercise, we'll use the [CoinDesk API](https://www.coindesk.com/api/) to walk through displaying Bitcoin prices, updated every minute. First, we'd install axios with either npm/yarn or through a CDN link.
+Dans cet exercice, nous allons utiliser l'[API CoinDesk](https://www.coindesk.com/api/) pour afficher les prix en Bitcoins qui sont mis à jour toutes les minutes. Premièrement, nous devons installer axios avec npm/yarn ou à partir d'un lien CDN.
 
-There are a number of ways we can request information from the API, but it's nice to first find out what the shape of the data looks like, in order to know what to display. In order to do so, we'll make a call to the API endpoint and output it so we can see it. We can see in the CoinDesk API documentation, that this call will be made to `https://api.coindesk.com/v1/bpi/currentprice.json`. So first, we'll create a data property that will eventually house our information, and we'll retrieve the data and assign it using the `mounted` lifecycle hook:
+Il existe plusieures manières de demander des informations à une API, mais il est préférable de d'abord savoir à quoi ressemble la structure des données qu'elles renvoient afin de savoir ce qu'elle va afficher. Pour ce faire, nous allons appeler le point de terminaison de l'API et afficher le résultat afin que nous puissions voir sa structure et son contenu. Nous pouvons voir dans la documentation de l'API de CoinDesk que l'appel doit être effectué à l'adresse `https://api.coindesk.com/v1/bpi/currentprice.json`. Nous allons donc commencer par créer une propriété de données qui hébergera nos informations, puis nous récupérerons les données et les attribuerons à l'aide du point de cycle de vie `mounted`:
 
 ```js
 new Vue({
