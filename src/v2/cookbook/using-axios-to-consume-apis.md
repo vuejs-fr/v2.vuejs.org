@@ -10,7 +10,7 @@ order: 9
 
 Dans cet exercice, nous allons utiliser l'[API CoinDesk](https://www.coindesk.com/api/) pour afficher les prix en Bitcoins qui sont mis à jour toutes les minutes. Premièrement, nous devons installer axios avec npm/yarn ou à partir d'un lien CDN.
 
-Il existe plusieures manières de demander des informations à une API, mais il est préférable de d'abord savoir à quoi ressemble la structure des données qu'elles renvoient afin de savoir ce qu'elle va afficher. Pour ce faire, nous allons appeler le point de terminaison de l'API et afficher le résultat afin que nous puissions voir sa structure et son contenu. Nous pouvons voir dans la documentation de l'API de CoinDesk que l'appel doit être effectué à l'adresse `https://api.coindesk.com/v1/bpi/currentprice.json`. Nous allons donc commencer par créer une propriété de données qui hébergera nos informations, puis nous récupérerons les données et les attribuerons à l'aide du point de cycle de vie `mounted`:
+Il existe plusieures manières de demander des informations à une API, mais il est préférable de d'abord savoir à quoi ressemble la structure des données qu'elle renvoit afin de savoir ce qu'elle va afficher. Pour ce faire, nous allons appeler le point de terminaison de l'API et afficher le résultat afin que nous puissions voir sa structure et son contenu. Nous pouvons voir dans la documentation de l'API de CoinDesk que l'appel doit être effectué à l'adresse `https://api.coindesk.com/v1/bpi/currentprice.json`. Nous allons donc commencer par créer une propriété de données qui hébergera nos informations, puis nous récupérerons les données et les attribuerons à l'aide du point de cycle de vie `mounted`:
 
 ```js
 new Vue({
@@ -34,18 +34,18 @@ new Vue({
 </div>
 ```
 
-And what we get is this:
+Et nous obtenons ceci :
 
-<p data-height="350" data-theme-id="32763" data-slug-hash="80043dfdb7b90f138f5585ade1a5286f" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="First Step Axios and Vue" class="codepen">See the Pen <a href="https://codepen.io/team/Vue/pen/80043dfdb7b90f138f5585ade1a5286f/">First Step Axios and Vue</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="350" data-theme-id="32763" data-slug-hash="80043dfdb7b90f138f5585ade1a5286f" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Premiere Étape Axios et Vue" class="codepen">Voir l'exemple <a href="https://codepen.io/team/Vue/pen/80043dfdb7b90f138f5585ade1a5286f/">Premiere Étape Axios et Vue</a> par Vue (<a href="https://codepen.io/Vue">@Vue</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-Excellent! We've got some data. But it looks pretty messy right now so let's display it properly and add some error handling in case things aren't working as expected or it takes longer than we thought to get the information.
+Parfait ! Nous avons des données. Mais cela semble assez désordonné pour le moment, alors affichons-les correctement et ajoutons un traitement d'erreur si les choses ne fonctionnent pas comme prévu ou s'il faut plus de temps que prévu pour obtenir les informations.
 
-## Real-World Example: Working with the Data
+## Exemple concret: utilisation des données
 
-### Displaying Data from an API
+### Affichage des données d'une API
 
-It's pretty typical that the information we'll need is within the response, and we'll have to traverse what we've just stored to access it properly. In our case, we can see that the price information we need lives in `response.data.bpi`. If we use this instead, our output is as follows:
+Il est assez courant que les informations dont nous avons besoin se trouvent dans la réponse. Nous devrons parcourir ce que nous venons de stocker pour y accéder correctement. Dans notre cas, nous pouvons voir que les informations de prix dont nous avons besoin sont stockées dans `response.data.bpi`. Si nous l'utilisons, notre sortie sera :
 
 ```js
 axios
@@ -53,14 +53,14 @@ axios
   .then(response => (this.info = response.data.bpi))
 ```
 
-<p data-height="200" data-theme-id="32763" data-slug-hash="6100b10f1b4ac2961208643560ba7d11" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Second Step Axios and Vue" class="codepen">See the Pen <a href="https://codepen.io/team/Vue/pen/6100b10f1b4ac2961208643560ba7d11/">Second Step Axios and Vue</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="200" data-theme-id="32763" data-slug-hash="6100b10f1b4ac2961208643560ba7d11" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Deuxième Étape Axios et Vue" class="codepen">Voir l'exemple <a href="https://codepen.io/team/Vue/pen/6100b10f1b4ac2961208643560ba7d11/">Premiere Étape Axios et Vue</a> par Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-This is a lot easier for us to display, so we can now update our HTML to display only the information we need from the data we've received, and we'll create a [filter](../api/#Vue-filter) to make sure that the decimal is in the appropriate place as well.
+C’est beaucoup plus facile à afficher; nous pouvons donc mettre à jour notre code HTML pour n’afficher que les informations dont nous avons besoin à partir des données reçues, et nous allons créer un [filtre](../api/#Vue-filter) pour vous assurer que la décimale se trouve également à la place appropriée.
 
 ```html
 <div id="app">
-  <h1>Bitcoin Price Index</h1>
+  <h1>Prix Bitcoin Index</h1>
   <div
     v-for="currency in info"
     class="currency"
@@ -81,7 +81,7 @@ filters: {
 },
 ```
 
-<p data-height="300" data-theme-id="32763" data-slug-hash="9d59319c09eaccfaf35d9e9f11990f0f" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Third Step Axios and Vue" class="codepen">See the Pen <a href="https://codepen.io/team/Vue/pen/9d59319c09eaccfaf35d9e9f11990f0f/">Third Step Axios and Vue</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="300" data-theme-id="32763" data-slug-hash="9d59319c09eaccfaf35d9e9f11990f0f" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Troisieme Étape Axios et Vue" class="codepen">Voir l'exemple <a href="https://codepen.io/team/Vue/pen/9d59319c09eaccfaf35d9e9f11990f0f/">Troisieme Étape Axios et Vue</a> par Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 ### Dealing with Errors
