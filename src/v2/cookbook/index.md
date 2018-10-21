@@ -6,7 +6,7 @@ order: 0
 
 ## Les tutoriels versus le guide
 
-<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>En quoi les tutoriels sont-ils différent du guide ? Pourquoi est-ce nécessaire ?</p>
+<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>En quoi les tutoriels sont-ils différents du guide ? Pourquoi est-ce nécessaire ?</p>
 
 * **Plus focalisé** : Dans le guide, nous racontons essentiellement une histoire. Chaque section se construit sur la base des précédentes et présume la connaissance de celles-ci. Dans les tutoriels, chaque tutoriel peut et devrait se suffire à lui-même. Cela signifie que les tutoriels peuvent se focaliser sur un aspect spécifique de Vue, plutôt que d'avoir à donner un aperçu global.
 
@@ -16,13 +16,13 @@ order: 0
 
 * **Explorer l'écosystème** : Pour les fonctionnalités avancées, nous supposons que le lecteur a quelques connaissances sur l'écosystème. Par exemple, si vous voulez utiliser des composants monofichiers avec webpack, nous n'expliquerons pas comment configurer les parties qui ne concernent pas Vue dans la configuration de webpack. Dans les tutoriels, nous avons l'espace suffisant pour explorer plus en profondeur ces bibliothèques de l'écosystème - au moins dans la mesure où cela est universellement utile aux développeurs Vue.
 
-## Contributions au tutoriels
+## Contributions aux tutoriels
 
-### What we're looking for (EN)
+### Ce que nous attendons
 
-The Cookbook gives developers examples to work off of that both cover common or interesting use cases, and also progressively explain more complex detail. Our goal is to move beyond a simple introductory example, and demonstrate concepts that are more widely applicable, as well as some caveats to the approach.
+Les tutoriels apportent aux développeurs des exemples à utiliser pour couvrir des cas d'utilisation courants ou intéressants et expliquent progressivement des points plus complexes. Notre but est d'aller au delà d'un simple exemple d'introduction et de mettre en avant des conceptes qui sont généralement utilisables avec les avertissements et les restrictions inhérants à leurs utilisations.
 
-If you're interested in contributing, please initiate collaboration by filing an issue under the tag **cookbook idea** with your concept so that we can help guide you to a successful pull request. After your idea has been approved, please follow the template below as much as possible. Some sections are required, and some are optional. Following the numerical order is strongly suggested, but not required.
+Si vous êtes interessé par l'idée de contribuer, vous pouvez ouvrir une requête sur le github sous le tag **cookbook idea** avec le concept que vous voulez mettre en avant afin que nous puissions vous guider dans la création d'une pull request qui sera acceptée. Après que votre idée ait été validée, il vous faudra suivre le plan ci-dessous autant que possible. Certaines sections sont obligatoires, d'autres sont optionnelles. Il est fortement conseillé de suivre l'ordre imposé même si ce n'est pas obligatoire.
 
 Les tutoriels doivent généralement :
 
@@ -35,7 +35,7 @@ Les tutoriels doivent généralement :
 > * Expliquer le pour et le contre de votre approche, en indiquant dans quels cas elle est appropriée ou non
 > * Mentionner des solutions alternatives si c'est pertinent, mais garder les explications en profondeur pour une autre recette.
 
-We request that you follow the template below. We understand, however, that there are times when you may necessarily need to deviate for clarity or flow. Either way, all recipes should at some point discuss the nuance of the choice made using this pattern, preferably in the form of the alternative patterns section.
+Nous attendons à ce que vous suiviez le plan ci-dessous. Nous comprenons, cependant, qu'il puisse arriver que vous ressentiez la nécessité d'en déviez pour conserver une certaine clarté dans vos explications. Dans tous les cas, tous les exemples, doivent à un certain momment mettre en avant ce qu'implique l'utilisation du modèle qu'ils illustrent et cela préférablement dans la section des modèles alternatifs.
 
 ### Base Example (EN)
 
