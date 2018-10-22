@@ -37,53 +37,54 @@ Les tutoriels doivent généralement :
 
 Nous attendons à ce que vous suiviez le plan ci-dessous. Nous comprenons, cependant, qu'il puisse arriver que vous ressentiez la nécessité d'en déviez pour conserver une certaine clarté dans vos explications. Dans tous les cas, tous les exemples, doivent à un certain momment mettre en avant ce qu'implique l'utilisation du modèle qu'ils illustrent et cela préférablement dans la section des modèles alternatifs.
 
-### Base Example (EN)
+### Exemple de base
 
-_required_
+_obligatoire_
 
-1.  Articulate the problem in a sentence or two.
-2.  Explain the simplest possible solution in a sentence or two.
-3.  Show a small code sample.
-4.  Explain what this accomplishes in a sentence.
+1.  Exprimer le problème en une à deux phrases.
+2.  Expliquer la plus simple solution en une à deux phrases.
+3.  Montrer un court extrait de code.
+4.  Expliquer ce que cela réalise en une phrase.
 
-### Details about the Value (EN)
+### Détails sur le contenu
 
-_required_
+_obligatoire_
 
-1.  Address common questions that one might have while looking at the example. (Blockquotes are great for this)
-2.  Show examples of common missteps and how they can be avoided.
-3.  Show very simple code samples of good and bad patterns.
-4.  Discuss why this may be a compelling pattern. Links for reference are not required but encouraged.
+1.  Anticiper les questions que pourrait se poser une personne découvrant l'exemple. (les Blockquotes sont très bien pour ça)
+2.  Mettre en avant les erreurs classiques et comment elles peuvent être évitées.
+3.  Montrer de courts extraits de code de bon et mauvais pattern.
+4.  Argument sur le fait que c'est un bon pattern. L'utilisation de liens et références n'est pas obligatoires mais conseillée.
 
-### Real-World Example (EN)
+### Cas d'utilisation réel
 
-_required_
+_obligatoire_
 
-Demonstrate the code that would power a common or interesting use case, either by:
+Démontrer que le code répond à un cas d'utilisation commun ou intéressant soit en:
 
-1.  Walking through a few terse examples of setup, or
-2.  Embedding a codepen/jsfiddle example
+1.  détaillant quelques exemples simples ou
+2.  en utilisant un exemple dans codepen/jsfiddle
 
-If you choose to do the latter, you should still talk through what it is and does.
+Si vous choisissez le dernier, vous devrez quand même décricre ce que c'est et
+ce que cela fait.
 
-### Additional Context (EN)
+### Contexte additionnel
 
-_optional_
+_optionnel_
 
-It's extremely helpful to write a bit about this pattern, where else it would apply, why it works well, and run through a bit of code as you do so or give people further reading materials here.
+Il est extrèmement utile de décrire à propos de ce pattern, quand/ ou il doit s'appliquer, pourquoi c'est une bonne solution tout en proprosant des parties de code en illustration ou en présentant des sources de lectures additionnelles.
 
-### When To Avoid This Pattern (EN)
+### Quand éviter ce pattern
 
-_optional_
+_optionnel_
 
-This section is not required, but heavily recommended. It won't make sense to write it for something very simple such as toggling classes based on state change, but for more advanced patterns like mixins it's vital. The answer to most questions about development is ["It depends!"](https://codepen.io/rachsmith/pen/YweZbG), this section embraces that. Here, we'll take an honest look at when the pattern is useful and when it should be avoided, or when something else makes more sense.
+L'ajout de cette section n'est pas obligatoire mais fortement recommandé. Il n'y a pas lieu de l'écrire pour des cas simples comme le changement de classes basées sur un changement d'état mais pour des patterns plus avancés comme les "mixins", cela s'impose. La réponse pour la pluspart des questions sur le développement est ["Cela dépend!"](https://codepen.io/rachsmith/pen/YweZbG), c'est le rôle de cette section. C'est ici que l'on va regarder objectivement quand ce pattern est utile, quand il doit être évité ou tout autre chose plus utile.
 
-### Alternative Patterns (EN)
+### Pattern alternatifs
 
-_required_
+_obligatoire_
 
-This section is required when you've provided the section above about avoidance. It's important to explore other methods so that people told that something is an antipattern in certain situations are not left wondering. In doing so, consider that the web is a big tent and that many people have different codebase structures and are solving different goals. Is the app large or small? Are they integrating Vue into an existing project, or are they building from scratch? Are their users only trying to achieve one goal or many? Is there a lot of asynchronous data? All of these concerns will impact alternative implementations. A good cookbook recipe gives developers this context.
+Cette section est obligatoire quand vous avez écrit une section sur la nécessité d'évité ce pattern dans certains cas. Il est important de mettre en avant d'autres moyens que ce pattern quand les lecteurs se sont vu dire que ce dernier est un antipattern dans certaines situations afin de ne pas les laisser sans ressources. Ce faisaint, considérez que les utilisateurs ont différentes base de code et qu'ils résolvent différents problèmes. Est-ce que l'application est grosse ou petite? Intègrent-ils Vue dans un projet existant, ou est ce qu'ils construisent leur application à partir de rien? Est ce que leurs utilisateurs essayent de résoudre un problème ou plusieurs? Y a t-il beaucoup de données asynchrones? Toutes ces considérations vont avoir un impact sur les implementations alternatives. Une bonnes liste de tutoriels fournis aux développeurs ce contexte.
 
-## Thank you (EN)
+## Merci
 
-It takes time to contribute to documentation, and if you spend the time to submit a PR to this section of our docs, you do so with our gratitude.
+Contribuer à de la documentation prend du temps et si vous prenez le temps de soumettre une PR à cette section de notre docmentation, vous aurez toute notre gratitude.
