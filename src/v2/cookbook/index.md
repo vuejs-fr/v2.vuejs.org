@@ -35,7 +35,7 @@ Les tutoriels doivent généralement :
 > * Expliquer le pour et le contre de votre approche, en indiquant dans quels cas elle est appropriée ou non
 > * Mentionner des solutions alternatives si c'est pertinent, mais garder les explications en profondeur pour une autre recette.
 
-Nous attendons à ce que vous suiviez le plan ci-dessous. Nous comprenons, cependant, qu'il puisse arriver que vous ressentiez la nécessité d'en déviez pour conserver une certaine clarté dans vos explications. Dans tous les cas, tous les exemples, doivent à un certain momment mettre en avant ce qu'implique l'utilisation du modèle qu'ils illustrent et cela préférablement dans la section des modèles alternatifs.
+Nous exigeons que vous suiviez le plan ci-dessous. Cependant nous comprenons que parfois vous ayez besoin de vous en écarter pour conserver une certaine clarté dans vos explications. Malgré tout, chaque exemple doit à un certain moment discuter les raisons de l'utilisation du modèle proposé, de préférence dans la section des modèles alternatifs.
 
 ### Exemple de base
 
