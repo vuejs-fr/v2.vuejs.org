@@ -77,7 +77,7 @@ Il est extrèmement utile de décrire à propos de ce pattern, quand/ ou il doit
 
 _optionnel_
 
-L'ajout de cette section n'est pas obligatoire mais fortement recommandé. Il n'y a pas lieu de l'écrire pour des cas simples comme le changement de classes basées sur un changement d'état mais pour des patterns plus avancés comme les "mixins", cela s'impose. La réponse pour la pluspart des questions sur le développement est ["Cela dépend!"](https://codepen.io/rachsmith/pen/YweZbG), c'est le rôle de cette section. C'est ici que l'on va regarder objectivement quand ce pattern est utile, quand il doit être évité ou tout autre chose plus utile.
+Cette section n'est pas obligatoire mais fortement recommandée. Il n'y a pas lieu de l'écrire pour des cas simples comme le changement de classes basées sur un changement d'état, mais pour des patterns plus avancés comme les "mixins", cela s'impose. La réponse pour la plupart des questions sur le développement est ["Cela dépend!"](https://codepen.io/rachsmith/pen/YweZbG), c'est le rôle de cette section. C'est ici que l'on va regarder objectivement quand ce pattern est utile, quand il doit être évité ou tout autre chose plus utile.
 
 ### Pattern alternatifs
 
