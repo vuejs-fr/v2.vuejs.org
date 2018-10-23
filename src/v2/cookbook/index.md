@@ -83,7 +83,7 @@ Cette section n'est pas obligatoire mais fortement recommandée. Il n'y a pas li
 
 _obligatoire_
 
-Cette section est requise quand vous avez écrit une section sur la nécessité d'éviter ce pattern dans certains cas. Il est important d'explorer d'autres méthodes pour que les lecteurs ne soient pas laissés dans l'expectative, alors qu'ils ont pu lire que dans certains cas c'est un antipattern. Considérez que les utilisateurs ont différentes base de code et qu'ils résolvent différents problèmes. Est-ce que l'application est grosse ou petite ? Intègrent-ils Vue dans un projet existant, ou est ce qu'ils construisent leur application à partir de rien ? Est ce que leurs utilisateurs essaient de résoudre un problème ou plusieurs ? Y a t-il beaucoup de données asynchrones ? Toutes ces considérations vont avoir un impact sur les implémentations alternatives. Une bonne liste de tutoriels fourni aux développeurs ce contexte.
+Cette section est requise quand vous avez écrit une section sur la nécessité d'éviter ce pattern dans certains cas. Il est important d'explorer d'autres méthodes pour que les lecteurs ne soient pas laissés dans l'expectative, alors qu'ils ont pu lire que dans certains cas c'est un antipattern. Considérez que les utilisateurs ont différentes bases de code et qu'ils résolvent différents problèmes. Est-ce que l'application est grosse ou petite ? Intègrent-ils Vue dans un projet existant, ou est-ce qu'ils construisent leur application à partir de rien ? Est-ce que leurs utilisateurs essaient de résoudre un problème ou plusieurs ? Y'a t-il beaucoup de données asynchrones ? Toutes ces considérations vont avoir un impact sur les implémentations alternatives. Une bonne liste de tutoriels fourni aux développeurs ce contexte.
 
 ## Merci
 
