@@ -55,7 +55,7 @@ _obligatoire_
 3.  Montrer de courts extraits de code de bon et mauvais patterns.
 4.  Argumenter sur le fait que c'est un bon pattern. L'utilisation de liens et références n'est pas obligatoire mais conseillée.
 
-### Cas d'utilisation réel
+### Cas d'utilisation concret
 
 _obligatoire_
 
