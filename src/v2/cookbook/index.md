@@ -53,7 +53,7 @@ _obligatoire_
 1.  Anticiper les questions que pourrait se poser une personne découvrant l'exemple. (les Blockquotes sont très bien pour ça)
 2.  Mettre en avant les erreurs classiques et comment elles peuvent être évitées.
 3.  Montrer de courts extraits de code de bon et mauvais patterns.
-4.  Argument sur le fait que c'est un bon pattern. L'utilisation de liens et références n'est pas obligatoires mais conseillée.
+4.  Argumenter sur le fait que c'est un bon pattern. L'utilisation de liens et références n'est pas obligatoire mais conseillée.
 
 ### Cas d'utilisation réel
 
