@@ -87,4 +87,4 @@ Cette section est requise quand vous avez écrit une section sur la nécessité 
 
 ## Merci
 
-Contribuer à de la documentation prend du temps et si vous prenez le temps de soumettre une PR à cette section de notre docmentation, vous aurez toute notre gratitude.
+Contribuer à de la documentation prend du temps et si vous prenez le temps de soumettre une PR à cette section de notre documentation, vous aurez toute notre gratitude.
