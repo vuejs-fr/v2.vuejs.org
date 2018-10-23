@@ -64,7 +64,7 @@ Démontrer que le code répond à un cas d'utilisation commun ou intéressant so
 1.  détaillant quelques exemples simples ou
 2.  en utilisant un exemple dans codepen/jsfiddle
 
-Si vous choisissez le dernier, vous devrez quand même décricre ce que c'est et
+Si vous choisissez le dernier, vous devrez quand même décrire ce que c'est et
 ce que cela fait.
 
 ### Contexte additionnel
