@@ -71,7 +71,7 @@ ce que cela fait.
 
 _optionnel_
 
-Il est extrèmement utile de décrire à propos de ce pattern, quand/ ou il doit s'appliquer, pourquoi c'est une bonne solution tout en proprosant des parties de code en illustration ou en présentant des sources de lectures additionnelles.
+Il est toujours utile d'écrire au sujet de ce pattern, quand / où il doit s'appliquer, pourquoi c'est une bonne solution tout en illustrant avec des morceaux de code ou en présentant des sources de lectures additionnelles.
 
 ### Quand éviter ce pattern
 
