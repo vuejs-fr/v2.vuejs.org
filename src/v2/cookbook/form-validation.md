@@ -427,7 +427,7 @@ On commence par une variable pour l'URL de l'API qui est exécuté sur OpenWhisk
 
 ## Patterns alternatifs
 
-Bien que cette partie se focalise essentiellement sur une validation "manuelle", il y a bien sur, de très bonnes bibliothèques permettant de gèrer cela pour vous. Opter pour une bibliothèque pré-packagée pourrait avoir un impact sur la taille finale de votre application, mais les bénéfices pourraient être énormes. Vous avez à votre disposition du code qui est (très probablement) très bien testé et aussi mis à jour régulièrement. Quelques exemples de bibliothèques de validation pour Vue:
+Bien que cette partie se focalise essentiellement sur une validation "manuelle", il y a bien sûr, de très bonnes bibliothèques permettant de gèrer cela pour vous. Opter pour une bibliothèque pré-packagée pourrait avoir un impact sur la taille finale de votre application, mais les bénéfices pourraient être énormes. Vous avez à votre disposition du code qui est (très probablement) très bien testé et aussi mis à jour régulièrement. Quelques exemples de bibliothèques de validation pour Vue:
 
 * [vuelidate](https://github.com/monterail/vuelidate)
 * [VeeValidate](http://vee-validate.logaretm.com/)
