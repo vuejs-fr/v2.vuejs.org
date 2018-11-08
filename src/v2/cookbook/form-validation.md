@@ -324,7 +324,7 @@ const app = new Vue({
 })
 ```
 
-Nous avons définit le total comme une valeur calculée et à part le bug que j'ai eu à gèré, ce fut simple à mettre en place. La méthode checkForm doit maintenant just vérifier si le total est 100 et c'est tout. Vous pouvez jouer avec ici:
+Nous avons défini le total comme une valeur calculée et à part le bug que j'ai eu à gérer, ce fut simple à mettre en place. La méthode checkForm doit maintenant juste vérifier si le total est 100 et c'est tout. Vous pouvez jouer avec ici:
 
 <p data-height="265" data-theme-id="0" data-slug-hash="vWqGoy" data-default-tab="html,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="form validation 3" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/vWqGoy/">form validation 3</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
