@@ -218,7 +218,7 @@ Comme vous pouvez le voir, nous avons ajouté une nouvelle méthode `validEmail`
 
 ## Autre exemple de validation personnalisée
 
-Pour le troisième exemple, nous avons construit quelquechose que vous avez surement déjà vu dans des application de sondage. L'utilisateur se voit demander de dépenser un budget pour un ensemble de propriétés pour un nouveau modèle de Star Destroyer. Le total doit être de 100. Tout d'abord le HTML.
+Pour le troisième exemple, nous avons construit quelque chose que vous avez surement déjà vu dans des applications de sondage. L'utilisateur se voit demander de dépenser un budget pour un ensemble de propriétés pour un nouveau modèle de Star Destroyer. Le total doit être de 100. Tout d'abord le HTML.
 
 ``` html
 <form
