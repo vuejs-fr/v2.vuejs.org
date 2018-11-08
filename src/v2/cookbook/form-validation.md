@@ -105,7 +105,7 @@ const app = new Vue({
 })
 ```
 
-Relativement court et simple, on définit un tableau pour contenir les erreurs et les valeurs des trois champs du formulaires sont initialisées à `null`. La logique de `checkForm` (qui est activée à la soumission du formulaire) vérifie seulement que name et age ont des valeurs puisque movie est optionnel. Si ce n'est pas le cas, on vérifie chacune d'elles et on ajoute une erreur spécifique quand elles sont nulles. Et c'est tout. Vous pouvez lancer la demo ci-dessous. N'oubliez pas que pour une soumission réussie, cela va générer une requête POST à une URL temporaire.
+Relativement court et simple, on définit un tableau pour contenir les erreurs et les valeurs des trois champs du formulaire sont initialisées à `null`. La logique de `checkForm` (qui est activée à la soumission du formulaire) vérifie seulement que name et age ont des valeurs puisque movie est optionnel. Si ce n'est pas le cas, on vérifie chacune d'elles et on ajoute une erreur spécifique quand elles sont nulles. Et c'est tout. Vous pouvez lancer la démo ci-dessous. N'oubliez pas que pour une soumission réussie, cela va générer une requête POST à une URL temporaire.
 
 <p data-height="265" data-theme-id="0" data-slug-hash="GObpZM" data-default-tab="html,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="form validation 1" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/GObpZM/">form validation 1</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
