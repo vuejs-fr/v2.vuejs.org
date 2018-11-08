@@ -284,7 +284,7 @@ Pour le troisième exemple, nous avons construit quelque chose que vous avez sur
 </form>
 ```
 
-Notez l'ensemble des champs pour les cinqs propriétés. Remarquez l'ajout de `.number` à la suite de l'attribut `v-model`. Cela dit à Vue de caster la valeur en un nombre quand vous l'utilisé. Il y a cependant un bug avec cette fonctionnalité qui fait que quand la valeur est nulle, cela retourne une chaine de caractère. Vous verrez comment contourner cela plus bas. Pour faciliter la tâche à l'utilisateur, nous avons ajouté le total en cours juste en bas afin qu'ils puissent le visualiser en temps réel. Maintenant regardons le JavaScript.
+Notez l'ensemble des champs pour les cinq propriétés. Remarquez l'ajout de `.number` à la suite de l'attribut `v-model`. Cela dit à Vue de caster la valeur en un nombre quand vous l'utilisez. Il y a cependant un bug avec cette fonctionnalité qui fait que quand la valeur est nulle, cela retourne une chaine de caractère. Vous verrez comment contourner cela plus bas. Pour faciliter la tâche à l'utilisateur, nous avons ajouté le total en cours juste en bas afin qu'ils puissent le visualiser en temps réel. Maintenant regardons le JavaScript.
 
 ``` js
 const app = new Vue({
