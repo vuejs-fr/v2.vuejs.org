@@ -7,7 +7,7 @@ order: 3
 ## Exemple de base
 
 <p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>
-La validation des formulaires est supportée nativement par le navigateur. Parfois on va observer des différences sur la manière de gèrer la validation en fonction des navigateurs ce qui fait que se reposer sur cette validation supportée nativement est des plus délicat. Même quand la validation est supportée parfaitement, il se peut que quand des validations personnalisées ou plus "manuelles" sont nécessaires, les solutions basées sur Vue soit plus appropriées. Commencons avec un exemple simple.</p>
+La validation des formulaires est supportée nativement par le navigateur. Parfois on va observer des différences sur la manière de gérer la validation en fonction des navigateurs ce qui fait que se reposer sur cette validation supportée nativement est des plus délicat. Même quand la validation est supportée parfaitement, il se peut que quand des validations personnalisées ou plus "manuelles" sont nécessaires, les solutions basées sur Vue soient plus appropriées. Commençons avec un exemple simple.</p>
 
 Pour un formulaire avec trois champs, considérons que deux sont obligatoires. Regardons le HTML d'abord:
 
