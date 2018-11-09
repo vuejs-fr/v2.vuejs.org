@@ -6,7 +6,7 @@ order: 7
 
 ## Exemple de base
 
-Plus d'une fois nous avons besoin d'introduire un comportement, en particulier d'animation, lors du défilement d'un site. Il y a plusieurs façons d'y parvenir mais le plus simple, en évitant d'accumuler les dépendances, est d'utiliser une [Directives personnalisées](https://fr.vuejs.org/v2/guide/custom-directive.html) pour créer un « hook » qui sera déclenché lors du défilement.
+Plus d'une fois nous avons besoin d'introduire un comportement, en particulier d'animation, lors du défilement d'un site. Il y a plusieurs façons d'y parvenir mais le plus simple, en évitant d'accumuler les dépendances, est d'utiliser une [Directive personnalisée](https://fr.vuejs.org/v2/guide/custom-directive.html) pour créer un « hook » qui sera déclenché lors du défilement.
 
 ```js
 Vue.directive('scroll', {
@@ -113,7 +113,7 @@ Afin de conserver un code concis et lisible, nous allons transmettre des argumen
 <p data-height="500" data-theme-id="5162" data-slug-hash="c8c55e3e0bba997350551dd747119100" data-default-tab="result" data-user="sdras" data-embed-version="2" data-pen-title="Scrolling Example- Using Custom Directives in Vue" class="codepen">See the Pen <a href="https://codepen.io/sdras/pen/c8c55e3e0bba997350551dd747119100/">Scrolling Example- Using Custom Directives in Vue</a> by Sarah Drasner (<a href="https://codepen.io/sdras">@sdras</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-Dans la démo ci-dessus, chacune des sections comporte deux différents types d'animations déclenchés lors du défilement : Une animation type « morphing » et une animation type « dessin » qui anime individuellement chaqu'un des `<path>` du SVG. Réutilisons ces deux animation pour créer une directive personnalisée pour chaqu'un des cas. Les arguments qui seront transmis vont nous aider à garder l'ensemble simple et réutilisable.
+Dans la démo ci-dessus, chacune des sections comporte deux différents types d'animations déclenchés lors du défilement : Une animation type « morphing » et une animation type « dessin » qui anime individuellement chacun des `<path>` du SVG. Réutilisons ces deux animation pour créer une directive personnalisée pour chaqu'un des cas. Les arguments qui seront transmis vont nous aider à garder l'ensemble simple et réutilisable.
 
 Pour analyser l'exemple de l'animation « morphing », nous aurons besoin d'indiquer ou l'animation commence et termine ainsi que la valeur du `<path>` qui va permettre le calcul du morphing. Ces arguments sont définis via `binding.value.foo` :
 
