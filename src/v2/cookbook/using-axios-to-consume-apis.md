@@ -84,15 +84,15 @@ filters: {
 <p data-height="300" data-theme-id="32763" data-slug-hash="9d59319c09eaccfaf35d9e9f11990f0f" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Troisieme Étape Axios et Vue" class="codepen">Voir l'exemple <a href="https://codepen.io/team/Vue/pen/9d59319c09eaccfaf35d9e9f11990f0f/">Troisieme Étape Axios et Vue</a> par Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-### Dealing with Errors
+### Travailler avec les erreurs
 
-There are times when we might not get the data we need from the API. There are several reasons that our axios call might fail, including but not limited to:
+Certaines fois, nous pouvons ne pas recevoir de données de l'API. Il peut y avoir de nombreuses raisons qu'un appel puisse échoué. Par exemple :  
 
-* The API is down.
-* The request was made incorrectly.
-* The API isn't giving us the information in the format that we anticipated.
+* L'API est hors-service.
+* Le requête a mal été réalisée.
+* L'API ne nous donne pas les informations dans un format attendu.
 
-When making this request, we should be checking for just such circumstances, and giving ourselves information in every case so we know how to handle the problem. In an axios call, we'll do so by using `catch`.
+Quand nous créons cette requête, nous devrions vérifier pour de telles circonstances et nous informer dans tous les cas pour savoir comment gérerce problème. Dans un appelle aios, nous allons le faire en utilisant `catch`.
 
 ```js
 axios
