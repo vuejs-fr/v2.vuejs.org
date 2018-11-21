@@ -196,7 +196,7 @@ describe("Foo", () => {
     const wrapper = factory();
 
     expect(wrapper.find(".message").text()).toEqual(
-      "Welcome to the Vue.js cookbook"
+      "Bienvenue sur le tutoriel VueJs"
     );
   });
 
