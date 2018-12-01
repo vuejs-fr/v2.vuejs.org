@@ -420,14 +420,14 @@ const app = new Vue({
 })
 ```
 
-On commence par une variable pour l'URL de l'API qui est exécuté sur OpenWhisk. Maintenant, voyons `checkForm`. Dans cette version, nous empêchons le formulaire d'être soumis (ce qui, par ailleurs, pourrait être fait en HTML par Vue). Vous pouvez voir une vérification basique sur la nullité de `this.name` puis on attaque l'API. Si c'est un mauvais nom, on ajoute une erreur comme précédement. Si c'est bon, dans cet exemple nous ne faisons rien à part une alerte JavaScript, mais vous pouvez renvoyer l'utilisateur vers une nouvelle page avec le nom du produit dans l'URL, ou effectuer d'autres actions. Vous pouvez tester la démo ci-dessous:
+On commence par une variable pour l'URL de l'API qui est exécuté sur OpenWhisk. Maintenant, voyons `checkForm`. Dans cette version, nous empêchons le formulaire d'être soumis (ce qui, par ailleurs, pourrait être fait en HTML par Vue). Vous pouvez voir une vérification basique sur la nullité de `this.name` puis on attaque l'API. Si c'est un mauvais nom, on ajoute une erreur comme précédemment. Si c'est bon, dans cet exemple nous ne faisons rien à part une alerte JavaScript, mais vous pouvez renvoyer l'utilisateur vers une nouvelle page avec le nom du produit dans l'URL, ou effectuer d'autres actions. Vous pouvez tester la démo ci-dessous:
 
 <p data-height="265" data-theme-id="0" data-slug-hash="BmgzeM" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="form validation 4" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/BmgzeM/">form validation 4</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 ## Patterns alternatifs
 
-Bien que cette partie se focalise essentiellement sur une validation "manuelle", il y a bien sur, de très bonnes bibliothèques permettant de gérer cela pour vous. Opter pour une bibliothèque pré-packagée pourrait avoir un impact sur la taille finale de votre application, mais les bénéfices pourraient être énormes. Vous avez à votre disposition du code qui est (très probablement) très bien testé et aussi mis à jour régulièrement. Quelques exemples de bibliothèques de validation pour Vue:
+Bien que cette partie se focalise essentiellement sur une validation "manuelle", il y a bien sûr, de très bonnes bibliothèques permettant de gérer cela pour vous. Opter pour une bibliothèque pré-packagée pourrait avoir un impact sur la taille finale de votre application, mais les bénéfices pourraient être énormes. Vous avez à votre disposition du code qui est (très probablement) très bien testé et aussi mis à jour régulièrement. Quelques exemples de bibliothèques de validation pour Vue:
 
 * [vuelidate](https://github.com/monterail/vuelidate)
 * [VeeValidate](http://vee-validate.logaretm.com/)
