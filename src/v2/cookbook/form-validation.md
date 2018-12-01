@@ -6,7 +6,7 @@ order: 3
 
 ## Exemple de base
 
-<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>
+<p>
 La validation des formulaires est supportée nativement par le navigateur. Parfois on va observer des différences sur la manière de gérer la validation en fonction des navigateurs ce qui fait que se reposer sur cette validation supportée nativement est des plus délicat. Même quand la validation est supportée parfaitement, il se peut que quand des validations personnalisées ou plus "manuelles" sont nécessaires, les solutions basées sur Vue soient plus appropriées. Commençons avec un exemple simple.</p>
 
 Pour un formulaire avec trois champs, considérons que deux sont obligatoires. Regardons le HTML d'abord:
@@ -331,7 +331,7 @@ Nous avons défini le total comme une valeur calculée et la méthode checkForm 
 
 ## Validation côté serveur
 
-Dans mon dernier exemple, nous contruisons quelquechose qui utilise Ajax afin de valider via le serveur. Le formulaire va vous demander de nommer un nouveau produit et ensuite s'assurer que ce nom est unique. Nous avons écrit une rapide [OpenWhisk](http://openwhisk.apache.org/) action sans serveur pour gèrer la validation, voici la logique de cette action.
+Dans mon dernier exemple, nous allons construire une application vuejs qui utilise Ajax pour valider des données via le serveur. Le formulaire va vous demander de nommer un nouveau produit et ensuite s'assurer que ce nom est unique. Nous avons écrit une rapide [OpenWhisk](http://openwhisk.apache.org/) action sans serveur pour gérer la validation, voici la logique de cette action.
 
 ``` js
 function main(args) {
@@ -348,7 +348,7 @@ function main(args) {
 }
 ```
 
-En gros, tous les noms excepté "vista", "empire", and "mbp" sont valides. Bien, regardons donc le formulaire.
+En gros, tous les noms exceptés "vista", "empire", and "mbp" sont valides. Bien, regardons donc le formulaire.
 
 ``` html
 <form
@@ -427,7 +427,7 @@ On commence par une variable pour l'URL de l'API qui est exécuté sur OpenWhisk
 
 ## Patterns alternatifs
 
-Bien que cette partie se focalise essentiellement sur une validation "manuelle", il y a bien sur, de très bonnes bibliothèques permettant de gèrer cela pour vous. Opter pour une bibliothèque pré-packagée pourrait avoir un impact sur la taille finale de votre application, mais les bénéfices pourraient être énormes. Vous avez à votre disposition du code qui est (très probablement) très bien testé et aussi mis à jour régulièrement. Quelques exemples de bibliothèques de validation pour Vue:
+Bien que cette partie se focalise essentiellement sur une validation "manuelle", il y a bien sur, de très bonnes bibliothèques permettant de gérer cela pour vous. Opter pour une bibliothèque pré-packagée pourrait avoir un impact sur la taille finale de votre application, mais les bénéfices pourraient être énormes. Vous avez à votre disposition du code qui est (très probablement) très bien testé et aussi mis à jour régulièrement. Quelques exemples de bibliothèques de validation pour Vue:
 
 * [vuelidate](https://github.com/monterail/vuelidate)
 * [VeeValidate](http://vee-validate.logaretm.com/)
