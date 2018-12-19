@@ -47,7 +47,7 @@ En utilisant le CDN:
 </script>
 ```
 
-Importez ce fichier dans chaque composant utilsant ButterCMS. Puis dans la console, exécutez:
+Importez ce fichier dans chaque composant utilisant ButterCMS. Puis dans la console, exécutez:
 
 ```javascript
 butter.post.list({page: 1, page_size: 10}).then(function(response) {
