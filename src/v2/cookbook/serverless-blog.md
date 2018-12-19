@@ -258,7 +258,7 @@ Maintenant, votre application possède un blog fonctionnel qui peut être mis à
 
 ## Catégories, mots-clés et auteurs
 
-Utilisez les interfaces de programmation dédiées aux catégories, aux mots clés et aux auteurs pour mettre en valeur et filtrer le contenu de votre blog.
+Utilisez les interfaces de programmation dédiées aux catégories, aux mots-clés et aux auteurs pour mettre en valeur et filtrer le contenu de votre blog.
 
 Consultez la référence des interfaces de programmation de ButterCMS pour plus d'information sur ces objets:
 
