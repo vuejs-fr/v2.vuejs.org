@@ -256,7 +256,7 @@ Section `<script>` mise à jour dans `components/BlogPost.vue`:
 
 Maintenant, votre application possède un blog fonctionnel qui peut être mis à jour facilement dans le panneau d'administration de ButterCMS.
 
-## Categories, mots clés et auteurs
+## Catégories, mots-clés et auteurs
 
 Utilisez les interfaces de programmation dédiées aux catégories, aux mots clés et aux auteurs pour mettre en valeur et filtrer le contenu de votre blog.
 
