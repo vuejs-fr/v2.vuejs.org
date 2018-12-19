@@ -5,7 +5,7 @@ order: 5
 ---
 
 <p>Donc vous venez juste de lancer votre site web en Vue.js, félicitations ! Maintenant vous voulez lui ajouter un blog qui va s'intégrer rapidement sans avoir à mettre en place un serveur complet pour héberger une instance de Wordpress (or tout autre CMS utilisant une base de données). Vous voulez seulement ajouter quelques composants Vue.js et des routes pour que votre blog fonctionne, n'est-ce pas ? Ce que vous recherchez, c'est un blog qui fonctionne entièrement sur des interfaces de programmation directement consommées par votre application Vue.js. Ce tutoriel va vous apprendre à le faire, lançons-nous !</p>
-Nous allons rapidement construire un blog se basant sur un CMS avec Vue.js. Ce CMS c'est [ButterCMS](https://buttercms.com/), un CMS implémentant le patron de conception API-first qui vous permet de gérer le contenu au travers du panneau d'administration de ButterCMS et de consommer les interfaces de programmation du contenu dans votre application Vue.js. Vous pouvez utiliser ButterCMS pour de nouveaux projets Vuejs ou pour des projets existants.
+Nous allons rapidement construire un blog en nous basant sur un CMS avec Vue.js. Ce CMS c'est [ButterCMS](https://buttercms.com/), un CMS implémentant le patron de conception API-first qui vous permet de gérer le contenu au travers du panneau d'administration de ButterCMS et de consommer les interfaces de programmation du contenu dans votre application Vue.js. Vous pouvez utiliser ButterCMS pour de nouveaux projets Vuejs ou pour des projets existants.
 
 ![Butter Dashboard](https://user-images.githubusercontent.com/160873/36677285-648798e4-1ad3-11e8-9454-d22fca8280b7.png "Butter Dashboard")
 
