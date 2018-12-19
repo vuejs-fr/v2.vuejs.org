@@ -152,7 +152,7 @@ Ensuite créez le fichier `components/BlogHome.vue` qui sera la page d'accueil d
 </template>
 ```
 
-Voici à quoi cela ressemblera (notez que nous avons ajouté du CSS à partir de https://bulma.io/ pour un rapide style):
+Voici à quoi cela ressemblera (notez que nous avons ajouté du CSS à partir de https://bulma.io/ pour un style rapide):
 
 ![buttercms-bloglist](https://user-images.githubusercontent.com/160873/36868500-1b22e374-1d5e-11e8-82a0-20c8dc312716.png)
 
