@@ -263,7 +263,7 @@ Utilisez les interfaces de programmation dédiées aux catégories, aux mots-cl�
 Consultez la référence des interfaces de programmation de ButterCMS pour plus d'information sur ces objets:
 
  * [Catégories](https://buttercms.com/docs/api/?ruby#categories)
-* [Mots clés](https://buttercms.com/docs/api/?ruby#tags)
+* [Mots-clés](https://buttercms.com/docs/api/?ruby#tags)
 * [Auteurs](https://buttercms.com/docs/api/?ruby#authors)
 
 Voici un exemple dans lequel on liste toutes les catégories et ou l'on récupère tous les articles par catégorie. Appelez ces méthodes sur le connecteur `created()` du cylce de vie du composant:
