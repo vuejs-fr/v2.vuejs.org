@@ -216,7 +216,7 @@ Maintenant notre application récupère tous les articles et nous pouvons affich
 
 Une chose à noter lorsque l'on utilise les routes avec des paramètres, c'est que quand l'utilisateur navigue de `blog/foo` à `blog/bar`, la même instance du composant va être utilisée. Comme chaque route correspond au même composant, c'est plus efficace que de détruire l'instance et d'en recréer une.
 
-<p class="tip">Soyez conscient, qu'utiliser un composant de cette manière signifie que les connecteurs du cycle de vie du composant ne seront pas appelés. Consultez la documentation de Vue Router pour en apprendre plus sur la [recherche de route dynamique](https://router.vuejs.org/en/essentials/dynamic-matching.html)</p>
+<p class="tip">Soyez conscient qu'utiliser un composant de cette manière signifie que les connecteurs du cycle de vie du composant ne seront pas appelés. Consultez la documentation de Vue Router pour en apprendre plus sur la [recherche de route dynamique](https://router.vuejs.org/en/essentials/dynamic-matching.html)</p>
 
 Pour palier à  cela nous devons surveiller l'objet `$route` et appeler `getPost()` quand la route change.
 
