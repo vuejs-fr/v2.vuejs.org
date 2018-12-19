@@ -212,7 +212,7 @@ Voici un aperçu:
 
 ![buttercms-blogdetail](https://user-images.githubusercontent.com/160873/36868506-218c86b6-1d5e-11e8-8691-0409d91366d6.png)
 
-Maintenant notre application récupère tous les articles et nous pouvons afficher chaque post individuellement. Cependant, les boutons article suivant/précédent ne fonctionne pas.
+Maintenant notre application récupère tous les articles et nous pouvons afficher chaque post individuellement. Cependant, les boutons article suivant/précédent ne fonctionnent pas.
 
 Une chose à noter lorsque l'on utilise les routes avec des paramètres, c'est que quand l'utilisateur navigue de `blog/foo` à `blog/bar`, la même instance du composant va être utilisée. Comme chaque route correspond au même composant, c'est plus efficace que de détruire l'instance et d'en recréer une.
 
