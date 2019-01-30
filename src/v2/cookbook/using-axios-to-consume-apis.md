@@ -168,7 +168,7 @@ Cela peut encore être amélioré avec l'utilisation de composants pour différe
 
 ### Fetch API
 
-L'[API Fetch](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) est une API native puissante pour ces types de demandes. Vous avez peut-être entendu dire que l'un des avantages de l'API Fetch est qu'il n'est pas nécessaire de charger une ressource externe pour l'utiliser, ce qui est vrai ! Sauf que ... ce n'est pas encore complètement supporté, vous aurez donc toujours besoin d'utiliser un polyfill. Il y a aussi quelques pièges à éviter avec cette API, raison pour laquelle beaucoup préfèrent utiliser axios pour le moment. Cela pourrait cependant très bien changer dans le futur.
+L'[API Fetch](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) est une API native puissante pour ces types de demandes. Vous avez peut-être entendu dire que l'un des avantages de l'API Fetch est qu'il n'est pas nécessaire de charger une ressource externe pour l'utiliser, ce qui est vrai ! Sauf que… ce n'est pas encore complètement supporté, vous aurez donc toujours besoin d'utiliser un polyfill. Il y a aussi quelques pièges à éviter avec cette API, raison pour laquelle beaucoup préfèrent utiliser axios pour le moment. Cela pourrait cependant très bien changer dans le futur.
 
 Si vous êtes intéressé par l’utilisation de l’API Fetch vous trouverez de [très bons articles](https://scotch.io/@bedakb/lets-build-type-ahead-component-with-vuejs-2-and-fetch-api) expliquant comment faire.
 
