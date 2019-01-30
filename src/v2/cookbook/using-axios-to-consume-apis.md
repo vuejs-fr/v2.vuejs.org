@@ -34,7 +34,7 @@ new Vue({
 
 Nous obtenons ceci :
 
-<p data-height="350" data-theme-id="32763" data-slug-hash="80043dfdb7b90f138f5585ade1a5286f" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Premiere Étape Axios et Vue" class="codepen">Voir l'exemple <a href="https://codepen.io/team/Vue/pen/80043dfdb7b90f138f5585ade1a5286f/">Premiere Étape Axios et Vue</a> par Vue (<a href="https://codepen.io/Vue">@Vue</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="350" data-theme-id="32763" data-slug-hash="80043dfdb7b90f138f5585ade1a5286f" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Premiere étape Axios et Vue" class="codepen">Voir l'exemple <a href="https://codepen.io/team/Vue/pen/80043dfdb7b90f138f5585ade1a5286f/">Premiere étape Axios et Vue</a> par Vue (<a href="https://codepen.io/Vue">@Vue</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 Parfait ! Nous avons des données. Mais cela semble assez désordonné pour le moment, alors affichons-les correctement et ajoutons un traitement d'erreur si les choses ne fonctionnent pas comme prévu, ou s'il faut plus de temps que nécessaire pour obtenir les informations.
