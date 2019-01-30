@@ -51,7 +51,7 @@ axios
   .then(response => (this.info = response.data.bpi))
 ```
 
-<p data-height="200" data-theme-id="32763" data-slug-hash="6100b10f1b4ac2961208643560ba7d11" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Deuxième Étape Axios et Vue" class="codepen">Voir l'exemple <a href="https://codepen.io/team/Vue/pen/6100b10f1b4ac2961208643560ba7d11/">Premiere Étape Axios et Vue</a> par Vue (<a href="https://codepen.io/Vue">@Vue</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="200" data-theme-id="32763" data-slug-hash="6100b10f1b4ac2961208643560ba7d11" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Deuxième étape Axios et Vue" class="codepen">Voir l'exemple <a href="https://codepen.io/team/Vue/pen/6100b10f1b4ac2961208643560ba7d11/">Premiere étape Axios et Vue</a> par Vue (<a href="https://codepen.io/Vue">@Vue</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 C'est beaucoup plus facile à afficher ; nous pouvons donc mettre à jour notre code HTML pour n'afficher que les informations dont nous avons besoin à partir des données reçues. Pour ce faire, nous allons créer un [filtre](../api/#Vue-filter) pour nous assurer que la décimale se trouve également à la place appropriée.
