@@ -39,7 +39,7 @@ Nous obtenons ceci :
 
 Parfait ! Nous avons des données. Mais cela semble assez désordonné pour le moment, alors affichons-les correctement et ajoutons un traitement d'erreur si les choses ne fonctionnent pas comme prévu ou s'il faut plus de temps que prévu pour obtenir les informations.
 
-## Exemple concret: l'utilisation des données
+## Exemple concret : l'utilisation des données
 
 ### Affichage des données d'une API
 
