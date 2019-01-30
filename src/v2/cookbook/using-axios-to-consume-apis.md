@@ -174,4 +174,4 @@ Si vous êtes intéressé par l’utilisation de l’API Fetch vous trouverez de
 
 ## Aller plus loin
 
-Il existe de nombreuses façons de travailler avec Vue et axios au-delà de la consommation et de l'affichage d'une API. Vous pouvez également communiquer avec des fonctions sans serveur, publier / éditer / supprimer à partir d'une API où vous disposez d'un accès en écriture, et de nombreux autres avantages. En raison de l’intégration directe de ces deux bibliothèques, c’est devenu un choix très courant pour les développeurs qui doivent intégrer des clients HTTP à leur workflow.
+Il existe de nombreuses façons de travailler avec Vue et axios au-delà de la consommation et de l'affichage d'une API. Vous pouvez également communiquer avec des Fonctions Sans Serveur, publier / éditer / supprimer à partir d'une API où vous disposez d'un accès en écriture, et de nombreux autres avantages. En raison de l’intégration directe de ces deux bibliothèques, c'est devenu un choix très courant pour les développeurs qui doivent intégrer des clients HTTP à leur workflow.
