@@ -157,7 +157,7 @@ new Vue({
 </div>
 ```
 
-Vous pouvez appuyer sur le bouton de réexécution de cet exemple pour connaître brièvement l'état du chargement pendant la collecte des données à partir de l'API :
+Vous pouvez appuyer sur le bouton de réexécution de cet exemple pour connaitre brièvement l'état du chargement pendant la collecte des données à partir de l'API :
 
 <p data-height="300" data-theme-id="32763" data-slug-hash="6c01922c9af3883890fd7393e8147ec4" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Quatrième étape Axios et Vue" class="codepen">Voir l'exemple <a href="https://codepen.io/team/Vue/pen/6c01922c9af3883890fd7393e8147ec4/">Quatrième étape Axios et Vue</a> par Vue (<a href="https://codepen.io/Vue">@Vue</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
