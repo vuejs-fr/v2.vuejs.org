@@ -9,7 +9,7 @@ Lors de la création d'une application Web, il est fréquent que vous souhaitiez
 
 Dans cet exemple, nous allons utiliser l'[API CoinDesk](https://www.coindesk.com/api/) pour afficher les prix du Bitcoin qui sont mis à jour toutes les minutes. Premièrement, nous devons installer axios avec npm/yarn ou à partir d'un lien CDN.
 
-Il existe plusieurs manières d'interroger une API, mais il est préférable de d'abord connaitre la structure des données qu'elle renvoie afin de savoir ce qu'elle va afficher. Pour ce faire, nous allons appeler le point de terminaison de l'API et afficher le résultat afin que nous puissions connaître sa structure et son contenu. Nous pouvons voir dans la documentation de l'API de CoinDesk que l'appel doit être effectué à l'adresse `https://api.coindesk.com/v1/bpi/currentprice.json`. Nous allons donc commencer par créer une donné qui gardera nos informations, puis nous récupérerons les données et les attribuerons à l'aide de l'étape `mounted` du cycle de vie :
+Il existe plusieurs manières d'interroger une API, mais il est préférable de d'abord connaitre la structure des données qu'elle renvoie afin de savoir ce qu'elle va afficher. Pour ce faire, nous allons appeler le point de terminaison de l'API et afficher le résultat afin que nous puissions connaître sa structure et son contenu. Nous pouvons voir dans la documentation de l'API de CoinDesk que l'appel doit être effectué à l'adresse `https://api.coindesk.com/v1/bpi/currentprice.json`. Nous allons donc commencer par créer une donnée qui gardera nos informations, puis nous récupérerons les données et les attribuerons à l'aide de l'étape `mounted` du cycle de vie :
 
 ```js
 new Vue({
