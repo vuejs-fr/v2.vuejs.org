@@ -85,7 +85,7 @@ filters: {
 
 ### Travailler avec des erreurs
 
-Parfois, nous pouvons ne pas recevoir de données de l'API. Il peut y avoir de nombreuses raisons pour qu'un appel puisse échouer. Par exemple :  
+Parfois, nous ne pouvons pas recevoir de données de l'API. Il peut y avoir de nombreuses raisons pour qu'un appel puisse échouer. Par exemple :  
 
 * L'API est hors-service.
 * La requête a mal été réalisée.
