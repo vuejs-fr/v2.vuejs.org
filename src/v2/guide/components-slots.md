@@ -227,3 +227,50 @@ La valeur de l'attribut `slot-scope` peut actuellement recevoir une expression J
 ```
 
 Cela peut être pratique pour rendre vos slot avec portée un peu plus lisibles.
+
+### Travail avec un slot nommé et un slot avec portée
+
+> Nouveauté en 2.6+
+
+Lorsqu'on travaille avec un slot nommé il est nécessaire d'indiquer le nom de ce dernier au mme niveau que le `slot-scope` :
+
+```html
+<ul>
+  <li
+    v-for="todo in todos"
+    v-bind:key="todo.id"
+  >
+    <!-- Un slot est créé pour chaque élément de "todos" -->
+    <!-- Chaque objet `todo` va bénéficier d'un "slot prop" -->
+    <slot v-bind:todo="todo" name="todoSlot">
+      <!-- Ici le contenu par défaut du slot -->
+      {{ todo.text }}
+    </slot>
+  </li>
+</ul>
+```
+
+```html
+<todo-list v-bind:todos="todos" slot-scope="todo" slot="todoSlot">
+  <span v-if="todo.isComplete">✓</span>
+  {{ todo.text }}
+</todo-list>
+```
+
+Mais on peut utiliser une expression raccourcie :
+
+```html
+<todo-list v-bind:todos="todos" slot-scope:todoSlot="todo">
+  <span v-if="todo.isComplete">✓</span>
+  {{ todo.text }}
+</todo-list>
+```
+
+... ou :
+
+```html
+<todo-list v-bind:todos="todos" #todoSlot="todo">
+  <span v-if="todo.isComplete">✓</span>
+  {{ todo.text }}
+</todo-list>
+```
