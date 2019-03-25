@@ -138,7 +138,7 @@ Considérer les types d'appareils que vos utilisateurs peuvent utiliser et quell
 
 ## Cas pratique
 
-Dans l'exemple ci-dessus, on a utilisé une directive `v-if` pour illustrer une fuite de mémoire, mais un scénario plus réel arrive quand on utilise [vue-router](https://router.vuejs.org/en/) pour lier les composants dans une applications monopages.
+Dans l'exemple ci-dessus, on a utilisé une directive `v-if` pour illustrer une fuite de mémoire, mais un scénario plus réel arrive quand on utilise [vue-router](https://router.vuejs.org/en/) pour lier les composants dans une application monopage.
 
 Comme la directive `v-if`, `vue-router` enlève les éléments de la DOM virtuel et les remplace avec de nouveaux éléments quand un utilisateur navigue dans votre application. Le [lifecycle hook](/v2/guide/instance.html#Lifecycle-Diagram) `beforeDestroy()` est une bonne place pour résoudre le même genre de problème dans une application basé sur `vue-router`.
 
