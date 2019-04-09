@@ -11,17 +11,17 @@ order: 103
 Contrairement aux composants et aux props, les noms d'événements ne fournissent pas de conversion kebab-case/camelCase. Le nom de l'événement émis doit correspondre exactement au nom utilisé pour écouter cet événement. Par exemple, si l'on émet un nom d'événement en camelCase :
 
 ```js
-this.$emit('monEvenement')
+this.$emit('myEvent')
 ```
 
 Alors écouter la version kebab-case n'aura pas d'effet :
 
 ```html
 <!-- Ne fonctionne pas -->
-<my-component v-on:mon-evenement="doSomething"></my-component>
+<my-component v-on:my-event="doSomething"></my-component>
 ```
 
-Contrairement aux composants et aux props, les noms d'événements ne seront jamais utilisés comme noms de variables ou de propriétés en JavaScript, donc il n'y a pas de raison d'utiliser camelCase ou PascalCase. De plus, les écouteurs d'événements  `v-on` à l'intérieur de templates DOM seront automatiquement transformées en minuscules (à cause de l'insensibilité à la casse de HTML), donc `v-on:monEvenement` deviendra `v-on:monevenement` -- rendant `monEvenement` impossible à écouter.
+Contrairement aux composants et aux props, les noms d'événements ne seront jamais utilisés comme noms de variables ou de propriétés en JavaScript, donc il n'y a pas de raison d'utiliser camelCase ou PascalCase. De plus, les écouteurs d'événements  `v-on` à l'intérieur de templates DOM seront automatiquement transformés en minuscules (à cause de l'insensibilité à la casse de HTML), donc `v-on:myEvent` deviendra `v-on:myevent` -- rendant `myEvent` impossible à écouter.
 
 Pour ces raisons, nous recommandons de **toujours utiliser la kebab-case pour les noms d'événements**.
 
@@ -92,7 +92,7 @@ Pour résoudre ce problème, Vue fournit une propriété `$listeners` contenant 
 }
 ```
 
-En utilisant la propriété `$listeners`, vous pouvez renvoyer tous les écouteurs d'événements sur le composant vers un élément enfant spécifique avec `v-on="$listeners"`. Pour les éléments tels que `<input>`, pour lesquels vous voulez aussi que `v-model` fonctionne, il est souvent utile de créer une nouvelle propriété calculée pour les écouteurs, tels que la propriété `inputListeners` ci-dessous:
+En utilisant la propriété `$listeners`, vous pouvez renvoyer tous les écouteurs d'événements sur le composant vers un élément enfant spécifique avec `v-on="$listeners"`. Pour les éléments tels que `<input>`, pour lesquels vous voulez aussi que `v-model` fonctionne, il est souvent utile de créer une nouvelle propriété calculée pour les écouteurs, telle que la propriété `inputListeners` ci-dessous:
 
 ```js
 Vue.component('base-input', {
@@ -158,7 +158,7 @@ Pour plus de commodité, nous proposons un raccourci pour cette technique avec l
 <text-document v-bind:title.sync="doc.title"></text-document>
 ```
 
-<p class="tip">Notez que  <code>v-bind</code> avec le modificateur <code>.sync</code> <strong>ne</strong> fonctionne <strong>pas</strong> avec des expressions (par ex. <code>v-bind:title.sync="doc.title + '!'"</code> est invalide). À la place, vous devez seulement fournir le nom de la propriété que vous voulez lier, similaire à <code>v-model</code>.</p>
+<p class="tip">Notez que <code>v-bind</code> avec le modificateur <code>.sync</code> <strong>ne</strong> fonctionne <strong>pas</strong> avec des expressions (par ex. <code>v-bind:title.sync="doc.title + '!'"</code> est invalide). À la place, vous devez seulement fournir le nom de la propriété que vous voulez lier, similaire à <code>v-model</code>.</p>
 
 Le modificateur `.sync` peut également être utilisé avec `v-bind` quand on utilise un objet pour assigner plusieurs props à la fois :
 
