@@ -326,7 +326,7 @@ vm.toggle === 'oui'
 vm.toggle === 'non'
 ```
 
-<p class="tip">Les attributs `true-value` et `false-value` n'affectent pas la valeur de l'attribut `value`, car les navigateurs n'incluent pas les cases non cochées dans les soumissions de formulaire. Pour garantir que l'une des deux valeurs soit soumise par le formulaire (par ex. `'oui'"` ou `"'non'"`), utilisez les boutons radio à la place.</p>
+<p class="tip">Les attributs `true-value` et `false-value` n'affectent pas la valeur de l'attribut `value`, car les navigateurs n'incluent pas les cases non cochées dans les soumissions de formulaire. Pour garantir que l'une des deux valeurs soit soumise par le formulaire (par ex. `"'oui'"` ou `"'non'"`), utilisez les boutons radio à la place.</p>
 
 ### Radio
 
