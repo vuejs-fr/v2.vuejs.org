@@ -1576,6 +1576,35 @@ type: api
   // la fonction `callback` est immédiatement déclenchée avec la valeur actuelle de `a`
   ```
 
+  Notez qu'avec l'option `immediate` vous serez incapable d'utiliser `unwatch` sur la propriété fournie par le premier appel de la fonction de rappel.
+ 
+  ``` js
+  // Ceci va générer une erreur
+  var unwatch = vm.$watch(
+    'value',
+    function () {
+      doSomething()
+      unwatch()
+    },
+    { immediate: true }
+  )
+  ```
+  
+  Si vous voulez toujours appeler la fonction `unwatch` à l'intérieur de la fonction de rappel, vous devrez d'abord vérifier sa disponibilité :
+
+  ``` js
+  var unwatch = vm.$watch(
+    'value',
+    function () {
+      doSomething()
+      if (unwatch) {
+        unwatch()
+      }
+    },
+    { immediate: true }
+  )
+  ```
+
 ### vm.$set( cible, nomDePropriete/index, valeur )
 
 - **Arguments :**

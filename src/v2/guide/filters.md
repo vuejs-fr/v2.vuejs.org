@@ -40,6 +40,8 @@ new Vue({
 })
 ```
 
+Quand le filtre global a le même nom que le filtre local, le filtre local va être préféré.
+
 Ci-dessous un exemple du filtre `capitalize` en action :
 
 {% raw %}

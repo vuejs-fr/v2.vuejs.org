@@ -143,36 +143,71 @@ new Vue({
 </script>
 {% endraw %}
 
-Les arguments de directive peuvent être dynamiques. Par exemple, dans `v-mydirective:argument=[dataproperty]`, `argument` est une valeur de chaine de caractère assignée à la propriété *arg* dans le paramètre de liaison (*binding*) du hook de directive et `dataproperty` est une référence à la propriété de donnée de l'instance de votre composant assignée à la valeur de propriété (*value*) pour le même paramètre de liaison (*binding*). Parce que les hooks de directive sont invoqués, la valeur de propriété (*value*) du paramètre de liaison (*binding*) va changer dynamiquement en se basant sur la valeur de `dataproperty`.
+### Arguments de directive dynamiques
 
-Un exemple de directive personnalisée utilisant un argument dynamique :
+Les arguments de directive peuvent être dynamiques. Par exemple, dans `v-mydirective:[argument]="value"`, l'`argument` peut-être mis à jour en se basant sur la propriété de donnée dans notre instance de composant ! Cela rend nos directives personnalisées flexibles à travers notre application.
+
+Imaginons que vous vouliez créer une directive personnalisée qui vous permet d'attacher des éléments sur votre page en utilisant le positionnement fixe. Nous pourrions créer une directive personnalisée ou la valeur met à jour le positionnement vertical en nombre de pixel, comme ceci :
 
 ```html
-<div id="app">
-  <p>Faite défiler la page vers le bas</p>
-  <p v-tack:left="[dynamicleft]">Vous êtes maintenant décalé depuis le bord gauche au lieu du haut de page</p>
+<div id="baseexample">
+  <p>Faite défiler la page vers le bas ↓</p>
+  <p v-pin="200">Je suis attaché à 200px depuis le haut de page.</p>
 </div>
 ```
 
 ```js
-Vue.directive('tack', {
-  bind(el, binding, vnode) {
-    el.style.position = 'fixed';
-    const s = (binding.arg == 'left' ? 'left' : 'top');
-    el.style[s] = binding.value + 'px';
+Vue.directive('pin', {
+  bind: function (el, binding, vnode) {
+    el.style.position = 'fixed'
+    el.style.top = binding.value + 'px'
   }
 })
 
-// démarrer l'application
 new Vue({
-  el: '#app',
-  data() {
+  el: '#baseexample'
+})
+```
+
+Cela va attacher l'élément à 200px depuis le haut de la page. Mais que ce passe t-il si nous somme dans un scénario ou nous avons besoin d'attacher l'élément sur la gauche à la place du haut ? Ici nous avons un argument dynamique qui peut être mis à jour pour chaque instance du composant de manière très pratique :
+
+
+```html
+<div id="dynamicexample">
+  <h3>Faite défiler la page vers le bas ↓</h3>
+  <p v-pin:[direction]="200">Je suis attaché à 200px depuis la gauche de la page.</p>
+</div>
+```
+
+```js
+Vue.directive('pin', {
+  bind: function (el, binding, vnode) {
+    el.style.position = 'fixed'
+    var s = (binding.arg == 'left' ? 'left' : 'top')
+    el.style[s] = binding.value + 'px'
+  }
+})
+
+new Vue({
+  el: '#dynamicexample',
+  data: function () {
     return {
-      dynamicleft: 500
+      direction: 'left'
     }
   }
 })
 ```
+
+Résultat :
+
+{% raw %}
+<iframe height="200" style="width: 100%;" class="demo" scrolling="no" title="Dynamic Directive Arguments" src="//codepen.io/team/Vue/embed/rgLLzb/?height=300&theme-id=32763&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  Voir le Pen <a href='https://codepen.io/team/Vue/pen/rgLLzb/'>Arguments de directive dynamiques</a> par Vue
+  (<a href='https://codepen.io/Vue'>@Vue</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+{% endraw %}
+
+Nos directives personnalisées sont maintenant assez flexibles pour supporter différents cas d'utilisation.
 
 ## Fonction abrégée
 

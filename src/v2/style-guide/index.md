@@ -1433,7 +1433,7 @@ Alors que les valeurs d'attributs sans espaces ne sont pas requises en HTML, cel
 
 ### Abréviations de directive <sup data-p="b">fortement recommandé</sup>
 
-**Les abréviations de directive (`:` pour `v-bind:` et `@` pour `v-on:`) devraient toujours être utilisées ou jamais.**
+**Les abréviations de directive (`:` pour `v-bind:`, `@` pour `v-on:` et `#` pour `v-slot`) devraient toujours être utilisées ou jamais.**
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### À éviter
@@ -1450,6 +1450,16 @@ Alors que les valeurs d'attributs sans espaces ne sont pas requises en HTML, cel
   v-on:input="onInput"
   @focus="onFocus"
 >
+```
+
+``` html
+<template v-slot:header>
+  <h1>Ici on place le titre de page</h1> 
+</template>
+
+<template #footer>
+  <p>Ici les informations de contact</p>
+</template>
 ```
 {% raw %}</div>{% endraw %}
 
@@ -1482,6 +1492,26 @@ Alors que les valeurs d'attributs sans espaces ne sont pas requises en HTML, cel
   v-on:input="onInput"
   v-on:focus="onFocus"
 >
+```
+
+``` html
+<template v-slot:header>
+  <h1>Ici on place le titre de page</h1> 
+</template>
+
+<template v-slot:footer>
+  <pIci les informations de contact</p>
+</template>
+```
+
+``` html
+<template #header>
+  <h1>Ici on place le titre de page</h1> 
+</template>
+
+<template #footer>
+  <p>Ici les informations de contact</p>
+</template>
 ```
 {% raw %}</div>{% endraw %}
 

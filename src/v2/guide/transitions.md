@@ -958,7 +958,8 @@ Alors, qu'en est-il lorsque nous avons une liste complète d'éléments où nous
 
 - Contrairement à `<transition>`, il rend un élément réel : par défaut un `<span>`. Vous pouvez modifier l'élément rendu avec l'attribut `tag`.
 - [Les modes de transition](#Modes-de-transition) ne sont pas disponibles car nous ne pouvons plus alterner entre des éléments mutuellement exclusifs.
-- Les éléments à l'intérieur **doivent toujours avoir** un attribut `key` unique
+- Les éléments à l'intérieur **doivent toujours avoir** un attribut `key` unique.
+- Les classes de transition CSS seront appliquées sur les éléments internes et non pas sur les groupes/conteneurs eux-mêmes.
 
 ### Transitions de liste entrantes/sortantes
 

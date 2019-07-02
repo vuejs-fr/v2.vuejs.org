@@ -4,7 +4,7 @@ type: guide
 order: 403
 ---
 
-> [Vue CLI](https://cli.vuejs.org) fournit des outils de support à TypeScript. Dans notre prochaine version majeur de Vue (3.x), nous avons également planifié d'améliorer grandement le support de TypeScript avec des classes basées sur les composants et un support de TSX.
+> [Vue CLI](https://cli.vuejs.org) fournit des outils de support à TypeScript. 
 
 ## Déclaration officielle dans les packages npm
 
