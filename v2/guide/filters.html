@@ -311,9 +311,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
-      <img src="/images/modus.png" alt="Modus">
-    </a>
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
@@ -328,6 +325,9 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
+      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -989,9 +989,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
-      <img src="/images/modus.png" alt="Modus">
-    </a>
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
@@ -1006,6 +1003,9 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
+      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -1035,11 +1035,30 @@
   
   
     <p>Vue.js permet de définir des filtres qui peuvent être utilisés pour appliquer des formatages de textes courants. Les filtres sont utilisables à deux endroits : <strong>les interpolations à moustaches et les expressions de v-bind</strong> (ces dernières étant supportées depuis la 2.1.0+). Les filtres doivent être ajoutés à la fin de l’expression JavaScript, indiqués par le symbole de la barre verticale :</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- dans les moustaches --&gt;</span></span><br><span class="line">&#123;&#123; message | capitalize &#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- dans les v-bind --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">"rawId | formatId"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- dans les moustaches --&gt;</span>
+&#123;&#123; message | capitalize &#125;&#125;
+
+<span class="hljs-comment">&lt;!-- dans les v-bind --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-bind:id</span>=<span class="hljs-string">"rawId | formatId"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <p>Vous pouvez définir les filtres locaux dans les options d’un composant :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">filters: &#123;</span><br><span class="line">  capitalize: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">    value = value.toString()</span><br><span class="line">    <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">filters: &#123;
+  <span class="hljs-attr">capitalize</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;
+    <span class="hljs-keyword">if</span> (!value) <span class="hljs-keyword">return</span> <span class="hljs-string">''</span>
+    value = value.toString()
+    <span class="hljs-keyword">return</span> value.charAt(<span class="hljs-number">0</span>).toUpperCase() + value.slice(<span class="hljs-number">1</span>)
+  &#125;
+&#125;</code></pre>
 <p>ou définir un filtre globalement avant de créer l’instance de Vue :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.filter(<span class="string">'capitalize'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">  value = value.toString()</span><br><span class="line">  <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">Vue.filter(<span class="hljs-string">'capitalize'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;
+  <span class="hljs-keyword">if</span> (!value) <span class="hljs-keyword">return</span> <span class="hljs-string">''</span>
+  value = value.toString()
+  <span class="hljs-keyword">return</span> value.charAt(<span class="hljs-number">0</span>).toUpperCase() + value.slice(<span class="hljs-number">1</span>)
+&#125;)
+
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-comment">// ...</span>
+&#125;)</code></pre>
+<p>Quand le filtre global a le même nom que le filtre local, le filtre local va être préféré.</p>
 <p>Ci-dessous un exemple du filtre <code>capitalize</code> en action :</p>
 
 <div id="example_1" class="demo">
@@ -1066,10 +1085,10 @@
 
 <p>La fonction de filtre reçoit toujours la valeur de l’expression (le résultat de la chaine) comme premier argument. Dans cet exemple, la fonction de filtre <code>capitalize</code> va recevoir la valeur de <code>message</code> dans son argument.</p>
 <p>Les filtres peuvent être chainés :</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html">&#123;&#123; message | filterA | filterB &#125;&#125;</code></pre>
 <p>Dans ce cas, <code>filterA</code>, défini avec un seul argument, va recevoir la valeur de <code>message</code>. Puis la fonction <code>filterB</code> va être appelée avec le résultat de <code>filterA</code> passé dans <code>filterB</code> en tant que simple argument.</p>
 <p>Les filtres sont des fonctions JavaScript et peuvent donc recevoir des arguments :</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;&#123; message | filterA('arg1', arg2) &#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html">&#123;&#123; message | filterA('arg1', arg2) &#125;&#125;</code></pre>
 <p>Ici <code>filterA</code> est définie comme une fonction prenant trois arguments. La valeur de <code>message</code> va être passée en premier argument. La chaine de caractères <code>&#39;arg1&#39;</code> sera passée au filtre <code>filterA</code> en tant que second argument, et la valeur de l’expression <code>arg2</code> sera évaluée et passée en tant que troisième argument.</p>
 
   

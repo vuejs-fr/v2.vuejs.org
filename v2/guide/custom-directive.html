@@ -311,9 +311,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
-      <img src="/images/modus.png" alt="Modus">
-    </a>
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
@@ -328,6 +325,9 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
+      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -989,9 +989,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
-      <img src="/images/modus.png" alt="Modus">
-    </a>
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
@@ -1006,6 +1003,9 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
+      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -1149,29 +1149,51 @@ new Vue({
 })
 </script>
 
-<p>Les arguments de directive peuvent être dynamiques. Par exemple, dans <code>v-mydirective:argument=[dataproperty]</code>, <code>argument</code> est une valeur de chaine de caractère assignée à la propriété <em>arg</em> dans le paramètre de liaison (<em>binding</em>) du hook de directive et <code>dataproperty</code> est une référence à la propriété de donnée de l’instance de votre composant assignée à la valeur de propriété (<em>value</em>) pour le même paramètre de liaison (<em>binding</em>). Parce que les hooks de directive sont invoqués, la valeur de propriété (<em>value</em>) du paramètre de liaison (<em>binding</em>) va changer dynamiquement en se basant sur la valeur de <code>dataproperty</code>.</p>
-<p>Un exemple de directive personnalisée utilisant un argument dynamique :</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Faite défiler la page vers le bas<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-tack:left</span>=<span class="hljs-string">"[dynamicleft]"</span>&gt;</span>Vous êtes maintenant décalé depuis le bord gauche au lieu du haut de page<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<h3 id="Arguments-de-directive-dynamiques"><a href="#Arguments-de-directive-dynamiques" class="headerlink" title="Arguments de directive dynamiques"></a>Arguments de directive dynamiques</h3><p>Les arguments de directive peuvent être dynamiques. Par exemple, dans <code>v-mydirective:[argument]=&quot;value&quot;</code>, l’<code>argument</code> peut-être mis à jour en se basant sur la propriété de donnée dans notre instance de composant ! Cela rend nos directives personnalisées flexibles à travers notre application.</p>
+<p>Imaginons que vous vouliez créer une directive personnalisée qui vous permet d’attacher des éléments sur votre page en utilisant le positionnement fixe. Nous pourrions créer une directive personnalisée ou la valeur met à jour le positionnement vertical en nombre de pixel, comme ceci :</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"baseexample"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Faite défiler la page vers le bas ↓<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-pin</span>=<span class="hljs-string">"200"</span>&gt;</span>Je suis attaché à 200px depuis le haut de page.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-<pre><code class="hljs js">Vue.directive(<span class="hljs-string">'tack'</span>, &#123;
-  bind(el, binding, vnode) &#123;
-    el.style.position = <span class="hljs-string">'fixed'</span>;
-    <span class="hljs-keyword">const</span> s = (binding.arg == <span class="hljs-string">'left'</span> ? <span class="hljs-string">'left'</span> : <span class="hljs-string">'top'</span>);
-    el.style[s] = binding.value + <span class="hljs-string">'px'</span>;
+<pre><code class="hljs js">Vue.directive(<span class="hljs-string">'pin'</span>, &#123;
+  <span class="hljs-attr">bind</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, binding, vnode</span>) </span>&#123;
+    el.style.position = <span class="hljs-string">'fixed'</span>
+    el.style.top = binding.value + <span class="hljs-string">'px'</span>
   &#125;
 &#125;)
 
-<span class="hljs-comment">// démarrer l'application</span>
 <span class="hljs-keyword">new</span> Vue(&#123;
-  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
-  data() &#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#baseexample'</span>
+&#125;)</code></pre>
+<p>Cela va attacher l’élément à 200px depuis le haut de la page. Mais que ce passe t-il si nous somme dans un scénario ou nous avons besoin d’attacher l’élément sur la gauche à la place du haut ? Ici nous avons un argument dynamique qui peut être mis à jour pour chaque instance du composant de manière très pratique :</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dynamicexample"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Faite défiler la page vers le bas ↓<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-pin:</span>[<span class="hljs-attr">direction</span>]=<span class="hljs-string">"200"</span>&gt;</span>Je suis attaché à 200px depuis la gauche de la page.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js">Vue.directive(<span class="hljs-string">'pin'</span>, &#123;
+  <span class="hljs-attr">bind</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, binding, vnode</span>) </span>&#123;
+    el.style.position = <span class="hljs-string">'fixed'</span>
+    <span class="hljs-keyword">var</span> s = (binding.arg == <span class="hljs-string">'left'</span> ? <span class="hljs-string">'left'</span> : <span class="hljs-string">'top'</span>)
+    el.style[s] = binding.value + <span class="hljs-string">'px'</span>
+  &#125;
+&#125;)
+
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#dynamicexample'</span>,
+  <span class="hljs-attr">data</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
     <span class="hljs-keyword">return</span> &#123;
-      <span class="hljs-attr">dynamicleft</span>: <span class="hljs-number">500</span>
+      <span class="hljs-attr">direction</span>: <span class="hljs-string">'left'</span>
     &#125;
   &#125;
 &#125;)</code></pre>
+<p>Résultat :</p>
+
+<iframe height="200" style="width: 100%;" class="demo" scrolling="no" title="Dynamic Directive Arguments" src="//codepen.io/team/Vue/embed/rgLLzb/?height=300&theme-id=32763&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  Voir le Pen <a href="https://codepen.io/team/Vue/pen/rgLLzb/" target="_blank" rel="noopener">Arguments de directive dynamiques</a> par Vue
+  (<a href="https://codepen.io/Vue" target="_blank" rel="noopener">@Vue</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<p>Nos directives personnalisées sont maintenant assez flexibles pour supporter différents cas d’utilisation.</p>
 <h2 id="Fonction-abregee"><a href="#Fonction-abregee" class="headerlink" title="Fonction abrégée"></a>Fonction abrégée</h2><p>Dans de nombreux cas, vous pourriez vouloir le même comportement pour les hooks <code>bind</code> et <code>update</code>, sans avoir besoin des autres hooks. Par exemple :</p>
 <pre><code class="hljs js">Vue.directive(<span class="hljs-string">'color-swatch'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, binding</span>) </span>&#123;
   el.style.backgroundColor = binding.value

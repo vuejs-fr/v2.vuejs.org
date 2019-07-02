@@ -311,9 +311,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
-      <img src="/images/modus.png" alt="Modus">
-    </a>
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
@@ -328,6 +325,9 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
+      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -989,9 +989,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
-      <img src="/images/modus.png" alt="Modus">
-    </a>
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
@@ -1006,6 +1003,9 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
+      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -1087,11 +1087,11 @@
 <p>Enfin, le style dans un composant monofichier Vue est vraiment flexible. Avec <a href="https://github.com/vuejs/vue-loader" target="_blank" rel="noopener">vue-loader</a>, vous pouvez utiliser n’importe quel préprocesseur, postprocesseur et même une intégration profonde avec les <a href="https://vue-loader.vuejs.org/en/features/css-modules.html" target="_blank" rel="noopener">Modules CSS</a> ; le tout dans un élément <code>&lt;style&gt;</code>.</p>
 <h3 id="Adaptabilite"><a href="#Adaptabilite" class="headerlink" title="Adaptabilité"></a>Adaptabilité</h3><h4 id="Utilisation-avancee"><a href="#Utilisation-avancee" class="headerlink" title="Utilisation avancée"></a>Utilisation avancée</h4><p>Pour de larges applications, Vue et React offrent des solutions de routage robustes. La communauté React a également été très innovante en matière de solutions de gestion d’état (par ex. : Flux/Redux). Ces modèles de gestion d’état et <a href="https://yarnpkg.com/en/packages?q=redux%20vue&amp;p=1" target="_blank" rel="noopener">même Redux lui-même</a> peuvent être facilement intégrés dans une application Vue. En fait, Vue a même poussé ce modèle un cran plus loin avec <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a>, une solution de gestion d’état inspirée par Elm qui s’intègre profondément dans Vue et qui, nous pensons, offre une expérience de développement supérieure.</p>
 <p>Une autre différence importante entre ces offres est que les bibliothèques accompagnant Vue pour la gestion d’état et le routage (parmi <a href="https://github.com/vuejs" target="_blank" rel="noopener">d’autres concernées</a>) sont toutes officiellement supportées et gardées à jour avec le cœur de la bibliothèque. React préfère en revanche laisser cette partie à la communauté, créant un écosystème plus fragmenté. Toutefois, étant plus populaire, l’écosystème de React est considérablement plus riche que celui de Vue.</p>
-<p>Pour finir, Vue offre un <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">outil de génération de projet en ligne de commande</a> qui rend trivial le démarrage d’un nouveau projet en utilisant le système de système de build de votre choix, incluant <a href="https://github.com/vuejs-templates/webpack" target="_blank" rel="noopener">webpack</a>, <a href="https://github.com/vuejs-templates/browserify" target="_blank" rel="noopener">Browserify</a>, ou même sans <a href="https://github.com/vuejs-templates/simple" target="_blank" rel="noopener">système de création</a>. React fait aussi des progrès de ce côté-là avec <a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">create-react-app</a>, mais a pour le moment quelques limitations :</p>
+<p>Pour finir, Vue offre un <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">outil de génération de projet en ligne de commande</a> qui rend trivial le démarrage d’un nouveau projet en utilisant le système de système de build de votre choix. Vous pouvez même l’utiliser pour <a href="https://cli.vuejs.org/guide/prototyping.html#instant-prototyping" target="_blank" rel="noopener">prototyper instantanément</a> un composant. React fait aussi des progrès de ce côté-là avec <a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">create-react-app</a>, mais a pour le moment quelques limitations :</p>
 <ul>
-<li>Il ne permet aucune configuration durant la génération du projet, là où les templates de projet Vue permettent une personnalisation à la façon <a href="http://yeoman.io/" target="_blank" rel="noopener">Yeoman</a>.</li>
+<li>Il ne permet aucune configuration durant la génération du projet, là où Vue CLI se lance sur un processus de dépendance qui peut être étendu avec des plugins <a href="https://cli.vuejs.org/guide/plugins-and-presets.html#plugins" target="_blank" rel="noopener">plugins</a>.</li>
 <li>Il ne propose qu’un seul template qui présume que vous concevez une application web monopage, là où Vue offre une large variété de templates pour différents objectifs et outils de build.</li>
-<li>Il ne permet pas la génération de projets depuis des templates faits par les utilisateurs, ce qui peut être particulièrement utile en entreprise avec des conventions préétablies.</li>
+<li>Il ne permet pas la génération de projets depuis des <a href="https://cli.vuejs.org/guide/plugins-and-presets.html#presets" target="_blank" rel="noopener">templates</a> faits par les utilisateurs, ce qui peut être particulièrement utile en entreprise avec des conventions préétablies.</li>
 </ul>
 <p>Il est important de noter que beaucoup de ces limitations sont des choix d’architecture intentionnels pris par l’équipe de create-react-app et qui ont également leurs avantages. Par exemple, tant que les besoins de votre projet sont très simples et que vous n’avez jamais besoin d’ « éjecter » des choses pour personnaliser votre chaîne de build, vous aurez la possibilité de le mettre à jour en tant que dépendance. Vous pouvez en lire plus à propos de <a href="https://github.com/facebookincubator/create-react-app#philosophy" target="_blank" rel="noopener">la différence de philosophie ici</a>.</p>
 <h4 id="Utilisation-minimale"><a href="#Utilisation-minimale" class="headerlink" title="Utilisation minimale"></a>Utilisation minimale</h4><p>React est renommé pour sa courbe d’apprentissage abrupte. Avant de pouvoir réellement commencer, vous devez connaitre JSX et probablement ES2015+, puisque beaucoup d’exemples utilisent la syntaxe React pour les classes. Vous devez également vous former aux outils de build, car bien que vous puissiez techniquement utiliser le compilateur Babel de manière autonome pour compiler à la volée le code dans le navigateur, cela n’est absolument pas envisageable en production.</p>

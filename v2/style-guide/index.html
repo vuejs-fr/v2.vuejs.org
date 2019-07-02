@@ -311,9 +311,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
-      <img src="/images/modus.png" alt="Modus">
-    </a>
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
@@ -328,6 +325,9 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
+      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -356,9 +356,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
-      <img src="/images/modus.png" alt="Modus">
-    </a>
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
@@ -373,6 +370,9 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
+      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -1239,7 +1239,7 @@ computed: &#123;
 <h4 id="Recommande-21"><a href="#Recommande-21" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span></code></pre>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">AppSidebar</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">"&#123; width: sidebarWidth + 'px' &#125;"</span>&gt;</span></code></pre>
 </div>
-<h3 id="Abreviations-de-directive-fortement-recommande"><a href="#Abreviations-de-directive-fortement-recommande" class="headerlink" title="Abréviations de directive fortement recommandé"></a>Abréviations de directive <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les abréviations de directive (<code>:</code> pour <code>v-bind:</code> et <code>@</code> pour <code>v-on:</code>) devraient toujours être utilisées ou jamais.</strong></p>
+<h3 id="Abreviations-de-directive-fortement-recommande"><a href="#Abreviations-de-directive-fortement-recommande" class="headerlink" title="Abréviations de directive fortement recommandé"></a>Abréviations de directive <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les abréviations de directive (<code>:</code> pour <code>v-bind:</code>, <code>@</code> pour <code>v-on:</code> et <code>#</code> pour <code>v-slot</code>) devraient toujours être utilisées ou jamais.</strong></p>
 <div class="style-example example-bad">
 <h4 id="A-eviter-22"><a href="#A-eviter-22" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
   <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">"newTodoText"</span>
@@ -1249,6 +1249,13 @@ computed: &#123;
   <span class="hljs-attr">v-on:input</span>=<span class="hljs-string">"onInput"</span>
   @<span class="hljs-attr">focus</span>=<span class="hljs-string">"onFocus"</span>
 &gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Ici on place le titre de page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">footer</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ici les informations de contact<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
 </div>
 <div class="style-example example-good">
 <h4 id="Recommande-22"><a href="#Recommande-22" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
@@ -1267,6 +1274,20 @@ computed: &#123;
   <span class="hljs-attr">v-on:input</span>=<span class="hljs-string">"onInput"</span>
   <span class="hljs-attr">v-on:focus</span>=<span class="hljs-string">"onFocus"</span>
 &gt;</span></code></pre>
+<pre><code class="hljs html">&lt;template v-slot:header&gt;
+  &lt;h1&gt;Ici on place le titre de page&lt;/h1&gt; 
+&lt;/template&gt;
+
+&lt;template v-slot:footer&gt;
+  &lt;pIci les informations de contact&lt;/p&gt;
+&lt;/template&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Ici on place le titre de page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">footer</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ici les informations de contact<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
 </div>
 <h2 id="Regles-de-priorite-C-recommande-minimiser-les-choix-arbitraires-et-la-surcharge-cognitive"><a href="#Regles-de-priorite-C-recommande-minimiser-les-choix-arbitraires-et-la-surcharge-cognitive" class="headerlink" title="Règles de priorité C : recommandé (minimiser les choix arbitraires et la surcharge cognitive)"></a>Règles de priorité C : recommandé (minimiser les choix arbitraires et la surcharge cognitive)</h2><h3 id="Ordre-des-options-de-composants-instances-recommande"><a href="#Ordre-des-options-de-composants-instances-recommande" class="headerlink" title="Ordre des options de composants / instances recommandé"></a>Ordre des options de composants / instances <sup data-p="c">recommandé</sup></h3><p><strong>Les options des instances / composants devraient être ordonnées avec consistance.</strong></p>
 <p>Voici l’ordre par défaut que nous recommandons pour les options de composant. Elles sont séparées en catégories ainsi vous saurez où ajouter vos nouvelles propriétés pour vos plugins.</p>

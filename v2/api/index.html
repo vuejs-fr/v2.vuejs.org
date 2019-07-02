@@ -311,9 +311,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
-      <img src="/images/modus.png" alt="Modus">
-    </a>
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
@@ -328,6 +325,9 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
+      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -363,9 +363,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
-      <img src="/images/modus.png" alt="Modus">
-    </a>
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
@@ -380,6 +377,9 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
+      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -1763,8 +1763,29 @@ vm.monObjet.valeurImbriquée = <span class="hljs-number">123</span>
   <span class="hljs-attr">immediate</span>: <span class="hljs-literal">true</span>
 &#125;)
 <span class="hljs-comment">// la fonction `callback` est immédiatement déclenchée avec la valeur actuelle de `a`</span></code></pre>
+<p>Notez qu’avec l’option <code>immediate</code> vous serez incapable d’utiliser <code>unwatch</code> sur la propriété fournie par le premier appel de la fonction de rappel.</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Ceci va générer une erreur</span>
+<span class="hljs-keyword">var</span> unwatch = vm.$watch(
+  <span class="hljs-string">'value'</span>,
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    doSomething()
+    unwatch()
+  &#125;,
+  &#123; <span class="hljs-attr">immediate</span>: <span class="hljs-literal">true</span> &#125;
+)</code></pre>
 </li>
 </ul>
+<p>  Si vous voulez toujours appeler la fonction <code>unwatch</code> à l’intérieur de la fonction de rappel, vous devrez d’abord vérifier sa disponibilité :</p>
+  <pre><code class="hljs js"><span class="hljs-keyword">var</span> unwatch = vm.$watch(
+  <span class="hljs-string">'value'</span>,
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    doSomething()
+    <span class="hljs-keyword">if</span> (unwatch) &#123;
+      unwatch()
+    &#125;
+  &#125;,
+  &#123; <span class="hljs-attr">immediate</span>: <span class="hljs-literal">true</span> &#125;
+)</code></pre>
 <h3 id="vm-set-cible-nomDePropriete-index-valeur"><a href="#vm-set-cible-nomDePropriete-index-valeur" class="headerlink" title="vm.$set( cible, nomDePropriete/index, valeur )"></a>vm.$set( cible, nomDePropriete/index, valeur )</h3><ul>
 <li><p><strong>Arguments :</strong></p>
 <ul>
