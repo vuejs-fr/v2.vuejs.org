@@ -395,7 +395,7 @@ Vous avez peut-être remarqué que les composants de Vue sont très similaires a
 
 2. Les composants de Vue fournissent des fonctionnalités importantes qui ne sont pas disponibles dans les éléments personnalisés  standards, notamment le flux de données entre composants, la communication par évènements personnalisés et l'intégration avec les outils de *build*.
 
-Bien que Vue n'utilise pas d'éléments personnalisés en interne, il a une [grande interopérabilité](https://custom-elements-everywhere.com/#vue) quand il est utilisé ou distribué en tant qu'élément personnalisé. La CLI Vue supporte également la construction de composant Vue qui s'enregistrent eux-mêmes en tant qu'éléments personnalisés natifs.
+Bien que Vue n'utilise pas d'éléments personnalisés en interne, il a une [grande interopérabilité](https://custom-elements-everywhere.com/#vue) quand il est utilisé ou distribué en tant qu'élément personnalisé. La CLI Vue supporte également la construction de composants Vue qui s'enregistrent eux-mêmes en tant qu'éléments personnalisés natifs.
 
 ## Prêt pour la suite ?
 
