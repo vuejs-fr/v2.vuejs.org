@@ -314,9 +314,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -325,9 +322,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -366,9 +360,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -377,9 +368,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -1735,9 +1723,9 @@ vm.$watch(<span class="hljs-string">'a.b.c'</span>, <span class="hljs-function">
 <span class="hljs-comment">// fonction</span>
 vm.$watch(
   <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
-    <span class="hljs-comment">// everytime the expression `this.a + this.b` yields a different result,</span>
-    <span class="hljs-comment">// the handler will be called. It's as if we were watching a computed</span>
-    <span class="hljs-comment">// property without defining the computed property itself</span>
+    <span class="hljs-comment">// chaque fois que l'expression `this.a + this.b` va produire un résultat différent,</span>
+    <span class="hljs-comment">// le gestionnaire d'écoute va être appelé. C'est comme si nous surveillons</span>
+    <span class="hljs-comment">// une propriété carculée sans définir de propriété calculée en elle-même.</span>
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.a + <span class="hljs-keyword">this</span>.b
   &#125;,
   <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">nouvelleValeur, ancienneValeur</span>) </span>&#123;
@@ -2759,18 +2747,16 @@ vm.$emit(<span class="hljs-string">'test'</span>, <span class="hljs-string">'sal
   
   <div class="footer">
       <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
-<div class="bsa-cpc"></div>
+<div id="bsa-native"></div>
 <script>
-  (function(){
-    if(typeof _bsa !== 'undefined' && _bsa) {
-    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
-      target: '.bsa-cpc',
-      align: 'horizontal',
-      disable_css: 'true'
-    });
-      }
-  })();
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
 </script>
+
 
     Une erreur dans cette page ? Envie de contribuer à la traduction ?
     <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/api/index.md" target="_blank">
@@ -2811,14 +2797,6 @@ vm.$emit(<span class="hljs-string">'test'</span>, <span class="hljs-string">'sal
       autocompleteOptions: { hint: false, appendTo: 'body'}
       })
     })
-    </script>
-
-    <!-- fastclick -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      FastClick.attach(document.body)
-    }, false)
     </script>
   </body>
 </html>

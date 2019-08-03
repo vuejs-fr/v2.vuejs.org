@@ -314,9 +314,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -325,9 +322,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -992,9 +986,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -1003,9 +994,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -1510,18 +1498,16 @@ new Vue({
   
   <div class="footer">
       <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
-<div class="bsa-cpc"></div>
+<div id="bsa-native"></div>
 <script>
-  (function(){
-    if(typeof _bsa !== 'undefined' && _bsa) {
-    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
-      target: '.bsa-cpc',
-      align: 'horizontal',
-      disable_css: 'true'
-    });
-      }
-  })();
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
 </script>
+
 
     Une erreur dans cette page ? Envie de contribuer à la traduction ?
     <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/guide/transitioning-state.md" target="_blank">
@@ -1562,14 +1548,6 @@ new Vue({
       autocompleteOptions: { hint: false, appendTo: 'body'}
       })
     })
-    </script>
-
-    <!-- fastclick -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      FastClick.attach(document.body)
-    }, false)
     </script>
   </body>
 </html>

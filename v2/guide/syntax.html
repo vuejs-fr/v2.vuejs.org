@@ -314,9 +314,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -325,9 +322,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -992,9 +986,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -1003,9 +994,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -1098,20 +1086,25 @@ new Vue({
 <p>Nouveau dans la 2.6.0+</p>
 </blockquote>
 <p>Introduit dans la version 2.6.0, il est aussi possible d’utiliser des expressions JavaScript dans un argument de directive inclus entre crochets :</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-bind:</span>[<span class="hljs-attr">attributeName</span>]=<span class="hljs-string">"url"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!--
+Notez qu'il y a diverses contraintes aux expressions d'argument, comme expliqué
+dans la section « Contraintes des expressions d'argument dynamique » ci-après.
+--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-bind:</span>[<span class="hljs-attr">attributeName</span>]=<span class="hljs-string">"url"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
 <p>Ici <code>attributeName</code> va dynamiquement être évalué comme une expression JavaScript et cette valeur d’évaluation va être utilisée comme valeur finale pour l’argument. Par exemple, si votre instance de Vue a une propriété de donnée, <code>attributeName</code>, et que cette valeur est <code>&quot;href&quot;</code>, alors la liaison sera équivalente à <code>v-bind:href</code>.</p>
 <p>De manière similaire, vous pouvez utiliser les arguments dynamiques pour lier un gestionnaire d’évènement à un nom d’évènement dynamique :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-on:</span>[<span class="hljs-attr">eventName</span>]=<span class="hljs-string">"doSomething"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
 <p>De manière similaire, donc, quand la valeur <code>eventName</code> est <code>&quot;focus&quot;</code>, par exemple, <code>v-on:[eventName]</code> sera équivalent à <code>v-on:focus</code>.</p>
 <h4 id="Contrainte-des-valeurs-d’argument-dynamique"><a href="#Contrainte-des-valeurs-d’argument-dynamique" class="headerlink" title="Contrainte des valeurs d’argument dynamique"></a>Contrainte des valeurs d’argument dynamique</h4><p>Les arguments dynamiques sont destinés à être évalués comme des chaines de caractères à l’exception de <code>null</code>. La valeur spéciale <code>null</code> peut être utilisée pour explicitement retirer la liaison. N’importe quelle autre valeur n’étant pas une chaine de caractères lèvera un avertissement.</p>
-<h4 id="Contraintes-des-expressions-d’argument-dynamique"><a href="#Contraintes-des-expressions-d’argument-dynamique" class="headerlink" title="Contraintes des expressions d’argument dynamique"></a>Contraintes des expressions d’argument dynamique</h4><p class="tip">Les expressions d’argument dynamique ont quelques contraintes de syntaxe car certains caractères sont invalides à l’intérieur d’un nom d’attribut HTML comme les espaces et les guillemets. Vous devez également éviter les majuscules quand vous utilisez des templates dans le DOM.</p>
-
-<p>Par exemple, ce qui suit est invalide :</p>
+<h4 id="Contraintes-des-expressions-d’argument-dynamique"><a href="#Contraintes-des-expressions-d’argument-dynamique" class="headerlink" title="Contraintes des expressions d’argument dynamique"></a>Contraintes des expressions d’argument dynamique</h4><p>Les expressions d’argument dynamique ont quelques contraintes de syntaxe car certains caractères sont invalides à l’intérieur d’un nom d’attribut HTML comme les espaces et les guillemets. Par exemple, ce qui suit est invalide :</p>
 <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Ceci va lever un avertissement de compilation. --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-bind:</span>['<span class="hljs-attr">foo</span>' + <span class="hljs-attr">bar</span>]=<span class="hljs-string">"value"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
 <p>La solution consiste à utiliser des expressions sans espaces ni guillemets, ou à remplacer l’expression complexe par une propriété calculée.</p>
-<p>De plus, si vous utilisez des templates dans le DOM (templates directement écrits dans un fichier HTML), vous devrez être attentif au navigateur qui convertit les noms d’attribut en lettre minuscule :</p>
-<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Ceci va être converti en v-bind:[someattr] dans un template dans le DOM. --&gt;</span>
+<p>De plus, si vous utilisez des templates dans le DOM (templates directement écrits dans un fichier HTML), vous devez éviter les majuscules dans vos clés car les navigateurs convertissent les noms d’attribut en lettre minuscule :</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 
+Ceci va être converti en v-bind:[someattr] dans un template dans le DOM. --&gt;</span>
+À moins que vous ne fassiez référence à la propriété `"someattr"` dans votre instance, votre code ne fonctionnera pas.
+--&gt;
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-bind:</span>[<span class="hljs-attr">someAttr</span>]=<span class="hljs-string">"value"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
 <h3 id="Modificateurs"><a href="#Modificateurs" class="headerlink" title="Modificateurs"></a>Modificateurs</h3><p>Les modificateurs sont des suffixes spéciaux indiqués par un point, qui indique qu’une directive devrait être liée d’une manière spécifique. Par exemple, le modificateur <code>.prevent</code> dit à la directive <code>v-on</code> d’appeler <code>event.preventDefault()</code> lorsque l’évènement survient.</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">v-on:submit.prevent</span>=<span class="hljs-string">"onSubmit"</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></code></pre>
@@ -1150,18 +1143,16 @@ new Vue({
   
   <div class="footer">
       <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
-<div class="bsa-cpc"></div>
+<div id="bsa-native"></div>
 <script>
-  (function(){
-    if(typeof _bsa !== 'undefined' && _bsa) {
-    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
-      target: '.bsa-cpc',
-      align: 'horizontal',
-      disable_css: 'true'
-    });
-      }
-  })();
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
 </script>
+
 
     Une erreur dans cette page ? Envie de contribuer à la traduction ?
     <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/guide/syntax.md" target="_blank">
@@ -1202,14 +1193,6 @@ new Vue({
       autocompleteOptions: { hint: false, appendTo: 'body'}
       })
     })
-    </script>
-
-    <!-- fastclick -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      FastClick.attach(document.body)
-    }, false)
     </script>
   </body>
 </html>

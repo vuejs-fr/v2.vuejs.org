@@ -314,9 +314,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -325,9 +322,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -992,9 +986,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -1003,9 +994,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -1037,6 +1025,8 @@
     <blockquote>
 <p>Cette page suppose que vous avez déjà lu les principes de base des <a href="components.html">composants</a>. Lisez-les en premier si les composants sont quelque chose de nouveau pour vous.</p>
 </blockquote>
+<div class="vueschool"><a href="https://vueschool.io/lessons/global-vs-local-components?friend=vuejs" target="_blank" rel="noopener" title="Cours Vue.js gratuit sur l'abonnement des composants">Regarder le cours gratuit sur Vue School</a></div>
+
 <h2 id="Noms-de-composant"><a href="#Noms-de-composant" class="headerlink" title="Noms de composant"></a>Noms de composant</h2><p>Lors de la création de composants, il faudra toujours spécifier un nom. Par exemple, la déclaration se fera comme suit :</p>
 <pre><code class="hljs js">Vue.component(<span class="hljs-string">'my-component-name'</span>, &#123; <span class="hljs-comment">/* ... */</span> &#125;)</code></pre>
 <p>Le nom du composant est le premier argument de <code>Vue.component</code>.</p>
@@ -1190,18 +1180,16 @@ requireComponent.keys().forEach(<span class="hljs-function"><span class="hljs-pa
   
   <div class="footer">
       <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
-<div class="bsa-cpc"></div>
+<div id="bsa-native"></div>
 <script>
-  (function(){
-    if(typeof _bsa !== 'undefined' && _bsa) {
-    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
-      target: '.bsa-cpc',
-      align: 'horizontal',
-      disable_css: 'true'
-    });
-      }
-  })();
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
 </script>
+
 
     Une erreur dans cette page ? Envie de contribuer à la traduction ?
     <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/guide/components-registration.md" target="_blank">
@@ -1242,14 +1230,6 @@ requireComponent.keys().forEach(<span class="hljs-function"><span class="hljs-pa
       autocompleteOptions: { hint: false, appendTo: 'body'}
       })
     })
-    </script>
-
-    <!-- fastclick -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      FastClick.attach(document.body)
-    }, false)
     </script>
   </body>
 </html>

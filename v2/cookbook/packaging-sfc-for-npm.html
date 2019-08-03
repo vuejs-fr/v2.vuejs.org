@@ -314,9 +314,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -325,9 +322,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -443,9 +437,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -454,9 +445,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -554,11 +542,12 @@ dist/</code></pre>
     "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/my-component.min.js"
   &#125;,
   "devDependencies": &#123;
-    "rollup": "^0.57.1",
-    "rollup-plugin-buble": "^0.19.2",
-    "rollup-plugin-vue": "^3.0.0",
-    "vue": "^2.5.16",
-    "vue-template-compiler": "^2.5.16",
+    "rollup": "^1.17.0",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
     ...
   &#125;,
   ...
@@ -597,7 +586,8 @@ dist/</code></pre>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> component;</code></pre>
 <p>Notice the first line directly imports your SFC, and the last line exports it unchanged. As indicated by the comments in the rest of the code, the wrapper provides an <code>install</code> function for Vue, then attempts to detect Vue and automatically install the component. With 90% of the work done, it’s time to sprint to the finish!</p>
 <h3 id="How-do-I-configure-the-Rollup-build"><a href="#How-do-I-configure-the-Rollup-build" class="headerlink" title="How do I configure the Rollup build?"></a>How do I configure the Rollup build?</h3><p>With the package.json <code>scripts</code> section ready and the SFC wrapper in place, all that is left is to ensure Rollup is properly configured. Fortunately, this can be done with a small 16 line rollup.config.js file:</p>
-<pre><code class="hljs js"><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>; <span class="hljs-comment">// Handle .vue SFC files</span>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> commonjs <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-commonjs'</span>; <span class="hljs-comment">// Convert CommonJS modules to ES6</span>
+<span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>; <span class="hljs-comment">// Handle .vue SFC files</span>
 <span class="hljs-keyword">import</span> buble <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-buble'</span>; <span class="hljs-comment">// Transpile/polyfill with reasonable browser support</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
     <span class="hljs-attr">input</span>: <span class="hljs-string">'src/wrapper.js'</span>, <span class="hljs-comment">// Path relative to package.json</span>
@@ -606,6 +596,7 @@ dist/</code></pre>
         <span class="hljs-attr">exports</span>: <span class="hljs-string">'named'</span>,
     &#125;,
     <span class="hljs-attr">plugins</span>: [
+        commonjs(),
         vue(&#123;
             <span class="hljs-attr">css</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// Dynamically inject css as a &lt;style&gt; tag</span>
             compileTemplate: <span class="hljs-literal">true</span>, <span class="hljs-comment">// Explicitly convert template to render function</span>
@@ -627,18 +618,16 @@ dist/</code></pre>
   
   <div class="footer">
       <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
-<div class="bsa-cpc"></div>
+<div id="bsa-native"></div>
 <script>
-  (function(){
-    if(typeof _bsa !== 'undefined' && _bsa) {
-    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
-      target: '.bsa-cpc',
-      align: 'horizontal',
-      disable_css: 'true'
-    });
-      }
-  })();
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
 </script>
+
 
     Une erreur dans cette page ? Envie de contribuer à la traduction ?
     <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/cookbook/packaging-sfc-for-npm.md" target="_blank">
@@ -679,14 +668,6 @@ dist/</code></pre>
       autocompleteOptions: { hint: false, appendTo: 'body'}
       })
     })
-    </script>
-
-    <!-- fastclick -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      FastClick.attach(document.body)
-    }, false)
     </script>
   </body>
 </html>

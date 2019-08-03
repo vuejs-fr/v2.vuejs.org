@@ -314,9 +314,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -325,9 +322,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -992,9 +986,6 @@
     <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
       <img src="/images/bit.png" alt="Bit">
     </a>
-    <a href="http://tooltwist.com/" target="_blank" class="logo">
-      <img src="/images/tooltwist.png" alt="Tooltwist">
-    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
@@ -1003,9 +994,6 @@
     </a>
     <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
-    <a href="https://teeplusplusclth.com/" target="_blank" class="logo">
-      <img src="/images/tee__.png" alt="Tee++">
     </a>
     </div>
   </div>
@@ -1035,7 +1023,9 @@
   
   
     <p>Un besoin classique de la liaison de données est la manipulation de la liste des classes d’un élément, ainsi que ses styles en ligne. Puisque ce sont tous deux des attributs, il est possible d’utiliser <code>v-bind</code>  pour les gérer : il faut simplement générer une chaine de caractère avec nos expressions. Cependant la concaténation de chaine de caractères est fastidieuse et source d’erreur. Pour cette raison, Vue fournit des améliorations spécifiques quand <code>v-bind</code> est utilisé avec <code>class</code> et <code>style</code>. En plus des chaines de caractères, l’expression peut évaluer des objets ou des tableaux.</p>
-<h2 id="Liaison-de-Classes-HTML"><a href="#Liaison-de-Classes-HTML" class="headerlink" title="Liaison de Classes HTML"></a>Liaison de Classes HTML</h2><h3 id="Syntaxe-Objet"><a href="#Syntaxe-Objet" class="headerlink" title="Syntaxe Objet"></a>Syntaxe Objet</h3><p>Il est possible de passer un objet à <code>v-bind:class</code> pour permuter les classes automatiquement :</p>
+<h2 id="Liaison-de-Classes-HTML"><a href="#Liaison-de-Classes-HTML" class="headerlink" title="Liaison de Classes HTML"></a>Liaison de Classes HTML</h2><div class="vueschool"><a href="https://vueschool.io/lessons/vuejs-dynamic-classes?friend=vuejs" target="_blank" rel="noopener" title="Cours Vue.js gratuit sur les classes dynamiques">Regarder le cours gratuit sur Vue School</a></div>
+
+<h3 id="Syntaxe-Objet"><a href="#Syntaxe-Objet" class="headerlink" title="Syntaxe Objet"></a>Syntaxe Objet</h3><p>Il est possible de passer un objet à <code>v-bind:class</code> pour permuter les classes automatiquement :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-bind:class</span>=<span class="hljs-string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <p>La syntaxe ci-dessus signifie que la classe <code>active</code> sera présente si la propriété <code>isActive</code> est <a href="https://developer.mozilla.org/fr/docs/Glossaire/Truthy" target="_blank" rel="noopener">considérée comme vraie</a>.</p>
 <p>Vous pouvez permuter plusieurs classes en ayant plus de champs dans l’objet. De plus, la directive <code>v-bind:class</code> peut aussi coexister avec l’attribut <code>class</code>. Donc, avec le template suivant :</p>
@@ -1142,18 +1132,16 @@
   
   <div class="footer">
       <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
-<div class="bsa-cpc"></div>
+<div id="bsa-native"></div>
 <script>
-  (function(){
-    if(typeof _bsa !== 'undefined' && _bsa) {
-    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
-      target: '.bsa-cpc',
-      align: 'horizontal',
-      disable_css: 'true'
-    });
-      }
-  })();
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
 </script>
+
 
     Une erreur dans cette page ? Envie de contribuer à la traduction ?
     <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/guide/class-and-style.md" target="_blank">
@@ -1194,14 +1182,6 @@
       autocompleteOptions: { hint: false, appendTo: 'body'}
       })
     })
-    </script>
-
-    <!-- fastclick -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      FastClick.attach(document.body)
-    }, false)
     </script>
   </body>
 </html>
