@@ -6,6 +6,8 @@ order: 302
 
 ## Introduction
 
+<div class="vueschool"><a href="https://vueschool.io/lessons/create-vuejs-directive?friend=vuejs" target="_blank" rel="noopener" title="Cours Vue.js gratuit sur les directives personnalisées">Regarder le cours gratuit sur Vue School</a></div>
+
 En supplément de l'ensemble de directives fournies par défaut (`v-model` et `v-show`), Vue vous permet également d'enregistrer vos propres directives. Notez qu'avec Vue 2.0, les composants sont la forme principale de réutilisabilité et d'abstraction du code. Il y a cependant des cas où vous aurez juste besoin d'un accès de bas niveau aux éléments du DOM, et c'est là que les directives personnalisées vous seraient utiles. Un exemple pourrait être la prise du focus sur un élément de champ, comme celui-ci :
 
 {% raw %}

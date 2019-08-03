@@ -4,6 +4,8 @@ type: guide
 order: 11
 ---
 
+<div class="vueschool"><a href="https://vueschool.io/courses/vuejs-components-fundamentals?friend=vuejs" target="_blank" rel="noopener" title="Cours Vue.js gratuit sur les fondamentaux des composants">Regarder le cours gratuit sur Vue School</a></div>
+
 ## Exemple de base
 
 Voici un exemple de composant Vue :

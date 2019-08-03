@@ -135,6 +135,10 @@ Ici l'argument est le nom de l'évènement à écouter. Nous parlerons aussi plu
 Introduit dans la version 2.6.0, il est aussi possible d'utiliser des expressions JavaScript dans un argument de directive inclus entre crochets :
 
 ``` html
+<!--
+Notez qu'il y a diverses contraintes aux expressions d'argument, comme expliqué
+dans la section « Contraintes des expressions d'argument dynamique » ci-après.
+-->
 <a v-bind:[attributeName]="url"> ... </a>
 ```
 
@@ -154,9 +158,7 @@ Les arguments dynamiques sont destinés à être évalués comme des chaines de 
 
 #### Contraintes des expressions d'argument dynamique
 
-<p class="tip">Les expressions d'argument dynamique ont quelques contraintes de syntaxe car certains caractères sont invalides à l'intérieur d'un nom d'attribut HTML comme les espaces et les guillemets. Vous devez également éviter les majuscules quand vous utilisez des templates dans le DOM.</p>
-
-Par exemple, ce qui suit est invalide :
+Les expressions d'argument dynamique ont quelques contraintes de syntaxe car certains caractères sont invalides à l'intérieur d'un nom d'attribut HTML comme les espaces et les guillemets. Par exemple, ce qui suit est invalide :
 
 ``` html
 <!-- Ceci va lever un avertissement de compilation. -->
@@ -165,10 +167,13 @@ Par exemple, ce qui suit est invalide :
 
 La solution consiste à utiliser des expressions sans espaces ni guillemets, ou à remplacer l'expression complexe par une propriété calculée.
 
-De plus, si vous utilisez des templates dans le DOM (templates directement écrits dans un fichier HTML), vous devrez être attentif au navigateur qui convertit les noms d'attribut en lettre minuscule :
+De plus, si vous utilisez des templates dans le DOM (templates directement écrits dans un fichier HTML), vous devez éviter les majuscules dans vos clés car les navigateurs convertissent les noms d'attribut en lettre minuscule :
 
 ``` html
-<!-- Ceci va être converti en v-bind:[someattr] dans un template dans le DOM. -->
+<!-- 
+Ceci va être converti en v-bind:[someattr] dans un template dans le DOM. -->
+À moins que vous ne fassiez référence à la propriété `"someattr"` dans votre instance, votre code ne fonctionnera pas.
+-->
 <a v-bind:[someAttr]="value"> ... </a>
 ```
 

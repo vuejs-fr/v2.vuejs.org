@@ -189,7 +189,11 @@ import Foo from './Foo'
 
 const factory = (values = {}) => {
   return shallowMount(Foo, {
-    data() { return { ...values  }}
+    data () {
+      return {
+        ...values
+      }
+    }
   })
 }
 

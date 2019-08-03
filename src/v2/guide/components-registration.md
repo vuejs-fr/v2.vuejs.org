@@ -6,6 +6,8 @@ order: 101
 
 > Cette page suppose que vous avez déjà lu les principes de base des [composants](components.html). Lisez-les en premier si les composants sont quelque chose de nouveau pour vous.
 
+<div class="vueschool"><a href="https://vueschool.io/lessons/global-vs-local-components?friend=vuejs" target="_blank" rel="noopener" title="Cours Vue.js gratuit sur l'abonnement des composants">Regarder le cours gratuit sur Vue School</a></div>
+
 ## Noms de composant
 
 Lors de la création de composants, il faudra toujours spécifier un nom. Par exemple, la déclaration se fera comme suit :

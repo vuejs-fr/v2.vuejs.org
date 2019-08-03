@@ -1534,9 +1534,9 @@ type: api
   // fonction
   vm.$watch(
     function () {
-      // everytime the expression `this.a + this.b` yields a different result,
-      // the handler will be called. It's as if we were watching a computed
-      // property without defining the computed property itself
+      // chaque fois que l'expression `this.a + this.b` va produire un résultat différent,
+      // le gestionnaire d'écoute va être appelé. C'est comme si nous surveillons
+      // une propriété carculée sans définir de propriété calculée en elle-même.
       return this.a + this.b
     },
     function (nouvelleValeur, ancienneValeur) {
