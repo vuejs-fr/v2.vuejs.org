@@ -603,7 +603,7 @@ Dans l'exemple ci-dessus, `currentTabComponent` peut contenir soit :
 
 Regardez [ce fiddle](https://jsfiddle.net/chrisvfritz/o3nycadu/) pour expérimenter cela avec un code complet, ou [cette version](https://jsfiddle.net/chrisvfritz/b2qj69o1/) pour un exemple lié à un objet d'option de composant plutôt qu'à un nom enregistré.
 
-C'est tout ce que vous avez besoin de savoir à propos des slot pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des [Composants dynamiques et asynchrones](components-dynamic-async.html).
+C'est tout ce que vous avez besoin de savoir à propos des composants dynamiques pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des [Composants dynamiques et asynchrones](components-dynamic-async.html).
 
 ## Cas particuliers de l'analyse des templates de DOM
 
