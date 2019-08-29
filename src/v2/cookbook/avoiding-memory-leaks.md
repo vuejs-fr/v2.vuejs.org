@@ -169,7 +169,7 @@ Quand on utilise keep-alive, on a accès à deux lifecycle hooks de plus: `activ
 
 ```js
 deactivated: function () {
-  // Enlevez toutes les données que vous ne voulez par garder en mémoire
+  // Enlevez toutes les données que vous ne voulez pas garder en mémoire
 }
 ```
 
