@@ -594,7 +594,7 @@
 <p>Cette technique peut être utile pour améliorer l’expérience utilisateur. Par exemple, imaginez qu’un utilisateur commence à écrire un texte sur une page et ensuite change de page. Si l’utilisateur revient sur la première page, son texte sera toujours là.</p>
 <p>Quand on utilise keep-alive, on a accès à deux lifecycle hooks de plus: <code>activated</code> et <code>deactivated</code>. Si on veut nettoyer ou changer les données quand un keep-alive composant est enlevé, on peut le faire dans le hook <code>deactivated</code>.</p>
 <pre><code class="hljs js">deactivated: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
-  <span class="hljs-comment">// Enlevez toutes les données que vous ne voulez par garder en mémoire</span>
+  <span class="hljs-comment">// Enlevez toutes les données que vous ne voulez pas garder en mémoire</span>
 &#125;</code></pre>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Vue permet de facilement développer de magnifiques, réactives applications JavaScript, mais vous devez toujours faire attention aux fuites de mémoire. Ces fuites vont souvent survenir quand on utilise des bibliothèques additionnelles qui manipulent la DOM en dehors de Vue. Soyez sure de tester votre application pour les fuites de mémoire et faites attention de bien nettoyer vos composants si nécessaire.</p>
 
