@@ -248,7 +248,7 @@ Utilisez des attributs `keyCode` est également possible :
 <input v-on:keyup.13="submit">
 ```
 
-Vue fournit des alias pour la plupard des clés communes utilisés quand necessaire pour le support des anciens navigateurs :
+Vue fournit des alias pour la plupart des clés communes utilisés quand nécessaire pour le support des anciens navigateurs :
 
 - `.enter`
 - `.tab`
