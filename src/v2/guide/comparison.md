@@ -98,7 +98,7 @@ Une autre différence importante entre ces offres est que les bibliothèques acc
 
 Pour finir, Vue offre un [outil de génération de projet en ligne de commande](https://github.com/vuejs/vue-cli) qui rend trivial le démarrage d'un nouveau projet en utilisant le système de système de build de votre choix. Vous pouvez même l'utiliser pour [prototyper instantanément](https://cli.vuejs.org/guide/prototyping.html#instant-prototyping) un composant. React fait aussi des progrès de ce côté-là avec [create-react-app](https://github.com/facebookincubator/create-react-app), mais a pour le moment quelques limitations :
 
-- Il ne permet aucune configuration durant la génération du projet, là où Vue CLI se lance sur un processus de dépendance qui peut être étendu avec des plugins [plugins](https://cli.vuejs.org/guide/plugins-and-presets.html#plugins).
+- Il ne permet aucune configuration durant la génération du projet, là où Vue CLI se lance sur un processus de dépendance qui peut être étendu avec des [plugins](https://cli.vuejs.org/guide/plugins-and-presets.html#plugins).
 - Il ne propose qu'un seul template qui présume que vous concevez une application web monopage, là où Vue offre une large variété de templates pour différents objectifs et outils de build.
 - Il ne permet pas la génération de projets depuis des [templates](https://cli.vuejs.org/guide/plugins-and-presets.html#presets) faits par les utilisateurs, ce qui peut être particulièrement utile en entreprise avec des conventions préétablies.
 
