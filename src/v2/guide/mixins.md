@@ -37,7 +37,7 @@ var component = new Component() // => "hello from mixin!"
 
 Quand un mixin et un composant définissent les mêmes options, elles seront fusionnées en utilisant la stratégie appropriée.
 
-Par exemple, les données d'un mixin subissant une fusion (une propriété profonde) avec les données d'un composant vont prendre la priorité en cas de conflits.
+Par exemple, les objets `data` subissent une fusion recursive, avec les données du composant qui sont prioritaires sur celles du mixin en cas de conflits.
 
 ``` js
 var mixin = {
