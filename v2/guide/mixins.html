@@ -1045,7 +1045,7 @@
 
 <span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Component() <span class="hljs-comment">// =&gt; "hello from mixin!"</span></code></pre>
 <h2 id="Fusion-des-options"><a href="#Fusion-des-options" class="headerlink" title="Fusion des options"></a>Fusion des options</h2><p>Quand un mixin et un composant définissent les mêmes options, elles seront fusionnées en utilisant la stratégie appropriée.</p>
-<p>Par exemple, les données d’un mixin subissant une fusion (une propriété profonde) avec les données d’un composant vont prendre la priorité en cas de conflits.</p>
+<p>Par exemple, les objets <code>data</code> subissent une fusion recursive, avec les données du composant qui sont prioritaires sur celles du mixin en cas de conflits.</p>
 <pre><code class="hljs js"><span class="hljs-keyword">var</span> mixin = &#123;
   <span class="hljs-attr">data</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
     <span class="hljs-keyword">return</span> &#123;
