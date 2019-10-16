@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,8 +49,12 @@
     <meta name="msapplication-config" content="browserconfig.xml">
     <link rel="manifest" href="/manifest.json">
 
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -58,6 +63,9 @@
 
     <!-- this needs to be loaded before guide's inline scripts -->
     <script src="/js/vue.js"></script>
+
+    
+
     <script>
       Vue.config.productionTip = false
       window.PAGE_TYPE = "cookbook"
@@ -68,7 +76,7 @@
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-46852172-1', 'vuejs.org');
       ga('send', 'pageview');
@@ -90,7 +98,7 @@
   <ul id="nav">
     <li>
   <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
   </form>
 </li>
 <li class="nav-dropdown-container learn">
@@ -109,8 +117,20 @@
     <li><h4>Videos</h4></li>
     <li>
       <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery (EN)
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School (EN)
+          </a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -121,39 +141,33 @@
   <ul class="nav-dropdown">
     <li><h4>Aide</h4></li>
     <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
+      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank" rel="noopener">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">Meetups (EN)</a></li>
     </ul></li>
     <li><h4>Outils</h4></li>
     <li>
       <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools (EN)</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI (EN)</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader (EN)</a></li>
       </ul>
     </li>
     <li><h4>Bibliothèques officielles</h4></li>
     <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Actualités (EN)</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Plans futurs (EN)</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Évènements (EN)</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter (EN)</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">Blog (EN)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">Offres d'emploi (EN)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">Communauté DEV (EN)</a></li>
     </ul></li>
   </ul>
 </li>
@@ -161,27 +175,37 @@
 <li>
   <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
 </li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Resources</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Partenaires</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Thèmes</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (EN)</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
 <li class="nav-dropdown-container support-vue">
   <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Dons ponctuel</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutiens récurrent</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">La boutique</a></li>
   </ul>
 </li>
 
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://cn.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank" rel="noopener">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://vi.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -193,115 +217,18 @@
       <div id="main" class="fix-sidebar">
         
           
-  <div class="sidebar">
+  
+
+<div class="sidebar">
   <div class="sidebar-inner">
-    <ul class="main-menu">
-      <li>
-  <form id="search-form">
-    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
-  </form>
-</li>
-<li class="nav-dropdown-container learn">
-  <a class="nav-link current">Doc</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><h4>Documentations</h4></li>
-    <li>
-      <ul>
-        <li><a href="/v2/guide/" class="nav-link">Guide</a></li>
-        <li><a href="/v2/api/" class="nav-link">API</a></li>
-        <li><a href="/v2/style-guide/" class="nav-link">Conventions</a></li>
-        <li><a href="/v2/examples/" class="nav-link">Exemples</a></li>
-        <li><a href="/v2/cookbook/" class="nav-link current">Tutoriels</a></li>
-      </ul>
-    </li>
-    <li><h4>Videos</h4></li>
-    <li>
-      <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
-      </ul>
-    </li>
-  </ul>
-</li>
-
-<li class="nav-dropdown-container ecosystem">
-  <a class="nav-link">Écosystème</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><h4>Aide</h4></li>
-    <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
-    </ul></li>
-    <li><h4>Outils</h4></li>
-    <li>
-      <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
-      </ul>
-    </li>
-    <li><h4>Bibliothèques officielles</h4></li>
-    <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
-    </ul></li>
-    <li><h4>Infos</h4></li>
-    <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
-    </ul></li>
-  </ul>
-</li>
-
-<li>
-  <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
-</li>
-<li class="nav-dropdown-container support-vue">
-  <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
-  </ul>
-</li>
-
-<li class="nav-dropdown-container language">
-  <a class="nav-link">Langues</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
-  </ul>
-</li>
-
-
-    </ul>
+    
     <div class="list">
       <div id="sidebar-sponsors-special">
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" class="logo">
-      <img src="/images/stdlib.png" alt="">
+    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/stdlib.png" alt="Bibliothèque standard">
     </a>
     </div>
   </div>
@@ -311,17 +238,17 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-      <img src="/images/bit.png" alt="Bit">
-    </a>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
-    <a href="https://vehikl.com/" target="_blank" class="logo">
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
     </a>
     </div>
   </div>
@@ -329,6 +256,7 @@
     Devenez un sponsor
   </a>
 </div>
+
 
 
       
@@ -434,17 +362,17 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-      <img src="/images/bit.png" alt="Bit">
-    </a>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
-    <a href="https://vehikl.com/" target="_blank" class="logo">
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
     </a>
     </div>
   </div>
@@ -455,10 +383,12 @@
 
 
 
+
 <div class="content cookbook with-sidebar ">
   
     
-      <div id="ad">
+      
+<div id="ad">
   <script
     async
     type="text/javascript"
@@ -466,6 +396,7 @@
     id="_carbonads_js">
   </script>
 </div>
+
 
     
   
@@ -484,50 +415,212 @@
 </ol>
 <p>Below is an example of how this can be achieved. We will analyze the code piece-by-piece and see what is actually happening in the next section.</p>
 <p>Let’s first establish our <code>GoogleMapLoader.vue</code> template:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"google-map"</span> <span class="attr">ref</span>=<span class="string">"googleMap"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"Boolean(this.google) &amp;&amp; Boolean(this.map)"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">slot</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:google</span>=<span class="string">"google"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:map</span>=<span class="string">"map"</span></span></span><br><span class="line"><span class="tag">      /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"google-map"</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"googleMap"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"Boolean(this.google) &amp;&amp; Boolean(this.map)"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>
+        <span class="hljs-attr">:google</span>=<span class="hljs-string">"google"</span>
+        <span class="hljs-attr">:map</span>=<span class="hljs-string">"map"</span>
+      /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
 <p>Now, our script needs to pass some props to the component which allows us to set the <a href="https://developers.google.com/maps/documentation/javascript/reference/" target="_blank" rel="noopener">Google Maps API</a> and <a href="https://developers.google.com/maps/documentation/javascript/reference/map#Map" target="_blank" rel="noopener">Map object</a>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> GoogleMapsApiLoader <span class="keyword">from</span> <span class="string">'google-maps-api-loader'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    mapConfig: <span class="built_in">Object</span>,</span><br><span class="line">    apiKey: <span class="built_in">String</span>,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      google: <span class="literal">null</span>,</span><br><span class="line">      map: <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> mounted() &#123;</span><br><span class="line">    <span class="keyword">const</span> googleMapApi = <span class="keyword">await</span> GoogleMapsApiLoader(&#123;</span><br><span class="line">      apiKey: <span class="keyword">this</span>.apiKey</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">this</span>.google = googleMapApi</span><br><span class="line">    <span class="keyword">this</span>.initializeMap()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  methods: &#123;</span><br><span class="line">    initializeMap() &#123;</span><br><span class="line">      <span class="keyword">const</span> mapContainer = <span class="keyword">this</span>.$refs.googleMap</span><br><span class="line">      <span class="keyword">this</span>.map = <span class="keyword">new</span> <span class="keyword">this</span>.google.maps.Map(</span><br><span class="line">        mapContainer, <span class="keyword">this</span>.mapConfig</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> GoogleMapsApiLoader <span class="hljs-keyword">from</span> <span class="hljs-string">'google-maps-api-loader'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">props</span>: &#123;
+    <span class="hljs-attr">mapConfig</span>: <span class="hljs-built_in">Object</span>,
+    <span class="hljs-attr">apiKey</span>: <span class="hljs-built_in">String</span>,
+  &#125;,
+
+  data() &#123;
+    <span class="hljs-keyword">return</span> &#123;
+      <span class="hljs-attr">google</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">map</span>: <span class="hljs-literal">null</span>
+    &#125;
+  &#125;,
+
+  <span class="hljs-keyword">async</span> mounted() &#123;
+    <span class="hljs-keyword">const</span> googleMapApi = <span class="hljs-keyword">await</span> GoogleMapsApiLoader(&#123;
+      <span class="hljs-attr">apiKey</span>: <span class="hljs-keyword">this</span>.apiKey
+    &#125;)
+    <span class="hljs-keyword">this</span>.google = googleMapApi
+    <span class="hljs-keyword">this</span>.initializeMap()
+  &#125;,
+
+  <span class="hljs-attr">methods</span>: &#123;
+    initializeMap() &#123;
+      <span class="hljs-keyword">const</span> mapContainer = <span class="hljs-keyword">this</span>.$refs.googleMap
+      <span class="hljs-keyword">this</span>.map = <span class="hljs-keyword">new</span> <span class="hljs-keyword">this</span>.google.maps.Map(
+        mapContainer, <span class="hljs-keyword">this</span>.mapConfig
+      )
+    &#125;
+  &#125;
+&#125;</code></pre>
 <p>This is just part of a working example, you can find the whole example in the Codesandbox below.</p>
 <iframe src="https://codesandbox.io/embed/1o45zvxk0q" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 <h2 id="Real-World-Example-Creating-a-Google-Map-Loader-component"><a href="#Real-World-Example-Creating-a-Google-Map-Loader-component" class="headerlink" title="Real-World Example: Creating a Google Map Loader component"></a>Real-World Example: Creating a Google Map Loader component</h2><h3 id="1-Create-a-component-that-initializes-our-map"><a href="#1-Create-a-component-that-initializes-our-map" class="headerlink" title="1. Create a component that initializes our map"></a>1. Create a component that initializes our map</h3><p><code>GoogleMapLoader.vue</code></p>
 <p>In the template, we create a container for the map which will be used to mount the <a href="https://developers.google.com/maps/documentation/javascript/reference/map#Map" target="_blank" rel="noopener">Map</a> object extracted from the Google Maps API.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"google-map"</span> <span class="attr">ref</span>=<span class="string">"googleMap"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"google-map"</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"googleMap"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
 <p>Next up, our script needs to receive props from the parent component which will allow us to set the Google Map. Those props consist of:</p>
 <ul>
 <li><a href="https://developers.google.com/maps/documentation/javascript/reference/3/map#MapOptions" target="_blank" rel="noopener">mapConfig</a>: Google Maps config object</li>
 <li><a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank" rel="noopener">apiKey</a>: Our personal api key required by Google Maps</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> GoogleMapsApiLoader <span class="keyword">from</span> <span class="string">'google-maps-api-loader'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    mapConfig: <span class="built_in">Object</span>,</span><br><span class="line">    apiKey: <span class="built_in">String</span>,</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> GoogleMapsApiLoader <span class="hljs-keyword">from</span> <span class="hljs-string">'google-maps-api-loader'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">props</span>: &#123;
+    <span class="hljs-attr">mapConfig</span>: <span class="hljs-built_in">Object</span>,
+    <span class="hljs-attr">apiKey</span>: <span class="hljs-built_in">String</span>,
+  &#125;,</code></pre>
 <p>Then, we set the initial values of google and map to null:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    google: <span class="literal">null</span>,</span><br><span class="line">    map: <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">data() &#123;
+  <span class="hljs-keyword">return</span> &#123;
+    <span class="hljs-attr">google</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">map</span>: <span class="hljs-literal">null</span>
+  &#125;
+&#125;,</code></pre>
 <p>On <code>mounted</code> hook we instantiate a <code>googleMapApi</code> and <code>Map</code> objects from the <code>GoogleMapsApi</code> and we set the values of <code>google</code> and <code>map</code> to the created instances:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">  <span class="keyword">async</span> mounted() &#123;</span><br><span class="line">    <span class="keyword">const</span> googleMapApi = <span class="keyword">await</span> GoogleMapsApiLoader(&#123;</span><br><span class="line">      apiKey: <span class="keyword">this</span>.apiKey</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">this</span>.google = googleMapApi</span><br><span class="line">    <span class="keyword">this</span>.initializeMap()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  methods: &#123;</span><br><span class="line">    initializeMap() &#123;</span><br><span class="line">      <span class="keyword">const</span> mapContainer = <span class="keyword">this</span>.$refs.googleMap</span><br><span class="line">      <span class="keyword">this</span>.map = <span class="keyword">new</span> <span class="keyword">this</span>.google.maps.Map(mapContainer, <span class="keyword">this</span>.mapConfig)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">  <span class="hljs-keyword">async</span> mounted() &#123;
+    <span class="hljs-keyword">const</span> googleMapApi = <span class="hljs-keyword">await</span> GoogleMapsApiLoader(&#123;
+      <span class="hljs-attr">apiKey</span>: <span class="hljs-keyword">this</span>.apiKey
+    &#125;)
+    <span class="hljs-keyword">this</span>.google = googleMapApi
+    <span class="hljs-keyword">this</span>.initializeMap()
+  &#125;,
+
+  <span class="hljs-attr">methods</span>: &#123;
+    initializeMap() &#123;
+      <span class="hljs-keyword">const</span> mapContainer = <span class="hljs-keyword">this</span>.$refs.googleMap
+      <span class="hljs-keyword">this</span>.map = <span class="hljs-keyword">new</span> <span class="hljs-keyword">this</span>.google.maps.Map(mapContainer, <span class="hljs-keyword">this</span>.mapConfig)
+    &#125;
+  &#125;
+&#125;</code></pre>
 <p>So far, so good. With all that done, we could continue adding the other objects to the map (Markers, Polylines, etc.) and use it as an ordinary map component.</p>
 <p>But, we want to use our <code>GoogleMapLoader</code> component only as a loader that prepares the map — we don’t want to render anything on it.</p>
 <p>To achieve that, we need to allow the parent component that will use our <code>GoogleMapLoader</code> to access <code>this.google</code> and <code>this.map</code> that are set inside the <code>GoogleMapLoader</code> component. That’s where <a href="https://vuejs.org/v2/guide/components-slots.html#Scoped-Slots" target="_blank" rel="noopener">scoped slots</a> really shine. Scoped slots allow us to expose the properties set in a child component to the parent component. It may sound like Inception, but bear with me one more minute as we break that down further.</p>
 <h3 id="2-Create-component-that-uses-our-initializer-component"><a href="#2-Create-component-that-uses-our-initializer-component" class="headerlink" title="2. Create component that uses our initializer component."></a>2. Create component that uses our initializer component.</h3><p><code>TravelMap.vue</code></p>
 <p>In the template, we render the <code>GoogleMapLoader</code> component and pass props that are required to initialize the map.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">GoogleMapLoader</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:mapConfig</span>=<span class="string">"mapConfig"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">apiKey</span>=<span class="string">"yourApiKey"</span></span></span><br><span class="line"><span class="tag">  /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">GoogleMapLoader</span>
+    <span class="hljs-attr">:mapConfig</span>=<span class="hljs-string">"mapConfig"</span>
+    <span class="hljs-attr">apiKey</span>=<span class="hljs-string">"yourApiKey"</span>
+  /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
 <p>Our script tag will look like this:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> GoogleMapLoader <span class="keyword">from</span> <span class="string">'./GoogleMapLoader'</span></span><br><span class="line"><span class="keyword">import</span> &#123; mapSettings &#125; <span class="keyword">from</span> <span class="string">'@/constants/mapSettings'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    GoogleMapLoader</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  computed: &#123;</span><br><span class="line">    mapConfig () &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...mapSettings,</span><br><span class="line">        center: &#123; <span class="attr">lat</span>: <span class="number">0</span>, <span class="attr">lng</span>: <span class="number">0</span> &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">&lt;script&gt;
+<span class="hljs-keyword">import</span> GoogleMapLoader <span class="hljs-keyword">from</span> <span class="hljs-string">'./GoogleMapLoader'</span>
+<span class="hljs-keyword">import</span> &#123; mapSettings &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@/constants/mapSettings'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">components</span>: &#123;
+    GoogleMapLoader
+  &#125;,
+
+  <span class="hljs-attr">computed</span>: &#123;
+    mapConfig () &#123;
+      <span class="hljs-keyword">return</span> &#123;
+        ...mapSettings,
+        <span class="hljs-attr">center</span>: &#123; <span class="hljs-attr">lat</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">0</span> &#125;
+      &#125;
+    &#125;,
+  &#125;,
+&#125;
+&lt;<span class="hljs-regexp">/script&gt;</span></code></pre>
 <p>Still no scoped slots, so let’s add one.</p>
 <h3 id="3-Expose-google-and-map-properties-to-the-parent-component-by-adding-a-scoped-slot"><a href="#3-Expose-google-and-map-properties-to-the-parent-component-by-adding-a-scoped-slot" class="headerlink" title="3. Expose google and map properties to the parent component by adding a scoped slot."></a>3. Expose <code>google</code> and <code>map</code> properties to the parent component by adding a scoped slot.</h3><p>Finally, we can add a scoped slot that will do the job and allow us to access the child component props in the parent component. We do that by adding the <code>&lt;slot&gt;</code> tag in the child component and passing the props that we want to expose (using <code>v-bind</code> directive or <code>:propName</code> shorthand). It does not differ from passing the props down to the child component, but doing it in the <code>&lt;slot&gt;</code> tag will reverse the direction of data flow.</p>
 <p><code>GoogleMapLoader.vue</code></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"google-map"</span> <span class="attr">ref</span>=<span class="string">"googleMap"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"Boolean(this.google) &amp;&amp; Boolean(this.map)"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">slot</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:google</span>=<span class="string">"google"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:map</span>=<span class="string">"map"</span></span></span><br><span class="line"><span class="tag">      /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"google-map"</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"googleMap"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"Boolean(this.google) &amp;&amp; Boolean(this.map)"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>
+        <span class="hljs-attr">:google</span>=<span class="hljs-string">"google"</span>
+        <span class="hljs-attr">:map</span>=<span class="hljs-string">"map"</span>
+      /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
 <p>Now, when we have the slot in the child component, we need to receive and consume the exposed props in the parent component.</p>
 <h3 id="4-Receive-exposed-props-in-the-parent-component-using-slot-scope-attribute"><a href="#4-Receive-exposed-props-in-the-parent-component-using-slot-scope-attribute" class="headerlink" title="4. Receive exposed props in the parent component using slot-scope attribute."></a>4. Receive exposed props in the parent component using <code>slot-scope</code> attribute.</h3><p>To receive the props in the parent component, we declare a template element and use the <code>slot-scope</code> attribute. This attribute has access to the object carrying all the props exposed from the child component. We can grab the whole object or we can <a href="https://vuejs.org/v2/guide/components-slots.html#Destructuring-slot-scope" target="_blank" rel="noopener">de-structure that object</a> and only what we need.</p>
 <p>Let’s de-structure this thing to get what we need.</p>
 <p><code>TravelMap.vue</code></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">GoogleMapLoader</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:mapConfig</span>=<span class="string">"mapConfig"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">apiKey</span>=<span class="string">"yourApiKey"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"&#123; google, map &#125;"</span>&gt;</span></span><br><span class="line">  	&#123;&#123; map &#125;&#125;</span><br><span class="line">  	&#123;&#123; google &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">GoogleMapLoader</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">GoogleMapLoader</span>
+  <span class="hljs-attr">:mapConfig</span>=<span class="hljs-string">"mapConfig"</span>
+  <span class="hljs-attr">apiKey</span>=<span class="hljs-string">"yourApiKey"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"&#123; google, map &#125;"</span>&gt;</span>
+  	&#123;&#123; map &#125;&#125;
+  	&#123;&#123; google &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMapLoader</span>&gt;</span></code></pre>
 <p>Even though the <code>google</code> and <code>map</code> props do not exist in the <code>TravelMap</code> scope, the component has access to them and we can use them in the template.</p>
 <p>You might wonder why would we do things like that and what is the use of all that?</p>
 <p>Scoped slots allow us to pass a template to the slot instead of a rendered element. It’s called a <code>scoped</code> slot because it will have access to certain child component data even though the template is rendered in the parent component scope. This gives us the freedom to fill the template with custom content from the parent component.</p>
 <h3 id="5-Create-factory-components-for-Markers-and-Polylines"><a href="#5-Create-factory-components-for-Markers-and-Polylines" class="headerlink" title="5. Create factory components for Markers and Polylines"></a>5. Create factory components for Markers and Polylines</h3><p>Now when we have our map ready we will create two factory components that will be used to add elements to the <code>TravelMap</code>.</p>
 <p><code>GoogleMapMarker.vue</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; POINT_MARKER_ICON_CONFIG &#125; <span class="keyword">from</span> <span class="string">'@/constants/mapSettings'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    google: &#123;</span><br><span class="line">      type: <span class="built_in">Object</span>,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    map: &#123;</span><br><span class="line">      type: <span class="built_in">Object</span>,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    marker: &#123;</span><br><span class="line">      type: <span class="built_in">Object</span>,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  mounted() &#123;</span><br><span class="line">    <span class="keyword">new</span> <span class="keyword">this</span>.google.maps.Marker(&#123;</span><br><span class="line">      position: <span class="keyword">this</span>.marker.position,</span><br><span class="line">      marker: <span class="keyword">this</span>.marker,</span><br><span class="line">      map: <span class="keyword">this</span>.map,</span><br><span class="line">      icon: POINT_MARKER_ICON_CONFIG</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; POINT_MARKER_ICON_CONFIG &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@/constants/mapSettings'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">props</span>: &#123;
+    <span class="hljs-attr">google</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Object</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    &#125;,
+    <span class="hljs-attr">map</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Object</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    &#125;,
+    <span class="hljs-attr">marker</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Object</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    &#125;
+  &#125;,
+
+  mounted() &#123;
+    <span class="hljs-keyword">new</span> <span class="hljs-keyword">this</span>.google.maps.Marker(&#123;
+      <span class="hljs-attr">position</span>: <span class="hljs-keyword">this</span>.marker.position,
+      <span class="hljs-attr">marker</span>: <span class="hljs-keyword">this</span>.marker,
+      <span class="hljs-attr">map</span>: <span class="hljs-keyword">this</span>.map,
+      <span class="hljs-attr">icon</span>: POINT_MARKER_ICON_CONFIG
+    &#125;)
+  &#125;
+&#125;</code></pre>
 <p><code>GoogleMapLine.vue</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; LINE_PATH_CONFIG &#125; <span class="keyword">from</span> <span class="string">'@/constants/mapSettings'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    google: &#123;</span><br><span class="line">      type: <span class="built_in">Object</span>,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    map: &#123;</span><br><span class="line">      type: <span class="built_in">Object</span>,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    path: &#123;</span><br><span class="line">      type: <span class="built_in">Array</span>,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  mounted() &#123;</span><br><span class="line">    <span class="keyword">new</span> <span class="keyword">this</span>.google.maps.Polyline(&#123;</span><br><span class="line">      path: <span class="keyword">this</span>.path,</span><br><span class="line">      map: <span class="keyword">this</span>.map,</span><br><span class="line">      ...LINE_PATH_CONFIG</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; LINE_PATH_CONFIG &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@/constants/mapSettings'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">props</span>: &#123;
+    <span class="hljs-attr">google</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Object</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    &#125;,
+    <span class="hljs-attr">map</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Object</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    &#125;,
+    <span class="hljs-attr">path</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Array</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    &#125;
+  &#125;,
+
+  mounted() &#123;
+    <span class="hljs-keyword">new</span> <span class="hljs-keyword">this</span>.google.maps.Polyline(&#123;
+      <span class="hljs-attr">path</span>: <span class="hljs-keyword">this</span>.path,
+      <span class="hljs-attr">map</span>: <span class="hljs-keyword">this</span>.map,
+      ...LINE_PATH_CONFIG
+    &#125;)
+  &#125;
+&#125;</code></pre>
 <p>Both of these receive <code>google</code> that we use to extract the required object (Marker or Polyline) as well as <code>map</code> which gives as a reference to the map on which we want to place our element.</p>
 <p>Each component also expects an extra prop to create a corresponding element. In this case, we have <code>marker</code> and <code>path</code>, respectively.</p>
 <p>On the mounted hook, we create an element (Marker/Polyline) and attach it to our map by passing the <code>map</code> property to the object constructor.</p>
@@ -535,9 +628,64 @@
 <h3 id="6-Add-elements-to-map"><a href="#6-Add-elements-to-map" class="headerlink" title="6. Add elements to map"></a>6. Add elements to map</h3><p>Let’s use our factory components to add elements to our map. We must render the factory component and pass the <code>google</code> and <code>map</code> objects so data flows to the right places.</p>
 <p>We also need to provide the data that’s required by the element itself. In our case, that’s the <code>marker</code> object with the position of the marker and the <code>path</code> object with Polyline coordinates.</p>
 <p>Here we go, integrating the data points directly into the template:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">GoogleMapLoader</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:mapConfig</span>=<span class="string">"mapConfig"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">apiKey</span>=<span class="string">"yourApiKey"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"&#123; google, map &#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">GoogleMapMarker</span></span></span><br><span class="line"><span class="tag">      <span class="attr">v-for</span>=<span class="string">"marker in markers"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:key</span>=<span class="string">"marker.id"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:marker</span>=<span class="string">"marker"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:google</span>=<span class="string">"google"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:map</span>=<span class="string">"map"</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">GoogleMapLine</span></span></span><br><span class="line"><span class="tag">      <span class="attr">v-for</span>=<span class="string">"line in lines"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:key</span>=<span class="string">"line.id"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:path.sync</span>=<span class="string">"line.path"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:google</span>=<span class="string">"google"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:map</span>=<span class="string">"map"</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">GoogleMapLoader</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">GoogleMapLoader</span>
+  <span class="hljs-attr">:mapConfig</span>=<span class="hljs-string">"mapConfig"</span>
+  <span class="hljs-attr">apiKey</span>=<span class="hljs-string">"yourApiKey"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"&#123; google, map &#125;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">GoogleMapMarker</span>
+      <span class="hljs-attr">v-for</span>=<span class="hljs-string">"marker in markers"</span>
+      <span class="hljs-attr">:key</span>=<span class="hljs-string">"marker.id"</span>
+      <span class="hljs-attr">:marker</span>=<span class="hljs-string">"marker"</span>
+      <span class="hljs-attr">:google</span>=<span class="hljs-string">"google"</span>
+      <span class="hljs-attr">:map</span>=<span class="hljs-string">"map"</span>
+    /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">GoogleMapLine</span>
+      <span class="hljs-attr">v-for</span>=<span class="hljs-string">"line in lines"</span>
+      <span class="hljs-attr">:key</span>=<span class="hljs-string">"line.id"</span>
+      <span class="hljs-attr">:path.sync</span>=<span class="hljs-string">"line.path"</span>
+      <span class="hljs-attr">:google</span>=<span class="hljs-string">"google"</span>
+      <span class="hljs-attr">:map</span>=<span class="hljs-string">"map"</span>
+    /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMapLoader</span>&gt;</span></code></pre>
 <p>We need to import the required factory components in our script and set the data that will be passed to the markers and lines:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapSettings &#125; <span class="keyword">from</span> <span class="string">'@/constants/mapSettings'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    GoogleMapLoader,</span><br><span class="line">    GoogleMapMarker,</span><br><span class="line">    GoogleMapLine</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      markers: [</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="string">'a'</span>, <span class="attr">position</span>: &#123; <span class="attr">lat</span>: <span class="number">3</span>, <span class="attr">lng</span>: <span class="number">101</span> &#125; &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="string">'b'</span>, <span class="attr">position</span>: &#123; <span class="attr">lat</span>: <span class="number">5</span>, <span class="attr">lng</span>: <span class="number">99</span> &#125; &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="string">'c'</span>, <span class="attr">position</span>: &#123; <span class="attr">lat</span>: <span class="number">6</span>, <span class="attr">lng</span>: <span class="number">97</span> &#125; &#125;,</span><br><span class="line">      ],</span><br><span class="line">      lines: [</span><br><span class="line">        &#123; <span class="attr">id</span>: <span class="string">'1'</span>, <span class="attr">path</span>: [&#123; <span class="attr">lat</span>: <span class="number">3</span>, <span class="attr">lng</span>: <span class="number">101</span> &#125;, &#123; <span class="attr">lat</span>: <span class="number">5</span>, <span class="attr">lng</span>: <span class="number">99</span> &#125;] &#125;,</span><br><span class="line">        &#123; <span class="attr">id</span>: <span class="string">'2'</span>, <span class="attr">path</span>: [&#123; <span class="attr">lat</span>: <span class="number">5</span>, <span class="attr">lng</span>: <span class="number">99</span> &#125;, &#123; <span class="attr">lat</span>: <span class="number">6</span>, <span class="attr">lng</span>: <span class="number">97</span> &#125;] &#125;</span><br><span class="line">      ],</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  computed: &#123;</span><br><span class="line">    mapConfig () &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...mapSettings,</span><br><span class="line">        center: <span class="keyword">this</span>.mapCenter</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    mapCenter () &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.markers[<span class="number">1</span>].position</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; mapSettings &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@/constants/mapSettings'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">components</span>: &#123;
+    GoogleMapLoader,
+    GoogleMapMarker,
+    GoogleMapLine
+  &#125;,
+
+  data () &#123;
+    <span class="hljs-keyword">return</span> &#123;
+      <span class="hljs-attr">markers</span>: [
+      &#123; <span class="hljs-attr">id</span>: <span class="hljs-string">'a'</span>, <span class="hljs-attr">position</span>: &#123; <span class="hljs-attr">lat</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">101</span> &#125; &#125;,
+      &#123; <span class="hljs-attr">id</span>: <span class="hljs-string">'b'</span>, <span class="hljs-attr">position</span>: &#123; <span class="hljs-attr">lat</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">99</span> &#125; &#125;,
+      &#123; <span class="hljs-attr">id</span>: <span class="hljs-string">'c'</span>, <span class="hljs-attr">position</span>: &#123; <span class="hljs-attr">lat</span>: <span class="hljs-number">6</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">97</span> &#125; &#125;,
+      ],
+      <span class="hljs-attr">lines</span>: [
+        &#123; <span class="hljs-attr">id</span>: <span class="hljs-string">'1'</span>, <span class="hljs-attr">path</span>: [&#123; <span class="hljs-attr">lat</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">101</span> &#125;, &#123; <span class="hljs-attr">lat</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">99</span> &#125;] &#125;,
+        &#123; <span class="hljs-attr">id</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">path</span>: [&#123; <span class="hljs-attr">lat</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">99</span> &#125;, &#123; <span class="hljs-attr">lat</span>: <span class="hljs-number">6</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">97</span> &#125;] &#125;
+      ],
+    &#125;
+  &#125;,
+
+  <span class="hljs-attr">computed</span>: &#123;
+    mapConfig () &#123;
+      <span class="hljs-keyword">return</span> &#123;
+        ...mapSettings,
+        <span class="hljs-attr">center</span>: <span class="hljs-keyword">this</span>.mapCenter
+      &#125;
+    &#125;,
+
+    mapCenter () &#123;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.markers[<span class="hljs-number">1</span>].position
+    &#125;
+  &#125;,
+&#125;</code></pre>
 <h2 id="When-To-Avoid-This-Pattern"><a href="#When-To-Avoid-This-Pattern" class="headerlink" title="When To Avoid This Pattern"></a>When To Avoid This Pattern</h2><p>It might be tempting to create a very complex solution based on the example, but at some point we can get to the situation where this abstraction becomes an independent part of the code living in our codebase. If we get to that point it might be worth considering extraction to an add-on.</p>
 <h2 id="Wrapping-Up"><a href="#Wrapping-Up" class="headerlink" title="Wrapping Up"></a>Wrapping Up</h2><p>That’s it. With all those bits and pieces created we can now re-use the <code>GoogleMapLoader</code> component as a base for all our maps by passing different templates to each one of them. Imagine that you need to create another map with different Markers or just Markers without Polylines. By using the above pattern it becomes very easy as we just need to pass different content to the <code>GoogleMapLoader</code> component.</p>
 <p>This pattern is not strictly connected to Google Maps; it can be used with any library to set the base component and expose the library’s API that might be then used in the component that summoned the base component.</p>
@@ -557,8 +705,8 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
 </script>
 
 
-    Une erreur dans cette page ? Envie de contribuer à la traduction ?
-    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/cookbook/practical-use-of-scoped-slots.md" target="_blank">
+    Une erreur dans cette page ou une envie de contribuer à la traduction ?
+    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/cookbook/practical-use-of-scoped-slots.md" rel="noopener" target="_blank">
       Éditez cette page sur GitHub !
     </a>
   </div>
@@ -574,9 +722,9 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
     <script src="/js/common.js"></script>
 
     <!-- search -->
-    <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/search.css">
-    <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
     <script>
     [
       '#search-query-nav',

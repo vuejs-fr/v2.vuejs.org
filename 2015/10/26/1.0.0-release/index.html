@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,8 +49,12 @@
     <meta name="msapplication-config" content="browserconfig.xml">
     <link rel="manifest" href="/manifest.json">
 
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -58,6 +63,9 @@
 
     <!-- this needs to be loaded before guide's inline scripts -->
     <script src="/js/vue.js"></script>
+
+    
+
     <script>
       Vue.config.productionTip = false
       window.PAGE_TYPE = ""
@@ -68,7 +76,7 @@
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-46852172-1', 'vuejs.org');
       ga('send', 'pageview');
@@ -90,7 +98,7 @@
   <ul id="nav">
     <li>
   <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
   </form>
 </li>
 <li class="nav-dropdown-container learn">
@@ -109,8 +117,20 @@
     <li><h4>Videos</h4></li>
     <li>
       <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery (EN)
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School (EN)
+          </a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -121,39 +141,33 @@
   <ul class="nav-dropdown">
     <li><h4>Aide</h4></li>
     <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
+      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank" rel="noopener">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">Meetups (EN)</a></li>
     </ul></li>
     <li><h4>Outils</h4></li>
     <li>
       <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools (EN)</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI (EN)</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader (EN)</a></li>
       </ul>
     </li>
     <li><h4>Bibliothèques officielles</h4></li>
     <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Actualités (EN)</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Plans futurs (EN)</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Évènements (EN)</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter (EN)</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">Blog (EN)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">Offres d'emploi (EN)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">Communauté DEV (EN)</a></li>
     </ul></li>
   </ul>
 </li>
@@ -161,27 +175,37 @@
 <li>
   <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
 </li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Resources</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Partenaires</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Thèmes</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (EN)</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
 <li class="nav-dropdown-container support-vue">
   <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Dons ponctuel</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutiens récurrent</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">La boutique</a></li>
   </ul>
 </li>
 
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://cn.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">한국어</a></li>
+    <li><a href="https://vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://br.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://vi.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -197,7 +221,7 @@
     <ul class="main-menu">
       <li>
   <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
   </form>
 </li>
 <li class="nav-dropdown-container learn">
@@ -216,8 +240,20 @@
     <li><h4>Videos</h4></li>
     <li>
       <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery (EN)
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School (EN)
+          </a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -228,39 +264,33 @@
   <ul class="nav-dropdown">
     <li><h4>Aide</h4></li>
     <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
+      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank" rel="noopener">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">Meetups (EN)</a></li>
     </ul></li>
     <li><h4>Outils</h4></li>
     <li>
       <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools (EN)</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI (EN)</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader (EN)</a></li>
       </ul>
     </li>
     <li><h4>Bibliothèques officielles</h4></li>
     <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Actualités (EN)</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Plans futurs (EN)</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Évènements (EN)</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter (EN)</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">Blog (EN)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">Offres d'emploi (EN)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">Communauté DEV (EN)</a></li>
     </ul></li>
   </ul>
 </li>
@@ -268,27 +298,37 @@
 <li>
   <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
 </li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Resources</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Partenaires</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Thèmes</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (EN)</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
 <li class="nav-dropdown-container support-vue">
   <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Dons ponctuel</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutiens récurrent</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">La boutique</a></li>
   </ul>
 </li>
 
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://cn.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">한국어</a></li>
+    <li><a href="https://vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://br.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://vi.vuejs.org/2015/10/26/1.0.0-release/" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -348,7 +388,8 @@
   </div>
 </div>
 <div class="content with-sidebar blog post">
-  <div id="ad">
+  
+<div id="ad">
   <script
     async
     type="text/javascript"
@@ -356,6 +397,7 @@
     id="_carbonads_js">
   </script>
 </div>
+
 
   <h1>Vue.js 1.0.0 Released</h1>
   <h4>Oct 26, 2015</h4>
@@ -365,9 +407,17 @@
 <p>After 300+ commits, 8 alphas, 4 betas and 2 release candidates, today I am very proud to announce the release of <a href="https://github.com/vuejs/vue/releases/tag/1.0.0" target="_blank" rel="noopener">Vue.js 1.0.0 Evangelion</a>! Many thanks to all those who participated in the API re-design process - it would not have been possible without all the input from the community.</p>
 <a id="more"></a>
 <h3 id="Improved-Template-Syntax"><a href="#Improved-Template-Syntax" class="headerlink" title="Improved Template Syntax"></a>Improved Template Syntax</h3><p>The 1.0 template syntax resolves a lot of subtle consistency issues and makes Vue templates more concise and more readable in general. The most notable new feature is the shorthand syntax for <code>v-on</code> and <code>v-bind</code>:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- short for v-bind:href --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">:href</span>=<span class="string">"someURL"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- short for v-on:click --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"onClick"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- short for v-bind:href --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">:href</span>=<span class="hljs-string">"someURL"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- short for v-on:click --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"onClick"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
 <p>When used on a child component, <code>v-on</code> listens for custom events and <code>v-bind</code> can be used to bind props. The shorthands using child components very succinct:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">item-list</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:items</span>=<span class="string">"items"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">ready</span>=<span class="string">"onItemsReady"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">update</span>=<span class="string">"onItemsUpdate"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">item-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">item-list</span>
+  <span class="hljs-attr">:items</span>=<span class="hljs-string">"items"</span>
+  @<span class="hljs-attr">ready</span>=<span class="hljs-string">"onItemsReady"</span>
+  @<span class="hljs-attr">update</span>=<span class="hljs-string">"onItemsUpdate"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">item-list</span>&gt;</span></code></pre>
 <h3 id="API-Cleanup"><a href="#API-Cleanup" class="headerlink" title="API Cleanup"></a>API Cleanup</h3><p>The overall goal for Vue.js 1.0 is to make it suitable for larger projects. This is why there are many API deprecations. Except for ones that are barely used, the most common reason for a deprecation is that the feature leads to patterns that damages maintainability. Specifically, we are deprecating features that make it hard to maintain and refactor a component in isolation without affecting the rest of the project.</p>
 <p>For example, the default asset resolution in 0.12 has implicit fallbacks to parents in the component tree. This makes the assets available to a component non-deterministic and subject how it is used at runtime. In 1.0, all assets are now resolved in strict mode and there are no longer implicit fallbacks to parent. The <code>inherit</code> option is also removed, because it too often leads to tightly coupled components that are hard to refactor.</p>
 <h3 id="Faster-Initial-Rendering"><a href="#Faster-Initial-Rendering" class="headerlink" title="Faster Initial Rendering"></a>Faster Initial Rendering</h3><p>1.0 replaces the old <code>v-repeat</code> directive with <code>v-for</code>. In addition to providing the same functionality and more intuitive scoping, <code>v-for</code> provides up to <strong>100%</strong> initial render performance boost when rendering large lists and tables!</p>
@@ -403,9 +453,9 @@
     <script src="/js/common.js"></script>
 
     <!-- search -->
-    <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/search.css">
-    <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
     <script>
     [
       '#search-query-nav',

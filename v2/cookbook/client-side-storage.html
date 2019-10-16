@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,8 +49,12 @@
     <meta name="msapplication-config" content="browserconfig.xml">
     <link rel="manifest" href="/manifest.json">
 
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -58,6 +63,9 @@
 
     <!-- this needs to be loaded before guide's inline scripts -->
     <script src="/js/vue.js"></script>
+
+    
+
     <script>
       Vue.config.productionTip = false
       window.PAGE_TYPE = "cookbook"
@@ -68,7 +76,7 @@
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-46852172-1', 'vuejs.org');
       ga('send', 'pageview');
@@ -90,7 +98,7 @@
   <ul id="nav">
     <li>
   <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
   </form>
 </li>
 <li class="nav-dropdown-container learn">
@@ -109,8 +117,20 @@
     <li><h4>Videos</h4></li>
     <li>
       <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery (EN)
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School (EN)
+          </a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -121,39 +141,33 @@
   <ul class="nav-dropdown">
     <li><h4>Aide</h4></li>
     <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
+      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank" rel="noopener">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">Meetups (EN)</a></li>
     </ul></li>
     <li><h4>Outils</h4></li>
     <li>
       <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools (EN)</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI (EN)</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader (EN)</a></li>
       </ul>
     </li>
     <li><h4>Bibliothèques officielles</h4></li>
     <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Actualités (EN)</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Plans futurs (EN)</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Évènements (EN)</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter (EN)</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">Blog (EN)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">Offres d'emploi (EN)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">Communauté DEV (EN)</a></li>
     </ul></li>
   </ul>
 </li>
@@ -161,27 +175,37 @@
 <li>
   <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
 </li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Resources</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Partenaires</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Thèmes</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (EN)</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
 <li class="nav-dropdown-container support-vue">
   <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Dons ponctuel</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutiens récurrent</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">La boutique</a></li>
   </ul>
 </li>
 
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://cn.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank" rel="noopener">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://vi.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -193,115 +217,18 @@
       <div id="main" class="fix-sidebar">
         
           
-  <div class="sidebar">
+  
+
+<div class="sidebar">
   <div class="sidebar-inner">
-    <ul class="main-menu">
-      <li>
-  <form id="search-form">
-    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
-  </form>
-</li>
-<li class="nav-dropdown-container learn">
-  <a class="nav-link current">Doc</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><h4>Documentations</h4></li>
-    <li>
-      <ul>
-        <li><a href="/v2/guide/" class="nav-link">Guide</a></li>
-        <li><a href="/v2/api/" class="nav-link">API</a></li>
-        <li><a href="/v2/style-guide/" class="nav-link">Conventions</a></li>
-        <li><a href="/v2/examples/" class="nav-link">Exemples</a></li>
-        <li><a href="/v2/cookbook/" class="nav-link current">Tutoriels</a></li>
-      </ul>
-    </li>
-    <li><h4>Videos</h4></li>
-    <li>
-      <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
-      </ul>
-    </li>
-  </ul>
-</li>
-
-<li class="nav-dropdown-container ecosystem">
-  <a class="nav-link">Écosystème</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><h4>Aide</h4></li>
-    <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
-    </ul></li>
-    <li><h4>Outils</h4></li>
-    <li>
-      <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
-      </ul>
-    </li>
-    <li><h4>Bibliothèques officielles</h4></li>
-    <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
-    </ul></li>
-    <li><h4>Infos</h4></li>
-    <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
-    </ul></li>
-  </ul>
-</li>
-
-<li>
-  <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
-</li>
-<li class="nav-dropdown-container support-vue">
-  <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
-  </ul>
-</li>
-
-<li class="nav-dropdown-container language">
-  <a class="nav-link">Langues</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/client-side-storage.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
-  </ul>
-</li>
-
-
-    </ul>
+    
     <div class="list">
       <div id="sidebar-sponsors-special">
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" class="logo">
-      <img src="/images/stdlib.png" alt="">
+    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/stdlib.png" alt="Bibliothèque standard">
     </a>
     </div>
   </div>
@@ -311,17 +238,17 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-      <img src="/images/bit.png" alt="Bit">
-    </a>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
-    <a href="https://vehikl.com/" target="_blank" class="logo">
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
     </a>
     </div>
   </div>
@@ -329,6 +256,7 @@
     Devenez un sponsor
   </a>
 </div>
+
 
 
       
@@ -434,17 +362,17 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-      <img src="/images/bit.png" alt="Bit">
-    </a>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
-    <a href="https://vehikl.com/" target="_blank" class="logo">
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
     </a>
     </div>
   </div>
@@ -455,10 +383,12 @@
 
 
 
+
 <div class="content cookbook with-sidebar ">
   
     
-      <div id="ad">
+      
+<div id="ad">
   <script
     async
     type="text/javascript"
@@ -466,6 +396,7 @@
     id="_carbonads_js">
   </script>
 </div>
+
 
     
   
@@ -476,25 +407,119 @@
     <h2 id="Exemple-de-base"><a href="#Exemple-de-base" class="headerlink" title="Exemple de base"></a>Exemple de base</h2><p>Le stockage côté client est un excellent moyen de rapidement ajouter un gain de performance à une application. En stockant les données sur le navigateur, on peut récupérer ces données sans passer par le serveur chaque fois que l’utilisateur en a besoin. Bien que très utile hors-ligne, même en ligne les utilisateurs peuvent bénéficier d’une utilisation locale plutôt que d’utiliser un serveur distant. Le stockage côté client peut être fait avec les <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies" target="_blank" rel="noopener">cookies</a>, le <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API" target="_blank" rel="noopener">Local Storage</a> (techniquement “Web Storage”), une <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noopener">IndexedDB</a>, et <a href="https://www.w3.org/TR/webdatabase/" target="_blank" rel="noopener">WebSQL</a> (une méthode périmée qui ne devrait plus être utilisée dans de nouveaux projets).</p>
 <p>Dans ce tutoriel on se concentrera sur le Local Storage, le moyen de stockage le plus simple. Le Local Storage utilise un système de clé/valeur pour stocker les données. Il est limité au stockage de simples valeurs mais des données plus complexes peuvent être stockées si on est prêt à encoder et décoder les valeurs en JSON. En général, le Local Storage est approprié pour des petits groupes de données qu’on voudrait garder en mémoire, comme des préférences ou les informations d’un formulaire. De plus grosses données avec une structure plus complexe feraient mieux d’être stockées sur une IndexedDB.</p>
 <p>Commençons par un simple exemple basé sur un formulaire :</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  Mon nom est <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+  Mon nom est <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"name"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <p>Cet exemple a un champ lié à une valeur Vue appelée <code>name</code>. Voici le JavaScript :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    name: <span class="string">''</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    <span class="keyword">if</span> (localStorage.name) &#123;</span><br><span class="line">      <span class="keyword">this</span>.name = localStorage.name;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    name(newName) &#123;</span><br><span class="line">      localStorage.name = newName;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">name</span>: <span class="hljs-string">''</span>
+  &#125;,
+  mounted() &#123;
+    <span class="hljs-keyword">if</span> (localStorage.name) &#123;
+      <span class="hljs-keyword">this</span>.name = localStorage.name;
+    &#125;
+  &#125;,
+  <span class="hljs-attr">watch</span>: &#123;
+    name(newName) &#123;
+      localStorage.name = newName;
+    &#125;
+  &#125;
+&#125;);</code></pre>
 <p>Concentrons-nous sur les parties <code>mounted</code> et <code>watch</code>. On utilise <code>mounted</code> pour récupérer la valeur depuis le localStorage. Pour garder les données en mémoire, on observe la valeur <code>name</code> et à chaque changement, on l’écrit dans le localStorage.</p>
 <p>Vous pouvez le tester vous-même ici :</p>
 <p data-height="265" data-theme-id="0" data-slug-hash="KodaKb" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/KodaKb/" target="_blank" rel="noopener">test du localstorage</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster" target="_blank" rel="noopener">@cfjedimaster</a>) sur <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><br><script async src="https://static.codepen.io/assets/embed/ei.js"></script><br><br>Écrivez quelque chose dans le formulaire et rechargez la page. Vous remarquerez que la valeur que vous aviez écrite s’affichera automatiquement. N’oubliez pas que votre navigateur a d’excellents outils de développement pour inspecter le stockage côté client. Voici un exemple sur Firefox :<br><br><img src="/images/devtools-storage.png" alt="Stockage devtools sur Firefox"><br><br>Ici sur Chrome :<br><br><img src="/images/devtools-storage-chrome.png" alt="Stockage devtools sur Chrome"><br><br>Finalement, un exemple sur Microsoft Edge. Notez que vous pouvez trouver les valeurs stockées sous l’onglet Debugger.<br><br><img src="/images/devtools-storage-edge.png" alt="Stockage devtools sur Edge"><br><br><p class="tip">Ces outils de développement permettent aussi de supprimer les données stockées. Ça peut être très utile pour faire des tests.</p>
 
 <p>Stocker immédiatement une valeur peut ne pas être recommandé. Considérons un exemple un peu plus avancé. Premièrement, le formulaire mis à jour.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    Mon nom est <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">    et j'ai <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"age"</span>&gt;</span> ans.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"persist"</span>&gt;</span>Sauver<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    Mon nom est <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"name"</span>&gt;</span>
+    et j'ai <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"age"</span>&gt;</span> ans.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"persist"</span>&gt;</span>Sauver<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <p>Maintenant on a deux champs (encore, liés à une instance de Vue) mais maintenant il y a un bouton en plus qui lance une fonction <code>persist</code>. Regardons le JavaScript.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    name: <span class="string">''</span>,</span><br><span class="line">    age: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    <span class="keyword">if</span> (localStorage.name) &#123;</span><br><span class="line">      <span class="keyword">this</span>.name = localStorage.name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (localStorage.age) &#123;</span><br><span class="line">      <span class="keyword">this</span>.age = localStorage.age;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    persist() &#123;</span><br><span class="line">      localStorage.name = <span class="keyword">this</span>.name;</span><br><span class="line">      localStorage.age = <span class="keyword">this</span>.age;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'now pretend I did more stuff...'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">name</span>: <span class="hljs-string">''</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">0</span>
+  &#125;,
+  mounted() &#123;
+    <span class="hljs-keyword">if</span> (localStorage.name) &#123;
+      <span class="hljs-keyword">this</span>.name = localStorage.name;
+    &#125;
+    <span class="hljs-keyword">if</span> (localStorage.age) &#123;
+      <span class="hljs-keyword">this</span>.age = localStorage.age;
+    &#125;
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    persist() &#123;
+      localStorage.name = <span class="hljs-keyword">this</span>.name;
+      localStorage.age = <span class="hljs-keyword">this</span>.age;
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'now pretend I did more stuff...'</span>);
+    &#125;
+  &#125;
+&#125;)</code></pre>
 <p>Comme avant, <code>mounted</code> est utilisé pour charger les données, si elles existent. Cette fois, les données sont sauvées seulement si le bouton est cliqué. On pourrait aussi faire des validations ou transformations ici avant de stocker les données. On pourrait aussi stocker une date représentant le moment ou les données ont été sauvées. Avec ces métadonnées, la fonction <code>mounted</code> pourrait vérifier si il faut encore stocker les valeurs. Vous pouvez essayer cette version ci-dessous.</p>
 <p></p><p data-height="265" data-theme-id="0" data-slug-hash="rdOjLN" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage 2" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/rdOjLN/" target="_blank" rel="noopener">test du localstorage 2</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster" target="_blank" rel="noopener">@cfjedimaster</a>) sur <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 <h2 id="Travailler-avec-des-valeurs-complexes"><a href="#Travailler-avec-des-valeurs-complexes" class="headerlink" title="Travailler avec des valeurs complexes"></a>Travailler avec des valeurs complexes</h2><p>Comme mentionné plus haut, le Local Storage marche seulement avec de simples valeurs. Pour stocker des valeurs plus complexes, comme un objet ou une liste, on doit sérialiser et désérialiser les valeurs avec JSON. Voici un exemple plus avancé qui sauvegarde une liste de chats (le meilleur type de liste possible).</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Chats<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(cat, n) in cats"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"cat"</span>&gt;</span>&#123;&#123; cat &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"removeCat(n)"</span>&gt;</span>Enlever<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"newCat"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"addCat"</span>&gt;</span>Ajouter un chat<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Chats<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(cat, n) in cats"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cat"</span>&gt;</span>&#123;&#123; cat &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"removeCat(n)"</span>&gt;</span>Enlever<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"newCat"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"addCat"</span>&gt;</span>Ajouter un chat<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <p>Cette “app” contient une simple liste (avec un bouton pour enlever un chat) et un petit formulaire pour ajouter un nouveau chat. Maintenant regardons le JavaScript.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    cats: [],</span><br><span class="line">    newCat: <span class="literal">null</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    <span class="keyword">if</span> (localStorage.getItem(<span class="string">'cats'</span>)) &#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.cats = <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">'cats'</span>));</span><br><span class="line">      &#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">        localStorage.removeItem(<span class="string">'cats'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    addCat() &#123;</span><br><span class="line">      <span class="comment">// s'assurer que l'utilisateur a entré quelque chose</span></span><br><span class="line">      <span class="keyword">if</span> (!<span class="keyword">this</span>.newCat) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">this</span>.cats.push(<span class="keyword">this</span>.newCat);</span><br><span class="line">      <span class="keyword">this</span>.newCat = <span class="string">''</span>;</span><br><span class="line">      <span class="keyword">this</span>.saveCats();</span><br><span class="line">    &#125;,</span><br><span class="line">    removeCat(x) &#123;</span><br><span class="line">      <span class="keyword">this</span>.cats.splice(x, <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">this</span>.saveCats();</span><br><span class="line">    &#125;,</span><br><span class="line">    saveCats() &#123;</span><br><span class="line">      <span class="keyword">const</span> parsed = <span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.cats);</span><br><span class="line">      localStorage.setItem(<span class="string">'cats'</span>, parsed);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">cats</span>: [],
+    <span class="hljs-attr">newCat</span>: <span class="hljs-literal">null</span>
+  &#125;,
+  mounted() &#123;
+    <span class="hljs-keyword">if</span> (localStorage.getItem(<span class="hljs-string">'cats'</span>)) &#123;
+      <span class="hljs-keyword">try</span> &#123;
+        <span class="hljs-keyword">this</span>.cats = <span class="hljs-built_in">JSON</span>.parse(localStorage.getItem(<span class="hljs-string">'cats'</span>));
+      &#125; <span class="hljs-keyword">catch</span>(e) &#123;
+        localStorage.removeItem(<span class="hljs-string">'cats'</span>);
+      &#125;
+    &#125;
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    addCat() &#123;
+      <span class="hljs-comment">// s'assurer que l'utilisateur a entré quelque chose</span>
+      <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.newCat) &#123;
+        <span class="hljs-keyword">return</span>;
+      &#125;
+
+      <span class="hljs-keyword">this</span>.cats.push(<span class="hljs-keyword">this</span>.newCat);
+      <span class="hljs-keyword">this</span>.newCat = <span class="hljs-string">''</span>;
+      <span class="hljs-keyword">this</span>.saveCats();
+    &#125;,
+    removeCat(x) &#123;
+      <span class="hljs-keyword">this</span>.cats.splice(x, <span class="hljs-number">1</span>);
+      <span class="hljs-keyword">this</span>.saveCats();
+    &#125;,
+    saveCats() &#123;
+      <span class="hljs-keyword">const</span> parsed = <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-keyword">this</span>.cats);
+      localStorage.setItem(<span class="hljs-string">'cats'</span>, parsed);
+    &#125;
+  &#125;
+&#125;)</code></pre>
 <p>Dans cette application, on a utilisé l’API Local Storage à la place d’un accès “direct”. Les deux marchent mais utiliser l’API est généralement la méthode préférée. <code>mounted</code> doit récupérer et parser la valeur en JSON. S’il y a un problème, on peut assumer que les données sont corrompues et les supprimer. (N’oubliez pas, quand votre application utilise le stockage côté client, l’utilisateur y a accès et peut les modifier à volonté.)</p>
 <p>Nous avons trois méthodes pour s’occuper de nos chats. <code>addCat</code> et <code>removeCat</code> s’occupent de mettre à jour les données de Vue stockées dans <code>this.cats</code>. Ensuite elles appellent <code>saveCats</code> qui s’occupe de sérialiser et sauver les données. Vous pouvez vous amuser avec la version ci-dessous :</p>
 <p></p><p data-height="265" data-theme-id="0" data-slug-hash="qoYbyW" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="localstorage, complex" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/qoYbyW/" target="_blank" rel="noopener">localstorage, complexe</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster" target="_blank" rel="noopener">@cfjedimaster</a>) sur <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
@@ -523,8 +548,8 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
 </script>
 
 
-    Une erreur dans cette page ? Envie de contribuer à la traduction ?
-    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/cookbook/client-side-storage.md" target="_blank">
+    Une erreur dans cette page ou une envie de contribuer à la traduction ?
+    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/cookbook/client-side-storage.md" rel="noopener" target="_blank">
       Éditez cette page sur GitHub !
     </a>
   </div>
@@ -540,9 +565,9 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
     <script src="/js/common.js"></script>
 
     <!-- search -->
-    <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/search.css">
-    <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
     <script>
     [
       '#search-query-nav',

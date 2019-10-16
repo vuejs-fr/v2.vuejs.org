@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,8 +49,12 @@
     <meta name="msapplication-config" content="browserconfig.xml">
     <link rel="manifest" href="/manifest.json">
 
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -58,6 +63,9 @@
 
     <!-- this needs to be loaded before guide's inline scripts -->
     <script src="/js/vue.js"></script>
+
+    
+
     <script>
       Vue.config.productionTip = false
       window.PAGE_TYPE = "cookbook"
@@ -68,7 +76,7 @@
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-46852172-1', 'vuejs.org');
       ga('send', 'pageview');
@@ -90,7 +98,7 @@
   <ul id="nav">
     <li>
   <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
   </form>
 </li>
 <li class="nav-dropdown-container learn">
@@ -109,8 +117,20 @@
     <li><h4>Videos</h4></li>
     <li>
       <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery (EN)
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School (EN)
+          </a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -121,39 +141,33 @@
   <ul class="nav-dropdown">
     <li><h4>Aide</h4></li>
     <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
+      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank" rel="noopener">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">Meetups (EN)</a></li>
     </ul></li>
     <li><h4>Outils</h4></li>
     <li>
       <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools (EN)</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI (EN)</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader (EN)</a></li>
       </ul>
     </li>
     <li><h4>Bibliothèques officielles</h4></li>
     <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Actualités (EN)</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Plans futurs (EN)</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Évènements (EN)</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter (EN)</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">Blog (EN)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">Offres d'emploi (EN)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">Communauté DEV (EN)</a></li>
     </ul></li>
   </ul>
 </li>
@@ -161,27 +175,37 @@
 <li>
   <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
 </li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Resources</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Partenaires</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Thèmes</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (EN)</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
 <li class="nav-dropdown-container support-vue">
   <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Dons ponctuel</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutiens récurrent</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">La boutique</a></li>
   </ul>
 </li>
 
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://cn.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://vi.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -193,115 +217,18 @@
       <div id="main" class="fix-sidebar">
         
           
-  <div class="sidebar">
+  
+
+<div class="sidebar">
   <div class="sidebar-inner">
-    <ul class="main-menu">
-      <li>
-  <form id="search-form">
-    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
-  </form>
-</li>
-<li class="nav-dropdown-container learn">
-  <a class="nav-link current">Doc</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><h4>Documentations</h4></li>
-    <li>
-      <ul>
-        <li><a href="/v2/guide/" class="nav-link">Guide</a></li>
-        <li><a href="/v2/api/" class="nav-link">API</a></li>
-        <li><a href="/v2/style-guide/" class="nav-link">Conventions</a></li>
-        <li><a href="/v2/examples/" class="nav-link">Exemples</a></li>
-        <li><a href="/v2/cookbook/" class="nav-link current">Tutoriels</a></li>
-      </ul>
-    </li>
-    <li><h4>Videos</h4></li>
-    <li>
-      <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
-      </ul>
-    </li>
-  </ul>
-</li>
-
-<li class="nav-dropdown-container ecosystem">
-  <a class="nav-link">Écosystème</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><h4>Aide</h4></li>
-    <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
-    </ul></li>
-    <li><h4>Outils</h4></li>
-    <li>
-      <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
-      </ul>
-    </li>
-    <li><h4>Bibliothèques officielles</h4></li>
-    <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
-    </ul></li>
-    <li><h4>Infos</h4></li>
-    <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
-    </ul></li>
-  </ul>
-</li>
-
-<li>
-  <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
-</li>
-<li class="nav-dropdown-container support-vue">
-  <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
-  </ul>
-</li>
-
-<li class="nav-dropdown-container language">
-  <a class="nav-link">Langues</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
-  </ul>
-</li>
-
-
-    </ul>
+    
     <div class="list">
       <div id="sidebar-sponsors-special">
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" class="logo">
-      <img src="/images/stdlib.png" alt="">
+    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/stdlib.png" alt="Bibliothèque standard">
     </a>
     </div>
   </div>
@@ -311,17 +238,17 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-      <img src="/images/bit.png" alt="Bit">
-    </a>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
-    <a href="https://vehikl.com/" target="_blank" class="logo">
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
     </a>
     </div>
   </div>
@@ -329,6 +256,7 @@
     Devenez un sponsor
   </a>
 </div>
+
 
 
       
@@ -434,17 +362,17 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-      <img src="/images/bit.png" alt="Bit">
-    </a>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
-    <a href="https://vehikl.com/" target="_blank" class="logo">
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
     </a>
     </div>
   </div>
@@ -455,10 +383,12 @@
 
 
 
+
 <div class="content cookbook with-sidebar ">
   
     
-      <div id="ad">
+      
+<div id="ad">
   <script
     async
     type="text/javascript"
@@ -467,16 +397,21 @@
   </script>
 </div>
 
+
     
   
   
     <h1>Ajouter des propriétés aux instances</h1>
   
   
-    <h2 id="Exemple-simple"><a href="#Exemple-simple" class="headerlink" title="Exemple simple"></a>Exemple simple</h2><p>Il peut y avoir des données/utilitaires que vous aimeriez utiliser dans de nombreux composants, mais vous ne voulez pas <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md" target="_blank" rel="noopener">polluer la portée globale</a>. Dans ces cas-là, vous pouvez les rendre accessibles dans chaque instance de Vue en les définissant dans le prototype :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.prototype.$appName = <span class="string">'Mon App'</span></span><br></pre></td></tr></table></figure>
+    <h2 id="Exemple-simple"><a href="#Exemple-simple" class="headerlink" title="Exemple simple"></a>Exemple simple</h2><p>Il peut y avoir des données/utilitaires que vous aimeriez utiliser dans de nombreux composants, mais vous ne voulez pas <a href="https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch3.md" target="_blank" rel="noopener">polluer la portée globale</a>. Dans ces cas-là, vous pouvez les rendre accessibles dans chaque instance de Vue en les définissant dans le prototype :</p>
+<pre><code class="hljs js">Vue.prototype.$appName = <span class="hljs-string">'Mon App'</span></code></pre>
 <p>Maintenant, <code>$appName</code> sera accessible dans toutes les instances de Vue, même avant leur création. Si nous exécutons :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  beforeCreate: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.$appName)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">beforeCreate</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.$appName)
+  &#125;
+&#125;)</code></pre>
 <p>Alors <code>&quot;Mon App&quot;</code> sera affiché en console !</p>
 <h2 id="L’importance-de-la-portee-des-proprietes-d’instances"><a href="#L’importance-de-la-portee-des-proprietes-d’instances" class="headerlink" title="L’importance de la portée des propriétés d’instances"></a>L’importance de la portée des propriétés d’instances</h2><p>Il se peut que vous vous demandiez :</p>
 <blockquote>
@@ -487,36 +422,108 @@
 <p>“Conflits ? Qu’est-ce que ça signifie ?”</p>
 </blockquote>
 <p>Une autre bonne question ! Si vous faites juste :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.prototype.appName = <span class="string">'Mon App'</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">Vue.prototype.appName = <span class="hljs-string">'Mon App'</span></code></pre>
 <p>Alors qu’est-ce qui sera affiché ci-dessous d’après vous ?</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    <span class="comment">// Oups - `appName` est *aussi* le nom de la</span></span><br><span class="line">    <span class="comment">// propriété d'instance que nous venons de définir !</span></span><br><span class="line">    appName: <span class="string">'Le nom d'</span>une autre app<span class="string">'</span></span><br><span class="line"><span class="string">  &#125;,</span></span><br><span class="line"><span class="string">  beforeCreate: function() &#123;</span></span><br><span class="line"><span class="string">    console.log(this.appName)</span></span><br><span class="line"><span class="string">  &#125;,</span></span><br><span class="line"><span class="string">  created: function() &#123;</span></span><br><span class="line"><span class="string">    console.log(this.appName)</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br></pre></td></tr></table></figure>
-<p>Cela sera <code>&quot;Mon App&quot;</code>, puis <code>&quot;Le nom d&#39;une autre app&quot;</code>, car <code>this.appName</code> est écrasée (<a href="https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md" target="_blank" rel="noopener">en quelque sorte</a>) par <code>data</code> quand l’instance est créée. Nous limitons la portée des propriétés avec <code>$</code> pour éviter ça. Vous pouvez même utiliser votre propre convention si vous préférez, comme <code>$_appName</code> ou <code>ΩappName</code>, pour en plus prévenir les conflits avec les plugins et les fonctionnalités futures.</p>
+<pre><code class="hljs js">new Vue(&#123;
+  data: &#123;
+    // Oups - `appName` est *aussi* le nom de la
+    // propriété d'instance que nous venons de définir !
+    appName: 'Le nom d'une autre app'
+  &#125;,
+  beforeCreate: function() &#123;
+    console.log(this.appName)
+  &#125;,
+  created: function() &#123;
+    console.log(this.appName)
+  &#125;
+&#125;)</code></pre>
+<p>Cela sera <code>&quot;Mon App&quot;</code>, puis <code>&quot;Le nom d&#39;une autre app&quot;</code>, car <code>this.appName</code> est écrasée (<a href="https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/this-object-prototypes/ch5.md" target="_blank" rel="noopener">en quelque sorte</a>) par <code>data</code> quand l’instance est créée. Nous limitons la portée des propriétés avec <code>$</code> pour éviter ça. Vous pouvez même utiliser votre propre convention si vous préférez, comme <code>$_appName</code> ou <code>ΩappName</code>, pour en plus prévenir les conflits avec les plugins et les fonctionnalités futures.</p>
 <h2 id="Un-exemple-en-situation-reelle-Remplacer-Vue-Resource-par-Axios"><a href="#Un-exemple-en-situation-reelle-Remplacer-Vue-Resource-par-Axios" class="headerlink" title="Un exemple en situation réelle : Remplacer Vue Resource par Axios"></a>Un exemple en situation réelle : Remplacer Vue Resource par Axios</h2><p>Disons que vous remplacez le <a href="https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4" target="_blank" rel="noopener">maintenant déprécié Vue Resource</a> ; vous aimiez vraiment accéder aux méthodes de requête avec <code>this.$http</code> et vous voulez faire la même chose avec Axios à la place.</p>
 <p>Tout ce que vous avez à faire est inclure axios dans votre projet :</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"user in users"</span>&gt;</span>&#123;&#123; user.name &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in users"</span>&gt;</span>&#123;&#123; user.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <p>Puis assigner <code>axios</code> à <code>Vue.prototype.$http</code> :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.prototype.$http = axios</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">Vue.prototype.$http = axios</code></pre>
 <p>Alors vous serez capables d’utiliser des méthodes comme <code>this.$http.get</code> dans n’importe quelle instance de Vue :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    users: []</span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    <span class="keyword">var</span> vm = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">this</span>.$http</span><br><span class="line">      .get(<span class="string">'https://jsonplaceholder.typicode.com/users'</span>)</span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">        vm.users = response.data</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">users</span>: []
+  &#125;,
+  created() &#123;
+    <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">this</span>
+    <span class="hljs-keyword">this</span>.$http
+      .get(<span class="hljs-string">'https://jsonplaceholder.typicode.com/users'</span>)
+      .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">response</span>) </span>&#123;
+        vm.users = response.data
+      &#125;)
+  &#125;
+&#125;)</code></pre>
 <h2 id="Le-contexte-des-methodes-du-prototype"><a href="#Le-contexte-des-methodes-du-prototype" class="headerlink" title="Le contexte des méthodes du prototype"></a>Le contexte des méthodes du prototype</h2><p>Au cas où vous ne seriez pas au courant, les méthodes ajoutées au prototype en JavaScript obtiennent le contexte de l’instance. Cela signifie qu’elles peuvent utiliser <code>this</code> pour accéder aux data, propriétés calculées, méthodes ou toute autre chose définie dans l’instance.</p>
 <p>Profitons de ceci dans une méthode <code>$reverseText</code> :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.prototype.$reverseText = <span class="function"><span class="keyword">function</span>(<span class="params">propertyName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>[propertyName] = <span class="keyword">this</span>[propertyName]</span><br><span class="line">    .split(<span class="string">''</span>)</span><br><span class="line">    .reverse()</span><br><span class="line">    .join(<span class="string">''</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'Hello'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  created: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.message) <span class="comment">// =&gt; "Hello"</span></span><br><span class="line">    <span class="keyword">this</span>.$reverseText(<span class="string">'message'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.message) <span class="comment">// =&gt; "olleH"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">Vue.prototype.$reverseText = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">propertyName</span>) </span>&#123;
+  <span class="hljs-keyword">this</span>[propertyName] = <span class="hljs-keyword">this</span>[propertyName]
+    .split(<span class="hljs-string">''</span>)
+    .reverse()
+    .join(<span class="hljs-string">''</span>)
+&#125;
+
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">message</span>: <span class="hljs-string">'Hello'</span>
+  &#125;,
+  <span class="hljs-attr">created</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.message) <span class="hljs-comment">// =&gt; "Hello"</span>
+    <span class="hljs-keyword">this</span>.$reverseText(<span class="hljs-string">'message'</span>)
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.message) <span class="hljs-comment">// =&gt; "olleH"</span>
+  &#125;
+&#125;)</code></pre>
 <p>Notez que la liaison du contexte <strong>ne</strong> fonctionnera <strong>pas</strong> si vous utilisez une fonction fléchée ES6/2015, puisqu’elles gardent implicitement le contexte parent. Cela signifie que la version avec une fonction fléchée :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.prototype.$reverseText = <span class="function"><span class="params">propertyName</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">this</span>[propertyName] = <span class="keyword">this</span>[propertyName]</span><br><span class="line">    .split(<span class="string">''</span>)</span><br><span class="line">    .reverse()</span><br><span class="line">    .join(<span class="string">''</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">Vue.prototype.$reverseText = <span class="hljs-function"><span class="hljs-params">propertyName</span> =&gt;</span> &#123;
+  <span class="hljs-keyword">this</span>[propertyName] = <span class="hljs-keyword">this</span>[propertyName]
+    .split(<span class="hljs-string">''</span>)
+    .reverse()
+    .join(<span class="hljs-string">''</span>)
+&#125;</code></pre>
 <p>Rejettera une exception :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Uncaught TypeError: Cannot read property &apos;split&apos; of undefined</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs log">Uncaught TypeError: Cannot read property &apos;split&apos; of undefined</code></pre>
 <h2 id="Quand-eviter-ce-pattern"><a href="#Quand-eviter-ce-pattern" class="headerlink" title="Quand éviter ce pattern"></a>Quand éviter ce <em>pattern</em></h2><p>Tant que vous êtes vigilants sur la portée des propriétés du prototype, utiliser ce <em>pattern</em> est plutôt sûr - c’est-à-dire, peu probable de produire des bugs.</p>
 <p>Cependant, il peut parfois semer la confusion auprès des autres développeurs. Ils peuvent voir <code>this.$http</code>, par exemple, et penser, “Oh, je ne savais pas qu’il s’agissait d’une fonctionnalité de Vue !”. Ensuite ils vont sur un projet différent et sont confus quand <code>this.$http</code> est non défini. Ou alors ils cherchent sur Google comment faire quelque chose, mais ne trouvent pas de résultats car ils ne réalisent pas qu’ils utilisent Axios sous un alias.</p>
 <p><strong>C’est certes plus commode mais moins explicite.</strong> En regardant simplement un composant, il est impossible de dire d’où <code>$http</code> vient. Vue lui-même ? Un plugin ? Un collègue ?</p>
 <p>Alors quelles sont les alternatives ?</p>
 <h2 id="Patterns-Alternatifs"><a href="#Patterns-Alternatifs" class="headerlink" title="Patterns Alternatifs"></a><em>Patterns</em> Alternatifs</h2><h3 id="Quand-un-systeme-de-modules-n’est-pas-utilise"><a href="#Quand-un-systeme-de-modules-n’est-pas-utilise" class="headerlink" title="Quand un système de modules n’est pas utilisé"></a>Quand un système de modules n’est pas utilisé</h3><p>Dans les applications <strong>sans</strong> systèmes de modules (ex. via webpack ou Browserify), il y a un <em>pattern</em> souvent utilisé dans <em>n’importe quel</em> frontend amélioré en JavaScript : un objet global <code>App</code>.</p>
 <p>Si ce que vous voulez ajouter n’a rien à voir avec Vue spécifiquement, cela peut être une bonne alternative à étudier. Voici un exemple :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> App = <span class="built_in">Object</span>.freeze(&#123;</span><br><span class="line">  name: <span class="string">'Mon App'</span>,</span><br><span class="line">  version: <span class="string">'2.1.4'</span>,</span><br><span class="line">  helpers: &#123;</span><br><span class="line">    <span class="comment">// Ceci est une version purement fonctionnelle</span></span><br><span class="line">    <span class="comment">// de la méthode $reverseText décrite plus haut</span></span><br><span class="line">    reverseText: <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> text</span><br><span class="line">        .split(<span class="string">''</span>)</span><br><span class="line">        .reverse()</span><br><span class="line">        .join(<span class="string">''</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> App = <span class="hljs-built_in">Object</span>.freeze(&#123;
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Mon App'</span>,
+  <span class="hljs-attr">version</span>: <span class="hljs-string">'2.1.4'</span>,
+  <span class="hljs-attr">helpers</span>: &#123;
+    <span class="hljs-comment">// Ceci est une version purement fonctionnelle</span>
+    <span class="hljs-comment">// de la méthode $reverseText décrite plus haut</span>
+    reverseText: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">text</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> text
+        .split(<span class="hljs-string">''</span>)
+        .reverse()
+        .join(<span class="hljs-string">''</span>)
+    &#125;
+  &#125;
+&#125;)</code></pre>
 <p class="tip">Si vous avez levé un sourcil à <code>Object.freeze</code>, cela sert à empêcher l’objet d’être modifié dans le futur. Il s’agit essentiellement de rendre toutes ses propriétés constantes, les protégeant de futurs bugs d’état.</p>
 
 <p>Maintenant la source de ces propriétés partagées est bien plus évidente : il y a un objet <code>App</code> défini quelque part dans l’application. Pour le trouver, les développeurs ont seulement besoin de rechercher la référence dans le projet.</p>
 <p>Un autre avantage est que <code>App</code> peut maintenant être utilisé <em>n’importe où</em> dans le code, qu’il soit lié à Vue ou non. Cela inclue les valeurs attachées directement aux options des instances, plutôt qu’avoir à entrer dans une fonction pour accéder aux propriétés avec <code>this</code> :</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    appVersion: App.version</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    reverseText: App.helpers.reverseText</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">appVersion</span>: App.version
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">reverseText</span>: App.helpers.reverseText
+  &#125;
+&#125;)</code></pre>
 <h3 id="Quand-un-systeme-de-modules-est-utilise"><a href="#Quand-un-systeme-de-modules-est-utilise" class="headerlink" title="Quand un système de modules est utilisé"></a>Quand un système de modules est utilisé</h3><p>Quand vous avez accès à un système de modules, vous pouvez facilement organiser le code partagé à travers des modules, puis <code>require</code> / <code>import</code> ces modules partout où ils sont nécessaires. C’est l’approche la plus explicite car chaque fichier obtient alors une liste de dépendances. Vous savez <em>exactement</em> d’où vient chacune d’entre elles.</p>
 <p>Bien que certainement plus verbeux, cette approche est assurément la plus maintenable, particulièrement quand vous travaillez avec d’autres développeurs et/ou construisez une grosse application.</p>
 
@@ -535,8 +542,8 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
 </script>
 
 
-    Une erreur dans cette page ? Envie de contribuer à la traduction ?
-    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/cookbook/adding-instance-properties.md" target="_blank">
+    Une erreur dans cette page ou une envie de contribuer à la traduction ?
+    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/cookbook/adding-instance-properties.md" rel="noopener" target="_blank">
       Éditez cette page sur GitHub !
     </a>
   </div>
@@ -552,9 +559,9 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
     <script src="/js/common.js"></script>
 
     <!-- search -->
-    <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/search.css">
-    <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
     <script>
     [
       '#search-query-nav',

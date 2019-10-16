@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,8 +49,12 @@
     <meta name="msapplication-config" content="browserconfig.xml">
     <link rel="manifest" href="/manifest.json">
 
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -58,9 +63,12 @@
 
     <!-- this needs to be loaded before guide's inline scripts -->
     <script src="/js/vue.js"></script>
+
+    
+
     <script>
       Vue.config.productionTip = false
-      window.PAGE_TYPE = ""
+      window.PAGE_TYPE = "sponsors"
     </script>
 
     <!-- ga -->
@@ -68,7 +76,7 @@
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-46852172-1', 'vuejs.org');
       ga('send', 'pageview');
@@ -90,7 +98,7 @@
   <ul id="nav">
     <li>
   <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
   </form>
 </li>
 <li class="nav-dropdown-container learn">
@@ -109,8 +117,20 @@
     <li><h4>Videos</h4></li>
     <li>
       <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery (EN)
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School (EN)
+          </a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -121,39 +141,33 @@
   <ul class="nav-dropdown">
     <li><h4>Aide</h4></li>
     <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
+      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank" rel="noopener">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">Meetups (EN)</a></li>
     </ul></li>
     <li><h4>Outils</h4></li>
     <li>
       <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools (EN)</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI (EN)</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader (EN)</a></li>
       </ul>
     </li>
     <li><h4>Bibliothèques officielles</h4></li>
     <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Actualités (EN)</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Plans futurs (EN)</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Évènements (EN)</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter (EN)</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">Blog (EN)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">Offres d'emploi (EN)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">Communauté DEV (EN)</a></li>
     </ul></li>
   </ul>
 </li>
@@ -161,27 +175,37 @@
 <li>
   <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
 </li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Resources</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Partenaires</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Thèmes</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (EN)</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
 <li class="nav-dropdown-container support-vue">
   <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Dons ponctuel</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutiens récurrent</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">La boutique</a></li>
   </ul>
 </li>
 
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://cn.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank" rel="noopener">한국어</a></li>
+    <li><a href="https://vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://br.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://vi.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -193,114 +217,64 @@
       <div id="main" class="fix-sidebar">
         
           
-  <div class="sidebar">
-    <ul class="main-menu">
-      <li>
-  <form id="search-form">
-    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
-  </form>
-</li>
-<li class="nav-dropdown-container learn">
-  <a class="nav-link">Doc</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><h4>Documentations</h4></li>
-    <li>
-      <ul>
-        <li><a href="/v2/guide/" class="nav-link">Guide</a></li>
-        <li><a href="/v2/api/" class="nav-link">API</a></li>
-        <li><a href="/v2/style-guide/" class="nav-link">Conventions</a></li>
-        <li><a href="/v2/examples/" class="nav-link">Exemples</a></li>
-        <li><a href="/v2/cookbook/" class="nav-link">Tutoriels</a></li>
-      </ul>
-    </li>
-    <li><h4>Videos</h4></li>
-    <li>
-      <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
-      </ul>
-    </li>
-  </ul>
-</li>
+  
 
-<li class="nav-dropdown-container ecosystem">
-  <a class="nav-link">Écosystème</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><h4>Aide</h4></li>
-    <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
-    </ul></li>
-    <li><h4>Outils</h4></li>
-    <li>
-      <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
-      </ul>
-    </li>
-    <li><h4>Bibliothèques officielles</h4></li>
-    <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
-    </ul></li>
-    <li><h4>Infos</h4></li>
-    <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
-    </ul></li>
-  </ul>
-</li>
-
-<li>
-  <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
-</li>
-<li class="nav-dropdown-container support-vue">
-  <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
-  </ul>
-</li>
-
-<li class="nav-dropdown-container language">
-  <a class="nav-link">Langues</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/support-vuejs/index.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
-  </ul>
-</li>
-
-
-    </ul>
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>Special Sponsor</span>
+    <div>
+    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    </a>
+    </div>
   </div>
+</div>
 
-<div class="content  ">
+
+      
+        <h2>
+          
+          
+          
+            <select class="version-select">
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+    <li>
+      <a href="/support-vuejs/index.html" class="sidebar-link current"></a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="content sponsors with-sidebar ">
+  
+    
+      
+
+    
   
   
   
-    <h1>Soutenir le développement de Vue.js</h1>
+    <h1 id="sponsor-Vue-js-Development">Soutenir le développement de Vue.js</h1>
 
 <p>
 Vue.js est un projet open source sous licence MIT qui est complètement libre d'utilisation.
@@ -312,7 +286,7 @@ Cependant, les efforts nécessaires à la maintenance et au développement de no
 <p>Nous acceptons les dons via ces plateformes :</p>
 
 <div id="one-time-donations">
-  <a href="https://www.paypal.me/evanyou" target="_blank">
+  <a href="https://www.paypal.me/evanyou" target="_blank" rel="noopener">
     <img src="/images/paypal.png" style="width:100px">
   </a>
   <a href="#btc"><svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FFAD02" cx="19" cy="19" r="19"></circle><path d="M24.7 19.68a3.63 3.63 0 0 0 1.47-2.06c.74-2.77-.46-4.87-3.2-5.6l.89-3.33a.23.23 0 0 0-.16-.28l-1.32-.35a.23.23 0 0 0-.28.15l-.89 3.33-1.75-.47.88-3.32a.23.23 0 0 0-.16-.28l-1.31-.35a.23.23 0 0 0-.28.15l-.9 3.33-3.73-1a.23.23 0 0 0-.27.16l-.36 1.33c-.03.12.04.25.16.28l.22.06a1.83 1.83 0 0 1 1.28 2.24l-1.9 7.09a1.83 1.83 0 0 1-2.07 1.33.23.23 0 0 0-.24.12l-.69 1.24a.23.23 0 0 0 0 .2c.02.07.07.12.14.13l3.67.99-.89 3.33c-.03.12.04.24.16.27l1.32.35c.12.03.24-.04.28-.16l.89-3.32 1.76.47-.9 3.33c-.02.12.05.24.16.27l1.32.35c.12.03.25-.04.28-.16l.9-3.32.87.23c2.74.74 4.83-.48 5.57-3.25.35-1.3-.05-2.6-.92-3.48zm-5.96-5.95l2.64.7a1.83 1.83 0 0 1 1.28 2.24 1.83 1.83 0 0 1-2.23 1.3l-2.64-.7.95-3.54zm1.14 9.8l-3.51-.95.95-3.54 3.51.94a1.83 1.83 0 0 1 1.28 2.24 1.83 1.83 0 0 1-2.23 1.3z" fill="#FFF"></path></g></svg>
@@ -368,225 +342,240 @@ Les soutiens récurrents viennent avec des avantages exclusifs comme avoir son n
 
 <ul>
   <li>
-    <a href="https://www.patreon.com/evanyou" target="_blank">Devenir un donateur ou un sponsor via Patreon</a> (sert directement à soutenir le travail à plein temps d'Evan You sur Vue)
+    <a href="https://www.patreon.com/evanyou" target="_blank" rel="noopener">Devenir un donateur ou un sponsor via Patreon</a> (sert directement à soutenir le travail à plein temps d'Evan You sur Vue)
   </li>
   <li>
     <a href="https://opencollective.com/vuejs">Devenir un donateur ou un sponsor via OpenCollective</a> (offre un apport de fond transparent pour soutenir la communauté et financer des évènements)
   </li>
 </ul>
 
-<h2>Les sponsors premiums actuels :</h2>
+<h2 id="current-premium-sponsors">Les sponsors premiums actuels</h2>
 
-<h3>Sponsors spéciaux</h3>
+<h3 id="special-sponsors">Sponsors spéciaux</h3>
 
 <p class="platinum">
-  <a href="https://stdlib.com/" target="_blank">
+  <a href="https://stdlib.com/" target="_blank" rel="noopener">
     <img src="/images/stdlib.png">
   </a>
 </p>
 
-<h3>Platine</h3>
+<h3 id="platinum">Platine</h3>
 
 <p class="platinum">
-  <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank">
-    <img src="/images/bit.png">
-  </a>
-  <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank">
+  <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="noopener">
     <img src="/images/vueschool.png">
   </a>
-  <a href="https://vehikl.com/" target="_blank">
+  <a href="https://vehikl.com/" target="_blank" rel="noopener">
     <img src="/images/vehikl.png">
   </a>
-  <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank">
+  <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="noopener">
     <img src="/images/nativescript.png">
+  </a>
+  <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="noopener">
+    <img src="/images/retool.png">
   </a>
 </p>
 
-<h3>OpenCollective Platine</h3>
+<h3 id="open-collective-platinum">OpenCollective Platine</h3>
 
 <p class="open-collective-sponsors sponsor-section">
-  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/0/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/0/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/platinum-sponsors/0/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/1/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/1/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/platinum-sponsors/1/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/2/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/2/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/platinum-sponsors/2/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/3/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/3/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/platinum-sponsors/3/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/4/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/4/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/platinum-sponsors/4/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/5/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/5/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/platinum-sponsors/5/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/6/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/6/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/platinum-sponsors/6/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/7/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/7/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/platinum-sponsors/7/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/8/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/8/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/platinum-sponsors/8/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/9/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/platinum-sponsors/9/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/platinum-sponsors/9/avatar.svg">
   </a>
 </p>
 
-<h3>Sponsors spéciaux (Chine)</h3>
+<h3 id="special-sponsors-china">Sponsors spéciaux (Chine)</h3>
 
 <p class="platinum">
-  <a href="http://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci=" target="_blank">
+  <a href="http://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="noopener">
     <img src="/images/dcloud.gif">
   </a>
 </p>
 
-<h3>Or Patreon</h3>
+<h3 id="patreon-gold">Or Patreon</h3>
 
 <p class="patreon-sponsors sponsor-section">
-  <a href="https://www.vuemastery.com/" target="_blank">
+  <a href="https://www.vuemastery.com/" target="_blank" rel="noopener">
     <img src="/images/vuemastery.png">
   </a>
-  <a href="https://laravel.com" target="_blank">
+  <a href="https://laravel.com" target="_blank" rel="noopener">
     <img src="/images/laravel.png">
   </a>
-  <a href="https://chaitin.cn/en/" target="_blank">
+  <a href="https://chaitin.cn/en/" target="_blank" rel="noopener">
     <img src="/images/chaitin.png">
   </a>
-  <a href="https://htmlburger.com" target="_blank">
+  <a href="https://htmlburger.com" target="_blank" rel="noopener">
     <img src="/images/html_burger.png">
   </a>
-  <a href="https://onsen.io/vue/" target="_blank">
+  <a href="https://www.frontenddeveloperlove.com/" target="_blank" rel="noopener">
+    <img src="/images/frontendlove.png">
+  </a>
+  <a href="https://onsen.io/vue/" target="_blank" rel="noopener">
     <img src="/images/onsen_ui.png">
   </a>
-  <a href="https://neds.com.au/" target="_blank">
+  <a href="https://neds.com.au/" target="_blank" rel="noopener">
     <img src="/images/neds.png">
   </a>
-  <a href="https://icons8.com/" target="_blank">
+  <a href="https://icons8.com/" target="_blank" rel="noopener">
     <img src="/images/icons_8.png">
   </a>
-  <a href="https://vuejobs.com/?ref=vuejs" target="_blank">
+  <a href="https://vuejobs.com/?ref=vuejs" target="_blank" rel="noopener">
     <img src="/images/vuejobs.png">
   </a>
-  <a href="https://tidelift.com/subscription/npm/vue" target="_blank">
+  <a href="https://tidelift.com/subscription/npm/vue" target="_blank" rel="noopener">
     <img src="/images/tidelift.png">
   </a>
-  <a href="https://opteo.com/vue" target="_blank">
+  <a href="https://opteo.com/vue" target="_blank" rel="noopener">
     <img src="/images/opteo.png">
   </a>
-  <a href="https://devsquad.com/" target="_blank">
+  <a href="https://devsquad.com/" target="_blank" rel="noopener">
     <img src="/images/devsquad.png">
   </a>
-  <a href="https://www.firesticktricks.com/" target="_blank">
+  <a href="https://www.firesticktricks.com/" target="_blank" rel="noopener">
     <img src="/images/firestick_tricks.png">
   </a>
-  <a href="https://intygrate.com/" target="_blank">
+  <a href="https://intygrate.com/" target="_blank" rel="noopener">
     <img src="/images/intygrate.png">
   </a>
-  <a href="https://passionatepeople.io/" target="_blank">
+  <a href="https://passionatepeople.io/" target="_blank" rel="noopener">
     <img src="/images/passionate_people.png">
   </a>
-  <a href="http://en.shopware.com/" target="_blank">
+  <a href="http://en.shopware.com/" target="_blank" rel="noopener">
     <img src="/images/shopware_ag.png">
   </a>
-  <a href="https://www.vpnranks.com/" target="_blank">
+  <a href="https://www.vpnranks.com/" target="_blank" rel="noopener">
     <img src="/images/vpnranks.png">
   </a>
-  <a href="https://www.simplyswitch.com/" target="_blank">
+  <a href="https://www.simplyswitch.com/" target="_blank" rel="noopener">
     <img src="/images/energy_comparison.png">
   </a>
-  <a href="https://www.bacancytechnology.com" target="_blank">
+  <a href="https://www.bacancytechnology.com" target="_blank" rel="noopener">
     <img src="/images/bacancy_technology.png">
   </a>
-  <a href="https://www.bestvpn.co/" target="_blank">
+  <a href="https://www.bestvpn.co/" target="_blank" rel="noopener">
     <img src="/images/bestvpn_co.png">
   </a>
-  <a href="https://blokt.com/" target="_blank">
+  <a href="https://blokt.com/" target="_blank" rel="noopener">
     <img src="/images/blokt_cryptocurrency_news.png">
   </a>
-  <a href="https://www.y8.com/" target="_blank">
+  <a href="https://www.y8.com/" target="_blank" rel="noopener">
     <img src="/images/y8.png">
   </a>
-  <a href="https://js.devexpress.com/" target="_blank">
+  <a href="https://js.devexpress.com/" target="_blank" rel="noopener">
     <img src="/images/devexpress.png">
   </a>
-  <a href="https://fastcoding.jp/javascript/ " target="_blank">
-    <img src="/images/fastcoding_inc.svg">
+  <a href="https://fastcoding.jp/javascript/ " target="_blank" rel="noopener">
+    <img src="/images/fastcoding_inc.png">
   </a>
-  <a href="https://usave.co.uk/utilities/broadband" target="_blank">
+  <a href="https://usave.co.uk/utilities/broadband" target="_blank" rel="noopener">
     <img src="/images/usave.png">
   </a>
-  <a href="https://www.dailynow.co/" target="_blank">
+  <a href="https://www.dailynow.co/" target="_blank" rel="noopener">
     <img src="/images/daily.png">
   </a>
-  <a href="https://storekit.com" target="_blank">
+  <a href="https://storekit.com" target="_blank" rel="noopener">
     <img src="/images/storekit.png">
+  </a>
+  <a href="https://staffaugmentation.ro/en" target="_blank" rel="noopener">
+    <img src="/images/staff_augmentation.png">
+  </a>
+  <a href="https://piratebay.ink" target="_blank" rel="noopener">
+    <img src="/images/piratebay_proxy.png">
+  </a>
+  <a href="https://www.programmers.io" target="_blank" rel="noopener">
+    <img src="/images/programmers_io.png">
   </a>
 </p>
 
-<h3>opencollective Or</h3>
+<h3 id="open-collective-gold">OpenCollective Or</h3>
 
 <p class="open-collective-sponsors sponsor-section">
-  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/0/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/0/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/gold-sponsors/0/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/1/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/1/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/gold-sponsors/1/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/2/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/2/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/gold-sponsors/2/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/3/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/3/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/gold-sponsors/3/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/4/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/4/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/gold-sponsors/4/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/5/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/5/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/gold-sponsors/5/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/6/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/6/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/gold-sponsors/6/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/7/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/7/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/gold-sponsors/7/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/8/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/8/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/gold-sponsors/8/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/9/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/gold-sponsors/9/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/gold-sponsors/9/avatar.svg">
   </a>
 </p>
 
-<h3>Patreon Argent</h3>
+<h3 id="patreon-silver">Patreon Argent</h3>
 
 <p class="patreon-sponsors sponsor-section">
-  <a href="https://dopamine.bg/" target="_blank">
+  <a href="https://dopamine.bg/" target="_blank" rel="noopener">
     <img src="/images/dopamine.png">
+  </a>
+  <a href="https://roadster.com" target="_blank" rel="noopener">
+    <img src="/images/roadster.png">
   </a>
 </p>
 
-<h3>OpenCollective Argent</h3>
+<h3 id="open-collective-silver">OpenCollective Argent</h3>
 
 <p class="open-collective-sponsors sponsor-section">
-  <a href="https://opencollective.com/vuejs/tiers/silver-sponsors/0/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/silver-sponsors/0/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/silver-sponsors/0/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/silver-sponsors/1/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/silver-sponsors/1/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/silver-sponsors/1/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/silver-sponsors/2/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/silver-sponsors/2/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/silver-sponsors/2/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/silver-sponsors/3/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/silver-sponsors/3/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/silver-sponsors/3/avatar.svg">
   </a>
-  <a href="https://opencollective.com/vuejs/tiers/silver-sponsors/4/website" target="_blank">
+  <a href="https://opencollective.com/vuejs/tiers/silver-sponsors/4/website" target="_blank" rel="noopener">
     <img src="https://opencollective.com/vuejs/tiers/silver-sponsors/4/avatar.svg">
   </a>
 </p>
@@ -602,8 +591,8 @@ Si vous êtes un simple utilisateur qui apprécie la productivité apportée par
   
   
   <div class="footer">
-    Une erreur dans cette page ? Envie de contribuer à la traduction ?
-    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/support-vuejs/index.md" target="_blank">
+    Une erreur dans cette page ou une envie de contribuer à la traduction ?
+    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/support-vuejs/index.md" rel="noopener" target="_blank">
       Éditez cette page sur GitHub !
     </a>
   </div>
@@ -619,9 +608,9 @@ Si vous êtes un simple utilisateur qui apprécie la productivité apportée par
     <script src="/js/common.js"></script>
 
     <!-- search -->
-    <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/search.css">
-    <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
     <script>
     [
       '#search-query-nav',

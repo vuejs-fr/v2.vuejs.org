@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,8 +49,12 @@
     <meta name="msapplication-config" content="browserconfig.xml">
     <link rel="manifest" href="/manifest.json">
 
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -58,6 +63,9 @@
 
     <!-- this needs to be loaded before guide's inline scripts -->
     <script src="/js/vue.js"></script>
+
+    
+
     <script>
       Vue.config.productionTip = false
       window.PAGE_TYPE = "cookbook"
@@ -68,7 +76,7 @@
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-46852172-1', 'vuejs.org');
       ga('send', 'pageview');
@@ -90,7 +98,7 @@
   <ul id="nav">
     <li>
   <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
   </form>
 </li>
 <li class="nav-dropdown-container learn">
@@ -109,8 +117,20 @@
     <li><h4>Videos</h4></li>
     <li>
       <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery (EN)
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School (EN)
+          </a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -121,39 +141,33 @@
   <ul class="nav-dropdown">
     <li><h4>Aide</h4></li>
     <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
+      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank" rel="noopener">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">Meetups (EN)</a></li>
     </ul></li>
     <li><h4>Outils</h4></li>
     <li>
       <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools (EN)</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI (EN)</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader (EN)</a></li>
       </ul>
     </li>
     <li><h4>Bibliothèques officielles</h4></li>
     <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Actualités (EN)</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Plans futurs (EN)</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Évènements (EN)</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter (EN)</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">Blog (EN)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">Offres d'emploi (EN)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">Communauté DEV (EN)</a></li>
     </ul></li>
   </ul>
 </li>
@@ -161,27 +175,37 @@
 <li>
   <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
 </li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Resources</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Partenaires</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Thèmes</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (EN)</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
 <li class="nav-dropdown-container support-vue">
   <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Dons ponctuel</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutiens récurrent</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">La boutique</a></li>
   </ul>
 </li>
 
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://cn.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://vi.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -193,115 +217,18 @@
       <div id="main" class="fix-sidebar">
         
           
-  <div class="sidebar">
+  
+
+<div class="sidebar">
   <div class="sidebar-inner">
-    <ul class="main-menu">
-      <li>
-  <form id="search-form">
-    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
-  </form>
-</li>
-<li class="nav-dropdown-container learn">
-  <a class="nav-link current">Doc</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><h4>Documentations</h4></li>
-    <li>
-      <ul>
-        <li><a href="/v2/guide/" class="nav-link">Guide</a></li>
-        <li><a href="/v2/api/" class="nav-link">API</a></li>
-        <li><a href="/v2/style-guide/" class="nav-link">Conventions</a></li>
-        <li><a href="/v2/examples/" class="nav-link">Exemples</a></li>
-        <li><a href="/v2/cookbook/" class="nav-link current">Tutoriels</a></li>
-      </ul>
-    </li>
-    <li><h4>Videos</h4></li>
-    <li>
-      <ul>
-        <li><a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank">Vue Mastery (EN)</a></li>
-        <li><a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank">Vue School (EN)</a></li>
-      </ul>
-    </li>
-  </ul>
-</li>
-
-<li class="nav-dropdown-container ecosystem">
-  <a class="nav-link">Écosystème</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><h4>Aide</h4></li>
-    <li><ul>
-      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank">Forum</a></li>
-      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank">Chat</a></li>
-      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Meetups (EN)</a></li>
-    </ul></li>
-    <li><h4>Outils</h4></li>
-    <li>
-      <ul>
-        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools (En)</a></li>
-        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI (En)</a></li>
-        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader (En)</a></li>
-      </ul>
-    </li>
-    <li><h4>Bibliothèques officielles</h4></li>
-    <li><ul>
-      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
-      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
-    </ul></li>
-    <li><h4>Infos</h4></li>
-    <li><ul>
-      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Actualités (En)</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Plans futurs (En)</a></li>
-      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Évènements (En)</a></li>
-      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter (En)</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog (En)</a></li>
-      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Offres d'emploi (En)</a></li>
-      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Communauté DEV</a></li>
-    </ul></li>
-    <li><h4>Liste de ressources</h4></li>
-    <li><ul>
-      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Dépôt officiel (En)</a></li>
-      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Curation Vue (En)</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (En)</a></li>
-    </ul></li>
-  </ul>
-</li>
-
-<li>
-  <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
-</li>
-<li class="nav-dropdown-container support-vue">
-  <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><ul>
-      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Don ponctuel</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutien récurrent</a></li>
-      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">La boutique</a></li>
-    </ul></li>
-  </ul>
-</li>
-
-<li class="nav-dropdown-container language">
-  <a class="nav-link">Langues</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">中文</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
-  </ul>
-</li>
-
-
-    </ul>
+    
     <div class="list">
       <div id="sidebar-sponsors-special">
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" class="logo">
-      <img src="/images/stdlib.png" alt="">
+    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/stdlib.png" alt="Bibliothèque standard">
     </a>
     </div>
   </div>
@@ -311,17 +238,17 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-      <img src="/images/bit.png" alt="Bit">
-    </a>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
-    <a href="https://vehikl.com/" target="_blank" class="logo">
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
     </a>
     </div>
   </div>
@@ -329,6 +256,7 @@
     Devenez un sponsor
   </a>
 </div>
+
 
 
       
@@ -434,17 +362,17 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://bit.dev/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-      <img src="/images/bit.png" alt="Bit">
-    </a>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vueschool.png" alt="VueSchool">
     </a>
-    <a href="https://vehikl.com/" target="_blank" class="logo">
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
     </a>
     </div>
   </div>
@@ -455,10 +383,12 @@
 
 
 
+
 <div class="content cookbook with-sidebar ">
   
     
-      <div id="ad">
+      
+<div id="ad">
   <script
     async
     type="text/javascript"
@@ -466,6 +396,7 @@
     id="_carbonads_js">
   </script>
 </div>
+
 
     
   
@@ -489,19 +420,114 @@
 <p>Voici un exemple du système une fois terminé. <a href="https://github.com/sdras/vue-sample-svg-icons/" target="_blank" rel="noopener">https://github.com/sdras/vue-sample-svg-icons/</a></p>
 <p><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/screendocs.jpg" alt="Documentation site" title="Docs demo"></p>
 <p>Créons un composant icône de base (<code>IconBase.vue</code>) disposant d’un <code>slot</code>.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:width</span>=<span class="string">"width"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:height</span>=<span class="string">"height"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">viewBox</span>=<span class="string">"0 0 18 18"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:aria-labelledby</span>=<span class="string">"iconName"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">role</span>=<span class="string">"presentation"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:id</span>=<span class="string">"iconName"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">lang</span>=<span class="string">"en"</span></span></span><br><span class="line"><span class="tag">    &gt;</span>&#123;&#123; iconName &#125;&#125; icon<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">g</span> <span class="attr">:fill</span>=<span class="string">"iconColor"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">slot</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">g</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span>
+    <span class="hljs-attr">:width</span>=<span class="hljs-string">"width"</span>
+    <span class="hljs-attr">:height</span>=<span class="hljs-string">"height"</span>
+    <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 18 18"</span>
+    <span class="hljs-attr">:aria-labelledby</span>=<span class="hljs-string">"iconName"</span>
+    <span class="hljs-attr">role</span>=<span class="hljs-string">"presentation"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>
+      <span class="hljs-attr">:id</span>=<span class="hljs-string">"iconName"</span>
+      <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>
+    &gt;</span>&#123;&#123; iconName &#125;&#125; icon<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">:fill</span>=<span class="hljs-string">"iconColor"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
 <p>Ce composant peut être utilisé tel quel, le seul paramètre à vérifier sera le <code>viewBox</code> qui dépendra de celui de vos icônes. Dans l’icône de base, les paramètres <code>width</code>, <code>height</code>, <code>iconColor</code> et <code>iconName</code> sont des props pour pouvoir les piloter selon les besoins. La prop <code>iconName</code> sera utilisée comme le contenu de la balise <code>&lt;title&gt;</code> et de l’attribut <code>id</code> de notre icône SVG pour assurer l’accessibilité. </p>
 <p>Le <code>&lt;script&gt;</code> du composant icône de base ressemble à ça. Remarquons les valeurs par défaut. Notre icône sera toujours affichée avec les mêmes hauteur/largeur partout sauf si on les force à changer. </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    iconName: &#123;</span><br><span class="line">      type: <span class="built_in">String</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="string">'box'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    width: &#123;</span><br><span class="line">      type: [<span class="built_in">Number</span>, <span class="built_in">String</span>],</span><br><span class="line">      <span class="keyword">default</span>: <span class="number">18</span></span><br><span class="line">    &#125;,</span><br><span class="line">    height: &#123;</span><br><span class="line">      type: [<span class="built_in">Number</span>, <span class="built_in">String</span>],</span><br><span class="line">      <span class="keyword">default</span>: <span class="number">18</span></span><br><span class="line">    &#125;,</span><br><span class="line">    iconColor: &#123;</span><br><span class="line">      type: <span class="built_in">String</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="string">'currentColor'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">props</span>: &#123;
+    <span class="hljs-attr">iconName</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,
+      <span class="hljs-attr">default</span>: <span class="hljs-string">'box'</span>
+    &#125;,
+    <span class="hljs-attr">width</span>: &#123;
+      <span class="hljs-attr">type</span>: [<span class="hljs-built_in">Number</span>, <span class="hljs-built_in">String</span>],
+      <span class="hljs-attr">default</span>: <span class="hljs-number">18</span>
+    &#125;,
+    <span class="hljs-attr">height</span>: &#123;
+      <span class="hljs-attr">type</span>: [<span class="hljs-built_in">Number</span>, <span class="hljs-built_in">String</span>],
+      <span class="hljs-attr">default</span>: <span class="hljs-number">18</span>
+    &#125;,
+    <span class="hljs-attr">iconColor</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,
+      <span class="hljs-attr">default</span>: <span class="hljs-string">'currentColor'</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
 <p>La valeur <code>currentColor</code> de la prop <code>iconColor</code> donne aux icônes la couleur - <code>fill</code> - du texte qui l’encadre. On peut modifier cette couleur simplement en passant une prop au composant.</p>
 <p>Voici un exemple d’utilisation, avec le contenu de <code>IconWrite.vue</code> comme path du SVG :</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">icon-base</span> <span class="attr">icon-name</span>=<span class="string">"write"</span>&gt;</span><span class="tag">&lt;<span class="name">icon-write</span> /&gt;</span><span class="tag">&lt;/<span class="name">icon-base</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">icon-base</span> <span class="hljs-attr">icon-name</span>=<span class="hljs-string">"write"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">icon-write</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">icon-base</span>&gt;</span></code></pre>
 <p>Et si on souhaite afficher l’icône dans d’autres tailles :</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- vous pouvez lui passer une `width` et une `height` plus petite grâce aux props --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">icon-base</span></span></span><br><span class="line"><span class="tag">    <span class="attr">width</span>=<span class="string">"12"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">height</span>=<span class="string">"12"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">icon-name</span>=<span class="string">"write"</span></span></span><br><span class="line"><span class="tag">  &gt;</span><span class="tag">&lt;<span class="name">icon-write</span> /&gt;</span><span class="tag">&lt;/<span class="name">icon-base</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ou utiliser la valeur par défaut qui est : 18 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">icon-base</span> <span class="attr">icon-name</span>=<span class="string">"write"</span>&gt;</span><span class="tag">&lt;<span class="name">icon-write</span> /&gt;</span><span class="tag">&lt;/<span class="name">icon-base</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ou même l'agrandir :) --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">icon-base</span></span></span><br><span class="line"><span class="tag">    <span class="attr">width</span>=<span class="string">"30"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">height</span>=<span class="string">"30"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">icon-name</span>=<span class="string">"write"</span></span></span><br><span class="line"><span class="tag">  &gt;</span><span class="tag">&lt;<span class="name">icon-write</span> /&gt;</span><span class="tag">&lt;/<span class="name">icon-base</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- vous pouvez lui passer une `width` et une `height` plus petite grâce aux props --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">icon-base</span>
+    <span class="hljs-attr">width</span>=<span class="hljs-string">"12"</span>
+    <span class="hljs-attr">height</span>=<span class="hljs-string">"12"</span>
+    <span class="hljs-attr">icon-name</span>=<span class="hljs-string">"write"</span>
+  &gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">icon-write</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">icon-base</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- ou utiliser la valeur par défaut qui est : 18 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">icon-base</span> <span class="hljs-attr">icon-name</span>=<span class="hljs-string">"write"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">icon-write</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">icon-base</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- ou même l'agrandir :) --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">icon-base</span>
+    <span class="hljs-attr">width</span>=<span class="hljs-string">"30"</span>
+    <span class="hljs-attr">height</span>=<span class="hljs-string">"30"</span>
+    <span class="hljs-attr">icon-name</span>=<span class="hljs-string">"write"</span>
+  &gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">icon-write</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">icon-base</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
 <p><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/Screen%20Shot%202018-01-01%20at%204.51.40%20PM.png" width="450"></p>
 <h2 id="Icones-animables"><a href="#Icones-animables" class="headerlink" title="Icônes animables"></a>Icônes animables</h2><p>Mettre des icônes SVG dans des composants devient nécessaire lorsque l’on souhaite les animer. D’autant plus quand cette animation se passe lors d’une interaction. Les SVG <code>inline</code> sont la forme de SVG la mieux supportée. Voici comment animer une icône lors d’un clic :</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">svg</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">click</span>=<span class="string">"startScissors"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">viewBox</span>=<span class="string">"0 0 100 100"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">width</span>=<span class="string">"100"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">height</span>=<span class="string">"100"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">aria-labelledby</span>=<span class="string">"scissors"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">role</span>=<span class="string">"presentation"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span></span></span><br><span class="line"><span class="tag">      <span class="attr">id</span>=<span class="string">"scissors"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">lang</span>=<span class="string">"en"</span></span></span><br><span class="line"><span class="tag">    &gt;</span>Scissors Animated Icon<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">path</span></span></span><br><span class="line"><span class="tag">      <span class="attr">id</span>=<span class="string">"bk"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">fill</span>=<span class="string">"#fff"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">d</span>=<span class="string">"M0 0h100v100H0z"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">g</span> <span class="attr">ref</span>=<span class="string">"leftscissor"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M..."</span>/&gt;</span></span><br><span class="line">      ...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">g</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">g</span> <span class="attr">ref</span>=<span class="string">"rightscissor"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M..."</span>/&gt;</span></span><br><span class="line">      ...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">g</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; TweenMax, Sine &#125; <span class="keyword">from</span> <span class="string">'gsap'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    startScissors() &#123;</span><br><span class="line">      <span class="keyword">this</span>.scissorAnim(<span class="keyword">this</span>.$refs.rightscissor, <span class="number">30</span>)</span><br><span class="line">      <span class="keyword">this</span>.scissorAnim(<span class="keyword">this</span>.$refs.leftscissor, <span class="number">-30</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    scissorAnim(el, rot) &#123;</span><br><span class="line">      TweenMax.to(el, <span class="number">0.25</span>, &#123;</span><br><span class="line">        rotation: rot,</span><br><span class="line">        repeat: <span class="number">3</span>,</span><br><span class="line">        yoyo: <span class="literal">true</span>,</span><br><span class="line">        svgOrigin: <span class="string">'50 45'</span>,</span><br><span class="line">        ease: Sine.easeInOut</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>
+    @<span class="hljs-attr">click</span>=<span class="hljs-string">"startScissors"</span>
+    <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span>
+    <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 100 100"</span>
+    <span class="hljs-attr">width</span>=<span class="hljs-string">"100"</span>
+    <span class="hljs-attr">height</span>=<span class="hljs-string">"100"</span>
+    <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"scissors"</span>
+    <span class="hljs-attr">role</span>=<span class="hljs-string">"presentation"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>
+      <span class="hljs-attr">id</span>=<span class="hljs-string">"scissors"</span>
+      <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>
+    &gt;</span>Scissors Animated Icon<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">path</span>
+      <span class="hljs-attr">id</span>=<span class="hljs-string">"bk"</span>
+      <span class="hljs-attr">fill</span>=<span class="hljs-string">"#fff"</span>
+      <span class="hljs-attr">d</span>=<span class="hljs-string">"M0 0h100v100H0z"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"leftscissor"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M..."</span>/&gt;</span>
+      ...
+    <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"rightscissor"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M..."</span>/&gt;</span>
+      ...
+    <span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; TweenMax, Sine &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'gsap'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">methods</span>: &#123;
+    startScissors() &#123;
+      <span class="hljs-keyword">this</span>.scissorAnim(<span class="hljs-keyword">this</span>.$refs.rightscissor, <span class="hljs-number">30</span>)
+      <span class="hljs-keyword">this</span>.scissorAnim(<span class="hljs-keyword">this</span>.$refs.leftscissor, <span class="hljs-number">-30</span>)
+    &#125;,
+    scissorAnim(el, rot) &#123;
+      TweenMax.to(el, <span class="hljs-number">0.25</span>, &#123;
+        <span class="hljs-attr">rotation</span>: rot,
+        <span class="hljs-attr">repeat</span>: <span class="hljs-number">3</span>,
+        <span class="hljs-attr">yoyo</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">svgOrigin</span>: <span class="hljs-string">'50 45'</span>,
+        <span class="hljs-attr">ease</span>: Sine.easeInOut
+      &#125;)
+    &#125;
+  &#125;
+&#125;</code></pre>
 <p>Nous avons ajouté des attributs <code>ref</code> aux groupes de paths pour pouvoir les animer. Comme les deux cotés des ciseaux s’animent en même temps, nous allons écrire une fonction réutilisable à laquelle nous allons passer des <code>ref</code>. L’utilisation de <em>GreenSock</em> aide à gérer les problèmes de compatibilité entre navigateurs, notamment les problemes de <code>transform-origin</code>.</p>
 <p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Système d'icônes SVG Dynamique : Animation" class="codepen">Voir le Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/" target="_blank" rel="noopener">Système d’icônes SVG Dynamique : Animation</a> by Vue (<a href="https://codepen.io/Vue" target="_blank" rel="noopener">@Vue</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script><br><br><p style="margin-top:-30px">Pas trop dur ! Et en plus, facile à modifier à la volée.</p>
 
@@ -530,8 +556,8 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
 </script>
 
 
-    Une erreur dans cette page ? Envie de contribuer à la traduction ?
-    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/cookbook/editable-svg-icons.md" target="_blank">
+    Une erreur dans cette page ou une envie de contribuer à la traduction ?
+    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/cookbook/editable-svg-icons.md" rel="noopener" target="_blank">
       Éditez cette page sur GitHub !
     </a>
   </div>
@@ -547,9 +573,9 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
     <script src="/js/common.js"></script>
 
     <!-- search -->
-    <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/search.css">
-    <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
     <script>
     [
       '#search-query-nav',
