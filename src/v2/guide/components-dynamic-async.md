@@ -201,7 +201,7 @@ Pour plus de détails sur `<keep-alive>`, consultez la [référence API](../api/
 
 ## Composants asynchrones
 
-<div class="vueschool"><a href="https://vueschool.io/lessons/dynamically-load-components?friend=vuejs" target="_blank" rel="noopener" title="Cours Vue.js gratuit sur les composants asynchrones">Regarder le cours gratuit sur Vue School</a></div>
+<div class="vueschool"><a href="https://vueschool.io/lessons/dynamically-load-components?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les composants asynchrones">Regarder le cours gratuit sur Vue School</a></div>
 
 Dans de grosses applications, nous pouvons avoir besoin de diviser l'application en morceaux plus petits et charger un composant depuis le serveur seulement lorsque celui-ci est requis. Pour rendre cela plus facile, Vue vous permet de définir un composant en tant que fonction usine qui va résoudre de façon asynchrone la définition de votre composant. Vue déclenchera la fonction usine seulement lorsque le rendu du composant est nécessaire, et mettra en cache le résultat pour les futurs nouveaux rendus. Par exemple :
 

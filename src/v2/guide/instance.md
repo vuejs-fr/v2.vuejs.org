@@ -123,7 +123,7 @@ Consultez [l'API](../api#Proprietes-dinstance) pour une liste complète des prop
 
 ## Hooks de cycle de vie d'une instance
 
-<div class="vueschool"><a href="https://vueschool.io/lessons/understanding-the-vuejs-lifecycle-hooks?friend=vuejs" target="_blank" rel="noopener" title="Cours Vue.js gratuit sur les hooks du cycle de vie">Regarder le cours gratuit sur Vue School</a></div>
+<div class="vueschool"><a href="https://vueschool.io/lessons/understanding-the-vuejs-lifecycle-hooks?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les hooks du cycle de vie">Regarder le cours gratuit sur Vue School</a></div>
 
 Chaque instance de vue traverse une série d'étapes d'initialisation au moment de sa création - par exemple, elle doit mettre en place l'observation des données, compiler le template, monter l'instance sur le DOM et mettre à jour le DOM quand les données changent. En cours de route, elle va aussi invoquer des **_hooks_ de cycle de vie**, qui nous donnent l'opportunité d'exécuter une logique personnalisée à chaque niveau.
 

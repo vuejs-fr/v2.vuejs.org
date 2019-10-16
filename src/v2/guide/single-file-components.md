@@ -6,7 +6,7 @@ order: 401
 
 ## Introduction
 
-<div class="vueschool"><a href="https://vueschool.io/lessons/introduction-to-single-file-components?friend=vuejs" target="_blank" rel="noopener" title="Cours Vue.js gratuit sur les composants monofichiers">Regarder le cours gratuit sur Vue School</a></div>
+<div class="vueschool"><a href="https://vueschool.io/lessons/introduction-to-single-file-components?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les composants monofichiers">Regarder le cours gratuit sur Vue School</a></div>
 
 Dans beaucoup de projets Vue, des composants globaux seront définis en utilisant `Vue.component`, suivi de `new Vue({ el: '#container' })` pour cibler un élément conteneur dans le corps de chaque page.
 
@@ -60,7 +60,7 @@ Si vous voulez dès maintenant commencer à jouer avec des composants monofichie
 
 Avec les composants `.vue`, nous entrons de plain-pied dans le domaine des applications JavaScript avancées. Cela implique d'apprendre à utiliser quelques nouveaux outils si vous ne les connaissez pas déjà :
 
-- **Node Package Manager (npm)**: lisez le guide npm [Getting Started guide](https://docs.npmjs.com/getting-started/what-is-npm) section _10: Uninstalling global packages_.
+- **Node Package Manager (npm)**: lisez la section du guide npm [Getting Started guide](https://docs.npmjs.com/packages-and-modules/getting-packages-from-the-registry) à propos de comment récupérer un package.
 
 - **JavaScript moderne avec ES2015/16**: lisez le guide Babel [Learn ES2015 guide](https://babeljs.io/docs/learn-es2015/). Vous n'avez pas besoin de mémoriser chacune des fonctionnalités maintenant, mais gardez cette page en référence pour pouvoir y revenir.
 

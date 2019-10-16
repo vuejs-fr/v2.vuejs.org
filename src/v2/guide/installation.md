@@ -37,13 +37,13 @@ Il suffit de télécharger et de l'inclure avec une balise script. `Vue` sera d�
 Pour du prototypage ou de l'apprentissage, vous pouvez utiliser la dernière version avec :
 
 ``` html
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 ```
 
 Pour la production, nous vous recommandons de vous figer à une version et un build défini pour éviter les changements non compatibles des nouvelles versions :
 
 ``` html
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
 ```
 
 Si vous utilisez des Modules ES natif, il y a également un build compatible avec les Modules ES :
@@ -75,7 +75,7 @@ Vue.js offre une [CLI officielle](https://github.com/vuejs/vue-cli) (« interfac
 
 <p class="tip">Utiliser la CLI nécessite des connaissances préalables en Node.js et les outils de build associés. Si vous êtes nouveau sur Vue ou les outils de build front-end, nous vous recommandons fortement de parcourir <a href="./">le guide</a> sans aucun outil de build avant d'utiliser l'interface CLI.</p>
 
-<div class="vue-mastery"><a href="https://www.vuemastery.com/courses/real-world-vue-js/vue-cli" target="_blank" rel="noopener" title="Vue CLI">Regardez une vidéo de cours gratuite sur Vue Mastery (EN)</a></div>
+<div class="vue-mastery"><a href="https://www.vuemastery.com/courses/real-world-vue-js/vue-cli" target="_blank" rel="sponsored noopener" title="Vue CLI">Regardez une vidéo de cours gratuite sur Vue Mastery (EN)</a></div>
 
 ## Explication des différents builds
 

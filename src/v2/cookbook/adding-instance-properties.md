@@ -6,7 +6,7 @@ order: 2
 
 ## Exemple simple
 
-Il peut y avoir des données/utilitaires que vous aimeriez utiliser dans de nombreux composants, mais vous ne voulez pas [polluer la portée globale](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md). Dans ces cas-là, vous pouvez les rendre accessibles dans chaque instance de Vue en les définissant dans le prototype :
+Il peut y avoir des données/utilitaires que vous aimeriez utiliser dans de nombreux composants, mais vous ne voulez pas [polluer la portée globale](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/ch3.md). Dans ces cas-là, vous pouvez les rendre accessibles dans chaque instance de Vue en les définissant dans le prototype :
 
 ``` js
 Vue.prototype.$appName = 'Mon App'
@@ -58,7 +58,7 @@ new Vue({
 })
 ```
 
-Cela sera `"Mon App"`, puis `"Le nom d'une autre app"`, car `this.appName` est écrasée ([en quelque sorte](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md)) par `data` quand l'instance est créée. Nous limitons la portée des propriétés avec `$` pour éviter ça. Vous pouvez même utiliser votre propre convention si vous préférez, comme `$_appName` ou `ΩappName`, pour en plus prévenir les conflits avec les plugins et les fonctionnalités futures.
+Cela sera `"Mon App"`, puis `"Le nom d'une autre app"`, car `this.appName` est écrasée ([en quelque sorte](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/this-object-prototypes/ch5.md)) par `data` quand l'instance est créée. Nous limitons la portée des propriétés avec `$` pour éviter ça. Vous pouvez même utiliser votre propre convention si vous préférez, comme `$_appName` ou `ΩappName`, pour en plus prévenir les conflits avec les plugins et les fonctionnalités futures.
 
 ## Un exemple en situation réelle : Remplacer Vue Resource par Axios
 

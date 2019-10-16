@@ -98,7 +98,7 @@ Ces expressions seront évaluées en tant que JavaScript au sein de la portée d
 {{ if (ok) { return message } }}
 ```
 
-<p class="tip">Les expressions de template sont isolées et ont seulement accès à une liste blanche de globales telles que `Math` et `Date`. Vous ne devriez pas tenter d'accéder à des variables globales définies par l'utilisateur dans les expressions de template.</p>
+<p class="tip">Les expressions de template sont isolées et ont seulement accès à une [liste blanche](https://github.com/vuejs/vue/blob/v2.6.10/src/core/instance/proxy.js#L9) de globales telles que `Math` et `Date`. Vous ne devriez pas tenter d'accéder à des variables globales définies par l'utilisateur dans les expressions de template.</p>
 
 ## Directives
 

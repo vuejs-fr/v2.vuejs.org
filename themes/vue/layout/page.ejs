@@ -11,7 +11,7 @@
   <% if (page.type) { %>
     <% if (page.type === 'menu') { %>
       <form id="search-form">
-        <input type="text" id="search-query-menu" class="search-query st-default-search-input">
+        <input type="text" id="search-query-menu" aria-label="Recherche de site Vue.js" class="search-query st-default-search-input">
       </form>
       <%- partial('partials/toc', { type: 'guide' }) %>
     <% } else { %>
@@ -23,6 +23,8 @@
   <% } %>
   <% if (page.sponsors) { %>
     <%- partial('sponsors-page') %>
+  <% } else if (page.partners) { %>
+    <%- partial('partners-page') %>
   <% } else if (page.search) { %>
     <%- partial('search-page') %>
   <% } else { %>
@@ -44,8 +46,8 @@
     <%_ if (!page.sponsors) { _%>
       <%- partial('partials/ad-text') %>
     <%_ } _%>
-    Une erreur dans cette page ? Envie de contribuer à la traduction ?
-    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/<%- page.path.replace(/\.html$/, '.md') %>" target="_blank">
+    Une erreur dans cette page ou une envie de contribuer à la traduction ?
+    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/<%- page.path.replace(/\.html$/, '.md') %>" rel="noopener" target="_blank">
       Éditez cette page sur GitHub !
     </a>
   </div>

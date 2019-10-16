@@ -6,7 +6,7 @@ order: 601
 
 C'est maintenant l'heure du grand plongeon ! L'une des fonctionnalités les plus emblématiques de Vue est le système de réactivité non obstrusif. Les modèles sont simplement des objets JavaScript. Lorsque vous les modifiez, la vue se met à jour. Cela rend la gestion d'état très simple et intuitive, mais il est également important de comprendre comment cela fonctionne pour éviter quelques erreurs classiques. Dans cette section, nous allons nous pencher sur certains détails de bas niveau du système de réactivité de Vue.
 
-<div class="vue-mastery"><a href="https://www.vuemastery.com/courses/advanced-components/build-a-reactivity-system" target="_blank" rel="noopener" title="Vue Reactivity">Regardez une vidéo de cours gratuite sur Vue Mastery (EN)</a></div>
+<div class="vue-mastery"><a href="https://www.vuemastery.com/courses/advanced-components/build-a-reactivity-system" target="_blank" rel="sponsored noopener" title="Vue Reactivity">Regardez une vidéo de cours gratuite sur Vue Mastery (EN)</a></div>
 
 ## Comment les modifications sont tracées ?
 
@@ -121,7 +121,7 @@ Vue.component('example', {
 })
 ```
 
-Depuis que `$nextTick()` retourne une promesse, vous pouvez parvenir au même résultat que ci-dessus avec la nouvelle syntaxe [async/await de ES2016](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) :
+Depuis que `$nextTick()` retourne une promesse, vous pouvez parvenir au même résultat que ci-dessus avec la nouvelle syntaxe [async/await de ES2017](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/async_function) :
 
 ``` js
   methods: {
