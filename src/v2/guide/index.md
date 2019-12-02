@@ -244,7 +244,7 @@ var app5 = new Vue({
 
 Notez que dans la méthode, nous avons seulement mis à jour l'état de l'application sans toucher au DOM. Toutes les manipulations de DOM sont prises en charge par Vue, ainsi le code que vous écrivez se concentre sur la logique sous-jacente.
 
-Vue fournit aussi la directive `v-model` qui fait de la liaison de données bidirectionnelle entre les champs d'un formulaire et l'état de l'application. Une simple formalité :
+Vue fournit aussi la directive `v-model` qui fait de la liaison de données bidirectionnelle entre les champs d'un formulaire et l'état de l'application une simple formalité :
 
 ``` html
 <div id="app-6">
