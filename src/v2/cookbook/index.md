@@ -1,5 +1,5 @@
 ---
-title: Introduction (EN)
+title: Introduction
 type: cookbook
 order: 0
 ---
