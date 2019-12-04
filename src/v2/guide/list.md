@@ -6,7 +6,6 @@ order: 8
 
 <div class="vueschool"><a href="https://vueschool.io/lessons/vuejs-loops?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les rendus de liste">Regarder le cours gratuit sur Vue School (EN)</a></div>
 
-
 ## Associer un tableau à des éléments avec `v-for`
 
 Nous pouvons utiliser la directive `v-for` pour faire le rendu d'une liste d'éléments en nous basant sur un tableau. La directive `v-for` utilise une syntaxe spécifique de la forme `item in items`, où `items` représente le tableau source des données et où `item` est un **alias** représentant l'élément du tableau en cours d'itération :
