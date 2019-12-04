@@ -16,6 +16,7 @@
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/syntax.html">
     <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/syntax.html">
     <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/syntax.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/syntax.html">
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="Syntaxe de template — Vue.js">
@@ -86,6 +87,98 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
+    <div id="vs-banner" class="vueschool-banner hide" role="banner">
+  <a href="https://vueschool.io/sales/blackfriday?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=TopBanner&utm_campaign=Black%20Friday" title="Apprenez Vue.js en vidéo avec Vue School" target="_blank">
+    <img class="vueschool-banner--logo" src="/images/vueschool_logo.svg" alt="Vue School Logo">
+    <div class="vueschool-banner--wrapper">
+      <p>Black Friday 40% sur Vue School<span>Apprenez Vue.js en vidéo.</span></p>
+      <button>Get 40% Off</button>
+    </div>
+    <div id="vs-close" class="vueschool-banner--close"></div>
+  </a>
+</div>
+
+<script>
+
+  (function () {
+    // Get elements
+    var elBody = document.getElementsByTagName("body")[0];
+    var elBanner = document.getElementById("vs-banner");
+    var elClose = document.getElementById("vs-close");
+    var elMenu = document.getElementById("mobile-bar");
+    // Variable names
+    var nameWrapper = "vueschool-weekend-promo";
+    var nameFixMenu = "vueschool-menu-fixed";
+    var nameStorage = "vueschool-banner";
+    // Defaults values
+    var isMenuFixed = false;
+    var posMenu = 80;
+    var initBanner = function () {
+      // Add event listeners
+      toggleBannerEvents(true);
+      // Add class to the body to push fixed elements
+      elBody.classList.add(nameWrapper);
+      // Display the banner
+      elBanner.style.display = "block";
+      // Init close button action
+      elClose.onclick = closeBanner;
+      // Get the menu position
+      getMenuPosition();
+      // Check current page offset position
+      isMenuFixed = isUnderBanner();
+      // And position menu accordingly
+      if (isMenuFixed) {
+        elBody.classList.add("fixed");
+      }
+    }
+    var closeBanner = function(e) {
+      // Prevent bubbling event that redirect to vueschool.io
+      e.preventDefault();
+      // Remove events
+      toggleBannerEvents(false);
+      // Hide the banner
+      elBanner.style.display = "none";
+      // Remove class to the body that push fixed elements
+      elBody.classList.remove(nameWrapper);
+      // Save action in the local storage
+      localStorage.setItem(nameStorage, true);
+    }
+    var getMenuPosition = function() {
+      posMenu = elBanner.clientHeight;
+    }
+    var isUnderBanner = function() {
+      return window.pageYOffset > posMenu;
+    }
+    var fixMenuAfterBanner = function() {
+      if (isUnderBanner()) {
+        if (!isMenuFixed) {
+          // The menu will be fixed
+          toggleFixedPosition(true);
+        }
+      } else if (isMenuFixed) {
+        // The menu stay under the banner
+        toggleFixedPosition(false);
+      }
+    }
+    var toggleBannerEvents = function (on) {
+      // Add or remove event listerners attached to the DOM
+      var method = on ? "addEventListener" : "removeEventListener";
+      window[method]("resize", getMenuPosition);
+      window[method]("scroll", fixMenuAfterBanner);
+    }
+    var toggleFixedPosition = function (on) {
+      // Switch between relative and fixed position
+      var method = on ? "add" : "remove";
+      elBody.classList[method](nameFixMenu);
+      isMenuFixed = on;
+    }
+    // Load component according to user preferences
+    if (!localStorage.getItem(nameStorage)) {
+      initBanner();
+    }
+  })()
+</script>
+
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -181,6 +274,7 @@
     <li><a href="/resources/partners.html" class="nav-link">Partenaires</a></li>
     <li><a href="/resources/themes.html" class="nav-link">Thèmes</a></li>
     <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (EN)</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Packages pour Vue (EN)</a></li>
   </ul>
 </li>
 
@@ -206,6 +300,8 @@
     <li><a href="https://vuejs.org/v2/guide/syntax.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/syntax.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
     <li><a href="https://vi.vuejs.org/v2/guide/syntax.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/syntax.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/syntax.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
   </ul>
 </li>
 
@@ -216,7 +312,6 @@
     
       <div id="main" class="fix-sidebar">
         
-          
   
 
 <div class="sidebar">
@@ -791,6 +886,22 @@
       
       
       
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">Security</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
         <li><h3>Mécanismes</h3></li>
       
       
@@ -961,9 +1072,9 @@
 <p>La balise moustache sera remplacée par la valeur de la propriété <code>msg</code> de l’objet data correspondant. Elle sera également mise à jour à chaque fois que la propriété <code>msg</code> de l’objet data changera.</p>
 <p>Vous pouvez également réaliser des interpolations à usage unique qui ne se mettront pas à jour lors de la modification des données en utilisant la <a href="../api/#v-once">directive v-once</a>, mais gardez à l’esprit que cela affectera toutes les liaisons de données présentes sur le même nœud :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-once</span>&gt;</span>Ceci ne changera jamais : &#123;&#123; msg &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
-<h3 id="Interpretation-du-HTML"><a href="#Interpretation-du-HTML" class="headerlink" title="Interprétation du HTML"></a>Interprétation du HTML</h3><p>Les doubles moustaches interprètent la donnée en tant que texte brut, pas en tant que HTML. Pour afficher réellement du HTML, vous aurez besoin d’utiliser la directive <code>v-html</code></p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Using mustaches: &#123;&#123; rawHtml &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Using v-html directive: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"rawHtml"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<h3 id="Interpretation-du-HTML"><a href="#Interpretation-du-HTML" class="headerlink" title="Interprétation du HTML"></a>Interprétation du HTML</h3><p>Les doubles moustaches interprètent la donnée en tant que texte brut, pas en tant que HTML. Pour afficher réellement du HTML, vous aurez besoin d’utiliser la <a href="../api/#v-html">directive <code>v-html</code>directive</a> :</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>En utilisant les doubles moustaches : &#123;&#123; rawHtml &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>En utilisant la directive `v-html` : <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"rawHtml"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
 
 <div id="example1" class="demo">
   <p>En utilisant les moustaches : {{ rawHtml }}</p>
@@ -983,7 +1094,7 @@ new Vue({
 <p>Le contenu de cette <code>span</code> sera alors remplacée par la valeur de la propriété <code>rawHtml</code> en tant que HTML classique. Les liaisons de données sont ignorées. À noter que vous ne pouvez pas utiliser <code>v-html</code> pour composer des fragments de templates, parce que Vue n’est pas un moteur de template basé sur les chaines de caractères. À la place, les composants sont préférés en tant qu’unité fondamentale pour la réutilisabilité et la composition de l’interface utilisateur.</p>
 <p class="tip">Générer dynamiquement du HTML arbitraire sur votre site peut être très dangereux car cela peut mener facilement à des <a href="https://fr.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noopener">vulnérabilités XSS</a>. Utilisez l’interpolation HTML uniquement sur du contenu de confiance et <strong>jamais</strong> sur du contenu fourni par l’utilisateur</p>
 
-<h3 id="Attributs"><a href="#Attributs" class="headerlink" title="Attributs"></a>Attributs</h3><p>Les moustaches ne peuvent pas être utilisées à l’intérieur des attributs HTML, à la place utilisez une <a href="../api/#v-bind">directive <code>v-bind</code></a> :</p>
+<h3 id="Attributs"><a href="#Attributs" class="headerlink" title="Attributs"></a>Attributs</h3><p>Les moustaches ne peuvent pas être utilisées à l’intérieur des attributs HTML. À la place utilisez une <a href="../api/#v-bind">directive <code>v-bind</code></a> :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-bind:id</span>=<span class="hljs-string">"dynamicId"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <p>Dans le cas des attributs booléens qui impliquent la présence d’une valeur évaluée à <code>true</code>, <code>v-bind</code> fonctionne un peu différemment. Dans cet exemple :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-bind:disabled</span>=<span class="hljs-string">"isButtonDisabled"</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
@@ -1092,7 +1203,6 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
   </div>
 </div>
 
-        
       </div>
       <script src="/js/smooth-scroll.min.js"></script>
     

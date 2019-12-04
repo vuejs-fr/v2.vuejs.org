@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Create a CMS-Powered Blog (EN) — Vue.js</title>
+    <title>Créer un blog alimenté par un CMS — Vue.js</title>
     <meta charset="utf-8">
     <meta name="description" content="Vue.js - Le Framework JavaScript Évolutif">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,14 +16,15 @@
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/cookbook/serverless-blog.html">
     <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/cookbook/serverless-blog.html">
     <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/cookbook/serverless-blog.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/cookbook/serverless-blog.html">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Create a CMS-Powered Blog (EN) — Vue.js">
+    <meta property="og:title" content="Créer un blog alimenté par un CMS — Vue.js">
     <meta property="og:description" content="Vue.js - Le Framework JavaScript Évolutif">
     <meta property="og:image" content="https://vuejs.org//images/logo.png">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Create a CMS-Powered Blog (EN) — Vue.js">
+    <meta name="twitter:title" content="Créer un blog alimenté par un CMS — Vue.js">
     <meta name="twitter:description" content="Vue.js - Le Framework JavaScript Évolutif">
     <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
 
@@ -86,6 +87,98 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
+    <div id="vs-banner" class="vueschool-banner hide" role="banner">
+  <a href="https://vueschool.io/sales/blackfriday?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=TopBanner&utm_campaign=Black%20Friday" title="Apprenez Vue.js en vidéo avec Vue School" target="_blank">
+    <img class="vueschool-banner--logo" src="/images/vueschool_logo.svg" alt="Vue School Logo">
+    <div class="vueschool-banner--wrapper">
+      <p>Black Friday 40% sur Vue School<span>Apprenez Vue.js en vidéo.</span></p>
+      <button>Get 40% Off</button>
+    </div>
+    <div id="vs-close" class="vueschool-banner--close"></div>
+  </a>
+</div>
+
+<script>
+
+  (function () {
+    // Get elements
+    var elBody = document.getElementsByTagName("body")[0];
+    var elBanner = document.getElementById("vs-banner");
+    var elClose = document.getElementById("vs-close");
+    var elMenu = document.getElementById("mobile-bar");
+    // Variable names
+    var nameWrapper = "vueschool-weekend-promo";
+    var nameFixMenu = "vueschool-menu-fixed";
+    var nameStorage = "vueschool-banner";
+    // Defaults values
+    var isMenuFixed = false;
+    var posMenu = 80;
+    var initBanner = function () {
+      // Add event listeners
+      toggleBannerEvents(true);
+      // Add class to the body to push fixed elements
+      elBody.classList.add(nameWrapper);
+      // Display the banner
+      elBanner.style.display = "block";
+      // Init close button action
+      elClose.onclick = closeBanner;
+      // Get the menu position
+      getMenuPosition();
+      // Check current page offset position
+      isMenuFixed = isUnderBanner();
+      // And position menu accordingly
+      if (isMenuFixed) {
+        elBody.classList.add("fixed");
+      }
+    }
+    var closeBanner = function(e) {
+      // Prevent bubbling event that redirect to vueschool.io
+      e.preventDefault();
+      // Remove events
+      toggleBannerEvents(false);
+      // Hide the banner
+      elBanner.style.display = "none";
+      // Remove class to the body that push fixed elements
+      elBody.classList.remove(nameWrapper);
+      // Save action in the local storage
+      localStorage.setItem(nameStorage, true);
+    }
+    var getMenuPosition = function() {
+      posMenu = elBanner.clientHeight;
+    }
+    var isUnderBanner = function() {
+      return window.pageYOffset > posMenu;
+    }
+    var fixMenuAfterBanner = function() {
+      if (isUnderBanner()) {
+        if (!isMenuFixed) {
+          // The menu will be fixed
+          toggleFixedPosition(true);
+        }
+      } else if (isMenuFixed) {
+        // The menu stay under the banner
+        toggleFixedPosition(false);
+      }
+    }
+    var toggleBannerEvents = function (on) {
+      // Add or remove event listerners attached to the DOM
+      var method = on ? "addEventListener" : "removeEventListener";
+      window[method]("resize", getMenuPosition);
+      window[method]("scroll", fixMenuAfterBanner);
+    }
+    var toggleFixedPosition = function (on) {
+      // Switch between relative and fixed position
+      var method = on ? "add" : "remove";
+      elBody.classList[method](nameFixMenu);
+      isMenuFixed = on;
+    }
+    // Load component according to user preferences
+    if (!localStorage.getItem(nameStorage)) {
+      initBanner();
+    }
+  })()
+</script>
+
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -181,6 +274,7 @@
     <li><a href="/resources/partners.html" class="nav-link">Partenaires</a></li>
     <li><a href="/resources/themes.html" class="nav-link">Thèmes</a></li>
     <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (EN)</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Packages pour Vue (EN)</a></li>
   </ul>
 </li>
 
@@ -206,6 +300,8 @@
     <li><a href="https://vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
     <li><a href="https://br.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
     <li><a href="https://vi.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
   </ul>
 </li>
 
@@ -216,7 +312,6 @@
     
       <div id="main" class="fix-sidebar">
         
-          
   
 
 <div class="sidebar">
@@ -270,7 +365,7 @@
     
     
     <li>
-      <a href="/v2/cookbook/index.html" class="sidebar-link">Introduction (EN)</a>
+      <a href="/v2/cookbook/index.html" class="sidebar-link">Introduction</a>
     </li>
   
     
@@ -294,7 +389,7 @@
     
     
     <li>
-      <a href="/v2/cookbook/serverless-blog.html" class="sidebar-link current">Create a CMS-Powered Blog (EN)</a>
+      <a href="/v2/cookbook/serverless-blog.html" class="sidebar-link current">Créer un blog alimenté par un CMS</a>
     </li>
   
     
@@ -401,7 +496,7 @@
     
   
   
-    <h1>Create a CMS-Powered Blog (EN)</h1>
+    <h1>Créer un blog alimenté par un CMS</h1>
   
   
     <p>Donc vous venez juste de lancer votre site web en Vue.js, félicitations ! Maintenant vous voulez lui ajouter un blog qui va s’intégrer rapidement sans avoir à mettre en place un serveur complet pour héberger une instance de Wordpress (or tout autre CMS utilisant une base de données). Vous voulez seulement ajouter quelques composants Vue.js et des routes pour que votre blog fonctionne, n’est-ce pas ? Ce que vous recherchez, c’est un blog qui fonctionne entièrement sur des interfaces de programmation directement consommées par votre application Vue.js. Ce tutoriel va vous apprendre à le faire, lançons-nous !</p>
@@ -656,7 +751,6 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
   </div>
 </div>
 
-        
       </div>
       <script src="/js/smooth-scroll.min.js"></script>
     

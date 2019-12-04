@@ -16,6 +16,7 @@
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/resources/partners.html">
     <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/resources/partners.html">
     <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/resources/partners.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/resources/partners.html">
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="Vue Partners — Vue.js">
@@ -86,6 +87,98 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
+    <div id="vs-banner" class="vueschool-banner hide" role="banner">
+  <a href="https://vueschool.io/sales/blackfriday?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=TopBanner&utm_campaign=Black%20Friday" title="Apprenez Vue.js en vidéo avec Vue School" target="_blank">
+    <img class="vueschool-banner--logo" src="/images/vueschool_logo.svg" alt="Vue School Logo">
+    <div class="vueschool-banner--wrapper">
+      <p>Black Friday 40% sur Vue School<span>Apprenez Vue.js en vidéo.</span></p>
+      <button>Get 40% Off</button>
+    </div>
+    <div id="vs-close" class="vueschool-banner--close"></div>
+  </a>
+</div>
+
+<script>
+
+  (function () {
+    // Get elements
+    var elBody = document.getElementsByTagName("body")[0];
+    var elBanner = document.getElementById("vs-banner");
+    var elClose = document.getElementById("vs-close");
+    var elMenu = document.getElementById("mobile-bar");
+    // Variable names
+    var nameWrapper = "vueschool-weekend-promo";
+    var nameFixMenu = "vueschool-menu-fixed";
+    var nameStorage = "vueschool-banner";
+    // Defaults values
+    var isMenuFixed = false;
+    var posMenu = 80;
+    var initBanner = function () {
+      // Add event listeners
+      toggleBannerEvents(true);
+      // Add class to the body to push fixed elements
+      elBody.classList.add(nameWrapper);
+      // Display the banner
+      elBanner.style.display = "block";
+      // Init close button action
+      elClose.onclick = closeBanner;
+      // Get the menu position
+      getMenuPosition();
+      // Check current page offset position
+      isMenuFixed = isUnderBanner();
+      // And position menu accordingly
+      if (isMenuFixed) {
+        elBody.classList.add("fixed");
+      }
+    }
+    var closeBanner = function(e) {
+      // Prevent bubbling event that redirect to vueschool.io
+      e.preventDefault();
+      // Remove events
+      toggleBannerEvents(false);
+      // Hide the banner
+      elBanner.style.display = "none";
+      // Remove class to the body that push fixed elements
+      elBody.classList.remove(nameWrapper);
+      // Save action in the local storage
+      localStorage.setItem(nameStorage, true);
+    }
+    var getMenuPosition = function() {
+      posMenu = elBanner.clientHeight;
+    }
+    var isUnderBanner = function() {
+      return window.pageYOffset > posMenu;
+    }
+    var fixMenuAfterBanner = function() {
+      if (isUnderBanner()) {
+        if (!isMenuFixed) {
+          // The menu will be fixed
+          toggleFixedPosition(true);
+        }
+      } else if (isMenuFixed) {
+        // The menu stay under the banner
+        toggleFixedPosition(false);
+      }
+    }
+    var toggleBannerEvents = function (on) {
+      // Add or remove event listerners attached to the DOM
+      var method = on ? "addEventListener" : "removeEventListener";
+      window[method]("resize", getMenuPosition);
+      window[method]("scroll", fixMenuAfterBanner);
+    }
+    var toggleFixedPosition = function (on) {
+      // Switch between relative and fixed position
+      var method = on ? "add" : "remove";
+      elBody.classList[method](nameFixMenu);
+      isMenuFixed = on;
+    }
+    // Load component according to user preferences
+    if (!localStorage.getItem(nameStorage)) {
+      initBanner();
+    }
+  })()
+</script>
+
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -181,6 +274,7 @@
     <li><a href="/resources/partners.html" class="nav-link">Partenaires</a></li>
     <li><a href="/resources/themes.html" class="nav-link">Thèmes</a></li>
     <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (EN)</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Packages pour Vue (EN)</a></li>
   </ul>
 </li>
 
@@ -206,6 +300,8 @@
     <li><a href="https://vuejs.org/resources/partners.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
     <li><a href="https://br.vuejs.org/resources/partners.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
     <li><a href="https://vi.vuejs.org/resources/partners.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/resources/partners.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
+    <li><a href="https://docs.vuejs.id/resources/partners.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
   </ul>
 </li>
 
@@ -216,7 +312,6 @@
     
       <div id="main" class="fix-sidebar">
         
-          
   
 
 <div class="sidebar">
@@ -461,11 +556,11 @@
               
                 <li>
                   <a
-                    href="https://vuejs.org"
+                    href="https://moduscreate.com/partners/vue/?utm_source=Vue&utm_medium=Partner-Page&utm_campaign=Vue_partnerpage"
                     target="_blank"
                     rel="sponsored noopener"
                   >
-                    VueJs
+                    Vue.js
                   </a>
                 </li>
               
@@ -577,7 +672,7 @@
   
     <div class="partner">
       <div class="logo">
-        <a href="https://www.monterail.com" target="_blank" rel="sponsored noopener">
+        <a href="https://www.monterail.com/?utm_campaign=Vue.js&utm_source=partner-list" target="_blank" rel="sponsored noopener">
           <img
             alt="Monterail"
             src="/images/Monterail.png"
@@ -593,7 +688,7 @@
               <span class="sr-only">Link</span>
             </dt>
             <dd>
-              <a href="https://www.monterail.com" target="_blank" rel="sponsored noopener">
+              <a href="https://www.monterail.com/?utm_campaign=Vue.js&utm_source=partner-list" target="_blank" rel="sponsored noopener">
                 www.monterail.com
               </a>
             </dd>
@@ -630,7 +725,7 @@
               
                 <li>
                   <a
-                    href="https://vuejs.org"
+                    href="https://hi.monterail.co/2NqPUa6"
                     target="_blank"
                     rel="sponsored noopener"
                   >
@@ -640,7 +735,7 @@
               
                 <li>
                   <a
-                    href=""
+                    href="https://hi.monterail.co/31RvfBm"
                     target="_blank"
                     rel="sponsored noopener"
                   >
@@ -650,7 +745,7 @@
               
                 <li>
                   <a
-                    href=""
+                    href="https://hi.monterail.co/34cWQhR"
                     target="_blank"
                     rel="sponsored noopener"
                   >
@@ -660,7 +755,7 @@
               
                 <li>
                   <a
-                    href=""
+                    href="https://hi.monterail.co/2MXHLeb"
                     target="_blank"
                     rel="sponsored noopener"
                   >
@@ -729,6 +824,149 @@
       </div>
     </div>
   
+    <div class="partner">
+      <div class="logo">
+        <a href="https://rangle.io/?utm_source=referral&utm_medium=partner&utm_campaign=vue-partners" target="_blank" rel="sponsored noopener">
+          <img
+            alt="Rangle"
+            src="https://res.cloudinary.com/rangle/image/upload/q_auto,f_auto/vuejs.org/rangle_black_lockup_n6q48z.png"
+          >
+        </a>
+      </div>
+      <div class="profile">
+        <!-- <h3> Rangle </h3> -->
+        <p class="description">Rangle is a global digital consultancy that helps ambitious organizations outperform the competition in the most demanding markets. We work closely with our clients as one team to imagine, design, and deliver human-centered digital experiences that create lasting results and real business value. Anchored in innovation and lean startup best-practices, our unique delivery and partnership model is purposed-built to this task.</p>
+        <dl>
+          <dt>
+              <i class="fa fa-link"></i>
+              <span class="sr-only">Link</span>
+            </dt>
+            <dd>
+              <a href="https://rangle.io/?utm_source=referral&utm_medium=partner&utm_campaign=vue-partners" target="_blank" rel="sponsored noopener">
+                rangle.io
+              </a>
+            </dd>
+
+          <dt>
+            <i class="fa fa-map-marker"></i>
+            <span class="sr-only">Location</span>
+          </dt>
+          <dd>
+            Toronto, ON, CA　Atlanta, GA, USA　Amsterdam, Netherlands　Tokyo, Japan
+          </dd>
+
+          <dt>
+            <i class="fa fa-globe"></i>
+            <span class="sr-only">Languages</span>
+          </dt>
+          <dd class="language-list">
+            <ul>
+              
+                <li>
+                  English
+                </li>
+              
+                <li>
+                  French
+                </li>
+              
+                <li>
+                  Dutch
+                </li>
+              
+            </ul>
+          </dd>
+
+          <dt>Proficiencies</dt>
+          <dd>
+            <ul>
+              
+                <li>
+                  <a
+                    href="https://rangle.io/#build-a-product/?utm_source=referral&utm_medium=partner&utm_campaign=vue-partners"
+                    target="_blank"
+                    rel="sponsored noopener"
+                  >
+                    Building Products
+                  </a>
+                </li>
+              
+                <li>
+                  <a
+                    href="https://rangle.io/#improve-an-experience/?utm_source=referral&utm_medium=partner&utm_campaign=vue-partners"
+                    target="_blank"
+                    rel="sponsored noopener"
+                  >
+                    Improving Experiences
+                  </a>
+                </li>
+              
+                <li>
+                  <a
+                    href="https://rangle.io/#level-up-your-team/?utm_source=referral&utm_medium=partner&utm_campaign=vue-partners"
+                    target="_blank"
+                    rel="sponsored noopener"
+                  >
+                    Training &amp; Coaching
+                  </a>
+                </li>
+              
+                <li>
+                  <a
+                    href="https://rangle.io/#adopt-agile-delivery/?utm_source=referral&utm_medium=partner&utm_campaign=vue-partners"
+                    target="_blank"
+                    rel="sponsored noopener"
+                  >
+                    Agile Transformation
+                  </a>
+                </li>
+              
+                <li>
+                  <a
+                    href="https://rangle.io/#transform-your-business/?utm_source=referral&utm_medium=partner&utm_campaign=vue-partners"
+                    target="_blank"
+                    rel="sponsored noopener"
+                  >
+                    Business Transformation
+                  </a>
+                </li>
+              
+            </ul>
+          </dd>
+
+          <dd class="social">
+            
+              <a href="mailto:info@rangle.io?subject=Hire Rangle">
+                <i class="fa fa-envelope"></i>
+                <span class="sr-only">Email</span>
+              </a>
+            
+            
+              <a class="github" href="https://github.com/rangle" target="_blank" rel="noopener">
+                <i class="fa fa-github"></i>
+                <span class="sr-only">GitHub</span>
+              </a>
+            
+              <a class="linkedin" href="https://www.linkedin.com/company/rangle/" target="_blank" rel="noopener">
+                <i class="fa fa-linkedin"></i>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+            
+              <a class="twitter" href="https://twitter.com/rangleio" target="_blank" rel="noopener">
+                <i class="fa fa-twitter"></i>
+                <span class="sr-only">Twitter</span>
+              </a>
+            
+              <a class="instagram" href="https://www.instagram.com/rangleio/?hl=en" target="_blank" rel="noopener">
+                <i class="fa fa-instagram"></i>
+                <span class="sr-only">Instagram</span>
+              </a>
+            
+          </dd>
+        </dl>
+      </div>
+    </div>
+  
 </div>
 
   
@@ -753,7 +991,6 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
   </div>
 </div>
 
-        
       </div>
       <script src="/js/smooth-scroll.min.js"></script>
     
