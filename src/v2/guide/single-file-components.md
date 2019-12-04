@@ -6,7 +6,7 @@ order: 401
 
 ## Introduction
 
-<div class="vueschool"><a href="https://vueschool.io/lessons/introduction-to-single-file-components?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les composants monofichiers">Regarder le cours gratuit sur Vue School</a></div>
+<div class="vueschool"><a href="https://vueschool.io/lessons/introduction-to-single-file-components?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les composants monofichiers">Regarder le cours gratuit sur Vue School (EN)</a></div>
 
 Dans beaucoup de projets Vue, des composants globaux seront définis en utilisant `Vue.component`, suivi de `new Vue({ el: '#container' })` pour cibler un élément conteneur dans le corps de chaque page.
 

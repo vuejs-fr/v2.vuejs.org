@@ -6,6 +6,8 @@ order: 102
 
 > Cette page suppose que vous avez déjà lu les principes de base des [composants](components.html). Lisez-les en premier si les composants sont quelque chose de nouveau pour vous.
 
+<div class="vueschool"><a href="https://vueschool.io/lessons/reusable-components-with-props?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les props">Regarder le cours gratuit sur Vue School (EN)</a></div>
+
 ## Casse des props (camelCase vs. kebab-case)
 
 Les noms d'attributs HTML sont insensibles à la casse, aussi les navigateurs interprèteront de la même manière les majuscules et les minuscules. Cela signifie que pour l'utilisation des templates directement dans le DOM, les props en camelCase doivent utiliser leur équivalent kebab-case (délimités par des tirets) :

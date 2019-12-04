@@ -2,7 +2,15 @@
 
 Ce site est assemblé avec [hexo](http://hexo.io/). Le contenu du site est écrit au format Markdown et se trouve dans `src`. Les propositions de fusion (*pull request*) sont les bienvenues !
 
+<<<<<<< HEAD
 ## Développement
+=======
+## Writing
+
+See the [Vue Docs Writing Guide](https://github.com/vuejs/vuejs.org/blob/master/writing-guide.md) for our rules and recommendations on writing and maintaining documentation.
+
+## Developing
+>>>>>>> upstream/master
 
 Lancez un serveur de développement sur `localhost:4000` :
 

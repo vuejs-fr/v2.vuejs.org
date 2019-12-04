@@ -233,7 +233,7 @@ methods: {
 }
 ```
 
-Consultez [ce fiddle](https://jsfiddle.net/chrisvfritz/1Leb7up8/) pour le code complet. Notez cependant que si vous vous trouvez à devoir faire beaucoup de code de montage et de nettoyage au sein d'un seul composant, la meilleure solution sera souvent de créer des composants plus modulaires. Dans le cas présent, nous recommanderions de créer un composant réutilisable `<input-datepicker>`.
+Consultez [ce fiddle](https://jsfiddle.net/09jvu65m/) pour le code complet. Notez cependant que si vous vous trouvez à devoir faire beaucoup de code de montage et de nettoyage au sein d'un seul composant, la meilleure solution sera souvent de créer des composants plus modulaires. Dans le cas présent, nous recommanderions de créer un composant réutilisable `<input-datepicker>`.
 
 Pour en apprendre plus sur les écouteurs programmatiques, allez voir l'API des [méthodes d'événements d'une instance](https://vuejs.org/v2/api/#Instance-Methods-Events).
 

@@ -1,7 +1,7 @@
 var themeData = [
   {
     name: 'Creative Tim',
-    description: `With the examples below built by our partners from [Creative Tim](https://creative-tim.com?affiliate_id=116187) you can see how a real world application is built, the technology stack behind it and how most of the concepts you've learned so far apply in a real world application.`,
+    description: `Avec les exemples ci-dessous créés par nos partenaires de chez [Creative Tim](https://creative-tim.com?affiliate_id=116187) vous pouvez voir comment une application réelle est construite, la pile de technologie qui la sous-tend et comment la plupart des concepts que vous avez appris jusqu'à présent s'appliquent à une application réelle.`,
     seeMoreUrl: 'https://www.creative-tim.com/bootstrap-themes/vuejs-themes?affiliate_id=116187',
     products: [
       {
@@ -89,5 +89,41 @@ var themeData = [
         image: 'https://raw.githubusercontent.com/creativetimofficial/public-assets/master/vue-light-bootstrap-dashboard/vue-light-bootstrap-dashboard.jpg'
       }
     ]
+  },
+  {
+    name: "MDBootstrap",
+    description: `Consultez les thèmes, UI Kits et plugins ci-dessous créés par nos partenaires de chez [MDBootstrap](https://mdbootstrap.com/?utm_ref_id=82665). Apprenez comment utiliser Vue dans des projets professionels avec la technologie Bootstrap. Template et composant pré-conçu vont rendre vos développments plus rapides et efficaces.`,
+    seeMoreUrl: "https://mdbootstrap.com/docs/vue?utm_ref_id=82665",
+    products: [
+      {
+        url: "https://mdbootstrap.com/products/vue-ui-kit?utm_ref_id=82665",
+        name: "Vue Material Bootstrap Pro",
+        description: "Premium Vue.js UI Kit",
+        image: "https://mdbootstrap.com/img/Marketing/mdb-press-pack/vuejs/ui-kit.jpg",
+        price: 99
+      },
+      {
+        url: "https://mdbootstrap.com/docs/vue?utm_ref_id=82665",
+        name: "Vue Material Bootstrap Kit",
+        description: "Free Vue.js UI Kit",
+        image: "https://mdbootstrap.com/img/Marketing/mdb-press-pack/vuejs/ui-kit.jpg",
+        price: 0
+      },
+      {
+        url: "https://mdbootstrap.com/products/vue-admin-dashboard?utm_ref_id=82665",
+        name: " Vue Admin Bootstrap Pro",
+        description: "Premium Vue.js Templates Pack",
+        image: "https://mdbootstrap.com/img/Marketing/mdb-press-pack/vuejs/admin-pack.jpg",
+        price: 79
+      },
+      {
+        url: "https://mdbootstrap.com/freebies/vue/admin-dashboard?utm_ref_id=82665",
+        name: "Vue Admin Bootstrap",
+        description: "Free Vue.js Templates Pack",
+        image: "https://mdbootstrap.com/img/Marketing/mdb-press-pack/vuejs/admin-pack.jpg",
+        price: 0
+      }
+    ]
   }
+  
 ]

@@ -4,6 +4,8 @@ type: guide
 order: 7
 ---
 
+<div class="vueschool"><a href="https://vueschool.io/lessons/vuejs-conditionals?friend=vuejs" target="_blank" rel="sponsored noopener" title="Learn how conditional rendering works with Vue School">Learn how conditional rendering works with a free lesson on Vue School</a></div>
+
 ## `v-if`
 
 La directive `v-if` est utilisée pour conditionnellement faire le rendu d'un bloc. Le rendu du bloc sera effectué uniquement si l'expression de la directive retourne une valeur évaluée à vrai.

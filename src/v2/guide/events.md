@@ -4,6 +4,8 @@ type: guide
 order: 9
 ---
 
+<div class="vueschool"><a href="https://vueschool.io/lessons/vuejs-user-events?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur la gestion des évènements">Regarder le cours gratuit sur Vue School (EN)</a></div>
+
 ## Écouter des évènements
 
 Nous pouvons utiliser l'instruction `v-on` pour écouter les évènements du DOM afin d'exécuter du JavaScript lorsque ces évènements surviennent.
@@ -154,7 +156,9 @@ Parfois nous avons également besoin d'accéder à l'évènement original du DOM
 methods: {
   warn: function (message, event) {
     // maintenant nous avons accès à l'évènement natif
-    if (event) event.preventDefault()
+    if (event) {
+      event.preventDefault()
+    }
     alert(message)
   }
 }

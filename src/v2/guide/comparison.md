@@ -224,5 +224,5 @@ Avec Polymer, l'équipe a également créé un système de liaison de données v
 
 Riot 3.0 fournit un modèle de développement similaire orienté composant (cela est appelé un « tag » dans Riot), avec une API minimaliste mais conçue de manière élégante. Riot et Vue partagent probablement beaucoup de choses dans leur philosophie d'architecture. Cependant, bien qu'étant un peu plus lourd que Riot, Vue offre certains avantages significatifs :
 
-- De meilleures performances. Riot [utilise le DOM](http://riotjs.com/compare/#virtual-dom-vs-expressions-binding) plutôt qu'un DOM virtuel, et par conséquent il souffre des mêmes problèmes de performances que AngularJS.
+- De meilleures performances. Riot [utilise le DOM](https://v3.riotjs.now.sh/compare/#virtual-dom-vs-expressions-binding) plutôt qu'un DOM virtuel, et par conséquent il souffre des mêmes problèmes de performances que AngularJS.
 - Le support d'un outillage plus mature. Vue fournit un support officiel pour [webpack](https://github.com/vuejs/vue-loader) et [Browserify](https://github.com/vuejs/vueify), là où Riot s'appuie sur le soutien de la communauté pour l'intégration de systèmes de build.

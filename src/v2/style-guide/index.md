@@ -1612,7 +1612,6 @@ Voici l'ordre par défaut que nous recommandons pour les options de composant. E
 6. **Attributs uniques** (attributs nécessitant une valeur unique)
   - `ref`
   - `key`
-  - `slot`
 
 7. **Liaison bidirectionnelle** (combiner les liaisons descendantes et les évènements montants)
   - `v-model`

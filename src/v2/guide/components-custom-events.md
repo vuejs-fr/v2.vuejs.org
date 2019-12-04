@@ -6,6 +6,8 @@ order: 103
 
 > Cette page suppose que vous avez déjà lu les principes de base des [composants](components.html). Lisez-les en premier si les composants sont quelque chose de nouveau pour vous.
 
+<div class="vueschool"><a href="https://vueschool.io/lessons/communication-between-components?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les évènements personnalisés">Regarder le cours gratuit sur Vue School (EN)</a></div>
+
 ## Noms d'événements
 
 Contrairement aux composants et aux props, les noms d'événements ne fournissent pas de conversion kebab-case/camelCase. Le nom de l'événement émis doit correspondre exactement au nom utilisé pour écouter cet événement. Par exemple, si l'on émet un nom d'événement en camelCase :

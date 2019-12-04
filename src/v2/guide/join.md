@@ -49,7 +49,7 @@ Hormis répondre aux questions ou partager des ressources sur le forum et le cha
 
 ### Traduire les documentations
 
-Vue s'est déjà répandu à travers le monde avec l'équipe principale présente dans au moins une demi-douzaine de fuseaux horaires. Le [forum international](https://forum.vuejs.org/) inclut bien des langues et beaucoup de nos documentations ont une [traduction maintenue activement](https://github.com/vuejs?utf8=%E2%9C%93&query=vuejs.org). Nous sommes extrêmement fiers de notre présence à l'international avec Vue, mais nous pouvons faire encore mieux.
+Vue s'est déjà répandu à travers le monde avec l'équipe principale présente dans au moins une demi-douzaine de fuseaux horaires. Le [forum international](https://forum.vuejs.org/) inclut bien des langues et beaucoup de nos documentations ont une [traduction maintenue activement](https://github.com/vuejs?utf8=%E2%9C%93&q=vuejs.org). Nous sommes extrêmement fiers de notre présence à l'international avec Vue, mais nous pouvons faire encore mieux.
 
 Nous espérons qu'en ce moment, vous êtes en train de lire cette phrase dans votre langue préférée. Si ce n'est pas le cas, que diriez-vous de nous aider à changer cela en répliquant le [dépôt international](https://github.com/vuejs/vuejs.org/) ?
 

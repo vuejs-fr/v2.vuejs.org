@@ -6,6 +6,8 @@ order: 5
 
 ## Propriétés calculées
 
+<div class="vueschool"><a href="https://vueschool.io/lessons/vuejs-computed-properties?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les propriétés calculées et observateurs">Regarder le cours gratuit sur Vue School (EN)</a></div>
+
 Les expressions dans le template sont très pratiques, mais elles sont uniquement destinées à des opérations simples. Mettre trop de logique dans vos templates peut les rendre trop verbeux et difficiles à maintenir. Par exemple :
 
 ``` html

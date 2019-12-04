@@ -4,7 +4,7 @@ type: guide
 order: 11
 ---
 
-<div class="vueschool"><a href="https://vueschool.io/courses/vuejs-components-fundamentals?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les fondamentaux des composants">Regarder le cours gratuit sur Vue School</a></div>
+<div class="vueschool"><a href="https://vueschool.io/courses/vuejs-components-fundamentals?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les fondamentaux des composants">Regarder le cours gratuit sur Vue School (EN)</a></div>
 
 ## Exemple de base
 
@@ -602,6 +602,8 @@ Dans l'exemple ci-dessus, `currentTabComponent` peut contenir soit :
 - un objet d'option de composant
 
 Regardez [ce fiddle](https://jsfiddle.net/chrisvfritz/o3nycadu/) pour expérimenter cela avec un code complet, ou [cette version](https://jsfiddle.net/chrisvfritz/b2qj69o1/) pour un exemple lié à un objet d'option de composant plutôt qu'à un nom enregistré.
+
+Gardez à l'esprit que ces attributs peuvent être utilisés sur des éléments HTML standard, cependant ils seront traités comme des composants, ce qui signifie que tous les attributs **seront liés en tant qu'attribut du DOM**. Pour que diverses propriétés fonctionnent comme vous le souhaité, comme pour `value`, vous allez devoir les liés en utilisant le [modificateur `.prop`](../api/#v-bind).
 
 C'est tout ce que vous avez besoin de savoir à propos des composants dynamiques pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des [Composants dynamiques et asynchrones](components-dynamic-async.html).
 

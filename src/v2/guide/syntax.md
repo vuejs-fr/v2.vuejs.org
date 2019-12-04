@@ -30,11 +30,11 @@ Vous pouvez également réaliser des interpolations à usage unique qui ne se me
 
 ### Interprétation du HTML
 
-Les doubles moustaches interprètent la donnée en tant que texte brut, pas en tant que HTML. Pour afficher réellement du HTML, vous aurez besoin d'utiliser la directive `v-html`
+Les doubles moustaches interprètent la donnée en tant que texte brut, pas en tant que HTML. Pour afficher réellement du HTML, vous aurez besoin d'utiliser la [directive `v-html`directive](../api/#v-html) :
 
 ``` html
-<p>Using mustaches: {{ rawHtml }}</p>
-<p>Using v-html directive: <span v-html="rawHtml"></span></p>
+<p>En utilisant les doubles moustaches : {{ rawHtml }}</p>
+<p>En utilisant la directive `v-html` : <span v-html="rawHtml"></span></p>
 ```
 
 {% raw %}
@@ -60,7 +60,7 @@ Le contenu de cette `span` sera alors remplacée par la valeur de la propriété
 
 ### Attributs
 
-Les moustaches ne peuvent pas être utilisées à l'intérieur des attributs HTML, à la place utilisez une [directive `v-bind`](../api/#v-bind) :
+Les moustaches ne peuvent pas être utilisées à l'intérieur des attributs HTML. À la place utilisez une [directive `v-bind`](../api/#v-bind) :
 
 ``` html
 <div v-bind:id="dynamicId"></div>
