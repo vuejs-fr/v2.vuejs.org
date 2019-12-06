@@ -79,7 +79,7 @@ Vue.js offre une [CLI officielle](https://github.com/vuejs/vue-cli) (« interfac
 
 ## Explication des différents builds
 
-Dans le [dossier `dist/` du package npm](https://cdn.jsdelivr.net/npm/vue/dist/) vous trouverrez plusieurs builds différents de Vue.js. Voici un aperçu des différences entre chacun d'eux :
+Dans le [dossier `dist/` du package npm](https://cdn.jsdelivr.net/npm/vue/dist/) vous trouverez plusieurs builds différents de Vue.js. Voici un aperçu des différences entre chacun d'eux :
 
 | | UMD | CommonJS | ES Module (pour empaqueteurs) | ES Module (pour navigateurs) |
 | --- | --- | --- | --- | --- |
