@@ -537,7 +537,7 @@ L'attribut `slot-scope` peut également être utilisé directement sur un élém
 </slot-example>
 ```
 
-La valeur de `slot-scope` peut accepter toute expression JavaScript valide pouvant apparaître dans la position d'argument d'une définition de fonction. Cela signifie que dans les environnements pris en charge ([Composants monofichiers](single-file-components.html) ou [navigateurs modernes](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#Compatibilit%C3%A9_des_navigateurs)) vous pouvez aussi utiliser [Décomposition ES2015](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#D%C3%A9composer_un_objet) dans l'expression, comme ceci :
+La valeur de `slot-scope` peut accepter toute expression JavaScript valide pouvant apparaitre dans la position d'argument d'une définition de fonction. Cela signifie que dans les environnements pris en charge ([Composants monofichiers](single-file-components.html) ou [navigateurs modernes](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#Compatibilit%C3%A9_des_navigateurs)) vous pouvez aussi utiliser [Décomposition ES2015](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#D%C3%A9composer_un_objet) dans l'expression, comme ceci :
 
 ``` html
 <slot-example>
