@@ -398,7 +398,7 @@ Au lieu de cela, vous devez toujours spécifier le nom slot si vous souhaitez ut
 
 ## Autres exemples
 
-**Les props de slot nous permettent de transformer les slot en template réutilisables pouvant afficher différents contenus en fonction des slots fourni en paramètre.** Cela est particulièrement utile lorsque vous concevez un composant réutilisable qui encapsule la logique des données tout en permettant au composant parent de personnaliser une partie de sa mise en page.
+**Les props de slot nous permettent de transformer les slot en templates réutilisables pouvant afficher différents contenus en fonction des slots fourni en paramètre.** Cela est particulièrement utile lorsque vous concevez un composant réutilisable qui encapsule la logique des données tout en permettant au composant parent de personnaliser une partie de sa mise en page.
 
 Par exemple, nous implémentons un composant `<todo-list>` qui contient la logique de mise en page et de filtrage pour une liste :
 
