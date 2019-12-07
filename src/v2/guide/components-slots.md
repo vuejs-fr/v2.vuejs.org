@@ -484,7 +484,7 @@ Ou bien, l'attribut `slot` peut également être utilisé directement sur un él
 </base-layout>
 ```
 
-Il peut toujours y avoir un emplacement non nommé, le **slot par défaut**, qui sert de passe-partout pour tout contenu sans correspondance. Dans les deux exemples ci-dessus, le code HTML rendu serait :
+Il peut toujours y avoir un emplacement non nommé, le **slot par défaut**, qui sert de passepartout pour tout contenu sans correspondance. Dans les deux exemples ci-dessus, le code HTML rendu serait :
 
 ``` html
 <div class="container">
