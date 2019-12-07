@@ -446,7 +446,7 @@ Maintenant, lorsque nous utilisons le composant `<todo-list>`, nous pouvons éve
 
 Cependant, même cela effleure à peine ce que sont capables de faire les scops slots. Pour des exemples concrets et puissants d’utilisation des scops de slots, nous vous recommandons de parcourir des bibliothèques telles que [Vue Virtual Scroller](https://github.com/Akryum/vue-virtual-scroller), [Vue Promised](https://github.com/posva/vue-promised) et [Portal Vue](https://github.com/LinusBorg/portal-vue).
 
-## Syntaxe Obsolète
+## Syntaxe obsolète
 
 > La directive `v-slot` a été introduite dans Vue 2.6.0, offrant une API alternative améliorée aux attributs`slot` et `slot-scope` toujours pris en charge. La justification complète de l'introduction du `v-slot` est décrite dans cette [RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md). Les attributs `slot` et`slot-scope` continueront d'être pris en charge dans toutes les futures versions 2.x, mais sont officiellement obsolètes et seront éventuellement supprimés dans Vue 3.
 
