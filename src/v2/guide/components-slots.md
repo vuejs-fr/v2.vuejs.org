@@ -83,7 +83,7 @@ Souvenez-vous de cette règle :
 
 Il y a des cas où il est utile de spécifier un contenu par défaut pour un slot qui sera rendu uniquement si aucun contenu n'est fourni. Par exemple, dans le composant `<submit-button>` :
 
-```html
+``` html
 <button type="submit">
   <slot></slot>
 </button>
@@ -91,7 +91,7 @@ Il y a des cas où il est utile de spécifier un contenu par défaut pour un slo
 
 Nous pourrions vouloir que le texte « Envoyer » soit rendu à l'intérieur de `<button>` la plupart du temps. Pour faire de « Envoyer » le contenu par défaut, nous pouvons le placer à l'intérieur des balises `<slot>` :
 
-```html
+``` html
 <button type="submit">
   <slot>Envoyer</slot>
 </button>
@@ -99,13 +99,13 @@ Nous pourrions vouloir que le texte « Envoyer » soit rendu à l'intérieur de 
 
 Maintenant quand nous utilisons `<submit-button>` dans le composant parent, nous ne fournissons aucun contenu pour le slot :
 
-```html
+``` html
 <submit-button></submit-button>
 ```
 
 ce qui fera le rendu du contenu par défaut « Envoyer » :
 
-```html
+``` html
 <button type="submit">
   Envoyer
 </button>
@@ -113,7 +113,7 @@ ce qui fera le rendu du contenu par défaut « Envoyer » :
 
 Cependant, si nous fournissons le contenu :
 
-```html
+``` html
 <submit-button>
   Sauver
 </submit-button>
@@ -121,7 +121,7 @@ Cependant, si nous fournissons le contenu :
 
 Le contenu fourni sera rendu à la place :
 
-```html
+``` html
 <button type="submit">
   Sauver
 </button>
@@ -167,7 +167,7 @@ Un `<slot>` sans `name` obtient implicitement le nom "default".
 
 Pour fournir du contenu à des slots nommés, nous pouvons utiliser la directive `v-slot` sur un `<template>`, fournissant le nom du slot en tant qu'argument de `v-slot` :
 
-```html
+``` html
 <base-layout>
   <template v-slot:header>
     <h1>Le titre de ma page</h1>
@@ -186,7 +186,7 @@ Maintenant, tout a l'intérieur des éléments `<template>` sera passé aux slot
 
 Cependant, vous pouvez toujours entourer le contenu du slot par défaut dans un `<template>` si vous désirez que cela soit plus explicite :
 
-```html
+``` html
 <base-layout>
   <template v-slot:header>
     <h1>Le titre de ma page</h1>
@@ -228,7 +228,7 @@ Notez que **`v-slot` ne peut seulement être ajouté à un `<template>`** (avec 
 
 Parfois, il est utile pour les contenus de slot d'avoir accès aux données uniquement disponibles dans le composant enfant. Par exemple, imaginez un composant `<current-user>` avec le template suivant :
 
-```html
+``` html
 <span>
   <slot>{{ user.lastName }}</slot>
 </span>
@@ -320,7 +320,7 @@ function (slotProps) {
 }
 ```
 
-Cela signifie que la valeur de `v-slot` peut accepter n'importe quelle expression JavaScript valide pouvant apparaitre à la position d'un argument lors de la définition d'une fonction. Également, pour les environnements qui le supportent ([composants monofichier](single-file-components.html) ou les [navigateurs modernes](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs)), vous pouvez utiliser la [décomposition ES2015](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#Object_destructuring) pour définir une collection de props de slot comme suit :
+Cela signifie que la valeur de `v-slot` peut accepter n'importe quelle expression JavaScript valide pouvant apparaitre à la position d'un argument lors de la définition d'une fonction. Également, pour les environnements qui le supportent ([composants monofichier](single-file-components.html) ou les [navigateurs modernes](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#Compatibilit%C3%A9_des_navigateurs)), vous pouvez utiliser la [décomposition ES2015](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#D%C3%A9composer_un_objet) pour définir une collection de props de slot comme suit :
 
 ``` html
 <current-user v-slot="{ user }">
@@ -348,7 +348,7 @@ Vous pouvez même définir des valeurs par défaut à utiliser dans le cas où l
 
 > Nouveau dans la 2.6.0+
 
-[Dynamic directive arguments](syntax.html#Dynamic-Arguments) also work on `v-slot`, allowing the definition of dynamic slot names:
+[Arguments de directive dynamiques](syntax.html#Dynamic-Arguments) fonctionne aussi sur `v-slot`, en permettant de définir des noms de slots dynamiques:
 
 ``` html
 <base-layout>
@@ -358,37 +358,37 @@ Vous pouvez même définir des valeurs par défaut à utiliser dans le cas où l
 </base-layout>
 ```
 
-## Named Slots Shorthand
+## Abréviation pour les slots nommés
 
 > New in 2.6.0+
 
-Similar to `v-on` and `v-bind`, `v-slot` also has a shorthand, replacing everything before the argument (`v-slot:`) with the special symbol `#`. For example, `v-slot:header` can be rewritten as `#header`:
+Semblable à `v-on` et`v-bind`, `v-slot` a aussi une abréviation, remplaçant tout ce qui précède l'argument (`v-slot:`) par le symbole spécial `#`. Par exemple, `v-slot: header` peut être réécrit comme `#header`:
 
-```html
+``` html
 <base-layout>
   <template #header>
-    <h1>Here might be a page title</h1>
+    <h1>Peut être ici le titre d'une page</h1>
   </template>
 
-  <p>A paragraph for the main content.</p>
-  <p>And another one.</p>
+  <p>Un paragraphe pour le contenu principal.</p>
+  <p>Un autre paragraphe.</p>
 
   <template #footer>
-    <p>Here's some contact info</p>
+    <p>Quelques informations de contact</p>
   </template>
 </base-layout>
 ```
 
-However, just as with other directives, the shorthand is only available when an argument is provided. That means the following syntax is invalid:
+Cependant, comme pour les autres directives, l'abréviation n'est disponible que lorsqu'un argument est fourni. Cela signifie que la syntaxe suivante n'est pas valide:
 
 ``` html
-<!-- This will trigger a warning -->
+<!-- Déclenchera un avertissement -->
 <current-user #="{ user }">
   {{ user.firstName }}
 </current-user>
 ```
 
-Instead, you must always specify the name of the slot if you wish to use the shorthand:
+Au lieu de cela, vous devez toujours spécifier le nom slot si vous souhaitez utiliser l'abréviation :
 
 ``` html
 <current-user #default="{ user }">
@@ -396,13 +396,13 @@ Instead, you must always specify the name of the slot if you wish to use the sho
 </current-user>
 ```
 
-## Other Examples
+## Autres exemples
 
-**Slot props allow us to turn slots into reusable templates that can render different content based on input props.** This is most useful when you are designing a reusable component that encapsulates data logic while allowing the consuming parent component to customize part of its layout.
+**Les props de slot nous permettent de transformer les slot en templates réutilisables pouvant afficher différents contenus en fonction des slots fourni en paramètre.** Cela est particulièrement utile lorsque vous concevez un composant réutilisable qui encapsule la logique des données tout en permettant au composant parent de personnaliser une partie de sa mise en page.
 
-For example, we are implementing a `<todo-list>` component that contains the layout and filtering logic for a list:
+Par exemple, nous implémentons un composant `<todo-list>` qui contient la logique de mise en page et de filtrage pour une liste :
 
-```html
+``` html
 <ul>
   <li
     v-for="todo in filteredTodos"
@@ -413,29 +413,29 @@ For example, we are implementing a `<todo-list>` component that contains the lay
 </ul>
 ```
 
-Instead of hard-coding the content for each todo, we can let the parent component take control by making every todo a slot, then binding `todo` as a slot prop:
+Au lieu de coder en dur le contenu de chaque tâche, nous pouvons laisser le composant parent prendre le contrôle en faisant en sorte que chaque tâche soit un slot, puis lier `todo` en tant que prop du slot :
 
-```html
+``` html
 <ul>
   <li
     v-for="todo in filteredTodos"
     v-bind:key="todo.id"
   >
     <!--
-    We have a slot for each todo, passing it the
-    `todo` object as a slot prop.
+    Nous avons un slot pour chaque tâche, en le passant le
+     `todo` objet comme une prop du slot.
     -->
     <slot name="todo" v-bind:todo="todo">
-      <!-- Fallback content -->
+      <!-- Contenu par défaut -->
       {{ todo.text }}
     </slot>
   </li>
 </ul>
 ```
 
-Now when we use the `<todo-list>` component, we can optionally define an alternative `<template>` for todo items, but with access to data from the child:
+Maintenant, lorsque nous utilisons le composant `<todo-list>`, nous pouvons éventuellement définir un autre `<modèle>` pour les éléments à faire, mais avec un accès aux données de l'enfant :
 
-```html
+``` html
 <todo-list v-bind:todos="todos">
   <template v-slot:todo="{ todo }">
     <span v-if="todo.isComplete">✓</span>
@@ -444,68 +444,68 @@ Now when we use the `<todo-list>` component, we can optionally define an alterna
 </todo-list>
 ```
 
-However, even this barely scratches the surface of what scoped slots are capable of. For real-life, powerful examples of scoped slot usage, we recommend browsing libraries such as [Vue Virtual Scroller](https://github.com/Akryum/vue-virtual-scroller), [Vue Promised](https://github.com/posva/vue-promised), and [Portal Vue](https://github.com/LinusBorg/portal-vue).
+Cependant, même cela effleure à peine ce que sont capables de faire les scops slots. Pour des exemples concrets et puissants d’utilisation des scops de slots, nous vous recommandons de parcourir des bibliothèques telles que [Vue Virtual Scroller](https://github.com/Akryum/vue-virtual-scroller), [Vue Promised](https://github.com/posva/vue-promised) et [Portal Vue](https://github.com/LinusBorg/portal-vue).
 
-## Deprecated Syntax
+## Syntaxe obsolète
 
-> The `v-slot` directive was introduced in Vue 2.6.0, offering an improved, alternative API to the still-supported `slot` and `slot-scope` attributes. The full rationale for introducing `v-slot` is described in this [RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md). The `slot` and `slot-scope` attributes will continue to be supported in all future 2.x releases, but are officially deprecated and will eventually be removed in Vue 3.
+> La directive `v-slot` a été introduite dans Vue 2.6.0, offrant une API alternative améliorée aux attributs`slot` et `slot-scope` toujours pris en charge. La justification complète de l'introduction du `v-slot` est décrite dans cette [RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md). Les attributs `slot` et`slot-scope` continueront d'être pris en charge dans toutes les futures versions 2.x, mais sont officiellement obsolètes et seront éventuellement supprimés dans Vue 3.
 
-### Named Slots with the `slot` Attribute
+### Slots nommés avec l'attribut `slot`
 
-> <abbr title="Still supported in all 2.x versions of Vue, but no longer recommended.">Deprecated</abbr> in 2.6.0+. See [here](#Named-Slots) for the new, recommended syntax.
+> <abbr title="Toujours pris en charge dans toutes les versions 2.x de Vue, mais n'est plus recommandé.">Obsolète</abbr> pour 2.6.0+. Voir [ici](#Les-slots-nommes) pour la nouvelle syntaxe recommandée.
 
-To pass content to named slots from the parent, use the special `slot` attribute on `<template>` (using the `<base-layout>` component described [here](#Named-Slots) as example):
-
-```html
-<base-layout>
-  <template slot="header">
-    <h1>Here might be a page title</h1>
-  </template>
-
-  <p>A paragraph for the main content.</p>
-  <p>And another one.</p>
-
-  <template slot="footer">
-    <p>Here's some contact info</p>
-  </template>
-</base-layout>
-```
-
-Or, the `slot` attribute can also be used directly on a normal element:
+Pour transmettre le contenu du parent aux slots nommés, utilisez l’attribut spécial `slot` sur `<template>` (utilisant le composant `<base-layout>` décrit [ici](#Les-slots-nommes) par exemple):
 
 ``` html
 <base-layout>
-  <h1 slot="header">Here might be a page title</h1>
+  <template slot="header">
+    <h1>Peut être ici le titre d'une page</h1>
+  </template>
 
-  <p>A paragraph for the main content.</p>
-  <p>And another one.</p>
+  <p>Un paragraphe pour le contenu principal.</p>
+  <p>Un autre paragraphe.</p>
 
-  <p slot="footer">Here's some contact info</p>
+  <template slot="footer">
+    <p>Quelques informations de contact</p>
+  </template>
 </base-layout>
 ```
 
-There can still be one unnamed slot, which is the **default slot** that serves as a catch-all for any unmatched content. In both examples above, the rendered HTML would be:
+Ou bien, l'attribut `slot` peut également être utilisé directement sur un élément normal :
+
+``` html
+<base-layout>
+  <h1 slot="header">Peut être ici le titre d'une page</h1>
+
+  <p>Un paragraphe pour le contenu principal.</p>
+  <p>Un autre paragraphe.</p>
+
+  <p slot="footer">Quelques informations de contact</p>
+</base-layout>
+```
+
+Il peut toujours y avoir un emplacement non nommé, le **slot par défaut**, qui sert de passepartout pour tout contenu sans correspondance. Dans les deux exemples ci-dessus, le code HTML rendu serait :
 
 ``` html
 <div class="container">
   <header>
-    <h1>Here might be a page title</h1>
+    <h1>Peut être ici le titre d'une page</h1>
   </header>
   <main>
-    <p>A paragraph for the main content.</p>
-    <p>And another one.</p>
+    <p>Un paragraphe pour le contenu principal.</p>
+    <p>Un autre paragraphe.</p>
   </main>
   <footer>
-    <p>Here's some contact info</p>
+    <p>Quelques informations de contact</p>
   </footer>
 </div>
 ```
 
-### Scoped Slots with the `slot-scope` Attribute
+### Slots avec portée avec l'attribut `slot-scope`
 
-> <abbr title="Still supported in all 2.x versions of Vue, but no longer recommended.">Deprecated</abbr> in 2.6.0+. See [here](#Scoped-Slots) for the new, recommended syntax.
+> <abbr title="Toujours pris en charge dans toutes les versions 2.x de Vue, mais n'est plus recommandé.">Obsolète</abbr> pour 2.6.0+. Voir [ici](#Slots-avec-portee) pour la nouvelle syntaxe recommandée.
 
-To receive props passed to a slot, the parent component can use `<template>` with the `slot-scope` attribute (using the `<slot-example>` described [here](#Scoped-Slots) as example):
+Pour recevoir les props passés à un slot, le composant parent peut utiliser `<template>` avec l'attribut `slot-scope` (en utilisant le `<slot-example>` décrit [ici](#Slots-avec-portee) par exemple) :
 
 ``` html
 <slot-example>
@@ -515,9 +515,9 @@ To receive props passed to a slot, the parent component can use `<template>` wit
 </slot-example>
 ```
 
-Here, `slot-scope` declares the received props object as the `slotProps` variable, and makes it available inside the `<template>` scope. You can name `slotProps` anything you like similar to naming function arguments in JavaScript.
+Ici, `slot-scope` déclare l'objet props reçu en tant que variable`slotProps` et le rend disponible dans la portée `<template>`. Vous pouvez nommer `slotProps` comme vous le souhaitez, comme pour nommer les arguments des fonctions en JavaScript.
 
-Here `slot="default"` can be omitted as it is implied:
+Ici `slot="default"` peut être omis car cela sous-entend :
 
 ``` html
 <slot-example>
@@ -527,7 +527,7 @@ Here `slot="default"` can be omitted as it is implied:
 </slot-example>
 ```
 
-The `slot-scope` attribute can also be used directly on a non-`<template>` element (including components):
+L'attribut `slot-scope` peut également être utilisé directement sur un élément non-`<template>`(y compris les composants) :
 
 ``` html
 <slot-example>
@@ -537,7 +537,7 @@ The `slot-scope` attribute can also be used directly on a non-`<template>` eleme
 </slot-example>
 ```
 
-The value of `slot-scope` can accept any valid JavaScript expression that can appear in the argument position of a function definition. This means in supported environments ([single-file components](single-file-components.html) or [modern browsers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Browser_compatibility)) you can also use [ES2015 destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring) in the expression, like so:
+La valeur de `slot-scope` peut accepter toute expression JavaScript valide pouvant apparaitre dans la position d'argument d'une définition de fonction. Cela signifie que dans les environnements pris en charge ([Composants monofichiers](single-file-components.html) ou [navigateurs modernes](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#Compatibilit%C3%A9_des_navigateurs)) vous pouvez aussi utiliser [Décomposition ES2015](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#D%C3%A9composer_un_objet) dans l'expression, comme ceci :
 
 ``` html
 <slot-example>
@@ -547,7 +547,7 @@ The value of `slot-scope` can accept any valid JavaScript expression that can ap
 </slot-example>
 ```
 
-Using the `<todo-list>` described [here](#Other-Examples) as an example, here's the equivalent usage using `slot-scope`:
+En utilisant le `<todo-list>` décrit [ici](#Autres-exemples) à titre d'exemple, voici l'utilisation équivalente en utilisant `slot-scope` :
 
 ``` html
 <todo-list v-bind:todos="todos">
