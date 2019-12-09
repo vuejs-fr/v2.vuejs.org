@@ -1259,7 +1259,7 @@
 <pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">slotProps</span>) </span>&#123;
   <span class="hljs-comment">// ... contenu du slot ...</span>
 &#125;</code></pre>
-<p>Cela signifie que la valeur de <code>v-slot</code> peut accepter n’importe quelle expression JavaScript valide pouvant apparaitre à la position d’un argument lors de la définition d’une fonction. Également, pour les environnements qui le supportent (<a href="single-file-components.html">composants monofichier</a> ou les <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs" target="_blank" rel="noopener">navigateurs modernes</a>), vous pouvez utiliser la <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#Object_destructuring" target="_blank" rel="noopener">décomposition ES2015</a> pour définir une collection de props de slot comme suit :</p>
+<p>Cela signifie que la valeur de <code>v-slot</code> peut accepter n’importe quelle expression JavaScript valide pouvant apparaitre à la position d’un argument lors de la définition d’une fonction. Également, pour les environnements qui le supportent (<a href="single-file-components.html">composants monofichier</a> ou les <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#Compatibilit%C3%A9_des_navigateurs" target="_blank" rel="noopener">navigateurs modernes</a>), vous pouvez utiliser la <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#D%C3%A9composer_un_objet" target="_blank" rel="noopener">décomposition ES2015</a> pour définir une collection de props de slot comme suit :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">"&#123; user &#125;"</span>&gt;</span>
   &#123;&#123; user.firstName &#125;&#125;
 <span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
@@ -1274,39 +1274,39 @@
 <h2 id="Noms-de-slot-dynamiques"><a href="#Noms-de-slot-dynamiques" class="headerlink" title="Noms de slot dynamiques"></a>Noms de slot dynamiques</h2><blockquote>
 <p>Nouveau dans la 2.6.0+</p>
 </blockquote>
-<p><a href="syntax.html#Dynamic-Arguments">Dynamic directive arguments</a> also work on <code>v-slot</code>, allowing the definition of dynamic slot names:</p>
+<p><a href="syntax.html#Dynamic-Arguments">Arguments de directive dynamiques</a> fonctionne aussi sur <code>v-slot</code>, en permettant de définir des noms de slots dynamiques:</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:</span>[<span class="hljs-attr">dynamicSlotName</span>]&gt;</span>
     ...
   <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
-<h2 id="Named-Slots-Shorthand"><a href="#Named-Slots-Shorthand" class="headerlink" title="Named Slots Shorthand"></a>Named Slots Shorthand</h2><blockquote>
+<h2 id="Abreviation-pour-les-slots-nommes"><a href="#Abreviation-pour-les-slots-nommes" class="headerlink" title="Abréviation pour les slots nommés"></a>Abréviation pour les slots nommés</h2><blockquote>
 <p>New in 2.6.0+</p>
 </blockquote>
-<p>Similar to <code>v-on</code> and <code>v-bind</code>, <code>v-slot</code> also has a shorthand, replacing everything before the argument (<code>v-slot:</code>) with the special symbol <code>#</code>. For example, <code>v-slot:header</code> can be rewritten as <code>#header</code>:</p>
+<p>Semblable à <code>v-on</code> et<code>v-bind</code>, <code>v-slot</code> a aussi une abréviation, remplaçant tout ce qui précède l’argument (<code>v-slot:</code>) par le symbole spécial <code>#</code>. Par exemple, <code>v-slot: header</code> peut être réécrit comme <code>#header</code>:</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">header</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Peut être ici le titre d'une page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Un paragraphe pour le contenu principal.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Un autre paragraphe.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
   <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">footer</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here's some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Quelques informations de contact<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
-<p>However, just as with other directives, the shorthand is only available when an argument is provided. That means the following syntax is invalid:</p>
-<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- This will trigger a warning --&gt;</span>
+<p>Cependant, comme pour les autres directives, l’abréviation n’est disponible que lorsqu’un argument est fourni. Cela signifie que la syntaxe suivante n’est pas valide:</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Déclenchera un avertissement --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> #=<span class="hljs-string">"&#123; user &#125;"</span>&gt;</span>
   &#123;&#123; user.firstName &#125;&#125;
 <span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
-<p>Instead, you must always specify the name of the slot if you wish to use the shorthand:</p>
+<p>Au lieu de cela, vous devez toujours spécifier le nom slot si vous souhaitez utiliser l’abréviation :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> #<span class="hljs-attr">default</span>=<span class="hljs-string">"&#123; user &#125;"</span>&gt;</span>
   &#123;&#123; user.firstName &#125;&#125;
 <span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
-<h2 id="Other-Examples"><a href="#Other-Examples" class="headerlink" title="Other Examples"></a>Other Examples</h2><p><strong>Slot props allow us to turn slots into reusable templates that can render different content based on input props.</strong> This is most useful when you are designing a reusable component that encapsulates data logic while allowing the consuming parent component to customize part of its layout.</p>
-<p>For example, we are implementing a <code>&lt;todo-list&gt;</code> component that contains the layout and filtering logic for a list:</p>
+<h2 id="Autres-exemples"><a href="#Autres-exemples" class="headerlink" title="Autres exemples"></a>Autres exemples</h2><p><strong>Les props de slot nous permettent de transformer les slot en templates réutilisables pouvant afficher différents contenus en fonction des slots fourni en paramètre.</strong> Cela est particulièrement utile lorsque vous concevez un composant réutilisable qui encapsule la logique des données tout en permettant au composant parent de personnaliser une partie de sa mise en page.</p>
+<p>Par exemple, nous implémentons un composant <code>&lt;todo-list&gt;</code> qui contient la logique de mise en page et de filtrage pour une liste :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
     <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in filteredTodos"</span>
@@ -1315,100 +1315,100 @@
     &#123;&#123; todo.text &#125;&#125;
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
-<p>Instead of hard-coding the content for each todo, we can let the parent component take control by making every todo a slot, then binding <code>todo</code> as a slot prop:</p>
+<p>Au lieu de coder en dur le contenu de chaque tâche, nous pouvons laisser le composant parent prendre le contrôle en faisant en sorte que chaque tâche soit un slot, puis lier <code>todo</code> en tant que prop du slot :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
     <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in filteredTodos"</span>
     <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"todo.id"</span>
   &gt;</span>
     <span class="hljs-comment">&lt;!--
-    We have a slot for each todo, passing it the
-    `todo` object as a slot prop.
+    Nous avons un slot pour chaque tâche, en le passant le
+     `todo` objet comme une prop du slot.
     --&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"todo"</span> <span class="hljs-attr">v-bind:todo</span>=<span class="hljs-string">"todo"</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- Fallback content --&gt;</span>
+      <span class="hljs-comment">&lt;!-- Contenu par défaut --&gt;</span>
       &#123;&#123; todo.text &#125;&#125;
     <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
-<p>Now when we use the <code>&lt;todo-list&gt;</code> component, we can optionally define an alternative <code>&lt;template&gt;</code> for todo items, but with access to data from the child:</p>
+<p>Maintenant, lorsque nous utilisons le composant <code>&lt;todo-list&gt;</code>, nous pouvons éventuellement définir un autre <code>&lt;modèle&gt;</code> pour les éléments à faire, mais avec un accès aux données de l’enfant :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> <span class="hljs-attr">v-bind:todos</span>=<span class="hljs-string">"todos"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:todo</span>=<span class="hljs-string">"&#123; todo &#125;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"todo.isComplete"</span>&gt;</span>✓<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     &#123;&#123; todo.text &#125;&#125;
   <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">todo-list</span>&gt;</span></code></pre>
-<p>However, even this barely scratches the surface of what scoped slots are capable of. For real-life, powerful examples of scoped slot usage, we recommend browsing libraries such as <a href="https://github.com/Akryum/vue-virtual-scroller" target="_blank" rel="noopener">Vue Virtual Scroller</a>, <a href="https://github.com/posva/vue-promised" target="_blank" rel="noopener">Vue Promised</a>, and <a href="https://github.com/LinusBorg/portal-vue" target="_blank" rel="noopener">Portal Vue</a>.</p>
-<h2 id="Deprecated-Syntax"><a href="#Deprecated-Syntax" class="headerlink" title="Deprecated Syntax"></a>Deprecated Syntax</h2><blockquote>
-<p>The <code>v-slot</code> directive was introduced in Vue 2.6.0, offering an improved, alternative API to the still-supported <code>slot</code> and <code>slot-scope</code> attributes. The full rationale for introducing <code>v-slot</code> is described in this <a href="https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md" target="_blank" rel="noopener">RFC</a>. The <code>slot</code> and <code>slot-scope</code> attributes will continue to be supported in all future 2.x releases, but are officially deprecated and will eventually be removed in Vue 3.</p>
+<p>Cependant, même cela effleure à peine ce que sont capables de faire les scops slots. Pour des exemples concrets et puissants d’utilisation des scops de slots, nous vous recommandons de parcourir des bibliothèques telles que <a href="https://github.com/Akryum/vue-virtual-scroller" target="_blank" rel="noopener">Vue Virtual Scroller</a>, <a href="https://github.com/posva/vue-promised" target="_blank" rel="noopener">Vue Promised</a> et <a href="https://github.com/LinusBorg/portal-vue" target="_blank" rel="noopener">Portal Vue</a>.</p>
+<h2 id="Syntaxe-obsolete"><a href="#Syntaxe-obsolete" class="headerlink" title="Syntaxe obsolète"></a>Syntaxe obsolète</h2><blockquote>
+<p>La directive <code>v-slot</code> a été introduite dans Vue 2.6.0, offrant une API alternative améliorée aux attributs<code>slot</code> et <code>slot-scope</code> toujours pris en charge. La justification complète de l’introduction du <code>v-slot</code> est décrite dans cette <a href="https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md" target="_blank" rel="noopener">RFC</a>. Les attributs <code>slot</code> et<code>slot-scope</code> continueront d’être pris en charge dans toutes les futures versions 2.x, mais sont officiellement obsolètes et seront éventuellement supprimés dans Vue 3.</p>
 </blockquote>
-<h3 id="Named-Slots-with-the-slot-Attribute"><a href="#Named-Slots-with-the-slot-Attribute" class="headerlink" title="Named Slots with the slot Attribute"></a>Named Slots with the <code>slot</code> Attribute</h3><blockquote>
-<p><abbr title="Still supported in all 2.x versions of Vue, but no longer recommended.">Deprecated</abbr> in 2.6.0+. See <a href="#Named-Slots">here</a> for the new, recommended syntax.</p>
+<h3 id="Slots-nommes-avec-l’attribut-slot"><a href="#Slots-nommes-avec-l’attribut-slot" class="headerlink" title="Slots nommés avec l’attribut slot"></a>Slots nommés avec l’attribut <code>slot</code></h3><blockquote>
+<p><abbr title="Toujours pris en charge dans toutes les versions 2.x de Vue, mais n'est plus recommandé.">Obsolète</abbr> pour 2.6.0+. Voir <a href="#Les-slots-nommes">ici</a> pour la nouvelle syntaxe recommandée.</p>
 </blockquote>
-<p>To pass content to named slots from the parent, use the special <code>slot</code> attribute on <code>&lt;template&gt;</code> (using the <code>&lt;base-layout&gt;</code> component described <a href="#Named-Slots">here</a> as example):</p>
+<p>Pour transmettre le contenu du parent aux slots nommés, utilisez l’attribut spécial <code>slot</code> sur <code>&lt;template&gt;</code> (utilisant le composant <code>&lt;base-layout&gt;</code> décrit <a href="#Les-slots-nommes">ici</a> par exemple):</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"header"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Peut être ici le titre d'une page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Un paragraphe pour le contenu principal.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Un autre paragraphe.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
   <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"footer"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here's some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Quelques informations de contact<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
-<p>Or, the <code>slot</code> attribute can also be used directly on a normal element:</p>
+<p>Ou bien, l’attribut <code>slot</code> peut également être utilisé directement sur un élément normal :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"header"</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"header"</span>&gt;</span>Peut être ici le titre d'une page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Un paragraphe pour le contenu principal.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Un autre paragraphe.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"footer"</span>&gt;</span>Here's some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"footer"</span>&gt;</span>Quelques informations de contact<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
-<p>There can still be one unnamed slot, which is the <strong>default slot</strong> that serves as a catch-all for any unmatched content. In both examples above, the rendered HTML would be:</p>
+<p>Il peut toujours y avoir un emplacement non nommé, le <strong>slot par défaut</strong>, qui sert de passepartout pour tout contenu sans correspondance. Dans les deux exemples ci-dessus, le code HTML rendu serait :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Peut être ici le titre d'une page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Un paragraphe pour le contenu principal.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Un autre paragraphe.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here's some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Quelques informations de contact<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-<h3 id="Scoped-Slots-with-the-slot-scope-Attribute"><a href="#Scoped-Slots-with-the-slot-scope-Attribute" class="headerlink" title="Scoped Slots with the slot-scope Attribute"></a>Scoped Slots with the <code>slot-scope</code> Attribute</h3><blockquote>
-<p><abbr title="Still supported in all 2.x versions of Vue, but no longer recommended.">Deprecated</abbr> in 2.6.0+. See <a href="#Scoped-Slots">here</a> for the new, recommended syntax.</p>
+<h3 id="Slots-avec-portee-avec-l’attribut-slot-scope"><a href="#Slots-avec-portee-avec-l’attribut-slot-scope" class="headerlink" title="Slots avec portée avec l’attribut slot-scope"></a>Slots avec portée avec l’attribut <code>slot-scope</code></h3><blockquote>
+<p><abbr title="Toujours pris en charge dans toutes les versions 2.x de Vue, mais n'est plus recommandé.">Obsolète</abbr> pour 2.6.0+. Voir <a href="#Slots-avec-portee">ici</a> pour la nouvelle syntaxe recommandée.</p>
 </blockquote>
-<p>To receive props passed to a slot, the parent component can use <code>&lt;template&gt;</code> with the <code>slot-scope</code> attribute (using the <code>&lt;slot-example&gt;</code> described <a href="#Scoped-Slots">here</a> as example):</p>
+<p>Pour recevoir les props passés à un slot, le composant parent peut utiliser <code>&lt;template&gt;</code> avec l’attribut <code>slot-scope</code> (en utilisant le <code>&lt;slot-example&gt;</code> décrit <a href="#Slots-avec-portee">ici</a> par exemple) :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"default"</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
     &#123;&#123; slotProps.msg &#125;&#125;
   <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
-<p>Here, <code>slot-scope</code> declares the received props object as the <code>slotProps</code> variable, and makes it available inside the <code>&lt;template&gt;</code> scope. You can name <code>slotProps</code> anything you like similar to naming function arguments in JavaScript.</p>
-<p>Here <code>slot=&quot;default&quot;</code> can be omitted as it is implied:</p>
+<p>Ici, <code>slot-scope</code> déclare l’objet props reçu en tant que variable<code>slotProps</code> et le rend disponible dans la portée <code>&lt;template&gt;</code>. Vous pouvez nommer <code>slotProps</code> comme vous le souhaitez, comme pour nommer les arguments des fonctions en JavaScript.</p>
+<p>Ici <code>slot=&quot;default&quot;</code> peut être omis car cela sous-entend :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
     &#123;&#123; slotProps.msg &#125;&#125;
   <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
-<p>The <code>slot-scope</code> attribute can also be used directly on a non-<code>&lt;template&gt;</code> element (including components):</p>
+<p>L’attribut <code>slot-scope</code> peut également être utilisé directement sur un élément non-<code>&lt;template&gt;</code>(y compris les composants) :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
     &#123;&#123; slotProps.msg &#125;&#125;
   <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
-<p>The value of <code>slot-scope</code> can accept any valid JavaScript expression that can appear in the argument position of a function definition. This means in supported environments (<a href="single-file-components.html">single-file components</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Browser_compatibility" target="_blank" rel="noopener">modern browsers</a>) you can also use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring" target="_blank" rel="noopener">ES2015 destructuring</a> in the expression, like so:</p>
+<p>La valeur de <code>slot-scope</code> peut accepter toute expression JavaScript valide pouvant apparaitre dans la position d’argument d’une définition de fonction. Cela signifie que dans les environnements pris en charge (<a href="single-file-components.html">Composants monofichiers</a> ou <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#Compatibilit%C3%A9_des_navigateurs" target="_blank" rel="noopener">navigateurs modernes</a>) vous pouvez aussi utiliser <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition#D%C3%A9composer_un_objet" target="_blank" rel="noopener">Décomposition ES2015</a> dans l’expression, comme ceci :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"&#123; msg &#125;"</span>&gt;</span>
     &#123;&#123; msg &#125;&#125;
   <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
-<p>Using the <code>&lt;todo-list&gt;</code> described <a href="#Other-Examples">here</a> as an example, here’s the equivalent usage using <code>slot-scope</code>:</p>
+<p>En utilisant le <code>&lt;todo-list&gt;</code> décrit <a href="#Autres-exemples">ici</a> à titre d’exemple, voici l’utilisation équivalente en utilisant <code>slot-scope</code> :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> <span class="hljs-attr">v-bind:todos</span>=<span class="hljs-string">"todos"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"todo"</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"&#123; todo &#125;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"todo.isComplete"</span>&gt;</span>✓<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
