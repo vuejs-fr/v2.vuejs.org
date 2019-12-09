@@ -166,7 +166,7 @@ methods: {
 
 ## Modificateurs d'évènements
 
-C'est un besoin courant que de faire appel ā `event.preventDefault()` ou `event.stopPropagation()` à l'intérieur d'une déclaration de gestionnaire d'évènements. Bien que nous puissions réaliser ceci aisément à l'intérieur des méthodes, il serait préférable que les méthodes restent purement dédiées à la logique des données au lieu d'avoir à gérer les détails des évènements du DOM.
+C'est un besoin courant que de faire appel à `event.preventDefault()` ou `event.stopPropagation()` à l'intérieur d'une déclaration de gestionnaire d'évènements. Bien que nous puissions réaliser ceci aisément à l'intérieur des méthodes, il serait préférable que les méthodes restent purement dédiées à la logique des données au lieu d'avoir à gérer les détails des évènements du DOM.
 
 Pour résoudre ce problème, Vue propose des modificateurs d'évènements pour `v-on`. Rappelez-vous que les modificateurs sont des suffixes de directives indiqués par un point.
 
