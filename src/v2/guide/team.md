@@ -167,7 +167,7 @@ order: 803
     </h2>
 
     <p>
-      Here we honor some no-longer-active core team members who have made valuable contributions in the past.
+      Ici, nous honorons divers membres de l'équipe principale qui ont fait des contributions de grandes valeurs par le passé.
     </p>
 
     <vuer-profile
