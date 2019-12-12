@@ -1184,7 +1184,7 @@ methods: &#123;
     alert(message)
   &#125;
 &#125;</code></pre>
-<h2 id="Modificateurs-d’evenements"><a href="#Modificateurs-d’evenements" class="headerlink" title="Modificateurs d’évènements"></a>Modificateurs d’évènements</h2><p>C’est un besoin courant que de faire appel ā <code>event.preventDefault()</code> ou <code>event.stopPropagation()</code> à l’intérieur d’une déclaration de gestionnaire d’évènements. Bien que nous puissions réaliser ceci aisément à l’intérieur des méthodes, il serait préférable que les méthodes restent purement dédiées à la logique des données au lieu d’avoir à gérer les détails des évènements du DOM.</p>
+<h2 id="Modificateurs-d’evenements"><a href="#Modificateurs-d’evenements" class="headerlink" title="Modificateurs d’évènements"></a>Modificateurs d’évènements</h2><p>C’est un besoin courant que de faire appel à <code>event.preventDefault()</code> ou <code>event.stopPropagation()</code> à l’intérieur d’une déclaration de gestionnaire d’évènements. Bien que nous puissions réaliser ceci aisément à l’intérieur des méthodes, il serait préférable que les méthodes restent purement dédiées à la logique des données au lieu d’avoir à gérer les détails des évènements du DOM.</p>
 <p>Pour résoudre ce problème, Vue propose des modificateurs d’évènements pour <code>v-on</code>. Rappelez-vous que les modificateurs sont des suffixes de directives indiqués par un point.</p>
 <ul>
 <li><code>.stop</code></li>
