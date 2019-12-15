@@ -6,13 +6,13 @@ order: 8
 
 <p>Chaque application atteint un point où il est nécessaire de comprendre les défaillances, petites ou grandes. Dans ce tutoriel, nous explorons quelques workflows pour les utilisateurs de VS Code qui souhaitent déboguer leur application dans le navigateur.</p>
 
-Ce tutoriel montre comment déboguer les applications en utilisant [Vue CLI](https://github.com/vuejs/vue-cli) dans VS Code comme s'ils tournaient dans un navigateur.
+Ce tutoriel montre comment déboguer les applications en utilisant [Vue CLI](https://github.com/vuejs/vue-cli) dans VS Code comme si elles tournaient dans un navigateur.
 
 <p class="tip">Note: Ce tutoriel couvre Chrome et Firefox. Si vous savez comment configurer le débogage de VS Code avec d'autres navigateurs, veuillez envisager de partager vos idées (voir en bas de la page).</p>
 
 ## Prérequis
 
-Assurez-vous d'avoir installé VS Code et le navigateur de votre choix, et que la dernière version de l'extension Debugger correspondante est installée et activée:
+Assurez-vous d'avoir installé VS Code et le navigateur de votre choix, et que la dernière version de l'extension Debugger correspondante est installée et activée :
 
 * [Debugger pour Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
 * [Debugger pour Firefox](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-firefox-debug)
@@ -23,13 +23,13 @@ Installez et créez un projet avec la [vue-cli](https://github.com/vuejs/vue-cli
 
 Avant de pouvoir déboguer vos composants Vue à partir de VS Code, vous devez mettre à jour la configuration webpack générée pour construire des sourcemaps. Nous faisons cela pour que notre débogueur ait un moyen de mapper le code d'un fichier compressé à sa position dans le fichier d'origine. Ceci vous permet de déboguer une application même après que vos ressources aient été optimisées par webpack.
 
-Si vous utilisez Vue CLI 2, réglez ou mettez à jour le paramètre `devtool` dans `config/index.js`:
+Si vous utilisez Vue CLI 2, définissez ou mettez à jour le paramètre `devtool` dans `config/index.js` :
 
 ```json
 devtool: 'source-map',
 ```
 
-Si vous utilisez Vue CLI 3, réglez ou mettez à jour le paramètre `devtool` dans `vue.config.js`:
+Si vous utilisez Vue CLI 3, définissez ou mettez à jour le paramètre `devtool` dans `vue.config.js` :
 
 ```js
 module.exports = {
@@ -41,11 +41,11 @@ module.exports = {
 
 ### Lancement de l'application à partir de VS Code
 
-<p class="tip">Nous supposons que le port est le `8080` ici. Si ce n'est pas le cas (par exemple, si le port `8080` est pris et que Vue CLI a choisi automatiquement un autre port pour vous), modifiez simplement la configuration en conséquence.</p>
+<p class="tip">Nous supposons ici que le port est le `8080`. Si ce n'est pas le cas (par exemple, si le port `8080` a été pris et que Vue CLI a choisi automatiquement un autre port pour vous), modifiez simplement la configuration en conséquence.</p>
 
-Cliquez sur l'icône Débogage dans la barre d'activités pour afficher la vue Débogage, puis cliquez sur l'icône en forme d'écrou pour configurer un fichier launch.json, en sélectionnant **Chrome/Firefox: Launch** comme environnement. Remplacez le contenu du fichier launch.json généré par la configuration correspondante:
+Cliquez sur l'icône Débogage dans la barre d'activités pour afficher la vue Débogage, puis cliquez sur l'icône en forme d'écrou pour configurer un fichier launch.json, en sélectionnant **Chrome/Firefox: Launch** comme environnement. Remplacez le contenu du fichier launch.json généré par la configuration correspondante :
 
-![Ajouter la Configuration de Chrome](/images/config_add.png)
+![Ajout de la configuration de Chrome](/images/config_add.png)
 
 ```json
 {
@@ -80,7 +80,7 @@ Cliquez sur l'icône Débogage dans la barre d'activités pour afficher la vue D
 
   ![Définition d'un point d'arrêt](/images/breakpoint_set.png)
 
-2.  Ouvrez votre terminal favori dans le dossier racine et lancez l'application en utilisant Vue CLI:
+2.  Ouvrez votre terminal favori dans le dossier racine et lancez l'application en utilisant Vue CLI :
 
   ```
   npm run serve
@@ -94,7 +94,7 @@ Cliquez sur l'icône Débogage dans la barre d'activités pour afficher la vue D
 
 ## Modèles alternatifs
 
-### Vue.js Devtools
+### Vue Devtools
 
 Il existe d'autres méthodes de débogage, plus ou moins complexes. Le plus simple et le plus populaire est d'utiliser l'excellent outil Vue.js devtools [pour Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) et [pour Firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/). Certains des avantages de travailler avec les outils Vue.js devtools sont qu'ils vous permettent d'éditer en direct les propriétés des données et de voir les changements se refléter immédiatement. L'autre avantage majeur est la possibilité de déboguer en revenant dans le temps pour Vuex.
 
@@ -104,7 +104,7 @@ Il existe d'autres méthodes de débogage, plus ou moins complexes. Le plus simp
 
 ### La simple instruction Debugger
 
-L'exemple ci-dessus a un excellent workflow. Cependant, il y a une autre option où vous pouvez utiliser l'[instruction de débogueur natif](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) directement dans votre code. Si vous choisissez de travailler de cette façon, il est important que vous vous souveniez d'enlever les instructions lorsque vous avez terminé.
+L'exemple ci-dessus a un excellent workflow. Cependant, il y a une autre option où vous pouvez utiliser l'[instruction du débogueur natif](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) directement dans votre code. Si vous choisissez de travailler de cette façon, il est important que vous vous souveniez d'enlever les instructions lorsque vous avez terminé.
 
 ```js
 <script>
