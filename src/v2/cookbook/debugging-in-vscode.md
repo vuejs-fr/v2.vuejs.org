@@ -1,35 +1,35 @@
 ---
-title: Debugging in VS Code (EN)
+title: Déboguer dans VS Code
 type: cookbook
 order: 8
 ---
 
-<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>Every application reaches a point where it's necessary to understand failures, small to large. In this recipe, we explore a few workflows for VS Code users who would like to debug their application in the browser.</p>
+<p>Chaque application atteint un point où il est nécessaire de comprendre les défaillances, petites ou grandes. Dans ce tutoriel, nous explorons quelques workflows pour les utilisateurs de VS Code qui souhaitent déboguer leur application dans le navigateur.</p>
 
-This recipe shows how to debug [Vue CLI](https://github.com/vuejs/vue-cli) applications in VS Code as they run in the browser.
+Ce tutoriel montre comment déboguer les applications en utilisant [Vue CLI](https://github.com/vuejs/vue-cli) dans VS Code comme si elles tournaient dans un navigateur.
 
-<p class="tip">Note: This recipe covers Chrome and Firefox. If you know how to setup VS Code debugging with other browsers, please consider sharing your insights (see bottom of the page).</p>
+<p class="tip">Note: Ce tutoriel couvre Chrome et Firefox. Si vous savez comment configurer le débogage de VS Code avec d'autres navigateurs, veuillez envisager de partager vos idées (voir en bas de la page).</p>
 
-## Prerequisites
+## Prérequis
 
-Make sure you have VS Code and the browser of your choice installed, and the latest version of the corresponding Debugger extension installed and enabled:
+Assurez-vous d'avoir installé VS Code et le navigateur de votre choix, et que la dernière version de l'extension Debugger correspondante est installée et activée :
 
-* [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
-* [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-firefox-debug)
+* [Debugger pour Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+* [Debugger pour Firefox](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-firefox-debug)
 
-Install and create a project with the [vue-cli](https://github.com/vuejs/vue-cli), following the instructions in the [Vue CLI Guide](https://cli.vuejs.org/). Change into the newly created application directory and open VS Code.
+Installez et créez un projet avec la [vue-cli](https://github.com/vuejs/vue-cli), en suivant les instructions de la section [Guide Vue CLI](https://cli.vuejs.org/). Allez dans le répertoire nouvellement créé et ouvrez VS Code.
 
-### Displaying Source Code in the Browser
+### Affichage du code source dans le navigateur
 
-Before you can debug your Vue components from VS Code, you need to update the generated Webpack config to build sourcemaps. We do this so that our debugger has a way to map the code within a compressed file back to its position in the original file. This ensures that you can debug an application even after your assets have been optimized by Webpack.
+Avant de pouvoir déboguer vos composants Vue à partir de VS Code, vous devez mettre à jour la configuration webpack générée pour construire des sourcemaps. Nous faisons cela pour que notre débogueur ait un moyen de mapper le code d'un fichier compressé à sa position dans le fichier d'origine. Ceci vous permet de déboguer une application même après que vos ressources aient été optimisées par webpack.
 
-If you use Vue CLI 2, set or update the `devtool` property inside `config/index.js`:
+Si vous utilisez Vue CLI 2, définissez ou mettez à jour le paramètre `devtool` dans `config/index.js` :
 
 ```json
 devtool: 'source-map',
 ```
 
-If you use Vue CLI 3, set or update the `devtool` property inside `vue.config.js`:
+Si vous utilisez Vue CLI 3, définissez ou mettez à jour le paramètre `devtool` dans `vue.config.js` :
 
 ```js
 module.exports = {
@@ -39,13 +39,13 @@ module.exports = {
 }
 ```
 
-### Launching the Application from VS Code
+### Lancement de l'application à partir de VS Code
 
-<p class="tip">We're assuming the port to be `8080` here. If it's not the case (for instance, if `8080` has been taken and Vue CLI automatically picks another port for you), just modify the configuration accordingly.</p>
+<p class="tip">Nous supposons ici que le port est le `8080`. Si ce n'est pas le cas (par exemple, si le port `8080` a été pris et que Vue CLI a choisi automatiquement un autre port pour vous), modifiez simplement la configuration en conséquence.</p>
 
-Click on the Debugging icon in the Activity Bar to bring up the Debug view, then click on the gear icon to configure a launch.json file, selecting **Chrome/Firefox: Launch** as the environment. Replace content of the generated launch.json with the corresponding configuration:
+Cliquez sur l'icône Débogage dans la barre d'activités pour afficher la vue Débogage, puis cliquez sur l'icône en forme d'écrou pour configurer un fichier launch.json, en sélectionnant **Chrome/Firefox: Launch** comme environnement. Remplacez le contenu du fichier launch.json généré par la configuration correspondante :
 
-![Add Chrome Configuration](/images/config_add.png)
+![Ajout de la configuration de Chrome](/images/config_add.png)
 
 ```json
 {
@@ -74,37 +74,37 @@ Click on the Debugging icon in the Activity Bar to bring up the Debug view, then
 }
 ```
 
-## Setting a Breakpoint
+## Définir un point d'arrêt
 
-1.  Set a breakpoint in **src/components/HelloWorld.vue** on `line 90` where the `data` function returns a string.
+1.  Définissez un point d'arrêt dans **src/components/HelloWorld.vue** à la `ligne 90` où la fonction `data` retourne une chaîne de caractères.
 
-  ![Breakpoint Renderer](/images/breakpoint_set.png)
+  ![Définition d'un point d'arrêt](/images/breakpoint_set.png)
 
-2.  Open your favorite terminal at the root folder and serve the app using Vue CLI:
+2.  Ouvrez votre terminal favori dans le dossier racine et lancez l'application en utilisant Vue CLI :
 
   ```
   npm run serve
   ```
 
-3.  Go to the Debug view, select the **'vuejs: chrome/firefox'** configuration, then press F5 or click the green play button.
+3.  Allez dans la vue Débogage, sélectionnez la configuration **'vuejs: chrome/firefox'**, puis appuyez sur F5 ou cliquez sur le bouton vert de lecture.
 
-4.  Your breakpoint should now be hit as a new browser instance opens `http://localhost:8080`.
+4.  Votre point d'arrêt devrait maintenant être atteint dès qu'une nouvelle instance de navigateur ouvre `http://localhost:8080`.
 
-  ![Breakpoint Hit](/images/breakpoint_hit.png)
+  ![Point d'arrêt en pleine action](/images/breakpoint_hit.png)
 
-## Alternative Patterns
+## Modèles alternatifs
 
 ### Vue Devtools
 
-There are other methods of debugging, varying in complexity. The most popular and simple of which is to use the excellent Vue.js devtools [for Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) and [for Firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/). Some of the benefits of working with the devtools are that they enable you to live-edit data properties and see the changes reflected immediately. The other major benefit is the ability to do time travel debugging for Vuex.
+Il existe d'autres méthodes de débogage, plus ou moins complexes. Le plus simple et le plus populaire est d'utiliser l'excellent outil Vue.js devtools [pour Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) et [pour Firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/). Certains des avantages de travailler avec les outils Vue.js devtools sont qu'ils vous permettent d'éditer en direct les propriétés des données et de voir les changements se refléter immédiatement. L'autre avantage majeur est la possibilité de déboguer en revenant dans le temps pour Vuex.
 
-![Devtools Timetravel Debugger](/images/devtools-timetravel.gif)
+![Debugger Vue.js Devtools dans le temps](/images/devtools-timetravel.gif)
 
-<p class="tip">Please note that if the page uses a production/minified build of Vue.js (such as the standard link from a CDN), devtools inspection is disabled by default so the Vue pane won't show up. If you switch to an unminified version, you may have to give the page a hard refresh to see them.</p>
+<p class="tip">Veuillez noter que si la page utilise une version de Vue.js de production/minifiée (comme le lien standard d'un CDN), l'inspection via Vue.js devtools est désactivée par défaut et le volet Vue n'apparaîtra pas. Si vous passez à une version non minifiée, vous devrez peut-être rafraîchir la page pour les voir.</p>
 
-### Simple Debugger Statement
+### La simple instruction Debugger
 
-The example above has a great workflow. However, there is an alternative option where you can use the [native debugger statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) directly in your code. If you choose to work this way, it's important that you remember to remove the statements when you're done.
+L'exemple ci-dessus a un excellent workflow. Cependant, il y a une autre option où vous pouvez utiliser l'[instruction du débogueur natif](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) directement dans votre code. Si vous choisissez de travailler de cette façon, il est important que vous vous souveniez d'enlever les instructions lorsque vous avez terminé.
 
 ```js
 <script>
@@ -123,6 +123,6 @@ export default {
 </script>
 ```
 
-## Acknowledgements
+## Remerciements
 
-This recipe was based on a contribution from [Kenneth Auchenberg](https://twitter.com/auchenberg), [available here](https://github.com/Microsoft/VSCode-recipes/tree/master/vuejs-cli).
+Ce tutoriel est basée sur une contribution de [Kenneth Auchenberg](https://twitter.com/auchenberg), [disponible ici](https://github.com/Microsoft/VSCode-recipes/tree/master/vuejs-cli).
