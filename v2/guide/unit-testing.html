@@ -1065,22 +1065,22 @@
   
   
     <blockquote>
-<p><a href="https://cli.vuejs.org/" target="_blank" rel="noopener">Vue CLI</a> possède des options intégrées pour les tests unitaires avec <a href="https://github.com/facebook/jest" target="_blank" rel="noopener">Jest</a> ou <a href="https://mochajs.org/" target="_blank" rel="noopener">Mocha</a> qui fonctionne dès démarrage. Nous avons également le <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> officiel qui fournit un guide plus détaillé pour des configurations personnalisées.</p>
+<p><a href="https://cli.vuejs.org/" target="_blank" rel="noopener">Vue CLI</a> possède des options intégrées pour les tests unitaires avec <a href="https://github.com/facebook/jest" target="_blank" rel="noopener">Jest</a> ou <a href="https://mochajs.org/" target="_blank" rel="noopener">Mocha</a> qui fonctionne dès le démarrage. Nous avons également le <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> officiel qui fournit un guide plus détaillé pour des configurations personnalisées.</p>
 </blockquote>
 <h2 id="Des-assertions-simples"><a href="#Des-assertions-simples" class="headerlink" title="Des assertions simples"></a>Des assertions simples</h2><p>En termes de structure de code pour les tests, vous n’avez rien de spécial à faire dans vos composants pour les rendre testables. Exportez juste les options en l’état :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
+  export default &#123;
     data () &#123;
-      <span class="hljs-keyword">return</span> &#123;
-        <span class="hljs-attr">message</span>: <span class="hljs-string">'bonjour !'</span>
+      return &#123;
+        message: 'bonjour !'
       &#125;
     &#125;,
     created () &#123;
-      <span class="hljs-keyword">this</span>.message = <span class="hljs-string">'au revoir !'</span>
+      this.message = 'au revoir !'
     &#125;
   &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
