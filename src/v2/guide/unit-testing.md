@@ -4,7 +4,7 @@ type: guide
 order: 402
 ---
 
-> [Vue CLI](https://cli.vuejs.org/) possède des options intégrées pour les tests unitaires avec [Jest](https://github.com/facebook/jest) ou [Mocha](https://mochajs.org/) qui fonctionne dès démarrage. Nous avons également le [Vue Test Utils](https://vue-test-utils.vuejs.org/) officiel qui fournit un guide plus détaillé pour des configurations personnalisées.
+> [Vue CLI](https://cli.vuejs.org/) possède des options intégrées pour les tests unitaires avec [Jest](https://github.com/facebook/jest) ou [Mocha](https://mochajs.org/) qui fonctionne dès le démarrage. Nous avons également le [Vue Test Utils](https://vue-test-utils.vuejs.org/) officiel qui fournit un guide plus détaillé pour des configurations personnalisées.
 
 ## Des assertions simples
 
