@@ -65,9 +65,9 @@ test('Hello', () => {
 });
 ```
 
-Le code ci-dessus montre comment tester l'apparition d'un message d'erreur si le username n'est pas assez long. Il nous donne une idée de ce en quoi consistent les tests unitaires de composants Vue.js : on render le composant, on lui fournit des données, puis on vérifie que le rendu correspond aux données.
+Le code ci-dessus montre comment tester l'apparition d'un message d'erreur si le username n'est pas assez long. Il nous donne une idée de ce en quoi consistent les tests unitaires de composants Vue.js : on restitue le composant, on lui fournit des données, puis on vérifie que le rendu correspond aux données.
 
-## Pourquoi tester?
+## Pourquoi tester ?
 
 Les tests unitaires de composants ont beaucoup d'avantages :
 
@@ -137,11 +137,11 @@ export default {
 
 Ce que l'on doit tester :
 
-* le `message` est il affiché?
+* le `message` est-il affiché ?
 * si `error` est `true`, `<div class="error">` devrait être visible
 * si `error` est `false`, `<div class="error">` ne devrait pas être présent
 
-Et enfin la version naïve de nos tests utilisant jest:
+Et enfin la version naïve de nos tests utilisant jest :
 
 ```js
 import { shallowMount } from '@vue/test-utils'
