@@ -514,20 +514,20 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
-  <span class="hljs-attr">name</span>: <span class="hljs-string">'Hello'</span>,
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
+export default &#123;
+  name: 'Hello',
   data () &#123;
-    <span class="hljs-keyword">return</span> &#123;
-      <span class="hljs-attr">username</span>: <span class="hljs-string">''</span>
+    return &#123;
+      username: ''
     &#125;
   &#125;,
 
-  <span class="hljs-attr">computed</span>: &#123;
+  computed: &#123;
     error () &#123;
-      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.username.trim().length &lt; <span class="hljs-number">7</span>
-        ? <span class="hljs-string">'Veuillez entrez un nom plus long'</span>
-        : <span class="hljs-string">''</span>
+      return this.username.trim().length &lt; 7
+        ? 'Veuillez entrez un nom plus long'
+        : ''
     &#125;
   &#125;
 &#125;
@@ -536,25 +536,25 @@
 <span class="hljs-keyword">import</span> Hello <span class="hljs-keyword">from</span> <span class="hljs-string">'./Hello.vue'</span>
 
 test(<span class="hljs-string">'Hello'</span>, () =&gt; &#123;
-  <span class="hljs-comment">// render the component</span>
+  <span class="hljs-comment">// restitue le composant</span>
   <span class="hljs-keyword">const</span> wrapper = shallowMount(Hello)
 
-  <span class="hljs-comment">// should not allow for `username` less than 7 characters, excludes whitespace</span>
+  <span class="hljs-comment">// n'accepte pas un `username` de moins de 7 caractères, exclut les espaces</span>
   wrapper.setData(&#123; <span class="hljs-attr">username</span>: <span class="hljs-string">" "</span>.repeat(<span class="hljs-number">7</span>) &#125;);
 
-  <span class="hljs-comment">// assert the error is rendered</span>
+  <span class="hljs-comment">// vérifie que `error` est restituée</span>
   expect(wrapper.find(<span class="hljs-string">".error"</span>).exists()).toBe(<span class="hljs-literal">true</span>);
 
-  <span class="hljs-comment">// update the name to be long enough</span>
+  <span class="hljs-comment">// met à jour `username` afin qu'il soit suffisamment long</span>
   wrapper.setData(&#123; <span class="hljs-attr">username</span>: <span class="hljs-string">'Lachlan'</span> &#125;)
 
-  <span class="hljs-comment">// assert the error has gone away</span>
+  <span class="hljs-comment">// vérifie que `error` n'est plus restituée</span>
   expect(wrapper.find(<span class="hljs-string">".error"</span>).exists()).toBe(<span class="hljs-literal">false</span>);
 &#125;);</code></pre>
-<p>Le code ci-dessus montre comment tester l’apparition d’un message d’erreur si le username n’est pas assez long. Il nous donne une idée de ce en quoi consistent les tests unitaires de composants Vue.js : On render le composant, on lui fournit des données, puis on vérifie que le rendu correspond au données.</p>
-<h2 id="Pourquoi-tester"><a href="#Pourquoi-tester" class="headerlink" title="Pourquoi tester?"></a>Pourquoi tester?</h2><p>Quelques-un des avantages à tester ses composants :</p>
+<p>Le code ci-dessus montre comment tester l’apparition d’un message d’erreur si le username n’est pas assez long. Il nous donne une idée de ce en quoi consistent les tests unitaires de composants Vue.js : on restitue le composant, on lui fournit des données, puis on vérifie que le rendu correspond aux données.</p>
+<h2 id="Pourquoi-tester"><a href="#Pourquoi-tester" class="headerlink" title="Pourquoi tester ?"></a>Pourquoi tester ?</h2><p>Les tests unitaires de composants ont beaucoup d’avantages :</p>
 <ul>
-<li>Les tests documentent comment le composant doit fonctionner</li>
+<li>Ils fournissent une documentation sur la façon dont le composant doit fonctionner</li>
 <li>Ils évitent d’avoir à re-tester manuellement après chaque changement du code</li>
 <li>Ils réduisent le risque de régression quand on ajoute des fonctionnalités</li>
 <li>Ils améliorent l’architecture du code</li>
@@ -568,7 +568,7 @@ test(<span class="hljs-string">'Hello'</span>, () =&gt; &#123;
 <li>Facile à comprendre</li>
 <li>Tester un <em>seul comportement à la fois</em></li>
 </ul>
-<p>Reprenons l’exemple précédent, et ajoutons y le concept de <a href="https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)" target="_blank" rel="noopener">factory function</a> pour rendre nos tests plus compacts et plus clairs. Le composant devra donc :</p>
+<p>Reprenons l’exemple précédent et ajoutons y le concept de <a href="https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)" target="_blank" rel="noopener">factory function</a> pour rendre nos tests plus compacts et plus clairs. Le composant devra donc :</p>
 <ul>
 <li>Afficher un message ‘Bienvenue sur le tutoriel Vue.js’.</li>
 <li>Demander à l’utilisateur son username</li>
@@ -585,7 +585,7 @@ test(<span class="hljs-string">'Hello'</span>, () =&gt; &#123;
       <span class="hljs-attr">v-if</span>=<span class="hljs-string">"error"</span>
       <span class="hljs-attr">class</span>=<span class="hljs-string">"error"</span>
     &gt;</span>
-      Choisissez un username de plus de 7 characteres.
+      Choisissez un username de plus de 7 caractères.
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
@@ -610,11 +610,11 @@ test(<span class="hljs-string">'Hello'</span>, () =&gt; &#123;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>Ce que l’on doit tester :</p>
 <ul>
-<li>le <code>message</code> est il affiché?</li>
+<li>le <code>message</code> est-il affiché ?</li>
 <li>si <code>error</code> est <code>true</code>, <code>&lt;div class=&quot;error&quot;&gt;</code> devrait être visible</li>
 <li>si <code>error</code> est <code>false</code>, <code>&lt;div class=&quot;error&quot;&gt;</code> ne devrait pas être présent</li>
 </ul>
-<p>Et enfin la version naïve de nos tests utilisant jest:</p>
+<p>Et enfin la version naïve de nos tests utilisant jest :</p>
 <pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; shallowMount &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@vue/test-utils'</span>
 <span class="hljs-keyword">import</span> Foo <span class="hljs-keyword">from</span> <span class="hljs-string">'./Foo.vue'</span>
 
@@ -627,13 +627,13 @@ describe(<span class="hljs-string">'Foo'</span>, () =&gt; &#123;
       &#125;
     &#125;)
 
-    <span class="hljs-comment">// vérifie si le message est restitué</span>
+    <span class="hljs-comment">// vérifie que `message` est restitué</span>
     expect(wrapper.find(<span class="hljs-string">'.message'</span>).text()).toEqual(<span class="hljs-string">'Hello World'</span>)
 
-    <span class="hljs-comment">// vérifie que `error` est rendue</span>
+    <span class="hljs-comment">// vérifie que `error` est restituée</span>
     expect(wrapper.find(<span class="hljs-string">'.error'</span>).exists()).toBeTruthy()
 
-    <span class="hljs-comment">// met à jour `username` et vérifie que `error` n'est plus rendu</span>
+    <span class="hljs-comment">// met à jour `username` et vérifie que `error` n'est plus restituée</span>
     wrapper.setData(&#123; <span class="hljs-attr">username</span>: <span class="hljs-string">'Lachlan'</span> &#125;)
     expect(wrapper.find(<span class="hljs-string">'.error'</span>).exists()).toBeFalsy()
   &#125;)
@@ -665,7 +665,7 @@ describe(<span class="hljs-string">'Foo'</span>, () =&gt; &#123;
 &#125;
 
 describe(<span class="hljs-string">"Foo"</span>, () =&gt; &#123;
-  it(<span class="hljs-string">"renders a welcome message"</span>, () =&gt; &#123;
+  it(<span class="hljs-string">"restitue un message de bienvenue"</span>, () =&gt; &#123;
     <span class="hljs-keyword">const</span> wrapper = factory();
 
     expect(wrapper.find(<span class="hljs-string">".message"</span>).text()).toEqual(
@@ -673,40 +673,40 @@ describe(<span class="hljs-string">"Foo"</span>, () =&gt; &#123;
     );
   &#125;);
 
-  it(<span class="hljs-string">"renders an error when username is less than 7 characters"</span>, () =&gt; &#123;
+  it(<span class="hljs-string">"restitue une erreur quand `username` a moins de 7 caractères"</span>, () =&gt; &#123;
     <span class="hljs-keyword">const</span> wrapper = factory(&#123; <span class="hljs-attr">username</span>: <span class="hljs-string">""</span> &#125;);
 
     expect(wrapper.find(<span class="hljs-string">".error"</span>).exists()).toBeTruthy();
   &#125;);
 
-  it(<span class="hljs-string">"renders an error when username is whitespace"</span>, () =&gt; &#123;
+  it(<span class="hljs-string">"restitue une erreur quand `username` contient des espaces"</span>, () =&gt; &#123;
     <span class="hljs-keyword">const</span> wrapper = factory(&#123; <span class="hljs-attr">username</span>: <span class="hljs-string">" "</span>.repeat(<span class="hljs-number">7</span>) &#125;);
 
     expect(wrapper.find(<span class="hljs-string">".error"</span>).exists()).toBeTruthy();
   &#125;);
 
-  it(<span class="hljs-string">"does not render an error when username is 7 characters or more"</span>, () =&gt; &#123;
+  it(<span class="hljs-string">"ne restitue pas d'erreur quand `username` a 7 caractères ou plus"</span>, () =&gt; &#123;
     <span class="hljs-keyword">const</span> wrapper = factory(&#123; <span class="hljs-attr">username</span>: <span class="hljs-string">"Lachlan"</span> &#125;);
 
     expect(wrapper.find(<span class="hljs-string">".error"</span>).exists()).toBeFalsy();
   &#125;);
 &#125;);</code></pre>
 <p>À noter :</p>
-<p>Au début du code, on déclare la fonction <code>factory</code> qui prend l’objet <code>values</code> et en construit le <code>data</code> pour renvoyer une nouvelle instance de <code>wrapper</code>. Du coup, plus besoin de dupliquer <code>const wrapper = shallowMount(Foo)</code> dans chaque test. Un autre avantage important : quand des composants plus complexes vont devoir être testés, le <code>mock</code> ou le <code>stub</code> d’une méthode ou d’une propriété calculée pourront facilement être mutualisés une seule fois.</p>
-<h2 id="Pour-aller-plus-loin"><a href="#Pour-aller-plus-loin" class="headerlink" title="Pour aller plus loin"></a>Pour aller plus loin</h2><p>Le test précédent est assez simple. En pratique on souhaitera souvent vérifier d’autres comportements comme :</p>
+<p>Au début du code, on déclare la fonction <code>factory</code> qui prend l’objet <code>values</code> et en construit le <code>data</code> pour renvoyer une nouvelle instance de <code>wrapper</code>. Donc plus besoin de dupliquer <code>const wrapper = shallowMount(Foo)</code> dans chaque test. Un autre avantage important : quand des composants plus complexes vont devoir être testés, le <code>mock</code> ou le <code>stub</code> d’une méthode ou d’une propriété calculée pourront facilement être mutualisés.</p>
+<h2 id="Pour-aller-plus-loin"><a href="#Pour-aller-plus-loin" class="headerlink" title="Pour aller plus loin"></a>Pour aller plus loin</h2><p>Le test précédent est assez simple. En pratique, on souhaitera souvent vérifier d’autres comportements comme :</p>
 <ul>
 <li>appeler une API</li>
-<li>faire des <code>commit</code> ou des <code>dispatch</code> de mutations ou d’actions a un store <code>Vuex</code></li>
+<li>faire des <code>commit</code> ou des <code>dispatch</code> de mutations ou d’actions à un store <code>Vuex</code></li>
 <li>tester l’interactivité</li>
 </ul>
 <p>Il existe des exemples plus complets illustrant ce genre de tests dans les <a href="https://vue-test-utils.vuejs.org/guides/" target="_blank" rel="noopener">guides</a> de Vue Test Utils.</p>
-<p>Vue Test Utils et le gigantesque ecosystème JavaScript fournissant plein d’outils facilitant une couverture de test proche de 100%. Mais les tests unitaires ne sont qu’une partie de la pyramide de tests. On peut y inclure des tests d’intégration (e2e ou end to end), et du snapshot testing. Les tests unitaires sont les plus petits et les plus simples des tests - Ils vérifient les plus petites unités de travail, isolant ainsi chaque partie d’un même composant.</p>
-<p>Le snapshot testing permet de sauvegarder le rendu HTML d’un composant Vue, et de le comparer au rendu généré chaque fois que les tests passent. Si quelque chose change dans le rendu, le développeur est averti et peut décider si le changement est intentionnel (le composant a été mis à jour) ou involontaire (le composant ne se comporte pas comme prévu).</p>
-<p>Les tests d’intégration testent l’interaction de plusieurs composants. Il s’agit de tests plus haut niveau. Par exemple tester si un utilisateur peut s’enregistrer se logger et changer son <code>username</code>. Ils peuvent être plus lent et plus long a exécuter que les tests unitaires ou snapshot.</p>
-<p>Les tests unitaires sont souvent utilisés lors du développement, soit pour aider le développeur à concevoir l’architecture d’un composant, soit pour l’aider a refactorer un composant existant. Ils sont souvent exécutés après chaque changement du code.</p>
-<p>Les test de plus haut niveau comme les tests d’intégration sont plus lent a l’exécution. Ces tests sont plutôt lancés avant de déployer une mise à jour en production, pour s’assurer que chaque partie du logiciel fonctionne correctement.</p>
+<p>Vue Test Utils et le gigantesque ecosystème JavaScript fournissant plein d’outils facilitant une couverture de test proche de 100%. Mais les tests unitaires ne sont qu’une partie de la pyramide de tests. On peut y inclure des tests d’intégration (e2e ou end to end) et du snapshot testing. De tous les types de tests, les tests unitaires sont les plus petits et les plus simples - ils vérifient les plus petites unités de travail, isolant ainsi chaque partie d’un même composant.</p>
+<p>Le snapshot testing permet de sauvegarder le rendu HTML d’un composant Vue et de le comparer au rendu généré chaque fois que les tests passent. Si quelque chose change dans le rendu, le développeur est averti et peut décider si le changement est intentionnel (le composant a été mis à jour) ou involontaire (le composant ne se comporte pas comme prévu).</p>
+<p>Les tests d’intégration testent l’interaction de plusieurs composants. Il s’agit de tests plus haut niveau. Par exemple tester si un utilisateur peut s’enregistrer, se logger et changer son <code>username</code>. Ils peuvent être plus lent et plus long à exécuter que les tests unitaires ou snapshot testing.</p>
+<p>Les tests unitaires sont souvent utilisés lors du développement, soit pour aider le développeur à concevoir l’architecture d’un composant, soit pour l’aider à refactorer un composant existant. Ils sont souvent exécutés après chaque changement du code.</p>
+<p>Les tests de plus haut niveau comme les tests d’intégration sont plus lents a l’exécution. Ces tests sont plutôt lancés avant de déployer une mise à jour en production pour s’assurer que chaque partie du logiciel fonctionne correctement.</p>
 <p>Plus d’info sur comment tester des composants Vue.js dans le livre de <a href="https://eddyerburgh.me/" target="_blank" rel="noopener">Edd Yerburgh</a> membre de la core team de Vue.js : <a href="https://www.manning.com/books/testing-vuejs-applications" target="_blank" rel="noopener">Testing Vue.js Applications</a> (en anglais).</p>
-<h2 id="Quand-eviter-ce-pattern"><a href="#Quand-eviter-ce-pattern" class="headerlink" title="Quand éviter ce pattern"></a>Quand éviter ce pattern</h2><p>Les tests unitaires sont une part importante de toute application sérieuse. Au début, quand l’application commence et que la vision complète n’est pas très claire, les tests unitaires peuvent ralentir un peu le développement, mais une fois l’architecture établie et que des utilisateurs réels utilisent l’application, les tests unitaires (et tous types de tests automatiques) sont essentiel à la stabilité et la scalabilité.</p>
+<h2 id="Quand-eviter-ces-types-de-tests"><a href="#Quand-eviter-ces-types-de-tests" class="headerlink" title="Quand éviter ces types de tests"></a>Quand éviter ces types de tests</h2><p>Les tests unitaires sont une part importante de toute application sérieuse. Au début, quand l’application commence et que la vision complète n’est pas très claire, les tests unitaires peuvent ralentir un peu le développement, mais une fois l’architecture établie et que des utilisateurs réels utilisent l’application, les tests unitaires (et tous types de tests automatiques) sont essentiel à la stabilité et la scalabilité.</p>
 
   
   
