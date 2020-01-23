@@ -1279,7 +1279,7 @@ Vue.component(<span class="hljs-string">'todo-item'</span>, &#123;
 <span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(...)</code></pre>
 <p>Maintenant nous pouvons l’insérer dans le template d’un autre composant :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- Crée une instance du composant todo-list --&gt;</span>
+  <span class="hljs-comment">&lt;!-- Crée une instance du composant todo-item --&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">todo-item</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">todo-item</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span></code></pre>
 <p>Mais cela donnerait comme rendu le même texte, ce qui n’est pas vraiment intéressant. Nous devrions être capables de passer les données de la portée parente dans le composant enfant. Modifions la définition du composant pour lui permettre d’accepter une <a href="components.html#Props"><em>prop</em></a> :</p>
