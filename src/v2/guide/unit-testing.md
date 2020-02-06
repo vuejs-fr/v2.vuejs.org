@@ -119,7 +119,7 @@ Parce que Vue [fait les mises à jour du DOM de manière asynchrone](reactivity.
 
 ``` js
 // Inspecter le HTML généré après une mise à jour d'état
-it('met à jour le message rendu quand `vm.message` est mis à jour', async () => {
+it('met à jour le message rendu quand `wrapper.message` est mis à jour', async () => {
   const wrapper = shallowMount(MyComponent)
   wrapper.setData({ message: 'foo' })
 
