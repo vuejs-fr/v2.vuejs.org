@@ -89,7 +89,7 @@ Vous pouvez faire des assertions sur le rendu en sortie avec différentes props 
 import { shallowMount } from '@vue/test-utils'
 import MyComponent from './MyComponent.vue'
 
-// Fonction utilitaire qui monte et retourne le texte rendu
+// Fonction utilitaire qui monte et retourne le composant rendu
 function getMountedComponent(Component, propsData) {
   return shallowMount(MyComponent, {
     propsData
