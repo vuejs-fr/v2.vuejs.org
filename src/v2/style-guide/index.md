@@ -1941,7 +1941,9 @@ Vue.component('TodoItem', {
 
 **[Vuex](https://github.com/vuejs/vuex) devrait être préféré pour une gestion globale d'état à la place de `this.$root` ou d'un canal global d'évènement.**
 
-Gérer l'état avec `this.$root` et / ou utiliser un [canal d'évènement global](https://fr.vuejs.org/v2/guide/migration.html#dispatch-et-broadcast-remplaces) peut faciliter la tâche dans des cas vraiment simples. Cependant cela n'est pas approprié pour la plupart des applications. Vuex n'offre pas seulement une place centrale pour gérer l'état mais également des outils pour organiser, tracer et déboguer les changements d'états.
+Gérer l'état avec `this.$root` et/ou utiliser un [canal d'évènement global](https://fr.vuejs.org/v2/guide/migration.html#dispatch-et-broadcast-remplaces) peut faciliter la tâche dans des cas vraiment simples. Cependant cela n'est pas approprié pour la plupart des applications.
+
+Vuex est [l'implémentation flux officielle](https://vuejs.org/v2/guide/state-management.html#Official-Flux-Like-Implementation) pour Vue, et n'offre pas seulement une place centrale pour gérer l'état mais également des outils pour organiser, tracer et déboguer les changements d'états. Il s'intègre parfaitement à l'écosystème Vue (y compris un support complet dans [Vue DevTools](https://vuejs.org/v2/guide/installation.html#Vue-Devtools)).
 
 {% raw %}</details>{% endraw %}
 
