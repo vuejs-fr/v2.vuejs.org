@@ -87,98 +87,6 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
-    <div id="vs-banner" class="vueschool-banner hide" role="banner">
-  <a href="https://vueschool.io/sales/blackfriday?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=TopBanner&utm_campaign=Black%20Friday" title="Apprenez Vue.js en vidéo avec Vue School" target="_blank">
-    <img class="vueschool-banner--logo" src="/images/vueschool_logo.svg" alt="Vue School Logo">
-    <div class="vueschool-banner--wrapper">
-      <p>Black Friday 40% sur Vue School<span>Apprenez Vue.js en vidéo.</span></p>
-      <button>Get 40% Off</button>
-    </div>
-    <div id="vs-close" class="vueschool-banner--close"></div>
-  </a>
-</div>
-
-<script>
-
-  (function () {
-    // Get elements
-    var elBody = document.getElementsByTagName("body")[0];
-    var elBanner = document.getElementById("vs-banner");
-    var elClose = document.getElementById("vs-close");
-    var elMenu = document.getElementById("mobile-bar");
-    // Variable names
-    var nameWrapper = "vueschool-weekend-promo";
-    var nameFixMenu = "vueschool-menu-fixed";
-    var nameStorage = "vueschool-banner";
-    // Defaults values
-    var isMenuFixed = false;
-    var posMenu = 80;
-    var initBanner = function () {
-      // Add event listeners
-      toggleBannerEvents(true);
-      // Add class to the body to push fixed elements
-      elBody.classList.add(nameWrapper);
-      // Display the banner
-      elBanner.style.display = "block";
-      // Init close button action
-      elClose.onclick = closeBanner;
-      // Get the menu position
-      getMenuPosition();
-      // Check current page offset position
-      isMenuFixed = isUnderBanner();
-      // And position menu accordingly
-      if (isMenuFixed) {
-        elBody.classList.add("fixed");
-      }
-    }
-    var closeBanner = function(e) {
-      // Prevent bubbling event that redirect to vueschool.io
-      e.preventDefault();
-      // Remove events
-      toggleBannerEvents(false);
-      // Hide the banner
-      elBanner.style.display = "none";
-      // Remove class to the body that push fixed elements
-      elBody.classList.remove(nameWrapper);
-      // Save action in the local storage
-      localStorage.setItem(nameStorage, true);
-    }
-    var getMenuPosition = function() {
-      posMenu = elBanner.clientHeight;
-    }
-    var isUnderBanner = function() {
-      return window.pageYOffset > posMenu;
-    }
-    var fixMenuAfterBanner = function() {
-      if (isUnderBanner()) {
-        if (!isMenuFixed) {
-          // The menu will be fixed
-          toggleFixedPosition(true);
-        }
-      } else if (isMenuFixed) {
-        // The menu stay under the banner
-        toggleFixedPosition(false);
-      }
-    }
-    var toggleBannerEvents = function (on) {
-      // Add or remove event listerners attached to the DOM
-      var method = on ? "addEventListener" : "removeEventListener";
-      window[method]("resize", getMenuPosition);
-      window[method]("scroll", fixMenuAfterBanner);
-    }
-    var toggleFixedPosition = function (on) {
-      // Switch between relative and fixed position
-      var method = on ? "add" : "remove";
-      elBody.classList[method](nameFixMenu);
-      isMenuFixed = on;
-    }
-    // Load component according to user preferences
-    if (!localStorage.getItem(nameStorage)) {
-      initBanner();
-    }
-  })()
-</script>
-
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -300,7 +208,7 @@
     <li><a href="https://vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
     <li><a href="https://vi.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank" rel="noopener">Español</a></li>
     <li><a href="https://docs.vuejs.id/v2/guide/installation.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
   </ul>
 </li>
@@ -339,11 +247,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1028,11 +936,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1065,6 +973,7 @@
   
   
     <h3 id="Compatibilite"><a href="#Compatibilite" class="headerlink" title="Compatibilité"></a>Compatibilité</h3><p>Vue <strong>ne</strong> supporte <strong>pas</strong> IE8 et les versions antérieures, car il utilise des fonctionnalités ECMAScript 5 qui ne peuvent pas être émulées sur IE8. Cela dit, Vue supporte tous les <a href="https://caniuse.com/#feat=es5" target="_blank" rel="noopener">navigateurs compatibles ECMAScript 5</a>.</p>
+<h3 id="EN-Semantic-Versioning"><a href="#EN-Semantic-Versioning" class="headerlink" title="(EN) Semantic Versioning"></a>(EN) Semantic Versioning</h3><p>Vue follows <a href="https://semver.org/" target="_blank" rel="noopener">Semantic Versioning</a> in all its official projects for documented features and behavior. For undocumented behavior or exposed internals, changes are described in <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">release notes</a>.</p>
 <h3 id="Notes-de-version"><a href="#Notes-de-version" class="headerlink" title="Notes de version"></a>Notes de version</h3><p>Dernière version stable : 2.5.16</p>
 <p>Les notes de version détaillées pour chaque version sont disponibles sur <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Vue-Devtools"><a href="#Vue-Devtools" class="headerlink" title="Vue Devtools"></a>Vue Devtools</h2><p>Quand vous utilisez Vue, nous vous recommandons également d’installer <a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">Vue Devtools</a> dans votre navigateur. Cela vous permetta d’inspecter et de déboguer vos applications Vue dans une interface dédiée et intuitive.</p>
@@ -1078,8 +987,8 @@
 <p>Pour la production, nous vous recommandons de vous figer à une version et un build défini pour éviter les changements non compatibles des nouvelles versions :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.6.0"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>Si vous utilisez des Modules ES natif, il y a également un build compatible avec les Modules ES :</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="undefined">
-  import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.esm.browser.js'
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.esm.browser.js'</span>
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>Vous pouvez parcourir la source du package npm à l’adresse : <a href="https://cdn.jsdelivr.net/npm/vue/" target="_blank" rel="noopener">cdn.jsdelivr.net/npm/vue</a>.</p>
 <p>Vue est également disponible sur <a href="https://unpkg.com/vue@2.5.16/dist/vue.js" target="_blank" rel="noopener">unpkg</a> et <a href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js" target="_blank" rel="noopener">cdnjs</a> (cdnjs met du temps à se synchroniser ce qui signifie que la dernière version peut ne pas être encore disponible).</p>

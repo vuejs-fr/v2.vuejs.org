@@ -87,98 +87,6 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
-    <div id="vs-banner" class="vueschool-banner hide" role="banner">
-  <a href="https://vueschool.io/sales/blackfriday?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=TopBanner&utm_campaign=Black%20Friday" title="Apprenez Vue.js en vidéo avec Vue School" target="_blank">
-    <img class="vueschool-banner--logo" src="/images/vueschool_logo.svg" alt="Vue School Logo">
-    <div class="vueschool-banner--wrapper">
-      <p>Black Friday 40% sur Vue School<span>Apprenez Vue.js en vidéo.</span></p>
-      <button>Get 40% Off</button>
-    </div>
-    <div id="vs-close" class="vueschool-banner--close"></div>
-  </a>
-</div>
-
-<script>
-
-  (function () {
-    // Get elements
-    var elBody = document.getElementsByTagName("body")[0];
-    var elBanner = document.getElementById("vs-banner");
-    var elClose = document.getElementById("vs-close");
-    var elMenu = document.getElementById("mobile-bar");
-    // Variable names
-    var nameWrapper = "vueschool-weekend-promo";
-    var nameFixMenu = "vueschool-menu-fixed";
-    var nameStorage = "vueschool-banner";
-    // Defaults values
-    var isMenuFixed = false;
-    var posMenu = 80;
-    var initBanner = function () {
-      // Add event listeners
-      toggleBannerEvents(true);
-      // Add class to the body to push fixed elements
-      elBody.classList.add(nameWrapper);
-      // Display the banner
-      elBanner.style.display = "block";
-      // Init close button action
-      elClose.onclick = closeBanner;
-      // Get the menu position
-      getMenuPosition();
-      // Check current page offset position
-      isMenuFixed = isUnderBanner();
-      // And position menu accordingly
-      if (isMenuFixed) {
-        elBody.classList.add("fixed");
-      }
-    }
-    var closeBanner = function(e) {
-      // Prevent bubbling event that redirect to vueschool.io
-      e.preventDefault();
-      // Remove events
-      toggleBannerEvents(false);
-      // Hide the banner
-      elBanner.style.display = "none";
-      // Remove class to the body that push fixed elements
-      elBody.classList.remove(nameWrapper);
-      // Save action in the local storage
-      localStorage.setItem(nameStorage, true);
-    }
-    var getMenuPosition = function() {
-      posMenu = elBanner.clientHeight;
-    }
-    var isUnderBanner = function() {
-      return window.pageYOffset > posMenu;
-    }
-    var fixMenuAfterBanner = function() {
-      if (isUnderBanner()) {
-        if (!isMenuFixed) {
-          // The menu will be fixed
-          toggleFixedPosition(true);
-        }
-      } else if (isMenuFixed) {
-        // The menu stay under the banner
-        toggleFixedPosition(false);
-      }
-    }
-    var toggleBannerEvents = function (on) {
-      // Add or remove event listerners attached to the DOM
-      var method = on ? "addEventListener" : "removeEventListener";
-      window[method]("resize", getMenuPosition);
-      window[method]("scroll", fixMenuAfterBanner);
-    }
-    var toggleFixedPosition = function (on) {
-      // Switch between relative and fixed position
-      var method = on ? "add" : "remove";
-      elBody.classList[method](nameFixMenu);
-      isMenuFixed = on;
-    }
-    // Load component according to user preferences
-    if (!localStorage.getItem(nameStorage)) {
-      initBanner();
-    }
-  })()
-</script>
-
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -300,7 +208,7 @@
     <li><a href="https://vuejs.org/v2/guide/events.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/events.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
     <li><a href="https://vi.vuejs.org/v2/guide/events.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/guide/events.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/events.html" class="nav-link" target="_blank" rel="noopener">Español</a></li>
     <li><a href="https://docs.vuejs.id/v2/guide/events.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
   </ul>
 </li>
@@ -339,11 +247,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1028,11 +936,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1274,10 +1182,10 @@ Vue.config.keyCodes.f1 = <span class="hljs-number">112</span></code></pre>
 </blockquote>
 <p>Par exemple :</p>
 <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Alt + C --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">input</span> @<span class="hljs-attr">keyup.alt.67</span>=<span class="hljs-string">"clear"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keyup.alt.67</span>=<span class="hljs-string">"clear"</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- Ctrl + Click --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click.ctrl</span>=<span class="hljs-string">"doSomething"</span>&gt;</span>Do something<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-on:click.ctrl</span>=<span class="hljs-string">"doSomething"</span>&gt;</span>Do something<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <p class="tip">Notez que ces modificateurs de raccourcis sont différents des modificateurs usuels utilisés avec l’évènement <code>keyup</code>, ils doivent être pressés quand l’évènement est émis. En d’autres mots, <code>keyup.ctrl</code> sera déclenché uniquement si vous relâchez une touche pendant que vous maintenez la touche <code>ctrl</code> enfoncée. Rien ne sera déclenché si vous relâchez uniquement la touche <code>Ctrl</code>. Si vous souhaitez un tel comportement, utilisez le <code>keyCode</code> pour <code>ctrl</code> à la place : <code>keyup.17</code>.</p>
 
 <h3 id="Modificateur-exact"><a href="#Modificateur-exact" class="headerlink" title="Modificateur .exact"></a>Modificateur <code>.exact</code></h3><blockquote>
@@ -1285,13 +1193,13 @@ Vue.config.keyCodes.f1 = <span class="hljs-number">112</span></code></pre>
 </blockquote>
 <p>Le modificateur <code>.exact</code> permet le contrôle de la combinaison de touches système exacte requise pour déclencher le gestionnaire d’évènements.</p>
 <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ceci va aussi émettre un évènement si les touches Alt et Shift sont pressées --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click.ctrl</span>=<span class="hljs-string">"onClick"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click.ctrl</span>=<span class="hljs-string">"onClick"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- ceci va émettre un évènement seulement si la touche Ctrl est pressée sans aucune autre touche --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click.ctrl.exact</span>=<span class="hljs-string">"onCtrlClick"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click.ctrl.exact</span>=<span class="hljs-string">"onCtrlClick"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- ceci va émettre un évènement si aucune touche n'est pressée --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click.exact</span>=<span class="hljs-string">"onClick"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click.exact</span>=<span class="hljs-string">"onClick"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
 <h3 id="Modificateurs-de-boutons-de-la-souris"><a href="#Modificateurs-de-boutons-de-la-souris" class="headerlink" title="Modificateurs de boutons de la souris"></a>Modificateurs de boutons de la souris</h3><blockquote>
 <p>Nouveau dans la 2.2.0+</p>
 </blockquote>

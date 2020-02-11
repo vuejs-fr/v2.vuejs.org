@@ -87,98 +87,6 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
-    <div id="vs-banner" class="vueschool-banner hide" role="banner">
-  <a href="https://vueschool.io/sales/blackfriday?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=TopBanner&utm_campaign=Black%20Friday" title="Apprenez Vue.js en vidéo avec Vue School" target="_blank">
-    <img class="vueschool-banner--logo" src="/images/vueschool_logo.svg" alt="Vue School Logo">
-    <div class="vueschool-banner--wrapper">
-      <p>Black Friday 40% sur Vue School<span>Apprenez Vue.js en vidéo.</span></p>
-      <button>Get 40% Off</button>
-    </div>
-    <div id="vs-close" class="vueschool-banner--close"></div>
-  </a>
-</div>
-
-<script>
-
-  (function () {
-    // Get elements
-    var elBody = document.getElementsByTagName("body")[0];
-    var elBanner = document.getElementById("vs-banner");
-    var elClose = document.getElementById("vs-close");
-    var elMenu = document.getElementById("mobile-bar");
-    // Variable names
-    var nameWrapper = "vueschool-weekend-promo";
-    var nameFixMenu = "vueschool-menu-fixed";
-    var nameStorage = "vueschool-banner";
-    // Defaults values
-    var isMenuFixed = false;
-    var posMenu = 80;
-    var initBanner = function () {
-      // Add event listeners
-      toggleBannerEvents(true);
-      // Add class to the body to push fixed elements
-      elBody.classList.add(nameWrapper);
-      // Display the banner
-      elBanner.style.display = "block";
-      // Init close button action
-      elClose.onclick = closeBanner;
-      // Get the menu position
-      getMenuPosition();
-      // Check current page offset position
-      isMenuFixed = isUnderBanner();
-      // And position menu accordingly
-      if (isMenuFixed) {
-        elBody.classList.add("fixed");
-      }
-    }
-    var closeBanner = function(e) {
-      // Prevent bubbling event that redirect to vueschool.io
-      e.preventDefault();
-      // Remove events
-      toggleBannerEvents(false);
-      // Hide the banner
-      elBanner.style.display = "none";
-      // Remove class to the body that push fixed elements
-      elBody.classList.remove(nameWrapper);
-      // Save action in the local storage
-      localStorage.setItem(nameStorage, true);
-    }
-    var getMenuPosition = function() {
-      posMenu = elBanner.clientHeight;
-    }
-    var isUnderBanner = function() {
-      return window.pageYOffset > posMenu;
-    }
-    var fixMenuAfterBanner = function() {
-      if (isUnderBanner()) {
-        if (!isMenuFixed) {
-          // The menu will be fixed
-          toggleFixedPosition(true);
-        }
-      } else if (isMenuFixed) {
-        // The menu stay under the banner
-        toggleFixedPosition(false);
-      }
-    }
-    var toggleBannerEvents = function (on) {
-      // Add or remove event listerners attached to the DOM
-      var method = on ? "addEventListener" : "removeEventListener";
-      window[method]("resize", getMenuPosition);
-      window[method]("scroll", fixMenuAfterBanner);
-    }
-    var toggleFixedPosition = function (on) {
-      // Switch between relative and fixed position
-      var method = on ? "add" : "remove";
-      elBody.classList[method](nameFixMenu);
-      isMenuFixed = on;
-    }
-    // Load component according to user preferences
-    if (!localStorage.getItem(nameStorage)) {
-      initBanner();
-    }
-  })()
-</script>
-
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -300,7 +208,7 @@
     <li><a href="https://vuejs.org/v2/guide/security.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/security.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
     <li><a href="https://vi.vuejs.org/v2/guide/security.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/guide/security.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/security.html" class="nav-link" target="_blank" rel="noopener">Español</a></li>
     <li><a href="https://docs.vuejs.id/v2/guide/security.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
   </ul>
 </li>
@@ -339,11 +247,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1028,11 +936,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1064,9 +972,15 @@
     <h1>Security</h1>
   
   
-    <h2 id="Reporting-Vulnerabilities"><a href="#Reporting-Vulnerabilities" class="headerlink" title="Reporting Vulnerabilities"></a>Reporting Vulnerabilities</h2><p>When a vulnerability is reported, it immediately becomes our top concern, with a full-time contributor dropping everything to work on it. To report a vulnerability, please email <a href="mailto:vuejs.org@gmail.com" target="_blank" rel="noopener">vuejs.org@gmail.com</a>.</p>
+    <h2 id="EN-Reporting-Vulnerabilities"><a href="#EN-Reporting-Vulnerabilities" class="headerlink" title="(EN) Reporting Vulnerabilities"></a>(EN) Reporting Vulnerabilities</h2><p>When a vulnerability is reported, it immediately becomes our top concern, with a full-time contributor dropping everything to work on it. To report a vulnerability, please email <a href="mailto:vuejs.org@gmail.com" target="_blank" rel="noopener">vuejs.org@gmail.com</a>.</p>
 <p>While the discovery of new vulnerabilities is rare, we also recommend always using the latest versions of Vue and its official companion libraries to ensure your application remains as secure as possible.</p>
-<h2 id="What-Vue-Does-to-Protect-You"><a href="#What-Vue-Does-to-Protect-You" class="headerlink" title="What Vue Does to Protect You"></a>What Vue Does to Protect You</h2><h3 id="HTML-content"><a href="#HTML-content" class="headerlink" title="HTML content"></a>HTML content</h3><p>Whether using templates or render functions, content is automatically escaped. That means in this template:</p>
+<h2 id="EN-Rule-No-1-Never-Use-Non-trusted-Templates"><a href="#EN-Rule-No-1-Never-Use-Non-trusted-Templates" class="headerlink" title="(EN) Rule No.1: Never Use Non-trusted Templates"></a>(EN) Rule No.1: Never Use Non-trusted Templates</h2><p>The most fundamental security rule when using Vue is <strong>never use non-trusted content as your component template</strong>. Doing so is equivalent to allowing arbitrary JavaScript execution in your application - and worse, could lead to server breaches if the code is executed during server-side rendering. An example of such usage:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">`&lt;div&gt;`</span> + userProvidedString + <span class="hljs-string">`&lt;/div&gt;`</span> <span class="hljs-comment">// NEVER DO THIS</span>
+&#125;)</code></pre>
+<p>Vue templates are compiled into JavaScript, and expressions inside templates will be executed as part of the rendering process. Although the expressions are evaluated against a specific rendering context, due to the complexity of potential global execution environments, it is impractical for a framework like Vue to completely shield you from potential malicious code execution without incurring unrealistic performance overhead. The most straightforward way to avoid this category of problems altogether is to make sure the contents of your Vue templates are always trusted and entirely controlled by you.</p>
+<h2 id="EN-What-Vue-Does-to-Protect-You"><a href="#EN-What-Vue-Does-to-Protect-You" class="headerlink" title="(EN) What Vue Does to Protect You"></a>(EN) What Vue Does to Protect You</h2><h3 id="HTML-content"><a href="#HTML-content" class="headerlink" title="HTML content"></a>HTML content</h3><p>Whether using templates or render functions, content is automatically escaped. That means in this template:</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;&#123; userProvidedString &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></code></pre>
 <p>if <code>userProvidedString</code> contained:</p>
 <pre><code class="hljs js"><span class="hljs-string">'&lt;script&gt;alert("hi")&lt;/script&gt;'</span></code></pre>
@@ -1082,7 +996,7 @@
 <p>then it would be escaped to the following HTML:</p>
 <pre><code class="hljs html">&amp;quot; onclick=&amp;quot;alert('hi')</code></pre>
 <p>thus preventing the close of the <code>title</code> attribute to inject new, arbitrary HTML. This escaping is done using native browser APIs, like <code>setAttribute</code>, so a vulnerability can only exist if the browser itself is vulnerable.</p>
-<h2 id="Potential-Dangers"><a href="#Potential-Dangers" class="headerlink" title="Potential Dangers"></a>Potential Dangers</h2><p>In any web application, allowing unsanitized, user-provided content to be executed as HTML, CSS, or JavaScript is potentially dangerous, so should be avoided wherever possible. There are times when some risk be acceptable though.</p>
+<h2 id="EN-Potential-Dangers"><a href="#EN-Potential-Dangers" class="headerlink" title="(EN) Potential Dangers"></a>(EN) Potential Dangers</h2><p>In any web application, allowing unsanitized, user-provided content to be executed as HTML, CSS, or JavaScript is potentially dangerous, so should be avoided wherever possible. There are times when some risk be acceptable though.</p>
 <p>For example, services like CodePen and JSFiddle allow user-provided content to be executed, but it’s in a context where this is expected and sandboxed to some extent inside iframes. In the cases when an important feature inherently requires some level of vulnerability, it’s up to your team to weigh the importance of the feature against the worst-case scenarios the vulnerability enables.</p>
 <h3 id="Injecting-HTML"><a href="#Injecting-HTML" class="headerlink" title="Injecting HTML"></a>Injecting HTML</h3><p>As you learned earlier, Vue automatically escapes HTML content, preventing you from accidentally injecting executable HTML into your application. However, in cases where you know the HTML is safe, you can explicitly render HTML content:</p>
 <ul>
@@ -1117,7 +1031,7 @@
   click me
 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
 <p>let’s assume that <code>sanitizedUrl</code> has been sanitized, so that it’s definitely a real URL and not JavaScript. With the <code>userProvidedStyles</code>, malicious users could still provide CSS to “click jack”, e.g. styling the link into a transparent box over the “Log in” button. Then if <code>https://user-controlled-website.com/</code> is built to resemble the login page of your application, they might have just captured a user’s real login information.</p>
-<p>You may be able to imagine how allowing user-provided content for a <code>&lt;style&gt;</code> element would create an even greater vulnerability, giving that user full control over how to style the entire page. That’s why prevents rendering of style tags inside templates, such as:</p>
+<p>You may be able to imagine how allowing user-provided content for a <code>&lt;style&gt;</code> element would create an even greater vulnerability, giving that user full control over how to style the entire page. That’s why Vue prevents rendering of style tags inside templates, such as:</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">&#123;&#123; userProvidedStyles &#125;&#125;</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 <p>To keep your users fully safe from click jacking, we recommend only allowing full control over CSS inside a sandboxed iframe. Alternatively, when providing user control through a style binding, we recommend using its <a href="class-and-style.html#Object-Syntax-1">object syntax</a> and only allowing users to provide values for specific properties it’s safe for them to control, like this:</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span>
@@ -1140,15 +1054,15 @@
 <li><p>The developer is mounting Vue to an entire HTML page which happens to contain server-rendered and user-provided content. This is fundamentally the same problem as #1, but sometimes devs may do it without realizing. This can lead to possible vulnerabilities where the attacker provides HTML which is safe as plain HTML but unsafe as a Vue template. The best practice is to never mount Vue on nodes that may contain server-rendered and user-provided content.</p>
 </li>
 </ol>
-<h2 id="Best-Practices"><a href="#Best-Practices" class="headerlink" title="Best Practices"></a>Best Practices</h2><p>The general rule is that if you allow unsanitized, user-provided content to be executed (as either HTML, JavaScript, or even CSS), you might be opening yourself up to attacks. This advice actually holds true whether using Vue, another framework, or even no framework.</p>
+<h2 id="EN-Best-Practices"><a href="#EN-Best-Practices" class="headerlink" title="(EN) Best Practices"></a>(EN) Best Practices</h2><p>The general rule is that if you allow unsanitized, user-provided content to be executed (as either HTML, JavaScript, or even CSS), you might be opening yourself up to attacks. This advice actually holds true whether using Vue, another framework, or even no framework.</p>
 <p>Beyond the recommendations made above for <a href="#Potential-Dangers">Potential Dangers</a>, we also recommend familiarizing yourself with these resources:</p>
 <ul>
 <li><a href="https://html5sec.org/" target="_blank" rel="noopener">HTML5 Security Cheat Sheet</a></li>
-<li><a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet" target="_blank" rel="noopener">OWASP’s Cross Site Scripting (XSS) Prevention Cheat Sheet</a></li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html" target="_blank" rel="noopener">OWASP’s Cross Site Scripting (XSS) Prevention Cheat Sheet</a></li>
 </ul>
 <p>Then use what you learn to also review the source code of your dependencies for potentially dangerous patterns, if any of them include 3rd-party components or otherwise influence what’s rendered to the DOM.</p>
-<h2 id="Backend-Coordination"><a href="#Backend-Coordination" class="headerlink" title="Backend Coordination"></a>Backend Coordination</h2><p>HTTP security vulnerabilities, such as cross-site request forgery (CSRF/XSRF) and cross-site script inclusion (XSSI), are primarily addressed on the backend, so aren’t a concern of Vue’s. However, it’s still a good idea to communicate with your backend team to learn how to best interact with their API, e.g. by submitting CSRF tokens with form submissions.</p>
-<h2 id="Server-Side-Rendering-SSR"><a href="#Server-Side-Rendering-SSR" class="headerlink" title="Server-Side Rendering (SSR)"></a>Server-Side Rendering (SSR)</h2><p>There are some additional security concerns when using SSR, so make sure to follow the best practices outlined throughout <a href="https://ssr.vuejs.org/" target="_blank" rel="noopener">our SSR documentation</a> to avoid vulnerabilities.</p>
+<h2 id="EN-Backend-Coordination"><a href="#EN-Backend-Coordination" class="headerlink" title="(EN) Backend Coordination"></a>(EN) Backend Coordination</h2><p>HTTP security vulnerabilities, such as cross-site request forgery (CSRF/XSRF) and cross-site script inclusion (XSSI), are primarily addressed on the backend, so aren’t a concern of Vue’s. However, it’s still a good idea to communicate with your backend team to learn how to best interact with their API, e.g. by submitting CSRF tokens with form submissions.</p>
+<h2 id="EN-Server-Side-Rendering-SSR"><a href="#EN-Server-Side-Rendering-SSR" class="headerlink" title="(EN) Server-Side Rendering (SSR)"></a>(EN) Server-Side Rendering (SSR)</h2><p>There are some additional security concerns when using SSR, so make sure to follow the best practices outlined throughout <a href="https://ssr.vuejs.org/" target="_blank" rel="noopener">our SSR documentation</a> to avoid vulnerabilities.</p>
 
   
   

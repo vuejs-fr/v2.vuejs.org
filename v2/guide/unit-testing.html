@@ -87,98 +87,6 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
-    <div id="vs-banner" class="vueschool-banner hide" role="banner">
-  <a href="https://vueschool.io/sales/blackfriday?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=TopBanner&utm_campaign=Black%20Friday" title="Apprenez Vue.js en vidéo avec Vue School" target="_blank">
-    <img class="vueschool-banner--logo" src="/images/vueschool_logo.svg" alt="Vue School Logo">
-    <div class="vueschool-banner--wrapper">
-      <p>Black Friday 40% sur Vue School<span>Apprenez Vue.js en vidéo.</span></p>
-      <button>Get 40% Off</button>
-    </div>
-    <div id="vs-close" class="vueschool-banner--close"></div>
-  </a>
-</div>
-
-<script>
-
-  (function () {
-    // Get elements
-    var elBody = document.getElementsByTagName("body")[0];
-    var elBanner = document.getElementById("vs-banner");
-    var elClose = document.getElementById("vs-close");
-    var elMenu = document.getElementById("mobile-bar");
-    // Variable names
-    var nameWrapper = "vueschool-weekend-promo";
-    var nameFixMenu = "vueschool-menu-fixed";
-    var nameStorage = "vueschool-banner";
-    // Defaults values
-    var isMenuFixed = false;
-    var posMenu = 80;
-    var initBanner = function () {
-      // Add event listeners
-      toggleBannerEvents(true);
-      // Add class to the body to push fixed elements
-      elBody.classList.add(nameWrapper);
-      // Display the banner
-      elBanner.style.display = "block";
-      // Init close button action
-      elClose.onclick = closeBanner;
-      // Get the menu position
-      getMenuPosition();
-      // Check current page offset position
-      isMenuFixed = isUnderBanner();
-      // And position menu accordingly
-      if (isMenuFixed) {
-        elBody.classList.add("fixed");
-      }
-    }
-    var closeBanner = function(e) {
-      // Prevent bubbling event that redirect to vueschool.io
-      e.preventDefault();
-      // Remove events
-      toggleBannerEvents(false);
-      // Hide the banner
-      elBanner.style.display = "none";
-      // Remove class to the body that push fixed elements
-      elBody.classList.remove(nameWrapper);
-      // Save action in the local storage
-      localStorage.setItem(nameStorage, true);
-    }
-    var getMenuPosition = function() {
-      posMenu = elBanner.clientHeight;
-    }
-    var isUnderBanner = function() {
-      return window.pageYOffset > posMenu;
-    }
-    var fixMenuAfterBanner = function() {
-      if (isUnderBanner()) {
-        if (!isMenuFixed) {
-          // The menu will be fixed
-          toggleFixedPosition(true);
-        }
-      } else if (isMenuFixed) {
-        // The menu stay under the banner
-        toggleFixedPosition(false);
-      }
-    }
-    var toggleBannerEvents = function (on) {
-      // Add or remove event listerners attached to the DOM
-      var method = on ? "addEventListener" : "removeEventListener";
-      window[method]("resize", getMenuPosition);
-      window[method]("scroll", fixMenuAfterBanner);
-    }
-    var toggleFixedPosition = function (on) {
-      // Switch between relative and fixed position
-      var method = on ? "add" : "remove";
-      elBody.classList[method](nameFixMenu);
-      isMenuFixed = on;
-    }
-    // Load component according to user preferences
-    if (!localStorage.getItem(nameStorage)) {
-      initBanner();
-    }
-  })()
-</script>
-
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -300,7 +208,7 @@
     <li><a href="https://vuejs.org/v2/guide/unit-testing.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/unit-testing.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
     <li><a href="https://vi.vuejs.org/v2/guide/unit-testing.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/guide/unit-testing.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/unit-testing.html" class="nav-link" target="_blank" rel="noopener">Español</a></li>
     <li><a href="https://docs.vuejs.id/v2/guide/unit-testing.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
   </ul>
 </li>
@@ -339,11 +247,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1028,11 +936,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1072,24 +980,27 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
-  export default &#123;
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
     data () &#123;
-      return &#123;
-        message: 'bonjour !'
+      <span class="hljs-keyword">return</span> &#123;
+        <span class="hljs-attr">message</span>: <span class="hljs-string">'bonjour !'</span>
       &#125;
     &#125;,
     created () &#123;
-      this.message = 'au revoir !'
+      <span class="hljs-keyword">this</span>.message = <span class="hljs-string">'au revoir !'</span>
     &#125;
   &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
-<p>Puis importez les options de composant aux côtés de Vue et vous pourrez faire une série d’assertions communes (ici nous utilisons le style Jasmine/Jest avec l’assertions <code>expect</code> en tant qu’exemple) :</p>
-<pre><code class="hljs js"><span class="hljs-comment">// Importer Vue et le composant à tester</span>
-<span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
-<span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'path/to/MyComponent.vue'</span>
+<p>Puis importez les options de composant avec <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> et vous pourrez faire une série d’assertions communes (ici nous utilisons le style Jest avec l’assertions <code>expect</code> en tant qu’exemple) :</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Importer `shallowMount` de Vue Test Utils et le composant à tester</span>
+<span class="hljs-keyword">import</span> &#123; shallowMount &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@vue/test-utils'</span>
+<span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyComponent.vue'</span>
 
-<span class="hljs-comment">// Ici nous avons plusieurs tests avec Jasmine 2.0, cependant vous pouvez utiliser</span>
+<span class="hljs-comment">// Monter le composant</span>
+<span class="hljs-keyword">const</span> wrapper = shallowMount(MyComponent)
+
+<span class="hljs-comment">// Ici nous avons plusieurs tests avec Jest, cependant vous pouvez utiliser</span>
 <span class="hljs-comment">// n'importe quel combo de lanceur de tests / bibliothèque d'assertions que vous préférez</span>
 describe(<span class="hljs-string">'MyComponent'</span>, () =&gt; &#123;
   <span class="hljs-comment">// Inspecter l'objet d'options du composant</span>
@@ -1107,15 +1018,12 @@ describe(<span class="hljs-string">'MyComponent'</span>, () =&gt; &#123;
 
   <span class="hljs-comment">// Inspecter l'instance au montage du composant</span>
   it(<span class="hljs-string">'affecte correctement les messages à la création'</span>, () =&gt; &#123;
-    <span class="hljs-keyword">const</span> vm = <span class="hljs-keyword">new</span> Vue(MyComponent).$mount()
-    expect(vm.message).toBe(<span class="hljs-string">'au revoir !'</span>)
+    expect(wrapper.vm.$data.message).toBe(<span class="hljs-string">'bye!'</span>)
   &#125;)
 
   <span class="hljs-comment">// Monter une instance et inspecter le résultat en sortie</span>
   it(<span class="hljs-string">'rend le message correct'</span>, () =&gt; &#123;
-    <span class="hljs-keyword">const</span> Constructor = Vue.extend(MyComponent)
-    <span class="hljs-keyword">const</span> vm = <span class="hljs-keyword">new</span> Constructor().$mount()
-    expect(vm.$el.textContent).toBe(<span class="hljs-string">'au revoir !'</span>)
+    expect(wrapper.text()).toBe(<span class="hljs-string">'bye!'</span>)
   &#125;)
 &#125;)</code></pre>
 <h2 id="Ecrire-des-composants-testables"><a href="#Ecrire-des-composants-testables" class="headerlink" title="Écrire des composants testables"></a>Écrire des composants testables</h2><p>Une bonne partie du code en sortie du rendu d’un composant est principalement déterminée par les props qu’il reçoit. Si le rendu d’un composant dépend uniquement de ses props, il devient assez facile à tester, de la même manière que l’on ferait une assertion sur la valeur de retour d’une fonction pure avec différents arguments. Voici un exemple :</p>
@@ -1128,39 +1036,41 @@ describe(<span class="hljs-string">'MyComponent'</span>, () =&gt; &#123;
     <span class="hljs-attr">props</span>: [<span class="hljs-string">'msg'</span>]
   &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
-<p>Vous pouvez faire des assertions sur le rendu en sortie avec différentes props en utilisant l’option <code>propsData</code> :</p>
-<pre><code class="hljs js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+<p>Vous pouvez faire des assertions sur le rendu en sortie avec différentes props en utilisant <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> :</p>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; shallowMount &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@vue/test-utils'</span>
 <span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyComponent.vue'</span>
 
-<span class="hljs-comment">// Fonction utilitaire qui monte et retourne le texte rendu</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRenderedText</span> (<span class="hljs-params">Component, propsData</span>) </span>&#123;
-  <span class="hljs-keyword">const</span> Constructor = Vue.extend(Component)
-  <span class="hljs-keyword">const</span> vm = <span class="hljs-keyword">new</span> Constructor(&#123; <span class="hljs-attr">propsData</span>: propsData &#125;).$mount()
-  <span class="hljs-keyword">return</span> vm.$el.textContent
+<span class="hljs-comment">// Fonction utilitaire qui monte et retourne le composant rendu</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getMountedComponent</span>(<span class="hljs-params">Component, propsData</span>) </span>&#123;
+  <span class="hljs-keyword">return</span> shallowMount(Component, &#123;
+    propsData
+  &#125;)
 &#125;
 
 describe(<span class="hljs-string">'MyComponent'</span>, () =&gt; &#123;
   it(<span class="hljs-string">'donne un rendu correct avec différentes props'</span>, () =&gt; &#123;
-    expect(getRenderedText(MyComponent, &#123;
-      <span class="hljs-attr">msg</span>: <span class="hljs-string">'Bonjour'</span>
-    &#125;)).toBe(<span class="hljs-string">'Bonjour'</span>)
+    expect(
+      getMountedComponent(MyComponent, &#123;
+        <span class="hljs-attr">msg</span>: <span class="hljs-string">'Bonjour'</span>
+      &#125;).text()
+    ).toBe(<span class="hljs-string">'Bonjour'</span>)
 
-    expect(getRenderedText(MyComponent, &#123;
-      <span class="hljs-attr">msg</span>: <span class="hljs-string">'Au revoir'</span>
-    &#125;)).toBe(<span class="hljs-string">'Au revoir'</span>)
+    expect(
+      getMountedComponent(MyComponent, &#123;
+        <span class="hljs-attr">msg</span>: <span class="hljs-string">'Au revoir'</span>
+      &#125;).text()
+    ).toBe(<span class="hljs-string">'Au revoir'</span>)
   &#125;)
 &#125;)</code></pre>
-<h2 id="Assertions-sur-des-mises-a-jour-asynchrones"><a href="#Assertions-sur-des-mises-a-jour-asynchrones" class="headerlink" title="Assertions sur des mises à jour asynchrones"></a>Assertions sur des mises à jour asynchrones</h2><p>Parce que Vue <a href="reactivity.html#File-d’attente-de-mise-a-jour-asynchrone">fait les mises à jour du DOM de manière asynchrone</a>, les assertions sur les mises à jour du DOM résultant d’un changement d’état doivent être faites dans une fonction de rappel <code>Vue.nextTick</code> :</p>
+<h2 id="Assertions-sur-des-mises-a-jour-asynchrones"><a href="#Assertions-sur-des-mises-a-jour-asynchrones" class="headerlink" title="Assertions sur des mises à jour asynchrones"></a>Assertions sur des mises à jour asynchrones</h2><p>Parce que Vue <a href="reactivity.html#File-d’attente-de-mise-a-jour-asynchrone">fait les mises à jour du DOM de manière asynchrone</a>, les assertions sur les mises à jour du DOM résultant d’un changement d’état doivent être faites après que <code>vm.$nextTick()</code> soit résolue :</p>
 <pre><code class="hljs js"><span class="hljs-comment">// Inspecter le HTML généré après une mise à jour d'état</span>
-it(<span class="hljs-string">'met à jour le message rendu quand `vm.message` est mis à jour'</span>, done =&gt; &#123;
-  <span class="hljs-keyword">const</span> vm = <span class="hljs-keyword">new</span> Vue(MyComponent).$mount()
-  vm.message = <span class="hljs-string">'foo'</span>
+it(<span class="hljs-string">'met à jour le message rendu quand `vm.message` est mis à jour'</span>, <span class="hljs-keyword">async</span> () =&gt; &#123;
+  <span class="hljs-keyword">const</span> wrapper = shallowMount(MyComponent)
+  wrapper.setData(&#123; <span class="hljs-attr">message</span>: <span class="hljs-string">'foo'</span> &#125;)
 
   <span class="hljs-comment">// attendre une boucle (« tick ») après le changement d'état avant de faire l'assertion des mises à jour du DOM</span>
-  Vue.nextTick(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;
-    expect(vm.$el.textContent).toBe(<span class="hljs-string">'foo'</span>)
-    done()
-  &#125;)
+  <span class="hljs-keyword">await</span> wrapper.vm.$nextTick()
+  expect(wrapper.text()).toBe(<span class="hljs-string">'foo'</span>)
 &#125;)</code></pre>
 <p>Nous prévoyons de travailler sur une collection de fonctions utilitaires de tests communs pour rendre encore plus simple le rendu de composants avec différentes contraintes (par ex. des rendus peu profonds ignorant les composants enfants) et faire des assertions sur le code en sortie.</p>
 <p>Pour des informations plus pointues sur les tests unitaires avec Vue, jeter un œil à <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> et notre entrée des tutoriels à propos des <a href="https://vuejs.org/v2/cookbook/unit-testing-vue-components.html" target="_blank" rel="noopener">tests unitaires de composants Vue</a>.</p>

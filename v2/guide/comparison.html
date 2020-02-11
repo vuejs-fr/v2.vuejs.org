@@ -87,98 +87,6 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
-    <div id="vs-banner" class="vueschool-banner hide" role="banner">
-  <a href="https://vueschool.io/sales/blackfriday?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=TopBanner&utm_campaign=Black%20Friday" title="Apprenez Vue.js en vidéo avec Vue School" target="_blank">
-    <img class="vueschool-banner--logo" src="/images/vueschool_logo.svg" alt="Vue School Logo">
-    <div class="vueschool-banner--wrapper">
-      <p>Black Friday 40% sur Vue School<span>Apprenez Vue.js en vidéo.</span></p>
-      <button>Get 40% Off</button>
-    </div>
-    <div id="vs-close" class="vueschool-banner--close"></div>
-  </a>
-</div>
-
-<script>
-
-  (function () {
-    // Get elements
-    var elBody = document.getElementsByTagName("body")[0];
-    var elBanner = document.getElementById("vs-banner");
-    var elClose = document.getElementById("vs-close");
-    var elMenu = document.getElementById("mobile-bar");
-    // Variable names
-    var nameWrapper = "vueschool-weekend-promo";
-    var nameFixMenu = "vueschool-menu-fixed";
-    var nameStorage = "vueschool-banner";
-    // Defaults values
-    var isMenuFixed = false;
-    var posMenu = 80;
-    var initBanner = function () {
-      // Add event listeners
-      toggleBannerEvents(true);
-      // Add class to the body to push fixed elements
-      elBody.classList.add(nameWrapper);
-      // Display the banner
-      elBanner.style.display = "block";
-      // Init close button action
-      elClose.onclick = closeBanner;
-      // Get the menu position
-      getMenuPosition();
-      // Check current page offset position
-      isMenuFixed = isUnderBanner();
-      // And position menu accordingly
-      if (isMenuFixed) {
-        elBody.classList.add("fixed");
-      }
-    }
-    var closeBanner = function(e) {
-      // Prevent bubbling event that redirect to vueschool.io
-      e.preventDefault();
-      // Remove events
-      toggleBannerEvents(false);
-      // Hide the banner
-      elBanner.style.display = "none";
-      // Remove class to the body that push fixed elements
-      elBody.classList.remove(nameWrapper);
-      // Save action in the local storage
-      localStorage.setItem(nameStorage, true);
-    }
-    var getMenuPosition = function() {
-      posMenu = elBanner.clientHeight;
-    }
-    var isUnderBanner = function() {
-      return window.pageYOffset > posMenu;
-    }
-    var fixMenuAfterBanner = function() {
-      if (isUnderBanner()) {
-        if (!isMenuFixed) {
-          // The menu will be fixed
-          toggleFixedPosition(true);
-        }
-      } else if (isMenuFixed) {
-        // The menu stay under the banner
-        toggleFixedPosition(false);
-      }
-    }
-    var toggleBannerEvents = function (on) {
-      // Add or remove event listerners attached to the DOM
-      var method = on ? "addEventListener" : "removeEventListener";
-      window[method]("resize", getMenuPosition);
-      window[method]("scroll", fixMenuAfterBanner);
-    }
-    var toggleFixedPosition = function (on) {
-      // Switch between relative and fixed position
-      var method = on ? "add" : "remove";
-      elBody.classList[method](nameFixMenu);
-      isMenuFixed = on;
-    }
-    // Load component according to user preferences
-    if (!localStorage.getItem(nameStorage)) {
-      initBanner();
-    }
-  })()
-</script>
-
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -300,7 +208,7 @@
     <li><a href="https://vuejs.org/v2/guide/comparison.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/comparison.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
     <li><a href="https://vi.vuejs.org/v2/guide/comparison.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/guide/comparison.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/comparison.html" class="nav-link" target="_blank" rel="noopener">Español</a></li>
     <li><a href="https://docs.vuejs.id/v2/guide/comparison.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
   </ul>
 </li>
@@ -339,11 +247,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1028,11 +936,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1103,13 +1011,13 @@
 </ul>
 <p>Beaucoup de personnes argumentent sur le fait que vous devez apprendre un langage spécifique pour écrire vos templates. Nous pensons que cette différence est superficielle. Premièrement, JSX ne signifie pas que les utilisateurs ne doivent rien apprendre en plus. Cette syntaxe additionnelle au-dessus du JavaScript à beau être simple à apprendre pour quiconque connait le JavaScript, il n’est pas vrai de dire qu’elle ne nécessite pas un apprentissage supplémentaire. De la même manière, les templates sont juste une syntaxe additionnelle au-dessus du HTML et qui ont un cout d’apprentissage assez bas pour ceux connaissant déjà le HTML. Avec cet autre langage spécifique, nous sommes aussi capables d’aider les utilisateurs à faire plus de choses avec moins de code (par ex. les modificateurs <code>v-on</code>). La même tache demanderait bien plus de code en utilisant une syntaxe JSX ou des fonctions de rendu.</p>
 <p>À un haut niveau, nous pouvons diviser les composants en deux catégories : ceux de présentation et ceux de logique. Nous recommandons d’utiliser les templates pour les composants de présentation et les fonctions de rendu (ou JSX) pour les composants de logique. Le pourcentage de chaque type dépend du type d’application que vous construisez, bien qu’en général nous trouvions plus de composants de présentation.</p>
-<h4 id="CSS-a-portee-limitee-au-composant"><a href="#CSS-a-portee-limitee-au-composant" class="headerlink" title="CSS à portée limitée au composant"></a>CSS à portée limitée au composant</h4><p>À moins que vous ne répartissiez les composants dans plusieurs fichiers (par exemple avec les <a href="https://github.com/gajus/react-css-modules" target="_blank" rel="noopener">Modules CSS</a>), limiter la portée du CSS dans React est souvent fait par des solutions « CSS-in-JS » (par ex : <a href="https://github.com/styled-components/styled-components" target="_blank" rel="noopener">styled-components</a>, <a href="https://github.com/paypal/glamorous" target="_blank" rel="noopener">glamorous</a> et <a href="https://github.com/emotion-js/emotion" target="_blank" rel="noopener">emotion</a>). Ceci introduit un nouveau paradigme de style orienté composant qui est différent du processus de création de CSS normal. De plus, bien qu’il y ait une option pour extraire le CSS dans un seul fichier de style lors de la phase de build, il est encore courant qu’une exécution doive être faite niveau paquetage pour que le style fonctionne correctement. Alors que vous avez l’avantage du JavaScript pendant la construction de vos styles, la contrepartie est souvent un paquetage plus lourd et un coût d’exécution JavaScript.</p>
+<h4 id="CSS-a-portee-limitee-au-composant"><a href="#CSS-a-portee-limitee-au-composant" class="headerlink" title="CSS à portée limitée au composant"></a>CSS à portée limitée au composant</h4><p>À moins que vous ne répartissiez les composants dans plusieurs fichiers (par exemple avec les <a href="https://github.com/gajus/react-css-modules" target="_blank" rel="noopener">Modules CSS</a>), limiter la portée du CSS dans React est souvent fait par des solutions « CSS-in-JS » (par ex : <a href="https://github.com/styled-components/styled-components" target="_blank" rel="noopener">styled-components</a> et <a href="https://github.com/emotion-js/emotion" target="_blank" rel="noopener">emotion</a>). Ceci introduit un nouveau paradigme de style orienté composant qui est différent du processus de création de CSS normal. De plus, bien qu’il y ait une option pour extraire le CSS dans un seul fichier de style lors de la phase de build, il est encore courant qu’une exécution doive être faite niveau paquetage pour que le style fonctionne correctement. Alors que vous avez l’avantage du JavaScript pendant la construction de vos styles, la contrepartie est souvent un paquetage plus lourd et un coût d’exécution JavaScript.</p>
 <p>Si vous êtes un grand fan de « CSS-in-JS », beaucoup de bibliothèques supportent Vue (par ex. <a href="https://github.com/styled-components/vue-styled-components" target="_blank" rel="noopener">styled-components-vue</a> et <a href="https://github.com/egoist/vue-emotion" target="_blank" rel="noopener">vue-emotion</a>). La grande différence entre React et Vue ici est que la méthode de style par défaut de Vue est plus familière avec l’utilisation d’une balise <code>&lt;style&gt;</code> dans <a href="single-file-components.html">un composant monofichier</a>.</p>
 <p><a href="single-file-components.html">Un composant monofichier</a> vous donne l’accès complet au CSS au sein d’un même fichier comme le reste du code du composant.</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="undefined">
-  @media (min-width: 250px) &#123;
-    .list-container:hover &#123;
-      background: orange;
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+  @<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">250px</span>) &#123;
+    <span class="hljs-selector-class">.list-container</span><span class="hljs-selector-pseudo">:hover</span> &#123;
+      <span class="hljs-attribute">background</span>: orange;
     &#125;
   &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>

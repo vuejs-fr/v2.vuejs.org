@@ -87,98 +87,6 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
-    <div id="vs-banner" class="vueschool-banner hide" role="banner">
-  <a href="https://vueschool.io/sales/blackfriday?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=TopBanner&utm_campaign=Black%20Friday" title="Apprenez Vue.js en vidéo avec Vue School" target="_blank">
-    <img class="vueschool-banner--logo" src="/images/vueschool_logo.svg" alt="Vue School Logo">
-    <div class="vueschool-banner--wrapper">
-      <p>Black Friday 40% sur Vue School<span>Apprenez Vue.js en vidéo.</span></p>
-      <button>Get 40% Off</button>
-    </div>
-    <div id="vs-close" class="vueschool-banner--close"></div>
-  </a>
-</div>
-
-<script>
-
-  (function () {
-    // Get elements
-    var elBody = document.getElementsByTagName("body")[0];
-    var elBanner = document.getElementById("vs-banner");
-    var elClose = document.getElementById("vs-close");
-    var elMenu = document.getElementById("mobile-bar");
-    // Variable names
-    var nameWrapper = "vueschool-weekend-promo";
-    var nameFixMenu = "vueschool-menu-fixed";
-    var nameStorage = "vueschool-banner";
-    // Defaults values
-    var isMenuFixed = false;
-    var posMenu = 80;
-    var initBanner = function () {
-      // Add event listeners
-      toggleBannerEvents(true);
-      // Add class to the body to push fixed elements
-      elBody.classList.add(nameWrapper);
-      // Display the banner
-      elBanner.style.display = "block";
-      // Init close button action
-      elClose.onclick = closeBanner;
-      // Get the menu position
-      getMenuPosition();
-      // Check current page offset position
-      isMenuFixed = isUnderBanner();
-      // And position menu accordingly
-      if (isMenuFixed) {
-        elBody.classList.add("fixed");
-      }
-    }
-    var closeBanner = function(e) {
-      // Prevent bubbling event that redirect to vueschool.io
-      e.preventDefault();
-      // Remove events
-      toggleBannerEvents(false);
-      // Hide the banner
-      elBanner.style.display = "none";
-      // Remove class to the body that push fixed elements
-      elBody.classList.remove(nameWrapper);
-      // Save action in the local storage
-      localStorage.setItem(nameStorage, true);
-    }
-    var getMenuPosition = function() {
-      posMenu = elBanner.clientHeight;
-    }
-    var isUnderBanner = function() {
-      return window.pageYOffset > posMenu;
-    }
-    var fixMenuAfterBanner = function() {
-      if (isUnderBanner()) {
-        if (!isMenuFixed) {
-          // The menu will be fixed
-          toggleFixedPosition(true);
-        }
-      } else if (isMenuFixed) {
-        // The menu stay under the banner
-        toggleFixedPosition(false);
-      }
-    }
-    var toggleBannerEvents = function (on) {
-      // Add or remove event listerners attached to the DOM
-      var method = on ? "addEventListener" : "removeEventListener";
-      window[method]("resize", getMenuPosition);
-      window[method]("scroll", fixMenuAfterBanner);
-    }
-    var toggleFixedPosition = function (on) {
-      // Switch between relative and fixed position
-      var method = on ? "add" : "remove";
-      elBody.classList[method](nameFixMenu);
-      isMenuFixed = on;
-    }
-    // Load component according to user preferences
-    if (!localStorage.getItem(nameStorage)) {
-      initBanner();
-    }
-  })()
-</script>
-
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -300,7 +208,7 @@
     <li><a href="https://vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
     <li><a href="https://vi.vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">Español</a></li>
     <li><a href="https://docs.vuejs.id/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
   </ul>
 </li>
@@ -339,11 +247,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1028,11 +936,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1196,7 +1104,7 @@ new Vue({ el: '#blog-post-demo' })
   <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"post.id"</span>
   <span class="hljs-attr">v-bind:title</span>=<span class="hljs-string">"post.title"</span>
 &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post</span>&gt;</span></code></pre>
-<p>Vous voyez au-dessus que nous pouvons utiliser <code>v-bind</code> pour dynamiquement passer des props. Cela est particulièrement utile quand vous ne connaissez pas exactement le contenu dont vous êtes en train de faire le rendu à l’avance, comme dans le cas de <a href="https://jsfiddle.net/chrisvfritz/sbLgr0ad" target="_blank" rel="noopener">récupération de billets depuis une API</a>.</p>
+<p>Vous voyez au-dessus que nous pouvons utiliser <code>v-bind</code> pour dynamiquement passer des props. Cela est particulièrement utile quand vous ne connaissez pas exactement le contenu dont vous êtes en train de faire le rendu à l’avance, comme dans le cas de <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-component-blog-post-example" target="_blank" rel="noopener">récupération de billets depuis une API</a>.</p>
 <p>C’est tout ce que vous avez besoin de savoir à propos des props pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l’aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des <a href="components-props.html">props</a>.</p>
 <h2 id="Element-racine-unique"><a href="#Element-racine-unique" class="headerlink" title="Élément racine unique"></a>Élément racine unique</h2><p>Quand nous réalisons un composant <code>&lt;blog-post&gt;</code>, votre template va éventuellement contenir plus que juste le titre :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></code></pre>
@@ -1460,7 +1368,7 @@ new Vue({
 <li>le nom du composant enregistré, ou</li>
 <li>un objet d’option de composant</li>
 </ul>
-<p>Regardez <a href="https://jsfiddle.net/chrisvfritz/o3nycadu/" target="_blank" rel="noopener">ce fiddle</a> pour expérimenter cela avec un code complet, ou <a href="https://jsfiddle.net/chrisvfritz/b2qj69o1/" target="_blank" rel="noopener">cette version</a> pour un exemple lié à un objet d’option de composant plutôt qu’à un nom enregistré.</p>
+<p>Regardez <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-dynamic-components" target="_blank" rel="noopener">ce fiddle</a> pour expérimenter cela avec un code complet, ou <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-dynamic-components-with-binding" target="_blank" rel="noopener">cette version</a> pour un exemple lié à un objet d’option de composant plutôt qu’à un nom enregistré.</p>
 <p>Gardez à l’esprit que ces attributs peuvent être utilisés sur des éléments HTML standard, cependant ils seront traités comme des composants, ce qui signifie que tous les attributs <strong>seront liés en tant qu’attribut du DOM</strong>. Pour que diverses propriétés fonctionnent comme vous le souhaité, comme pour <code>value</code>, vous allez devoir les liés en utilisant le <a href="../api/#v-bind">modificateur <code>.prop</code></a>.</p>
 <p>C’est tout ce que vous avez besoin de savoir à propos des composants dynamiques pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l’aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des <a href="components-dynamic-async.html">Composants dynamiques et asynchrones</a>.</p>
 <h2 id="Cas-particuliers-de-l’analyse-des-templates-de-DOM"><a href="#Cas-particuliers-de-l’analyse-des-templates-de-DOM" class="headerlink" title="Cas particuliers de l’analyse des templates de DOM"></a>Cas particuliers de l’analyse des templates de DOM</h2><p>Plusieurs éléments HTML, comme <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;table&gt;</code> et <code>&lt;select&gt;</code> ont des restrictions en ce qui concerne les éléments à l’intérieur desquels ils apparaissent. D’autres éléments quant à eux, tel que <code>&lt;li&gt;</code>, <code>&lt;tr&gt;</code>, ou <code>&lt;option&gt;</code> peuvent uniquement être placés à l’intérieur de certains éléments parents uniquement.</p>

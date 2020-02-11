@@ -87,98 +87,6 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
-    <div id="vs-banner" class="vueschool-banner hide" role="banner">
-  <a href="https://vueschool.io/sales/blackfriday?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=TopBanner&utm_campaign=Black%20Friday" title="Apprenez Vue.js en vidéo avec Vue School" target="_blank">
-    <img class="vueschool-banner--logo" src="/images/vueschool_logo.svg" alt="Vue School Logo">
-    <div class="vueschool-banner--wrapper">
-      <p>Black Friday 40% sur Vue School<span>Apprenez Vue.js en vidéo.</span></p>
-      <button>Get 40% Off</button>
-    </div>
-    <div id="vs-close" class="vueschool-banner--close"></div>
-  </a>
-</div>
-
-<script>
-
-  (function () {
-    // Get elements
-    var elBody = document.getElementsByTagName("body")[0];
-    var elBanner = document.getElementById("vs-banner");
-    var elClose = document.getElementById("vs-close");
-    var elMenu = document.getElementById("mobile-bar");
-    // Variable names
-    var nameWrapper = "vueschool-weekend-promo";
-    var nameFixMenu = "vueschool-menu-fixed";
-    var nameStorage = "vueschool-banner";
-    // Defaults values
-    var isMenuFixed = false;
-    var posMenu = 80;
-    var initBanner = function () {
-      // Add event listeners
-      toggleBannerEvents(true);
-      // Add class to the body to push fixed elements
-      elBody.classList.add(nameWrapper);
-      // Display the banner
-      elBanner.style.display = "block";
-      // Init close button action
-      elClose.onclick = closeBanner;
-      // Get the menu position
-      getMenuPosition();
-      // Check current page offset position
-      isMenuFixed = isUnderBanner();
-      // And position menu accordingly
-      if (isMenuFixed) {
-        elBody.classList.add("fixed");
-      }
-    }
-    var closeBanner = function(e) {
-      // Prevent bubbling event that redirect to vueschool.io
-      e.preventDefault();
-      // Remove events
-      toggleBannerEvents(false);
-      // Hide the banner
-      elBanner.style.display = "none";
-      // Remove class to the body that push fixed elements
-      elBody.classList.remove(nameWrapper);
-      // Save action in the local storage
-      localStorage.setItem(nameStorage, true);
-    }
-    var getMenuPosition = function() {
-      posMenu = elBanner.clientHeight;
-    }
-    var isUnderBanner = function() {
-      return window.pageYOffset > posMenu;
-    }
-    var fixMenuAfterBanner = function() {
-      if (isUnderBanner()) {
-        if (!isMenuFixed) {
-          // The menu will be fixed
-          toggleFixedPosition(true);
-        }
-      } else if (isMenuFixed) {
-        // The menu stay under the banner
-        toggleFixedPosition(false);
-      }
-    }
-    var toggleBannerEvents = function (on) {
-      // Add or remove event listerners attached to the DOM
-      var method = on ? "addEventListener" : "removeEventListener";
-      window[method]("resize", getMenuPosition);
-      window[method]("scroll", fixMenuAfterBanner);
-    }
-    var toggleFixedPosition = function (on) {
-      // Switch between relative and fixed position
-      var method = on ? "add" : "remove";
-      elBody.classList[method](nameFixMenu);
-      isMenuFixed = on;
-    }
-    // Load component according to user preferences
-    if (!localStorage.getItem(nameStorage)) {
-      initBanner();
-    }
-  })()
-</script>
-
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -300,7 +208,7 @@
     <li><a href="https://vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
     <li><a href="https://vi.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank" rel="noopener">Español</a></li>
     <li><a href="https://docs.vuejs.id/v2/guide/components-edge-cases.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
   </ul>
 </li>
@@ -339,11 +247,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1028,11 +936,11 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
     </div>
   </div>
@@ -1104,7 +1012,7 @@
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">google-map</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">google-map-markers</span> <span class="hljs-attr">v-bind:places</span>=<span class="hljs-string">"iceCreamShops"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">google-map-markers</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">google-map</span>&gt;</span></code></pre>
-<p>Le composant <code>&lt;google-map&gt;</code> peut définir une propriété <code>map</code> à laquelle tous les sous-composants ont besoin d’accéder. Dans ce cas, <code>&lt;google-map-markers&gt;</code> peut vouloir accéder à cette carte avec quelque-chose comme <code>this.$parent.getMap</code>, afin d’ajouter des marqueurs dessus. Vous pouvez voir ce pattern <a href="https://jsfiddle.net/chrisvfritz/ttzutdxh/" target="_blank" rel="noopener">en démonstration ici</a>.</p>
+<p>Le composant <code>&lt;google-map&gt;</code> peut définir une propriété <code>map</code> à laquelle tous les sous-composants ont besoin d’accéder. Dans ce cas, <code>&lt;google-map-markers&gt;</code> peut vouloir accéder à cette carte avec quelque-chose comme <code>this.$parent.getMap</code>, afin d’ajouter des marqueurs dessus. Vous pouvez voir ce pattern <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-accessing-parent-component-instance" target="_blank" rel="noopener">en démonstration ici</a>.</p>
 <p>Gardez en tête, toutefois, que les composants conçus avec ce pattern sont toujours intrinsèquement fragiles. Par exemple, imaginons que nous ajoutons un nouveau composant <code>&lt;google-map-region&gt;</code> et que lorsque <code>&lt;google-map-markers&gt;</code> apparaît à l’intérieur, il affiche uniquement les marqueurs de cette région :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">google-map</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">google-map-region</span> <span class="hljs-attr">v-bind:shape</span>=<span class="hljs-string">"cityBoundaries"</span>&gt;</span>
@@ -1147,7 +1055,7 @@
 &#125;</code></pre>
 <p>Ensuite, dans n’importe quel descendant, nous pouvons utiliser l’option <code>inject</code> pour récupérer des propriétés spécifiques que nous voulons ajouter à cette instance :</p>
 <pre><code class="hljs js">inject: [<span class="hljs-string">'getMap'</span>]</code></pre>
-<p>Vous pouvez voir l’<a href="https://jsfiddle.net/chrisvfritz/tdv8dt3s/" target="_blank" rel="noopener">exemple complet ici</a>. L’avantage par rapport à <code>$parent</code> est que nous pouvons accéder à <code>getMap</code> dans <em>n’importe quel</em> composant descendant, sans avoir à exposer l’instance entière de <code>&lt;google-map&gt;</code>. Cela nous permet de continuer à développer ce composant de façon plus sûre, sans crainte de devoir changer/supprimer quelque-chose sur lequel repose un composant enfant. L’interface entre ces composants reste clairement définie, tout comme avec les <code>props</code>.</p>
+<p>Vous pouvez voir l’<a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-dependency-injection" target="_blank" rel="noopener">exemple complet ici</a>. L’avantage par rapport à <code>$parent</code> est que nous pouvons accéder à <code>getMap</code> dans <em>n’importe quel</em> composant descendant, sans avoir à exposer l’instance entière de <code>&lt;google-map&gt;</code>. Cela nous permet de continuer à développer ce composant de façon plus sûre, sans crainte de devoir changer/supprimer quelque-chose sur lequel repose un composant enfant. L’interface entre ces composants reste clairement définie, tout comme avec les <code>props</code>.</p>
 <p>En fait, vous pouvez vous représenter l’injection de dépendances comme une sorte de « props à longue distance », sauf que :</p>
 <ul>
 <li>les composants ancêtres n’ont pas besoin de connaître quels descendants utilisent les propriétés qu’ils fournissent</li>
@@ -1210,7 +1118,7 @@ beforeDestroy: <span class="hljs-function"><span class="hljs-keyword">function</
     &#125;)
   &#125;
 &#125;</code></pre>
-<p>Consultez <a href="https://jsfiddle.net/09jvu65m/" target="_blank" rel="noopener">ce fiddle</a> pour le code complet. Notez cependant que si vous vous trouvez à devoir faire beaucoup de code de montage et de nettoyage au sein d’un seul composant, la meilleure solution sera souvent de créer des composants plus modulaires. Dans le cas présent, nous recommanderions de créer un composant réutilisable <code>&lt;input-datepicker&gt;</code>.</p>
+<p>Consultez <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-programmatic-event-listeners" target="_blank" rel="noopener">ce fiddle</a> pour le code complet. Notez cependant que si vous vous trouvez à devoir faire beaucoup de code de montage et de nettoyage au sein d’un seul composant, la meilleure solution sera souvent de créer des composants plus modulaires. Dans le cas présent, nous recommanderions de créer un composant réutilisable <code>&lt;input-datepicker&gt;</code>.</p>
 <p>Pour en apprendre plus sur les écouteurs programmatiques, allez voir l’API des <a href="https://vuejs.org/v2/api/#Instance-Methods-Events" target="_blank" rel="noopener">méthodes d’événements d’une instance</a>.</p>
 <p class="tip">Notez que le système d’événements de Vue est différent de celui de <a href="https://developer.mozilla.org/fr/docs/Web/API/EventTarget" target="_blank" rel="noopener">l’API EventTarget</a> du navigateur. Bien qu’ils fonctionnent de façon similaire, <code>$emit</code>, <code>$on</code>, et <code>$off</code> ne sont <strong>pas</strong> des alias pour <code>dispatchEvent</code>, <code>addEventListener</code>, et <code>removeEventListener</code>.</p>
 
