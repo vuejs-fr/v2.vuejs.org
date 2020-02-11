@@ -203,7 +203,7 @@ Maintenant, faisons le rendu d'un composant pour chacun :
 ></blog-post>
 ```
 
-Vous voyez au-dessus que nous pouvons utiliser `v-bind` pour dynamiquement passer des props. Cela est particulièrement utile quand vous ne connaissez pas exactement le contenu dont vous êtes en train de faire le rendu à l'avance, comme dans le cas de [récupération de billets depuis une API](https://jsfiddle.net/chrisvfritz/sbLgr0ad).
+Vous voyez au-dessus que nous pouvons utiliser `v-bind` pour dynamiquement passer des props. Cela est particulièrement utile quand vous ne connaissez pas exactement le contenu dont vous êtes en train de faire le rendu à l'avance, comme dans le cas de [récupération de billets depuis une API](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-component-blog-post-example).
 
 C'est tout ce que vous avez besoin de savoir à propos des props pour le moment, mais une fois que vous aurez fini de lire cette page et que vous vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir pour lire le guide complet à propos des [props](components-props.html).
 
@@ -601,7 +601,7 @@ Dans l'exemple ci-dessus, `currentTabComponent` peut contenir soit :
 - le nom du composant enregistré, ou
 - un objet d'option de composant
 
-Regardez [ce fiddle](https://jsfiddle.net/chrisvfritz/o3nycadu/) pour expérimenter cela avec un code complet, ou [cette version](https://jsfiddle.net/chrisvfritz/b2qj69o1/) pour un exemple lié à un objet d'option de composant plutôt qu'à un nom enregistré.
+Regardez [ce fiddle](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-dynamic-components) pour expérimenter cela avec un code complet, ou [cette version](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-dynamic-components-with-binding) pour un exemple lié à un objet d'option de composant plutôt qu'à un nom enregistré.
 
 Gardez à l'esprit que ces attributs peuvent être utilisés sur des éléments HTML standard, cependant ils seront traités comme des composants, ce qui signifie que tous les attributs **seront liés en tant qu'attribut du DOM**. Pour que diverses propriétés fonctionnent comme vous le souhaité, comme pour `value`, vous allez devoir les liés en utilisant le [modificateur `.prop`](../api/#v-bind).
 

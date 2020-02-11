@@ -1244,7 +1244,7 @@ new Vue({
 
 <p class="tip">Un point important est a noter : ces transitions FLIP ne fonctionnent pas si des éléments sont configurés avec `display: inline`. Comme alternative, vous pouvez utiliser `display: inline-block` où placer des éléments dans un contexte flexible.</p>
 
-Ces animations FLIP ne se limitent pas à un seul axe. Les éléments dans une grille multidimensionnelle peuvent être transitionnés [aussi facilement](https://jsfiddle.net/chrisvfritz/sLrhk1bc/) :
+Ces animations FLIP ne se limitent pas à un seul axe. Les éléments dans une grille multidimensionnelle peuvent être transitionnés [aussi facilement](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-list-move-transitions) :
 
 {% raw %}
 <div id="sudoku-demo" class="demo">

@@ -21,7 +21,7 @@ Tous ces désavantages sont résolus par les **composants monofichiers** avec un
 
 Voici un exemple simple de fichier que nous appellerons `Hello.vue` :
 
-<a href="https://gist.github.com/chrisvfritz/e2b6a6110e0829d78fa4aedf7cf6b235" target="_blank" rel="noopener noreferrer"><img src="/images/vue-component.png" alt="Exemple d'un composant pour un seul fichier (cliquez pour voir le code sous forme de texte)" style="display: block; margin: 30px auto;"></a>
+<a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-single-file-components5" target="_blank" rel="noopener noreferrer"><img src="/images/vue-component.png" alt="Exemple d'un composant pour un seul fichier (cliquez pour voir le code sous forme de texte)" style="display: block; margin: 30px auto;"></a>
 
 Maintenant nous avons :
 
