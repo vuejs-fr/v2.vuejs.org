@@ -382,13 +382,15 @@ computed: {
 
 Dans les situations où les propriétés calculées ne sont pas utilisables (par ex. à l'intérieur d'une boucle `v-for` imbriquée), vous pouvez juste utiliser une méthode :
 
-``` html
-<li v-for="n in even(numbers)">{{ n }}</li>
+```html
+<ul v-for="set in sets">
+  <li v-for="n in even(set)">{{ n }}</li>
+</ul>
 ```
 
-``` js
+```js
 data: {
-  numbers: [ 1, 2, 3, 4, 5 ]
+  sets: [[ 1, 2, 3, 4, 5 ], [6, 7, 8, 9, 10]]
 },
 methods: {
   even: function (numbers) {

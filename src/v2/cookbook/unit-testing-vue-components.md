@@ -150,9 +150,11 @@ import Foo from './Foo.vue'
 describe('Foo', () => {
   it('restitue un message et répond correctement à la saisie de l\'utilisateur', () => {
     const wrapper = shallowMount(Foo, {
-      data: {
-        message: 'Hello World',
-        username: ''
+      data() {
+        return {
+          message: 'Hello World',
+          username: ''
+        }
       }
     })
 
