@@ -63,7 +63,7 @@ Il y a des cas cependant où cela _pourrait_ être approprié, notamment dans de
 </google-map>
 ```
 
-Le composant `<google-map>` peut définir une propriété `map` à laquelle tous les sous-composants ont besoin d'accéder. Dans ce cas, `<google-map-markers>` peut vouloir accéder à cette carte avec quelque-chose comme `this.$parent.getMap`, afin d'ajouter des marqueurs dessus. Vous pouvez voir ce pattern [en démonstration ici](https://jsfiddle.net/chrisvfritz/ttzutdxh/).
+Le composant `<google-map>` peut définir une propriété `map` à laquelle tous les sous-composants ont besoin d'accéder. Dans ce cas, `<google-map-markers>` peut vouloir accéder à cette carte avec quelque-chose comme `this.$parent.getMap`, afin d'ajouter des marqueurs dessus. Vous pouvez voir ce pattern [en démonstration ici](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-accessing-parent-component-instance).
 
 Gardez en tête, toutefois, que les composants conçus avec ce pattern sont toujours intrinsèquement fragiles. Par exemple, imaginons que nous ajoutons un nouveau composant `<google-map-region>` et que lorsque `<google-map-markers>` apparaît à l'intérieur, il affiche uniquement les marqueurs de cette région :
 
@@ -154,7 +154,7 @@ Ensuite, dans n'importe quel descendant, nous pouvons utiliser l'option `inject`
 inject: ['getMap']
 ```
 
-Vous pouvez voir l'[exemple complet ici](https://jsfiddle.net/chrisvfritz/tdv8dt3s/). L'avantage par rapport à `$parent` est que nous pouvons accéder à `getMap` dans _n'importe quel_ composant descendant, sans avoir à exposer l'instance entière de `<google-map>`. Cela nous permet de continuer à développer ce composant de façon plus sûre, sans crainte de devoir changer/supprimer quelque-chose sur lequel repose un composant enfant. L'interface entre ces composants reste clairement définie, tout comme avec les `props`.
+Vous pouvez voir l'[exemple complet ici](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-dependency-injection). L'avantage par rapport à `$parent` est que nous pouvons accéder à `getMap` dans _n'importe quel_ composant descendant, sans avoir à exposer l'instance entière de `<google-map>`. Cela nous permet de continuer à développer ce composant de façon plus sûre, sans crainte de devoir changer/supprimer quelque-chose sur lequel repose un composant enfant. L'interface entre ces composants reste clairement définie, tout comme avec les `props`.
 
 En fait, vous pouvez vous représenter l'injection de dépendances comme une sorte de « props à longue distance », sauf que :
 
@@ -233,7 +233,7 @@ methods: {
 }
 ```
 
-Consultez [ce fiddle](https://jsfiddle.net/09jvu65m/) pour le code complet. Notez cependant que si vous vous trouvez à devoir faire beaucoup de code de montage et de nettoyage au sein d'un seul composant, la meilleure solution sera souvent de créer des composants plus modulaires. Dans le cas présent, nous recommanderions de créer un composant réutilisable `<input-datepicker>`.
+Consultez [ce fiddle](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-programmatic-event-listeners) pour le code complet. Notez cependant que si vous vous trouvez à devoir faire beaucoup de code de montage et de nettoyage au sein d'un seul composant, la meilleure solution sera souvent de créer des composants plus modulaires. Dans le cas présent, nous recommanderions de créer un composant réutilisable `<input-datepicker>`.
 
 Pour en apprendre plus sur les écouteurs programmatiques, allez voir l'API des [méthodes d'événements d'une instance](https://vuejs.org/v2/api/#Instance-Methods-Events).
 
