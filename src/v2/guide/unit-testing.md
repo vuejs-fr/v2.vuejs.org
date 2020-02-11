@@ -29,14 +29,17 @@ En termes de structure de code pour les tests, vous n'avez rien de spécial à f
 </script>
 ```
 
-Puis importez les options de composant aux côtés de Vue et vous pourrez faire une série d'assertions communes (ici nous utilisons le style Jasmine/Jest avec l'assertions `expect` en tant qu'exemple) :
+Puis importez les options de composant avec [Vue Test Utils](https://vue-test-utils.vuejs.org/) et vous pourrez faire une série d'assertions communes (ici nous utilisons le style Jest avec l'assertions `expect` en tant qu'exemple) :
 
 ``` js
-// Importer Vue et le composant à tester
-import Vue from 'vue'
-import MyComponent from 'path/to/MyComponent.vue'
+// Importer `shallowMount` de Vue Test Utils et le composant à tester
+import { shallowMount } from '@vue/test-utils'
+import MyComponent from './MyComponent.vue'
 
-// Ici nous avons plusieurs tests avec Jasmine 2.0, cependant vous pouvez utiliser
+// Monter le composant
+const wrapper = shallowMount(MyComponent)
+
+// Ici nous avons plusieurs tests avec Jest, cependant vous pouvez utiliser
 // n'importe quel combo de lanceur de tests / bibliothèque d'assertions que vous préférez
 describe('MyComponent', () => {
   // Inspecter l'objet d'options du composant
@@ -54,15 +57,12 @@ describe('MyComponent', () => {
 
   // Inspecter l'instance au montage du composant
   it('affecte correctement les messages à la création', () => {
-    const vm = new Vue(MyComponent).$mount()
-    expect(vm.message).toBe('au revoir !')
+    expect(wrapper.vm.$data.message).toBe('bye!')
   })
 
   // Monter une instance et inspecter le résultat en sortie
   it('rend le message correct', () => {
-    const Constructor = Vue.extend(MyComponent)
-    const vm = new Constructor().$mount()
-    expect(vm.$el.textContent).toBe('au revoir !')
+    expect(wrapper.text()).toBe('bye!')
   })
 })
 ```
@@ -91,7 +91,7 @@ import MyComponent from './MyComponent.vue'
 
 // Fonction utilitaire qui monte et retourne le composant rendu
 function getMountedComponent(Component, propsData) {
-  return shallowMount(MyComponent, {
+  return shallowMount(MyComponent, { 
     propsData
   })
 }
