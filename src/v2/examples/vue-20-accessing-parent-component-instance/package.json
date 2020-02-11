@@ -1,7 +1,7 @@
 {
   "name": "vue-20-accessing-parent-component-instance",
   "version": "1.0.0",
-  "description": "Vue.js example accessing Parent Component Instance using Google Maps.",
+  "description": "(EN) Vue.js example accessing Parent Component Instance using Google Maps.",
   "main": "index.html",
   "scripts": {
     "start": "serve"

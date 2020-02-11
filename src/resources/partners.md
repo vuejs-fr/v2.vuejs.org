@@ -42,7 +42,7 @@ partners_list:
         name: Modus Create
         logo: https://res.cloudinary.com/modus-labs/image/upload/v1533109874/modus/logo-vertical-black.svg
         description:
-            "Modus Create is a disruptive consulting firm that helps companies transform for success in the digital future. 
+            "(EN) Modus Create is a disruptive consulting firm that helps companies transform for success in the digital future. 
             
             Clients work with Modus to effect transformational change through a unique collaborative engagement model that focuses on strategy, product design/build, user experience, company culture, and process change to accelerate their response to digital disruption. 
             

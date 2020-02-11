@@ -13,5 +13,5 @@
   "devDependencies": {},
   "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
   "keywords": [],
-  "description": "Hello.vue single-file components example using a .vue extension."
+  "description": "(EN) Hello.vue single-file components example using a .vue extension."
 }

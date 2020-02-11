@@ -4,13 +4,13 @@ type: guide
 order: 504
 ---
 
-## Reporting Vulnerabilities
+## (EN) Reporting Vulnerabilities
 
 When a vulnerability is reported, it immediately becomes our top concern, with a full-time contributor dropping everything to work on it. To report a vulnerability, please email [vuejs.org@gmail.com](mailto:vuejs.org@gmail.com).
 
 While the discovery of new vulnerabilities is rare, we also recommend always using the latest versions of Vue and its official companion libraries to ensure your application remains as secure as possible.
 
-## Rule No.1: Never Use Non-trusted Templates
+## (EN) Rule No.1: Never Use Non-trusted Templates
 
 The most fundamental security rule when using Vue is **never use non-trusted content as your component template**. Doing so is equivalent to allowing arbitrary JavaScript execution in your application - and worse, could lead to server breaches if the code is executed during server-side rendering. An example of such usage:
 
@@ -23,7 +23,7 @@ new Vue({
 
 Vue templates are compiled into JavaScript, and expressions inside templates will be executed as part of the rendering process. Although the expressions are evaluated against a specific rendering context, due to the complexity of potential global execution environments, it is impractical for a framework like Vue to completely shield you from potential malicious code execution without incurring unrealistic performance overhead. The most straightforward way to avoid this category of problems altogether is to make sure the contents of your Vue templates are always trusted and entirely controlled by you.
 
-## What Vue Does to Protect You
+## (EN) What Vue Does to Protect You
 
 ### HTML content
 
@@ -71,7 +71,7 @@ then it would be escaped to the following HTML:
 
 thus preventing the close of the `title` attribute to inject new, arbitrary HTML. This escaping is done using native browser APIs, like `setAttribute`, so a vulnerability can only exist if the browser itself is vulnerable.
 
-## Potential Dangers
+## (EN) Potential Dangers
 
 In any web application, allowing unsanitized, user-provided content to be executed as HTML, CSS, or JavaScript is potentially dangerous, so should be avoided wherever possible. There are times when some risk be acceptable though.
 
@@ -165,7 +165,7 @@ Sometimes we receive vulnerability reports on how it's possible to do cross-site
 
 2. The developer is mounting Vue to an entire HTML page which happens to contain server-rendered and user-provided content. This is fundamentally the same problem as \#1, but sometimes devs may do it without realizing. This can lead to possible vulnerabilities where the attacker provides HTML which is safe as plain HTML but unsafe as a Vue template. The best practice is to never mount Vue on nodes that may contain server-rendered and user-provided content.
 
-## Best Practices
+## (EN) Best Practices
 
 The general rule is that if you allow unsanitized, user-provided content to be executed (as either HTML, JavaScript, or even CSS), you might be opening yourself up to attacks. This advice actually holds true whether using Vue, another framework, or even no framework.
 
@@ -176,10 +176,10 @@ Beyond the recommendations made above for [Potential Dangers](#Potential-Dangers
 
 Then use what you learn to also review the source code of your dependencies for potentially dangerous patterns, if any of them include 3rd-party components or otherwise influence what's rendered to the DOM.
 
-## Backend Coordination
+## (EN) Backend Coordination
 
 HTTP security vulnerabilities, such as cross-site request forgery (CSRF/XSRF) and cross-site script inclusion (XSSI), are primarily addressed on the backend, so aren't a concern of Vue's. However, it's still a good idea to communicate with your backend team to learn how to best interact with their API, e.g. by submitting CSRF tokens with form submissions.
 
-## Server-Side Rendering (SSR)
+## (EN) Server-Side Rendering (SSR)
 
 There are some additional security concerns when using SSR, so make sure to follow the best practices outlined throughout [our SSR documentation](https://ssr.vuejs.org/) to avoid vulnerabilities.

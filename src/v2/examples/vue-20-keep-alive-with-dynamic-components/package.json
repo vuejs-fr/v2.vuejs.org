@@ -1,7 +1,7 @@
 {
   "name": "vue-20-keep-alive-with-dynamic-components",
   "version": "1.0.0",
-  "description": "The Posts tab maintains its state (the selected post) even when it's not rendered.",
+  "description": "(EN) The Posts tab maintains its state (the selected post) even when it's not rendered.",
   "main": "index.html",
   "scripts": {
     "start": "serve"

@@ -1,7 +1,7 @@
 {
   "name": "vue-20-priority-d-rules-correct-example",
   "version": "1.0.0",
-  "description": "A unique key on each conditional element so the transition is applied.",
+  "description": "(EN) A unique key on each conditional element so the transition is applied.",
   "main": "index.html",
   "scripts": {
     "start": "serve"

@@ -1,7 +1,7 @@
 {
   "name": "vue-20-dynamic-components-with-binding",
   "version": "1.0.0",
-  "description": "Showing binding to a component's options object.",
+  "description": "(EN) Showing binding to a component's options object.",
   "main": "index.html",
   "scripts": {
     "start": "serve"

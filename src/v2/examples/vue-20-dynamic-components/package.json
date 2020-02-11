@@ -1,7 +1,7 @@
 {
   "name": "vue-20-dynamic-components",
   "version": "1.0.0",
-  "description": "Used to dynamically switch between components, like in a tabbed interface.",
+  "description": "(EN) Used to dynamically switch between components, like in a tabbed interface.",
   "main": "index.html",
   "scripts": {
     "start": "serve"

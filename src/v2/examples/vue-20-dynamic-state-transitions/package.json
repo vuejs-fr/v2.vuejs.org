@@ -1,7 +1,7 @@
 {
   "name": "vue-20-dynamic-state-transitions",
   "version": "1.0.0",
-  "description": "Data backing state transitions can be updated in real time, like in this example.",
+  "description": "(EN) Data backing state transitions can be updated in real time, like in this example.",
   "main": "index.html",
   "scripts": {
     "start": "serve"

@@ -1,7 +1,7 @@
 {
   "name": "vue-20-dependency-injection",
   "version": "1.0.0",
-  "description": "Vue.js Dependency Injection example using Google Maps.",
+  "description": "(EN) Vue.js Dependency Injection example using Google Maps.",
   "main": "index.html",
   "scripts": {
     "start": "serve"

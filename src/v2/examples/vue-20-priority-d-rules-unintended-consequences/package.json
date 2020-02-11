@@ -1,7 +1,7 @@
 {
   "name": "vue-20-priority-d-rules-unintended-consequences",
   "version": "1.0.0",
-  "description": "Lacking a unique key on each conditional element, the transition is never applied.",
+  "description": "(EN) Lacking a unique key on each conditional element, the transition is never applied.",
   "main": "index.html",
   "scripts": {
     "start": "serve"
