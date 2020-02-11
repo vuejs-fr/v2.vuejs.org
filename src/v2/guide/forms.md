@@ -362,7 +362,7 @@ Par défaut, `v-model` synchronise le champ avec les données après chaque év�
 
 ``` html
 <!-- synchronisé après le "change" au lieu du "input" -->
-<input v-model.lazy="msg" >
+<input v-model.lazy="msg">
 ```
 
 ### `.number`

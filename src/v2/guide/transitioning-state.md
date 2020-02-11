@@ -366,7 +366,7 @@ function generatePoints (stats) {
 </style>
 {% endraw %}
 
-Consulter [ce fiddle](https://jsfiddle.net/chrisvfritz/65gLu2b6/) pour voir le code complet derrière la démo ci-dessus.
+Consulter [cet exemple](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-dynamic-state-transitions) pour voir le code complet derrière la démo ci-dessus.
 
 ## Organisation des transitions dans les composants
 

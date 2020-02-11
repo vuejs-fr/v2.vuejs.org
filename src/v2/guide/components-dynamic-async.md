@@ -193,7 +193,7 @@ new Vue({
 </script>
 {% endraw %}
 
-Désormais, l'onglet _Posts_ conserve son état (le post sélectionné) même lorsqu'il n'est pas dessiné. Consultez [ce fiddle](https://jsfiddle.net/chrisvfritz/Lp20op9o/) pour le code complet.
+Désormais, l'onglet _Posts_ conserve son état (le post sélectionné) même lorsqu'il n'est pas dessiné. Consultez [ce fiddle](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-keep-alive-with-dynamic-components) pour le code complet.
 
 <p class="tip">Notez que `<keep-alive>` requiert que tous les sous-composants aient un nom, soit via l'option `name` des composants, soit via une inscription locale/globale de ces composants.</p>
 

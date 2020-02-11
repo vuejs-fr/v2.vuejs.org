@@ -290,10 +290,10 @@ Par exemple :
 
 ```html
 <!-- Alt + C -->
-<input @keyup.alt.67="clear">
+<input v-on:keyup.alt.67="clear">
 
 <!-- Ctrl + Click -->
-<div @click.ctrl="doSomething">Do something</div>
+<div v-on:click.ctrl="doSomething">Do something</div>
 ```
 
 <p class="tip">Notez que ces modificateurs de raccourcis sont différents des modificateurs usuels utilisés avec l'évènement `keyup`, ils doivent être pressés quand l'évènement est émis. En d'autres mots, `keyup.ctrl` sera déclenché uniquement si vous relâchez une touche pendant que vous maintenez la touche `ctrl` enfoncée. Rien ne sera déclenché si vous relâchez uniquement la touche `Ctrl`. Si vous souhaitez un tel comportement, utilisez le `keyCode` pour `ctrl` à la place : `keyup.17`.</p>
@@ -306,13 +306,13 @@ Le modificateur `.exact` permet le contrôle de la combinaison de touches systè
 
 ``` html
 <!-- ceci va aussi émettre un évènement si les touches Alt et Shift sont pressées -->
-<button @click.ctrl="onClick">A</button>
+<button v-on:click.ctrl="onClick">A</button>
 
 <!-- ceci va émettre un évènement seulement si la touche Ctrl est pressée sans aucune autre touche -->
-<button @click.ctrl.exact="onCtrlClick">A</button>
+<button v-on:click.ctrl.exact="onCtrlClick">A</button>
 
 <!-- ceci va émettre un évènement si aucune touche n'est pressée -->
-<button @click.exact="onClick">A</button>
+<button v-on:click.exact="onClick">A</button>
 ```
 
 ### Modificateurs de boutons de la souris
