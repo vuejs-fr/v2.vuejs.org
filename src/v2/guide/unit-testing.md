@@ -29,7 +29,7 @@ En termes de structure de code pour les tests, vous n'avez rien de spécial à f
 </script>
 ```
 
-Puis importez les options de composant avec [Vue Test Utils](https://vue-test-utils.vuejs.org/) et vous pourrez faire une série d'assertions communes (ici nous utilisons le style Jest avec l'assertions `expect` en tant qu'exemple) :
+Puis importez le composant avec [Vue Test Utils](https://vue-test-utils.vuejs.org/) et vous pourrez faire une série d'assertions communes (ici nous utilisons le style Jest avec l'assertion `expect` en tant qu'exemple) :
 
 ``` js
 // Importer `shallowMount` de Vue Test Utils et le composant à tester
@@ -40,7 +40,7 @@ import MyComponent from './MyComponent.vue'
 const wrapper = shallowMount(MyComponent)
 
 // Ici nous avons plusieurs tests avec Jest, cependant vous pouvez utiliser
-// n'importe quel combo de lanceur de tests / bibliothèque d'assertions que vous préférez
+// n'importe quel combo de lanceur de tests/bibliothèque d'assertions que vous préférez
 describe('MyComponent', () => {
   // Inspecter l'objet d'options du composant
   it('a le hook `created`', () => {
@@ -57,12 +57,12 @@ describe('MyComponent', () => {
 
   // Inspecter l'instance au montage du composant
   it('affecte correctement les messages à la création', () => {
-    expect(wrapper.vm.$data.message).toBe('bye!')
+    expect(wrapper.vm.$data.message).toBe('au revoir !')
   })
 
   // Monter une instance et inspecter le résultat en sortie
   it('rend le message correct', () => {
-    expect(wrapper.text()).toBe('bye!')
+    expect(wrapper.text()).toBe('au revoir !')
   })
 })
 ```
