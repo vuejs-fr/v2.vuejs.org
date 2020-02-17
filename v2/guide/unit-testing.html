@@ -980,19 +980,19 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
+  export default &#123;
     data () &#123;
-      <span class="hljs-keyword">return</span> &#123;
-        <span class="hljs-attr">message</span>: <span class="hljs-string">'bonjour !'</span>
+      return &#123;
+        message: 'bonjour !'
       &#125;
     &#125;,
     created () &#123;
-      <span class="hljs-keyword">this</span>.message = <span class="hljs-string">'au revoir !'</span>
+      this.message = 'au revoir !'
     &#125;
   &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
-<p>Puis importez les options de composant avec <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> et vous pourrez faire une série d’assertions communes (ici nous utilisons le style Jest avec l’assertions <code>expect</code> en tant qu’exemple) :</p>
+<p>Puis importez le composant avec <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> et vous pourrez faire une série d’assertions communes (ici nous utilisons le style Jest avec l’assertion <code>expect</code> en tant qu’exemple) :</p>
 <pre><code class="hljs js"><span class="hljs-comment">// Importer `shallowMount` de Vue Test Utils et le composant à tester</span>
 <span class="hljs-keyword">import</span> &#123; shallowMount &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@vue/test-utils'</span>
 <span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyComponent.vue'</span>
@@ -1001,7 +1001,7 @@
 <span class="hljs-keyword">const</span> wrapper = shallowMount(MyComponent)
 
 <span class="hljs-comment">// Ici nous avons plusieurs tests avec Jest, cependant vous pouvez utiliser</span>
-<span class="hljs-comment">// n'importe quel combo de lanceur de tests / bibliothèque d'assertions que vous préférez</span>
+<span class="hljs-comment">// n'importe quel combo de lanceur de tests/bibliothèque d'assertions que vous préférez</span>
 describe(<span class="hljs-string">'MyComponent'</span>, () =&gt; &#123;
   <span class="hljs-comment">// Inspecter l'objet d'options du composant</span>
   it(<span class="hljs-string">'a le hook `created`'</span>, () =&gt; &#123;
@@ -1018,12 +1018,12 @@ describe(<span class="hljs-string">'MyComponent'</span>, () =&gt; &#123;
 
   <span class="hljs-comment">// Inspecter l'instance au montage du composant</span>
   it(<span class="hljs-string">'affecte correctement les messages à la création'</span>, () =&gt; &#123;
-    expect(wrapper.vm.$data.message).toBe(<span class="hljs-string">'bye!'</span>)
+    expect(wrapper.vm.$data.message).toBe(<span class="hljs-string">'au revoir !'</span>)
   &#125;)
 
   <span class="hljs-comment">// Monter une instance et inspecter le résultat en sortie</span>
   it(<span class="hljs-string">'rend le message correct'</span>, () =&gt; &#123;
-    expect(wrapper.text()).toBe(<span class="hljs-string">'bye!'</span>)
+    expect(wrapper.text()).toBe(<span class="hljs-string">'au revoir !'</span>)
   &#125;)
 &#125;)</code></pre>
 <h2 id="Ecrire-des-composants-testables"><a href="#Ecrire-des-composants-testables" class="headerlink" title="Écrire des composants testables"></a>Écrire des composants testables</h2><p>Une bonne partie du code en sortie du rendu d’un composant est principalement déterminée par les props qu’il reçoit. Si le rendu d’un composant dépend uniquement de ses props, il devient assez facile à tester, de la même manière que l’on ferait une assertion sur la valeur de retour d’une fonction pure avec différents arguments. Voici un exemple :</p>
@@ -1036,13 +1036,13 @@ describe(<span class="hljs-string">'MyComponent'</span>, () =&gt; &#123;
     <span class="hljs-attr">props</span>: [<span class="hljs-string">'msg'</span>]
   &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
-<p>Vous pouvez faire des assertions sur le rendu en sortie avec différentes props en utilisant <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> :</p>
+<p>Vous pouvez faire des assertions sur le rendu en sortie avec différentes props avec <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> :</p>
 <pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; shallowMount &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@vue/test-utils'</span>
 <span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyComponent.vue'</span>
 
 <span class="hljs-comment">// Fonction utilitaire qui monte et retourne le composant rendu</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getMountedComponent</span>(<span class="hljs-params">Component, propsData</span>) </span>&#123;
-  <span class="hljs-keyword">return</span> shallowMount(Component, &#123;
+  <span class="hljs-keyword">return</span> shallowMount(MyComponent, &#123; 
     propsData
   &#125;)
 &#125;
@@ -1062,13 +1062,13 @@ describe(<span class="hljs-string">'MyComponent'</span>, () =&gt; &#123;
     ).toBe(<span class="hljs-string">'Au revoir'</span>)
   &#125;)
 &#125;)</code></pre>
-<h2 id="Assertions-sur-des-mises-a-jour-asynchrones"><a href="#Assertions-sur-des-mises-a-jour-asynchrones" class="headerlink" title="Assertions sur des mises à jour asynchrones"></a>Assertions sur des mises à jour asynchrones</h2><p>Parce que Vue <a href="reactivity.html#File-d’attente-de-mise-a-jour-asynchrone">fait les mises à jour du DOM de manière asynchrone</a>, les assertions sur les mises à jour du DOM résultant d’un changement d’état doivent être faites après que <code>vm.$nextTick()</code> soit résolue :</p>
+<h2 id="Assertions-sur-des-mises-a-jour-asynchrones"><a href="#Assertions-sur-des-mises-a-jour-asynchrones" class="headerlink" title="Assertions sur des mises à jour asynchrones"></a>Assertions sur des mises à jour asynchrones</h2><p>Parce que Vue <a href="reactivity.html#File-d’attente-de-mise-a-jour-asynchrone">fait les mises à jour du DOM de manière asynchrone</a>, les assertions sur les mises à jour du DOM résultant d’un changement d’état doivent être faites une fois que la promesse retournée par <code>vm.$nextTick()</code> est résolue :</p>
 <pre><code class="hljs js"><span class="hljs-comment">// Inspecter le HTML généré après une mise à jour d'état</span>
-it(<span class="hljs-string">'met à jour le message rendu quand `vm.message` est mis à jour'</span>, <span class="hljs-keyword">async</span> () =&gt; &#123;
+it(<span class="hljs-string">'met à jour le message rendu quand `wrapper.message` est mis à jour'</span>, <span class="hljs-keyword">async</span> () =&gt; &#123;
   <span class="hljs-keyword">const</span> wrapper = shallowMount(MyComponent)
   wrapper.setData(&#123; <span class="hljs-attr">message</span>: <span class="hljs-string">'foo'</span> &#125;)
 
-  <span class="hljs-comment">// attendre une boucle (« tick ») après le changement d'état avant de faire l'assertion des mises à jour du DOM</span>
+  <span class="hljs-comment">// Attendre une boucle (« tick ») après le changement d'état avant de faire l'assertion des mises à jour du DOM</span>
   <span class="hljs-keyword">await</span> wrapper.vm.$nextTick()
   expect(wrapper.text()).toBe(<span class="hljs-string">'foo'</span>)
 &#125;)</code></pre>
