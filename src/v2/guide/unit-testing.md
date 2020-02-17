@@ -83,7 +83,7 @@ Une bonne partie du code en sortie du rendu d'un composant est principalement d�
 </script>
 ```
 
-Vous pouvez faire des assertions sur le rendu en sortie avec différentes props en utilisant [Vue Test Utils](https://vue-test-utils.vuejs.org/) :
+Vous pouvez faire des assertions sur le rendu en sortie avec différentes props avec [Vue Test Utils](https://vue-test-utils.vuejs.org/) :
 
 ``` js
 import { shallowMount } from '@vue/test-utils'
@@ -91,7 +91,7 @@ import MyComponent from './MyComponent.vue'
 
 // Fonction utilitaire qui monte et retourne le composant rendu
 function getMountedComponent(Component, propsData) {
-  return shallowMount(Component, {
+  return shallowMount(MyComponent, { 
     propsData
   })
 }
@@ -115,15 +115,15 @@ describe('MyComponent', () => {
 
 ## Assertions sur des mises à jour asynchrones
 
-Parce que Vue [fait les mises à jour du DOM de manière asynchrone](reactivity.html#File-d’attente-de-mise-a-jour-asynchrone), les assertions sur les mises à jour du DOM résultant d'un changement d'état doivent être faites après que `vm.$nextTick()` soit résolue :
+Parce que Vue [fait les mises à jour du DOM de manière asynchrone](reactivity.html#File-d’attente-de-mise-a-jour-asynchrone), les assertions sur les mises à jour du DOM résultant d'un changement d'état doivent être faites une fois que la promesse retournée par `vm.$nextTick()` est résolue :
 
 ``` js
 // Inspecter le HTML généré après une mise à jour d'état
-it('met à jour le message rendu quand `vm.message` est mis à jour', async () => {
+it('met à jour le message rendu quand `wrapper.message` est mis à jour', async () => {
   const wrapper = shallowMount(MyComponent)
   wrapper.setData({ message: 'foo' })
 
-  // attendre une boucle (« tick ») après le changement d'état avant de faire l'assertion des mises à jour du DOM
+  // Attendre une boucle (« tick ») après le changement d'état avant de faire l'assertion des mises à jour du DOM
   await wrapper.vm.$nextTick()
   expect(wrapper.text()).toBe('foo')
 })
