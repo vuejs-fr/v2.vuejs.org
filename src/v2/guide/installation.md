@@ -22,7 +22,7 @@ Les notes de version détaillées pour chaque version sont disponibles sur [GitH
 
 ## Vue Devtools
 
-Quand vous utilisez Vue, nous vous recommandons également d'installer [Vue Devtools](https://github.com/vuejs/vue-devtools#vue-devtools) dans votre navigateur. Cela vous permetta d'inspecter et de déboguer vos applications Vue dans une interface dédiée et intuitive.
+Quand vous utilisez Vue, nous vous recommandons également d'installer [Vue Devtools](https://github.com/vuejs/vue-devtools#vue-devtools) dans votre navigateur. Cela vous permettra d'inspecter et de déboguer vos applications Vue dans une interface dédiée et intuitive.
 
 ## Inclusion directe `<script>`
 
@@ -50,7 +50,7 @@ Pour la production, nous vous recommandons de vous figer à une version et un bu
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
 ```
 
-Si vous utilisez des Modules ES natif, il y a également un build compatible avec les Modules ES :
+Si vous utilisez des Modules ES natifs, il y a également un build compatible avec les Modules ES :
 
 ``` html
 <script type="module">
