@@ -104,7 +104,7 @@ Il y a six classes appliquées pour les transitions entrantes/sortantes.
 
 5. `v-leave-active`: c'est l'état actif pour *leave*. Il est appliqué pendant toute la phase *leave*. Il est ajouté dès qu'une transition sortante est déclenchée, il est supprimé lorsque la transition/animation est terminée. Cette classe peut être utilisée pour définir la durée, le retard et la courbe d'accélération pour la transition de sortie.
 
-6. `v-leave-to`: **seulement disponible pour les versions 2.1.8+.** C'est l'état de fin pour *leave*. Il est ajouté après que la transition sortante soit déclenchée (au même moment que `v-leave` est supprimé), il est supprimé lorsque la transition/animation est terminée.
+6. `v-leave-to`: **seulement disponible pour les versions 2.1.8+.** C'est l'état de fin pour *leave*. Il est ajouté après que la transition sortante est déclenchée (au même moment que `v-leave` est supprimé), il est supprimé lorsque la transition/animation est terminée.
 
 ![Diagramme de transition](/images/transition.png)
 

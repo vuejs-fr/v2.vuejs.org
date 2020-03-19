@@ -24,7 +24,7 @@ order: 0
 
 Les tutoriels apportent aux développeurs des exemples à utiliser pour couvrir des cas d'utilisation courants ou intéressants, et expliquent progressivement des points plus complexes. Notre but est d'aller au-delà d'un simple exemple d'introduction et de mettre en avant des concepts qui sont plus largement utilisables, avec les avertissements et restrictions inhérents à leurs utilisations.
 
-Si vous êtes intéressé par l'idée de contribuer, vous pouvez ouvrir une *issue* sur le github sous le tag **cookbook idea** avec votre idée afin que nous puissions vous guider dans la création d'une *pull request* qui sera acceptée. Après que votre idée ait été validée, merci de suivre le plan ci-dessous autant que possible. Certaines sections sont obligatoires, d'autres sont optionnelles. Suivre l'ordre chronologique est fortement conseillé mais non obligatoire.
+Si vous êtes intéressé par l'idée de contribuer, vous pouvez ouvrir une *issue* sur le github sous le tag **cookbook idea** avec votre idée afin que nous puissions vous guider dans la création d'une *pull request* qui sera acceptée. Après que votre idée a été validée, merci de suivre le plan ci-dessous autant que possible. Certaines sections sont obligatoires, d'autres sont optionnelles. Suivre l'ordre chronologique est fortement conseillé mais non obligatoire.
 
 Les tutoriels doivent généralement :
 
