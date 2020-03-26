@@ -21,7 +21,7 @@ Installez et créez un projet avec la [vue-cli](https://github.com/vuejs/vue-cli
 
 ### Affichage du code source dans le navigateur
 
-Avant de pouvoir déboguer vos composants Vue à partir de VS Code, vous devez mettre à jour la configuration webpack générée pour construire des sourcemaps. Nous faisons cela pour que notre débogueur ait un moyen de mapper le code d'un fichier compressé à sa position dans le fichier d'origine. Ceci vous permet de déboguer une application même après que vos ressources aient été optimisées par webpack.
+Avant de pouvoir déboguer vos composants Vue à partir de VS Code, vous devez mettre à jour la configuration webpack générée pour construire des sourcemaps. Nous faisons cela pour que notre débogueur ait un moyen de mapper le code d'un fichier compressé à sa position dans le fichier d'origine. Ceci vous permet de déboguer une application même après que vos ressources ont été optimisées par webpack.
 
 Si vous utilisez Vue CLI 2, définissez ou mettez à jour le paramètre `devtool` dans `config/index.js` :
 
