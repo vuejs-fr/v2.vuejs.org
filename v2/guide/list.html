@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -942,6 +945,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -976,7 +982,7 @@
 
 <h2 id="Associer-un-tableau-a-des-elements-avec-v-for"><a href="#Associer-un-tableau-a-des-elements-avec-v-for" class="headerlink" title="Associer un tableau à des éléments avec v-for"></a>Associer un tableau à des éléments avec <code>v-for</code></h2><p>Nous pouvons utiliser la directive <code>v-for</code> pour faire le rendu d’une liste d’éléments en nous basant sur un tableau. La directive <code>v-for</code> utilise une syntaxe spécifique de la forme <code>item in items</code>, où <code>items</code> représente le tableau source des données et où <code>item</code> est un <strong>alias</strong> représentant l’élément du tableau en cours d’itération :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-1"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">"item.message"</span>&gt;</span>
     &#123;&#123; item.message &#125;&#125;
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
@@ -992,7 +998,7 @@
 <p>Résultat :</p>
 
 <ul id="example-1" class="demo">
-  <li v-for="item in items">
+  <li v-for="item in items" :key="item.message">
     {{item.message}}
   </li>
 </ul>
@@ -1157,60 +1163,7 @@ new Vue({
   <span class="hljs-keyword">return</span> item.message.match(<span class="hljs-regexp">/Foo/</span>)
 &#125;)</code></pre>
 <p>Vous pouvez penser que cela va forcer Vue à jeter le DOM existant et à faire de nouveau le rendu de la liste entière ? Par chance, cela n’est pas le cas. Vue implémente plusieurs fonctions heuristiques intelligentes pour maximiser la réutilisation du DOM existant ; ainsi remplacer un tableau par un autre contenant des objets différents à certains index est une opération très performante.</p>
-<h3 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h3><p>À cause des limitations en JavaScript, Vue <strong>ne peut pas</strong> détecter les changements suivants dans un tableau :</p>
-<ol>
-<li>Quand vous affectez directement un élément à un index. Par ex. : <code>vm.items[indexOfItem] = newValue</code></li>
-<li>Quand vous modifiez la longueur du tableau. Par ex. : <code>vm.items.length = newLength</code></li>
-</ol>
-<p>Par exemple :</p>
-<pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
-  <span class="hljs-attr">data</span>: &#123;
-    <span class="hljs-attr">items</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>]
-  &#125;
-&#125;)
-vm.items[<span class="hljs-number">1</span>] = <span class="hljs-string">'x'</span> <span class="hljs-comment">// N'est PAS réactive</span>
-vm.items.length = <span class="hljs-number">2</span> <span class="hljs-comment">// N'est PAS réactive</span></code></pre>
-<p>Pour contourner la première limitation, les deux exemples suivants accomplissent la même chose que <code>vm.items[indexOfItem] = newValue</code>, mais vont également déclencher des mises à jour de l’état dans le système de réactivité :</p>
-<pre><code class="hljs js"><span class="hljs-comment">// Vue.set</span>
-Vue.set(vm.items, indexOfItem, newValue)</code></pre>
-<pre><code class="hljs js"><span class="hljs-comment">// Array.prototype.splice</span>
-vm.items.splice(indexOfItem, <span class="hljs-number">1</span>, newValue)</code></pre>
-<p>Vous pouvez également utiliser la méthode d’instance <a href="https://vuejs.org/v2/api/#vm-set" target="_blank" rel="noopener"><code>vm.$set</code></a>, qui est un alias pour la méthode globale <code>Vue.set</code> :</p>
-<pre><code class="hljs js">vm.$set(vm.items, indexOfItem, newValue)</code></pre>
-<p>Pour gérer la seconde limitation, vous pouvez également utiliser <code>splice</code> :</p>
-<pre><code class="hljs js">vm.items.splice(newLength)</code></pre>
-<h2 id="Limitation-de-detection-de-changement-dans-un-objet"><a href="#Limitation-de-detection-de-changement-dans-un-objet" class="headerlink" title="Limitation de détection de changement dans un objet"></a>Limitation de détection de changement dans un objet</h2><p>De nouveau, à cause de limitation du JavaScript, <strong>Vue ne peut détecter l’ajout ou la suppression d’une propriété</strong>. Par exemple :</p>
-<pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
-  <span class="hljs-attr">data</span>: &#123;
-    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>
-  &#125;
-&#125;)
-<span class="hljs-comment">// `vm.a` est maintenant réactive</span>
-
-vm.b = <span class="hljs-number">2</span>
-<span class="hljs-comment">// `vm.b` N'est PAS réactive</span></code></pre>
-<p>Vue ne permet pas d’ajouter dynamiquement de nouvelles propriétés réactives au niveau racine sur des instances déjà créées. Cependant, il est possible d’ajouter des propriétés réactives aux objets imbriqués en utilisant la méthode <code>Vue.set(object, propertyName, value)</code>. Par exemple avec :</p>
-<pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
-  <span class="hljs-attr">data</span>: &#123;
-    <span class="hljs-attr">userProfile</span>: &#123;
-      <span class="hljs-attr">name</span>: <span class="hljs-string">'Anika'</span>
-    &#125;
-  &#125;
-&#125;)</code></pre>
-<p>Vous pourriez ajouter une nouvelle propriété <code>age</code> à l’objet imbriqué <code>userProfile</code> avec :</p>
-<pre><code class="hljs js">Vue.set(vm.userProfile, <span class="hljs-string">'age'</span>, <span class="hljs-number">27</span>)</code></pre>
-<p>Vous pouvez également utiliser la méthode d’instance <code>vm.$set</code>, qui est juste un alias de la méthode globale <code>Vue.set</code> :</p>
-<pre><code class="hljs js">vm.$set(vm.userProfile, <span class="hljs-string">'age'</span>, <span class="hljs-number">27</span>)</code></pre>
-<p>Parfois vous voudrez affecter plusieurs nouvelles propriétés à un objet existant, par exemple en utilisant <code>Object.assign()</code> ou <code>_.extend()</code>. Dans ce cas, vous devrez créer un nouvel objet avec les propriétés des deux objets. Donc au lieu de :</p>
-<pre><code class="hljs js"><span class="hljs-built_in">Object</span>.assign(vm.userProfile, &#123;
-  <span class="hljs-attr">age</span>: <span class="hljs-number">27</span>,
-  <span class="hljs-attr">favoriteColor</span>: <span class="hljs-string">'Vert Vue'</span>
-&#125;)</code></pre>
-<p>Vous ajouterez une nouvelle propriété réactive avec :</p>
-<pre><code class="hljs js">vm.userProfile = <span class="hljs-built_in">Object</span>.assign(&#123;&#125;, vm.userProfile, &#123;
-  <span class="hljs-attr">age</span>: <span class="hljs-number">27</span>,
-  <span class="hljs-attr">favoriteColor</span>: <span class="hljs-string">'Vert Vue'</span>
-&#125;)</code></pre>
+<h3 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h3><p>En raison des limitations de JavaScript, il y a des types de changements que Vue <strong>ne peut pas détecter</strong> avec les tableaux et les objets. Ils sont abordés dans la section <a href="reactivity.html#Limitations-de-la-detection-de-changement">réactivité</a>.</p>
 <h2 id="Affichage-de-resultats-filtres-tries"><a href="#Affichage-de-resultats-filtres-tries" class="headerlink" title="Affichage de résultats filtrés/triés"></a>Affichage de résultats filtrés/triés</h2><p>Parfois nous voulons afficher une version filtrée ou triée d’un tableau sans pour autant modifier ou réassigner les données d’origine. Dans ce cas, vous pouvez créer une propriété calculée qui retourne le tableau filtré ou trié.</p>
 <p>Par exemple :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"n in evenNumbers"</span>&gt;</span>&#123;&#123; n &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code></pre>

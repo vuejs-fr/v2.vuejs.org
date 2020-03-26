@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -942,6 +945,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -973,7 +979,7 @@
   
   
     <h2 id="Usage-basique"><a href="#Usage-basique" class="headerlink" title="Usage basique"></a>Usage basique</h2><p>Vous pouvez utiliser la directive <code>v-model</code> pour créer une liaison de données bidirectionnelle sur les champs de formulaire (input, select ou textarea). Elle choisira automatiquement la bonne manière de mettre à jour l’élément en fonction du type de champ. Bien qu’un peu magique, <code>v-model</code> est essentiellement du sucre syntaxique pour mettre à jour les données lors des évènements de saisie utilisateur sur les champs, ainsi que quelques traitements spéciaux pour certains cas particuliers.</p>
-<p class="tip"><code>v-model</code> ne prend pas en compte la valeur initiale des attributs <code>value</code>, <code>checked</code> ou <code>selected</code> fournis par un champ. Elle traitera toujours les données de l’instance de vue comme la source de vérité. Vous devez déclarer la valeur initiale dans votre JavaScript, dans l’option <code>data</code> de votre composant.</p>
+<p class="tip"><code>v-model</code> ne prend pas en compte la valeur initiale des attributs <code>value</code>, <code>checked</code> ou <code>selected</code> fournis par un champ. Elle traitera toujours les données de l’instance de Vue comme la source de vérité. Vous devez déclarer la valeur initiale dans votre JavaScript, dans l’option <code>data</code> de votre composant.</p>
 
 <p><code>v-model</code> utilise en interne différentes propriétés et émetteurs d’évènement pour différents éléments de saisie :</p>
 <ul>
@@ -1135,7 +1141,7 @@ new Vue({
 })
 </script>
 
-<p class="tip">Si la valeur initiale de votre expression dans <code>v-model</code> ne correspond à aucune des options, l’élément <code>&lt;select&gt;</code> va faire le rendu dans un état « non sélectionné ». Sur iOS cela va conduire l’utilisateur à ne pas pouvoir sélectionner le premier élément car aucun évènement <code>change</code> n’est déclenché dans ce cas. Il est cependant recommandé de fournir une option désactivée avec une valeur vide comme dans l’exemple ci-dessus.</p>
+<p class="tip">&gt;Si la valeur initiale de votre expression dans <code>v-model</code> ne correspond à aucune des options, l’élément <code>&lt;select&gt;</code> va faire le rendu dans un état « non sélectionné ». Sur iOS cela va conduire l’utilisateur à ne pas pouvoir sélectionner le premier élément car aucun évènement <code>change</code> n’est déclenché dans ce cas. Il est cependant recommandé de fournir une option désactivée avec une valeur vide comme dans l’exemple ci-dessus.</p>
 
 <p>Select à choix multiples (lié à un tableau) :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"selected"</span> <span class="hljs-attr">multiple</span>&gt;</span>
@@ -1227,7 +1233,7 @@ new Vue({
 vm.toggle === <span class="hljs-string">'oui'</span>
 <span class="hljs-comment">// lorsque que c'est décoché :</span>
 vm.toggle === <span class="hljs-string">'non'</span></code></pre>
-<p class="tip">Les attributs <code>true-value</code> et <code>false-value</code> n’affectent pas la valeur de l’attribut <code>value</code>, car les navigateurs n’incluent pas les cases non cochées dans les soumissions de formulaire. Pour garantir que l’une des deux valeurs soit soumise par le formulaire (par ex. <code>&quot;&#39;oui&#39;&quot;</code> ou <code>&quot;&#39;non&#39;&quot;</code>), utilisez les boutons radio à la place.</p>
+<p class="tip">Les attributs <code>true-value</code> et <code>false-value</code> n’affectent pas la valeur de l’attribut <code>value</code>, car les navigateurs n’incluent pas les cases non cochées dans les soumissions de formulaire. Pour garantir que l’une des deux valeurs soit soumise par le formulaire (par ex. « oui » ou « non »), utilisez les boutons radio à la place.</p>
 
 <h3 id="Radio-1"><a href="#Radio-1" class="headerlink" title="Radio"></a>Radio</h3><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"pick"</span> <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">"a"</span>&gt;</span></code></pre>
 <pre><code class="hljs js"><span class="hljs-comment">// lorsque c'est choisi :</span>
@@ -1250,7 +1256,8 @@ vm.selected.number <span class="hljs-comment">// =&gt; 123</span></code></pre>
 <h2 id="v-model-avec-les-composants"><a href="#v-model-avec-les-composants" class="headerlink" title="v-model avec les composants"></a><code>v-model</code> avec les composants</h2><blockquote>
 <p>Si vous n’êtes pas encore familier avec les composants de Vue, passez cette section pour le moment.</p>
 </blockquote>
-<p>Les types de champ standards HTML ne couvriront pas toujours vos besoins. Heureusement, les composants de Vue vous permettent de construire des champs avec un comportement complètement personnalisé. Ces champs fonctionnent même avec <code>v-model</code> ! Pour en apprendre plus, lisez la section <a href="components.html#Utiliser-v-model-sur-les-composants">champs personnalisés</a> dans le guide des composants.</p>
+<p>Les types de saisie intégrés au HTML ne répondront pas toujours à vos besoins. Heureusement, les composants de Vue vous permettent de créer des entrées réutilisables avec un comportement entièrement personnalisé. Ces entrées fonctionnent même avec le <code>v-model</code> ! </p>
+<p>Pour en apprendre plus, lisez la section <a href="components.html#Utiliser-v-model-sur-les-composants">champs personnalisés</a> dans le guide des composants.</p>
 
   
   

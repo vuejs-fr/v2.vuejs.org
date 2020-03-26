@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -942,6 +945,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -1055,7 +1061,7 @@ new Vue({
 </li>
 <li><p><code>v-leave-active</code>: c’est l’état actif pour <em>leave</em>. Il est appliqué pendant toute la phase <em>leave</em>. Il est ajouté dès qu’une transition sortante est déclenchée, il est supprimé lorsque la transition/animation est terminée. Cette classe peut être utilisée pour définir la durée, le retard et la courbe d’accélération pour la transition de sortie.</p>
 </li>
-<li><p><code>v-leave-to</code>: <strong>seulement disponible pour les versions 2.1.8+.</strong> C’est l’état de fin pour <em>leave</em>. Il est ajouté après que la transition sortante soit déclenchée (au même moment que <code>v-leave</code> est supprimé), il est supprimé lorsque la transition/animation est terminée.</p>
+<li><p><code>v-leave-to</code>: <strong>seulement disponible pour les versions 2.1.8+.</strong> C’est l’état de fin pour <em>leave</em>. Il est ajouté après que la transition sortante est déclenchée (au même moment que <code>v-leave</code> est supprimé), il est supprimé lorsque la transition/animation est terminée.</p>
 </li>
 </ol>
 <p><img src="/images/transition.png" alt="Diagramme de transition"></p>
@@ -1357,6 +1363,7 @@ une excellente option pour les animations
   <span class="hljs-attr">methods</span>: &#123;
     <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
       el.style.opacity = <span class="hljs-number">0</span>
+      el.style.transformOrigin = <span class="hljs-string">'left'</span>
     &#125;,
     <span class="hljs-attr">enter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
       Velocity(el, &#123; <span class="hljs-attr">opacity</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">fontSize</span>: <span class="hljs-string">'1.4em'</span> &#125;, &#123; <span class="hljs-attr">duration</span>: <span class="hljs-number">300</span> &#125;)

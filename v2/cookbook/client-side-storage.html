@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -377,6 +380,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -430,9 +436,9 @@
     &#125;
   &#125;
 &#125;);</code></pre>
-<p>Concentrons-nous sur les parties <code>mounted</code> et <code>watch</code>. On utilise <code>mounted</code> pour récupérer la valeur depuis le localStorage. Pour garder les données en mémoire, on observe la valeur <code>name</code> et à chaque changement, on l’écrit dans le localStorage.</p>
+<p>Concentrons-nous sur les parties <code>mounted</code> et <code>watch</code>. On utilise <code>mounted</code> pour récupérer la valeur depuis le localStorage. Pour garder les données en mémoire, on observe la valeur <code>name</code> et à chaque changement, on l’écrit immédiatement.</p>
 <p>Vous pouvez le tester vous-même ici :</p>
-<p data-height="265" data-theme-id="0" data-slug-hash="KodaKb" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/KodaKb/" target="_blank" rel="noopener">test du localstorage</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster" target="_blank" rel="noopener">@cfjedimaster</a>) sur <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><br><script async src="https://static.codepen.io/assets/embed/ei.js"></script><br><br>Écrivez quelque chose dans le formulaire et rechargez la page. Vous remarquerez que la valeur que vous aviez écrite s’affichera automatiquement. N’oubliez pas que votre navigateur a d’excellents outils de développement pour inspecter le stockage côté client. Voici un exemple sur Firefox :<br><br><img src="/images/devtools-storage.png" alt="Stockage devtools sur Firefox"><br><br>Ici sur Chrome :<br><br><img src="/images/devtools-storage-chrome.png" alt="Stockage devtools sur Chrome"><br><br>Finalement, un exemple sur Microsoft Edge. Notez que vous pouvez trouver les valeurs stockées sous l’onglet Debugger.<br><br><img src="/images/devtools-storage-edge.png" alt="Stockage devtools sur Edge"><br><br><p class="tip">Ces outils de développement permettent aussi de supprimer les données stockées. Ça peut être très utile pour faire des tests.</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="KodaKb" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/KodaKb/" target="_blank" rel="noopener">test du localstorage</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster" target="_blank" rel="noopener">@cfjedimaster</a>) sur <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a> (EN).</p><br><script async src="https://static.codepen.io/assets/embed/ei.js"></script><br><br>Écrivez quelque chose dans le formulaire et rechargez la page. Vous remarquerez que la valeur que vous aviez écrite s’affichera automatiquement. N’oubliez pas que votre navigateur a d’excellents outils de développement pour inspecter le stockage côté client. Voici un exemple sur Firefox :<br><br><img src="/images/devtools-storage.png" alt="Stockage devtools sur Firefox"><br><br>Et ici sur Chrome :<br><br><img src="/images/devtools-storage-chrome.png" alt="Stockage devtools sur Chrome"><br><br>Finalement, un exemple sur Microsoft Edge. Notez que vous pouvez trouver les valeurs stockées sous l’onglet Debugger.<br><br><img src="/images/devtools-storage-edge.png" alt="Stockage devtools sur Edge"><br><br><p class="tip">Ces outils de développement permettent aussi de supprimer les données stockées. Ça peut être très utile pour faire des tests.</p>
 
 <p>Stocker immédiatement une valeur peut ne pas être recommandé. Considérons un exemple un peu plus avancé. Premièrement, le formulaire mis à jour.</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
@@ -463,30 +469,30 @@
     persist() &#123;
       localStorage.name = <span class="hljs-keyword">this</span>.name;
       localStorage.age = <span class="hljs-keyword">this</span>.age;
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'now pretend I did more stuff...'</span>);
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'maintenant prétendre que j\'ai fait plus de choses...'</span>);
     &#125;
   &#125;
 &#125;)</code></pre>
 <p>Comme avant, <code>mounted</code> est utilisé pour charger les données, si elles existent. Cette fois, les données sont sauvées seulement si le bouton est cliqué. On pourrait aussi faire des validations ou transformations ici avant de stocker les données. On pourrait aussi stocker une date représentant le moment ou les données ont été sauvées. Avec ces métadonnées, la fonction <code>mounted</code> pourrait vérifier si il faut encore stocker les valeurs. Vous pouvez essayer cette version ci-dessous.</p>
-<p></p><p data-height="265" data-theme-id="0" data-slug-hash="rdOjLN" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage 2" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/rdOjLN/" target="_blank" rel="noopener">test du localstorage 2</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster" target="_blank" rel="noopener">@cfjedimaster</a>) sur <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<p></p><p data-height="265" data-theme-id="0" data-slug-hash="rdOjLN" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage 2" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/rdOjLN/" target="_blank" rel="noopener">test du localstorage 2</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster" target="_blank" rel="noopener">@cfjedimaster</a>) sur <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a> (EN).</p><p></p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 <h2 id="Travailler-avec-des-valeurs-complexes"><a href="#Travailler-avec-des-valeurs-complexes" class="headerlink" title="Travailler avec des valeurs complexes"></a>Travailler avec des valeurs complexes</h2><p>Comme mentionné plus haut, le Local Storage marche seulement avec de simples valeurs. Pour stocker des valeurs plus complexes, comme un objet ou une liste, on doit sérialiser et désérialiser les valeurs avec JSON. Voici un exemple plus avancé qui sauvegarde une liste de chats (le meilleur type de liste possible).</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Chats<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(cat, n) in cats"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cat"</span>&gt;</span>&#123;&#123; cat &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"removeCat(n)"</span>&gt;</span>Enlever<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<pre><code class="hljs html">&lt;div id="app"&gt;
+  &lt;h2&gt;Chats&lt;/h2&gt;
+  &lt;div v-for="(cat, n) in cats"&gt;
+    &lt;p&gt;
+      &lt;span class="cat"&gt;&#123;&#123; cat &#125;&#125;&lt;/span&gt;
+      &lt;button @click="removeCat(n)"&gt;Enlever&lt;/button&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"newCat"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"addCat"</span>&gt;</span>Ajouter un chat<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-<p>Cette “app” contient une simple liste (avec un bouton pour enlever un chat) et un petit formulaire pour ajouter un nouveau chat. Maintenant regardons le JavaScript.</p>
+  &lt;p&gt;
+    &lt;input v-model="newCat"&gt;
+    &lt;button @click="addCat"Ajouter un chat&lt;/button&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<p>Cette « app » contient une simple liste (avec un bouton pour enlever un chat) et un petit formulaire pour ajouter un nouveau chat. Maintenant regardons le JavaScript.</p>
 <pre><code class="hljs js"><span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Vue(&#123;
   <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
   <span class="hljs-attr">data</span>: &#123;
@@ -525,7 +531,7 @@
 &#125;)</code></pre>
 <p>Dans cette application, on a utilisé l’API Local Storage à la place d’un accès “direct”. Les deux marchent mais utiliser l’API est généralement la méthode préférée. <code>mounted</code> doit récupérer et parser la valeur en JSON. S’il y a un problème, on peut assumer que les données sont corrompues et les supprimer. (N’oubliez pas, quand votre application utilise le stockage côté client, l’utilisateur y a accès et peut les modifier à volonté.)</p>
 <p>Nous avons trois méthodes pour s’occuper de nos chats. <code>addCat</code> et <code>removeCat</code> s’occupent de mettre à jour les données de Vue stockées dans <code>this.cats</code>. Ensuite elles appellent <code>saveCats</code> qui s’occupe de sérialiser et sauver les données. Vous pouvez vous amuser avec la version ci-dessous :</p>
-<p></p><p data-height="265" data-theme-id="0" data-slug-hash="qoYbyW" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="localstorage, complex" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/qoYbyW/" target="_blank" rel="noopener">localstorage, complexe</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster" target="_blank" rel="noopener">@cfjedimaster</a>) sur <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<p></p><p data-height="265" data-theme-id="0" data-slug-hash="qoYbyW" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="localstorage, complex" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/qoYbyW/" target="_blank" rel="noopener">localstorage plus complexe</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster" target="_blank" rel="noopener">@cfjedimaster</a>) sur <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a> (EN).</p><p></p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 <h2 id="Modeles-alternatifs"><a href="#Modeles-alternatifs" class="headerlink" title="Modèles alternatifs"></a>Modèles alternatifs</h2><p>Bien que l’API Local Storage est relativement simple, il manque quelques fonctions basiques qui seraient utiles dans beaucoup d’applications. Les plugins suivants utilisent le Local Storage et facilitent son utilisation, tout en ajoutant quelques fonctionnalités comme les valeurs par défaut.</p>

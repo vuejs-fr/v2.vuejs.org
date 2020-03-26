@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -941,6 +944,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -1636,14 +1642,14 @@ self.users.filter(<span class="hljs-function"><span class="hljs-keyword">functio
 
 <h3 id="Filtres-bidirectionnels-remplaces"><a href="#Filtres-bidirectionnels-remplaces" class="headerlink" title="Filtres bidirectionnels remplacés"></a>Filtres bidirectionnels <sup>remplacés</sup></h3><p>Beaucoup d’utilisateurs adorent utiliser des filtres bidirectionnels avec <code>v-model</code> pour créer des champs intéressants avec très peu de code. Si simple <em>d’apparence</em>, les filtres bidirectionnels peuvent aussi cacher un grand niveau de complexité et encourager une expérience utilisateur pauvre en rendant lente la mise à jour des états. À la place, la création d’un champ dans un composant est recommandée et permet de mieux appréhender son utilisation et d’y ajouter tout ce qu’il faut pour de la création de champs personnalisés.</p>
 <p>Par exemple, nous allons migrer un filtre de devise bidirectionnel :</p>
-<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/6744xnjk/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
-<p>Il fonctionne plutôt bien, mais la rétention de mise à jour d’état peut causer des comportements étranges. Par exemple, cliquez sur l’onglet <code>Result</code> et essayez d’entrer la valeur <code>9.999</code> dans l’un des champs. Quand le champ perd le focus, sa valeur va être mise à jour à <code>$10.00</code>. Quand vous regardez le total calculé cependant, vous verrez que <code>9.999</code> est toujours stocké dans nos données. La version de la réalité que l’utilisateur voit est hors de synchro !</p>
+<p>Il fonctionne plutôt bien, mais la rétention de mise à jour d’état peut causer des comportements étranges. Par exemple, essayez d’entrer la valeur <code>9.999</code> dans l’un des champs. Quand le champ perd le focus, sa valeur va être mise à jour à <code>$10.00</code>. Quand vous regardez le total calculé cependant, vous verrez que <code>9.999</code> est toujours stocké dans nos données. La version de la réalité que l’utilisateur voit est hors de synchro !</p>
 <p>Pour commencer a utiliser une solution plus robuste en utilisant Vue 2.0, commençons par entourer ce filtre dans un nouveau composant <code>&lt;currency-input&gt;</code> :</p>
-<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/943zfbsh/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter-v2?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 <p>Celui-ci nous permet d’ajouter des comportements qu’un filtre seul ne pourrait pas encapsuler, comme sélectionner le contenu d’un champ lors du focus. Maintenant, la prochaine étape va être d’extraire la logique métier du filtre. Ci-dessous, nous allons tout mettre dans un <a href="https://gist.github.com/chrisvfritz/5f0a639590d6e648933416f90ba7ae4e" target="_blank" rel="noopener">objet <code>currencyValidator</code></a> externe :</p>
-<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/9c32kev2/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter-v3?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 <p>Cette augmentation de la modularité ne permet pas seulement de rendre plus facile la migration vers Vue 2, mais permet également à l’analyse et au formatage d’être :</p>
 <ul>
@@ -1652,7 +1658,7 @@ self.users.filter(<span class="hljs-function"><span class="hljs-keyword">functio
 </ul>
 <p>Avec ce validateur extrait, nous sommes plus à l’aise pour construire une solution plus robuste. L’étrangeté de changement d’état a été éliminée et il est en fait impossible pour l’utilisateur d’entrer une valeur fausse, de la même manière que le fait le champ numérique natif des navigateurs.</p>
 <p>Nous sommes toujours limités cependant, par les filtres et par Vue 1.0 en général. Donc terminons notre mise à jour vers Vue 2.0 :</p>
-<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/1oqjojjx/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-two-way-currency-filter?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 <p>Vous pouvez remarquer que :</p>
 <ul>

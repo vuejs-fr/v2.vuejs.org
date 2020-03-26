@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -299,6 +302,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -730,7 +736,7 @@ Vue.component(<span class="hljs-string">'mon-composant'</span>, &#123; <span cla
 <li><p><strong>Détails :</strong></p>
 <p>L’objet de données pour l’instance de Vue. Vue va de manière récursive convertir ses propriétés en des accesseurs / mutateurs (<em>getter/setters</em>) afin de les rendre « réactives ». <strong>L’objet doit être un simple objet de base</strong>: les objets natifs tels que les API du navigateur et les propriétés issues du prototype sont ignorées. Une règle d’or est que la donnée doit juste être de la donnée. Il n’est pas recommandé d’observer des objets ayant leur propre comportement avec états.</p>
 <p>Une fois observé, vous ne pouvez plus ajouter de propriétés réactives à l’objet de données racine. C’est pourquoi il est recommandé de déclarer dès le départ toutes les propriétés réactives à la racine de l’objet de données, avant de créer l’instance.</p>
-<p>Après que l’instance ait été créée, l’objet de données initial peut être accédé via <code>vm.$data</code>. L’instance de Vue servira également de proxy pour toutes les propriétés trouvées dans l’objet de données, donc <code>vm.a</code> sera l’équivalent de <code>vm.$data.a</code>.</p>
+<p>Après que l’instance a été créée, l’objet de données initial peut être accédé via <code>vm.$data</code>. L’instance de Vue servira également de proxy pour toutes les propriétés trouvées dans l’objet de données, donc <code>vm.a</code> sera l’équivalent de <code>vm.$data.a</code>.</p>
 <p>Les propriétés commençant par <code>_</code> ou <code>$</code> ne seront <strong>pas</strong> proxyfiées par l’instance de Vue car elles pourraient entrer en conflit avec certaines propriétés internes et méthodes d’API de Vue. Vous devrez y accéder via <code>vm.$data._propriete</code>.</p>
 <p>Lors de la définition d’un <strong>composant</strong>, la propriété <code>data</code> doit être déclarée en tant que fonction retournant l’objet de données initial, car il y aura plusieurs instances créées utilisant la même définition. Si nous utilisons un objet classique pour <code>data</code>, le même objet sera <strong>partagé par référence</strong> à toutes les instances créées ! En fournissant une fonction <code>data</code> , chaque fois qu’une nouvelle instance est créée, nous l’appelons simplement afin de récupérer une copie fraiche des données initiales.</p>
 <p>Si nécessaire, un clone profond de l’objet original peut être obtenu en passant <code>vm.$data</code> à travers <code>JSON.parse(JSON.stringify(...))</code>.</p>
@@ -912,7 +918,8 @@ vm.a <span class="hljs-comment">// 2</span></code></pre>
       <span class="hljs-attr">handler</span>: <span class="hljs-string">'uneMéthode'</span>,
       <span class="hljs-attr">immediate</span>: <span class="hljs-literal">true</span>
     &#125;,
-    <span class="hljs-attr">e</span>: [
+    <span class="hljs-comment">// vous pouvez passer un tableau de fonctions de rappel, elles seront appelées une par une</span>
+    e: [
       <span class="hljs-string">'handle1'</span>,
       <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle2</span> (<span class="hljs-params">valeur, ancienneValeur</span>) </span>&#123; <span class="hljs-comment">/* ... */</span> &#125;,
       &#123;
@@ -1007,7 +1014,7 @@ vm.a = <span class="hljs-number">2</span> <span class="hljs-comment">// =&gt; no
 <li><p><strong>Type :</strong> <code>Function</code></p>
 </li>
 <li><p><strong>Détails :</strong></p>
-<p>Appelé de manière synchrone juste après que l’instance ait été initialisée, et avant l’observation des données et l’installation des évènements / observateurs.</p>
+<p>Appelé de manière synchrone juste après que l’instance a été initialisée, et avant l’observation des données et l’installation des évènements / observateurs.</p>
 </li>
 <li><p><strong>Voir aussi :</strong> <a href="../guide/instance.html#Diagramme-du-cycle-de-vie">Diagramme du cycle de vie</a></p>
 </li>
@@ -1016,7 +1023,7 @@ vm.a = <span class="hljs-number">2</span> <span class="hljs-comment">// =&gt; no
 <li><p><strong>Type :</strong> <code>Function</code></p>
 </li>
 <li><p><strong>Détails :</strong></p>
-<p>Appelé de manière synchrone après que l’instance ait été créée. À ce stade, l’instance a fini de traiter les options, ce qui signifie que les éléments suivants ont été installés: observation des données, propriétés calculées, méthodes, fonctions de retour des observateurs et évènements. Cependant, la propriété <code>$el</code> n’est pas encore disponible.</p>
+<p>Appelé de manière synchrone après que l’instance a été créée. À ce stade, l’instance a fini de traiter les options, ce qui signifie que les éléments suivants ont été installés: observation des données, propriétés calculées, méthodes, fonctions de retour des observateurs et évènements. Cependant, la propriété <code>$el</code> n’est pas encore disponible.</p>
 </li>
 <li><p><strong>Voir aussi :</strong> <a href="../guide/instance.html#Diagramme-du-cycle-de-vie">Diagramme du cycle de vie</a></p>
 </li>
@@ -1035,7 +1042,7 @@ vm.a = <span class="hljs-number">2</span> <span class="hljs-comment">// =&gt; no
 <li><p><strong>Type :</strong> <code>Function</code></p>
 </li>
 <li><p><strong>Détails :</strong></p>
-<p>Appelé juste après que l’instance ait été montée, là où <code>el</code> est remplacé par le nouvellement créé <code>vm.$el</code>. Si l’instance à la racine est montée sur un élément du document, alors <code>vm.$el</code> sera aussi dans le document quand <code>mounted</code> est appelé.</p>
+<p>Appelé juste après que l’instance a été montée, là où <code>el</code> est remplacé par le nouvellement créé <code>vm.$el</code>. Si l’instance à la racine est montée sur un élément du document, alors <code>vm.$el</code> sera aussi dans le document quand <code>mounted</code> est appelé.</p>
 <p>Notez que <code>mounted</code> <strong>ne</strong> garantit <strong>pas</strong> que tous les composants aient été montés. Si vous souhaitez attendre jusqu’à ce que le rendu de la vue entière ait été fait, vous pouvez utiliser <a href="#vm-nextTick">vm.$nextTick</a> à l’intérieur de <code>mounted</code> :</p>
 <pre><code class="hljs js">mounted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
   <span class="hljs-keyword">this</span>.$nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
@@ -1695,10 +1702,8 @@ vm.monObjet.valeurImbriquée = <span class="hljs-number">123</span>
   &#125;,
   &#123; <span class="hljs-attr">immediate</span>: <span class="hljs-literal">true</span> &#125;
 )</code></pre>
-</li>
-</ul>
-<p>  Si vous voulez toujours appeler la fonction <code>unwatch</code> à l’intérieur de la fonction de rappel, vous devrez d’abord vérifier sa disponibilité :</p>
-  <pre><code class="hljs js"><span class="hljs-keyword">var</span> unwatch = vm.$watch(
+<p>Si vous voulez toujours appeler la fonction <code>unwatch</code> à l’intérieur de la fonction de rappel, vous devrez d’abord vérifier sa disponibilité :</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> unwatch = vm.$watch(
   <span class="hljs-string">'value'</span>,
   <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
     doSomething()
@@ -1708,6 +1713,8 @@ vm.monObjet.valeurImbriquée = <span class="hljs-number">123</span>
   &#125;,
   &#123; <span class="hljs-attr">immediate</span>: <span class="hljs-literal">true</span> &#125;
 )</code></pre>
+</li>
+</ul>
 <h3 id="vm-set-cible-nomDePropriete-index-valeur"><a href="#vm-set-cible-nomDePropriete-index-valeur" class="headerlink" title="vm.$set( cible, nomDePropriete/index, valeur )"></a>vm.$set( cible, nomDePropriete/index, valeur )</h3><ul>
 <li><p><strong>Arguments :</strong></p>
 <ul>

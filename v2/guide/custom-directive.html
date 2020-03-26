@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -942,6 +945,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -1016,13 +1022,13 @@ Vue.directive(<span class="hljs-string">'focus'</span>, &#123;
 </li>
 <li><p><code>inserted</code>: appelée quand l’élément lié a été inséré dans son nœud parent (cela garantit uniquement sa présence dans le nœud parent, mais pas nécessairement dans le document principal).</p>
 </li>
-<li><p><code>update</code>: appelée après que le composant conteneur VNode ait été mis à jour, <strong>mais possiblement avant que ses enfants aient été mis à jour</strong>. La valeur de la directive peut ou pas avoir changé, mais vous pouvez ignorer les mises à jour inutiles en comparant les valeurs actuelles et anciennes de la liaison (voir plus bas les arguments de hook).</p>
+<li><p><code>update</code>: appelée après que le composant conteneur VNode a été mis à jour, <strong>mais possiblement avant que ses enfants aient été mis à jour</strong>. La valeur de la directive peut ou pas avoir changé, mais vous pouvez ignorer les mises à jour inutiles en comparant les valeurs actuelles et anciennes de la liaison (voir plus bas les arguments de hook).</p>
 </li>
 </ul>
 <p class="tip">Nous couvrirons VNodes plus en détail <a href="./render-function.html#DOM-virtuel">plus tard</a>, quand nous discuterons des <a href="./render-function.html">fonctions de rendu</a>.</p>
 
 <ul>
-<li><p><code>componentUpdated</code>: appelée après que le composant conteneur VNode <strong>et les VNode de ses enfants</strong> aient été mis à jour.</p>
+<li><p><code>componentUpdated</code>: appelée après que le composant conteneur VNode <strong>et les VNode de ses enfants</strong> ont été mis à jour.</p>
 </li>
 <li><p><code>unbind</code>: appelée uniquement une fois, quand la directive est déliée de l’élément.</p>
 </li>

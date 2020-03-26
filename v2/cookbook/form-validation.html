@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -376,6 +379,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -698,18 +704,23 @@
 <p></p><p data-height="265" data-theme-id="0" data-slug-hash="vWqGoy" data-default-tab="html,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="form validation 3" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/vWqGoy/" target="_blank" rel="noopener">form validation 3</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster" target="_blank" rel="noopener">@cfjedimaster</a>) sur <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-<h2 id="Validation-cote-serveur"><a href="#Validation-cote-serveur" class="headerlink" title="Validation côté serveur"></a>Validation côté serveur</h2><p>Dans mon dernier exemple, nous allons construire une application vuejs qui utilise Ajax pour valider des données via le serveur. Le formulaire va vous demander de nommer un nouveau produit et ensuite s’assurer que ce nom est unique. Nous avons écrit une rapide <a href="http://openwhisk.apache.org/" target="_blank" rel="noopener">OpenWhisk</a> action sans serveur pour gérer la validation, voici la logique de cette action.</p>
-<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params">args</span>) </span>&#123;
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
-        <span class="hljs-comment">// bad product names: vista, empire, mbp</span>
-        <span class="hljs-keyword">const</span> badNames = [<span class="hljs-string">'vista'</span>, <span class="hljs-string">'empire'</span>, <span class="hljs-string">'mbp'</span>];
+<h2 id="Validation-cote-serveur"><a href="#Validation-cote-serveur" class="headerlink" title="Validation côté serveur"></a>Validation côté serveur</h2><p>Dans mon dernier exemple, nous allons construire quelque chose qui utilise Ajax pour valider des données via le serveur. Le formulaire va vous demander de nommer un nouveau produit et ensuite s’assurer que ce nom est unique. Nous avons écrit une rapide <a href="(https://netlify.com/">Netlify</a> action sans serveur pour gérer la validation, voici la logique de cette action.</p>
+<pre><code class="hljs js">exports.handler = <span class="hljs-keyword">async</span> (event, context) =&gt; &#123;
+  
+    <span class="hljs-keyword">const</span> badNames = [<span class="hljs-string">'vista'</span>, <span class="hljs-string">'empire'</span>, <span class="hljs-string">'mbp'</span>];
+    <span class="hljs-keyword">const</span> name = event.queryStringParameters.name;
 
-        <span class="hljs-keyword">if</span> (badNames.includes(args.name)) &#123;
-          reject(&#123;<span class="hljs-attr">error</span>: <span class="hljs-string">'Existing product'</span>&#125;);
-        &#125;
+    <span class="hljs-keyword">if</span> (badNames.includes(name)) &#123;
+      <span class="hljs-keyword">return</span> &#123; 
+        <span class="hljs-attr">statusCode</span>: <span class="hljs-number">400</span>,         
+        <span class="hljs-attr">body</span>: <span class="hljs-built_in">JSON</span>.stringify(&#123;<span class="hljs-attr">error</span>: <span class="hljs-string">'Invalid name passed.'</span>&#125;) 
+      &#125;
+    &#125;
 
-        resolve(&#123;<span class="hljs-attr">status</span>: <span class="hljs-string">'ok'</span>&#125;);
-    &#125;);
+    <span class="hljs-keyword">return</span> &#123;
+      <span class="hljs-attr">statusCode</span>: <span class="hljs-number">204</span>
+    &#125;
+
 &#125;</code></pre>
 <p>En gros, tous les noms exceptés “vista”, “empire”, and “mbp” sont valides. Bien, regardons donc le formulaire.</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span>
@@ -744,7 +755,7 @@
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></code></pre>
 <p>Il n’y a rien de bien spécial ici. Voyons maintenant le JavaScript.</p>
-<pre><code class="hljs js"><span class="hljs-keyword">const</span> apiUrl = <span class="hljs-string">'https://openwhisk.ng.bluemix.net/api/v1/web/rcamden%40us.ibm.com_My%20Space/safeToDelete/productName.json?name='</span>;
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> apiUrl = <span class="hljs-string">'https://vuecookbook.netlify.com/.netlify/functions/product-name?name='</span>;
 
 <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Vue(&#123;
   <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
@@ -762,13 +773,12 @@
         <span class="hljs-keyword">this</span>.errors.push(<span class="hljs-string">'Product name is required.'</span>);
       &#125; <span class="hljs-keyword">else</span> &#123;
         fetch(apiUrl + <span class="hljs-built_in">encodeURIComponent</span>(<span class="hljs-keyword">this</span>.name))
-        .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> res.json())
-        .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;
-          <span class="hljs-keyword">if</span> (res.error) &#123;
-            <span class="hljs-keyword">this</span>.errors.push(res.error);
-          &#125; <span class="hljs-keyword">else</span> &#123;
-            <span class="hljs-comment">// redirect to a new URL, or do something on success</span>
-            alert(<span class="hljs-string">'ok!'</span>);
+        .then(<span class="hljs-keyword">async</span> res =&gt; &#123;
+          <span class="hljs-keyword">if</span> (res.status === <span class="hljs-number">204</span>) &#123;
+            alert(<span class="hljs-string">'OK'</span>);
+          &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (res.status === <span class="hljs-number">400</span>) &#123;
+            <span class="hljs-keyword">let</span> errorResponse = <span class="hljs-keyword">await</span> res.json();
+            <span class="hljs-keyword">this</span>.errors.push(errorResponse.error);
           &#125;
         &#125;);
       &#125;

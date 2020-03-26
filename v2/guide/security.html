@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -942,6 +945,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -972,7 +978,7 @@
     <h1>Security</h1>
   
   
-    <h2 id="EN-Reporting-Vulnerabilities"><a href="#EN-Reporting-Vulnerabilities" class="headerlink" title="(EN) Reporting Vulnerabilities"></a>(EN) Reporting Vulnerabilities</h2><p>When a vulnerability is reported, it immediately becomes our top concern, with a full-time contributor dropping everything to work on it. To report a vulnerability, please email <a href="mailto:vuejs.org@gmail.com" target="_blank" rel="noopener">vuejs.org@gmail.com</a>.</p>
+    <h2 id="EN-Reporting-Vulnerabilities"><a href="#EN-Reporting-Vulnerabilities" class="headerlink" title="(EN) Reporting Vulnerabilities"></a>(EN) Reporting Vulnerabilities</h2><p>When a vulnerability is reported, it immediately becomes our top concern, with a full-time contributor dropping everything to work on it. To report a vulnerability, please email <a href="security@vuejs.org">security@vuejs.org</a>.</p>
 <p>While the discovery of new vulnerabilities is rare, we also recommend always using the latest versions of Vue and its official companion libraries to ensure your application remains as secure as possible.</p>
 <h2 id="EN-Rule-No-1-Never-Use-Non-trusted-Templates"><a href="#EN-Rule-No-1-Never-Use-Non-trusted-Templates" class="headerlink" title="(EN) Rule No.1: Never Use Non-trusted Templates"></a>(EN) Rule No.1: Never Use Non-trusted Templates</h2><p>The most fundamental security rule when using Vue is <strong>never use non-trusted content as your component template</strong>. Doing so is equivalent to allowing arbitrary JavaScript execution in your application - and worse, could lead to server breaches if the code is executed during server-side rendering. An example of such usage:</p>
 <pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;

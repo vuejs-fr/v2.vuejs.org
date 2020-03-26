@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -942,6 +945,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -976,7 +982,7 @@
 <h3 id="Gestion-semantique-de-version"><a href="#Gestion-semantique-de-version" class="headerlink" title="Gestion sémantique de version"></a>Gestion sémantique de version</h3><p>Vue suit la <a href="https://semver.org/lang/fr/" target="_blank" rel="noopener">gestion sémantique de version</a> dans tous ses projets officiels pour les fonctionnalités et les comportements documentés. Les changements concernant les comportements non documentés et les fonctionnalités internes exposées sont décrits dans les <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">notes de version</a>.</p>
 <h3 id="Notes-de-version"><a href="#Notes-de-version" class="headerlink" title="Notes de version"></a>Notes de version</h3><p>Dernière version stable : 2.5.16</p>
 <p>Les notes de version détaillées pour chaque version sont disponibles sur <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Vue-Devtools"><a href="#Vue-Devtools" class="headerlink" title="Vue Devtools"></a>Vue Devtools</h2><p>Quand vous utilisez Vue, nous vous recommandons également d’installer <a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">Vue Devtools</a> dans votre navigateur. Cela vous permetta d’inspecter et de déboguer vos applications Vue dans une interface dédiée et intuitive.</p>
+<h2 id="Vue-Devtools"><a href="#Vue-Devtools" class="headerlink" title="Vue Devtools"></a>Vue Devtools</h2><p>Quand vous utilisez Vue, nous vous recommandons également d’installer <a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">Vue Devtools</a> dans votre navigateur. Cela vous permettra d’inspecter et de déboguer vos applications Vue dans une interface dédiée et intuitive.</p>
 <h2 id="Inclusion-directe-lt-script-gt"><a href="#Inclusion-directe-lt-script-gt" class="headerlink" title="Inclusion directe &lt;script&gt;"></a>Inclusion directe <code>&lt;script&gt;</code></h2><p>Il suffit de télécharger et de l’inclure avec une balise script. <code>Vue</code> sera déclaré comme une variable globale.</p>
 <p class="tip">N’utilisez pas la version minifiée pendant le développement. Vous ne bénéficieriez alors pas des avertissements pour les erreurs courantes !</p>
 
@@ -986,7 +992,7 @@
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>Pour la production, nous vous recommandons de vous figer à une version et un build défini pour éviter les changements non compatibles des nouvelles versions :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.6.0"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
-<p>Si vous utilisez des Modules ES natif, il y a également un build compatible avec les Modules ES :</p>
+<p>Si vous utilisez des Modules ES natifs, il y a également un build compatible avec les Modules ES :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="javascript">
   <span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.esm.browser.js'</span>
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>

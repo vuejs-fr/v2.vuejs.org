@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -942,6 +945,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -977,13 +983,13 @@
 
 <h3 id="Information-pour-les-developpeurs-React"><a href="#Information-pour-les-developpeurs-React" class="headerlink" title="Information pour les développeurs React"></a>Information pour les développeurs React</h3><p>Si vous venez de React, vous pouvez vous demander comment Vuex se compare à <a href="https://github.com/reactjs/redux" target="_blank" rel="noopener">Redux</a>, l’implémentation de Flux la plus populaire dans cet écosystème. Redux est en fait agnostique de la couche vue, et peut donc être facilement utilisé avec Vue à l’aide de plusieurs <a href="https://yarnpkg.com/en/packages?q=redux%20vue&amp;p=1" target="_blank" rel="noopener">liaisons simples</a>. Vuex est différent dans le sens où il <em>sait</em> qu’il est dans une application Vue. Cela lui permet de mieux s’intégrer avec Vue, offrant une API plus intuitive et une meilleure expérience de développement.</p>
 <h2 id="Gestion-d’etat-simple-a-partir-de-rien"><a href="#Gestion-d’etat-simple-a-partir-de-rien" class="headerlink" title="Gestion d’état simple à partir de rien"></a>Gestion d’état simple à partir de rien</h2><p>On n’insiste souvent pas assez sur le fait que, dans des applications Vue, c’est l’objet <code>data</code> qui fait office de « source de vérité ». Une instance de Vue ne fait que proxifier l’accès à cet objet. Par conséquent, si vous avez une partie d’état qui doit être partagée par plusieurs instances, vous pouvez simplement la partager par référence :</p>
-<pre><code class="hljs js"><span class="hljs-keyword">const</span> sourceOfTruth = &#123;&#125;
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> sourceOfTruth = &#123;&#125;
 
-<span class="hljs-keyword">const</span> vmA = <span class="hljs-keyword">new</span> Vue(&#123;
+<span class="hljs-keyword">var</span> vmA = <span class="hljs-keyword">new</span> Vue(&#123;
   <span class="hljs-attr">data</span>: sourceOfTruth
 &#125;)
 
-<span class="hljs-keyword">const</span> vmB = <span class="hljs-keyword">new</span> Vue(&#123;
+<span class="hljs-keyword">var</span> vmB = <span class="hljs-keyword">new</span> Vue(&#123;
   <span class="hljs-attr">data</span>: sourceOfTruth
 &#125;)</code></pre>
 <p>Maintenant, quelle que soit la manière dont <code>sourceOfTruth</code> sera mutée, les instances <code>vmA</code> et <code>vmB</code> mettront à jour leurs vues automatiquement. Les sous-composants à l’intérieur de chacune de ces instances y auront aussi accès via la propriété <code>this.$root.$data</code>. Maintenant, nous avons une unique source de vérité, mais le débogage serait un cauchemar. N’importe quel fragment de donnée pourrait être changé par n’importe quelle partie de notre application, à n’importe quel moment, et sans laisser de trace.</p>

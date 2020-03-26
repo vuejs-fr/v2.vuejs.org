@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -942,6 +945,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -979,7 +985,9 @@
 <p>Les accesseurs/mutateurs sont invisibles pour l’utilisateur, mais sous le capot, ils permettent à Vue d’effectuer le suivi des dépendances et la notification de changement quand les propriétés sont accédées ou modifiées. Une des limitations est que les consoles des navigateurs formatent les accesseurs/mutateurs différemment lorsque les objets de données convertis sont logués, vous pouvez donc installer <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="noopener">vue-devtools</a> pour avoir une interface plus sympathique lors de l’inspection.</p>
 <p>Chaque instance de composant a une instance d’<strong>observateur</strong> correspondante, qui enregistre comme dépendances toutes les propriétés « touchées » pendant le rendu du composant. Plus tard, lorsque le mutateur d’une dépendance est déclenché, il en avertit l’observateur, ce qui provoque à son tour un nouveau rendu du composant.</p>
 <p><img src="/images/data.png" alt="Reactivity Cycle"></p>
-<h2 id="Limitations-de-la-detection-de-changement"><a href="#Limitations-de-la-detection-de-changement" class="headerlink" title="Limitations de la détection de changement"></a>Limitations de la détection de changement</h2><p>En raison des limites du JavaScript moderne (et de l’abandon de <code>Object.observe</code>), Vue <strong>ne peut pas détecter l’ajout et la suppression de propriété</strong>. Étant donné que Vue effectue le processus de conversion en accesseur/mutateur lors de l’initialisation de l’instance, une propriété doit être présente dans l’objet <code>data</code> afin que Vue puisse la convertir et la rendre réactive. Par exemple :</p>
+<h2 id="Limitations-de-la-detection-de-changement"><a href="#Limitations-de-la-detection-de-changement" class="headerlink" title="Limitations de la détection de changement"></a>Limitations de la détection de changement</h2><p>En raison des limites du JavaScript moderne, il y a certains changement que Vue <strong>ne peut pas détecter</strong>. Cependant, il existe des manières de contourner ces limitations pour préserver la réactivité :</p>
+<h3 id="Pour-les-objects"><a href="#Pour-les-objects" class="headerlink" title="Pour les objects"></a>Pour les objects</h3><p>Vus ne peut pas détecter l’ajout et la suppression.<br>Vue cannot detect property addition or deletion. Since Vue performs the getter/setter conversion process during instance initialization, a property must be present in the <code>data</code> object in order for Vue to convert it and make it reactive. For example:</p>
+<p>Comme Vue effectue le processus de conversion accesseur/mutateur lors de l’initialisation de l’instance, une propriété doit être présente dans l’objet <code>data</code> pour que Vue puisse le convertir et le rendre réactif. Par exemple :</p>
 <pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
   <span class="hljs-attr">data</span>: &#123;
     <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>
@@ -996,7 +1004,28 @@ vm.b = <span class="hljs-number">2</span>
 <p>Parfois vous voudrez affecter un certain nombre de propriétés à un objet existant, par exemple à l’aide de <code>Object.assign()</code> ou <code>_.extend()</code>. Pourtant, les nouvelles propriétés ajoutées à l’objet ne déclencheront pas de changements. Dans de tels cas, créez un nouvel objet avec à la fois les propriétés de l’objet d’origine et celles de l’objet à intégrer :</p>
 <pre><code class="hljs js"><span class="hljs-comment">// Au lieu de `Object.assign(this.someObject, &#123; a: 1, b: 2 &#125;)`</span>
 <span class="hljs-keyword">this</span>.someObject = <span class="hljs-built_in">Object</span>.assign(&#123;&#125;, <span class="hljs-keyword">this</span>.someObject, &#123; <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span> &#125;)</code></pre>
-<p>Il y a également quelques limitations liées aux tableaux, qui ont été expliquées précédemment dans la <a href="list.html#Limitations">section du rendu de liste</a>.</p>
+<h3 id="Pour-les-tableaux"><a href="#Pour-les-tableaux" class="headerlink" title="Pour les tableaux"></a>Pour les tableaux</h3><p>Vue ne peut pas détecter les changements suivants dans un tableau :</p>
+<ol>
+<li>Lorsque vous définissez directement un élément avec l’index, par exemple <code>vm.items[indexOfItem] = newValue</code></li>
+<li>Lorsque vous modifiez la longueur du tableau, par exemple <code>vm.items.length = newLength</code></li>
+</ol>
+<p>Par exemple :</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">items</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>]
+  &#125;
+&#125;)
+vm.items[<span class="hljs-number">1</span>] = <span class="hljs-string">'x'</span> <span class="hljs-comment">// is NOT reactive</span>
+vm.items.length = <span class="hljs-number">2</span> <span class="hljs-comment">// is NOT reactive</span></code></pre>
+<p>Pour surmonter la première restriction, les deux éléments suivants accompliront la même chose que “vm.items[indexOfItem] = newValue”, mais déclencheront également des mises à jour d’état dans le système de réactivité :</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Vue.set</span>
+Vue.set(vm.items, indexOfItem, newValue)</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// Array.prototype.splice</span>
+vm.items.splice(indexOfItem, <span class="hljs-number">1</span>, newValue)</code></pre>
+<p>Vous pouvez également utiliser le <a href="https://vuejs.org/v2/api/#vm-set" target="_blank" rel="noopener"><code>vm.$set</code></a> d’instance, qui est un alias de la méthode <code>Vue.set</code>:</p>
+<pre><code class="hljs js">vm.$set(vm.items, indexOfItem, newValue)</code></pre>
+<p>Pour résoudre la deuxième condition, vous pouvez utiliser le <code>splice</code> :</p>
+<pre><code class="hljs js">vm.items.splice(newLength)</code></pre>
 <h2 id="Declaration-de-proprietes-reactives"><a href="#Declaration-de-proprietes-reactives" class="headerlink" title="Déclaration de propriétés réactives"></a>Déclaration de propriétés réactives</h2><p>Étant donné que Vue ne permet pas d’ajouter dynamiquement des propriétés réactives au niveau de la racine, vous devez initialiser les instances de Vue en déclarant dès le départ toutes les propriétés des données réactives au niveau de la racine, même avec juste une valeur vide :</p>
 <pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
   <span class="hljs-attr">data</span>: &#123;
@@ -1010,7 +1039,7 @@ vm.message = <span class="hljs-string">'Bonjour !'</span></code></pre>
 <p>Si vous ne déclarez pas <code>message</code> dans l’option data, Vue vous avertira que la fonction de rendu tente d’accéder à une propriété qui n’existe pas.</p>
 <p>Il y a des raisons techniques derrière cette restriction (ça élimine toute une série de cas particuliers dans le système de suivi, et permet également aux instances de Vue de mieux s’intégrer avec les systèmes de vérification de type). Mais il y a aussi une considération importante en termes de maintenance de code : l’objet <code>data</code> est comme le schéma de l’état de votre composant. Déclarer toutes les propriétés réactives dès le départ rend le code du composant plus facile à comprendre lorsqu’il sera reparcouru plus tard ou lu par un autre développeur.</p>
 <h2 id="File-d’attente-de-mise-a-jour-asynchrone"><a href="#File-d’attente-de-mise-a-jour-asynchrone" class="headerlink" title="File d’attente de mise à jour asynchrone"></a>File d’attente de mise à jour asynchrone</h2><p>Au cas où vous ne l’auriez pas encore remarqué, Vue effectue les mises à jour du DOM de façon <strong>asynchrone</strong>. Chaque fois qu’un changement de données est observé, cela ouvrira une file d’attente et mettra en mémoire toutes les modifications de données qui se sont produites dans la même boucle des évènements. Si le même observateur est déclenché plusieurs fois, il ne sera ajouté qu’une seule fois dans la file d’attente. Cette suppression des doublons en mémoire est primordiale car elle évite des calculs et des manipulations du DOM inutiles. Puis, lors du prochain tour (« tick ») de la boucle des évènements, Vue vide la file d’attente et effectue le travail (déjà dédoublonné). En interne, Vue essaie d’utiliser les fonctions natives <code>Promise.then</code> et <code>MutationObserver</code> et <code>setImmediate</code> pour la file d’attente asynchrone et se rabat sur <code>setTimeout(fn, 0)</code> si elles ne sont pas supportées.</p>
-<p>Par exemple, lorsque vous définissez <code>vm.someData = &#39;nouvelle valeur&#39;</code>, le composant ne sera pas rendu de nouveau immédiatement. Il se mettra à jour au prochain « tour » (tick), lorsque la file d’attente sera vidée. La plupart du temps nous n’avons pas besoin de nous en soucier, mais cela peut être délicat lorsque vous voulez faire quelque chose qui dépend de l’état du DOM après sa mise à jour. Bien que Vue.js encourage généralement les développeurs à penser dans un mode « piloté par les données » (« data-driven ») en évitant de toucher le DOM directement, parfois il peut être nécessaire de se salir les mains. Afin d’attendre que Vue.js ait terminé la mise à jour du DOM après un changement de données, vous pouvez utiliser <code>Vue.nextTick (callback)</code> immédiatement après la modification des données. La fonction de retour sera appelée après que le DOM ait été mis à jour. Par exemple :</p>
+<p>Par exemple, lorsque vous définissez <code>vm.someData = &#39;nouvelle valeur&#39;</code>, le composant ne sera pas rendu de nouveau immédiatement. Il se mettra à jour au prochain « tour » (tick), lorsque la file d’attente sera vidée. La plupart du temps nous n’avons pas besoin de nous en soucier, mais cela peut être délicat lorsque vous voulez faire quelque chose qui dépend de l’état du DOM après sa mise à jour. Bien que Vue.js encourage généralement les développeurs à penser dans un mode « piloté par les données » (« data-driven ») en évitant de toucher le DOM directement, parfois il peut être nécessaire de se salir les mains. Afin d’attendre que Vue.js ait terminé la mise à jour du DOM après un changement de données, vous pouvez utiliser <code>Vue.nextTick (callback)</code> immédiatement après la modification des données. La fonction de retour sera appelée après que le DOM a été mis à jour. Par exemple :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example"</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
   <span class="hljs-attr">el</span>: <span class="hljs-string">'#example'</span>,

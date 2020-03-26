@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -377,6 +380,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -418,7 +424,7 @@
 <li><a href="https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-firefox-debug" target="_blank" rel="noopener">Debugger pour Firefox</a></li>
 </ul>
 <p>Installez et créez un projet avec la <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">vue-cli</a>, en suivant les instructions de la section <a href="https://cli.vuejs.org/" target="_blank" rel="noopener">Guide Vue CLI</a>. Allez dans le répertoire nouvellement créé et ouvrez VS Code.</p>
-<h3 id="Affichage-du-code-source-dans-le-navigateur"><a href="#Affichage-du-code-source-dans-le-navigateur" class="headerlink" title="Affichage du code source dans le navigateur"></a>Affichage du code source dans le navigateur</h3><p>Avant de pouvoir déboguer vos composants Vue à partir de VS Code, vous devez mettre à jour la configuration webpack générée pour construire des sourcemaps. Nous faisons cela pour que notre débogueur ait un moyen de mapper le code d’un fichier compressé à sa position dans le fichier d’origine. Ceci vous permet de déboguer une application même après que vos ressources aient été optimisées par webpack.</p>
+<h3 id="Affichage-du-code-source-dans-le-navigateur"><a href="#Affichage-du-code-source-dans-le-navigateur" class="headerlink" title="Affichage du code source dans le navigateur"></a>Affichage du code source dans le navigateur</h3><p>Avant de pouvoir déboguer vos composants Vue à partir de VS Code, vous devez mettre à jour la configuration webpack générée pour construire des sourcemaps. Nous faisons cela pour que notre débogueur ait un moyen de mapper le code d’un fichier compressé à sa position dans le fichier d’origine. Ceci vous permet de déboguer une application même après que vos ressources ont été optimisées par webpack.</p>
 <p>Si vous utilisez Vue CLI 2, définissez ou mettez à jour le paramètre <code>devtool</code> dans <code>config/index.js</code> :</p>
 <pre><code class="hljs json">devtool: 'source-map',</code></pre>
 <p>Si vous utilisez Vue CLI 3, définissez ou mettez à jour le paramètre <code>devtool</code> dans <code>vue.config.js</code> :</p>
@@ -442,7 +448,7 @@
       <span class="hljs-attr">"webRoot"</span>: <span class="hljs-string">"$&#123;workspaceFolder&#125;/src"</span>,
       <span class="hljs-attr">"breakOnLoad"</span>: <span class="hljs-literal">true</span>,
       <span class="hljs-attr">"sourceMapPathOverrides"</span>: &#123;
-        <span class="hljs-attr">"webpack:///./src/*"</span>: <span class="hljs-string">"$&#123;webRoot&#125;/*"</span>
+        <span class="hljs-attr">"webpack:///src/*"</span>: <span class="hljs-string">"$&#123;webRoot&#125;/*"</span>
       &#125;
     &#125;,
     &#123;

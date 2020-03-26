@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -942,6 +945,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -1042,7 +1048,7 @@ marketingPages.forEach(<span class="hljs-function"><span class="hljs-keyword">fu
 <span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> Router(&#123;
   <span class="hljs-attr">routes</span>: routes
 &#125;)</code></pre>
-<p>Si vous avez besoin d’ajouter une nouvelle route après que le routeur soit instancié, vous pouvez remplacer l’objet de concordance des routes du routeur par un nouveau contenant la route que vous souhaitez ajouter :</p>
+<p>Si vous avez besoin d’ajouter une nouvelle route après que le routeur a été instancié, vous pouvez remplacer l’objet de concordance des routes du routeur par un nouveau contenant la route que vous souhaitez ajouter :</p>
 <pre><code class="hljs js">router.match = createMatcher(
   [&#123;
     <span class="hljs-attr">path</span>: <span class="hljs-string">'/my/new/path'</span>,

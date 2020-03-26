@@ -91,7 +91,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -215,7 +215,7 @@
 
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -230,8 +230,8 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/stdlib.png" alt="Bibliothèque standard">
+    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
   </div>
@@ -252,6 +252,9 @@
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -942,6 +945,9 @@
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/passionate_people.png" alt="Passionate People">
     </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -1022,7 +1028,7 @@ var vm = new Vue({
 vm.message = <span class="hljs-string">'Au revoir'</span>
 <span class="hljs-built_in">console</span>.log(vm.reversedMessage) <span class="hljs-comment">// =&gt; 'riover uA'</span></code></pre>
 <p>Vous pouvez ouvrir la console et jouer vous-même avec l’exemple de vm. La valeur de <code>vm.reversedMessage</code> dépend toujours de la valeur de <code>vm.message</code>.</p>
-<p>Vous pouvez lier des données aux propriétés calculées dans les templates comme une propriété normale. Vue est au courant que <code>vm.reversedMessage</code> dépend de <code>vm.message</code>, donc il mettra à jour toutes les liaisons qui dépendent de <code>vm.reversedMessage</code> lorsque <code>vm.message</code> changera. Et le mieux dans tout cela est que nous avons créé cette relation de dépendance de façon déclarative : la fonction de l’accesseur calculé n’a pas d’effets secondaires, ce qui la rend facile à tester et à raisonner.</p>
+<p>Vous pouvez lier des données aux propriétés calculées dans les templates comme une propriété normale. Vue est au courant que <code>vm.reversedMessage</code> dépend de <code>vm.message</code>, donc il mettra à jour toutes les liaisons qui dépendent de <code>vm.reversedMessage</code> lorsque <code>vm.message</code> changera. Et le mieux dans tout cela est que nous avons créé cette relation de dépendance de façon déclarative : la fonction de l’accesseur calculé n’a pas d’effets secondaires, ce qui la rend facile à tester et à comprendre.</p>
 <h3 id="Mise-en-cache-dans-computed-vs-methods"><a href="#Mise-en-cache-dans-computed-vs-methods" class="headerlink" title="Mise en cache dans computed vs methods"></a>Mise en cache dans <code>computed</code> vs <code>methods</code></h3><p>Vous avez peut-être remarqué que nous pouvons accomplir le même résultat en invoquant une méthode dans l’expression :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Message inversé : "&#123;&#123; reverseMessage() &#125;&#125;"<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
 <pre><code class="hljs js"><span class="hljs-comment">// dans le composant</span>
@@ -1039,7 +1045,7 @@ methods: &#123;
   &#125;
 &#125;</code></pre>
 <p>En comparaison, une invocation de méthode exécutera <strong>toujours</strong> la fonction à chaque fois que se produira un redéclenchement du rendu.</p>
-<p>Pourquoi avons-nous besoin de mettre en cache ? Imaginez que nous avons une propriété calculée couteuse <strong>A</strong>, qui exige une boucle dans un énorme tableau et qui fait beaucoup de calculs. Alors nous pouvons avoir d’autres propriétés calculées qui dépendent à leur tour de <strong>A</strong>. Sans la mise en cache, nous exécuterions l’accesseur de <strong>A</strong> autant de fois que nécessaire ! Dans les cas où vous ne souhaitez pas la mise en cache, utilisez une méthode à la place.</p>
+<p>Pourquoi avons-nous besoin de mettre en cache ? Imaginez que nous avons une propriété calculée coûteuse <strong>A</strong>, qui exige une boucle dans un énorme tableau et qui fait beaucoup de calculs. Alors nous pouvons avoir d’autres propriétés calculées qui dépendent à leur tour de <strong>A</strong>. Sans la mise en cache, nous exécuterions l’accesseur de <strong>A</strong> autant de fois que nécessaire ! Dans les cas où vous ne souhaitez pas la mise en cache, utilisez une méthode à la place.</p>
 <h3 id="Proprietes-calculees-vs-observees"><a href="#Proprietes-calculees-vs-observees" class="headerlink" title="Propriétés calculées vs observées"></a>Propriétés calculées vs observées</h3><p>Vue fournit une façon plus générique d’observer et de réagir aux changements de données sur une instance de Vue : <strong>les propriétés watch</strong>. Quand vous avez des données qu’il faut changer selon d’autres données, il est tentant d’abuser de <code>watch</code> (surtout si vous venez du monde d’AngularJS). Toutefois, il est souvent préférable d’utiliser une propriété calculée et non une fonction de rappel impérative comme <code>watch</code>. Considérez cet exemple :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"demo"</span>&gt;</span>&#123;&#123; fullName &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 <pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
@@ -1090,7 +1096,7 @@ computed: &#123;
 &#125;
 <span class="hljs-comment">// ...</span></code></pre>
 <p>Maintenant, lorsque vous exécutez <code>vm.fullName = &#39;John Doe&#39;</code>, le mutateur sera invoqué, <code>vm.firstName</code> et <code>vm.lastName</code> seront mis à jour en conséquence.</p>
-<h2 id="Observateurs"><a href="#Observateurs" class="headerlink" title="Observateurs"></a>Observateurs</h2><p>Bien que les propriétés calculées soient plus appropriées dans la plupart des cas, parfois un observateur personnalisé est nécessaire. C’est pour cela que Vue fournit une façon plus générique de réagir aux changements de données à travers l’option <code>watch</code>. Ceci est très utile lorsque vous souhaitez exécuter des opérations asynchrones ou couteuses en réponse à des données changeantes.</p>
+<h2 id="Observateurs"><a href="#Observateurs" class="headerlink" title="Observateurs"></a>Observateurs</h2><p>Bien que les propriétés calculées soient plus appropriées dans la plupart des cas, parfois un observateur personnalisé est nécessaire. C’est pour cela que Vue fournit une façon plus générique de réagir aux changements de données à travers l’option <code>watch</code>. Ceci est très utile lorsque vous souhaitez exécuter des opérations asynchrones ou coûteuses en réponse à des données changeantes.</p>
 <p>Par exemple :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"watch-example"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
@@ -1121,7 +1127,7 @@ computed: &#123;
   &#125;,
   <span class="hljs-attr">created</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
     <span class="hljs-comment">// _.debounce est une fonction fournie par lodash pour limiter la fréquence</span>
-    <span class="hljs-comment">// d'exécution d'une opération particulièrement couteuse.</span>
+    <span class="hljs-comment">// d'exécution d'une opération particulièrement coûteuse.</span>
     <span class="hljs-comment">// Dans ce cas, nous voulons limiter la fréquence d'accès à</span>
     <span class="hljs-comment">// yesno.wtf/api, en attendant que l'utilisateur ait complètement</span>
     <span class="hljs-comment">// fini de taper avant de faire la requête ajax. Pour en savoir</span>
