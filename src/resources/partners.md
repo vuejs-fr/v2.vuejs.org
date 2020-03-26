@@ -11,7 +11,7 @@ partners_list:
         name: Vehikl
         logo: vehikl.png
         description:
-            Vehikl is a software consultancy specialising in PHP and JavaScript. We build best-in-class web applications written with popular frameworks such as Laravel, Express, NestJS, Vue, and React. Think of us as an extension of your team.
+            (EN) Vehikl is a software consultancy specialising in PHP and JavaScript. We build best-in-class web applications written with popular frameworks such as Laravel, Express, NestJS, Vue, and React. Think of us as an extension of your team.
         proficiencies:
             - VueJs
             - Laravel
@@ -42,11 +42,11 @@ partners_list:
         name: Modus Create
         logo: https://res.cloudinary.com/modus-labs/image/upload/v1533109874/modus/logo-vertical-black.svg
         description:
-            "(EN) Modus Create is a disruptive consulting firm that helps companies transform for success in the digital future. 
-            
-            Clients work with Modus to effect transformational change through a unique collaborative engagement model that focuses on strategy, product design/build, user experience, company culture, and process change to accelerate their response to digital disruption. 
-            
-            Modus is uniquely expert at executing within the new reality of global talent sourcing and globally distributed teams. Modus culture is based on recruiting only top talent regardless of their location. Modus delivers time zone-aligned, highly productive, English-speaking teams, accessibility, and a totally collaborative environment regardless of individual location. 
+            "(EN) Modus Create is a disruptive consulting firm that helps companies transform for success in the digital future.
+
+            Clients work with Modus to effect transformational change through a unique collaborative engagement model that focuses on strategy, product design/build, user experience, company culture, and process change to accelerate their response to digital disruption.
+
+            Modus is uniquely expert at executing within the new reality of global talent sourcing and globally distributed teams. Modus culture is based on recruiting only top talent regardless of their location. Modus delivers time zone-aligned, highly productive, English-speaking teams, accessibility, and a totally collaborative environment regardless of individual location.
 "
         proficiencies:
             - name: Vue.js
@@ -94,7 +94,7 @@ partners_list:
         name: Monterail
         logo: Monterail.png
         description:
-            "Monterail is a full-service software development company with 100+ experts on board delivering meaningful software for start-ups, SMBs and enterprises. We build for the Web with Ruby on Rails, Python, JavaScript, and Agile. We guarantee this: a product so qualitative and aligned with your vision, you’ll swear it was built in-house."
+            "(EN) Monterail is a full-service software development company with 110+ experts on board delivering meaningful software for start-ups, SMBs and enterprises. We are organizers of the first official Vue-related conference in the world and authors of the State of Vue.js report (2017&2019). Our experts delivered 30 Vue.js-based projects so far."
         proficiencies:
             - name: VueJs
               url: https://hi.monterail.co/2NqPUa6
@@ -105,15 +105,15 @@ partners_list:
             - name: Python
               url: https://hi.monterail.co/2MXHLeb
             - name: Services
-              url:  https://www.monterail.com/services
+              url:  https://www.monterail.com/services?utm_medium=referral&utm_source=partner-list&utm_campaign=vue.js
             - name: Projects
-              url:  https://www.monterail.com/projects
+              url:  https://www.monterail.com/projects?utm_medium=referral&utm_source=partner-list&utm_campaign=vue.js
         location: Wrocław, Poland
         languages:
             - English
             - Polish
         url_text: www.monterail.com
-        url_link: www.monterail.com/?utm_campaign=Vue.js&utm_source=partner-list
+        url_link: www.monterail.com/services/vue-development?utm_campaign=Vue.js&utm_source=partner-list
         hire_url: www.monterail.com/contact
         email: hello@monterail.com
         social_links:
@@ -141,7 +141,7 @@ partners_list:
         name: Rangle
         logo: https://res.cloudinary.com/rangle/image/upload/q_auto,f_auto/vuejs.org/rangle_black_lockup_n6q48z.png
         description:
-            "Rangle is a global digital consultancy that helps ambitious organizations outperform the competition in the most demanding markets. We work closely with our clients as one team to imagine, design, and deliver human-centered digital experiences that create lasting results and real business value. Anchored in innovation and lean startup best-practices, our unique delivery and partnership model is purposed-built to this task."
+            "(EN) Rangle is a global digital consultancy that helps ambitious organizations outperform the competition in the most demanding markets. We work closely with our clients as one team to imagine, design, and deliver human-centered digital experiences that create lasting results and real business value. Anchored in innovation and lean startup best-practices, our unique delivery and partnership model is purposed-built to this task."
         proficiencies:
             - name: Building Products
               url: https://rangle.io/#build-a-product/?utm_source=referral&utm_medium=partner&utm_campaign=vue-partners

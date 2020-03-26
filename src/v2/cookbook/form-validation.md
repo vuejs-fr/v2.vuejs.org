@@ -333,21 +333,27 @@ Nous avons défini le total comme une valeur calculée et la méthode checkForm 
 
 ## Validation côté serveur
 
-Dans mon dernier exemple, nous allons construire une application vuejs qui utilise Ajax pour valider des données via le serveur. Le formulaire va vous demander de nommer un nouveau produit et ensuite s'assurer que ce nom est unique. Nous avons écrit une rapide [OpenWhisk](http://openwhisk.apache.org/) action sans serveur pour gérer la validation, voici la logique de cette action.
+Dans mon dernier exemple, nous allons construire quelque chose qui utilise Ajax pour valider des données via le serveur. Le formulaire va vous demander de nommer un nouveau produit et ensuite s'assurer que ce nom est unique. Nous avons écrit une rapide [Netlify]((https://netlify.com/) action sans serveur pour gérer la validation, voici la logique de cette action.
 
 ``` js
-function main(args) {
-    return new Promise((resolve, reject) => {
-        // bad product names: vista, empire, mbp
-        const badNames = ['vista', 'empire', 'mbp'];
+exports.handler = async (event, context) => {
+  
+    const badNames = ['vista', 'empire', 'mbp'];
+    const name = event.queryStringParameters.name;
 
-        if (badNames.includes(args.name)) {
-          reject({error: 'Existing product'});
-        }
+    if (badNames.includes(name)) {
+      return { 
+        statusCode: 400,         
+        body: JSON.stringify({error: 'Invalid name passed.'}) 
+      }
+    }
 
-        resolve({status: 'ok'});
-    });
+    return {
+      statusCode: 204
+    }
+
 }
+
 ```
 
 En gros, tous les noms exceptés "vista", "empire", and "mbp" sont valides. Bien, regardons donc le formulaire.
@@ -389,7 +395,7 @@ En gros, tous les noms exceptés "vista", "empire", and "mbp" sont valides. Bien
 Il n'y a rien de bien spécial ici. Voyons maintenant le JavaScript.
 
 ``` js
-const apiUrl = 'https://openwhisk.ng.bluemix.net/api/v1/web/rcamden%40us.ibm.com_My%20Space/safeToDelete/productName.json?name=';
+const apiUrl = 'https://vuecookbook.netlify.com/.netlify/functions/product-name?name=';
 
 const app = new Vue({
   el: '#app',
@@ -407,13 +413,12 @@ const app = new Vue({
         this.errors.push('Product name is required.');
       } else {
         fetch(apiUrl + encodeURIComponent(this.name))
-        .then(res => res.json())
-        .then(res => {
-          if (res.error) {
-            this.errors.push(res.error);
-          } else {
-            // redirect to a new URL, or do something on success
-            alert('ok!');
+        .then(async res => {
+          if (res.status === 204) {
+            alert('OK');
+          } else if (res.status === 400) {
+            let errorResponse = await res.json();
+            this.errors.push(errorResponse.error);
           }
         });
       }

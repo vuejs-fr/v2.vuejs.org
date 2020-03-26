@@ -1089,17 +1089,17 @@ Beaucoup d'utilisateurs adorent utiliser des filtres bidirectionnels avec `v-mod
 
 Par exemple, nous allons migrer un filtre de devise bidirectionnel :
 
-<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/6744xnjk/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
-Il fonctionne plutôt bien, mais la rétention de mise à jour d'état peut causer des comportements étranges. Par exemple, cliquez sur l'onglet `Result` et essayez d'entrer la valeur `9.999` dans l'un des champs. Quand le champ perd le focus, sa valeur va être mise à jour à `$10.00`. Quand vous regardez le total calculé cependant, vous verrez que `9.999` est toujours stocké dans nos données. La version de la réalité que l'utilisateur voit est hors de synchro !
+Il fonctionne plutôt bien, mais la rétention de mise à jour d'état peut causer des comportements étranges. Par exemple, essayez d'entrer la valeur `9.999` dans l'un des champs. Quand le champ perd le focus, sa valeur va être mise à jour à `$10.00`. Quand vous regardez le total calculé cependant, vous verrez que `9.999` est toujours stocké dans nos données. La version de la réalité que l'utilisateur voit est hors de synchro !
 
 Pour commencer a utiliser une solution plus robuste en utilisant Vue 2.0, commençons par entourer ce filtre dans un nouveau composant `<currency-input>` :
 
-<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/943zfbsh/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter-v2?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 Celui-ci nous permet d'ajouter des comportements qu'un filtre seul ne pourrait pas encapsuler, comme sélectionner le contenu d'un champ lors du focus. Maintenant, la prochaine étape va être d'extraire la logique métier du filtre. Ci-dessous, nous allons tout mettre dans un [objet `currencyValidator`](https://gist.github.com/chrisvfritz/5f0a639590d6e648933416f90ba7ae4e) externe :
 
-<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/9c32kev2/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter-v3?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 Cette augmentation de la modularité ne permet pas seulement de rendre plus facile la migration vers Vue 2, mais permet également à l'analyse et au formatage d'être :
 
@@ -1110,7 +1110,7 @@ Avec ce validateur extrait, nous sommes plus à l'aise pour construire une solut
 
 Nous sommes toujours limités cependant, par les filtres et par Vue 1.0 en général. Donc terminons notre mise à jour vers Vue 2.0 :
 
-<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/1oqjojjx/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-two-way-currency-filter?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 Vous pouvez remarquer que :
 

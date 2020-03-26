@@ -59,7 +59,7 @@ Cliquez sur l'icône Débogage dans la barre d'activités pour afficher la vue D
       "webRoot": "${workspaceFolder}/src",
       "breakOnLoad": true,
       "sourceMapPathOverrides": {
-        "webpack:///./src/*": "${webRoot}/*"
+        "webpack:///src/*": "${webRoot}/*"
       }
     },
     {

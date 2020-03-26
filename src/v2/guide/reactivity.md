@@ -20,7 +20,14 @@ Chaque instance de composant a une instance d'**observateur** correspondante, qu
 
 ## Limitations de la détection de changement
 
-En raison des limites du JavaScript moderne (et de l'abandon de `Object.observe`), Vue **ne peut pas détecter l'ajout et la suppression de propriété**. Étant donné que Vue effectue le processus de conversion en accesseur/mutateur lors de l'initialisation de l'instance, une propriété doit être présente dans l'objet `data` afin que Vue puisse la convertir et la rendre réactive. Par exemple :
+En raison des limites du JavaScript moderne, il y a certains changement que Vue **ne peut pas détecter**. Cependant, il existe des manières de contourner ces limitations pour préserver la réactivité :
+
+### Pour les objects
+
+Vus ne peut pas détecter l'ajout et la suppression. 
+Vue cannot detect property addition or deletion. Since Vue performs the getter/setter conversion process during instance initialization, a property must be present in the `data` object in order for Vue to convert it and make it reactive. For example:
+
+Comme Vue effectue le processus de conversion accesseur/mutateur lors de l'initialisation de l'instance, une propriété doit être présente dans l'objet `data` pour que Vue puisse le convertir et le rendre réactif. Par exemple :
 
 ``` js
 var vm = new Vue({
@@ -53,7 +60,47 @@ Parfois vous voudrez affecter un certain nombre de propriétés à un objet exis
 this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })
 ```
 
-Il y a également quelques limitations liées aux tableaux, qui ont été expliquées précédemment dans la [section du rendu de liste](list.html#Limitations).
+### Pour les tableaux
+
+Vue ne peut pas détecter les changements suivants dans un tableau :
+
+1. Lorsque vous définissez directement un élément avec l'index, par exemple `vm.items[indexOfItem] = newValue`
+2. Lorsque vous modifiez la longueur du tableau, par exemple `vm.items.length = newLength`
+
+Par exemple :
+
+``` js
+var vm = new Vue({
+  data: {
+    items: ['a', 'b', 'c']
+  }
+})
+vm.items[1] = 'x' // is NOT reactive
+vm.items.length = 2 // is NOT reactive
+```
+
+Pour surmonter la première restriction, les deux éléments suivants accompliront la même chose que "vm.items[indexOfItem] = newValue", mais déclencheront également des mises à jour d'état dans le système de réactivité :
+
+``` js
+// Vue.set
+Vue.set(vm.items, indexOfItem, newValue)
+```
+``` js
+// Array.prototype.splice
+vm.items.splice(indexOfItem, 1, newValue)
+```
+
+Vous pouvez également utiliser le [`vm.$set`](https://vuejs.org/v2/api/#vm-set) d'instance, qui est un alias de la méthode `Vue.set`:
+
+``` js
+vm.$set(vm.items, indexOfItem, newValue)
+```
+
+Pour résoudre la deuxième condition, vous pouvez utiliser le `splice` :
+
+``` js
+vm.items.splice(newLength)
+```
 
 ## Déclaration de propriétés réactives
 

@@ -19,13 +19,13 @@ Si vous venez de React, vous pouvez vous demander comment Vuex se compare à [Re
 On n'insiste souvent pas assez sur le fait que, dans des applications Vue, c'est l'objet `data` qui fait office de « source de vérité ». Une instance de Vue ne fait que proxifier l'accès à cet objet. Par conséquent, si vous avez une partie d'état qui doit être partagée par plusieurs instances, vous pouvez simplement la partager par référence :
 
 ``` js
-const sourceOfTruth = {}
+var sourceOfTruth = {}
 
-const vmA = new Vue({
+var vmA = new Vue({
   data: sourceOfTruth
 })
 
-const vmB = new Vue({
+var vmB = new Vue({
   data: sourceOfTruth
 })
 ```

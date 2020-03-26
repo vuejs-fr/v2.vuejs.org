@@ -6,10 +6,10 @@ platinum_sponsors_china:
   - url: 'http://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci='
     img: dcloud.gif
 special_sponsors:
-  - url: 'https://stdlib.com/'
-    img: stdlib.png
-    name: Bibliothèque standard
-    description: "Créer les APIs dont vous avez besoin en quelques minutes plutôt qu'en quelques jours, gratuitement."
+  - url: 'https://autocode.com'
+    img: autocode.svg
+    name: Autocode
+    description: Créez des workflows application à application et connectez des APIs
 platinum_sponsors:
   - url: >-
       https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1
@@ -24,6 +24,9 @@ platinum_sponsors:
   - url: 'https://passionatepeople.io/'
     img: passionate_people.png
     name: Passionate People
+  - url: 'https://www.storyblok.com'
+    img: storyblok.png
+    name: Storyblok
 gold_sponsors:
   - url: 'https://www.vuemastery.com/'
     img: vuemastery.png
@@ -52,9 +55,6 @@ gold_sponsors:
   - url: 'https://tidelift.com/subscription/npm/vue'
     img: tidelift.png
     name: Tidelift
-  - url: 'https://opteo.com/vue'
-    img: opteo.png
-    name: Opteo
   - url: 'https://devsquad.com/'
     img: devsquad.png
     name: DevSquad
@@ -85,21 +85,12 @@ gold_sponsors:
   - url: 'https://usave.co.uk/utilities/broadband'
     img: usave.png
     name: usave
-  - url: 'https://www.dailynow.co/'
-    img: daily.png
-    name: Daily
-  - url: 'https://storekit.com'
-    img: storekit.png
-    name: StoreKit
   - url: 'http://www.pullrequest.com'
     img: pullrequest.svg
     name: PullRequest
   - url: 'https://unicorn.io/'
     img: unicorn_io.png
     name: Unicorn.io
-  - url: 'https://www.programmers.io'
-    img: programmers_io.png
-    name: Programmers.io
   - url: 'https://www.vuescreencasts.com/'
     img: happy_programmer_llc.png
     name: Happy Programmer LLC

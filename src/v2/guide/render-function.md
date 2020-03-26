@@ -641,6 +641,4 @@ Pour ce composant, `children` va vous donner les deux paragraphes, `slots().defa
 
 Vous serez peut-être intéressé de savoir que les templates Vue sont en fait compilés en fonctions de rendu. C'est un détail d'implémentation dont vous n'avez en général pas à vous soucier, mais si vous souhaitez savoir comment un template spécifique est compilé, vous pourrez trouver cela intéressant. Vous trouverez ci-dessous une petite démo utilisant `Vue.compile` pour voir en live le rendu d'une chaine de template :
 
-{% raw %}
-<script async src="https://jsfiddle.net/phanan/5h0wx9np/embed/result,js,html/"></script>
-{% endraw %}
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-template-compilation?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light&view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>

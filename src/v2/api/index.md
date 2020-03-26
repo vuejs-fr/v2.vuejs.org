@@ -684,6 +684,7 @@ type: api
         handler: 'uneMéthode',
         immediate: true
       },
+      // vous pouvez passer un tableau de fonctions de rappel, elles seront appelées une par une
       e: [
         'handle1',
         function handle2 (valeur, ancienneValeur) { /* ... */ },

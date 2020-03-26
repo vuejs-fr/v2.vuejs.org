@@ -8,7 +8,7 @@ order: 10
 
 Vous pouvez utiliser la directive `v-model` pour créer une liaison de données bidirectionnelle sur les champs de formulaire (input, select ou textarea). Elle choisira automatiquement la bonne manière de mettre à jour l'élément en fonction du type de champ. Bien qu'un peu magique, `v-model` est essentiellement du sucre syntaxique pour mettre à jour les données lors des évènements de saisie utilisateur sur les champs, ainsi que quelques traitements spéciaux pour certains cas particuliers.
 
-<p class="tip">`v-model` ne prend pas en compte la valeur initiale des attributs `value`, `checked` ou `selected` fournis par un champ. Elle traitera toujours les données de l'instance de vue comme la source de vérité. Vous devez déclarer la valeur initiale dans votre JavaScript, dans l'option `data` de votre composant.</p>
+<p class="tip">`v-model` ne prend pas en compte la valeur initiale des attributs `value`, `checked` ou `selected` fournis par un champ. Elle traitera toujours les données de l'instance de Vue comme la source de vérité. Vous devez déclarer la valeur initiale dans votre JavaScript, dans l'option `data` de votre composant.</p>
 
 `v-model` utilise en interne différentes propriétés et émetteurs d'évènement pour différents éléments de saisie :
 - Les éléments `text` et `textarea` utilisent la propriété `value` et évènement `input`;
@@ -209,7 +209,7 @@ new Vue({
 </script>
 {% endraw %}
 
-<p class="tip">Si la valeur initiale de votre expression dans `v-model` ne correspond à aucune des options, l'élément `<select>` va faire le rendu dans un état « non sélectionné ». Sur iOS cela va conduire l'utilisateur à ne pas pouvoir sélectionner le premier élément car aucun évènement `change` n'est déclenché dans ce cas. Il est cependant recommandé de fournir une option désactivée avec une valeur vide comme dans l'exemple ci-dessus.</p>
+<p class="tip">>Si la valeur initiale de votre expression dans `v-model` ne correspond à aucune des options, l'élément `<select>` va faire le rendu dans un état « non sélectionné ». Sur iOS cela va conduire l'utilisateur à ne pas pouvoir sélectionner le premier élément car aucun évènement `change` n'est déclenché dans ce cas. Il est cependant recommandé de fournir une option désactivée avec une valeur vide comme dans l'exemple ci-dessus.</p>
 
 Select à choix multiples (lié à un tableau) :
 
@@ -326,7 +326,7 @@ vm.toggle === 'oui'
 vm.toggle === 'non'
 ```
 
-<p class="tip">Les attributs `true-value` et `false-value` n'affectent pas la valeur de l'attribut `value`, car les navigateurs n'incluent pas les cases non cochées dans les soumissions de formulaire. Pour garantir que l'une des deux valeurs soit soumise par le formulaire (par ex. `"'oui'"` ou `"'non'"`), utilisez les boutons radio à la place.</p>
+<p class="tip">Les attributs `true-value` et `false-value` n'affectent pas la valeur de l'attribut `value`, car les navigateurs n'incluent pas les cases non cochées dans les soumissions de formulaire. Pour garantir que l'une des deux valeurs soit soumise par le formulaire (par ex. « oui » ou « non »), utilisez les boutons radio à la place.</p>
 
 ### Radio
 
@@ -387,4 +387,6 @@ Si vous voulez que les espaces superflus des saisies utilisateur soient automati
 
 > Si vous n'êtes pas encore familier avec les composants de Vue, passez cette section pour le moment.
 
-Les types de champ standards HTML ne couvriront pas toujours vos besoins. Heureusement, les composants de Vue vous permettent de construire des champs avec un comportement complètement personnalisé. Ces champs fonctionnent même avec `v-model` ! Pour en apprendre plus, lisez la section [champs personnalisés](components.html#Utiliser-v-model-sur-les-composants) dans le guide des composants.
+Les types de saisie intégrés au HTML ne répondront pas toujours à vos besoins. Heureusement, les composants de Vue vous permettent de créer des entrées réutilisables avec un comportement entièrement personnalisé. Ces entrées fonctionnent même avec le `v-model` ! 
+
+Pour en apprendre plus, lisez la section [champs personnalisés](components.html#Utiliser-v-model-sur-les-composants) dans le guide des composants.

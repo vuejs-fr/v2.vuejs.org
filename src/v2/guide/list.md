@@ -12,7 +12,7 @@ Nous pouvons utiliser la directive `v-for` pour faire le rendu d'une liste d'él
 
 ``` html
 <ul id="example-1">
-  <li v-for="item in items">
+  <li v-for="item in items" :key="item.message">
     {{ item.message }}
   </li>
 </ul>
@@ -34,7 +34,7 @@ Résultat :
 
 {% raw %}
 <ul id="example-1" class="demo">
-  <li v-for="item in items">
+  <li v-for="item in items" :key="item.message">
     {{item.message}}
   </li>
 </ul>
@@ -259,103 +259,7 @@ Vous pouvez penser que cela va forcer Vue à jeter le DOM existant et à faire d
 
 ### Limitations
 
-À cause des limitations en JavaScript, Vue **ne peut pas** détecter les changements suivants dans un tableau :
-
-1. Quand vous affectez directement un élément à un index. Par ex. : `vm.items[indexOfItem] = newValue`
-2. Quand vous modifiez la longueur du tableau. Par ex. : `vm.items.length = newLength`
-
-Par exemple :
-
-``` js
-var vm = new Vue({
-  data: {
-    items: ['a', 'b', 'c']
-  }
-})
-vm.items[1] = 'x' // N'est PAS réactive
-vm.items.length = 2 // N'est PAS réactive
-```
-
-Pour contourner la première limitation, les deux exemples suivants accomplissent la même chose que `vm.items[indexOfItem] = newValue`, mais vont également déclencher des mises à jour de l'état dans le système de réactivité :
-
-``` js
-// Vue.set
-Vue.set(vm.items, indexOfItem, newValue)
-```
-``` js
-// Array.prototype.splice
-vm.items.splice(indexOfItem, 1, newValue)
-```
-
-Vous pouvez également utiliser la méthode d'instance [`vm.$set`](https://vuejs.org/v2/api/#vm-set), qui est un alias pour la méthode globale `Vue.set` :
-
-``` js
-vm.$set(vm.items, indexOfItem, newValue)
-```
-
-Pour gérer la seconde limitation, vous pouvez également utiliser `splice` :
-
-``` js
-vm.items.splice(newLength)
-```
-
-## Limitation de détection de changement dans un objet
-
-De nouveau, à cause de limitation du JavaScript, **Vue ne peut détecter l'ajout ou la suppression d'une propriété**. Par exemple :
-
-``` js
-var vm = new Vue({
-  data: {
-    a: 1
-  }
-})
-// `vm.a` est maintenant réactive
-
-vm.b = 2
-// `vm.b` N'est PAS réactive
-```
-
-Vue ne permet pas d'ajouter dynamiquement de nouvelles propriétés réactives au niveau racine sur des instances déjà créées. Cependant, il est possible d'ajouter des propriétés réactives aux objets imbriqués en utilisant la méthode `Vue.set(object, propertyName, value)`. Par exemple avec :
-
-``` js
-var vm = new Vue({
-  data: {
-    userProfile: {
-      name: 'Anika'
-    }
-  }
-})
-```
-
-Vous pourriez ajouter une nouvelle propriété `age` à l'objet imbriqué `userProfile` avec :
-
-``` js
-Vue.set(vm.userProfile, 'age', 27)
-```
-
-Vous pouvez également utiliser la méthode d'instance `vm.$set`, qui est juste un alias de la méthode globale `Vue.set` :
-
-``` js
-vm.$set(vm.userProfile, 'age', 27)
-```
-
-Parfois vous voudrez affecter plusieurs nouvelles propriétés à un objet existant, par exemple en utilisant `Object.assign()` ou `_.extend()`. Dans ce cas, vous devrez créer un nouvel objet avec les propriétés des deux objets. Donc au lieu de :
-
-``` js
-Object.assign(vm.userProfile, {
-  age: 27,
-  favoriteColor: 'Vert Vue'
-})
-```
-
-Vous ajouterez une nouvelle propriété réactive avec :
-
-``` js
-vm.userProfile = Object.assign({}, vm.userProfile, {
-  age: 27,
-  favoriteColor: 'Vert Vue'
-})
-```
+En raison des limitations de JavaScript, il y a des types de changements que Vue **ne peut pas détecter** avec les tableaux et les objets. Ils sont abordés dans la section [réactivité](reactivity.html#Limitations-de-la-detection-de-changement).
 
 ## Affichage de résultats filtrés/triés
 

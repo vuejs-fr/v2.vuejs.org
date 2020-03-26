@@ -39,18 +39,18 @@ const app = new Vue({
 });
 ```
 
-Concentrons-nous sur les parties `mounted` et `watch`. On utilise `mounted` pour récupérer la valeur depuis le localStorage. Pour garder les données en mémoire, on observe la valeur `name` et à chaque changement, on l'écrit dans le localStorage.
+Concentrons-nous sur les parties `mounted` et `watch`. On utilise `mounted` pour récupérer la valeur depuis le localStorage. Pour garder les données en mémoire, on observe la valeur `name` et à chaque changement, on l'écrit immédiatement.
 
 Vous pouvez le tester vous-même ici :
 
-<p data-height="265" data-theme-id="0" data-slug-hash="KodaKb" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/KodaKb/">test du localstorage</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="KodaKb" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/KodaKb/">test du localstorage</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a> (EN).</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 Écrivez quelque chose dans le formulaire et rechargez la page. Vous remarquerez que la valeur que vous aviez écrite s'affichera automatiquement. N'oubliez pas que votre navigateur a d'excellents outils de développement pour inspecter le stockage côté client. Voici un exemple sur Firefox :
 
 ![Stockage devtools sur Firefox](/images/devtools-storage.png)
 
-Ici sur Chrome :
+Et ici sur Chrome :
 
 ![Stockage devtools sur Chrome](/images/devtools-storage-chrome.png)
 
@@ -95,7 +95,7 @@ const app = new Vue({
     persist() {
       localStorage.name = this.name;
       localStorage.age = this.age;
-      console.log('now pretend I did more stuff...');
+      console.log('maintenant prétendre que j\'ai fait plus de choses...');
     }
   }
 })
@@ -103,7 +103,7 @@ const app = new Vue({
 
 Comme avant, `mounted` est utilisé pour charger les données, si elles existent. Cette fois, les données sont sauvées seulement si le bouton est cliqué. On pourrait aussi faire des validations ou transformations ici avant de stocker les données. On pourrait aussi stocker une date représentant le moment ou les données ont été sauvées. Avec ces métadonnées, la fonction `mounted` pourrait vérifier si il faut encore stocker les valeurs. Vous pouvez essayer cette version ci-dessous.
 
-<p data-height="265" data-theme-id="0" data-slug-hash="rdOjLN" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage 2" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/rdOjLN/">test du localstorage 2</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="rdOjLN" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="testing localstorage 2" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/rdOjLN/">test du localstorage 2</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a> (EN).</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 ## Travailler avec des valeurs complexes
@@ -122,12 +122,12 @@ Comme mentionné plus haut, le Local Storage marche seulement avec de simples va
 
   <p>
     <input v-model="newCat">
-    <button @click="addCat">Ajouter un chat</button>
+    <button @click="addCat"Ajouter un chat</button>
   </p>
 </div>
 ```
 
-Cette "app" contient une simple liste (avec un bouton pour enlever un chat) et un petit formulaire pour ajouter un nouveau chat. Maintenant regardons le JavaScript.
+Cette « app » contient une simple liste (avec un bouton pour enlever un chat) et un petit formulaire pour ajouter un nouveau chat. Maintenant regardons le JavaScript.
 
 ``` js
 const app = new Vue({
@@ -172,7 +172,7 @@ Dans cette application, on a utilisé l'API Local Storage à la place d'un accè
 
 Nous avons trois méthodes pour s'occuper de nos chats. `addCat` et `removeCat` s'occupent de mettre à jour les données de Vue stockées dans `this.cats`. Ensuite elles appellent `saveCats` qui s'occupe de sérialiser et sauver les données. Vous pouvez vous amuser avec la version ci-dessous :
 
-<p data-height="265" data-theme-id="0" data-slug-hash="qoYbyW" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="localstorage, complex" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/qoYbyW/">localstorage, complexe</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="qoYbyW" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="localstorage, complex" class="codepen">Voir le Pen <a href="https://codepen.io/cfjedimaster/pen/qoYbyW/">localstorage plus complexe</a> par Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) sur <a href="https://codepen.io">CodePen</a> (EN).</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 ## Modèles alternatifs
