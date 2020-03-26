@@ -77,7 +77,7 @@ console.log(vm.reversedMessage) // => 'riover uA'
 
 Vous pouvez ouvrir la console et jouer vous-même avec l'exemple de vm. La valeur de `vm.reversedMessage` dépend toujours de la valeur de `vm.message`.
 
-Vous pouvez lier des données aux propriétés calculées dans les templates comme une propriété normale. Vue est au courant que `vm.reversedMessage` dépend de `vm.message`, donc il mettra à jour toutes les liaisons qui dépendent de `vm.reversedMessage` lorsque `vm.message` changera. Et le mieux dans tout cela est que nous avons créé cette relation de dépendance de façon déclarative : la fonction de l'accesseur calculé n'a pas d'effets secondaires, ce qui la rend facile à tester et à raisonner.
+Vous pouvez lier des données aux propriétés calculées dans les templates comme une propriété normale. Vue est au courant que `vm.reversedMessage` dépend de `vm.message`, donc il mettra à jour toutes les liaisons qui dépendent de `vm.reversedMessage` lorsque `vm.message` changera. Et le mieux dans tout cela est que nous avons créé cette relation de dépendance de façon déclarative : la fonction de l'accesseur calculé n'a pas d'effets secondaires, ce qui la rend facile à tester et à comprendre.
 
 ### Mise en cache dans `computed` vs `methods`
 
@@ -110,7 +110,7 @@ computed: {
 
 En comparaison, une invocation de méthode exécutera **toujours** la fonction à chaque fois que se produira un redéclenchement du rendu.
 
-Pourquoi avons-nous besoin de mettre en cache ? Imaginez que nous avons une propriété calculée couteuse **A**, qui exige une boucle dans un énorme tableau et qui fait beaucoup de calculs. Alors nous pouvons avoir d’autres propriétés calculées qui dépendent à leur tour de **A**. Sans la mise en cache, nous exécuterions l'accesseur de **A** autant de fois que nécessaire ! Dans les cas où vous ne souhaitez pas la mise en cache, utilisez une méthode à la place.
+Pourquoi avons-nous besoin de mettre en cache ? Imaginez que nous avons une propriété calculée coûteuse **A**, qui exige une boucle dans un énorme tableau et qui fait beaucoup de calculs. Alors nous pouvons avoir d’autres propriétés calculées qui dépendent à leur tour de **A**. Sans la mise en cache, nous exécuterions l'accesseur de **A** autant de fois que nécessaire ! Dans les cas où vous ne souhaitez pas la mise en cache, utilisez une méthode à la place.
 
 ### Propriétés calculées vs observées
 
@@ -185,7 +185,7 @@ Maintenant, lorsque vous exécutez `vm.fullName = 'John Doe'`, le mutateur sera 
 
 ## Observateurs
 
-Bien que les propriétés calculées soient plus appropriées dans la plupart des cas, parfois un observateur personnalisé est nécessaire. C'est pour cela que Vue fournit une façon plus générique de réagir aux changements de données à travers l'option `watch`. Ceci est très utile lorsque vous souhaitez exécuter des opérations asynchrones ou couteuses en réponse à des données changeantes.
+Bien que les propriétés calculées soient plus appropriées dans la plupart des cas, parfois un observateur personnalisé est nécessaire. C'est pour cela que Vue fournit une façon plus générique de réagir aux changements de données à travers l'option `watch`. Ceci est très utile lorsque vous souhaitez exécuter des opérations asynchrones ou coûteuses en réponse à des données changeantes.
 
 Par exemple :
 
@@ -222,7 +222,7 @@ var watchExampleVM = new Vue({
   },
   created: function () {
     // _.debounce est une fonction fournie par lodash pour limiter la fréquence
-    // d'exécution d'une opération particulièrement couteuse.
+    // d'exécution d'une opération particulièrement coûteuse.
     // Dans ce cas, nous voulons limiter la fréquence d'accès à
     // yesno.wtf/api, en attendant que l'utilisateur ait complètement
     // fini de taper avant de faire la requête ajax. Pour en savoir
