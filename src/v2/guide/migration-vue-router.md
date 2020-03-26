@@ -110,7 +110,7 @@ var router = new Router({
 })
 ```
 
-Si vous avez besoin d'ajouter une nouvelle route après que le routeur soit instancié, vous pouvez remplacer l'objet de concordance des routes du routeur par un nouveau contenant la route que vous souhaitez ajouter :
+Si vous avez besoin d'ajouter une nouvelle route après que le routeur a été instancié, vous pouvez remplacer l'objet de concordance des routes du routeur par un nouveau contenant la route que vous souhaitez ajouter :
 
 ``` js
 router.match = createMatcher(

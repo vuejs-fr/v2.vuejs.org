@@ -465,7 +465,7 @@ type: api
 
   Une fois observé, vous ne pouvez plus ajouter de propriétés réactives à l'objet de données racine. C'est pourquoi il est recommandé de déclarer dès le départ toutes les propriétés réactives à la racine de l'objet de données, avant de créer l'instance.
 
-  Après que l'instance ait été créée, l'objet de données initial peut être accédé via `vm.$data`. L'instance de Vue servira également de proxy pour toutes les propriétés trouvées dans l'objet de données, donc `vm.a` sera l'équivalent de `vm.$data.a`.
+  Après que l'instance a été créée, l'objet de données initial peut être accédé via `vm.$data`. L'instance de Vue servira également de proxy pour toutes les propriétés trouvées dans l'objet de données, donc `vm.a` sera l'équivalent de `vm.$data.a`.
 
   Les propriétés commençant par `_` ou `$` ne seront **pas** proxyfiées par l'instance de Vue car elles pourraient entrer en conflit avec certaines propriétés internes et méthodes d'API de Vue. Vous devrez y accéder via `vm.$data._propriete`.
 
@@ -796,7 +796,7 @@ type: api
 
 - **Détails :**
 
-  Appelé de manière synchrone juste après que l'instance ait été initialisée, et avant l'observation des données et l'installation des évènements / observateurs.
+  Appelé de manière synchrone juste après que l'instance a été initialisée, et avant l'observation des données et l'installation des évènements / observateurs.
 
 - **Voir aussi :** [Diagramme du cycle de vie](../guide/instance.html#Diagramme-du-cycle-de-vie)
 
@@ -806,7 +806,7 @@ type: api
 
 - **Détails :**
 
-  Appelé de manière synchrone après que l'instance ait été créée. À ce stade, l'instance a fini de traiter les options, ce qui signifie que les éléments suivants ont été installés: observation des données, propriétés calculées, méthodes, fonctions de retour des observateurs et évènements. Cependant, la propriété `$el` n'est pas encore disponible.
+  Appelé de manière synchrone après que l'instance a été créée. À ce stade, l'instance a fini de traiter les options, ce qui signifie que les éléments suivants ont été installés: observation des données, propriétés calculées, méthodes, fonctions de retour des observateurs et évènements. Cependant, la propriété `$el` n'est pas encore disponible.
 
 - **Voir aussi :** [Diagramme du cycle de vie](../guide/instance.html#Diagramme-du-cycle-de-vie)
 
@@ -828,7 +828,7 @@ type: api
 
 - **Détails :**
 
-  Appelé juste après que l'instance ait été montée, là où `el` est remplacé par le nouvellement créé `vm.$el`. Si l'instance à la racine est montée sur un élément du document, alors `vm.$el` sera aussi dans le document quand `mounted` est appelé.
+  Appelé juste après que l'instance a été montée, là où `el` est remplacé par le nouvellement créé `vm.$el`. Si l'instance à la racine est montée sur un élément du document, alors `vm.$el` sera aussi dans le document quand `mounted` est appelé.
 
   Notez que `mounted` **ne** garantit **pas** que tous les composants aient été montés. Si vous souhaitez attendre jusqu'à ce que le rendu de la vue entière ait été fait, vous pouvez utiliser [vm.$nextTick](#vm-nextTick) à l'intérieur de `mounted` :
 
@@ -1577,7 +1577,7 @@ type: api
   ```
 
   Notez qu'avec l'option `immediate` vous serez incapable d'utiliser `unwatch` sur la propriété fournie par le premier appel de la fonction de rappel.
- 
+
   ``` js
   // Ceci va générer une erreur
   var unwatch = vm.$watch(
@@ -1589,7 +1589,7 @@ type: api
     { immediate: true }
   )
   ```
-  
+
   Si vous voulez toujours appeler la fonction `unwatch` à l'intérieur de la fonction de rappel, vous devrez d'abord vérifier sa disponibilité :
 
   ``` js
