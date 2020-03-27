@@ -183,7 +183,7 @@ var App = Object.freeze({
 
 Maintenant la source de ces propriétés partagées est bien plus évidente : il y a un objet `App` défini quelque part dans l'application. Pour le trouver, les développeurs ont seulement besoin de rechercher la référence dans le projet.
 
-Un autre avantage est que `App` peut maintenant être utilisé _n'importe où_ dans le code, qu'il soit lié à Vue ou non. Cela inclue les valeurs attachées directement aux options des instances, plutôt qu'avoir à entrer dans une fonction pour accéder aux propriétés avec `this` :
+Un autre avantage est que `App` peut maintenant être utilisé _n'importe où_ dans le code, qu'il soit lié à Vue ou non. Cela inclut les valeurs attachées directement aux options des instances, plutôt qu'avoir à entrer dans une fonction pour accéder aux propriétés avec `this` :
 
 ```js
 new Vue({
