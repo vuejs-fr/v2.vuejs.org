@@ -524,7 +524,7 @@
 <p class="tip">Si vous avez levé un sourcil à <code>Object.freeze</code>, cela sert à empêcher l’objet d’être modifié dans le futur. Il s’agit essentiellement de rendre toutes ses propriétés constantes, les protégeant de futurs bugs d’état.</p>
 
 <p>Maintenant la source de ces propriétés partagées est bien plus évidente : il y a un objet <code>App</code> défini quelque part dans l’application. Pour le trouver, les développeurs ont seulement besoin de rechercher la référence dans le projet.</p>
-<p>Un autre avantage est que <code>App</code> peut maintenant être utilisé <em>n’importe où</em> dans le code, qu’il soit lié à Vue ou non. Cela inclue les valeurs attachées directement aux options des instances, plutôt qu’avoir à entrer dans une fonction pour accéder aux propriétés avec <code>this</code> :</p>
+<p>Un autre avantage est que <code>App</code> peut maintenant être utilisé <em>n’importe où</em> dans le code, qu’il soit lié à Vue ou non. Cela inclut les valeurs attachées directement aux options des instances, plutôt qu’avoir à entrer dans une fonction pour accéder aux propriétés avec <code>this</code> :</p>
 <pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
   <span class="hljs-attr">data</span>: &#123;
     <span class="hljs-attr">appVersion</span>: App.version
