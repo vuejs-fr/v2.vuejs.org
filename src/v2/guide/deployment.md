@@ -4,7 +4,7 @@ type: guide
 order: 404
 ---
 
-> La plupard des tips ci-dessous sont activé par défaut si vous utilisez [Vue CLI](https://cli.vuejs.org). Cette section est seulement pertinente si vous utilisez des installations personnalisés.
+> La plupart des conseils ci-dessous sont activés par défaut si vous utilisez [Vue CLI](https://cli.vuejs.org). Cette section est seulement pertinente si vous utilisez des installations personnalisés.
 
 ## Passer en mode production
 
