@@ -527,7 +527,7 @@ Animer, par définition, signifie donner vie. Malheureusement, quand les designe
 
 Vue peut vous aider. Puisque les SVGs ne sont que des données, nous avons uniquement besoin de voir à quoi ressemblent ces créatures quand elles sont excitées, pensives, en interaction, etc. Ensuite Vue vous aidera aux transitions entre ces états, faisant de vos pages d'accueil, vos animations d'attente et de vos notifications quelque chose de vivant.
 
-Un exemple de cela dans de Sarah Drasner ci-dessous, utilisant une combinaison de changement d'état interactif et d'état en boucle animée.
+Sarah Drasner nous le démontre dans l'exemple ci-dessous, utilisant une combinaison de changement d'état interactif et d'état en boucle animée.
 
 <p data-height="265" data-theme-id="light" data-slug-hash="YZBGNp" data-default-tab="result" data-user="sdras" data-embed-version="2" data-pen-title="Vue-controlled Wall-E" class="codepen">Voir le pen <a href="https://codepen.io/sdras/pen/YZBGNp/">Wall-E contrôlé par Vue</a> par Sarah Drasner (<a href="https://codepen.io/sdras">@sdras</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
