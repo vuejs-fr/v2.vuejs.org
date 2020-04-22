@@ -573,7 +573,7 @@ Au-delà de l'attribut `scoped`, utiliser des noms de classe uniques vous assure
 </summary>
 {% endraw %}
 
-Vue utilise le préfixe `_` pour définir ses propres propriétés privées. Aussi utiliser le même préfixe comme (par ex. `_update`) risque d'écraser les propriétés d'instance. Même si vous vérifiez que Vue n'utilise pas actuellement un nom de propriété particulier, il n'y a aucune garantie que le conflit n'apparaisse pas dans des versions futures.
+Vue utilise le préfixe `_` pour définir ses propres propriétés privées. Aussi, utiliser le même préfixe (comme par ex. `_update`) risque d'écraser les propriétés d'instance. Même si vous vérifiez que Vue n'utilise pas actuellement un nom de propriété particulier, il n'y a aucune garantie que le conflit n'apparaisse pas dans des versions futures.
 
 Concernant le préfixe `$`, il est réservé dans l'écosystème Vue à des propriétés spéciales d'instance exposées à l'utilisateur. L'utiliser pour des propriétés _privées_ ne serait pas approprié.
 
@@ -712,7 +712,7 @@ components/
 
 **Les noms de fichier des [composants monofichiers](../guide/single-file-components.html) devraient toujours être écrits en PascalCase ou en kebab-case.**
 
-La PascalCase fonctionne mieux avec l'autocomplétion dans des éditeurs de code. Comme ils sont consistants avec la manière dont nous référençons les composants avec du JS(X) et des templates, utilisez-le si possible. Cependant, les casses de noms mixtes (majuscules et minuscules) peuvent parfois créer des problèmes sur des systèmes de fichier non sensibles à la casse. C'est pourquoi la kebab-case est aussi parfaitement acceptable.
+La PascalCase fonctionne mieux avec l'autocomplétion dans des éditeurs de code. Comme ils sont consistants avec la manière dont nous référençons les composants avec du JS(X) et des templates, utilisez-la si possible. Cependant, les casses de noms mixtes (majuscules et minuscules) peuvent parfois créer des problèmes sur des systèmes de fichier non sensibles à la casse. C'est pourquoi la kebab-case est aussi parfaitement acceptable.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### À éviter
@@ -1357,7 +1357,7 @@ Les propriétés calculées simples et bien nommées sont :
 
 - __Plus adaptable aux changements__
 
-  N'importe quelle valeur qui peut être nommée pourra être utile pour la vue. Par exemple, nous pourrions décider d'afficher un message expliquant à l'utilisateur combien d'argent ils ont économisé. Nous pourrions décider de calculer les taxes de vente associées, mais peut-être de les afficher indépendamment au lieu qu'elle soit une partie du prix final.
+  N'importe quelle valeur qui peut être nommée pourra être utile pour la vue. Par exemple, nous pourrions décider d'afficher un message expliquant à l'utilisateur combien d'argent il a économisé. Nous pourrions décider de calculer les taxes de vente associées, mais peut-être de les afficher indépendamment au lieu qu'elles soient une partie du prix final.
 
   Des propriétés calculées courtes et spécifiques permettent plus de liberté sur la manière dont les informations seront utilisées ce qui nécessite moins de refactorisation en cas de changements.
 
@@ -1587,7 +1587,7 @@ Voici l'ordre par défaut que nous recommandons pour les options de composant. E
 
 **Les attributs d'éléments (incluant les composants) devraient être ordonnés avec consistance.**
 
-Voici l'ordre par défaut que nous recommandons pour les options de composant. Elles sont séparées en catégories, ainsi vous saurez où ajouter vos attributs et directives personnalisées.
+Voici l'ordre par défaut que nous recommandons pour les attributs d'éléments. Ils sont séparés en catégories, ainsi vous saurez où ajouter vos attributs et directives personnalisées.
 
 1. **Définition** (fournit les options du composant)
   - `is`
@@ -1631,7 +1631,7 @@ Voici l'ordre par défaut que nous recommandons pour les options de composant. E
 
 **Vous pourriez ajouter une ligne vide entre de multiples propriétés, en particulier si la longueur de votre option dépasse la taille de l'écran.**
 
-Quand les composants commencent à devenir difficile à lire, ajouter des espaces entre des propriétés sur plusieurs lignes peut les rendre de nouveau simples à lire. Dans divers éditeurs, comme Vim, formater les options ainsi peut rendre la navigation plus simple avec le clavier.
+Quand les composants commencent à devenir difficile à lire, ajouter des espaces entre des propriétés sur plusieurs lignes peut les rendre de nouveau simple à lire. Dans divers éditeurs, comme Vim, formater les options ainsi peut rendre la navigation plus simple avec le clavier.
 
 {% raw %}<div class="style-example example-good">{% endraw %}
 #### Recommandé
