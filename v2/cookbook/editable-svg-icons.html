@@ -54,10 +54,10 @@
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
 
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- main page styles -->
     <link rel="stylesheet" href="/css/page.css">
@@ -201,15 +201,16 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">한국어</a></li>
-    <li><a href="https://vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">Español</a></li>
-    <li><a href="https://docs.vuejs.id/v2/cookbook/editable-svg-icons.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
+    <li><a href="https://cn.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/cookbook/editable-svg-icons.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/cookbook/editable-svg-icons.html" class="nav-link">Bahasa Indonesia</a></li>
   </ul>
 </li>
 
@@ -241,9 +242,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
-    </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
@@ -368,9 +366,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
-    </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
@@ -542,7 +537,7 @@
 
 <p>D’autres exemples d’animations sont disponibles dans le <a href="https://github.com/sdras/vue-sample-svg-icons/" target="_blank" rel="noopener">dépôt</a></p>
 <h2 id="Remarques-additionnelles"><a href="#Remarques-additionnelles" class="headerlink" title="Remarques additionnelles"></a>Remarques additionnelles</h2><p>Les designers peuvent changer d’avis. Les exigences du produit peuvent aussi évoluer. Conserver la logique pour l’ensemble des icônes dans un seul composant de base nous permettra de mettre a jour toutes les icônes en modifiant un seul fichier. Même en utilisant un <em>icon loader</em>, il existe des situations où recréer ou modifier chaque SVG devient nécessaire si on souhaite la même modification sur toutes les icônes. Cette méthode peut vous éviter ces contrariétés et vous faire gagner du temps.</p>
-<h2 id="Quand-eviter-ce-pattern"><a href="#Quand-eviter-ce-pattern" class="headerlink" title="Quand éviter ce pattern"></a>Quand éviter ce pattern</h2><p>Ce système est particulièrement utile quand vous avez un grand nombre d’icônes utilisées de façons différentes à travers votre site. Si la même icône est utilisée de nombreuses fois sur la même page (par exemple, un tableau avec une icône de suppression sur chaque ligne), il peut être plus optimisé de définir un <em>sprite</em> SVG contenant des <code>&lt;symbol/&gt;</code> entre des balises <code>&lt;defs&gt;</code> et de les référencer dans des balises <code>&lt;use&gt;</code>.</p>
+<h2 id="Quand-eviter-ce-pattern"><a href="#Quand-eviter-ce-pattern" class="headerlink" title="Quand éviter ce pattern"></a>Quand éviter ce pattern</h2><p>Ce système d’icone SVG est particulièrement utile quand vous avez un grand nombre d’icônes utilisées de façons différentes à travers votre site. Si la même icône est utilisée de nombreuses fois sur la même page (par exemple, un tableau avec une icône de suppression sur chaque ligne), il peut être plus optimisé de définir un sprite et de les référencer dans des balises <code>&lt;use&gt;</code>.</p>
 <h2 id="Patterns-alternatifs"><a href="#Patterns-alternatifs" class="headerlink" title="Patterns alternatifs"></a>Patterns alternatifs</h2><p>Quelques autres outils pour aider à gérer le chargement d’icônes SVG :</p>
 <ul>
 <li><a href="https://github.com/kisenka/svg-sprite-loader" target="_blank" rel="noopener">svg-sprite-loader</a></li>

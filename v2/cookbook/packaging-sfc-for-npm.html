@@ -54,10 +54,10 @@
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
 
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- main page styles -->
     <link rel="stylesheet" href="/css/page.css">
@@ -201,15 +201,16 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link" target="_blank" rel="noopener">한국어</a></li>
-    <li><a href="https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link" target="_blank" rel="noopener">Español</a></li>
-    <li><a href="https://docs.vuejs.id/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
+    <li><a href="https://cn.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">Bahasa Indonesia</a></li>
   </ul>
 </li>
 
@@ -241,9 +242,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
-    </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
@@ -368,9 +366,6 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
-    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
-    </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
@@ -483,8 +478,8 @@ dist/</code></pre>
   &#125;,
   "devDependencies": &#123;
     "rollup": "^1.17.0",
-    "rollup-plugin-buble": "^0.19.8",
-    "rollup-plugin-commonjs": "^10.0.1",
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^11.1.0",
     "rollup-plugin-vue": "^5.0.1",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
@@ -526,9 +521,9 @@ dist/</code></pre>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> component;</code></pre>
 <p>Notice the first line directly imports your SFC, and the last line exports it unchanged. As indicated by the comments in the rest of the code, the wrapper provides an <code>install</code> function for Vue, then attempts to detect Vue and automatically install the component. With 90% of the work done, it’s time to sprint to the finish!</p>
 <h3 id="How-do-I-configure-the-Rollup-build"><a href="#How-do-I-configure-the-Rollup-build" class="headerlink" title="How do I configure the Rollup build?"></a>How do I configure the Rollup build?</h3><p>With the package.json <code>scripts</code> section ready and the SFC wrapper in place, all that is left is to ensure Rollup is properly configured. Fortunately, this can be done with a small 16 line rollup.config.js file:</p>
-<pre><code class="hljs js"><span class="hljs-keyword">import</span> commonjs <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-commonjs'</span>; <span class="hljs-comment">// Convert CommonJS modules to ES6</span>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> commonjs <span class="hljs-keyword">from</span> <span class="hljs-string">'@rollup/plugin-commonjs'</span>; <span class="hljs-comment">// Convert CommonJS modules to ES6</span>
 <span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>; <span class="hljs-comment">// Handle .vue SFC files</span>
-<span class="hljs-keyword">import</span> buble <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-buble'</span>; <span class="hljs-comment">// Transpile/polyfill with reasonable browser support</span>
+<span class="hljs-keyword">import</span> buble <span class="hljs-keyword">from</span> <span class="hljs-string">'@rollup/plugin-buble'</span>; <span class="hljs-comment">// Transpile/polyfill with reasonable browser support</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
     <span class="hljs-attr">input</span>: <span class="hljs-string">'src/wrapper.js'</span>, <span class="hljs-comment">// Path relative to package.json</span>
     output: &#123;
