@@ -340,12 +340,12 @@ order: 803
     },
     {
       name: 'Pine Wu',
+      city: 'Shanghai, China',
       languages: ['zh', 'en', 'jp'],
       github: 'octref',
       twitter: 'octref',
       work: {
-        role: 'Engineer on VSCode',
-        org: 'Microsoft'
+        role: 'Nomad'
       },
       reposOfficial: [
         'vetur'
@@ -353,20 +353,15 @@ order: 803
     },
     {
       name: 'Jinjiang',
-      title: 'Mobile Extrapolator',
-      city: 'Hangzhou, China',
+      city: 'Singapore',
       languages: ['zh', 'en'],
       github: 'jinjiang',
       twitter: 'zhaojinjiang',
-      work: {
-        org: 'Alibaba',
-        orgUrl: 'https://www.alibaba.com/'
-      },
       reposOfficial: [
-        'cn.vuejs.org'
+        'cn.vuejs.org', 'vue-docs-zh-cn'
       ],
       reposPersonal: [
-        'apache/incubator-weex'
+        'vue-a11y-utils', 'vue-mark-display', 'mark2slides', 'vue-keyboard-over'
       ]
     },
     {
@@ -648,6 +643,25 @@ order: 803
         'https://bencodezen.io/'
       ]
     },
+    {
+       name: 'Kia King Ishii',
+       title: 'The optimist web designer/developer',
+       city: 'Kanagawa, Japan',
+       languages: ['en', 'jp'],
+       work: {
+         role: 'Tech Talent',
+         org: 'Global Brain',
+         orgUrl: 'https://globalbrains.com/'
+       },
+       github: 'kiaking',
+       twitter: 'KiaKing85',
+       reposOfficial: [
+         'vuex'
+       ],
+       reposPersonal: [
+         'vuex-orm/*'
+       ]
+     }
   ]))
 
   var emeriti = shuffle([
@@ -766,6 +780,21 @@ order: 803
   ])
 
   var partners = [
+    {
+      name: 'Maria Lamardo',
+      title: 'Front End Engineer at Pendo',
+      city: 'Raleigh, NC, USA',
+      languages: ['en', 'es'],
+      work: {
+        role: 'Front End Engineer',
+        org: 'Pendo'
+      },
+      github: 'mlama007',
+      twitter: 'MariaLamardo',
+      reposPersonal: [
+        'vuejs/events'
+      ]
+    },
     {
       name: 'Pratik Patel',
       title: 'Organizer of VueConf US',

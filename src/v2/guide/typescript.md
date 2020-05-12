@@ -187,3 +187,34 @@ const Component = Vue.extend({
 ```
 
 Si vous vous apercevez que l'autocomplétion ne fonctionne pas, annoter certaines méthodes peut aider à résoudre ces problèmes. Utiliser l'option `--noImplicitAny` aidera à trouver bon nombre de ces méthodes non annotées.
+
+
+
+## Annotating Props
+
+```ts
+import Vue, { PropType } from 'vue'
+
+interface ComplexMessage { 
+  title: string,
+  okMessage: string,
+  cancelMessage: string
+}
+const Component = Vue.extend({
+  props: {
+    name: String,
+    success: { type: String },
+    callback: { 
+      type: Function as PropType<() => void>
+    },
+    message: {
+      type: Object as PropType<ComplexMessage>,
+      required: true,
+      validator (message: ComplexMessage) {
+        return !!message.title;
+      }
+    }
+  }
+})
+```
+Si vous constatez que le validateur n'obtient pas l'inférence de type ou que la complétion des membres ne fonctionne pas, l'annotation de l'argument avec le type attendu peut aider à résoudre ces problèmes.
