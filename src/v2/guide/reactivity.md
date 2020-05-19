@@ -24,10 +24,7 @@ En raison des limites du JavaScript moderne, il y a certains changement que Vue 
 
 ### Pour les objects
 
-Vue ne peut pas détecter l'ajout et la suppression. 
-Vue cannot detect property addition or deletion. Since Vue performs the getter/setter conversion process during instance initialization, a property must be present in the `data` object in order for Vue to convert it and make it reactive. For example:
-
-Comme Vue effectue le processus de conversion accesseur/mutateur lors de l'initialisation de l'instance, une propriété doit être présente dans l'objet `data` pour que Vue puisse le convertir et le rendre réactif. Par exemple :
+Vue ne peut pas détecter l'ajout et la suppression. Comme Vue effectue le processus de conversion accesseur/mutateur lors de l'initialisation de l'instance, une propriété doit être présente dans l'objet `data` pour que Vue puisse le convertir et le rendre réactif. Par exemple :
 
 ``` js
 var vm = new Vue({
