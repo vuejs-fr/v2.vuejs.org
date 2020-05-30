@@ -93,7 +93,7 @@ Vous pouvez également utiliser le [`vm.$set`](https://vuejs.org/v2/api/#vm-set)
 vm.$set(vm.items, indexOfItem, newValue)
 ```
 
-Pour résoudre la deuxième condition, vous pouvez utiliser le `splice` :
+Pour résoudre la deuxième restriction, vous pouvez utiliser le `splice` :
 
 ``` js
 vm.items.splice(newLength)
