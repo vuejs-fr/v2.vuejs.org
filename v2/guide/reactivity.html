@@ -981,8 +981,7 @@
 <p>Chaque instance de composant a une instance d’<strong>observateur</strong> correspondante, qui enregistre comme dépendances toutes les propriétés « touchées » pendant le rendu du composant. Plus tard, lorsque le mutateur d’une dépendance est déclenché, il en avertit l’observateur, ce qui provoque à son tour un nouveau rendu du composant.</p>
 <p><img src="/images/data.png" alt="Reactivity Cycle"></p>
 <h2 id="Limitations-de-la-detection-de-changement"><a href="#Limitations-de-la-detection-de-changement" class="headerlink" title="Limitations de la détection de changement"></a>Limitations de la détection de changement</h2><p>En raison des limites du JavaScript moderne, il y a certains changement que Vue <strong>ne peut pas détecter</strong>. Cependant, il existe des manières de contourner ces limitations pour préserver la réactivité :</p>
-<h3 id="Pour-les-objects"><a href="#Pour-les-objects" class="headerlink" title="Pour les objects"></a>Pour les objects</h3><p>Vue ne peut pas détecter l’ajout et la suppression.<br>Vue cannot detect property addition or deletion. Since Vue performs the getter/setter conversion process during instance initialization, a property must be present in the <code>data</code> object in order for Vue to convert it and make it reactive. For example:</p>
-<p>Comme Vue effectue le processus de conversion accesseur/mutateur lors de l’initialisation de l’instance, une propriété doit être présente dans l’objet <code>data</code> pour que Vue puisse le convertir et le rendre réactif. Par exemple :</p>
+<h3 id="Pour-les-objects"><a href="#Pour-les-objects" class="headerlink" title="Pour les objects"></a>Pour les objects</h3><p>Vue ne peut pas détecter l’ajout et la suppression. Comme Vue effectue le processus de conversion accesseur/mutateur lors de l’initialisation de l’instance, une propriété doit être présente dans l’objet <code>data</code> pour que Vue puisse le convertir et le rendre réactif. Par exemple :</p>
 <pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
   <span class="hljs-attr">data</span>: &#123;
     <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>
@@ -1019,7 +1018,7 @@ Vue.set(vm.items, indexOfItem, newValue)</code></pre>
 vm.items.splice(indexOfItem, <span class="hljs-number">1</span>, newValue)</code></pre>
 <p>Vous pouvez également utiliser le <a href="https://vuejs.org/v2/api/#vm-set" target="_blank" rel="noopener"><code>vm.$set</code></a> d’instance, qui est un alias de la méthode <code>Vue.set</code>:</p>
 <pre><code class="hljs js">vm.$set(vm.items, indexOfItem, newValue)</code></pre>
-<p>Pour résoudre la deuxième condition, vous pouvez utiliser le <code>splice</code> :</p>
+<p>Pour résoudre la deuxième restriction, vous pouvez utiliser le <code>splice</code> :</p>
 <pre><code class="hljs js">vm.items.splice(newLength)</code></pre>
 <h2 id="Declaration-de-proprietes-reactives"><a href="#Declaration-de-proprietes-reactives" class="headerlink" title="Déclaration de propriétés réactives"></a>Déclaration de propriétés réactives</h2><p>Étant donné que Vue ne permet pas d’ajouter dynamiquement des propriétés réactives au niveau de la racine, vous devez initialiser les instances de Vue en déclarant dès le départ toutes les propriétés des données réactives au niveau de la racine, même avec juste une valeur vide :</p>
 <pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
