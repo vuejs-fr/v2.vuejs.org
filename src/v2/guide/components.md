@@ -609,7 +609,7 @@ C'est tout ce que vous avez besoin de savoir à propos des composants dynamiques
 
 ## Cas particuliers de l'analyse des templates de DOM
 
-Plusieurs éléments HTML, comme `<ul>`, `<ol>`, `<table>` et `<select>` ont des restrictions en ce qui concerne les éléments à l'intérieur desquels ils apparaissent. D'autres éléments quant à eux, tel que `<li>`, `<tr>`, ou `<option>` peuvent uniquement être placés à l'intérieur de certains éléments parents uniquement.
+Plusieurs éléments HTML, comme `<ul>`, `<ol>`, `<table>` et `<select>` ont des restrictions en ce qui concerne les éléments qui peuvent apparaitre à l'intérieur d'eux. D'autres éléments quant à eux, tel que `<li>`, `<tr>`, ou `<option>` peuvent uniquement être placés à l'intérieur de certains éléments parents uniquement.
 
 Cela mène à des problèmes quand vous utilisez des composants avec des éléments qui ont ces restrictions. Par exemple :
 
