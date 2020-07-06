@@ -152,7 +152,7 @@ export default {
 }
 ```
 
-Maintenant, et `ComponentA` et `ComponentC` peuvent être utilisés dans le template du composant `ComponentB`.
+Maintenant, `ComponentA` et `ComponentC` peuvent être utilisés dans le template du composant `ComponentB`.
 
 ### Enregistrement global automatique des composants de base
 
