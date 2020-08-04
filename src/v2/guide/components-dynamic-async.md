@@ -232,7 +232,7 @@ Vous pouvez également retourner une `Promise` dans la fonction usine, ainsi ave
 ``` js
 Vue.component(
   'exemple-webpack-async',
-  // La fonction `import` retourne une `Promise`.
+  // La fonction `import` dynamique retourne une `Promise`.
   () => import('./mon-composant-async')
 )
 ```

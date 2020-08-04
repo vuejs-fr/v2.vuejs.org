@@ -95,21 +95,19 @@ new Vue({
 Checkboxes multiples, liées au même tableau (Array) :
 
 ``` html
-<div id='example-3'>
-  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
-  <label for="jack">Jack</label>
-  <input type="checkbox" id="john" value="John" v-model="checkedNames">
-  <label for="john">John</label>
-  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-  <label for="mike">Mike</label>
-  <br>
-  <span>Noms cochés : {{ checkedNames }}</span>
-<div>
+<input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+<label for="jack">Jack</label>
+<input type="checkbox" id="john" value="John" v-model="checkedNames">
+<label for="john">John</label>
+<input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+<label for="mike">Mike</label>
+<br>
+<span>Noms cochés : {{ checkedNames }}</span>
 ```
 
 ``` js
 new Vue({
-  el: '#example-3',
+  el: '...',
   data: {
     checkedNames: []
   }
@@ -387,6 +385,6 @@ Si vous voulez que les espaces superflus des saisies utilisateur soient automati
 
 > Si vous n'êtes pas encore familier avec les composants de Vue, passez cette section pour le moment.
 
-Les types de saisie intégrés au HTML ne répondront pas toujours à vos besoins. Heureusement, les composants de Vue vous permettent de créer des entrées réutilisables avec un comportement entièrement personnalisé. Ces entrées fonctionnent même avec le `v-model` ! 
+Les types de saisie intégrés au HTML ne répondront pas toujours à vos besoins. Heureusement, les composants de Vue vous permettent de créer des entrées réutilisables avec un comportement entièrement personnalisé. Ces entrées fonctionnent même avec le `v-model` !
 
 Pour en apprendre plus, lisez la section [champs personnalisés](components.html#Utiliser-v-model-sur-les-composants) dans le guide des composants.

@@ -561,14 +561,6 @@ order: 803
       ]
     },
     {
-      name: 'Darek Gusto Wędrychowski',
-      title: 'Google Search Virtuoso',
-      city: 'Kraków, Poland',
-      languages: ['pl', 'en'],
-      github: 'gustojs',
-      twitter: 'gustojs'
-    },
-    {
       name: 'Phan An',
       title: 'Backend Designer & Process Poet',
       city: 'Munich, Germany',
@@ -625,12 +617,11 @@ order: 803
     },
     {
       name: 'Ben Hong',
-      title: 'Proud Ravenclaw Dragon',
       city: 'Washington, DC, USA',
       languages: ['en', 'zh'],
       work: {
-        role: 'Senior Frontend Engineer',
-        org: 'GitLab (Meltano)',
+        role: 'Developer Experience (DX) Engineer',
+        org: 'Cypress.io',
       },
       reposOfficial: [
         'vuejs.org',
