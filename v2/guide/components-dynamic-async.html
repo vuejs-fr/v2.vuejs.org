@@ -90,14 +90,18 @@
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
+      
     </div>
-    <header id="header">
-  <a id="logo" href="/">
-    <img src="/images/logo.png" alt="vue logo">
-    <span>Vue.js</span>
-  </a>
-  <ul id="nav">
-    <li>
+    <div>
+  
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.png" alt="vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
   <form id="search-form">
     <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
   </form>
@@ -215,8 +219,9 @@
 </li>
 
 
-  </ul>
-</header>
+    </ul>
+  </header>
+</div>
 
     
       <div id="main" class="fix-sidebar">
@@ -231,7 +236,7 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+    <a href="https://autocode.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
@@ -242,6 +247,9 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
@@ -269,6 +277,7 @@
           Guide
           
             <select class="version-select">
+              <option value="v3">3.x-beta</option>
               <option value="SELF" selected>2.x</option>
               <option value="v1">1.0</option>
               <option value="012">0.12</option>
@@ -931,6 +940,9 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
@@ -961,7 +973,7 @@
   <script
     async
     type="text/javascript"
-    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg"
     id="_carbonads_js">
   </script>
 </div>
@@ -1157,7 +1169,7 @@ new Vue({
 <p>Vous pouvez également retourner une <code>Promise</code> dans la fonction usine, ainsi avec webpack 2 et la syntaxe ES2015 vous pourrez écrire :</p>
 <pre><code class="hljs js">Vue.component(
   <span class="hljs-string">'exemple-webpack-async'</span>,
-  <span class="hljs-comment">// La fonction `import` retourne une `Promise`.</span>
+  <span class="hljs-comment">// La fonction `import` dynamique retourne une `Promise`.</span>
   () =&gt; <span class="hljs-keyword">import</span>(<span class="hljs-string">'./mon-composant-async'</span>)
 )</code></pre>
 <p>Quand vous utilisez <a href="components-registration.html#Local-Registration">l’inscription locale</a> de composant, vous pouvez aussi fournir directement une fonction qui retourne une <code>Promise</code> :</p>

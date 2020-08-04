@@ -90,14 +90,18 @@
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
+      
     </div>
-    <header id="header">
-  <a id="logo" href="/">
-    <img src="/images/logo.png" alt="vue logo">
-    <span>Vue.js</span>
-  </a>
-  <ul id="nav">
-    <li>
+    <div>
+  
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.png" alt="vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
   <form id="search-form">
     <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
   </form>
@@ -215,8 +219,9 @@
 </li>
 
 
-  </ul>
-</header>
+    </ul>
+  </header>
+</div>
 
     
       <div id="main" class="fix-sidebar">
@@ -231,7 +236,7 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+    <a href="https://autocode.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
@@ -242,6 +247,9 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
@@ -269,6 +277,7 @@
           Guide
           
             <select class="version-select">
+              <option value="v3">3.x-beta</option>
               <option value="SELF" selected>2.x</option>
               <option value="v1">1.0</option>
               <option value="012">0.12</option>
@@ -931,6 +940,9 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
@@ -961,7 +973,7 @@
   <script
     async
     type="text/javascript"
-    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg"
     id="_carbonads_js">
   </script>
 </div>
@@ -1041,18 +1053,16 @@ new Vue({
 </script>
 
 <p>Checkboxes multiples, liées au même tableau (Array) :</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'example-3'</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"jack"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Jack"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"checkedNames"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"jack"</span>&gt;</span>Jack<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"john"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"John"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"checkedNames"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"john"</span>&gt;</span>John<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mike"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Mike"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"checkedNames"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"mike"</span>&gt;</span>Mike<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Noms cochés : &#123;&#123; checkedNames &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"jack"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Jack"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"checkedNames"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"jack"</span>&gt;</span>Jack<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"john"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"John"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"checkedNames"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"john"</span>&gt;</span>John<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mike"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Mike"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"checkedNames"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"mike"</span>&gt;</span>Mike<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Noms cochés : &#123;&#123; checkedNames &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
 <pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
-  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-3'</span>,
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'...'</span>,
   <span class="hljs-attr">data</span>: &#123;
     <span class="hljs-attr">checkedNames</span>: []
   &#125;
@@ -1251,7 +1261,7 @@ vm.selected.number <span class="hljs-comment">// =&gt; 123</span></code></pre>
 <h2 id="v-model-avec-les-composants"><a href="#v-model-avec-les-composants" class="headerlink" title="v-model avec les composants"></a><code>v-model</code> avec les composants</h2><blockquote>
 <p>Si vous n’êtes pas encore familier avec les composants de Vue, passez cette section pour le moment.</p>
 </blockquote>
-<p>Les types de saisie intégrés au HTML ne répondront pas toujours à vos besoins. Heureusement, les composants de Vue vous permettent de créer des entrées réutilisables avec un comportement entièrement personnalisé. Ces entrées fonctionnent même avec le <code>v-model</code> ! </p>
+<p>Les types de saisie intégrés au HTML ne répondront pas toujours à vos besoins. Heureusement, les composants de Vue vous permettent de créer des entrées réutilisables avec un comportement entièrement personnalisé. Ces entrées fonctionnent même avec le <code>v-model</code> !</p>
 <p>Pour en apprendre plus, lisez la section <a href="components.html#Utiliser-v-model-sur-les-composants">champs personnalisés</a> dans le guide des composants.</p>
 
   

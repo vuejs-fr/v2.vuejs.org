@@ -90,14 +90,18 @@
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
+      
     </div>
-    <header id="header">
-  <a id="logo" href="/">
-    <img src="/images/logo.png" alt="vue logo">
-    <span>Vue.js</span>
-  </a>
-  <ul id="nav">
-    <li>
+    <div>
+  
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.png" alt="vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
   <form id="search-form">
     <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
   </form>
@@ -215,8 +219,9 @@
 </li>
 
 
-  </ul>
-</header>
+    </ul>
+  </header>
+</div>
 
     
       <div id="main" class="fix-sidebar">
@@ -231,7 +236,7 @@
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://autocode.com" target="_blank" rel="sponsored noopener" class="logo">
+    <a href="https://autocode.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/autocode.svg" alt="Autocode">
     </a>
     </div>
@@ -242,6 +247,9 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
@@ -269,6 +277,7 @@
           API
           
             <select class="version-select">
+              <option value="v3">3.x-beta</option>
               <option value="SELF" selected>2.x</option>
               <option value="v1">1.0</option>
               <option value="012">0.12</option>
@@ -289,6 +298,9 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
@@ -319,7 +331,7 @@
   <script
     async
     type="text/javascript"
-    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg"
     id="_carbonads_js">
   </script>
 </div>
@@ -2399,7 +2411,7 @@ vm.$emit(<span class="hljs-string">'test'</span>, <span class="hljs-string">'sal
 </li>
 </ul>
 <h2 id="Attributs-speciaux"><a href="#Attributs-speciaux" class="headerlink" title="Attributs spéciaux"></a>Attributs spéciaux</h2><h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><ul>
-<li><p><strong>Attend comme valeur :</strong> <code>number | string</code></p>
+<li><p><strong>Attend comme valeur :</strong> <code>number | string | boolean (depuis 2.4.2) | symbol (depuis 2.5.12)</code></p>
 <p>L’attribut spécial <code>key</code> est principalement utilisé comme marqueur pour l’algorithme de DOM virtuel de Vue afin d’identifier les <em>VNodes</em> lors du différentiel entre la nouvelle liste des nœuds et la liste précédente. Sans clés, Vue utilise un algorithme qui minimise le déplacement de nœuds et essaie de patcher/réutiliser le plus possible les éléments présents du même type. Avec des clés, cela réordonnera les éléments en se basant sur le nouvel ordre de clés, et les éléments avec des clés qui ne sont plus présentes seront toujours supprimés/détruits.</p>
 <p>Les enfants d’un même parent commun doivent avoir des <strong>clés uniques</strong>. Des clés en doublons causeront des erreurs de rendu.</p>
 <p>Le cas d’utilisation le plus classique est la combinaison avec <code>v-for</code>:</p>
