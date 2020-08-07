@@ -23,14 +23,16 @@ Si vous êtes un développeur *frontend* confirmé et que vous souhaitez compare
 La manière la plus simple d'essayer Vue.js est d'utiliser [l'exemple Hello World](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-hello-world). Si vous le souhaitez, ouvrez-le dans un nouvel onglet afin de suivre pendant que nous parcourons des exemples de base. Vous pouvez aussi simplement <a href="https://github.com/vuejs/vuejs.org/blob/master/src/v2/examples/vue-20-hello-world/index.html" target="_blank" download="index.html" rel="noopener noreferrer">créer un fichier <code>index.html</code></a> et ajouter Vue avec :
 
 ``` html
-<!-- development version, includes helpful console warnings -->
+<!-- Version développement 
+Celle-ci donne des avertissements utiles sur la console -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 ```
 
 ou :
 
 ``` html
-<!-- production version, optimized for size and speed -->
+<!-- Version production 
+Celle-ci est optimisée pour la taille et la vitesse -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 ```
 
