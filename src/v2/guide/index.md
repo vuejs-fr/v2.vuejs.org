@@ -6,7 +6,7 @@ order: 2
 
 ## Vue.js, qu'est-ce que c'est ?
 
-Vue (prononcé /vjuː/, comme le terme anglais **view**) est un **framework évolutif** pour construire des interfaces utilisateur. À la différence des autres frameworks monolithiques, Vue a été conçu et pensé pour pouvoir être adopté de manière incrémentale. Le cœur de la bibliothèque est concentré uniquement sur la partie vue, et il est vraiment simple de l'intégrer avec d'autres bibliothèques ou projets existants. D'un autre côté, Vue est tout à fait capable de faire tourner des applications web monopages quand il est couplé avec [des outils modernes](single-file-components.html) et [des bibliothèques complémentaires](https://github.com/vuejs/awesome-vue#components--libraries).
+Vue (prononcé /vjuː/, comme le terme anglais **view**) est un **framework évolutif** pour construire des interfaces utilisateur. À la différence des autres frameworks monolithiques, Vue a été conçu et pensé pour pouvoir être adopté de manière incrémentale. Le cœur de la bibliothèque se concentre uniquement sur la partie vue, et il est vraiment simple de l'intégrer avec d'autres bibliothèques ou projets existants. D'un autre côté, Vue est tout à fait capable de faire tourner des applications web monopages quand il est couplé avec [des outils modernes](single-file-components.html) et [des bibliothèques complémentaires](https://github.com/vuejs/awesome-vue#components--libraries).
 
 Si vous souhaitez en savoir plus à propos de Vue avant d'entrer dans le détail, nous <a id="modal-player" href="javascript:;">avons créé une vidéo</a> pour présenter ses principes fondamentaux avec un projet exemple.
 
@@ -18,19 +18,19 @@ Si vous êtes un développeur *frontend* confirmé et que vous souhaitez compare
 
 <a class="button" href="installation.html">Installation</a>
 
-<p class="tip">Ce guide officiel présuppose que vous ayez un niveau intermédiaire de connaissance en HTML, CSS et JavaScript. Si vous êtes complètement nouveau dans le développement frontend, ce n'est peut-être pas la solution la plus judicieuse de vous lancer dans un framework pour vos premiers pas — aussi complétez vos bases avant de revenir ! Bien qu'une première expérience avec d'autres frameworks puisse être utile, cela n'est pas obligatoire.</p>
+<p class="tip">Ce guide officiel présuppose que vous ayez un niveau intermédiaire de connaissance en HTML, CSS et JavaScript. Si vous êtes complètement nouveau dans le développement frontend, ce n'est peut-être pas la solution la plus judicieuse de vous lancer dans un framework pour vos premiers pas — Nous vous recommendons de compléter vos bases avant de revenir ! Bien qu'une première expérience avec d'autres frameworks puisse être utile, cela n'est pas obligatoire.</p>
 
 La manière la plus simple d'essayer Vue.js est d'utiliser [l'exemple Hello World](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-hello-world). Si vous le souhaitez, ouvrez-le dans un nouvel onglet afin de suivre pendant que nous parcourons des exemples de base. Vous pouvez aussi simplement <a href="https://github.com/vuejs/vuejs.org/blob/master/src/v2/examples/vue-20-hello-world/index.html" target="_blank" download="index.html" rel="noopener noreferrer">créer un fichier <code>index.html</code></a> et ajouter Vue avec :
 
 ``` html
-<!-- development version, includes helpful console warnings -->
+<!-- Version développement. Celle-ci donne des avertissements utiles sur la console -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 ```
 
 ou :
 
 ``` html
-<!-- production version, optimized for size and speed -->
+<!-- Version production. celle-ci est optimisée pour la taille et la vitesse -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 ```
 
@@ -109,9 +109,9 @@ var app2 = new Vue({
 </script>
 {% endraw %}
 
-Ici nous venons de rencontrer quelque chose de nouveau. L'attribut `v-bind` que vous voyez est appelé une **directive**. Les directives sont préfixées par `v-` pour indiquer que ce sont des attributs spéciaux fournis par Vue, et comme vous l'avez peut-être deviné, elles appliquent un comportement réactif spécifique au DOM après rendu. Ici cela veut basiquement dire : « garde l'attribut `title` de cet élément à jour avec la propriété `message` de l'instance de Vue ».
+Ici nous venons de rencontrer quelque chose de nouveau. L'attribut `v-bind` que vous voyez est appelé une **directive**. Les directives sont préfixées par `v-` pour indiquer que ce sont des attributs spéciaux fournis par Vue, et comme vous l'avez peut-être deviné, elles appliquent un comportement réactif spécifique au DOM après rendu. Ici cela veut tout simplement dire : « garde l'attribut `title` de cet élément à jour avec la propriété `message` de l'instance de Vue ».
 
-Si vous ouvrez votre console JavaScript une nouvelle fois et entrez `app2.message = 'un nouveau message'`, de nouveau vous verrez le HTML lié — dans notre cas l'attribut `title` — se mettre à jour.
+Si vous ouvrez votre console JavaScript une nouvelle fois et entrez `app2.message = 'un nouveau message'`, vous verrez l'élément du DOM lié — dans notre cas l'attribut `title` — se mettre à jour.
 
 ## Conditions et boucles
 
@@ -277,11 +277,11 @@ var app6 = new Vue({
 </script>
 {% endraw %}
 
-## Composer avec des composants
+## Découper en composants
 
 <div class="scrimba"><a href="https://scrimba.com/p/pXKqta/cEQVkA3" target="_blank" rel="noopener noreferrer">Essayez cette partie sur Scrimba (EN)</a></div>
 
-Le système de composant est un autre concept important de Vue, car c'est une abstraction qui nous permet de construire de plus grosses applications composées de plus petits composants réutilisables et autonomes. Quand on y pense, presque tous les types d'interfaces applicatives peuvent être abstraits en un arbre de composants.
+Le système de composant est un autre concept important de Vue, car c'est une abstraction qui nous permet de construire de grosses applications découpées en plus petits composants réutilisables et autonomes. Quand on y pense, presque tous les types d'interfaces applicatives peuvent être abstraits en un arbre de composants.
 
 ![Arbre de composants](/images/components.png)
 
@@ -379,7 +379,7 @@ var app7 = new Vue({
 
 Ceci n'est qu'un exemple grossier, nous avons réussi à séparer notre application en deux plus petites unités, et chaque enfant est raisonnablement bien découplé de son parent via l'utilisation des props. Nous pouvons maintenant améliorer notre `<todo-item>` avec un template et une logique plus complexes sans affecter l'application parente.
 
-Pour une grosse application, il est nécessaire de la diviser entièrement en composants afin de rendre le développement plus abordable. Nous parlerons des composants plus précisément [plus tard dans le guide](components.html), mais en attendant voici un exemple (imaginaire) de ce à quoi un template d'application pourrait ressembler avec des composants :
+Pour une grosse application, il est nécessaire de la diviser entièrement en composants afin de rendre le développement plus abordable. Nous parlerons des composants plus en détail [plus tard dans le guide](components.html), mais en attendant voici un exemple (imaginaire) de ce à quoi un template d'application pourrait ressembler avec des composants :
 
 ``` html
 <div id="app">
