@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -90,9 +91,30 @@
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
-      
     </div>
     <div>
+  
+  <a id="bts" class="bts-hidden" href="https://vueschool.io/sales/back-to-school?friend=vuejs" target="_blank" rel="noreferrer">
+    <div class="bts-logo">
+      <img src="/images/banners/bts-logo.svg">
+    </div>
+    <div class="bts-main">
+      <div class="bts-backpack">
+        <img src="/images/banners/bts-backpack.svg">
+      </div>
+      <div class="bts-slogan">
+        <div class="bts-title">
+          Moins de <span class="bts-title-green">48 heures</span> restante pour notre offre Vue School
+        </div>
+      </div>
+      <div>
+        <div class="bts-button">REJOINDRE</div>
+      </div>
+    </div>
+    <div id="bts-close" class="bts-close">
+      &times;
+    </div>
+  </a>
   
 
   <header id="header">
@@ -710,7 +732,7 @@
       
     
     <li>
-      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Tests unitaires</a>
+      <a href="/v2/guide/testing.html" class="sidebar-link">Testing</a>
     </li>
   
     
@@ -995,10 +1017,10 @@
 <pre><code class="hljs undefined">Instance racine
 └─ TodoList
    ├─ TodoItem
-   │  ├─ DeleteTodoButton
-   │  └─ EditTodoButton
+   │  ├─ TodoButtonDelete
+   │  └─ TodoButtonEdit
    └─ TodoListFooter
-      ├─ ClearTodosButton
+      ├─ TodosButtonClear
       └─ TodoListStatistics</code></pre>
 <p>Nous parlerons du <a href="components.html">système de composant</a> en détail plus loin. Pour le moment, sachez simplement que tous les composants de Vue sont également des instances de Vue et qu’ils acceptent donc le même objet d’option (à l’exception de quelques options spécifiques à l’instance racine).</p>
 <h2 id="Donnees-et-methodes"><a href="#Donnees-et-methodes" class="headerlink" title="Données et méthodes"></a>Données et méthodes</h2><p>Quand une instance de Vue est créée, cela ajoute toutes les propriétés trouvées dans son objet <code>data</code> au <strong>système réactif</strong> de Vue. Quand une valeur de ces propriétés change, la vue va « réagir », se mettant à jour pour concorder avec les nouvelles valeurs.</p>

@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -90,9 +91,30 @@
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
-      
     </div>
     <div>
+  
+  <a id="bts" class="bts-hidden" href="https://vueschool.io/sales/back-to-school?friend=vuejs" target="_blank" rel="noreferrer">
+    <div class="bts-logo">
+      <img src="/images/banners/bts-logo.svg">
+    </div>
+    <div class="bts-main">
+      <div class="bts-backpack">
+        <img src="/images/banners/bts-backpack.svg">
+      </div>
+      <div class="bts-slogan">
+        <div class="bts-title">
+          Moins de <span class="bts-title-green">48 heures</span> restante pour notre offre Vue School
+        </div>
+      </div>
+      <div>
+        <div class="bts-button">REJOINDRE</div>
+      </div>
+    </div>
+    <div id="bts-close" class="bts-close">
+      &times;
+    </div>
+  </a>
   
 
   <header id="header">
@@ -1524,9 +1546,12 @@ vm.a = <span class="hljs-number">2</span> <span class="hljs-comment">// =&gt; no
 </li>
 <li><p><strong>Accessible uniquement en lecture</strong></p>
 </li>
-<li><p><strong>Détails :</strong></p>
+<li><p><strong>Reactif ?</strong> Non</p>
+</li>
+<li><p><strong>Details :</strong></p>
 <p>Utilisé pour accéder programmatiquement à du contenu <a href="../guide/components.html#Distribution-de-contenu-avec-des-slots">distribué par slots</a>. Chaque <a href="../guide/components.html#Slots-nommes">slot nommé</a> a sa propriété correspondante (p. ex. le contenu de <code>v-slot:foo</code> sera trouvé dans <code>vm.$slots.foo</code>). La propriété <code>default</code> contient tous les nœuds non inclus dans un slot nommé ou contenus de <code>v-slot:default</code>.</p>
-<p><strong>Note:</strong> <code>v-slot:foo</code> est supporté dans la v2.6+. Pour des versions plus anciennes, vous pouvez utiliser la <a href="../guide/components-slots.html#Deprecated-Syntax">syntaxe dépréciée</a>.</p>
+<p>Notez que ces slots <strong>ne</strong> sont <strong>pas</strong> réactif. Si vous avez besoin de composent pour faire un nouveau rendu basé sur des changement de données passées au slot, nous vous proposons de considérer l’utilisation d’option d’instance réactive tel que <code>props</code> ou <code>data</code>.</p>
+<p><strong>Note:</strong> <code>v-slot:foo</code> est supporté dans la v2.6+. Pour des versions plus anciennes, vous pouvez utiliser la <a href="../guide/components-slots.html#Syntaxe-obsolete">syntaxe dépréciée</a>.</p>
 <p>Accéder à <code>vm.$slots</code> est plus utile lorsque vous écrivez un composant avec une <a href="../guide/render-function.html">fonction de rendu</a>.</p>
 </li>
 <li><p><strong>Exemple :</strong></p>

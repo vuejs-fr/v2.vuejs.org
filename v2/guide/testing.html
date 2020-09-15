@@ -1,30 +1,31 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Tests unitaires — Vue.js</title>
+    <title>Testing — Vue.js</title>
     <meta charset="utf-8">
     <meta name="description" content="Vue.js - Le Framework JavaScript Évolutif">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/unit-testing.html">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/unit-testing.html">
-    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/unit-testing.html">
-    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/unit-testing.html">
-    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/unit-testing.html">
-    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/unit-testing.html">
-    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/unit-testing.html">
-    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/unit-testing.html">
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/testing.html">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Tests unitaires — Vue.js">
+    <meta property="og:title" content="Testing — Vue.js">
     <meta property="og:description" content="Vue.js - Le Framework JavaScript Évolutif">
     <meta property="og:image" content="https://vuejs.org//images/logo.png">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Tests unitaires — Vue.js">
+    <meta name="twitter:title" content="Testing — Vue.js">
     <meta name="twitter:description" content="Vue.js - Le Framework JavaScript Évolutif">
     <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
 
@@ -90,9 +91,30 @@
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
-      
     </div>
     <div>
+  
+  <a id="bts" class="bts-hidden" href="https://vueschool.io/sales/back-to-school?friend=vuejs" target="_blank" rel="noreferrer">
+    <div class="bts-logo">
+      <img src="/images/banners/bts-logo.svg">
+    </div>
+    <div class="bts-main">
+      <div class="bts-backpack">
+        <img src="/images/banners/bts-backpack.svg">
+      </div>
+      <div class="bts-slogan">
+        <div class="bts-title">
+          Moins de <span class="bts-title-green">48 heures</span> restante pour notre offre Vue School
+        </div>
+      </div>
+      <div>
+        <div class="bts-button">REJOINDRE</div>
+      </div>
+    </div>
+    <div id="bts-close" class="bts-close">
+      &times;
+    </div>
+  </a>
   
 
   <header id="header">
@@ -205,16 +227,16 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/guide/unit-testing.html" class="nav-link">中文</a></li>
-    <li><a href="https://jp.vuejs.org/v2/guide/unit-testing.html" class="nav-link">日本語</a></li>
-    <li><a href="https://ru.vuejs.org/v2/guide/unit-testing.html" class="nav-link">Русский</a></li>
-    <li><a href="https://kr.vuejs.org/v2/guide/unit-testing.html" class="nav-link">한국어</a></li>
-    <li><a href="https://vuejs.org/v2/guide/unit-testing.html" class="nav-link">English</a></li>
-    <li><a href="https://br.vuejs.org/v2/guide/unit-testing.html" class="nav-link">Português</a></li>
-    <li><a href="https://fr.vuejs.org/v2/guide/unit-testing.html" class="nav-link">Français</a></li>
-    <li><a href="https://vi.vuejs.org/v2/guide/unit-testing.html" class="nav-link">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/guide/unit-testing.html" class="nav-link">Español</a></li>
-    <li><a href="https://docs.vuejs.id/v2/guide/unit-testing.html" class="nav-link">Bahasa Indonesia</a></li>
+    <li><a href="https://cn.vuejs.org/v2/guide/testing.html" class="nav-link">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/testing.html" class="nav-link">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/testing.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/testing.html" class="nav-link">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/guide/testing.html" class="nav-link">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/testing.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/testing.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/testing.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/testing.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/testing.html" class="nav-link">Bahasa Indonesia</a></li>
   </ul>
 </li>
 
@@ -710,7 +732,7 @@
       
     
     <li>
-      <a href="/v2/guide/unit-testing.html" class="sidebar-link current">Tests unitaires</a>
+      <a href="/v2/guide/testing.html" class="sidebar-link current">Testing</a>
     </li>
   
     
@@ -965,7 +987,7 @@
 
 
 
-<div class="content guide with-sidebar unit-testing-guide">
+<div class="content guide with-sidebar testing-guide">
   
     
       
@@ -982,111 +1004,85 @@
     
   
   
-    <h1>Tests unitaires</h1>
+    <h1>Testing</h1>
   
   
-    <blockquote>
-<p><a href="https://cli.vuejs.org/" target="_blank" rel="noopener">Vue CLI</a> possède des options intégrées pour les tests unitaires avec <a href="https://github.com/facebook/jest" target="_blank" rel="noopener">Jest</a> ou <a href="https://mochajs.org/" target="_blank" rel="noopener">Mocha</a> qui fonctionne dès le démarrage. Nous avons également le <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> officiel qui fournit un guide plus détaillé pour des configurations personnalisées.</p>
-</blockquote>
-<h2 id="Des-assertions-simples"><a href="#Des-assertions-simples" class="headerlink" title="Des assertions simples"></a>Des assertions simples</h2><p>En termes de structure de code pour les tests, vous n’avez rien de spécial à faire dans vos composants pour les rendre testables. Exportez juste les options en l’état :</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+    <h1 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>When it comes to building reliable applications, tests can play a critical role in an individual or team’s ability to build new features, refactor code, fix bugs, etc. While there are many schools of thought with testing, there are three categories often discussed in the context of web applications:</p>
+<ul>
+<li>Unit Testing</li>
+<li>Component Testing</li>
+<li>End-To-End (E2E) Testing</li>
+</ul>
+<p>This section aims to provide guidance to navigating the testing ecosystem and choosing the right tools for your Vue application or component library.</p>
+<h2 id="Unit-Testing"><a href="#Unit-Testing" class="headerlink" title="Unit Testing"></a>Unit Testing</h2><h3 id="Introduction-1"><a href="#Introduction-1" class="headerlink" title="Introduction"></a>Introduction</h3><p>Unit tests allow you to test individual units of code in isolation. The purpose of unit testing is to provide developers with confidence in their code. By writing thorough, meaningful tests, you achieve the confidence that as new features are built or your code is refactored your application will remain functional and stable.</p>
+<p>Unit testing a Vue application does not significantly differ from testing other types of applications.</p>
+<h3 id="Choosing-Your-Framework"><a href="#Choosing-Your-Framework" class="headerlink" title="Choosing Your Framework"></a>Choosing Your Framework</h3><p>Since unit testing advice is often framework-agnostic, here are some basic guidelines to keep in mind when evaluating which unit testing tool is best for your application.</p>
+<h4 id="First-class-error-reporting"><a href="#First-class-error-reporting" class="headerlink" title="First-class error reporting"></a>First-class error reporting</h4><p>When tests fail, it is critical that your unit testing framework provides useful errors. This is the job of the assertion library. An assertion with high-quality error messages helps minimize the amount of time it takes to debug the problem. In addition to simply telling you what test is failing, assertion libraries provide context for why a test fails, e.g., what is expected vs what was received.</p>
+<p>Some unit testing frameworks, like Jest, include assertion libraries. Others, like Mocha, require you to install assertion libraries separately (usually Chai).</p>
+<h4 id="Active-community-and-team"><a href="#Active-community-and-team" class="headerlink" title="Active community and team"></a>Active community and team</h4><p>Since the majority of unit testing frameworks are open-source, having a community that is active can be critical to some teams that will be maintaining their tests for a long period of time and needs to ensure that a project will be actively maintained. In addition, having an active community has the benefit of providing more support whenever you run into issues.</p>
+<h3 id="Frameworks"><a href="#Frameworks" class="headerlink" title="Frameworks"></a>Frameworks</h3><p>While there are many tools in the ecosystem, here are some common unit testing tools that are being used in the Vue.js ecosystem.</p>
+<h4 id="Jest"><a href="#Jest" class="headerlink" title="Jest"></a>Jest</h4><p>Jest is a JavaScript test framework that is focused on simplicity. One of its unique features is the ability to take snapshots of tests in order to provide an alternative means of verifying units of your application.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://jestjs.io" target="_blank" rel="noopener">Official Jest Website</a></li>
+<li><a href="https://cli.vuejs.org/core-plugins/unit-jest.html" target="_blank" rel="noopener">Official Vue 2 CLI Plugin - Jest</a></li>
+</ul>
+<h4 id="Mocha"><a href="#Mocha" class="headerlink" title="Mocha"></a>Mocha</h4><p>Mocha is a JavaScript test framework that is focused on being flexible. Because of this flexibility, it allows you to choose different libraries to fulfill other common features such as spying (e.g., Sinon) and assertions (e.g., Chai). Another unique feature of Mocha is that it can also execute tests in the browser in addition to Node.js.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://mochajs.org" target="_blank" rel="noopener">Official Mocha Website</a></li>
+<li><a href="https://cli.vuejs.org/core-plugins/unit-mocha.html" target="_blank" rel="noopener">Official Vue CLI Plugin - Mocha</a></li>
+</ul>
+<h2 id="Component-Testing"><a href="#Component-Testing" class="headerlink" title="Component Testing"></a>Component Testing</h2><h3 id="Introduction-2"><a href="#Introduction-2" class="headerlink" title="Introduction"></a>Introduction</h3><p>To test most Vue components, they must be mounted to the DOM (either virtual or real) in order to fully assert that they are working. This is another framework-agnostic concept. As a result, component testing frameworks were created to give users the ability to do this in a reliable way while also providing Vue-specific conveniences such as integrations for Vuex, Vue Router, and other Vue plugins.</p>
+<h3 id="Choosing-Your-Framework-1"><a href="#Choosing-Your-Framework-1" class="headerlink" title="Choosing Your Framework"></a>Choosing Your Framework</h3><p>The following section provides guidelines on things to keep in mind when evaluating which component testing framework is best for your application.</p>
+<h4 id="Optimal-compatibility-with-the-Vue-ecosystem"><a href="#Optimal-compatibility-with-the-Vue-ecosystem" class="headerlink" title="Optimal compatibility with the Vue ecosystem"></a>Optimal compatibility with the Vue ecosystem</h4><p>It should be no surprise that one of the first criteria is that a component testing library should have is being as compatible with the Vue ecosystem as possible. While this may seem comprehensive, some key integration areas to keep in mind include single file components (SFCs), Vuex, Vue Router, and any other Vue specific plugins that your application relies on.</p>
+<h4 id="First-class-error-reporting-1"><a href="#First-class-error-reporting-1" class="headerlink" title="First-class error reporting"></a>First-class error reporting</h4><p>When tests fail, it is critical that your component testing framework provides useful error logs that help to minimize the amount of time it takes to debug the problem. In addition to simply telling you what test fails, they should also provides context for why a test fails, e.g., what is expected vs what was received.</p>
+<h3 id="Recommendations"><a href="#Recommendations" class="headerlink" title="Recommendations"></a>Recommendations</h3><h4 id="Vue-Testing-Library-testing-library-vue"><a href="#Vue-Testing-Library-testing-library-vue" class="headerlink" title="Vue Testing Library (@testing-library/vue)"></a>Vue Testing Library (@testing-library/vue)</h4><p>Vue Testing Library is a set of tools focused on testing components without relying on implementation details. Built with accessibility in mind, its approach also makes refactoring a breeze.</p>
+<p>Its guiding principle is that the more tests resemble the way software is used, the more confidence they can provide.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://testing-library.com/docs/vue-testing-library/intro" target="_blank" rel="noopener">Official Vue Testing Library Website</a></li>
+</ul>
+<h4 id="Vue-Test-Utils"><a href="#Vue-Test-Utils" class="headerlink" title="Vue Test Utils"></a>Vue Test Utils</h4><p>Vue Test Utils is the official low-level component testing library that was written to provide users access to Vue specific APIs. If you are new to testing Vue applications, we would recommend using Vue Testing Library, which is an abstraction over Vue Test Utils.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://vue-test-utils.vuejs.org" target="_blank" rel="noopener">Official Vue Test Utils Documentation</a></li>
+<li><a href="https://lmiller1990.github.io/vue-testing-handbook/#what-is-this-guide" target="_blank" rel="noopener">Vue Testing Handbook</a> by Lachlan Miller</li>
+<li><a href="https://vuejs.org/v2/cookbook/unit-testing-vue-components.html" target="_blank" rel="noopener">Cookbook: Unit Testing Vue Components</a></li>
+</ul>
+<h2 id="End-to-End-E2E-Testing"><a href="#End-to-End-E2E-Testing" class="headerlink" title="End-to-End (E2E) Testing"></a>End-to-End (E2E) Testing</h2><h3 id="Introduction-3"><a href="#Introduction-3" class="headerlink" title="Introduction"></a>Introduction</h3><p>While unit tests provide developers with some degree of confidence, unit and component tests are limited in their abilities to provide holistic coverage of an application when deployed to production. As a result, end-to-end (E2E) tests provide coverage on what is arguably the most important aspect of an application: what happens when users actually use your applications.</p>
+<p>In other words, E2E tests validate all of the layers in your application. This not only includes your frontend code, but all associated backend services and infrastructure that are more representative of the environment that your users will be in. By testing how user actions impact your application, E2E tests are often the key to higher confidence in whether an application is functioning properly or not.</p>
+<h3 id="Choosing-Your-Framework-2"><a href="#Choosing-Your-Framework-2" class="headerlink" title="Choosing Your Framework"></a>Choosing Your Framework</h3><p>While end-to-end (E2E) testing on the web has gained a negative reputation for unreliable (flaky) tests and slowing down development processes, modern E2E tools have made strides forward to create more reliable, interactive, and useful tests. When choosing an E2E testing framework, the following sections provide some guidance on things to keep in mind when choosing a testing framework for your application.</p>
+<h4 id="Cross-browser-testing"><a href="#Cross-browser-testing" class="headerlink" title="Cross-browser testing"></a>Cross-browser testing</h4><p>One of the primary benefits that end-to-end (E2E) testing is known for is its ability to test your application across multiple browsers. While it may seem desirable to have 100% cross-browser coverage, it is important to note that cross browser testing has diminishing returns on a team’s resources due the additional time and machine power required to run them consistently. As a result, it is important to be mindful of this trade-off when choosing the amount of cross-browser testing your application needs.</p>
+<p class="tip">A recent development in for catching browser-specific issues is using application monitoring and error reporting tools (e.g., Sentry, LogRocket, etc.) for browsers that are not as commonly used (e.g., &lt; IE11, older Safari versions, etc.).</p>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
-  export default &#123;
-    data () &#123;
-      return &#123;
-        message: 'bonjour !'
-      &#125;
-    &#125;,
-    created () &#123;
-      this.message = 'au revoir !'
-    &#125;
-  &#125;
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
-<p>Puis importez le composant avec <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> et vous pourrez faire une série d’assertions communes (ici nous utilisons le style Jest avec l’assertion <code>expect</code> en tant qu’exemple) :</p>
-<pre><code class="hljs js"><span class="hljs-comment">// Importer `shallowMount` de Vue Test Utils et le composant à tester</span>
-<span class="hljs-keyword">import</span> &#123; shallowMount &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@vue/test-utils'</span>
-<span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyComponent.vue'</span>
-
-<span class="hljs-comment">// Monter le composant</span>
-<span class="hljs-keyword">const</span> wrapper = shallowMount(MyComponent)
-
-<span class="hljs-comment">// Ici nous avons plusieurs tests avec Jest, cependant vous pouvez utiliser</span>
-<span class="hljs-comment">// n'importe quel combo de lanceur de tests/bibliothèque d'assertions que vous préférez</span>
-describe(<span class="hljs-string">'MyComponent'</span>, () =&gt; &#123;
-  <span class="hljs-comment">// Inspecter l'objet d'options du composant</span>
-  it(<span class="hljs-string">'a le hook `created`'</span>, () =&gt; &#123;
-    expect(<span class="hljs-keyword">typeof</span> MyComponent.created).toBe(<span class="hljs-string">'function'</span>)
-  &#125;)
-
-  <span class="hljs-comment">// Évaluer les résultats des fonctions dans</span>
-  <span class="hljs-comment">// l'objet d'options du composant</span>
-  it(<span class="hljs-string">'contient les données par défaut'</span>, () =&gt; &#123;
-    expect(<span class="hljs-keyword">typeof</span> MyComponent.data).toBe(<span class="hljs-string">'function'</span>)
-    <span class="hljs-keyword">const</span> defaultData = MyComponent.data()
-    expect(defaultData.message).toBe(<span class="hljs-string">'bonjour !'</span>)
-  &#125;)
-
-  <span class="hljs-comment">// Inspecter l'instance au montage du composant</span>
-  it(<span class="hljs-string">'affecte correctement les messages à la création'</span>, () =&gt; &#123;
-    expect(wrapper.vm.$data.message).toBe(<span class="hljs-string">'au revoir !'</span>)
-  &#125;)
-
-  <span class="hljs-comment">// Monter une instance et inspecter le résultat en sortie</span>
-  it(<span class="hljs-string">'rend le message correct'</span>, () =&gt; &#123;
-    expect(wrapper.text()).toBe(<span class="hljs-string">'au revoir !'</span>)
-  &#125;)
-&#125;)</code></pre>
-<h2 id="Ecrire-des-composants-testables"><a href="#Ecrire-des-composants-testables" class="headerlink" title="Écrire des composants testables"></a>Écrire des composants testables</h2><p>Une bonne partie du code en sortie du rendu d’un composant est principalement déterminée par les props qu’il reçoit. Si le rendu d’un composant dépend uniquement de ses props, il devient assez facile à tester, de la même manière que l’on ferait une assertion sur la valeur de retour d’une fonction pure avec différents arguments. Voici un exemple :</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
-    <span class="hljs-attr">props</span>: [<span class="hljs-string">'msg'</span>]
-  &#125;
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
-<p>Vous pouvez faire des assertions sur le rendu en sortie avec différentes props avec <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> :</p>
-<pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; shallowMount &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'@vue/test-utils'</span>
-<span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyComponent.vue'</span>
-
-<span class="hljs-comment">// Fonction utilitaire qui monte et retourne le composant rendu</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getMountedComponent</span>(<span class="hljs-params">Component, propsData</span>) </span>&#123;
-  <span class="hljs-keyword">return</span> shallowMount(MyComponent, &#123; 
-    propsData
-  &#125;)
-&#125;
-
-describe(<span class="hljs-string">'MyComponent'</span>, () =&gt; &#123;
-  it(<span class="hljs-string">'donne un rendu correct avec différentes props'</span>, () =&gt; &#123;
-    expect(
-      getMountedComponent(MyComponent, &#123;
-        <span class="hljs-attr">msg</span>: <span class="hljs-string">'Bonjour'</span>
-      &#125;).text()
-    ).toBe(<span class="hljs-string">'Bonjour'</span>)
-
-    expect(
-      getMountedComponent(MyComponent, &#123;
-        <span class="hljs-attr">msg</span>: <span class="hljs-string">'Au revoir'</span>
-      &#125;).text()
-    ).toBe(<span class="hljs-string">'Au revoir'</span>)
-  &#125;)
-&#125;)</code></pre>
-<h2 id="Assertions-sur-des-mises-a-jour-asynchrones"><a href="#Assertions-sur-des-mises-a-jour-asynchrones" class="headerlink" title="Assertions sur des mises à jour asynchrones"></a>Assertions sur des mises à jour asynchrones</h2><p>Parce que Vue <a href="reactivity.html#File-d’attente-de-mise-a-jour-asynchrone">fait les mises à jour du DOM de manière asynchrone</a>, les assertions sur les mises à jour du DOM résultant d’un changement d’état doivent être faites une fois que la promesse retournée par <code>vm.$nextTick()</code> est résolue :</p>
-<pre><code class="hljs js"><span class="hljs-comment">// Inspecter le HTML généré après une mise à jour d'état</span>
-it(<span class="hljs-string">'met à jour le message rendu quand `wrapper.message` est mis à jour'</span>, <span class="hljs-keyword">async</span> () =&gt; &#123;
-  <span class="hljs-keyword">const</span> wrapper = shallowMount(MyComponent)
-  wrapper.setData(&#123; <span class="hljs-attr">message</span>: <span class="hljs-string">'foo'</span> &#125;)
-
-  <span class="hljs-comment">// Attendre une boucle (« tick ») après le changement d'état avant de faire l'assertion des mises à jour du DOM</span>
-  <span class="hljs-keyword">await</span> wrapper.vm.$nextTick()
-  expect(wrapper.text()).toBe(<span class="hljs-string">'foo'</span>)
-&#125;)</code></pre>
-<p>Nous prévoyons de travailler sur une collection de fonctions utilitaires de tests communs pour rendre encore plus simple le rendu de composants avec différentes contraintes (par ex. des rendus peu profonds ignorant les composants enfants) et faire des assertions sur le code en sortie.</p>
-<p>Pour des informations plus pointues sur les tests unitaires avec Vue, jeter un œil à <a href="https://vue-test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a> et notre entrée des tutoriels à propos des <a href="https://vuejs.org/v2/cookbook/unit-testing-vue-components.html" target="_blank" rel="noopener">tests unitaires de composants Vue</a>.</p>
+<h4 id="Faster-feedback-loops"><a href="#Faster-feedback-loops" class="headerlink" title="Faster feedback loops"></a>Faster feedback loops</h4><p>One of the primary problems with end-to-end (E2E) tests and development is that running the entire suite takes a long time. Typically, this is only done in continuous integration and deployment (CI/CD) pipelines. Modern E2E testing frameworks have helped to solve this by adding features like parallelization, which allows for CI/CD pipelines to often run magnitudes faster than before. In addition, when developing locally, the ability to selectively run a single test for the page you are working on while also providing hot reloading of tests can help to boost a developer’s workflow and productivity.</p>
+<h4 id="First-class-debugging-experience"><a href="#First-class-debugging-experience" class="headerlink" title="First class debugging experience"></a>First class debugging experience</h4><p>While developers have traditionally relied on scanning logs in a terminal window to help determine what went wrong in a test, modern end-to-end (E2E) test frameworks allow developers to leverage tools that they are already familiar with, e.g. browser developer tools.</p>
+<h4 id="Visibility-in-headless-mode"><a href="#Visibility-in-headless-mode" class="headerlink" title="Visibility in headless mode"></a>Visibility in headless mode</h4><p>When end-to-end (E2E) tests are run in continuous integration / deployment pipelines, they are often run in headless browsers (i.e., no visible browser is opened for the user to watch). As a result, when errors occur, a critical feature that modern E2E testing frameworks provide 1st class support for is the ability to see snapshots and/or videos of your applications during various testing stages in order to provide insight into why errors are happening. Historically, it was tedious to maintain these integrations.</p>
+<h3 id="Recommendations-1"><a href="#Recommendations-1" class="headerlink" title="Recommendations"></a>Recommendations</h3><p>While there are many tools in the ecosystem, here are some common end-to-end (E2E) testing frameworks that are being used in the Vue.js ecosystem.</p>
+<h4 id="Cypress-io"><a href="#Cypress-io" class="headerlink" title="Cypress.io"></a>Cypress.io</h4><p>Cypress.io is a testing framework that aims to enhance developer productivity by enabling developers to reliably test their applications while providing a first class developer experience.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://www.cypress.io" target="_blank" rel="noopener">Cypress’ Official Website</a></li>
+<li><a href="https://cli.vuejs.org/core-plugins/e2e-cypress.html" target="_blank" rel="noopener">Official Vue CLI Cypress Plugin</a></li>
+<li><a href="https://github.com/testing-library/cypress-testing-library" target="_blank" rel="noopener">Cypress Testing Library</a></li>
+</ul>
+<h4 id="Nightwatch-js"><a href="#Nightwatch-js" class="headerlink" title="Nightwatch.js"></a>Nightwatch.js</h4><p>Nightwatch.js is an end-to-end testing framework that can be used to test web applications and websites, as well as Node.js unit and integration testing.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://nightwatchjs.org" target="_blank" rel="noopener">Nightwatch’s Official Website</a></li>
+<li><a href="https://cli.vuejs.org/core-plugins/e2e-nightwatch.html" target="_blank" rel="noopener">Official Vue CLI Nightwatch Plugin</a></li>
+</ul>
+<h4 id="Puppeteer"><a href="#Puppeteer" class="headerlink" title="Puppeteer"></a>Puppeteer</h4><p>Puppeteer is a Node library that provides a high-level API to control the browser and can pair with other test runners (e.g., Jest) to test your application.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://pptr.dev" target="_blank" rel="noopener">Puppeteer’s Official Website</a></li>
+</ul>
+<h4 id="TestCafe"><a href="#TestCafe" class="headerlink" title="TestCafe"></a>TestCafe</h4><p>TestCafe is a Node.js based end-to-end framework that aims to provide easy setup so that developers can focus on creating tests that are easy to write and reliable.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://devexpress.github.io/testcafe/" target="_blank" rel="noopener">TestCafe’s Official Website</a></li>
+</ul>
 
   
   
@@ -1115,7 +1111,7 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
 
 
     Une erreur dans cette page ou une envie de contribuer à la traduction ?
-    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/guide/unit-testing.md" rel="noopener" target="_blank">
+    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/guide/testing.md" rel="noopener" target="_blank">
       Éditez cette page sur GitHub !
     </a>
   </div>
