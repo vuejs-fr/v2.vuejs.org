@@ -1384,11 +1384,15 @@ type: api
 
 - **Accessible uniquement en lecture**
 
-- **Détails :**
+- **Reactif ?** Non
+
+- **Details :**
 
   Utilisé pour accéder programmatiquement à du contenu [distribué par slots](../guide/components.html#Distribution-de-contenu-avec-des-slots). Chaque [slot nommé](../guide/components.html#Slots-nommes) a sa propriété correspondante (p. ex. le contenu de `v-slot:foo` sera trouvé dans `vm.$slots.foo`). La propriété `default` contient tous les nœuds non inclus dans un slot nommé ou contenus de `v-slot:default`.
 
-  **Note:** `v-slot:foo` est supporté dans la v2.6+. Pour des versions plus anciennes, vous pouvez utiliser la [syntaxe dépréciée](../guide/components-slots.html#Deprecated-Syntax).
+  Notez que ces slots **ne** sont **pas** réactif. Si vous avez besoin de composent pour faire un nouveau rendu basé sur des changement de données passées au slot, nous vous proposons de considérer l'utilisation d'option d'instance réactive tel que `props` ou `data`.
+
+  **Note:** `v-slot:foo` est supporté dans la v2.6+. Pour des versions plus anciennes, vous pouvez utiliser la [syntaxe dépréciée](../guide/components-slots.html#Syntaxe-obsolete).
 
   Accéder à `vm.$slots` est plus utile lorsque vous écrivez un composant avec une [fonction de rendu](../guide/render-function.html).
 

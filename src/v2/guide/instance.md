@@ -24,10 +24,10 @@ Une application Vue consiste en une **instance racine de Vue** créée avec `new
 Instance racine
 └─ TodoList
    ├─ TodoItem
-   │  ├─ DeleteTodoButton
-   │  └─ EditTodoButton
+   │  ├─ TodoButtonDelete
+   │  └─ TodoButtonEdit
    └─ TodoListFooter
-      ├─ ClearTodosButton
+      ├─ TodosButtonClear
       └─ TodoListStatistics
 ```
 
