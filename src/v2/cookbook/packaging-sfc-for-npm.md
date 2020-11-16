@@ -1,12 +1,12 @@
 ---
-title: Réaliser un composant Vue pour NPM (FR)
+title: Réaliser un composant Vue pour npm
 type: cookbook
 order: 12
 ---
 
 ## Exemple de base
 
-<p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>Par nature, un composant Vue est destiné à être réutilisé. Cela est facile lorsque le composant n'est utilisé que dans une seule application. Mais comment peut-on écrire un composant une seule fois et l'utiliser sur plusieurs sites/applications ? La solution la plus simple est peut-être de passer par npm.</p>
+Par nature, un composant Vue est destiné à être réutilisé. Cela est facile lorsque le composant n'est utilisé que dans une seule application. Mais comment peut-on écrire un composant une seule fois et l'utiliser sur plusieurs sites/applications ? La solution la plus simple est peut-être de passer par npm.
 
 En conditionnant votre composant pour qu'il soit partagé via npm, il peut être importé dans un processus de construction pour être utilisé dans des applications web à part entière:
 
@@ -31,7 +31,7 @@ Ou même utilisé via la balise `<script>` dans le navigateur directement :
   ...
 ```
 
-Non seulement cela vous évite de copier/coller des composants, mais cela vous permet aussi de redonner à la communauté Vue !
+Non seulement cela vous évite de copier/coller des composants, mais cela vous permet aussi de les partager avec la communauté Vue ! 
 
 ## Puis-je partager directement les fichiers `.vue` ?
 
@@ -89,7 +89,7 @@ import MyComponent from 'my-component/sfc'; // Notons le '/sfc'
 
 Les bundlers compatibles peuvent lire l'option `browser` dans le fichier package.json et traduire les requêtes de `my-component/sfc` à `my-component/src/my-component.vue`, ce qui permet d'utiliser le fichier `.vue` original à la place. Maintenant, le processus SSR peut utiliser les optimisations de concaténation de chaînes de caractères dont il a besoin pour un gain de performances.
 
-<p class="tip">Note: Lorsque vous utiliserez un fichier `.vue` directement, faites attention à tout type de prétraitement sur les balises `script` et `style`. Ces dépendances seront transmises aux utilisateurs. Envisagez donc de fournir des [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) "simples" pour alléger au maximum les choses.</p>
+<p class="tip">Note: Lorsque vous utiliserez un fichier `.vue` directement, faites attention à tout type de prétraitement sur les balises `script` et `style`. Ces dépendances seront transmises aux utilisateurs. Envisagez donc de fournir des [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) «simples» pour alléger au maximum les choses.</p>
 
 ### Comment puis-je réaliser plusieurs versions de mon composant ?
 
@@ -124,13 +124,13 @@ Vous n'avez pas besoin de réecrire votre module plusieurs fois car il est tout 
 }
 ```
 
-<p class="tip">N'oubliez pas que si vous un fichier package.json existe déjà sur votre projet, il contiendra probablement beaucoup plus long que celui-ci. Ceci n'illustre qu'un point de départ. De plus, les <i>paquets</i> listés dans devDependencies (et non leurs versions) sont les exigences minimales pour le rollup permettant de créer les trois builds séparées (umd, es, et unpkg). Ces dépendances doivent être mises à jour au fur et à mesure de l'avancée des versions de celles-ci.</p>
+<p class="tip">N'oubliez pas que si un fichier package.json est déjà présent sur votre projet, il sera probablement beaucoup plus long que celui présenté ici. Ceci n'illustre qu'un point de départ. De plus, les *paquets* listés dans devDependencies (et non leurs versions) sont les exigences minimales pour que Rollup puisse créer les trois builds séparées (umd, es, et unpkg). Ces dépendances doivent être mises à jour au fur et à mesure de l'avancée des versions de celles-ci.</p>
 
 Nos chamgements effectués sur notre package.json sont désormais terminés. Ensuite, nous aurons besoin d'un petit fichier pour exporter/installer automatiquement le ([Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) actuel, d'une configuration minimale de Rollup, et c'est parti !
 
 ### À quoi va ressembler mon composant ?
 
-En fonction de la manière dont votre composant est utilisé, il doit être exposé soit comme un module javascript ([CommonJS/UMD](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#c33a)), un module [ES6](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#4f5e) ou bien dans le cas d'une utilisation via `script`, ce composant sera automatiquement chargé dans Vue via `Vue.use(...)` et donc directement disponible. Ce fichier wrapper.js qui gère l'exportation et l'installation automatique du module ressemble à ceci:
+En fonction de la manière dont votre composant est utilisé, il doit être exposé soit comme un module JavaScript ([CommonJS/UMD](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#c33a)), un module [ES6](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#4f5e) ou bien dans le cas d'une utilisation via `script`, ce composant sera automatiquement chargé dans Vue via `Vue.use(...)` et donc directement disponible. Ce fichier wrapper.js qui gère l'exportation et l'installation automatique du module ressemble à ceci:
 
 ```js
 // Importation de notre composant Vue
@@ -197,17 +197,17 @@ export default {
 
 Cet exemple de configuration contient les paramètres minimums pour empaqueter votre [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) à destination de npm. Il est possible de le personnaliser, par exemple en extrayant le CSS dans un fichier séparé, en utilisant un préprocesseur CSS, en masquant la sortie JS, etc.
 
-Il convient également de noter le "nom" donné au composant ici qui est en PascalCase, et qui devrait correspondre au nom en kebab-case utilisé ailleurs dans ce projet.
+Il convient également de noter le «nom» donné au composant ici qui est en PascalCase, et qui devrait correspondre au nom en kebab-case utilisé ailleurs dans ce projet.
 
 ### Cela remplacera-t-il mon processus de développement actuel ?
 
-La configuration ici n'est pas destinée à remplacer le processus de développement que vous utilisez actuellement. Si, actuellement, vous avez une configuration webpack avec hot-reload, continuez à l'utiliser ! Si vous partez de zéro, n'hésitez pas à installer [Vue CLI 3](https://github.com/vuejs/vue-cli/), qui vous donnera la configuration complète d'un hot-reload avec la commande suivante:
+La configuration ici n'est pas destinée à remplacer le processus de développement que vous utilisez actuellement. Si, actuellement, vous avez une configuration webpack avec hot-reload, continuez à l'utiliser ! Si vous partez de zéro, n'hésitez pas à installer [Vue CLI 3](https://github.com/vuejs/vue-cli/), qui vous donnera la configuration complète d'un hot-reload avec la commande suivante :
 
 ```bash
 vue serve --open src/my-component.vue
 ```
 
-En d'autres termes, développez de la manière qui vous convient le mieux. Les éléments décrits sur cette page ressemblent plus à des "touches finales" qu'à un processus de développement complet.
+En d'autres termes, développez de la manière qui vous convient le mieux. Les éléments décrits sur cette page ressemblent plus à des «touches finales» qu'à un processus de développement complet.
 
 ## Quand éviter ce schéma ?
 
