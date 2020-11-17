@@ -8,7 +8,7 @@ order: 12
 
 Par nature, un composant Vue est destiné à être réutilisé. Cela est facile lorsque le composant n'est utilisé que dans une seule application. Mais comment peut-on écrire un composant une seule fois et l'utiliser sur plusieurs sites/applications ? La solution la plus simple est peut-être de passer par npm.
 
-En conditionnant votre composant pour qu'il soit partagé via npm, il peut être importé dans un processus de construction pour être utilisé dans des applications web à part entière:
+En conditionnant votre composant pour qu'il soit partagé via npm, il peut être importé dans un processus de construction pour être utilisé dans des applications web à part entière :
 
 ```js
 import MyComponent from 'my-component';
