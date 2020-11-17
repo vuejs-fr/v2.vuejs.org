@@ -124,7 +124,7 @@ Vous n'avez pas besoin de réecrire votre module plusieurs fois car il est tout 
 }
 ```
 
-<p class="tip">N'oubliez pas que si un fichier package.json est déjà présent sur votre projet, il sera probablement beaucoup plus long que celui présenté ici. Ceci n'illustre qu'un point de départ. De plus, les *paquets* listés dans devDependencies (et non leurs versions) sont les exigences minimales pour que Rollup puisse créer les trois builds séparées (umd, es, et unpkg). Ces dépendances doivent être mises à jour au fur et à mesure de l'avancée des versions de celles-ci.</p>
+<p class="tip">N'oubliez pas que si un fichier package.json est déjà présent sur votre projet, il sera probablement beaucoup plus long que celui présenté ici. Ceci n'illustre qu'un point de départ. De plus, les *paquets* listés dans devDependencies (et non leurs versions) sont les exigences minimales pour que Rollup puisse créer les trois builds séparées (umd, es, et unpkg). Au fur et à mesure que des versions plus récentes sont disponibles, elles doivent être mises à jour si nécessaire.</p>
 
 Nos chamgements effectués sur notre package.json sont désormais terminés. Ensuite, nous aurons besoin d'un petit fichier pour exporter/installer automatiquement le ([Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) actuel, d'une configuration minimale de Rollup, et c'est parti !
 
