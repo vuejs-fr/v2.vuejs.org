@@ -45,7 +45,7 @@ Une bonne réalisation de votre [Composant](https://fr.vuejs.org/v2/guide/single
 
 ## Réaliser un composant distribuable via npm
 
-Pour les besoins de ce document, nous allons utiliser la structure suivante:
+Pour les besoins de ce document, nous allons utiliser la structure suivante :
 
 ```
 package.json
