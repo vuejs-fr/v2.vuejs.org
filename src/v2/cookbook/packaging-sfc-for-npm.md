@@ -43,7 +43,7 @@ C'est vrai, vous pouvez partager vos fichiers `.vue` directement, et n'importe q
 
 Une bonne réalisation de votre [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) pour sa distribution via npm permet de le partager de manière à ce qu'il soit prêt à être utilisé partout !
 
-## Réaliser un composant distribuable via npm
+## Réaliser un package de votre composant pour npm
 
 Pour les besoins de ce document, nous allons utiliser la structure suivante :
 
