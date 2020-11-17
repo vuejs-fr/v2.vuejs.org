@@ -61,7 +61,7 @@ dist/
 
 ### Comment npm sait-il quelle version servir ?
 
-Le fichier package.json utilisé sur npm nécessite qu'une seule version (`main`), mais nous ne sommes pas seulement limité à cela. Nous pouvons aussi traiter les cas d'utilisation les plus courants en précisant 2 versions supplémentaires (`module` et `unpkg`) et même fournir un accès au fichier `.vue` lui-même en utilisant le champ `browser`. Notre fichier package.json devrait donc, pour l'instant, ressembler à ceci.
+Le fichier package.json utilisé sur npm nécessite qu'une seule version (`main`), mais nous ne sommes pas seulement limité à cela. Nous pouvons aussi traiter les cas d'utilisation les plus courants en précisant 2 versions supplémentaires (`module` et `unpkg`) et même fournir un accès au fichier `.vue` lui-même en utilisant le champ `browser`. Notre fichier package.json devrait donc, pour l'instant, ressembler à ceci :
 
 ```json
 {
