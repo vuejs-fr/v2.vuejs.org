@@ -79,7 +79,7 @@ Le fichier package.json utilisé sur npm nécessite qu'une seule version (`main`
 
 Quand webpack 2+, Rollup ou bien d'autres outils de compilation sont utilisés, ils reprennent la construction du build de type `module`. Les anciennes applications utiliseraient donc la version `main` tandis que la version `unpkg` peut être utilisée directement dans les navigateurs. Par ailleurs, [unpkg](https://unpkg.com) utilise automatiquement la version `unpkg` lorsque quelqu'un saisit l'URL de votre module dans son service !
 
-### Rendu côté serveur
+### Rendu côté serveur (SSR)
 
 Vous aurez peut-être remarqué que les navigateurs n'utilisent pas la version `browser`. C'est parce que ce champ est destiné pour que l'auteur du package fournisse [quelque chose aux bundlers](https://github.com/defunctzombie/package-browser-field-spec#spec) qui, à leur tour, créent leurs propres paquets pour une utilisation côté client. Avec un peu d'imagination, ce champ peut nous permettre de faire correspondre un alias d'un fichier `.vue` à lui-même. Par exemple :
 
