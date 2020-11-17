@@ -41,7 +41,7 @@ Vue autorise déjà l'écriture des composants dans un fichier unique. Du fait q
 
 C'est vrai, vous pouvez partager vos fichiers `.vue` directement, et n'importe qui utilisant [Un build Vue](https://fr.vuejs.org/v2/guide/installation.html#Explication-des-differents-builds) contenant le compilateur Vue peut utiliser votre composant directement. Aussi, les builds déstinés aux applications SSR utilisent la concaténation de chaînes de caractères comme une optimisation, l'utilisation de composants `.vue` partagés directement est donc préférable dans cette situation (lire la section [Rendu côté serveur](#Rendu-cote-serveur) pour plus de détails). Cependant, cela exclut les personnes souhaitant utiliser le composant directement dans un navigateur via la balise `<script>`, mais aussi les personnes souhaitant utiliser une compilation à l'exécution ou encore une application contenant des processus de compilation incapable de lire des fichiers `.vue`.
 
-Une bonne réalisation de votre [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) pour sa distribution via npm permet de le partager de manière à ce qu'il soit prêt à être utilisé partout !
+Un package approprié de votre [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) pour une distribution via npm permet de le partager de manière à ce qu'il soit prêt à être utilisé partout !
 
 ## Réaliser un package de votre composant pour npm
 
