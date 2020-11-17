@@ -77,7 +77,7 @@ Le fichier package.json utilisé sur npm nécessite qu'une seule version (`main`
 }
 ```
 
-Quand webpack 2+, Rollup ou bien d'autres outils de compilation sont utilisés, ils reprennent la construction du build de type `module`. Les anciennes applications utiliseraient donc la version `main` tandis que la version `unpkg` peut être utilisée directement dans les navigateurs. Par ailleurs, [unpkg](https://unpkg.com) utilise automatiquement la version `unpkg` lorsque quelqu'un entre l'URL de votre module dans son service !
+Quand webpack 2+, Rollup ou bien d'autres outils de compilation sont utilisés, ils reprennent la construction du build de type `module`. Les anciennes applications utiliseraient donc la version `main` tandis que la version `unpkg` peut être utilisée directement dans les navigateurs. Par ailleurs, [unpkg](https://unpkg.com) utilise automatiquement la version `unpkg` lorsque quelqu'un saisit l'URL de votre module dans son service !
 
 ### Rendu côté serveur
 
