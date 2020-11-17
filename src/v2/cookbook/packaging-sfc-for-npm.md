@@ -171,7 +171,7 @@ On peut remarquer que la première ligne importe directement notre [Composant](h
 
 ### Comment configurer un build avec Rollup ?
 
-Avec notre package.json contenant la section `scripts` prête à démarrer et la configuration de notre [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) mise en place via notre wrapper, il ne reste plus qu'à s'assurer que Rollup est correctement configuré. Heureusement, cela peut être fait avec un petit fichier rollup.config.js de 19 lignes déjà prêtes :
+Avec notre package.json contenant la section `scripts` prête à démarrer et la configuration de notre [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) mise en place via notre wrapper, il ne reste plus qu'à s'assurer que Rollup est correctement configuré. Heureusement, cela peut être fait avec un petit fichier rollup.config.js de 19 lignes déjà prêt :
 
 ```js
 import commonjs from '@rollup/plugin-commonjs'; // Converti les modules CommonJS en ES6
