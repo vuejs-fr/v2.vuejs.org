@@ -81,7 +81,7 @@ Quand webpack 2+, Rollup ou bien d'autres outils de compilation sont utilisés, 
 
 ### Rendu côté serveur (SSR)
 
-Vous aurez peut-être remarqué que les navigateurs n'utilisent pas la version `browser`. C'est parce que ce champ est destiné pour que l'auteur du package fournisse [quelque chose aux bundlers](https://github.com/defunctzombie/package-browser-field-spec#spec) qui, à leur tour, créent leurs propres paquets pour une utilisation côté client. Avec un peu d'imagination, ce champ peut nous permettre de faire correspondre un alias d'un fichier `.vue` à lui-même. Par exemple :
+Vous aurez peut-être remarqué que les navigateurs n'utilisent pas la version `browser`. C'est parce que ce champ est destiné pour que l'auteur du package fournisse [quelque chose aux bundlers](https://github.com/defunctzombie/package-browser-field-spec#spec) qui, à leur tour, créent leurs propres paquets pour une utilisation côté client. Avec un peu d'imagination ce champ nous permet de faire correspondre un alias au fichier `.vue` lui-même. Par exemple :
 
 ```js
 import MyComponent from 'my-component/sfc'; // Notons le '/sfc'
