@@ -217,7 +217,7 @@ En outre, faites attention à toute dépendance supplémentaires que votre [Comp
 
 ## Patterns alternatifs
 
-Au moment où cette recette est écrite, Vue CLI 3 est elle-même en version bêta. Cette version de la CLI est dotée d'un mode de construction `library` intégré, qui crée des versions CommonJS et UMD d'un composant. Cela peut être adéquat pour vos cas d'utilisation, mais vous devrez quand même vous assurer que votre fichier package.json pointe correctement vers `main` and `unpkg`. De plus, il n'y aura pas de sortie de `module` ES6 à moins que cette capacité ne soit ajoutée au CLI avant sa sortie ou via un plugin.
+Au moment où cette recette est écrite, Vue CLI 3 est elle-même en version bêta. Cette version de la CLI est dotée d'un mode de construction `library` intégré, qui crée des versions CommonJS et UMD d'un composant. Cela peut être adéquat pour vos cas d'utilisation, mais vous devrez quand même vous assurer que votre fichier package.json pointe correctement vers `main` and `unpkg`. De plus, il n'y aura pas de sortie de `module` ES6 à moins que cette fonctionnalité ne soit ajoutée au CLI avant sa sortie ou via un plugin.
 
 ## Remerciements
 
