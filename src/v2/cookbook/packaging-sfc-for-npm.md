@@ -35,7 +35,7 @@ Non seulement cela vous évite de copier/coller des composants, mais cela vous p
 
 ## Puis-je partager directement les fichiers `.vue` ?
 
-Vue autorise déjà l'écriture des composants dans un fichier unique. Du fait qu'un Single File Component (SFC) est déjà un fichier unique, vous pourriez vous poser la question :
+Vue autorise déjà l'écriture des composants dans un fichier unique. Du fait qu'un ([Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) soit déjà un fichier unique, vous pourriez donc vous poser la question suivante :
 
 > Pourquoi les gens ne peuvent-ils pas utiliser mon fichier `.vue` directement ? N'est-ce pas la façon la plus simple de partager des composants ?
 
