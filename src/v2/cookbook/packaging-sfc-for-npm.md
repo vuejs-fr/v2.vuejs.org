@@ -93,7 +93,7 @@ Les bundlers compatibles peuvent lire l'option `browser` dans le fichier package
 
 ### Comment puis-je réaliser plusieurs versions de mon composant ?
 
-Vous n'avez pas besoin de réecrire votre module plusieurs fois car il est tout à fait possible de préparer 3 versions de votre module en une seule étape, en quelques secondes seulement. L'exemple ci-dessous utilise [Rollup](https://rollupjs.org) en raison de sa configuration minimaliste, mais une configuration similaire est possible avec d'autres outils de builds (plus de détails sur [ce post (EN)](https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c)). La section `scripts` de notre package.json peut être mise à jour avec une seule entrée pour chaque cible de compilation, et un script `build` plus générique qui les exécute tous en un seul passage. Notre fichier package.json ressemble désormais à ceci:
+Vous n'avez pas besoin de réecrire votre module plusieurs fois car il est tout à fait possible de préparer 3 versions de votre module en une seule étape, en quelques secondes seulement. L'exemple ci-dessous utilise [Rollup](https://rollupjs.org) en raison de sa configuration minimaliste, mais une configuration similaire est possible avec d'autres outils de builds (plus de détails sur [ce post (EN)](https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c)). La section `scripts` de notre package.json peut être mise à jour avec une seule entrée pour chaque cible de compilation, et un script `build` plus générique qui les exécute tous en un seul passage. Notre fichier package.json ressemble désormais à ceci :
 
 ```json
 {
@@ -171,7 +171,7 @@ On peut remarquer que la première ligne importe directement notre [Composant](h
 
 ### Comment configurer un build avec Rollup ?
 
-Avec notre package.json contenant la section `script` prête à démarrer et la configuration de notre [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) mise en place via notre wrapper, il ne reste plus qu'à s'assurer que Rollup est correctement configuré. Heureusement, cela peut être fait avec un petit fichier rollup.config.js de 19 lignes déjà prêtes:
+Avec notre package.json contenant la section `scripts` prête à démarrer et la configuration de notre [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) mise en place via notre wrapper, il ne reste plus qu'à s'assurer que Rollup est correctement configuré. Heureusement, cela peut être fait avec un petit fichier rollup.config.js de 19 lignes déjà prêtes :
 
 ```js
 import commonjs from '@rollup/plugin-commonjs'; // Converti les modules CommonJS en ES6
@@ -197,7 +197,7 @@ export default {
 
 Cet exemple de configuration contient les paramètres minimums pour empaqueter votre [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) à destination de npm. Il est possible de le personnaliser, par exemple en extrayant le CSS dans un fichier séparé, en utilisant un préprocesseur CSS, en masquant la sortie JS, etc.
 
-Il convient également de noter le «nom» donné au composant ici qui est en PascalCase, et qui devrait correspondre au nom en kebab-case utilisé ailleurs dans ce projet.
+Il convient également de noter le « nom » donné au composant ici qui est en PascalCase, et qui devrait correspondre au nom en kebab-case utilisé ailleurs dans ce projet.
 
 ### Cela remplacera-t-il mon processus de développement actuel ?
 
@@ -207,15 +207,13 @@ La configuration ici n'est pas destinée à remplacer le processus de développe
 vue serve --open src/my-component.vue
 ```
 
-En d'autres termes, développez de la manière qui vous convient le mieux. Les éléments décrits sur cette page ressemblent plus à des «touches finales» qu'à un processus de développement complet.
+En d'autres termes, développez de la manière qui vous convient le mieux. Les éléments décrits sur cette page ressemblent plus à des « touches finales » qu'à un processus de développement complet.
 
 ## Quand éviter ce schéma ?
 
-Les modules 
-
 Conditionner les [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) de cette manière n'est pas forcément une bonne idée dans certains cas. Cette page n'entre pas dans le détail de la manière dont les composants eux-mêmes sont écrits. Certains composants peuvent avoir des effets secondaires comme des directives, ou étendre d'autres bibliothèques avec des fonctionnalités supplémentaires. Dans ces cas, vous devrez évaluer si les changements nécessaires décrits sur cette page sont trop importants ou non.
 
-En outre, faites attention à toute dépendance supplémentaires que votre [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html)] pourrait avoir. Par exemple, si vous avez besoin d'une bibliothèque tierce pour le tri ou la communication avec une API, Rollup peut ommetre ces différents packages dans le code final s'il n'est pas correctement configuré. Pour continuer à utiliser ceci, vous devrez configurer Rollup et exclure ces fichiers de la sortie puis mettre à jour votre documentation pour informer vos utilisateurs de la présence ces dépendances.
+En outre, faites attention à toute dépendance supplémentaires que votre [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) pourrait avoir. Par exemple, si vous avez besoin d'une bibliothèque tierce pour le tri ou la communication avec une API, Rollup peut ommetre ces différents packages dans le code final s'il n'est pas correctement configuré. Pour continuer à utiliser ceci, vous devrez configurer Rollup et exclure ces fichiers de la sortie puis mettre à jour votre documentation pour informer vos utilisateurs de la présence ces dépendances.
 
 ## Patterns alternatifs
 
