@@ -89,7 +89,7 @@ import MyComponent from 'my-component/sfc'; // Notons le '/sfc'
 
 Les bundlers compatibles peuvent lire l'option `browser` dans le fichier package.json et traduire les requêtes de `my-component/sfc` à `my-component/src/my-component.vue`, ce qui permet d'utiliser le fichier `.vue` original à la place. Maintenant, le processus SSR peut utiliser les optimisations de concaténation de chaînes de caractères dont il a besoin pour un gain de performances.
 
-<p class="tip">Note: Lorsque vous utiliserez un fichier `.vue` directement, faites attention à tout type de prétraitement sur les balises `script` et `style`. Ces dépendances seront transmises aux utilisateurs. Envisagez donc de fournir des [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) «simples» pour alléger au maximum les choses.</p>
+<p class="tip">Note: Lorsque vous utiliserez un fichier `.vue` directement, faites attention à tout type de prétraitement sur les balises `script` et `style`. Ces dépendances seront transmises aux utilisateurs. Envisagez donc de fournir des [Composant](https://fr.vuejs.org/v2/guide/single-file-components.html) « simples » pour alléger au maximum les choses.</p>
 
 ### Comment puis-je réaliser plusieurs versions de mon composant ?
 
