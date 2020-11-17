@@ -57,7 +57,7 @@ src/
 dist/
 ```
 
-<p class="tip">Tout au long de ce document, il est fait référence au fichier package.json mentionné dans la structure présente ci-dessus. Le fichier utilisé dans ces exemples a été généré à la main, et comprendra la configuration minimale requise pour la tâche en question. Il est probable que votre fichier package.json contienne beaucoup plus d'éléments que ce qui est énuméré sur ce document.</p>
+<p class="tip">Tout au long de ce document, il est fait référence au fichier package.json mentionné dans la structure présente ci-dessus. Le fichier utilisé dans ces exemples a été généré à la main, et contiendra la configuration minimale requise pour la tâche en question. Il est probable que votre fichier package.json contienne beaucoup plus d'éléments que ce qui est énuméré sur ce document.</p>
 
 ### Comment npm sait-il quelle version servir ?
 
