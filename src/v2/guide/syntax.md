@@ -171,7 +171,7 @@ De plus, si vous utilisez des templates dans le DOM (templates directement écri
 
 ``` html
 <!-- 
-Ceci va être converti en v-bind:[someattr] dans un template dans le DOM. -->
+Ceci va être converti en v-bind:[someattr] dans un template dans le DOM.
 À moins que vous ne fassiez référence à la propriété `"someattr"` dans votre instance, votre code ne fonctionnera pas.
 -->
 <a v-bind:[someAttr]="value"> ... </a>
