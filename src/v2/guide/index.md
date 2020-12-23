@@ -24,14 +24,14 @@ La manière la plus simple d'essayer Vue.js est d'utiliser [l'exemple Hello Worl
 
 ``` html
 <!-- Version développement. Celle-ci donne des avertissements utiles sur la console -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 ```
 
 ou :
 
 ``` html
 <!-- Version production. celle-ci est optimisée pour la taille et la vitesse -->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 ```
 
 La page d'[installation](installation.html) vous offre d'autres manières d'installer Vue. Notez que nous **ne** recommandons **pas** aux débutants de commencer avec `vue-cli`, surtout si vous n'êtes pas encore familier avec les outils de *build* basés sur Node.js.

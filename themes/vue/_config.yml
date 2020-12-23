@@ -97,6 +97,12 @@ gold_sponsors:
   - url: 'https://cosmos.network/'
     img: tendermint.png
     name: Tendermint
+  - url: 'https://www.okayhq.com/'
+    img: okay.png
+    name: Okay
+  - url: 'https://www.vpsserver.com'
+    img: vpsserver_com.png
+    name: VPSServer.com
 silver_sponsors:
   - url: 'https://roadster.com'
     img: roadster.png
@@ -107,6 +113,9 @@ silver_sponsors:
   - url: 'https://www.thecasinodb.com'
     img: isolutions_uk_limited.png
     name: iSolutions UK Limited
+  - url: https://teamextension.io
+    img: team_extension_north_america_inc.png
+    name: Team Extension North America Inc
 bronze_sponsors:
   - url: 'https://www.accelebrate.com/'
     img: accelebrate.png

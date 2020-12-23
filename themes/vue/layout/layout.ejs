@@ -1,9 +1,8 @@
 <% var isIndex = page.path === 'index.html' %>
 <% var isThemes = page.path === 'resources/themes.html' %>
-<% var hasBtsBanner = true %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="with-v3-banner">
   <head>
     <title><%- page.title ? page.title + ' — ' : '' %>Vue.js</title>
     <meta charset="utf-8">
@@ -95,7 +94,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <%- partial('partials/header', { hasBtsBanner }) %>
+    <%- partial('partials/header') %>
     <% if (!isIndex) { %>
       <div id="main" class="fix-sidebar">
         <%- body %>

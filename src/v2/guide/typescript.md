@@ -4,13 +4,13 @@ type: guide
 order: 403
 ---
 
-> [Vue CLI](https://cli.vuejs.org) fournit des outils de support à TypeScript. 
+> [Vue CLI](https://cli.vuejs.org) fournit des outils de support à TypeScript.
 
 ## Déclaration officielle dans les packages npm
 
 Un système de typage statique peut aider à prévenir des erreurs d'exécutions potentielles, et particulièrement quand les applications grandissent. C'est pourquoi Vue est fourni avec des [déclarations de types officielles](https://github.com/vuejs/vue/tree/dev/types) pour [TypeScript](https://www.typescriptlang.org/), et pas seulement pour le cœur de Vue, mais aussi pour [vue-router](https://github.com/vuejs/vue-router/tree/dev/types) et [vuex](https://github.com/vuejs/vuex/tree/dev/types).
 
-Puisque ceux-ci sont [publiés sur npm](https://cdn.jsdelivr.net/npm/vue/types/), et que la dernière version de TypeScript sait comment résoudre des déclarations de type dans des packages npm, cela signifie qu'installer ceux-ci via npm ne requiert aucun outil supplémentaire pour utiliser TypeScript avec Vue.
+Puisque ceux-ci sont [publiés sur npm](https://cdn.jsdelivr.net/npm/vue@2/types/), et que la dernière version de TypeScript sait comment résoudre des déclarations de type dans des packages npm, cela signifie qu'installer ceux-ci via npm ne requiert aucun outil supplémentaire pour utiliser TypeScript avec Vue.
 
 ## Configuration recommandée
 
@@ -195,7 +195,7 @@ Si vous vous apercevez que l'autocomplétion ne fonctionne pas, annoter certaine
 ```ts
 import Vue, { PropType } from 'vue'
 
-interface ComplexMessage { 
+interface ComplexMessage {
   title: string,
   okMessage: string,
   cancelMessage: string
@@ -204,7 +204,7 @@ const Component = Vue.extend({
   props: {
     name: String,
     success: { type: String },
-    callback: { 
+    callback: {
       type: Function as PropType<() => void>
     },
     message: {

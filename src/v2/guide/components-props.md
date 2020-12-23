@@ -347,6 +347,7 @@ Ce modèle vous permet d'utiliser des composants de base comme des éléments HT
 
 ```html
 <base-input
+  label="Username:"
   v-model="username"
   required
   placeholder="Entrez votre nom d\'utilisateur"

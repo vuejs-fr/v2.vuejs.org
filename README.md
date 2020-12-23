@@ -1,6 +1,8 @@
 # fr.vuejs.org
 
-Ce site est assemblé avec [hexo](http://hexo.io/). Le contenu du site est écrit au format Markdown et se trouve dans `src`. Les propositions de fusion (*pull request*) sont les bienvenues !
+> Important: Ce dépôt est pour Vue 1.x et 2.x uniquement. Les problèmes (*issues*) et propositions de fusion (*pull request*) concernant Vue 3.x sont gérés dans le [dépôt de la documentation v3](https://github.com/vuejs/docs-next) (EN).
+
+Ce site est assemblé avec [hexo](http://hexo.io/). Le contenu du site est écrit au format Markdown et se trouve dans `src`. Les propositions de fusion sont les bienvenues !
 
 ## Développement
 
