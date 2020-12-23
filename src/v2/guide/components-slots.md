@@ -129,7 +129,7 @@ Le contenu fourni sera rendu à la place :
 
 ## Les slots nommés
 
-> Mis à jour dans la 2.6.0+. [Voir ici](#Syntaxe-dépréciée) pour la syntaxe dépréciée en utilisant l'attribut `slot`.
+> Mis à jour dans la 2.6.0+. [Voir ici](#Syntaxe-obsolete) pour la syntaxe dépréciée en utilisant l'attribut `slot`.
 
 Dans certains cas, il peut être intéressant d'avoir plusieurs éléments `<slot>`. Dans un exemple hypothétique, voici le template d'un composant `<base-layout>` :
 
