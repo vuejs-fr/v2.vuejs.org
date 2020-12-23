@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Packaging Vue Components for npm (EN) — Vue.js</title>
+    <title>Réaliser un composant Vue pour npm — Vue.js</title>
     <meta charset="utf-8">
     <meta name="description" content="Vue.js - Le Framework JavaScript Évolutif">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,12 +20,12 @@
     <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Packaging Vue Components for npm (EN) — Vue.js">
+    <meta property="og:title" content="Réaliser un composant Vue pour npm — Vue.js">
     <meta property="og:description" content="Vue.js - Le Framework JavaScript Évolutif">
     <meta property="og:image" content="https://vuejs.org//images/logo.png">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Packaging Vue Components for npm (EN) — Vue.js">
+    <meta name="twitter:title" content="Réaliser un composant Vue pour npm — Vue.js">
     <meta name="twitter:description" content="Vue.js - Le Framework JavaScript Évolutif">
     <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
 
@@ -370,7 +370,7 @@
     
     
     <li>
-      <a href="/v2/cookbook/packaging-sfc-for-npm.html" class="sidebar-link current">Packaging Vue Components for npm (EN)</a>
+      <a href="/v2/cookbook/packaging-sfc-for-npm.html" class="sidebar-link current">Réaliser un composant Vue pour npm</a>
     </li>
   
     
@@ -438,34 +438,33 @@
     
   
   
-    <h1>Packaging Vue Components for npm (EN)</h1>
+    <h1>Réaliser un composant Vue pour npm</h1>
   
   
-    <h2 id="Base-Example"><a href="#Base-Example" class="headerlink" title="Base Example"></a>Base Example</h2><p>Cette page est en cours de traduction. Pour nous aider, vous pouvez participer sur <a href="https://github.com/vuejs-fr/vuejs.org" target="_blank">le dépôt GitHub dédié de Vuejs-FR</a>.</p><p>Vue components by nature are meant to be re-used. This is easy when the component is only used within a single application. But how can you write a component once and use it in multiple sites/applications? Perhaps the easiest solution is via npm.</p>
-
-<p>By packaging your component to be shared via npm, it can be imported/required into a build process for use in full-fledged web applications:</p>
+    <h2 id="Exemple-de-base"><a href="#Exemple-de-base" class="headerlink" title="Exemple de base"></a>Exemple de base</h2><p>Par nature, un composant Vue est destiné à être réutilisé. Cela est facile lorsque le composant n’est utilisé que dans une seule application. Mais comment peut-on écrire un composant une seule fois et l’utiliser sur plusieurs sites/applications ? La solution la plus simple est peut-être de passer par npm.</p>
+<p>En empaquetant votre composant afin qu’il soit partagé via npm, il peut être importé dans un processus de construction pour être utilisé dans des applications web à part entière :</p>
 <pre><code class="hljs js"><span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'my-component'</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
   <span class="hljs-attr">components</span>: &#123;
     MyComponent,
   &#125;,
-  <span class="hljs-comment">// rest of the component</span>
+    <span class="hljs-comment">// ... suite du composant</span>
 &#125;</code></pre>
-<p>Or even used via <code>&lt;script&gt;</code> tag in the browser directly:</p>
+<p>Ou même utilisé via la balise <code>&lt;script&gt;</code> dans le navigateur directement :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/vue"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/my-component"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 ...
 <span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span>
 ...</code></pre>
-<p>Not only does this help you avoid copy/pasting components around, but it also allows you to give back to the Vue community!</p>
-<h2 id="Can’t-I-Just-Share-vue-Files-Directly"><a href="#Can’t-I-Just-Share-vue-Files-Directly" class="headerlink" title="Can’t I Just Share .vue Files Directly?"></a>Can’t I Just Share <code>.vue</code> Files Directly?</h2><p>Vue already allows components to be written as a single file. Because a Single File Component (SFC) is already just one file, you might ask:</p>
+<p>Non seulement cela vous évite de copier/coller des composants, mais cela vous permet aussi de les partager avec la communauté Vue ! </p>
+<h2 id="Puis-je-partager-directement-les-fichiers-vue"><a href="#Puis-je-partager-directement-les-fichiers-vue" class="headerlink" title="Puis-je partager directement les fichiers .vue ?"></a>Puis-je partager directement les fichiers <code>.vue</code> ?</h2><p>Vue autorise déjà l’écriture des composants dans un fichier unique. Du fait qu’un (<a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> soit déjà un fichier unique, vous pourriez donc vous poser la question suivante :</p>
 <blockquote>
-<p>“Why can’t people use my <code>.vue</code> file directly? Isn’t that the simplest way to share components?”</p>
+<p>Pourquoi les gens ne peuvent-ils pas utiliser mon fichier <code>.vue</code> directement ? N’est-ce pas la façon la plus simple de partager des composants ?</p>
 </blockquote>
-<p>It’s true, you can share <code>.vue</code> files directly, and anyone using a <a href="https://vuejs.org/v2/guide/installation.html#Explanation-of-Different-Builds" target="_blank" rel="noopener">Vue build</a> containing the Vue compiler can consume it immediately. Also, the SSR build uses string concatenation as an optimization, so the <code>.vue</code> file might be preferred in this scenario (see <a href="#SSR-Usage">Packaging Components for npm &gt; SSR Usage</a> for details). However, this excludes anyone who wishes to use the component directly in a browser via <code>&lt;script&gt;</code> tag, anyone who uses a runtime-only build, or build processes which don’t understand what to do with <code>.vue</code> files.</p>
-<p>Properly packaging your SFC for distribution via npm enables your component to be shared in a way which is ready to use everywhere!</p>
-<h2 id="Packaging-Components-for-npm"><a href="#Packaging-Components-for-npm" class="headerlink" title="Packaging Components for npm"></a>Packaging Components for npm</h2><p>For the purposes of this section, assume the following file structure:</p>
+<p>C’est vrai, vous pouvez partager vos fichiers <code>.vue</code> directement, et n’importe qui utilisant <a href="https://fr.vuejs.org/v2/guide/installation.html#Explication-des-differents-builds">Un build Vue</a> contenant le compilateur Vue peut utiliser votre composant directement. Aussi, les builds déstinés aux applications SSR utilisent la concaténation de chaînes de caractères comme une optimisation, l’utilisation de composants <code>.vue</code> partagés directement est donc préférable dans cette situation (lire la section <a href="#Rendu-cote-serveur">Rendu côté serveur</a> pour plus de détails). Cependant, cela exclut les personnes souhaitant utiliser le composant directement dans un navigateur via la balise <code>&lt;script&gt;</code>, mais aussi les personnes souhaitant utiliser une compilation à l’exécution ou encore une application contenant des processus de compilation incapables de lire des fichiers <code>.vue</code>.</p>
+<p>Un package approprié de votre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> pour une distribution via npm permet de le partager de manière à ce qu’il soit prêt à être utilisé partout !</p>
+<h2 id="Realiser-un-package-de-votre-composant-pour-npm"><a href="#Realiser-un-package-de-votre-composant-pour-npm" class="headerlink" title="Réaliser un package de votre composant pour npm"></a>Réaliser un package de votre composant pour npm</h2><p>Pour les besoins de ce document, nous allons utiliser la structure suivante :</p>
 <pre><code class="hljs undefined">package.json
 build/
    rollup.config.js
@@ -473,9 +472,9 @@ src/
    wrapper.js
    my-component.vue
 dist/</code></pre>
-<p class="tip">Throughout this document, references are made to the package.json file listed above. The file used in these examples was generated by hand, and will include the minimum configuration required for the discussion/task at hand. It is likely your own package.json file will contain a lot more than is listed here.</p>
+<p class="tip">Tout au long de ce document, il est fait référence au fichier package.json mentionné dans la structure présente ci-dessus. Le fichier utilisé dans ces exemples a été généré à la main, et contiendra la configuration minimale requise pour la tâche en question. Il est probable que votre fichier package.json contienne beaucoup plus d’éléments que ce qui est énuméré sur ce document.</p>
 
-<h3 id="How-does-npm-know-which-version-to-serve-to-a-browser-build-process"><a href="#How-does-npm-know-which-version-to-serve-to-a-browser-build-process" class="headerlink" title="How does npm know which version to serve to a browser/build process?"></a>How does npm know which version to serve to a browser/build process?</h3><p>The package.json file used by npm really only requires one version (<code>main</code>), but as it turns out, we aren’t limited to that. We can address the most common use cases by specifying 2 additional versions (<code>module</code> and <code>unpkg</code>), and provide access to the <code>.vue</code> file itself using the <code>browser</code> field. A sample package.json would look like this:</p>
+<h3 id="Comment-npm-sait-il-quelle-version-servir"><a href="#Comment-npm-sait-il-quelle-version-servir" class="headerlink" title="Comment npm sait-il quelle version servir ?"></a>Comment npm sait-il quelle version servir ?</h3><p>Le fichier package.json utilisé sur npm nécessite qu’une seule version (<code>main</code>), mais nous ne sommes pas seulement limité à cela. Nous pouvons aussi traiter les cas d’utilisation les plus courants en précisant 2 versions supplémentaires (<code>module</code> et <code>unpkg</code>) et même fournir un accès au fichier <code>.vue</code> lui-même en utilisant le champ <code>browser</code>. Notre fichier package.json devrait donc, pour l’instant, ressembler à ceci :</p>
 <pre><code class="hljs json">&#123;
   "name": "my-component",
   "version": "1.2.3",
@@ -487,13 +486,13 @@ dist/</code></pre>
   &#125;,
   ...
 &#125;</code></pre>
-<p>When webpack 2+, Rollup, or other modern build tools are used, they will pick up on the <code>module</code> build. Legacy applications would use the <code>main</code> build, and the <code>unpkg</code> build can be used directly in browsers. In fact, the <a href="https://unpkg.com" target="_blank" rel="noopener">unpkg</a> cdn automatically uses this when someone enters the URL for your module into their service!</p>
-<h3 id="SSR-Usage"><a href="#SSR-Usage" class="headerlink" title="SSR Usage"></a>SSR Usage</h3><p>You might have noticed something interesting - browsers aren’t going to be using the <code>browser</code> version. That’s because this field is actually intended to allow authors to provide <a href="https://github.com/defunctzombie/package-browser-field-spec#spec" target="_blank" rel="noopener">hints to bundlers</a> which in turn create their own packages for client side use. With a little creativity, this field allows us to map an alias to the <code>.vue</code> file itself. For example:</p>
-<pre><code class="hljs js"><span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'my-component/sfc'</span>; <span class="hljs-comment">// Note the '/sfc'</span></code></pre>
-<p>Compatible bundlers see the <code>browser</code> definition in package.json and translate requests for <code>my-component/sfc</code> into <code>my-component/src/my-component.vue</code>, resulting in the original <code>.vue</code> file being used instead. Now the SSR process can use the string concatenation optimizations it needs to for a boost in performance.</p>
-<p class="tip">Note: When using <code>.vue</code> components directly, pay attention to any type of pre-processing required by <code>script</code> and <code>style</code> tags. These dependencies will be passed on to users. Consider providing ‘plain’ SFCs to keep things as light as possible.</p>
+<p>Quand webpack 2+, Rollup ou bien d’autres outils de compilation sont utilisés, ils reprennent la construction du build de type <code>module</code>. Les anciennes applications utiliseraient donc la version <code>main</code> tandis que la version <code>unpkg</code> peut être utilisée directement dans les navigateurs. Par ailleurs, <a href="https://unpkg.com" target="_blank" rel="noopener">unpkg</a> utilise automatiquement la version <code>unpkg</code> lorsque quelqu’un saisit l’URL de votre module dans son service !</p>
+<h3 id="Rendu-cote-serveur-SSR"><a href="#Rendu-cote-serveur-SSR" class="headerlink" title="Rendu côté serveur (SSR)"></a>Rendu côté serveur (SSR)</h3><p>Vous aurez peut-être remarqué que les navigateurs n’utilisent pas la version <code>browser</code>. C’est parce que ce champ est destiné pour que l’auteur du package fournisse <a href="https://github.com/defunctzombie/package-browser-field-spec#spec" target="_blank" rel="noopener">quelque chose aux bundlers</a> qui, à leur tour, créent leurs propres paquets pour une utilisation côté client. Avec un peu d’imagination ce champ nous permet de faire correspondre un alias au fichier <code>.vue</code> lui-même. Par exemple :</p>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'my-component/sfc'</span>; <span class="hljs-comment">// Notons le '/sfc'</span></code></pre>
+<p>Les bundlers compatibles peuvent lire l’option <code>browser</code> dans le fichier package.json et traduire les requêtes de <code>my-component/sfc</code> en <code>my-component/src/my-component.vue</code>, ce qui permet d’utiliser le fichier <code>.vue</code> original à la place. Maintenant, le processus SSR peut utiliser les optimisations de concaténation de chaînes de caractères dont il a besoin pour un gain de performances.</p>
+<p class="tip">Note: Lorsque vous utilisez un fichier <code>.vue</code> directement, faites attention à tout type de prétraitement sur les balises <code>script</code> et <code>style</code>. Ces dépendances seront transmises aux utilisateurs. Envisagez donc de fournir des <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> « simples » pour alléger au maximum les choses.</p>
 
-<h3 id="How-do-I-make-multiple-versions-of-my-component"><a href="#How-do-I-make-multiple-versions-of-my-component" class="headerlink" title="How do I make multiple versions of my component?"></a>How do I make multiple versions of my component?</h3><p>There is no need to write your module multiple times. It is possible to prepare all 3 versions of your module in one step, in a matter of seconds. The example here uses <a href="https://rollupjs.org" target="_blank" rel="noopener">Rollup</a> due to its minimal configuration, but similar configuration is possible with other build tools - more details on this decision can be found <a href="https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c" target="_blank" rel="noopener">here</a>. The package.json <code>scripts</code> section can be updated with a single entry for each build target, and a more generic <code>build</code> script that runs them all in one pass. The sample package.json file now looks like this:</p>
+<h3 id="Comment-puis-je-realiser-plusieurs-versions-de-mon-composant"><a href="#Comment-puis-je-realiser-plusieurs-versions-de-mon-composant" class="headerlink" title="Comment puis-je réaliser plusieurs versions de mon composant ?"></a>Comment puis-je réaliser plusieurs versions de mon composant ?</h3><p>Vous n’avez pas besoin de réecrire votre module plusieurs fois car il est tout à fait possible de préparer 3 versions de votre module en une seule étape, en quelques secondes seulement. L’exemple ci-dessous utilise <a href="https://rollupjs.org" target="_blank" rel="noopener">Rollup</a> en raison de sa configuration minimaliste, mais une configuration similaire est possible avec d’autres outils de builds (plus de détails sur <a href="https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c" target="_blank" rel="noopener">ce post (EN)</a>). La section <code>scripts</code> de notre package.json peut être mise à jour avec une seule entrée pour chaque cible de compilation, et un script <code>build</code> plus générique qui les exécute tous en un seul passage. Notre fichier package.json ressemble désormais à ceci :</p>
 <pre><code class="hljs json">&#123;
   "name": "my-component",
   "version": "1.2.3",
@@ -520,67 +519,72 @@ dist/</code></pre>
   &#125;,
   ...
 &#125;</code></pre>
-<p class="tip">Remember, if you have an existing package.json file, it will likely contain a lot more than this one does. This merely illustrates a starting point. Also, the <i>packages</i> listed in devDependencies (not their versions) are the minimum requirements for rollup to create the three separate builds (umd, es, and unpkg) mentioned. As newer versions become available, they should be updated as necessary.</p>
+<p class="tip">N’oubliez pas que si un fichier package.json est déjà présent sur votre projet, il sera probablement beaucoup plus long que celui présenté ici. Ceci n’illustre qu’un point de départ. De plus, les <em>paquets</em> listés dans devDependencies (et non leurs versions) sont les exigences minimales pour que Rollup puisse créer les trois builds séparées (umd, es, et unpkg). Au fur et à mesure que des versions plus récentes sont disponibles, elles doivent être mises à jour si nécessaire.</p>
 
-<p>Our changes to package.json are complete. Next, we need a small wrapper to export/auto-install the actual SFC, plus a minimal Rollup configuration, and we’re set!</p>
-<h3 id="What-does-my-packaged-component-look-like"><a href="#What-does-my-packaged-component-look-like" class="headerlink" title="What does my packaged component look like?"></a>What does my packaged component look like?</h3><p>Depending on how your component is being used, it needs to be exposed as either a <a href="https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#c33a" target="_blank" rel="noopener">CommonJS/UMD</a> javascript module, an <a href="https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#4f5e" target="_blank" rel="noopener">ES6 javascript</a> module, or in the case of a <code>&lt;script&gt;</code> tag, it will be automatically loaded into Vue via <code>Vue.use(...)</code> so it’s immediately available to the page. This is accomplished by a simple wrapper.js file which handles the module export and auto-install. That wrapper, in its entirety, looks like this:</p>
-<pre><code class="hljs js"><span class="hljs-comment">// Import vue component</span>
+<p>Nos chamgements effectués sur notre package.json sont désormais terminés. Ensuite, nous aurons besoin d’un petit fichier pour exporter/installer automatiquement le (<a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> actuel, d’une configuration minimale de Rollup, et c’est parti !</p>
+<h3 id="A-quoi-va-ressembler-mon-composant"><a href="#A-quoi-va-ressembler-mon-composant" class="headerlink" title="À quoi va ressembler mon composant ?"></a>À quoi va ressembler mon composant ?</h3><p>En fonction de la manière dont votre composant est utilisé, il doit être exposé soit comme un module JavaScript (<a href="https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#c33a" target="_blank" rel="noopener">CommonJS/UMD</a>), un module <a href="https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#4f5e" target="_blank" rel="noopener">ES6</a> ou bien dans le cas d’une utilisation via <code>script</code>, ce composant sera automatiquement chargé dans Vue via <code>Vue.use(...)</code> et donc directement disponible. Ce fichier wrapper.js qui gère l’exportation et l’installation automatique du module ressemble à ceci:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Importation de notre composant Vue</span>
 <span class="hljs-keyword">import</span> component <span class="hljs-keyword">from</span> <span class="hljs-string">'./my-component.vue'</span>;
 
-<span class="hljs-comment">// Declare install function executed by Vue.use()</span>
+<span class="hljs-comment">// Déclaration de la méthode d'installation utilisée via Vue.use(...)</span>
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">install</span>(<span class="hljs-params">Vue</span>) </span>&#123;
 	<span class="hljs-keyword">if</span> (install.installed) <span class="hljs-keyword">return</span>;
+  
 	install.installed = <span class="hljs-literal">true</span>;
+  
 	Vue.component(<span class="hljs-string">'MyComponent'</span>, component);
 &#125;
 
-<span class="hljs-comment">// Create module definition for Vue.use()</span>
+<span class="hljs-comment">// Création du module à destionation Vue.use(...)</span>
 <span class="hljs-keyword">const</span> plugin = &#123;
 	install,
 &#125;;
 
-<span class="hljs-comment">// Auto-install when vue is found (eg. in browser via &lt;script&gt; tag)</span>
+<span class="hljs-comment">// Installation automatique si Vue est détecté (par exemple dans un navigation via la balise &lt;script&gt;)</span>
 <span class="hljs-keyword">let</span> GlobalVue = <span class="hljs-literal">null</span>;
+
 <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span> !== <span class="hljs-string">'undefined'</span>) &#123;
 	GlobalVue = <span class="hljs-built_in">window</span>.Vue;
 &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> global !== <span class="hljs-string">'undefined'</span>) &#123;
 	GlobalVue = global.Vue;
 &#125;
+
 <span class="hljs-keyword">if</span> (GlobalVue) &#123;
 	GlobalVue.use(plugin);
 &#125;
 
-<span class="hljs-comment">// To allow use as module (npm/webpack/etc.) export component</span>
+<span class="hljs-comment">// Exporter en tant que module (pour npm/webpack/etc.)</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> component;</code></pre>
-<p>Notice the first line directly imports your SFC, and the last line exports it unchanged. As indicated by the comments in the rest of the code, the wrapper provides an <code>install</code> function for Vue, then attempts to detect Vue and automatically install the component. With 90% of the work done, it’s time to sprint to the finish!</p>
-<h3 id="How-do-I-configure-the-Rollup-build"><a href="#How-do-I-configure-the-Rollup-build" class="headerlink" title="How do I configure the Rollup build?"></a>How do I configure the Rollup build?</h3><p>With the package.json <code>scripts</code> section ready and the SFC wrapper in place, all that is left is to ensure Rollup is properly configured. Fortunately, this can be done with a small 16 line rollup.config.js file:</p>
-<pre><code class="hljs js"><span class="hljs-keyword">import</span> commonjs <span class="hljs-keyword">from</span> <span class="hljs-string">'@rollup/plugin-commonjs'</span>; <span class="hljs-comment">// Convert CommonJS modules to ES6</span>
-<span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>; <span class="hljs-comment">// Handle .vue SFC files</span>
-<span class="hljs-keyword">import</span> buble <span class="hljs-keyword">from</span> <span class="hljs-string">'@rollup/plugin-buble'</span>; <span class="hljs-comment">// Transpile/polyfill with reasonable browser support</span>
+<p>On peut remarquer que la première ligne importe directement notre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> et que la dernière ligne l’exporte tel quel. Comme indiqué dans les commentaires, ce fichier de configuration fourni une méthode “d’installation” déstinée à Vue puis tente de détecter Vue afin de s’installer automatiquement. Avec 90% du travail effectué, il est temps de sprinter jusqu’à l’arrivée !</p>
+<h3 id="Comment-configurer-un-build-avec-Rollup"><a href="#Comment-configurer-un-build-avec-Rollup" class="headerlink" title="Comment configurer un build avec Rollup ?"></a>Comment configurer un build avec Rollup ?</h3><p>Avec notre package.json contenant la section <code>scripts</code> prête à démarrer et la configuration de notre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> mise en place via notre wrapper, il ne reste plus qu’à s’assurer que Rollup est correctement configuré. Heureusement, cela peut être fait avec un petit fichier rollup.config.js de 19 lignes déjà prêt :</p>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> commonjs <span class="hljs-keyword">from</span> <span class="hljs-string">'@rollup/plugin-commonjs'</span>; <span class="hljs-comment">// Converti les modules CommonJS en ES6</span>
+<span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>; <span class="hljs-comment">// Gère les composants .vue</span>
+<span class="hljs-keyword">import</span> buble <span class="hljs-keyword">from</span> <span class="hljs-string">'@rollup/plugin-buble'</span>; <span class="hljs-comment">// Permet un polyfill de notre code pour un meilleur support sur les navigateurs</span>
+
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
-    <span class="hljs-attr">input</span>: <span class="hljs-string">'src/wrapper.js'</span>, <span class="hljs-comment">// Path relative to package.json</span>
-    output: &#123;
-        <span class="hljs-attr">name</span>: <span class="hljs-string">'MyComponent'</span>,
-        <span class="hljs-attr">exports</span>: <span class="hljs-string">'named'</span>,
-    &#125;,
-    <span class="hljs-attr">plugins</span>: [
-        commonjs(),
-        vue(&#123;
-            <span class="hljs-attr">css</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// Dynamically inject css as a &lt;style&gt; tag</span>
-            compileTemplate: <span class="hljs-literal">true</span>, <span class="hljs-comment">// Explicitly convert template to render function</span>
-        &#125;),
-        buble(), <span class="hljs-comment">// Transpile to ES5</span>
-    ],
+  <span class="hljs-attr">input</span>: <span class="hljs-string">'src/wrapper.js'</span>, <span class="hljs-comment">// Fichier relatif en partant de notre fichier package.json</span>
+  output: &#123;
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'MyComponent'</span>,
+    <span class="hljs-attr">exports</span>: <span class="hljs-string">'named'</span>,
+  &#125;,
+  <span class="hljs-attr">plugins</span>: [
+    commonjs(),
+    vue(&#123;
+      <span class="hljs-attr">css</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// Injecte dynamiquement notre CSS dans une balise &lt;style&gt;</span>
+      compileTemplate: <span class="hljs-literal">true</span>, <span class="hljs-comment">// Converti notre template en fonction de rendu Vue</span>
+    &#125;),
+    buble(), <span class="hljs-comment">// Traduit en ES5</span>
+  ],
 &#125;;</code></pre>
-<p>This sample config file contains the minimum settings to package your SFC for npm. There is room for customization, such as extracting CSS to a separate file, using a CSS preprocessor, uglifying the JS output, etc.</p>
-<p>Also, it is worth noting the <code>name</code> given the component here. This is a PascalCase name that the component will be given, and should correspond with the kebab-case name used elsewhere throughout this recipe.</p>
-<h3 id="Will-this-replace-my-current-development-process"><a href="#Will-this-replace-my-current-development-process" class="headerlink" title="Will this replace my current development process?"></a>Will this replace my current development process?</h3><p>The configuration here is not meant to replace the development process that you currently use. If you currently have a webpack setup with hot module reloading (HMR), keep using it! If you’re starting from scratch, feel free to install <a href="https://github.com/vuejs/vue-cli/" target="_blank" rel="noopener">Vue CLI 3</a>, which will give you the whole HMR experience config free:</p>
+<p>Cet exemple de configuration contient les paramètres minimums pour empaqueter votre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> à destination de npm. Il est possible de le personnaliser, par exemple en extrayant le CSS dans un fichier séparé, en utilisant un préprocesseur CSS, en masquant la sortie JS, etc.</p>
+<p>Il convient également de noter le « nom » donné au composant ici qui est en PascalCase, et qui devrait correspondre au nom en kebab-case utilisé ailleurs dans ce projet.</p>
+<h3 id="Cela-remplacera-t-il-mon-processus-de-developpement-actuel"><a href="#Cela-remplacera-t-il-mon-processus-de-developpement-actuel" class="headerlink" title="Cela remplacera-t-il mon processus de développement actuel ?"></a>Cela remplacera-t-il mon processus de développement actuel ?</h3><p>La configuration ici n’est pas destinée à remplacer le processus de développement que vous utilisez actuellement. Si, actuellement, vous avez une configuration webpack avec hot-reload, continuez à l’utiliser ! Si vous partez de zéro, n’hésitez pas à installer <a href="https://github.com/vuejs/vue-cli/" target="_blank" rel="noopener">Vue CLI 3</a>, qui vous donnera la configuration complète d’un hot-reload avec la commande suivante :</p>
 <pre><code class="hljs bash">vue serve --open src/my-component.vue</code></pre>
-<p>In other words, do all of your development in whatever way you are comfortable. The things outlined in this recipe are more like ‘finishing touches’ than a full dev process.</p>
-<h2 id="When-to-Avoid-this-Pattern"><a href="#When-to-Avoid-this-Pattern" class="headerlink" title="When to Avoid this Pattern"></a>When to Avoid this Pattern</h2><p>Packaging SFCs in this manner might not be a good idea in certain scenarios. This recipe doesn’t go into detail on how the components themselves are written. Some components might provide side effects like directives, or extend other libraries with additional functionality. In those cases, you will need to evaluate whether or not the changes required to this recipe are too extensive.</p>
-<p>In addition, pay attention to any dependencies that your SFC might have. For example, if you require a third party library for sorting or communication with an API, Rollup might roll those packages into the final code if not properly configured. To continue using this recipe, you would need to configure Rollup to exclude those files from the output, then update your documentation to inform your users about these dependencies.</p>
-<h2 id="Alternative-Patterns"><a href="#Alternative-Patterns" class="headerlink" title="Alternative Patterns"></a>Alternative Patterns</h2><p>At the time this recipe was written, Vue CLI 3 was itself in beta. This version of the CLI comes with a built-in <code>library</code> build mode, which creates CommonJS and UMD versions of a component. This might be adequate for your use cases, though you will still need to make sure your package.json file points to <code>main</code> and <code>unpkg</code> properly. Also, there will be no ES6 <code>module</code> output unless that capability is added to the CLI before its release or via plugin.</p>
-<h2 id="Acknowledgements"><a href="#Acknowledgements" class="headerlink" title="Acknowledgements"></a>Acknowledgements</h2><p>This recipe is the result of a lightning talk given by <a href="https://twitter.com/webdevdodge" target="_blank" rel="noopener">Mike Dodge</a> at VueConf.us in March 2018. He has published a utility to npm which will quickly scaffold a sample SFC using this recipe. You can download the utility, <a href="https://www.npmjs.com/package/vue-sfc-rollup" target="_blank" rel="noopener">vue-sfc-rollup</a>, from npm. You can also <a href="https://github.com/team-innovation/vue-sfc-rollup" target="_blank" rel="noopener">clone the repo</a> and customize it.</p>
+<p>En d’autres termes, développez de la manière qui vous convient le mieux. Les éléments décrits sur cette page ressemblent plus à des « touches finales » qu’à un processus de développement complet.</p>
+<h2 id="Quand-eviter-ce-schema"><a href="#Quand-eviter-ce-schema" class="headerlink" title="Quand éviter ce schéma ?"></a>Quand éviter ce schéma ?</h2><p>Conditionner les <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> de cette manière n’est pas forcément une bonne idée dans certains cas. Cette page n’entre pas dans le détail de la manière dont les composants eux-mêmes sont écrits. Certains composants peuvent avoir des effets secondaires comme des directives, ou étendre d’autres bibliothèques avec des fonctionnalités supplémentaires. Dans ces cas, vous devrez évaluer si les changements nécessaires décrits sur cette page sont trop importants ou non.</p>
+<p>En outre, faites attention à toute dépendance supplémentaire que votre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> pourrait avoir. Par exemple, si vous avez besoin d’une bibliothèque tierce pour le tri ou la communication avec une API, Rollup peut ommetre ces différents packages dans le code final s’il n’est pas correctement configuré. Pour continuer à utiliser ceci, vous devrez configurer Rollup et exclure ces fichiers de la sortie puis mettre à jour votre documentation pour informer vos utilisateurs de la présence ces dépendances.</p>
+<h2 id="Patterns-alternatifs"><a href="#Patterns-alternatifs" class="headerlink" title="Patterns alternatifs"></a>Patterns alternatifs</h2><p>Au moment où cette recette est écrite, Vue CLI 3 est elle-même en version bêta. Cette version de la CLI est dotée d’un mode de construction <code>library</code> intégré, qui crée des versions CommonJS et UMD d’un composant. Cela peut être adéquat pour vos cas d’utilisation, mais vous devrez quand même vous assurer que votre fichier package.json pointe correctement vers <code>main</code> and <code>unpkg</code>. De plus, il n’y aura pas de sortie de <code>module</code> ES6 à moins que cette fonctionnalité ne soit ajoutée au CLI avant sa sortie ou via un plugin.</p>
+<h2 id="Remerciements"><a href="#Remerciements" class="headerlink" title="Remerciements"></a>Remerciements</h2><p>Cette page est le résultat d’une conférence éclair donnée par <a href="https://twitter.com/webdevdodge" target="_blank" rel="noopener">Mike Dodge</a> à VueConf.us en mars 2018. Il a publié un utilitaire pour npm qui permettra d’échafauder rapidement un échantillon de <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> en utilisant cette recette. Vous pouvez télécharger l’utilitaire, <a href="https://www.npmjs.com/package/vue-sfc-rollup" target="_blank" rel="noopener">vue-sfc-rollup</a>, sur npm. Vous pouvez également <a href="https://github.com/team-innovation/vue-sfc-rollup" target="_blank" rel="noopener">cloner le repo</a> et le personnaliser.</p>
 
   
   
