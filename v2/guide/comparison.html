@@ -1,9 +1,8 @@
 
 
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="with-v3-banner">
   <head>
     <title>Comparaison avec les autres frameworks — Vue.js</title>
     <meta charset="utf-8">
@@ -93,33 +92,14 @@
       <a class="logo" href="/"></a>
     </div>
     <div>
-  
-  <a id="bts" class="bts-hidden" href="https://vueschool.io/sales/back-to-school?friend=vuejs" target="_blank" rel="noreferrer">
-    <div class="bts-logo">
-      <img src="/images/banners/bts-logo.svg">
-    </div>
-    <div class="bts-main">
-      <div class="bts-backpack">
-        <img src="/images/banners/bts-backpack.svg">
-      </div>
-      <div class="bts-slogan">
-        <div class="bts-title">
-          Moins de <span class="bts-title-green">48 heures</span> restante pour notre offre Vue School
-        </div>
-      </div>
-      <div>
-        <div class="bts-button">REJOINDRE</div>
-      </div>
-    </div>
-    <div id="bts-close" class="bts-close">
-      &times;
-    </div>
-  </a>
-  
+  <div id="v3-banner">
+    <span class="hidden-sm">Vous naviguez sur la documentation de Vue v2.x et précédentes.</span>
+    <a href="https://v3.vuejs.org/">Cliquez ici</a> pour la documentation v3.x.
+  </div>
 
   <header id="header">
     <a id="logo" href="/">
-      <img src="/images/logo.png" alt="vue logo">
+      <img src="/images/logo.png" alt="Vue logo">
       <span>Vue.js</span>
     </a>
     <ul id="nav">
@@ -299,7 +279,7 @@
           Guide
           
             <select class="version-select">
-              <option value="v3">3.x-beta</option>
+              <option value="v3">3.x</option>
               <option value="SELF" selected>2.x</option>
               <option value="v1">1.0</option>
               <option value="012">0.12</option>
@@ -988,6 +968,11 @@
 
 
 <div class="content guide with-sidebar comparison-guide">
+  <p class="tip warning v3-warning">
+    You’re browsing the documentation for v2.x and earlier.
+    For v3.x, <a href="https://v3.vuejs.org/">click here</a>.
+  </p>
+
   
     
       
@@ -1069,7 +1054,7 @@
 <p>Il est important de noter que beaucoup de ces limitations sont des choix d’architecture intentionnels pris par l’équipe de create-react-app et qui ont également leurs avantages. Par exemple, tant que les besoins de votre projet sont très simples et que vous n’avez jamais besoin d’ « éjecter » des choses pour personnaliser votre chaîne de build, vous aurez la possibilité de le mettre à jour en tant que dépendance. Vous pouvez en lire plus à propos de <a href="https://github.com/facebookincubator/create-react-app#philosophy" target="_blank" rel="noopener">la différence de philosophie ici</a>.</p>
 <h4 id="Utilisation-minimale"><a href="#Utilisation-minimale" class="headerlink" title="Utilisation minimale"></a>Utilisation minimale</h4><p>React est renommé pour sa courbe d’apprentissage abrupte. Avant de pouvoir réellement commencer, vous devez connaitre JSX et probablement ES2015+, puisque beaucoup d’exemples utilisent la syntaxe React pour les classes. Vous devez également vous former aux outils de build, car bien que vous puissiez techniquement utiliser le compilateur Babel de manière autonome pour compiler à la volée le code dans le navigateur, cela n’est absolument pas envisageable en production.</p>
 <p>Bien que Vue s’élève au niveau d’utilisation de React, il peut tout aussi bien se réduire au niveau d’utilisation de jQuery. C’est exact — tout ce que vous avez à faire est de placer une balise script dans une page :</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>Ensuite vous pouvez commencer à écrire du code Vue et même livrer la version minifiée sans vous sentir coupable ou vous soucier des problèmes de performance.</p>
 <p>Puisque vous n’avez pas besoin de connaitre JSX, ES2015 ou les outils de build pour commencer à travailler avec Vue, il faut généralement moins d’un jour à un développeur pour lire <a href="./">le guide</a> et en savoir assez pour concevoir des applications complexes.</p>
 <h3 id="Rendu-natif"><a href="#Rendu-natif" class="headerlink" title="Rendu natif"></a>Rendu natif</h3><p>React Native vous permet d’écrire des applications natives iOS et Android en utilisant le même modèle de composant que React. C’est génial car en tant que développeur, vous pouvez appliquer vos connaissances d’un framework sur de multiples plateformes. De ce côté, Vue a une collaboration officielle avec <a href="https://weex.apache.org/" target="_blank" rel="noopener">Weex</a>, un framework de développement d’UI multiplateforme développé par le groupe Alibaba et incubé par la Apache Software Foundation (ASF). Weex vous permet d’utiliser la même syntaxe de composant Vue pour concevoir des composants qui peuvent non seulement être utilisés sur navigateur mais également nativement sur iOS ou Android !</p>

@@ -1,9 +1,8 @@
 
 
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="with-v3-banner">
   <head>
     <title>Installation — Vue.js</title>
     <meta charset="utf-8">
@@ -93,33 +92,14 @@
       <a class="logo" href="/"></a>
     </div>
     <div>
-  
-  <a id="bts" class="bts-hidden" href="https://vueschool.io/sales/back-to-school?friend=vuejs" target="_blank" rel="noreferrer">
-    <div class="bts-logo">
-      <img src="/images/banners/bts-logo.svg">
-    </div>
-    <div class="bts-main">
-      <div class="bts-backpack">
-        <img src="/images/banners/bts-backpack.svg">
-      </div>
-      <div class="bts-slogan">
-        <div class="bts-title">
-          Moins de <span class="bts-title-green">48 heures</span> restante pour notre offre Vue School
-        </div>
-      </div>
-      <div>
-        <div class="bts-button">REJOINDRE</div>
-      </div>
-    </div>
-    <div id="bts-close" class="bts-close">
-      &times;
-    </div>
-  </a>
-  
+  <div id="v3-banner">
+    <span class="hidden-sm">Vous naviguez sur la documentation de Vue v2.x et précédentes.</span>
+    <a href="https://v3.vuejs.org/">Cliquez ici</a> pour la documentation v3.x.
+  </div>
 
   <header id="header">
     <a id="logo" href="/">
-      <img src="/images/logo.png" alt="vue logo">
+      <img src="/images/logo.png" alt="Vue logo">
       <span>Vue.js</span>
     </a>
     <ul id="nav">
@@ -299,7 +279,7 @@
           Guide
           
             <select class="version-select">
-              <option value="v3">3.x-beta</option>
+              <option value="v3">3.x</option>
               <option value="SELF" selected>2.x</option>
               <option value="v1">1.0</option>
               <option value="012">0.12</option>
@@ -988,6 +968,11 @@
 
 
 <div class="content guide with-sidebar installation-guide">
+  <p class="tip warning v3-warning">
+    You’re browsing the documentation for v2.x and earlier.
+    For v3.x, <a href="https://v3.vuejs.org/">click here</a>.
+  </p>
+
   
     
       
@@ -1018,7 +1003,7 @@
 <div id="downloads"><br>  <a class="button" href="/js/vue.js" download="">Version de développement</a><span class="light info">Avec tous les avertissements et le mode de débogage</span><br><br>  <a class="button" href="/js/vue.min.js" download="">Version de production</a><span class="light info">Avertissements retirés, 30.90ko min+gzip</span><br></div>
 
 <h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>Pour du prototypage ou de l’apprentissage, vous pouvez utiliser la dernière version avec :</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>Pour la production, nous vous recommandons de vous figer à une version et un build défini pour éviter les changements non compatibles des nouvelles versions :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.6.0"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>Si vous utilisez des Modules ES natifs, il y a également un build compatible avec les Modules ES :</p>
@@ -1036,7 +1021,7 @@ $ npm install vue</code></pre>
 
 <div class="vue-mastery"><a href="https://www.vuemastery.com/courses/real-world-vue-js/vue-cli" target="_blank" rel="sponsored noopener" title="Vue CLI">Regardez une vidéo de cours gratuite sur Vue Mastery (EN)</a></div>
 
-<h2 id="Explication-des-differents-builds"><a href="#Explication-des-differents-builds" class="headerlink" title="Explication des différents builds"></a>Explication des différents builds</h2><p>Dans le <a href="https://cdn.jsdelivr.net/npm/vue/dist/" target="_blank" rel="noopener">dossier <code>dist/</code> du package npm</a> vous trouverez plusieurs builds différents de Vue.js. Voici un aperçu des différences entre chacun d’eux :</p>
+<h2 id="Explication-des-differents-builds"><a href="#Explication-des-differents-builds" class="headerlink" title="Explication des différents builds"></a>Explication des différents builds</h2><p>Dans le <a href="https://cdn.jsdelivr.net/npm/vue@2/dist/" target="_blank" rel="noopener">dossier <code>dist/</code> du package npm</a> vous trouverez plusieurs builds différents de Vue.js. Voici un aperçu des différences entre chacun d’eux :</p>
 <table>
 <thead>
 <tr>
@@ -1085,7 +1070,7 @@ $ npm install vue</code></pre>
 </li>
 <li><p><strong>Runtime</strong>: le code qui est responsable de la création des instances de Vue, de faire le rendu et les modifications du DOM virtuel. C’est à dire tout, sauf ce que fait la partie Compiler.</p>
 </li>
-<li><p><strong><a href="https://github.com/umdjs/umd" target="_blank" rel="noopener">UMD</a></strong> : les builds UMD peuvent être utilisés directement dans un navigateur avec la balise <code>&lt;script&gt;</code>. Le fichier par défaut du CDN jsDelivr à l’adresse <a href="https://cdn.jsdelivr.net/npm/vue" target="_blank" rel="noopener">https://cdn.jsdelivr.net/npm/vue</a> est le build UMD Runtime + Compiler (<code>vue.js</code>).</p>
+<li><p><strong><a href="https://github.com/umdjs/umd" target="_blank" rel="noopener">UMD</a></strong> : les builds UMD peuvent être utilisés directement dans un navigateur avec la balise <code>&lt;script&gt;</code>. Le fichier par défaut du CDN jsDelivr à l’adresse <a href="https://cdn.jsdelivr.net/npm/vue@2" target="_blank" rel="noopener">https://cdn.jsdelivr.net/npm/vue@2</a> est le build UMD Runtime + Compiler (<code>vue.js</code>).</p>
 </li>
 <li><p><strong><a href="http://wiki.commonjs.org/wiki/Modules/1.1" target="_blank" rel="noopener">CommonJS</a></strong>: Les builds CommonJS sont prévus pour une utilisation avec les vieux outils de paquetage (« bundle ») comme <a href="http://browserify.org/" target="_blank" rel="noopener">browserify</a> ou <a href="https://webpack.github.io" target="_blank" rel="noopener">webpack 1</a>. Le fichier par défaut pour ces outils (<code>pkg.main</code>) est le build CommonJS Runtime (<code>vue.runtime.common.js</code>).</p>
 </li>

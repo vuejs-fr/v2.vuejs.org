@@ -1,9 +1,8 @@
 
 
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="with-v3-banner">
   <head>
     <title>Support de TypeScript — Vue.js</title>
     <meta charset="utf-8">
@@ -93,33 +92,14 @@
       <a class="logo" href="/"></a>
     </div>
     <div>
-  
-  <a id="bts" class="bts-hidden" href="https://vueschool.io/sales/back-to-school?friend=vuejs" target="_blank" rel="noreferrer">
-    <div class="bts-logo">
-      <img src="/images/banners/bts-logo.svg">
-    </div>
-    <div class="bts-main">
-      <div class="bts-backpack">
-        <img src="/images/banners/bts-backpack.svg">
-      </div>
-      <div class="bts-slogan">
-        <div class="bts-title">
-          Moins de <span class="bts-title-green">48 heures</span> restante pour notre offre Vue School
-        </div>
-      </div>
-      <div>
-        <div class="bts-button">REJOINDRE</div>
-      </div>
-    </div>
-    <div id="bts-close" class="bts-close">
-      &times;
-    </div>
-  </a>
-  
+  <div id="v3-banner">
+    <span class="hidden-sm">Vous naviguez sur la documentation de Vue v2.x et précédentes.</span>
+    <a href="https://v3.vuejs.org/">Cliquez ici</a> pour la documentation v3.x.
+  </div>
 
   <header id="header">
     <a id="logo" href="/">
-      <img src="/images/logo.png" alt="vue logo">
+      <img src="/images/logo.png" alt="Vue logo">
       <span>Vue.js</span>
     </a>
     <ul id="nav">
@@ -299,7 +279,7 @@
           Guide
           
             <select class="version-select">
-              <option value="v3">3.x-beta</option>
+              <option value="v3">3.x</option>
               <option value="SELF" selected>2.x</option>
               <option value="v1">1.0</option>
               <option value="012">0.12</option>
@@ -988,6 +968,11 @@
 
 
 <div class="content guide with-sidebar typescript-guide">
+  <p class="tip warning v3-warning">
+    You’re browsing the documentation for v2.x and earlier.
+    For v3.x, <a href="https://v3.vuejs.org/">click here</a>.
+  </p>
+
   
     
       
@@ -1008,10 +993,10 @@
   
   
     <blockquote>
-<p><a href="https://cli.vuejs.org" target="_blank" rel="noopener">Vue CLI</a> fournit des outils de support à TypeScript. </p>
+<p><a href="https://cli.vuejs.org" target="_blank" rel="noopener">Vue CLI</a> fournit des outils de support à TypeScript.</p>
 </blockquote>
 <h2 id="Declaration-officielle-dans-les-packages-npm"><a href="#Declaration-officielle-dans-les-packages-npm" class="headerlink" title="Déclaration officielle dans les packages npm"></a>Déclaration officielle dans les packages npm</h2><p>Un système de typage statique peut aider à prévenir des erreurs d’exécutions potentielles, et particulièrement quand les applications grandissent. C’est pourquoi Vue est fourni avec des <a href="https://github.com/vuejs/vue/tree/dev/types" target="_blank" rel="noopener">déclarations de types officielles</a> pour <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener">TypeScript</a>, et pas seulement pour le cœur de Vue, mais aussi pour <a href="https://github.com/vuejs/vue-router/tree/dev/types" target="_blank" rel="noopener">vue-router</a> et <a href="https://github.com/vuejs/vuex/tree/dev/types" target="_blank" rel="noopener">vuex</a>.</p>
-<p>Puisque ceux-ci sont <a href="https://cdn.jsdelivr.net/npm/vue/types/" target="_blank" rel="noopener">publiés sur npm</a>, et que la dernière version de TypeScript sait comment résoudre des déclarations de type dans des packages npm, cela signifie qu’installer ceux-ci via npm ne requiert aucun outil supplémentaire pour utiliser TypeScript avec Vue.</p>
+<p>Puisque ceux-ci sont <a href="https://cdn.jsdelivr.net/npm/vue@2/types/" target="_blank" rel="noopener">publiés sur npm</a>, et que la dernière version de TypeScript sait comment résoudre des déclarations de type dans des packages npm, cela signifie qu’installer ceux-ci via npm ne requiert aucun outil supplémentaire pour utiliser TypeScript avec Vue.</p>
 <h2 id="Configuration-recommandee"><a href="#Configuration-recommandee" class="headerlink" title="Configuration recommandée"></a>Configuration recommandée</h2><pre><code class="hljs js"><span class="hljs-comment">// tsconfig.json</span>
 &#123;
   <span class="hljs-string">"compilerOptions"</span>: &#123;
@@ -1133,7 +1118,7 @@ vue create my-project-name</code></pre>
 <p>Si vous vous apercevez que l’autocomplétion ne fonctionne pas, annoter certaines méthodes peut aider à résoudre ces problèmes. Utiliser l’option <code>--noImplicitAny</code> aidera à trouver bon nombre de ces méthodes non annotées.</p>
 <h2 id="Annotating-Props"><a href="#Annotating-Props" class="headerlink" title="Annotating Props"></a>Annotating Props</h2><pre><code class="hljs ts"><span class="hljs-keyword">import</span> Vue, &#123; PropType &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
 
-<span class="hljs-keyword">interface</span> ComplexMessage &#123; 
+<span class="hljs-keyword">interface</span> ComplexMessage &#123;
   title: <span class="hljs-built_in">string</span>,
   okMessage: <span class="hljs-built_in">string</span>,
   cancelMessage: <span class="hljs-built_in">string</span>
@@ -1142,7 +1127,7 @@ vue create my-project-name</code></pre>
   props: &#123;
     name: <span class="hljs-built_in">String</span>,
     success: &#123; <span class="hljs-keyword">type</span>: <span class="hljs-built_in">String</span> &#125;,
-    callback: &#123; 
+    callback: &#123;
       <span class="hljs-keyword">type</span>: <span class="hljs-built_in">Function</span> <span class="hljs-keyword">as</span> PropType&lt;<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">void</span>&gt;
     &#125;,
     message: &#123;

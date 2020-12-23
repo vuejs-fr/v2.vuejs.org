@@ -440,22 +440,47 @@ i.rotating-clockwise {
 }
 #header {
   background-color: #fff;
-  padding: 10px 30px 10px 60px;
+  height: 40px;
+  padding: 10px 60px;
   position: relative;
   z-index: 20;
-  display: flex;
-  justify-content: space-between;
+}
+#v3-banner {
+  background-color: #42b983;
+  min-height: 40px;
+  padding: 10px 60px;
+  z-index: 19;
   box-sizing: border-box;
+  text-align: center;
+  color: #d6ffec;
+  display: none;
+}
+#v3-banner a {
+  color: #fff;
+  font-weight: bold;
+}
+@media screen and (max-width: 900px) {
+  #v3-banner .hidden-sm {
+    display: none;
+  }
 }
 body.docs #header {
   position: fixed;
   width: 100%;
   top: 0;
 }
+body.docs #nav {
+  position: fixed;
+  top: 10px;
+}
 #nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  height: 40px;
   line-height: 40px;
 }
 #nav .break {
@@ -1584,216 +1609,6 @@ ul.demo li {
     width: 380px;
   }
 }
-@font-face {
-  font-family: "CircularStd";
-  src: url("../fonts/circular/CircularStd-Bold.eot");
-  src: url("../fonts/circular/CircularStd-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/circular/CircularStd-Bold.woff") format("woff"), url("../fonts/circular/CircularStd-Bold.ttf") format("truetype"), url("../fonts/circular/CircularStd-Bold.svg#bcc26993292869431e54c666aafa8fcd") format("svg");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "CircularStd";
-  src: url("../fonts/circular/CircularStd-Medium.eot");
-  src: url("../fonts/circular/CircularStd-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/circular/CircularStd-Medium.woff") format("woff"), url("../fonts/circular/CircularStd-Medium.ttf") format("truetype"), url("../fonts/circular/CircularStd-Medium.svg#bcc26993292869431e54c666aafa8fcd") format("svg");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "CircularStd";
-  src: url("../fonts/circular/CircularStd-Book.eot");
-  src: url("../fonts/circular/CircularStd-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/circular/CircularStd-Book.woff") format("woff"), url("../fonts/circular/CircularStd-Book.ttf") format("truetype"), url("../fonts/circular/CircularStd-Book.svg#bcc26993292869431e54c666aafa8fcd") format("svg");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@media (min-width: 900px) {
-  body.has-bts-banner.docs {
-    padding-top: 161px;
-  }
-}
-body.has-bts-banner.docs #bts {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-@media screen and (max-width: 900px) {
-  body.has-bts-banner.docs #bts {
-    display: none;
-  }
-}
-body.has-bts-banner.docs #header {
-  top: 80px;
-}
-body.has-bts-banner #mobile-bar.top .menu-button {
-  top: 27px;
-}
-body.has-bts-banner #mobile-bar .menu-button {
-  transition: top 250ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
-  background: url("../images/menu-bts.png") center center no-repeat;
-  background-size: 24px;
-}
-body.has-bts-banner #sidebar-sponsors-platinum-right {
-  top: 170px;
-}
-@media (min-width: 900px) {
-  body.has-bts-banner .sidebar {
-    top: 141px;
-  }
-}
-#bts {
-  font-family: "CircularStd";
-  min-height: 80px;
-  z-index: 19;
-  box-sizing: border-box;
-  color: #fff;
-  background-size: cover;
-  background-color: #1e204d;
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-image: url("../images/banners/bts-mobile.svg");
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 0 0 50px;
-}
-#bts.bts-hidden {
-  display: none;
-}
-@media (min-width: 680px) {
-  #bts {
-    background-image: url("../images/banners/bts-tablet.svg");
-    padding: 0 10px 0 50px;
-  }
-}
-@media (min-width: 900px) {
-  #bts {
-    justify-content: space-between;
-    padding: 0 20px 0 40px;
-    background-image: url("../images/banners/bts-desktop.svg");
-    background-position: top right;
-  }
-  #bts:hover .bts-button {
-    background-color: #38a1f3;
-  }
-}
-@media (min-width: 1600px) {
-  #bts {
-    background-position: top right;
-  }
-}
-#bts .bts-logo {
-  display: none;
-}
-@media (min-width: 900px) {
-  #bts .bts-logo {
-    display: inline-block;
-  }
-}
-#bts .bts-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1 0%;
-}
-#bts .bts-backpack img {
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  margin-right: 10px;
-}
-@media (min-width: 680px) {
-  #bts .bts-backpack img {
-    margin-right: 0;
-    height: 70px;
-    width: 70px;
-  }
-}
-@media (min-width: 680px) {
-  #bts .bts-slogan {
-    padding-left: 20px;
-    padding-left: 12px;
-    padding-right: 10px;
-  }
-}
-@media (min-width: 900px) {
-  #bts .bts-slogan {
-    padding-right: 60px;
-    padding-left: 20px;
-  }
-}
-#bts .bts-slogan .bts-title {
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  width: 183px;
-}
-@media (min-width: 680px) {
-  #bts .bts-slogan .bts-title {
-    font-size: 17px;
-    width: 380px;
-  }
-}
-@media (min-width: 900px) {
-  #bts .bts-slogan .bts-title {
-    width: auto;
-    font-size: 22px;
-  }
-}
-#bts .bts-slogan .bts-title .bts-dot {
-  display: none;
-}
-@media (min-width: 680px) {
-  #bts .bts-slogan .bts-title .bts-dot {
-    display: inline;
-  }
-}
-#bts .bts-slogan .bts-title .bts-title-offer {
-  display: block;
-}
-@media (min-width: 680px) {
-  #bts .bts-slogan .bts-title .bts-title-offer {
-    display: inline;
-  }
-}
-#bts .bts-slogan .bts-title .bts-title-grey {
-  color: #b3b1dc;
-  text-decoration: line-through;
-}
-#bts .bts-slogan .bts-title .bts-title-green {
-  color: #1fdb69;
-}
-#bts .bts-button {
-  color: #fff;
-  background-color: #667dff;
-  border-radius: 40px;
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.25s ease-in;
-  display: none;
-  white-space: nowrap;
-  padding: 17px 27px;
-}
-@media (min-width: 680px) {
-  #bts .bts-button {
-    display: inline-block;
-  }
-}
-#bts .bts-close {
-  color: #fff;
-  font-size: 28px;
-  margin-right: 10px;
-  line-height: 1;
-}
-#bts .bts-close:hover {
-  color: #56d8ff;
-}
-@media (min-width: 1600px) {
-  #bts .bts-close {
-    padding: 10px;
-  }
-}
 #header {
   box-shadow: 0 0 1px rgba(0,0,0,0.25);
   transition: background-color 0.3s ease-in-out;
@@ -2000,6 +1815,15 @@ body.has-bts-banner #sidebar-sponsors-platinum-right {
   content: "\f00c";
   font-family: FontAwesome;
   background-color: #42b983;
+}
+.content p.warning {
+  border-left-color: #ffa500;
+}
+.content p.warning:before {
+  background-color: #ffa500;
+}
+.content p.v3-warning {
+  margin-top: 0;
 }
 .guide-links {
   margin-top: 2em;
