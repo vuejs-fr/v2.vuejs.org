@@ -220,11 +220,11 @@ Dans tous les cas, le rendu HTML sera :
 </div>
 ```
 
-Notez que **`v-slot` ne peut seulement être ajouté à un `<template>`** (avec [une exception](#Abbreviated-Syntax-for-Lone-Default-Slots)) contrairement aux [attributs de `slot`](#Syntax-dépréciée) dépréciés.
+Notez que **`v-slot` ne peut seulement être ajouté à un `<template>`** (avec [une exception](#Syntaxe-abregee-pour-les-slots-par-defaut-uniques)) contrairement aux [attributs de `slot`](#Syntaxe-obsolete) dépréciés.
 
 ## Slots avec portée
 
-> Mis à jour dans la 2.6.0+. [Voir ici](#Syntaxe-dépréciée) pour la syntaxe dépréciée en utilisant l'attribut `slot-scope`.
+> Mis à jour dans la 2.6.0+. [Voir ici](#Syntaxe-obsolete) pour la syntaxe dépréciée en utilisant l'attribut `slot-scope`.
 
 Parfois, il est utile pour les contenus de slot d'avoir accès aux données uniquement disponibles dans le composant enfant. Par exemple, imaginez un composant `<current-user>` avec le template suivant :
 
