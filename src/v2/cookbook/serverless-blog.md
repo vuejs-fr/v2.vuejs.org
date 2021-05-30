@@ -60,7 +60,7 @@ Cette requête sur l'interface de programmation récupère les articles du blog.
 
 ## Afficher les articles
 
-Afin d'afficher les articles, nous créons une route `/blog` (en utilisant Vue Router) dans notre application et nous récupérons tous les articles grâce à l'interface de programmation de Butter, et de la même manière nous créons la route `/blog/:slug` afin d'afficher récupérer les articles de manière individuelle.
+Afin d'afficher les articles, nous créons une route `/blog` (en utilisant Vue Router) dans notre application et nous récupérons tous les articles grâce à l'interface de programmation de Butter, et de la même manière nous créons la route `/blog/:slug` afin d'afficher les articles de manière individuelle.
 
 Référez-vous à la [documentation de l'interface de programmation](https://buttercms.com/docs/api/?javascript#blog-posts) de ButterCMS pour prendre connaissance des options supplémentaires disponibles telles que le filtrage par catégorie ou par auteur. La réponse inclut aussi des métadonnées que nous utiliserons pour la pagination.
 
