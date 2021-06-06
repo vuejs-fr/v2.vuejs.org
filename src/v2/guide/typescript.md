@@ -37,7 +37,7 @@ Voir [les options de compilation TypeScript](https://www.typescriptlang.org/docs
 
 ### Creation de projet
 
-[Vue CLI 3](https://github.com/vuejs/vue-cli) peut générer de nouveaux projets qui utilise TypeScript. Pour commencer :
+[Vue CLI 3](https://github.com/vuejs/vue-cli) peut générer de nouveaux projets qui utilisent TypeScript. Pour commencer :
 
 ```bash
 # 1. Installer Vue CLI s'il n'est pas déjà installé
