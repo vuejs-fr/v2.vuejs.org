@@ -440,10 +440,12 @@ i.rotating-clockwise {
 }
 #header {
   background-color: #fff;
-  height: 40px;
-  padding: 10px 60px;
+  padding: 10px 30px 10px 60px;
   position: relative;
   z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 #v3-banner {
   background-color: #42b983;
@@ -469,18 +471,10 @@ body.docs #header {
   width: 100%;
   top: 0;
 }
-body.docs #nav {
-  position: fixed;
-  top: 10px;
-}
 #nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  position: absolute;
-  right: 30px;
-  top: 10px;
-  height: 40px;
   line-height: 40px;
 }
 #nav .break {
@@ -598,6 +592,7 @@ body.docs #nav {
   display: none;
   box-shadow: 0 0 2px rgba(0,0,0,0.25);
   pointer-events: none;
+  transition: background-color 0.25s ease-in;
 }
 #mobile-bar > * {
   pointer-events: auto;
@@ -615,7 +610,7 @@ body.docs #nav {
   position: absolute;
   width: 30px;
   height: 30px;
-  background: url("../images/logo.png") center center no-repeat;
+  background: url("../images/logo.svg") center center no-repeat;
   top: 5px;
   left: 50%;
   margin-left: -15px;
@@ -994,7 +989,7 @@ ul.demo li {
     position: fixed;
     background-color: #f9f9f9;
     height: 100%;
-    top: 0;
+    top: 40px;
     left: 0;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
@@ -1608,6 +1603,212 @@ ul.demo li {
     justify-content: center;
     width: 380px;
   }
+}
+body.has-vs-banner #v3-banner {
+  margin-top: 50px;
+}
+@media (min-width: 680px) {
+  body.has-vs-banner #v3-banner {
+    margin-top: 80px;
+  }
+}
+@media (min-width: 900px) {
+  body.has-vs-banner #v3-banner {
+    margin-top: 0;
+  }
+}
+body.has-vs-banner #mobile-bar {
+  top: 50px;
+}
+@media (min-width: 680px) {
+  body.has-vs-banner #mobile-bar {
+    top: 80px;
+  }
+}
+body.has-vs-banner .sidebar {
+  top: 90px;
+}
+@media (min-width: 680px) {
+  body.has-vs-banner .sidebar {
+    top: 120px;
+  }
+}
+@media (min-width: 900px) {
+  body.has-vs-banner .sidebar {
+    top: 143px;
+  }
+}
+body.has-vs-banner .content {
+  padding-top: 85px;
+}
+@media (min-width: 680px) {
+  body.has-vs-banner .content {
+    padding-top: 125px;
+  }
+}
+@media (min-width: 900px) {
+  body.has-vs-banner .content {
+    padding-top: 35px;
+  }
+}
+@media (min-width: 900px) {
+  body.has-vs-banner.docs {
+    padding-top: 144px;
+  }
+}
+body.has-vs-banner.docs #vs {
+  position: fixed;
+}
+body.has-vs-banner.docs #header {
+  top: 50px;
+}
+@media (min-width: 680px) {
+  body.has-vs-banner.docs #header {
+    top: 80px;
+  }
+}
+@media (min-width: 900px) {
+  body.has-vs-banner.docs #sidebar-sponsors-platinum-right {
+    top: 160px;
+  }
+}
+#vs {
+  font-family: "Roboto", sans-serif;
+  z-index: 8;
+  box-sizing: border-box;
+  color: #fff;
+  background: #202a5a;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: 0 10px;
+  min-height: 50px;
+  top: 0;
+}
+@media (min-width: 680px) {
+  #vs {
+    justify-content: center;
+    min-height: 80px;
+  }
+}
+@media (min-width: 900px) {
+  #vs {
+    position: static;
+  }
+}
+#vs.vs-hidden {
+  display: none;
+}
+#vs:hover .vs-core .vs-button {
+  background: #f22606;
+}
+#vs .vs-iso {
+  display: none;
+  position: absolute;
+  left: 20px;
+  height: 26px;
+}
+#vs .vs-iso img {
+  height: 26px;
+}
+@media (min-width: 680px) {
+  #vs .vs-iso {
+    display: inline-block;
+    height: 40px;
+  }
+  #vs .vs-iso img {
+    height: 40px;
+  }
+}
+@media (min-width: 900px) {
+  #vs .vs-iso {
+    display: none;
+  }
+}
+#vs .vs-logo {
+  position: absolute;
+  display: none;
+  left: 40px;
+}
+@media (min-width: 900px) {
+  #vs .vs-logo {
+    display: block;
+  }
+}
+#vs .vs-core {
+  display: flex;
+  align-items: center;
+}
+#vs .vs-core .vs-backpack {
+  margin-right: 14px;
+}
+#vs .vs-core .vs-backpack img {
+  height: 50px;
+}
+@media (min-width: 680px) {
+  #vs .vs-core .vs-backpack img {
+    height: 74px;
+  }
+}
+#vs .vs-core .vs-slogan {
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  width: 150px;
+  text-align: center;
+  margin-left: 40px;
+}
+@media (min-width: 400px) {
+  #vs .vs-core .vs-slogan {
+    margin-left: 60px;
+  }
+}
+@media (min-width: 680px) {
+  #vs .vs-core .vs-slogan {
+    margin-left: 0;
+    width: auto;
+    text-align: left;
+    font-size: 18px;
+  }
+}
+#vs .vs-core .vs-slogan > .vs-slogan-light {
+  color: #ff5338;
+  text-align: left;
+}
+@media (min-width: 900px) {
+  #vs .vs-core .vs-slogan > .vs-slogan-light {
+    text-align: center;
+    display: inline;
+  }
+}
+#vs .vs-core .vs-button {
+  margin-left: 43px;
+  color: #fff;
+  padding: 13px 24px;
+  border-radius: 40px;
+  display: none;
+  background: #ff5338;
+  font-weight: bold;
+}
+@media (min-width: 680px) {
+  #vs .vs-core .vs-button {
+    display: inline-block;
+  }
+}
+#vs .vs-close {
+  right: 10px;
+  position: absolute;
+  padding: 10px;
+}
+@media (min-width: 680px) {
+  #vs .vs-close {
+    right: 20px;
+  }
+}
+#vs .vs-close:hover {
+  color: #56d8ff;
 }
 #header {
   box-shadow: 0 0 1px rgba(0,0,0,0.25);

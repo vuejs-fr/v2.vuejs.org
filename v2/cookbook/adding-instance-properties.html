@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en" class="with-v3-banner">
   <head>
@@ -21,7 +22,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Ajouter des propriétés aux instances — Vue.js">
     <meta property="og:description" content="Vue.js - Le Framework JavaScript Évolutif">
-    <meta property="og:image" content="https://vuejs.org//images/logo.png">
+    <meta property="og:image" content="https://vuejs.org/images/logo.png">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Ajouter des propriétés aux instances — Vue.js">
@@ -42,7 +43,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
     <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
-    <link rel="icon" href="/images/logo.png" type="image/png">
+    <link rel="icon" href="/images/logo.svg">
 
     <meta name="msapplication-TileColor" content="#4fc08d">
     <meta name="theme-color" content="#4fc08d">
@@ -54,7 +55,7 @@
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto|Roboto Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -87,6 +88,33 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
+
+    
+      <a id="vs" class="vs-hidden" href="https://vueschool.io/sales/summer-vue?friend=vuejs" target="_blank" rel="noreferrer">
+  <div class="vs-iso">
+    <img src="/images/banners/vs-iso.svg">
+  </div>
+  <div class="vs-logo">
+    <img src="/images/banners/vs-logo.svg">
+  </div>
+  <div class="vs-core">
+    <div class="vs-backpack">
+      <img src="/images/banners/vs-backpack.png" alt="Backpack">
+    </div>
+    <div class="vs-slogan">
+      Less than <span class="vs-slogan-light">48 hours</span> left for the Vue School offer
+    </div>
+    <div class="vs-button">
+      GET ACCESS
+    </div>
+  </div>
+  <div id="vs-close" class="vs-close">
+    <img src="/images/banners/close.svg" alt="Close">
+  </div>
+</a>
+
+    
+
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -99,7 +127,7 @@
 
   <header id="header">
     <a id="logo" href="/">
-      <img src="/images/logo.png" alt="Vue logo">
+      <img src="/images/logo.svg" alt="Vue logo">
       <span>Vue.js</span>
     </a>
     <ul id="nav">
@@ -264,6 +292,12 @@
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/storyblok.png" alt="Storyblok">
     </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -391,6 +425,12 @@
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/storyblok.png" alt="Storyblok">
     </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -459,7 +499,7 @@
     console.log(this.appName)
   &#125;
 &#125;)</code></pre>
-<p>Cela sera <code>&quot;Mon App&quot;</code>, puis <code>&quot;Le nom d&#39;une autre app&quot;</code>, car <code>this.appName</code> est écrasée (<a href="https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/objects-classes/ch5.md" target="_blank" rel="noopener">en quelque sorte</a>) par <code>data</code> quand l’instance est créée. Nous limitons la portée des propriétés avec <code>$</code> pour éviter ça. Vous pouvez même utiliser votre propre convention si vous préférez, comme <code>$_appName</code> ou <code>ΩappName</code>, pour en plus prévenir les conflits avec les plugins et les fonctionnalités futures.</p>
+<p>Cela sera <code>&quot;Mon App&quot;</code>, puis <code>&quot;Le nom d&#39;une autre app&quot;</code>, car <code>this.appName</code> est écrasée (<a href="https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch5.md" target="_blank" rel="noopener">en quelque sorte</a>) par <code>data</code> quand l’instance est créée. Nous limitons la portée des propriétés avec <code>$</code> pour éviter ça. Vous pouvez même utiliser votre propre convention si vous préférez, comme <code>$_appName</code> ou <code>ΩappName</code>, pour en plus prévenir les conflits avec les plugins et les fonctionnalités futures.</p>
 <h2 id="Un-exemple-en-situation-reelle-Remplacer-Vue-Resource-par-Axios"><a href="#Un-exemple-en-situation-reelle-Remplacer-Vue-Resource-par-Axios" class="headerlink" title="Un exemple en situation réelle : Remplacer Vue Resource par Axios"></a>Un exemple en situation réelle : Remplacer Vue Resource par Axios</h2><p>Disons que vous remplacez le <a href="https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4" target="_blank" rel="noopener">maintenant déprécié Vue Resource</a> ; vous aimiez vraiment accéder aux méthodes de requête avec <code>this.$http</code> et vous voulez faire la même chose avec Axios à la place.</p>
 <p>Tout ce que vous avez à faire est inclure axios dans votre projet :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>

@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en" class="with-v3-banner">
   <head>
@@ -21,7 +22,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Conventions — Vue.js">
     <meta property="og:description" content="Vue.js - Le Framework JavaScript Évolutif">
-    <meta property="og:image" content="https://vuejs.org//images/logo.png">
+    <meta property="og:image" content="https://vuejs.org/images/logo.png">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Conventions — Vue.js">
@@ -42,7 +43,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
     <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
-    <link rel="icon" href="/images/logo.png" type="image/png">
+    <link rel="icon" href="/images/logo.svg">
 
     <meta name="msapplication-TileColor" content="#4fc08d">
     <meta name="theme-color" content="#4fc08d">
@@ -54,7 +55,7 @@
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto|Roboto Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -87,6 +88,33 @@
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
   <body class="docs">
+
+    
+      <a id="vs" class="vs-hidden" href="https://vueschool.io/sales/summer-vue?friend=vuejs" target="_blank" rel="noreferrer">
+  <div class="vs-iso">
+    <img src="/images/banners/vs-iso.svg">
+  </div>
+  <div class="vs-logo">
+    <img src="/images/banners/vs-logo.svg">
+  </div>
+  <div class="vs-core">
+    <div class="vs-backpack">
+      <img src="/images/banners/vs-backpack.png" alt="Backpack">
+    </div>
+    <div class="vs-slogan">
+      Less than <span class="vs-slogan-light">48 hours</span> left for the Vue School offer
+    </div>
+    <div class="vs-button">
+      GET ACCESS
+    </div>
+  </div>
+  <div id="vs-close" class="vs-close">
+    <img src="/images/banners/close.svg" alt="Close">
+  </div>
+</a>
+
+    
+
     <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
@@ -99,7 +127,7 @@
 
   <header id="header">
     <a id="logo" href="/">
-      <img src="/images/logo.png" alt="Vue logo">
+      <img src="/images/logo.svg" alt="Vue logo">
       <span>Vue.js</span>
     </a>
     <ul id="nav">
@@ -264,6 +292,12 @@
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/storyblok.png" alt="Storyblok">
     </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -306,6 +340,12 @@
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
     </a>
     </div>
   </div>
@@ -358,7 +398,7 @@
 </ol>
 <h3 id="Priorite-D-faire-attention"><a href="#Priorite-D-faire-attention" class="headerlink" title="Priorité D : faire attention"></a>Priorité D : faire attention</h3><p>Certaines fonctionnalités de Vue existent pour régler des cas exceptionnels ou rendre la migration d’une vieille version de code plus simple. Mais utiliser avec excès, elles rendront votre code difficile à maintenir et même deviendront une source de bogues. Ces règles mettent en lumière des fonctionnalités potentiellement risquées, décrivant quand et pourquoi elles doivent être évitées.</p>
 <h2 id="Regles-de-priorite-A-essentiel-prevenir-les-erreurs"><a href="#Regles-de-priorite-A-essentiel-prevenir-les-erreurs" class="headerlink" title="Règles de priorité A : essentiel (prévenir les erreurs)"></a>Règles de priorité A : essentiel (prévenir les erreurs)</h2><h3 id="Nom-de-composant-a-mots-multiples-essentiel"><a href="#Nom-de-composant-a-mots-multiples-essentiel" class="headerlink" title="Nom de composant à mots multiples essentiel"></a>Nom de composant à mots multiples <sup data-p="a">essentiel</sup></h3><p><strong>Les noms de composant devraient toujours être des mots multiples, à l’exception du composant racine <code>App</code> et des composants préconçus fournis par Vue comme <code>&lt;transition&gt;</code> ou <code>&lt;component&gt;</code>.</strong></p>
-<p>Ceci afin de <a href="http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name" target="_blank" rel="noopener">prévenir les conflits</a> avec des éléments HTML futurs ou existant car toutes les balises HTML n’ont qu’un seul mot.</p>
+<p>Ceci afin de <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name" target="_blank" rel="noopener">prévenir les conflits</a> avec des éléments HTML futurs ou existant car toutes les balises HTML n’ont qu’un seul mot.</p>
 <div class="style-example example-bad">
 <h4 id="A-eviter"><a href="#A-eviter" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js">Vue.component(<span class="hljs-string">'todo'</span>, &#123;
   <span class="hljs-comment">// ...</span>
@@ -648,9 +688,9 @@ props: &#123;
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-close"</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
-<span class="hljs-selector-class">.btn-close</span> &#123;
-  <span class="hljs-attribute">background-color</span>: red;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">
+.btn-close &#123;
+  background-color: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
@@ -660,14 +700,14 @@ props: &#123;
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- Utilisez l'attribut `scoped` --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
-<span class="hljs-selector-class">.button</span> &#123;
-  <span class="hljs-attribute">border</span>: none;
-  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="undefined">
+.button &#123;
+  border: none;
+  border-radius: 2px;
 &#125;
 
-<span class="hljs-selector-class">.button-close</span> &#123;
-  <span class="hljs-attribute">background-color</span>: red;
+.button-close &#123;
+  background-color: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
@@ -675,14 +715,14 @@ props: &#123;
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- Utilisez les modules CSS --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">module</span>&gt;</span><span class="css">
-<span class="hljs-selector-class">.button</span> &#123;
-  <span class="hljs-attribute">border</span>: none;
-  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">module</span>&gt;</span><span class="undefined">
+.button &#123;
+  border: none;
+  border-radius: 2px;
 &#125;
 
-<span class="hljs-selector-class">.buttonClose</span> &#123;
-  <span class="hljs-attribute">background-color</span>: red;
+.buttonClose &#123;
+  background-color: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
@@ -690,14 +730,14 @@ props: &#123;
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- Utilisez des conventions BEM --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
-<span class="hljs-selector-class">.c-Button</span> &#123;
-  <span class="hljs-attribute">border</span>: none;
-  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">
+.c-Button &#123;
+  border: none;
+  border-radius: 2px;
 &#125;
 
-<span class="hljs-selector-class">.c-Button--close</span> &#123;
-  <span class="hljs-attribute">background-color</span>: red;
+.c-Button--close &#123;
+  background-color: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
@@ -1421,38 +1461,38 @@ props: &#123;
 </div>
 <h3 id="Ordre-des-balises-principales-des-composants-monofichiers-recommande"><a href="#Ordre-des-balises-principales-des-composants-monofichiers-recommande" class="headerlink" title="Ordre des balises principales des composants monofichiers recommandé"></a>Ordre des balises principales des composants monofichiers <sup data-p="c">recommandé</sup></h3><p><strong><a href="../guide/single-file-components.html">Les composants monofichiers</a> devraient toujours ordonner de manière consistante les balises <code>&lt;script&gt;</code>, <code>&lt;template&gt;</code>, et <code>&lt;style&gt;</code>, avec <code>&lt;style&gt;</code> en dernier, car au moins l’un des deux autres est toujours nécessaire.</strong></p>
 <div class="style-example example-bad">
-<h4 id="A-eviter-23"><a href="#A-eviter-23" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<h4 id="A-eviter-23"><a href="#A-eviter-23" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
 <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
 <div class="style-example example-good">
 <h4 id="Recommande-24"><a href="#Recommande-24" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
 <h2 id="Regles-de-priorite-D-faire-attention-potentiellement-dangereux"><a href="#Regles-de-priorite-D-faire-attention-potentiellement-dangereux" class="headerlink" title="Règles de priorité D : faire attention (potentiellement dangereux)"></a>Règles de priorité D : faire attention (potentiellement dangereux)</h2><h3 id="v-if-v-else-if-v-else-sans-key-faire-attention"><a href="#v-if-v-else-if-v-else-sans-key-faire-attention" class="headerlink" title="v-if / v-else-if/ v-else sans key faire attention"></a><code>v-if</code> / <code>v-else-if</code>/ <code>v-else</code> sans <code>key</code> <sup data-p="d">faire attention</sup></h3><p><strong>Il est généralement préférable d’utiliser <code>key</code> avec <code>v-if</code> + <code>v-else</code>, si les éléments sont de même type (c.-à-d. avec deux éléments <code>&lt;div&gt;</code> par ex.).</strong></p>
 <p>Par défaut, Vue met à jour le DOM aussi efficacement que possible. Cela signifie que quand il commute entre deux éléments de même type, il va simplement modifier l’élément existant, plutôt que de l’enlever et d’en ajouter un nouveau à la place. Cela peut avoir des <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-priority-d-rules-unintended-consequences" target="_blank" rel="noopener">effets non souhaités</a> si ces éléments ne doivent pas être considérés comme les mêmes.</p>
@@ -1494,9 +1534,9 @@ props: &#123;
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
-<span class="hljs-selector-tag">button</span> &#123;
-  <span class="hljs-attribute">background-color</span>: red;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="undefined">
+button &#123;
+  background-color: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
@@ -1505,9 +1545,9 @@ props: &#123;
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-close"</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
-<span class="hljs-selector-class">.btn-close</span> &#123;
-  <span class="hljs-attribute">background-color</span>: red;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="undefined">
+.btn-close &#123;
+  background-color: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
