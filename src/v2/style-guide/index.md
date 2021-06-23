@@ -45,7 +45,7 @@ Certaines fonctionnalités de Vue existent pour régler des cas exceptionnels ou
 
 **Les noms de composant devraient toujours être des mots multiples, à l'exception du composant racine `App` et des composants préconçus fournis par Vue comme `<transition>` ou `<component>`.**
 
-Ceci afin de [prévenir les conflits](http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name) avec des éléments HTML futurs ou existant car toutes les balises HTML n'ont qu'un seul mot.
+Ceci afin de [prévenir les conflits](https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name) avec des éléments HTML futurs ou existant car toutes les balises HTML n'ont qu'un seul mot.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### À éviter

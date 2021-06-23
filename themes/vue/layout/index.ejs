@@ -10,7 +10,7 @@
   <div id="hero">
     <div class="inner">
       <div class="left">
-        <img class="hero-logo" src="<%- url_for("/images/logo.png") %>" alt="vue logo">
+        <img class="hero-logo" src="<%- url_for("/images/logo.svg") %>" alt="Vue logo">
       </div><div class="right">
         <h2 class="vue">Vue.js</h2>
         <h1>
@@ -163,10 +163,11 @@
   })
 
   window.addEventListener('scroll', function () {
-    if (window.pageYOffset > 165 && !topScrolled) {
+    var offset = 20
+    if (window.pageYOffset > offset && !topScrolled) {
       topScrolled = true
       document.getElementById('mobile-bar').classList.remove('top')
-    } else if (window.pageYOffset <= 165 && topScrolled) {
+    } else if (window.pageYOffset <= offset && topScrolled) {
       topScrolled = false
       document.getElementById('mobile-bar').classList.add('top')
     }
