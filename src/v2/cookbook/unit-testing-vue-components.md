@@ -256,4 +256,4 @@ Plus d’info sur comment tester des composants Vue.js dans le livre de [Edd Yer
 
 ## Quand éviter ces types de tests
 
-Les tests unitaires sont une part importante de toute application sérieuse. Au début, quand l’application commence et que la vision complète n’est pas très claire, les tests unitaires peuvent ralentir un peu le développement, mais une fois l’architecture établie et que des utilisateurs réels utilisent l’application, les tests unitaires (et tous types de tests automatiques) sont essentiel à la stabilité et l'évolutivité.
+Les tests unitaires sont une part importante de toute application sérieuse. Au début, quand l’application commence et que la vision complète n’est pas très claire, les tests unitaires peuvent ralentir un peu le développement, mais une fois l’architecture établie et que des utilisateurs réels utilisent l’application, les tests unitaires (et tous types de tests automatiques) sont essentiels à la stabilité et l'évolutivité.
