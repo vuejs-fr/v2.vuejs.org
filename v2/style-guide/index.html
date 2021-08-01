@@ -688,9 +688,9 @@ props: &#123;
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-close"</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">
-.btn-close &#123;
-  background-color: red;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.btn-close</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
@@ -700,14 +700,14 @@ props: &#123;
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- Utilisez l'attribut `scoped` --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="undefined">
-.button &#123;
-  border: none;
-  border-radius: 2px;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.button</span> &#123;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>;
 &#125;
 
-.button-close &#123;
-  background-color: red;
+<span class="hljs-selector-class">.button-close</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
@@ -715,14 +715,14 @@ props: &#123;
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- Utilisez les modules CSS --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">module</span>&gt;</span><span class="undefined">
-.button &#123;
-  border: none;
-  border-radius: 2px;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">module</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.button</span> &#123;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>;
 &#125;
 
-.buttonClose &#123;
-  background-color: red;
+<span class="hljs-selector-class">.buttonClose</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
@@ -730,14 +730,14 @@ props: &#123;
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- Utilisez des conventions BEM --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">
-.c-Button &#123;
-  border: none;
-  border-radius: 2px;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.c-Button</span> &#123;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>;
 &#125;
 
-.c-Button--close &#123;
-  background-color: red;
+<span class="hljs-selector-class">.c-Button--close</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
@@ -1461,38 +1461,38 @@ props: &#123;
 </div>
 <h3 id="Ordre-des-balises-principales-des-composants-monofichiers-recommande"><a href="#Ordre-des-balises-principales-des-composants-monofichiers-recommande" class="headerlink" title="Ordre des balises principales des composants monofichiers recommandé"></a>Ordre des balises principales des composants monofichiers <sup data-p="c">recommandé</sup></h3><p><strong><a href="../guide/single-file-components.html">Les composants monofichiers</a> devraient toujours ordonner de manière consistante les balises <code>&lt;script&gt;</code>, <code>&lt;template&gt;</code>, et <code>&lt;style&gt;</code>, avec <code>&lt;style&gt;</code> en dernier, car au moins l’un des deux autres est toujours nécessaire.</strong></p>
 <div class="style-example example-bad">
-<h4 id="A-eviter-23"><a href="#A-eviter-23" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<h4 id="A-eviter-23"><a href="#A-eviter-23" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
 <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
 <div class="style-example example-good">
 <h4 id="Recommande-24"><a href="#Recommande-24" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined">/* ... */</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
 <h2 id="Regles-de-priorite-D-faire-attention-potentiellement-dangereux"><a href="#Regles-de-priorite-D-faire-attention-potentiellement-dangereux" class="headerlink" title="Règles de priorité D : faire attention (potentiellement dangereux)"></a>Règles de priorité D : faire attention (potentiellement dangereux)</h2><h3 id="v-if-v-else-if-v-else-sans-key-faire-attention"><a href="#v-if-v-else-if-v-else-sans-key-faire-attention" class="headerlink" title="v-if / v-else-if/ v-else sans key faire attention"></a><code>v-if</code> / <code>v-else-if</code>/ <code>v-else</code> sans <code>key</code> <sup data-p="d">faire attention</sup></h3><p><strong>Il est généralement préférable d’utiliser <code>key</code> avec <code>v-if</code> + <code>v-else</code>, si les éléments sont de même type (c.-à-d. avec deux éléments <code>&lt;div&gt;</code> par ex.).</strong></p>
 <p>Par défaut, Vue met à jour le DOM aussi efficacement que possible. Cela signifie que quand il commute entre deux éléments de même type, il va simplement modifier l’élément existant, plutôt que de l’enlever et d’en ajouter un nouveau à la place. Cela peut avoir des <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-priority-d-rules-unintended-consequences" target="_blank" rel="noopener">effets non souhaités</a> si ces éléments ne doivent pas être considérés comme les mêmes.</p>
@@ -1534,9 +1534,9 @@ props: &#123;
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="undefined">
-button &#123;
-  background-color: red;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<span class="hljs-selector-tag">button</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
@@ -1545,9 +1545,9 @@ button &#123;
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-close"</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="undefined">
-.btn-close &#123;
-  background-color: red;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.btn-close</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
 &#125;
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 </div>
