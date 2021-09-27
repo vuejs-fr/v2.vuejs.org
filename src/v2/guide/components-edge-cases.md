@@ -136,7 +136,7 @@ Précédemment, quand nous avons décrit l'[accès à l'instance de composant pa
 </google-map>
 ```
 
-Dans ce composant, tous les descendants de `<google-map>` avaient besoin d'accéder à une méthode `getMap`, afin de savoir avec quelle carte interagir. Malheusement, utiliser la propriété `$parent` s'adapte mal avec des composants imbriqués plus profondément. C'est là où l'injection de dépendances peut s'avérer utile, en utilisant deux nouvelles options d'instance : `provide` et `inject`.
+Dans ce composant, tous les descendants de `<google-map>` avaient besoin d'accéder à une méthode `getMap`, afin de savoir avec quelle carte interagir. malheureusement, utiliser la propriété `$parent` s'adapte mal avec des composants imbriqués plus profondément. C'est là où l'injection de dépendances peut s'avérer utile, en utilisant deux nouvelles options d'instance : `provide` et `inject`.
 
 Les options `provide` nous permettent de spécifier quelles données/méthodes nous voulons **fournir** aux composants descendants. Dans ce cas, il s'agit de la méthode `getMap` à l'intérieur de `<google-map>`:
 
