@@ -190,7 +190,7 @@ Si vous vous apercevez que l'autocomplétion ne fonctionne pas, annoter certaine
 
 
 
-## Annotating Props
+## Annotation des props
 
 ```ts
 import Vue, { PropType } from 'vue'
