@@ -70,7 +70,7 @@ new Vue({ el: '#app' })
 </div>
 ```
 
-Cela s'applique même à tous les sous-composants, ce qui signifie que ces trois composants seront également disponibles _les uns des autres_.
+Cela s'applique même à tous les sous-composants, ce qui signifie que ces trois composants seront également disponibles _les uns dans les autres_.
 
 ## Création locale
 
