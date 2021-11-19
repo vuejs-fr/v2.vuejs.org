@@ -433,7 +433,7 @@ Au lieu de coder en dur le contenu de chaque tâche, nous pouvons laisser le com
 </ul>
 ```
 
-Maintenant, lorsque nous utilisons le composant `<todo-list>`, nous pouvons éventuellement définir un autre `<modèle>` pour les éléments à faire, mais avec un accès aux données de l'enfant :
+Maintenant, lorsque nous utilisons le composant `<todo-list>`, nous pouvons éventuellement définir un autre `<template>` pour les éléments à faire, mais avec un accès aux données de l'enfant :
 
 ``` html
 <todo-list v-bind:todos="todos">
