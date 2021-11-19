@@ -147,7 +147,7 @@ Dans certains cas, il peut être intéressant d'avoir plusieurs éléments `<slo
 </div>
 ```
 
-Dans le cas suivant, l'élément `<slot>` à un l'attribut spécial `name` , qui peut être utilisé pour désigner des slots additionnels :
+Dans le cas suivant, l'élément `<slot>` a un l'attribut spécial `name`, qui peut être utilisé pour désigner des slots additionnels :
 
 ``` html
 <div class="container">
