@@ -192,7 +192,7 @@ Les modes développement et production sont écrits en dur dans les builds UMD :
 
 Les builds CommonJS et ES Module sont prévus pour les outils de paquetage, donc nous ne fournissons pas de version minifié pour eux. Vous aurez à votre charge de minifier le paquetage final vous-même.
 
-Les builds CommonJS et ES Module contiennent une utilisation de `process.env.NODE_ENV` pour déterminer le mode qu'ils doivent suivre. Vous devriez utiliser une configuration d'outil d'empaquetage appropriée pour remplacer ces d'environnements afin de contrôler lequel des modes Vue exécutera. Remplacer `process.env.NODE_ENV` avec une chaîne de caractère littérale permet aux outils de minification comme UglifyJS de complètement retirer les pends de code réservés au développement, réduisant ainsi la taille du fichier final.
+Les builds CommonJS et ES Module contiennent une utilisation de `process.env.NODE_ENV` pour déterminer le mode qu'ils doivent suivre. Vous devriez utiliser une configuration d'outil d'empaquetage appropriée pour remplacer ces variables d'environnement afin de contrôler lequel des modes Vue s'exécutera. Remplacer `process.env.NODE_ENV` avec une chaîne de caractère littérale permet aux outils de minification comme UglifyJS de complètement retirer les pans de code réservés au développement, réduisant ainsi la taille du fichier final.
 
 #### webpack
 
