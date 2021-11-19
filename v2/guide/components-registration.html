@@ -1062,7 +1062,7 @@ Vue.component(<span class="hljs-string">'component-c'</span>, &#123; <span class
   <span class="hljs-tag">&lt;<span class="hljs-name">component-b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component-b</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">component-c</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component-c</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-<p>Cela s’applique même à tous les sous-composants, ce qui signifie que ces trois composants seront également disponibles <em>les uns des autres</em>.</p>
+<p>Cela s’applique même à tous les sous-composants, ce qui signifie que ces trois composants seront également disponibles <em>les uns dans les autres</em>.</p>
 <h2 id="Creation-locale"><a href="#Creation-locale" class="headerlink" title="Création locale"></a>Création locale</h2><p>La création globale n’est souvent pas idéale. Par exemple, si vous utilisez un système de build comme webpack, la création globale de composants signifie que même si vous arrêtez d’utiliser un composant, il peut toujours être inclus dans votre build final. Cela augmente inutilement la quantité de JavaScript que vos utilisateurs doivent télécharger.</p>
 <p>Dans ce cas, vous pouvez définir vos composants en tant qu’objets JavaScript simples :</p>
 <pre><code class="hljs js"><span class="hljs-keyword">var</span> ComponentA = &#123; <span class="hljs-comment">/* ... */</span> &#125;

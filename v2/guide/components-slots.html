@@ -1116,7 +1116,7 @@
     <span class="hljs-comment">&lt;!-- Ici le pied de page --&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-<p>Dans le cas suivant, l’élément <code>&lt;slot&gt;</code> à un l’attribut spécial <code>name</code> , qui peut être utilisé pour désigner des slots additionnels :</p>
+<p>Dans le cas suivant, l’élément <code>&lt;slot&gt;</code> a un l’attribut spécial <code>name</code>, qui peut être utilisé pour désigner des slots additionnels :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"header"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
@@ -1299,7 +1299,7 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
-<p>Maintenant, lorsque nous utilisons le composant <code>&lt;todo-list&gt;</code>, nous pouvons éventuellement définir un autre <code>&lt;modèle&gt;</code> pour les éléments à faire, mais avec un accès aux données de l’enfant :</p>
+<p>Maintenant, lorsque nous utilisons le composant <code>&lt;todo-list&gt;</code>, nous pouvons éventuellement définir un autre <code>&lt;template&gt;</code> pour les éléments à faire, mais avec un accès aux données de l’enfant :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> <span class="hljs-attr">v-bind:todos</span>=<span class="hljs-string">"todos"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:todo</span>=<span class="hljs-string">"&#123; todo &#125;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"todo.isComplete"</span>&gt;</span>✓<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
