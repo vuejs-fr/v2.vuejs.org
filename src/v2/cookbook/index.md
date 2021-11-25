@@ -16,7 +16,7 @@ order: 0
 
 * **Explorer l'écosystème** : Pour les fonctionnalités avancées, nous supposons que le lecteur a quelques connaissances sur l'écosystème. Par exemple, si vous voulez utiliser des composants monofichiers avec webpack, nous n'expliquerons pas comment configurer les parties qui ne concernent pas Vue dans la configuration de webpack. Dans les tutoriels, nous avons l'espace suffisant pour explorer plus en profondeur ces bibliothèques de l'écosystème - au moins dans la mesure où cela est universellement utile aux développeurs Vue.
 
-<p class="tip">Avec toutes ces différences, notez que les tutoriels ne sont _pas_ encore un manuelle pas à pas. Pour plus de contenus, nous supposons que vous avez des bases sur des concepts comme HTML, CSS, JavaScript, npm/yarn, etc.</p>
+<p class="tip">Avec toutes ces différences, notez que les tutoriels ne sont _pas_ encore un manuel pas à pas. Pour plus de contenus, nous supposons que vous avez des bases sur des concepts comme HTML, CSS, JavaScript, npm/yarn, etc.</p>
 
 ## Contributions aux tutoriels
 
