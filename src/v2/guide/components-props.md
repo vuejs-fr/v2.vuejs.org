@@ -219,7 +219,7 @@ Vue.component('my-component', {
     propF: {
       validator: function (value) {
         // La valeur passée doit être l'une de ces chaines de caractères
-        return ['success', 'warning', 'danger'].indexOf(value) !== -1
+        return ['success', 'warning', 'danger'].includes(value)
       }
     }
   }
