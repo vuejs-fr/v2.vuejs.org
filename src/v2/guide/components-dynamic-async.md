@@ -255,11 +255,7 @@ new Vue({
 })
 ```
 
-<<<<<<< HEAD
-<p class="tip">Si vous êtes un utilisateur de <strong>Browserify</strong> et souhaitez utiliser les composants asynchrones, son créateur a malheureusement [été très clair](https://github.com/substack/node-browserify/issues/58#issuecomment-21978224) sur le fait que le chargement asynchrone n'est pas quelque-chose que Browserify supportera un jour. Officiellement du moins. La communauté Browserify a trouvé [quelques solutions de contournement](https://github.com/vuejs/vuejs.org/issues/620), qui peuvent s'avérer utiles pour les applications complexes existantes. Pour tous les autres scénarios, nous recommandons d'utiliser webpack pour un support natif et de première classe de l'asynchrone.</p>
-=======
-<p class="tip">If you're a <strong>Browserify</strong> user that would like to use async components, its creator has unfortunately [made it clear](https://github.com/substack/node-browserify/issues/58#issuecomment-21978224) that async loading "is not something that Browserify will ever support." Officially, at least. The Browserify community has found [some workarounds](https://github.com/vuejs/v2.vuejs.org/issues/620), which may be helpful for existing and complex applications. For all other scenarios, we recommend using Webpack for built-in, first-class async support.</p>
->>>>>>> upstream/master
+<p class="tip">Si vous êtes un utilisateur de <strong>Browserify</strong> et souhaitez utiliser les composants asynchrones, son créateur a malheureusement [été très clair](https://github.com/substack/node-browserify/issues/58#issuecomment-21978224) sur le fait que le chargement asynchrone n'est pas quelque-chose que Browserify supportera un jour. Officiellement du moins. La communauté Browserify a trouvé [quelques solutions de contournement](https://github.com/vuejs/v2.vuejs.org/issues/620), qui peuvent s'avérer utiles pour les applications complexes existantes. Pour tous les autres scénarios, nous recommandons d'utiliser webpack pour un support natif et de première classe de l'asynchrone.</p>
 
 ### Gérer l'état de chargement
 
