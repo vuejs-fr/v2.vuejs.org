@@ -1,0 +1,1780 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="with-v3-banner">
+  <head>
+    <title>Conventions — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - Le Framework JavaScript Évolutif">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/style-guide/index.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Conventions — Vue.js">
+    <meta property="og:description" content="Vue.js - Le Framework JavaScript Évolutif">
+    <meta property="og:image" content="https://vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Conventions — Vue.js">
+    <meta name="twitter:description" content="Vue.js - Le Framework JavaScript Évolutif">
+    <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "style-guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs" data-v3-url="">
+
+    
+      <!-- <a id="vs" class="vs-hidden" href="https://vueschool.io/sales/price-increase-22?friend=vuejs" target="_blank" rel="noreferrer">
+  <div class="vs-iso">
+    <img src="/images/banners/vs-iso.svg">
+  </div>
+  <div class="vs-logo">
+    <img src="/images/banners/vs-logo.svg">
+  </div>
+  <div class="vs-core">
+    <div class="vs-slogan">
+      <div class="vs-slogan-up">
+        Get up to <strong>40% off</strong> your Vue School Subscription
+      </div>
+      <div class="vs-slogan-down">
+        Time Limited Offer
+      </div>
+    </div>
+    <div class="vs-button">
+      <div class="vs-button-inside">
+        GET OFFER
+      </div>
+    </div>
+  </div>
+  <div id="vs-close" class="vs-close">
+    <img src="/images/banners/close.svg" alt="Close">
+  </div>
+</a> -->
+
+    
+
+    <div id="mobile-bar" >
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">Vous naviguez sur la documentation de Vue v2.x et précédentes.</span>
+    <a href="https://vuejs.org/">Cliquez ici</a> pour la documentation v3.x.
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Doc</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Documentations</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link">Guide</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link current">Conventions</a></li>
+        <li><a href="/v2/examples/" class="nav-link">Exemples</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Tutoriels</a></li>
+      </ul>
+    </li>
+    <li><h4>Videos</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery (EN)
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School (EN)
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Écosystème</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Aide</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/c/french" class="nav-link" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://discordapp.com/channels/325477692906536972/360669119948783616" class="nav-link" target="_blank" rel="noopener">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">Meetups (EN)</a></li>
+    </ul></li>
+    <li><h4>Outils</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools (EN)</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI (EN)</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader (EN)</a></li>
+      </ul>
+    </li>
+    <li><h4>Bibliothèques officielles</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Infos</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Actualités (EN)</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Plans futurs (EN)</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Évènements (EN)</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter (EN)</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">Blog (EN)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">Offres d'emploi (EN)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">Communauté DEV (EN)</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Équipe</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Resources</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Partenaires</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Thèmes</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue (EN)</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Packages pour Vue (EN)</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Soutien</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Dons ponctuel</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Soutiens récurrent</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">La boutique</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Langues</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/style-guide/index.html" class="nav-link">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/style-guide/index.html" class="nav-link">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/style-guide/index.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/style-guide/index.html" class="nav-link">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/style-guide/index.html" class="nav-link">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/style-guide/index.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/style-guide/index.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/style-guide/index.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/style-guide/index.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/style-guide/index.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>Special Sponsor</span>
+    <div>
+    <a href="https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/hbuilder.png" alt="HBuilder">
+    </a>
+    </div>
+  </div>
+</div>
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Sponsors de platine</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/refurbed.png" alt="Refurbed">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Devenez un sponsor
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Conventions<sup class="beta">beta</sup>
+          
+        </h2>
+        <ul class="menu-root">
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Sponsors de platine</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/refurbed.png" alt="Refurbed">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Devenez un sponsor
+  </a>
+</div>
+
+
+
+
+<div class="content style-guide with-sidebar ">
+  <p class="tip warning v3-warning">
+    You’re browsing the documentation for v2.x and earlier.
+    For v3.x, <a href="https://vuejs.org/">click here</a>.
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script
+    async
+    type="text/javascript"
+    src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg"
+    id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Conventions</h1>
+  
+  
+    <p>Ceci est le guide des conventions officielles pour du code spécifique à Vue. Si vous utilisez Vue dans vos projets, c’est la référence pour éviter les erreurs, les discussions futiles ou les mauvais usages de code. Nous ne pensons cependant pas qu’un guide de conventions soit pertinent pour toutes les équipes ou tous les projets, aussi nous encourageons les écarts pourvu qu’ils soient éclairés et basés sur vos expériences passées, les technologies que vous côtoyez ainsi que vos valeurs personnelles.</p>
+<p>Nous allons en grande partie éviter les conventions à propos du JavaScript ou du HTML en eux-mêmes. Nous ne nous soucions pas de votre utilisation des points-virgules ou de la place de la virgule en début de ligne. Nous ne nous soucierons pas non plus de savoir si votre HTML utilise des apostrophes ou des guillemets pour les valeurs des attributs. Quelques exceptions seront faites cependant, quand nous trouvons qu’une utilisation de code spécifique est utile dans le contexte de Vue.</p>
+<blockquote>
+<p><strong>Bientôt, nous fournirons des astuces pour la mise en application.</strong> Même si certains points sont une simple question de discipline, nous essayerons de vous montrer comment utiliser ESLint et d’autres processus automatisés pour mettre simplement en place ces conventions.</p>
+</blockquote>
+<p>Nous avons donc divisé les règles en quatre catégories :</p>
+<h2 id="Categories-de-regle"><a href="#Categories-de-regle" class="headerlink" title="Catégories de règle"></a>Catégories de règle</h2><h3 id="Priorite-A-essentiel"><a href="#Priorite-A-essentiel" class="headerlink" title="Priorité A : essentiel"></a>Priorité A : essentiel</h3><p>Ces règles aident à éviter les erreurs, donc apprenez-les et respectez-les à tout prix. Des exceptions peuvent exister, mais elles devraient être rares et seulement faites par ceux qui ont une connaissance experte à la fois de JavaScript et de Vue.</p>
+<h3 id="Priorite-B-fortement-recommande"><a href="#Priorite-B-fortement-recommande" class="headerlink" title="Priorité B : fortement recommandé"></a>Priorité B : fortement recommandé</h3><p>Ces règles ont été établies pour améliorer la lisibilité et / ou l’expérience des développeurs dans la majorité des projets. Votre code fonctionnera toujours si vous ne les suivez pas, mais ces écarts doivent être rares et justifiés.</p>
+<h3 id="Priorite-C-recommande"><a href="#Priorite-C-recommande" class="headerlink" title="Priorité C : recommandé"></a>Priorité C : recommandé</h3><p>Là où de multiples et équivalentes options existent, un choix arbitraire a été fait pour assurer la consistance. Dans ces règles, nous décrivons chaque option acceptable et suggérons un choix par défaut. Cela signifie que vous pouvez faire des choix différents sur votre propre base de code, aussi longtemps que vous êtes cohérent et avez de bonnes raisons. Mais gardez toujours les bonnes raisons à l’esprit ! En vous alignant sur les standards de la communauté vous :</p>
+<ol>
+<li>pourrez améliorer votre cerveau à analyser plus facilement la plupart des codes communautaires rencontrés,</li>
+<li>serez capable de copier et coller la plupart des exemples de code sans modifications,</li>
+<li>trouverez de nouvelles recrues déjà habituées à votre style de codage préféré, au moins en ce qui concerne Vue.</li>
+</ol>
+<h3 id="Priorite-D-faire-attention"><a href="#Priorite-D-faire-attention" class="headerlink" title="Priorité D : faire attention"></a>Priorité D : faire attention</h3><p>Certaines fonctionnalités de Vue existent pour régler des cas exceptionnels ou rendre la migration d’une vieille version de code plus simple. Mais utiliser avec excès, elles rendront votre code difficile à maintenir et même deviendront une source de bogues. Ces règles mettent en lumière des fonctionnalités potentiellement risquées, décrivant quand et pourquoi elles doivent être évitées.</p>
+<h2 id="Regles-de-priorite-A-essentiel-prevenir-les-erreurs"><a href="#Regles-de-priorite-A-essentiel-prevenir-les-erreurs" class="headerlink" title="Règles de priorité A : essentiel (prévenir les erreurs)"></a>Règles de priorité A : essentiel (prévenir les erreurs)</h2><h3 id="Nom-de-composant-a-mots-multiples-essentiel"><a href="#Nom-de-composant-a-mots-multiples-essentiel" class="headerlink" title="Nom de composant à mots multiples essentiel"></a>Nom de composant à mots multiples <sup data-p="a">essentiel</sup></h3><p><strong>Les noms de composant devraient toujours être des mots multiples, à l’exception du composant racine <code>App</code> et des composants préconçus fournis par Vue comme <code>&lt;transition&gt;</code> ou <code>&lt;component&gt;</code>.</strong></p>
+<p>Ceci afin de <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name" target="_blank" rel="noopener">prévenir les conflits</a> avec des éléments HTML futurs ou existant car toutes les balises HTML n’ont qu’un seul mot.</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter"><a href="#A-eviter" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js">Vue.component(<span class="hljs-string">'todo'</span>, &#123;
+  <span class="hljs-comment">// ...</span>
+&#125;)</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Todo'</span>,
+  <span class="hljs-comment">// ...</span>
+&#125;</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande"><a href="#Recommande" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs js">Vue.component(<span class="hljs-string">'todo-item'</span>, &#123;
+  <span class="hljs-comment">// ...</span>
+&#125;)</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'TodoItem'</span>,
+  <span class="hljs-comment">// ...</span>
+&#125;</code></pre>
+</div>
+<h3 id="Donnees-du-composant-essentiel"><a href="#Donnees-du-composant-essentiel" class="headerlink" title="Données du composant essentiel"></a>Données du composant <sup data-p="a">essentiel</sup></h3><p><strong>La propriété <code>data</code> doit être une fonction.</strong></p>
+<p>Quand vous utilisez la propriété <code>data</code> dans un composant (par ex. partout sauf sur <code>new Vue</code>), la valeur doit être une fonction qui retourne un objet.</p>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>Quand la valeur de la propriété <code>data</code> est un objet, elle est partagée à travers toutes les instances du composant. Imaginez, par exemple, un composant <code>TodoList</code> avec ces données :</p>
+<pre><code class="hljs js">data: &#123;
+  <span class="hljs-attr">listTitle</span>: <span class="hljs-string">''</span>,
+  <span class="hljs-attr">todos</span>: []
+&#125;</code></pre>
+<p>Nous pourrions vouloir réutiliser ce composant pour permettre aux utilisateurs de maintenir plusieurs listes (par ex. une liste de course, une liste de souhait, une liste de tâche, etc.). Il y a cependant un problème. Comme toutes les instances du composant font référence au même objet de donnée, changer le titre de l’une des listes va aussi changer le titre de toutes les autres. Et c’est également vrai pour l’ajout, l’édition ou la suppression dans la liste.</p>
+<p>À la place, nous voulons que chaque composant instancie ses données pour soi. Pour que cela soit possible, chaque instance doit générer un objet de données unique. En JavaScript, ceci peut être accompli en retournant l’objet depuis une fonction :</p>
+<pre><code class="hljs js">data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">return</span> &#123;
+    <span class="hljs-attr">listTitle</span>: <span class="hljs-string">''</span>,
+    <span class="hljs-attr">todos</span>: []
+  &#125;
+&#125;</code></pre>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-1"><a href="#A-eviter-1" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js">Vue.component(<span class="hljs-string">'some-comp'</span>, &#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">'bar'</span>
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">'bar'</span>
+  &#125;
+&#125;</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-1"><a href="#Recommande-1" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs js">Vue.component(<span class="hljs-string">'some-comp'</span>, &#123;
+  <span class="hljs-attr">data</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> &#123;
+      <span class="hljs-attr">foo</span>: <span class="hljs-string">'bar'</span>
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// Dans un fichier `.vue`</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  data () &#123;
+    <span class="hljs-keyword">return</span> &#123;
+      <span class="hljs-attr">foo</span>: <span class="hljs-string">'bar'</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// Par contre l'utilisation directe d'un objet est possible dans</span>
+<span class="hljs-comment">// l'instance racine de Vue, car il n'y a qu'une</span>
+<span class="hljs-comment">// instance racine qui existe</span>
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">'bar'</span>
+  &#125;
+&#125;)</code></pre>
+</div>
+<h3 id="Definitions-de-prop-essentiel"><a href="#Definitions-de-prop-essentiel" class="headerlink" title="Définitions de prop essentiel"></a>Définitions de prop <sup data-p="a">essentiel</sup></h3><p><strong>Les définitions de prop devraient être aussi détaillées que possible.</strong></p>
+<p>Dans du code acté, les définitions de prop devraient être toujours aussi détaillées que possible, en spécifiant au moins le(s) type(s).</p>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>Les <a href="https://vuejs.org/v2/guide/components.html#Prop-Validation" target="_blank" rel="noopener">définitions de prop</a> détaillées ont deux avantages :</p>
+<ul>
+<li>Elles documentent l’API du composant, il est ainsi possible de voir comment le composant est prévu d’être utilisé.</li>
+<li>En développement, Vue vous avertira si le composant fournit un type de prop incorrectement formaté, vous aidant ainsi à trouver des sources potentielles d’erreur.</li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-2"><a href="#A-eviter-2" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js"><span class="hljs-comment">// Ceci est uniquement bon pour le prototypage</span>
+props: [<span class="hljs-string">'status'</span>]</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-2"><a href="#Recommande-2" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs js">props: &#123;
+  <span class="hljs-attr">status</span>: <span class="hljs-built_in">String</span>
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// Même mieux !</span>
+props: &#123;
+  <span class="hljs-attr">status</span>: &#123;
+    <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,
+    <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">validator</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'syncing'</span>,
+        <span class="hljs-string">'synced'</span>,
+        <span class="hljs-string">'version-conflict'</span>,
+        <span class="hljs-string">'error'</span>
+      ].indexOf(value) !== <span class="hljs-number">-1</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+</div>
+<h3 id="Des-cles-pour-v-for-essentiel"><a href="#Des-cles-pour-v-for-essentiel" class="headerlink" title="Des clés pour v-for essentiel"></a>Des clés pour <code>v-for</code> <sup data-p="a">essentiel</sup></h3><p><strong>Toujours utiliser <code>key</code> avec <code>v-for</code>.</strong></p>
+<p><code>key</code> avec <code>v-for</code> est <em>toujours</em> requis sur les composants afin de maintenir l’état des composants internes aligné aux sous-arbres. Même pour les éléments, c’est une bonne pratique pour garder un comportement prédictible pour de la <a href="https://bost.ocks.org/mike/constancy/" target="_blank" rel="noopener">stabilité d’objet</a> dans les animations.</p>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>Imaginons que nous ayons une liste de tâches :</p>
+<pre><code class="hljs js">data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">return</span> &#123;
+    <span class="hljs-attr">todos</span>: [
+      &#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">text</span>: <span class="hljs-string">'Apprendre à utiliser `v-for`'</span>
+      &#125;,
+      &#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">text</span>: <span class="hljs-string">'Apprendre à utiliser `key`'</span>
+      &#125;
+    ]
+  &#125;
+&#125;</code></pre>
+<p>Puis nous les trions par ordre alphabétique. Quand le DOM est mis à jour, Vue optimisera le rendu en exécutant les mutations les moins couteuses possibles dans le DOM. Cela signifie de supprimer le premier élément de la liste, puis de l’ajouter de nouveau à la fin de la liste.</p>
+<p>Le problème est qu’il y a des cas où il est important de ne pas supprimer les éléments qui resteront dans le DOM. Par exemple, vous pourriez utiliser <code>&lt;transition-group&gt;</code> pour animer un tri de liste, ou garder le focus si l’élément rendu était un <code>&lt;input&gt;</code>. Dans ces cas, ajouter une clé unique pour chaque élément (par ex. <code>:key=&quot;todo.id&quot;</code>) va dire à Vue comment être plus prédictif.</p>
+<p>De notre expérience, il est toujours mieux de <em>toujours</em> ajouter une clé unique. De cette manière vous et votre équipe n’aurez jamais à vous soucier des effets de bord. Ensuite, dans les rares scénarios critiques de performances où la stabilité des objets n’est pas nécessaire, vous pourrez faire une exception en connaissance de cause.</p>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-3"><a href="#A-eviter-3" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in todos"</span>&gt;</span>
+    &#123;&#123; todo.text &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-3"><a href="#Recommande-3" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in todos"</span>
+    <span class="hljs-attr">:key</span>=<span class="hljs-string">"todo.id"</span>
+  &gt;</span>
+    &#123;&#123; todo.text &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+</div>
+<h3 id="Eviter-v-if-avec-v-for-essentiel"><a href="#Eviter-v-if-avec-v-for-essentiel" class="headerlink" title="Éviter v-if avec v-for essentiel"></a>Éviter <code>v-if</code> avec <code>v-for</code> <sup data-p="a">essentiel</sup></h3><p><strong>N’utilisez jamais <code>v-if</code> sur le même élément que <code>v-for</code>.</strong></p>
+<p>Il y a deux utilisations courantes qui seraient tentantes :</p>
+<ul>
+<li><p>Pour filtrer des éléments dans une liste (par ex. <code>v-for=&quot;user in users&quot; v-if=&quot;user.isActive&quot;</code>). Dans ce cas, remplacez <code>users</code> par une nouvelle propriété calculée qui retourne votre liste filtrée (par ex. <code>activeUsers</code>).</p>
+</li>
+<li><p>Pour ne pas faire le rendu d’une liste si elle ne doit pas être affichée (par ex. <code>v-for=&quot;user in users&quot; v-if=&quot;shouldShowUsers&quot;</code>). Dans ce cas, déplacez <code>v-if</code> dans un élément englobant (par ex. <code>ul</code> ou <code>ol</code>).</p>
+</li>
+</ul>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>Quand Vue transforme les directives, <code>v-for</code> a une priorité plus élevée que <code>v-if</code>. Ce template :</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in users"</span>
+    <span class="hljs-attr">v-if</span>=<span class="hljs-string">"user.isActive"</span>
+    <span class="hljs-attr">:key</span>=<span class="hljs-string">"user.id"</span>
+  &gt;</span>
+    &#123;&#123; user.name &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<p>est évalué de manière similaire à :</p>
+<pre><code class="hljs js"><span class="hljs-keyword">this</span>.users.map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">user</span>) </span>&#123;
+  <span class="hljs-keyword">if</span> (user.isActive) &#123;
+    <span class="hljs-keyword">return</span> user.name
+  &#125;
+&#125;)</code></pre>
+<p>Donc même si nous faisons le rendu pour une petite portion d’utilisateurs, nous allons devoir itérer sur la liste à chaque nouveau rendu, que l’état actif de l’utilisateur ait changé ou non.</p>
+<p>Ou alors, en itérant sur une propriété calculée, comme ici :</p>
+<pre><code class="hljs js">computed: &#123;
+  <span class="hljs-attr">activeUsers</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.users.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">user</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> user.isActive
+    &#125;)
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in activeUsers"</span>
+    <span class="hljs-attr">:key</span>=<span class="hljs-string">"user.id"</span>
+  &gt;</span>
+    &#123;&#123; user.name &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<p>nous obtenons les bénéfices suivants :</p>
+<ul>
+<li>La liste filtrée sera <em>seulement</em> réévaluée s’il y a un changement dans le tableau <code>users</code>, rendant le filtrage plus performant.</li>
+<li>En utilisant <code>v-for=&quot;user in activeUsers&quot;</code>, nous itérons sur les utilisateurs <em>seulement</em> pendant le rendu, le rendant plus performant.</li>
+<li>La partie logique est maintenant découplée de la couche présentation, rendant la maintenance (changement, ajout de logique) plus facile.</li>
+</ul>
+<p>Nous obtenons des bénéfices similaires en changeant :</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in users"</span>
+    <span class="hljs-attr">v-if</span>=<span class="hljs-string">"shouldShowUsers"</span>
+    <span class="hljs-attr">:key</span>=<span class="hljs-string">"user.id"</span>
+  &gt;</span>
+    &#123;&#123; user.name &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<p>par :</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"shouldShowUsers"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in users"</span>
+    <span class="hljs-attr">:key</span>=<span class="hljs-string">"user.id"</span>
+  &gt;</span>
+    &#123;&#123; user.name &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<p>En déplaçant le <code>v-if</code> sur un élément englobant, nous ne vérifions plus <code>shouldShowUsers</code> pour <em>chaque</em> utilisateur dans la liste. À la place, nous le vérifions une fois et n’évaluons pas  <code>v-for</code> si <code>shouldShowUsers</code> est <code>false</code>.</p>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-4"><a href="#A-eviter-4" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in users"</span>
+    <span class="hljs-attr">v-if</span>=<span class="hljs-string">"user.isActive"</span>
+    <span class="hljs-attr">:key</span>=<span class="hljs-string">"user.id"</span>
+  &gt;</span>
+    &#123;&#123; user.name &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in users"</span>
+    <span class="hljs-attr">v-if</span>=<span class="hljs-string">"shouldShowUsers"</span>
+    <span class="hljs-attr">:key</span>=<span class="hljs-string">"user.id"</span>
+  &gt;</span>
+    &#123;&#123; user.name &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-4"><a href="#Recommande-4" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in activeUsers"</span>
+    <span class="hljs-attr">:key</span>=<span class="hljs-string">"user.id"</span>
+  &gt;</span>
+    &#123;&#123; user.name &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"shouldShowUsers"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in users"</span>
+    <span class="hljs-attr">:key</span>=<span class="hljs-string">"user.id"</span>
+  &gt;</span>
+    &#123;&#123; user.name &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+</div>
+<h3 id="Style-des-composants-a-portee-limitee-essentiel"><a href="#Style-des-composants-a-portee-limitee-essentiel" class="headerlink" title="Style des composants à portée limitée essentiel"></a>Style des composants à portée limitée <sup data-p="a">essentiel</sup></h3><p><strong>Pour les applications, le style du niveau <code>App</code> au sommet et des composants de mises en page doivent être globaux, mais tous les autres styles des composants devraient être avec une portée limitée au composant.</strong></p>
+<p>Ceci n’est pertinent que pour les <a href="../guide/single-file-components.html">composants monofichiers</a>. Cela _ne_ nécessite <em>pas</em> l’ajout de <a href="https://vue-loader.vuejs.org/en/features/scoped-css.html" target="_blank" rel="noopener">l’attribut <code>scoped</code></a>. La portée limitée peut être faite avec les <a href="https://vue-loader.vuejs.org/en/features/css-modules.html" target="_blank" rel="noopener">modules CSS</a>, une stratégie basée sur les classes comme <a href="http://getbem.com/" target="_blank" rel="noopener">BEM</a> ou d’autres bibliothèques / conventions du même genre.</p>
+<p><strong>Les composants de bibliothèques, cependant, devraient utiliser une stratégie basée sur les classes plutôt que d’utiliser l’attribut <code>scoped</code>.</strong></p>
+<p>Cela permet de surcharger les styles internes facilement, avec des noms de classes lisibles par les humains avec un niveau de spécificité peu élevé qui entre en conflit vraiment très rarement.</p>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>Si vous développez un grand projet, et travaillez avec d’autres développeurs, ou que parfois vous incluez du HTML / CSS tiers (par ex. de Auth0), une portée limitée consistante assurera une application de vos styles uniquement aux composants souhaités.</p>
+<p>Au-delà de l’attribut <code>scoped</code>, utiliser des noms de classe uniques vous assure que les CSS des bibliothèques tierces ne soient pas appliquées à votre propre HTML. Par exemple, beaucoup de projets utilisent les classes de nom <code>button</code>, <code>btn</code> ou <code>icon</code> donc même si vous n’utilisez pas de stratégie comme BEM, ajouter un préfixe dédié à l’application ou au composant (par ex. <code>ButtonClose-icon</code>) peut vous apporter une certaine protection.</p>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-5"><a href="#A-eviter-5" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-close"</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.btn-close</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
+&#125;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-5"><a href="#Recommande-5" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button button-close"</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Utilisez l'attribut `scoped` --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.button</span> &#123;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>;
+&#125;
+
+<span class="hljs-selector-class">.button-close</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
+&#125;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">"[$style.button, $style.buttonClose]"</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Utilisez les modules CSS --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">module</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.button</span> &#123;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>;
+&#125;
+
+<span class="hljs-selector-class">.buttonClose</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
+&#125;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-Button c-Button--close"</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Utilisez des conventions BEM --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.c-Button</span> &#123;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>;
+&#125;
+
+<span class="hljs-selector-class">.c-Button--close</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
+&#125;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+</div>
+<h3 id="Noms-de-propriete-prive-essentiel"><a href="#Noms-de-propriete-prive-essentiel" class="headerlink" title="Noms de propriété privé essentiel"></a>Noms de propriété privé <sup data-p="a">essentiel</sup></h3><p><strong>Utilisez la portée des modules pour garder les fonctions inaccessibles de l’extérieur. Si cela n’est pas possible, utilisez le préfixe <code>$_</code> pour les propriétés privées personnalisées dans un plugin, mixin, etc car elles ne doivent pas être considérées comme des APIs publiques. Cela permet d’éviter les conflits avec le code d’autres développeurs. Il est également possible d’inclure un nom de portée (par ex. <code>$_yourPluginName_</code>).</strong></p>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>Vue utilise le préfixe <code>_</code> pour définir ses propres propriétés privées. Aussi, utiliser le même préfixe (comme par ex. <code>_update</code>) risque d’écraser les propriétés d’instance. Même si vous vérifiez que Vue n’utilise pas actuellement un nom de propriété particulier, il n’y a aucune garantie que le conflit n’apparaisse pas dans des versions futures.</p>
+<p>Concernant le préfixe <code>$</code>, il est réservé dans l’écosystème Vue à des propriétés spéciales d’instance exposées à l’utilisateur. L’utiliser pour des propriétés <em>privées</em> ne serait pas approprié.</p>
+<p>À la place, nous recommandons de combiner les deux préfixes en un <code>$_</code>, comme une convention pour définir des propriétés personnelles privées et garantir qu’il n’y ait aucun conflit avec Vue.</p>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-6"><a href="#A-eviter-6" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js"><span class="hljs-keyword">var</span> myGreatMixin = &#123;
+  <span class="hljs-comment">// ...</span>
+  methods: &#123;
+    <span class="hljs-attr">update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-comment">// ...</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> myGreatMixin = &#123;
+  <span class="hljs-comment">// ...</span>
+  methods: &#123;
+    <span class="hljs-attr">_update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-comment">// ...</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> myGreatMixin = &#123;
+  <span class="hljs-comment">// ...</span>
+  methods: &#123;
+    <span class="hljs-attr">$update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-comment">// ...</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> myGreatMixin = &#123;
+  <span class="hljs-comment">// ...</span>
+  methods: &#123;
+    <span class="hljs-attr">$_update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-comment">// ...</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-6"><a href="#Recommande-6" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs js"><span class="hljs-keyword">var</span> myGreatMixin = &#123;
+  <span class="hljs-comment">// ...</span>
+  methods: &#123;
+    <span class="hljs-attr">$_myGreatMixin_update</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-comment">// ...</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// Encore mieux !</span>
+<span class="hljs-keyword">var</span> myGreatMixin = &#123;
+  <span class="hljs-comment">// ...</span>
+  methods: &#123;
+    publicMethod() &#123;
+      <span class="hljs-comment">// ...</span>
+      myPrivateFunction()
+    &#125;
+  &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myPrivateFunction</span>(<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-comment">// ...</span>
+&#125;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> myGreatMixin</code></pre>
+</div>
+<h2 id="Regles-de-priorite-B-fortement-recommande-ameliorer-la-lisibilite"><a href="#Regles-de-priorite-B-fortement-recommande-ameliorer-la-lisibilite" class="headerlink" title="Règles de priorité B : fortement recommandé (améliorer la lisibilité)"></a>Règles de priorité B : fortement recommandé (améliorer la lisibilité)</h2><h3 id="Fichier-composants-fortement-recommande"><a href="#Fichier-composants-fortement-recommande" class="headerlink" title="Fichier composants fortement recommandé"></a>Fichier composants <sup data-p="b">fortement recommandé</sup></h3><p><strong>Chaque fois qu’un système de build est disponible pour concaténer les fichiers, chaque composant devrait être dans son propre fichier.</strong></p>
+<p>Ceci aide à trouver plus rapidement un composant quand vous avez besoin de l’éditer ou de vérifier comment il fonctionne.</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-7"><a href="#A-eviter-7" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js">Vue.component(<span class="hljs-string">'TodoList'</span>, &#123;
+  <span class="hljs-comment">// ...</span>
+&#125;)
+
+Vue.component(<span class="hljs-string">'TodoItem'</span>, &#123;
+  <span class="hljs-comment">// ...</span>
+&#125;)</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-7"><a href="#Recommande-7" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs undefined">components/
+|- TodoList.js
+|- TodoItem.js</code></pre>
+<pre><code class="hljs undefined">components/
+|- TodoList.vue
+|- TodoItem.vue</code></pre>
+</div>
+<h3 id="Casse-des-noms-de-fichier-des-composants-monofichiers-fortement-recommande"><a href="#Casse-des-noms-de-fichier-des-composants-monofichiers-fortement-recommande" class="headerlink" title="Casse des noms de fichier des composants monofichiers fortement recommandé"></a>Casse des noms de fichier des composants monofichiers <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les noms de fichier des <a href="../guide/single-file-components.html">composants monofichiers</a> devraient toujours être écrits en PascalCase ou en kebab-case.</strong></p>
+<p>La PascalCase fonctionne mieux avec l’autocomplétion dans des éditeurs de code. Comme ils sont consistants avec la manière dont nous référençons les composants avec du JS(X) et des templates, utilisez-la si possible. Cependant, les casses de noms mixtes (majuscules et minuscules) peuvent parfois créer des problèmes sur des systèmes de fichier non sensibles à la casse. C’est pourquoi la kebab-case est aussi parfaitement acceptable.</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-8"><a href="#A-eviter-8" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs undefined">components/
+|- mycomponent.vue</code></pre>
+<pre><code class="hljs undefined">components/
+|- myComponent.vue</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-8"><a href="#Recommande-8" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs undefined">components/
+|- MyComponent.vue</code></pre>
+<pre><code class="hljs undefined">components/
+|- my-component.vue</code></pre>
+</div>
+<h3 id="Base-de-nom-de-composant-fortement-recommande"><a href="#Base-de-nom-de-composant-fortement-recommande" class="headerlink" title="Base de nom de composant fortement recommandé"></a>Base de nom de composant <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les composants de base (c.-à-d. les composants de présentation, de support ou purement fonctionnels) qui appliquent un style et des conventions spécifiques à l’application devraient tous commencer avec un même préfixe, comme par exemple <code>Base</code>, <code>App</code>, ou <code>V</code>.</strong></p>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>Ces composants sont les fondations d’un système de style et de comportement consistant pour votre application. Ils doivent <strong>seulement</strong> contenir :</p>
+<ul>
+<li>des éléments HTML,</li>
+<li>d’autres composants préfixés par une base de nom et</li>
+<li>des composants d’interface utilisateur tiers.</li>
+</ul>
+<p>Mais ils ne doivent <strong>jamais</strong> contenir un état global (par ex. depuis un store Vuex).</p>
+<p>Leurs noms incluent souvent le nom d’un des éléments qu’ils englobent (par ex. <code>BaseButton</code>, <code>BaseTable</code>), sauf quand aucun élément n’existe pour la tâche qu’ils accomplissent (par ex. <code>BaseIcon</code>). Si vous construisez des composants similaires pour un contexte plus spécifique, ils devront toujours utiliser ces composants (par ex. <code>BaseButton</code> pourrait être utilisé dans <code>ButtonSubmit</code>).</p>
+<p>Plusieurs avantages à ces conventions :</p>
+<ul>
+<li><p>Quand ils sont listés alphabétiquement dans des éditeurs, vos composants de base sont tous listés ensemble, les rendant plus simples à identifier.</p>
+</li>
+<li><p>Comme un nom de composant devrait toujours être un nom multiple, cette convention vous aide à ne pas choisir un préfixe arbitraire comme nom de composant encapsulant (par ex. <code>MyButton</code>, <code>VueButton</code>).</p>
+</li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-9"><a href="#A-eviter-9" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs undefined">components/
+|- MyButton.vue
+|- VueTable.vue
+|- Icon.vue</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-9"><a href="#Recommande-9" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs undefined">components/
+|- BaseButton.vue
+|- BaseTable.vue
+|- BaseIcon.vue</code></pre>
+<pre><code class="hljs undefined">components/
+|- AppButton.vue
+|- AppTable.vue
+|- AppIcon.vue</code></pre>
+<pre><code class="hljs undefined">components/
+|- VButton.vue
+|- VTable.vue
+|- VIcon.vue</code></pre>
+</div>
+<h3 id="Nom-des-composants-a-une-seule-instance-fortement-recommande"><a href="#Nom-des-composants-a-une-seule-instance-fortement-recommande" class="headerlink" title="Nom des composants à une seule instance fortement recommandé"></a>Nom des composants à une seule instance <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les composants qui devraient uniquement avoir une seule instance active devraient commencer par le préfixe <code>The</code> pour indiquer qu’il ne peut y en avoir qu’un.</strong></p>
+<p>Cela ne signifie pas que le composant doit être utilisé uniquement sur une seule page, mais qu’il ne peut y en avoir qu’<em>un par page</em>. Ces composants n’acceptent jamais de props car ils sont spécifiques à votre application et n’ont pas leur propre contexte dans l’application. Si vous ressentez le besoin d’ajouter des props c’est une bonne indication que c’est en fait un composant réutilisable qui n’est utilisé qu’une fois par page <em>pour le moment</em>.</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-10"><a href="#A-eviter-10" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs undefined">components/
+|- Heading.vue
+|- MySidebar.vue</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-10"><a href="#Recommande-10" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs undefined">components/
+|- TheHeading.vue
+|- TheSidebar.vue</code></pre>
+</div>
+<h3 id="Noms-de-composants-fortement-couples-fortement-recommande"><a href="#Noms-de-composants-fortement-couples-fortement-recommande" class="headerlink" title="Noms de composants fortement couplés fortement recommandé"></a>Noms de composants fortement couplés <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les composants qui sont fortement liés à leur parent devraient inclure le nom du parent en tant que préfixe.</strong></p>
+<p>Si un composant n’a de sens que dans le contexte d’un composant parent, cette relation devrait être évidente dans son nom. Puisque les éditeurs organisent les fichiers par ordre alphabétique, cela permet de garder ses fichiers proches les uns des autres.</p>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>Vous pourriez être tenté de résoudre ce problème en rangeant les composants dans des sous-dossiers nommés d’après leur parent. Par exemple :</p>
+<pre><code class="hljs undefined">components/
+|- TodoList/
+   |- Item/
+      |- index.vue
+      |- Button.vue
+   |- index.vue</code></pre>
+<p>ou :</p>
+<pre><code class="hljs undefined">components/
+|- TodoList/
+   |- Item/
+      |- Button.vue
+   |- Item.vue
+|- TodoList.vue</code></pre>
+<p>Cela n’est pas recommandé car :</p>
+<ul>
+<li>Plusieurs fichiers pourraient avoir des noms similaires, rendant la navigation entre fichiers au sein de l’éditeur de code plus difficile.</li>
+<li>Plusieurs sous dossiers imbriqués augmentent le temps de navigation pour trouver un composant dans la barre de navigation.</li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-11"><a href="#A-eviter-11" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs undefined">components/
+|- TodoList.vue
+|- TodoItem.vue
+|- TodoButton.vue</code></pre>
+<pre><code class="hljs undefined">components/
+|- SearchSidebar.vue
+|- NavigationForSearchSidebar.vue</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-11"><a href="#Recommande-11" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs undefined">components/
+|- TodoList.vue
+|- TodoListItem.vue
+|- TodoListItemButton.vue</code></pre>
+<pre><code class="hljs undefined">components/
+|- SearchSidebar.vue
+|- SearchSidebarNavigation.vue</code></pre>
+</div>
+<h3 id="Ordre-des-mots-dans-un-nom-de-composant-fortement-recommande"><a href="#Ordre-des-mots-dans-un-nom-de-composant-fortement-recommande" class="headerlink" title="Ordre des mots dans un nom de composant fortement recommandé"></a>Ordre des mots dans un nom de composant <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les noms de composant devraient commencer avec le mot le plus important en premier et se décliner avec des mots descriptifs.</strong></p>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>Vous pourriez vous demander :</p>
+<blockquote>
+<p>« Pourquoi ne pas utiliser l’ordre des mots dans un langage naturel ? »</p>
+</blockquote>
+<p>En anglais natif, les adjectifs et les autres descripteurs apparaissent généralement avant les noms à l’exception des mots de connexion. Par exemple :</p>
+<ul>
+<li>Coffee <em>with</em> milk</li>
+<li>Soup <em>of the</em> day</li>
+<li>Visitor <em>to the</em> museum</li>
+</ul>
+<p>Vous pouvez inclure ces connecteurs dans le nom de vos composants si vous le souhaitez, mais l’ordre reste important.</p>
+<p>Notez également que <strong>ce qui va être considéré comme le mot le plus important est relatif à votre application</strong>. Par exemple, imaginez une application avec un formulaire de recherche. Elle pourrait inclure les composants comme suit :</p>
+<pre><code class="hljs undefined">components/
+|- ClearSearchButton.vue
+|- ExcludeFromSearchInput.vue
+|- LaunchOnStartupCheckbox.vue
+|- RunSearchButton.vue
+|- SearchInput.vue
+|- TermsCheckbox.vue</code></pre>
+<p>Comme vous pouvez le remarquer, il est difficile de voir quels composants sont spécifiques à la recherche. Maintenant, renommons les composants en suivant notre règle :</p>
+<pre><code class="hljs undefined">components/
+|- SearchButtonClear.vue
+|- SearchButtonRun.vue
+|- SearchInputExcludeGlob.vue
+|- SearchInputQuery.vue
+|- SettingsCheckboxLaunchOnStartup.vue
+|- SettingsCheckboxTerms.vue</code></pre>
+<p>Puisque les éditeurs organisent généralement les fichiers par ordre alphabétique, toutes les relations importantes entre les composants sont maintenant évidentes.</p>
+<p>Vous pourriez être tenté de résoudre le problème différemment, en imbriquant tous les composants de recherche sous le dossier « search » et tous les composants de paramétrage sous le sous-dossier « settings ». Nous recommandons cette approche seulement pour les applications vraiment très grandes (par ex. avec plus de 100 composants) pour les raisons suivantes :</p>
+<ul>
+<li>Cela prend généralement plus de temps de naviguer à travers des sous-répertoires imbriqués que de défiler à travers un seul répertoire de composants.</li>
+<li>Les conflits de nom (par ex. de multiple composant <code>ButtonDelete.vue</code>) rendent la navigation plus difficile pour un composant spécifique dans un éditeur de texte.</li>
+<li>La refactorisation devient plus difficile car le remplacement par recherche n’est pas la seule action requise pour mettre à jour les références vers des composants qui auraient bougé.</li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-12"><a href="#A-eviter-12" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs undefined">components/
+|- ClearSearchButton.vue
+|- ExcludeFromSearchInput.vue
+|- LaunchOnStartupCheckbox.vue
+|- RunSearchButton.vue
+|- SearchInput.vue
+|- TermsCheckbox.vue</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-12"><a href="#Recommande-12" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs undefined">components/
+|- SearchButtonClear.vue
+|- SearchButtonRun.vue
+|- SearchInputQuery.vue
+|- SearchInputExcludeGlob.vue
+|- SettingsCheckboxTerms.vue
+|- SettingsCheckboxLaunchOnStartup.vue</code></pre>
+</div>
+<h3 id="Les-composants-autofermants-fortement-recommande"><a href="#Les-composants-autofermants-fortement-recommande" class="headerlink" title="Les composants autofermants fortement recommandé"></a>Les composants autofermants <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les composants sans contenu devraient être autofermants dans les <a href="../guide/single-file-components.html">composants monofichiers</a>, les templates de chaine de caractères, et le <a href="../guide/render-function.html#JSX">JSX</a> : mais jamais dans les templates du DOM.</strong></p>
+<p>Les composants qui sont autofermants n’indiquent pas seulement qu’ils n’ont pas de contenu, mais qu’ils sont <strong>faits</strong> pour ne pas en avoir. C’est la différence entre une page blanche dans un livre et une qui indiquerait « Cette page est intentionnellement vide ». Votre code est aussi plus clair sans balises fermantes inutiles.</p>
+<p>Malheureusement, le HTML ne permet pas aux éléments personnalisés d’être autofermant. Seuls les <a href="https://www.w3.org/TR/html/syntax.html#void-elements" target="_blank" rel="noopener">éléments vides officiels</a> peuvent l’être. C’est pourquoi il est possible d’utiliser cette stratégie seulement quand les templates Vue sont compilés avant qu’ils soient injectés dans le DOM. Ensuite du code HTML valide aux spécifications est fourni au DOM.</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-13"><a href="#A-eviter-13" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Dans les composants monofichiers, les templates avec chaine de caractères et en JSX --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">MyComponent</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Dans les templates du DOM --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>/&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-13"><a href="#Recommande-13" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Dans les composants monofichiers, les templates avec chaine de caractères et en JSX --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span>/&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Dans les templates du DOM --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span></code></pre>
+</div>
+<h3 id="Casse-des-noms-de-composant-dans-les-templates-fortement-recommande"><a href="#Casse-des-noms-de-composant-dans-les-templates-fortement-recommande" class="headerlink" title="Casse des noms de composant dans les templates fortement recommandé"></a>Casse des noms de composant dans les templates <sup data-p="b">fortement recommandé</sup></h3><p><strong>Dans la plupart des projets, les noms de composant devraient toujours être écrits en PascalCase dans les <a href="../guide/single-file-components.html">composants monofichiers</a> mais en kebab-case pour les templates dans le DOM.</strong></p>
+<p>La PascalCase a plusieurs avantages comparés à la kebab-case :</p>
+<ul>
+<li>Les éditeurs peuvent autocompléter un nom de composant dans les templates car la PascalCase est également utilisée en JavaScript.</li>
+<li><code>&lt;MyComponent&gt;</code> est visuellement plus distinct qu’un élément HTML d’un seul mot comme <code>&lt;my-component&gt;</code> car il y a deux caractères de différenciation (les deux capitales) plutôt que juste un (le trait d’union).</li>
+<li>Si vous utilisez des composants personnalisés qui ne sont pas des éléments Vue dans vos templates, comme les Web Composants, la PascalCase vous assure que les composants Vue restent bien différentiables.</li>
+</ul>
+<p>Malheureusement, du fait de l’insensibilité à la casse du HTML, les templates du DOM doivent rester en kebab-case.</p>
+<p>Notez également que si vous avez déjà largement utilisé la kebab-case de manière consistante avec vos conventions HTML à travers tous vos projets, cela peut être plus important que les avantages listés plus haut. Dans de tels cas, <strong>utiliser la kebab-case partout est également acceptable.</strong></p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-14"><a href="#A-eviter-14" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Dans les composants monofichiers, les templates avec chaine de caractères --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mycomponent</span>/&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Dans les composants monofichiers, les templates avec chaine de caractères --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">myComponent</span>/&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Dans les templates du DOM --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">MyComponent</span>&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-14"><a href="#Recommande-14" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Dans les composants monofichiers, les templates avec chaine de caractères --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span>/&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Dans les templates du DOM --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span></code></pre>
+<p>OU</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Partout --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span></code></pre>
+</div>
+<h3 id="Casse-des-noms-de-composant-en-JS-JSX-fortement-recommande"><a href="#Casse-des-noms-de-composant-en-JS-JSX-fortement-recommande" class="headerlink" title="Casse des noms de composant en JS / JSX fortement recommandé"></a>Casse des noms de composant en JS / JSX <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les noms de composant en JS / <a href="../guide/render-function.html#JSX">JSX</a> devraient toujours être en PascalCase, cependant ils peuvent être en kebab-case à l’intérieur des chaines de caractères pour de simples applications qui utilisent seulement des composants globaux avec <code>Vue.component</code>.</strong></p>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>En JavaScript, la PascalCase est la convention pour les classes et les prototypes, c.-à-d. tout ce qui peut avoir des instances distinctes. Les composants Vue ont également des instances, donc cela est logique d’utiliser également la PascalCase. De plus, utiliser la PascalCase dans le JSX (et les templates) permet une lecture de code plus simple pour la distinction avec des éléments HTML.</p>
+<p>Cependant, pour les applications qui n’utilisent <strong>que</strong> des composants globaux via <code>Vue.component</code>, nous recommandons la kebab-case à la place. Les raisons sont :</p>
+<ul>
+<li>Il est rare que les composants globaux soient référencés en JavaScript, donc suivre les conventions du JavaScript a moins de sens.</li>
+<li>Ces applications incluent beaucoup de templates depuis le DOM, où la <a href="#Casse-des-noms-de-composant-dans-les-templates-fortement-recommande">kebab-case <strong>doit</strong> être utilisée</a>.</li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-15"><a href="#A-eviter-15" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js">Vue.component(<span class="hljs-string">'myComponent'</span>, &#123;
+  <span class="hljs-comment">// ...</span>
+&#125;)</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> myComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyComponent.vue'</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'myComponent'</span>,
+  <span class="hljs-comment">// ...</span>
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'my-component'</span>,
+  <span class="hljs-comment">// ...</span>
+&#125;</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-15"><a href="#Recommande-15" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs js">Vue.component(<span class="hljs-string">'MyComponent'</span>, &#123;
+  <span class="hljs-comment">// ...</span>
+&#125;)</code></pre>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'my-component'</span>, &#123;
+  <span class="hljs-comment">// ...</span>
+&#125;)</code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyComponent.vue'</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'MyComponent'</span>,
+  <span class="hljs-comment">// ...</span>
+&#125;</code></pre>
+</div>
+<h3 id="Nom-de-composant-avec-mot-complet-fortement-recommande"><a href="#Nom-de-composant-avec-mot-complet-fortement-recommande" class="headerlink" title="Nom de composant avec mot complet fortement recommandé"></a>Nom de composant avec mot complet <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les noms de composant devraient préférer des mots complets à des abréviations.</strong></p>
+<p>L’autocomplétion dans les éditeurs rend le cout d’un long nom de composant insignifiant alors que la clarté qu’il amène est sans valeur. Les abréviations non communes, en particulier, sont à éviter.</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-16"><a href="#A-eviter-16" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs undefined">components/
+|- SdSettings.vue
+|- UProfOpts.vue</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-16"><a href="#Recommande-16" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs undefined">components/
+|- StudentDashboardSettings.vue
+|- UserProfileOptions.vue</code></pre>
+</div>
+<h3 id="Casse-des-noms-de-prop-fortement-recommande"><a href="#Casse-des-noms-de-prop-fortement-recommande" class="headerlink" title="Casse des noms de prop fortement recommandé"></a>Casse des noms de prop <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les noms de prop devraient toujours utiliser la camelCase lors de leur déclaration, mais la kebab-case dans les templates et les <a href="../guide/render-function.html#JSX">JSX</a>.</strong></p>
+<p>Nous suivons simplement les conventions de chaque langage. Dans le JavaScript, la camelCase est plus naturelle. Dans le HTML, c’est la kebab-case.</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-17"><a href="#A-eviter-17" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js">props: &#123;
+  <span class="hljs-string">'greeting-text'</span>: <span class="hljs-built_in">String</span>
+&#125;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">WelcomeMessage</span> <span class="hljs-attr">greetingText</span>=<span class="hljs-string">"hi"</span>/&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-17"><a href="#Recommande-17" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs js">props: &#123;
+  <span class="hljs-attr">greetingText</span>: <span class="hljs-built_in">String</span>
+&#125;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">WelcomeMessage</span> <span class="hljs-attr">greeting-text</span>=<span class="hljs-string">"hi"</span>/&gt;</span></code></pre>
+</div>
+<h3 id="Elements-avec-attributs-multiples-fortement-recommande"><a href="#Elements-avec-attributs-multiples-fortement-recommande" class="headerlink" title="Éléments avec attributs multiples fortement recommandé"></a>Éléments avec attributs multiples <sup data-p="b">fortement recommandé</sup></h3><p><strong>Des éléments avec de multiples attributs devraient occuper plusieurs lignes, avec un attribut par ligne.</strong></p>
+<p>En JavaScript, scinder les objets avec de multiples propriétés sur plusieurs lignes est largement considéré comme une bonne convention, car cela rend le code plus facile à lire. Nos templates et <a href="../guide/render-function.html#JSX">JSX</a> suivent les mêmes règles.</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-18"><a href="#A-eviter-18" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://vuejs.org/images/logo.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Vue Logo"</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> <span class="hljs-attr">foo</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">bar</span>=<span class="hljs-string">"b"</span> <span class="hljs-attr">baz</span>=<span class="hljs-string">"c"</span>/&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-18"><a href="#Recommande-18" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span>
+  <span class="hljs-attr">src</span>=<span class="hljs-string">"https://vuejs.org/images/logo.png"</span>
+  <span class="hljs-attr">alt</span>=<span class="hljs-string">"Vue Logo"</span>
+&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span>
+  <span class="hljs-attr">foo</span>=<span class="hljs-string">"a"</span>
+  <span class="hljs-attr">bar</span>=<span class="hljs-string">"b"</span>
+  <span class="hljs-attr">baz</span>=<span class="hljs-string">"c"</span>
+/&gt;</span></code></pre>
+</div>
+<h3 id="Expressions-simples-dans-les-templates-fortement-recommande"><a href="#Expressions-simples-dans-les-templates-fortement-recommande" class="headerlink" title="Expressions simples dans les templates fortement recommandé"></a>Expressions simples dans les templates <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les templates de composant devraient seulement inclure de simples expressions, avec les expressions les plus complexes refactorisées dans des propriétés calculées ou des méthodes.</strong></p>
+<p>Les expressions complexes dans vos templates les rendent moins déclaratifs. Nous devrions voir <em>ce qui</em> devrait apparaitre, et non <em>comment</em> cette valeur est calculée. Les propriétés calculées et les méthodes permettent également de rendre le code réutilisable.</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-19"><a href="#A-eviter-19" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html">&#123;&#123;
+  fullName.split(' ').map(function (word) &#123;
+    return word[0].toUpperCase() + word.slice(1)
+  &#125;).join(' ')
+&#125;&#125;</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-19"><a href="#Recommande-19" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In a template --&gt;</span>
+&#123;&#123; normalizedFullName &#125;&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// L'expression complexe a été bougée dans une propriété calculée</span>
+computed: &#123;
+  <span class="hljs-attr">normalizedFullName</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.fullName.split(<span class="hljs-string">' '</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">word</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> word[<span class="hljs-number">0</span>].toUpperCase() + word.slice(<span class="hljs-number">1</span>)
+    &#125;).join(<span class="hljs-string">' '</span>)
+  &#125;
+&#125;</code></pre>
+</div>
+<h3 id="Proprietes-calculees-simples-fortement-recommande"><a href="#Proprietes-calculees-simples-fortement-recommande" class="headerlink" title="Propriétés calculées simples fortement recommandé"></a>Propriétés calculées simples <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les propriétés calculées complexes devraient être scindées en plusieurs propriétés plus simples autant que possible.</strong></p>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>Les propriétés calculées simples et bien nommées sont :</p>
+<ul>
+<li><p><strong>Plus facile à tester</strong></p>
+<p>Quand chaque propriété calculée contient seulement une expression simple, avec peu de dépendances, il est plus facile d’écrire des tests pour confirmer qu’elles fonctionnent correctement.</p>
+</li>
+<li><p><strong>Plus facile à lire</strong></p>
+<p>Simplifier les propriétés calculées vous force à donner à chaque valeur un nom descriptif, même si elle ne sera pas réutilisée. Cela permet aux autres développeurs (et vous dans le futur) de plus facilement vous concentrer sur le code qui vous intéresse et de ne pas vous soucier du reste.</p>
+</li>
+<li><p><strong>Plus adaptable aux changements</strong></p>
+<p>N’importe quelle valeur qui peut être nommée pourra être utile pour la vue. Par exemple, nous pourrions décider d’afficher un message expliquant à l’utilisateur combien d’argent il a économisé. Nous pourrions décider de calculer les taxes de vente associées, mais peut-être de les afficher indépendamment au lieu qu’elles soient une partie du prix final.</p>
+<p>Des propriétés calculées courtes et spécifiques permettent plus de liberté sur la manière dont les informations seront utilisées ce qui nécessite moins de refactorisation en cas de changements.</p>
+</li>
+</ul>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-20"><a href="#A-eviter-20" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js">computed: &#123;
+  <span class="hljs-attr">price</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">var</span> basePrice = <span class="hljs-keyword">this</span>.manufactureCost / (<span class="hljs-number">1</span> - <span class="hljs-keyword">this</span>.profitMargin)
+    <span class="hljs-keyword">return</span> (
+      basePrice -
+      basePrice * (<span class="hljs-keyword">this</span>.discountPercent || <span class="hljs-number">0</span>)
+    )
+  &#125;
+&#125;</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-20"><a href="#Recommande-20" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs js">computed: &#123;
+  <span class="hljs-attr">basePrice</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.manufactureCost / (<span class="hljs-number">1</span> - <span class="hljs-keyword">this</span>.profitMargin)
+  &#125;,
+  <span class="hljs-attr">discount</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.basePrice * (<span class="hljs-keyword">this</span>.discountPercent || <span class="hljs-number">0</span>)
+  &#125;,
+  <span class="hljs-attr">finalPrice</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.basePrice - <span class="hljs-keyword">this</span>.discount
+  &#125;
+&#125;</code></pre>
+</div>
+<h3 id="Valeur-d’attribut-entre-guillemets-fortement-recommande"><a href="#Valeur-d’attribut-entre-guillemets-fortement-recommande" class="headerlink" title="Valeur d’attribut entre guillemets fortement recommandé"></a>Valeur d’attribut entre guillemets <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les attributs HTML non vides devraient toujours être entre guillemets (ou apostrophe, celui qui n’est pas utilisé dans le JS).</strong></p>
+<p>Alors que les valeurs d’attributs sans espaces ne sont pas requises en HTML, cela les mène à ne <em>jamais</em> mettre d’espace, laissant place à des valeurs moins lisibles.</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-21"><a href="#A-eviter-21" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">text</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">AppSidebar</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&#123;width:sidebarWidth+</span>'<span class="hljs-attr">px</span>'&#125;&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-21"><a href="#Recommande-21" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">AppSidebar</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">"&#123; width: sidebarWidth + 'px' &#125;"</span>&gt;</span></code></pre>
+</div>
+<h3 id="Abreviations-de-directive-fortement-recommande"><a href="#Abreviations-de-directive-fortement-recommande" class="headerlink" title="Abréviations de directive fortement recommandé"></a>Abréviations de directive <sup data-p="b">fortement recommandé</sup></h3><p><strong>Les abréviations de directive (<code>:</code> pour <code>v-bind:</code>, <code>@</code> pour <code>v-on:</code> et <code>#</code> pour <code>v-slot</code>) devraient toujours être utilisées ou jamais.</strong></p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-22"><a href="#A-eviter-22" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+  <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">"newTodoText"</span>
+  <span class="hljs-attr">:placeholder</span>=<span class="hljs-string">"newTodoInstructions"</span>
+&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+  <span class="hljs-attr">v-on:input</span>=<span class="hljs-string">"onInput"</span>
+  @<span class="hljs-attr">focus</span>=<span class="hljs-string">"onFocus"</span>
+&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Ici on place le titre de page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">footer</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ici les informations de contact<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-22"><a href="#Recommande-22" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+  <span class="hljs-attr">:value</span>=<span class="hljs-string">"newTodoText"</span>
+  <span class="hljs-attr">:placeholder</span>=<span class="hljs-string">"newTodoInstructions"</span>
+&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+  <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">"newTodoText"</span>
+  <span class="hljs-attr">v-bind:placeholder</span>=<span class="hljs-string">"newTodoInstructions"</span>
+&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+  @<span class="hljs-attr">input</span>=<span class="hljs-string">"onInput"</span>
+  @<span class="hljs-attr">focus</span>=<span class="hljs-string">"onFocus"</span>
+&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+  <span class="hljs-attr">v-on:input</span>=<span class="hljs-string">"onInput"</span>
+  <span class="hljs-attr">v-on:focus</span>=<span class="hljs-string">"onFocus"</span>
+&gt;</span></code></pre>
+<pre><code class="hljs html">&lt;template v-slot:header&gt;
+  &lt;h1&gt;Ici on place le titre de page&lt;/h1&gt; 
+&lt;/template&gt;
+
+&lt;template v-slot:footer&gt;
+  &lt;pIci les informations de contact&lt;/p&gt;
+&lt;/template&gt;</code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Ici on place le titre de page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">footer</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ici les informations de contact<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
+</div>
+<h2 id="Regles-de-priorite-C-recommande-minimiser-les-choix-arbitraires-et-la-surcharge-cognitive"><a href="#Regles-de-priorite-C-recommande-minimiser-les-choix-arbitraires-et-la-surcharge-cognitive" class="headerlink" title="Règles de priorité C : recommandé (minimiser les choix arbitraires et la surcharge cognitive)"></a>Règles de priorité C : recommandé (minimiser les choix arbitraires et la surcharge cognitive)</h2><h3 id="Ordre-des-options-de-composants-instances-recommande"><a href="#Ordre-des-options-de-composants-instances-recommande" class="headerlink" title="Ordre des options de composants / instances recommandé"></a>Ordre des options de composants / instances <sup data-p="c">recommandé</sup></h3><p><strong>Les options des instances / composants devraient être ordonnées avec consistance.</strong></p>
+<p>Voici l’ordre par défaut que nous recommandons pour les options de composant. Elles sont séparées en catégories ainsi vous saurez où ajouter vos nouvelles propriétés pour vos plugins.</p>
+<ol>
+<li><p><strong>Effets de bord</strong> (créer des effets en dehors du composant)</p>
+<ul>
+<li><code>el</code></li>
+</ul>
+</li>
+<li><p><strong>Informations globales</strong> (nécessite des connaissances au-delà du composant)</p>
+<ul>
+<li><code>name</code></li>
+<li><code>parent</code></li>
+</ul>
+</li>
+<li><p><strong>Type de composant</strong> (change le type du composant)</p>
+<ul>
+<li><code>functional</code></li>
+</ul>
+</li>
+<li><p><strong>Modificateurs de template</strong> (change la manière dont les templates sont compilés)</p>
+<ul>
+<li><code>delimiters</code></li>
+<li><code>comments</code></li>
+</ul>
+</li>
+<li><p><strong>Dépendances des templates</strong> (les ressources utilisées dans le template)</p>
+<ul>
+<li><code>components</code></li>
+<li><code>directives</code></li>
+<li><code>filters</code></li>
+</ul>
+</li>
+<li><p><strong>Composition</strong> (fusionner des propriétés dans les options)</p>
+<ul>
+<li><code>extends</code></li>
+<li><code>mixins</code></li>
+</ul>
+</li>
+<li><p><strong>Interface</strong> (interface du composant)</p>
+<ul>
+<li><code>inheritAttrs</code></li>
+<li><code>model</code></li>
+<li><code>props</code> / <code>propsData</code></li>
+</ul>
+</li>
+<li><p><strong>État local</strong> (propriétés réactives locales)</p>
+<ul>
+<li><code>data</code></li>
+<li><code>computed</code></li>
+</ul>
+</li>
+<li><p><strong>Évènements</strong> (fonctions de rappel déclenchées par des évènements réactifs)</p>
+<ul>
+<li><code>watch</code></li>
+<li>Évènements du cycle de vie (dans leur ordre d’appel)<ul>
+<li><code>beforeCreate</code></li>
+<li><code>created</code></li>
+<li><code>beforeMount</code></li>
+<li><code>mounted</code></li>
+<li><code>beforeUpdate</code></li>
+<li><code>updated</code></li>
+<li><code>activated</code></li>
+<li><code>deactivated</code></li>
+<li><code>beforeDestroy</code></li>
+<li><code>destroyed</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Propriétés non réactives</strong> (propriétés d’instance indépendantes du système de réactivité)</p>
+<ul>
+<li><code>methods</code></li>
+</ul>
+</li>
+<li><p><strong>Rendu</strong> (description déclarative de la sortie du composant)</p>
+<ul>
+<li><code>template</code> / <code>render</code></li>
+<li><code>renderError</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="Ordre-des-attributs-des-elements-recommande"><a href="#Ordre-des-attributs-des-elements-recommande" class="headerlink" title="Ordre des attributs des éléments recommandé"></a>Ordre des attributs des éléments <sup data-p="c">recommandé</sup></h3><p><strong>Les attributs d’éléments (incluant les composants) devraient être ordonnés avec consistance.</strong></p>
+<p>Voici l’ordre par défaut que nous recommandons pour les attributs d’éléments. Ils sont séparés en catégories, ainsi vous saurez où ajouter vos attributs et directives personnalisées.</p>
+<ol>
+<li><p><strong>Définition</strong> (fournit les options du composant)</p>
+<ul>
+<li><code>is</code></li>
+</ul>
+</li>
+<li><p><strong>Rendu de liste</strong> (crée des variations multiples du même élément)</p>
+<ul>
+<li><code>v-for</code></li>
+</ul>
+</li>
+<li><p><strong>Conditions</strong> (comment l’élément est rendu / affiché)</p>
+<ul>
+<li><code>v-if</code></li>
+<li><code>v-else-if</code></li>
+<li><code>v-else</code></li>
+<li><code>v-show</code></li>
+<li><code>v-cloak</code></li>
+</ul>
+</li>
+<li><p><strong>Modificateurs de rendu</strong> (change la manière de faire le rendu de l’élément)</p>
+<ul>
+<li><code>v-pre</code></li>
+<li><code>v-once</code></li>
+</ul>
+</li>
+<li><p><strong>Attention globale</strong> (nécessite des connaissances au-delà du composant)</p>
+<ul>
+<li><code>id</code></li>
+</ul>
+</li>
+<li><p><strong>Attributs uniques</strong> (attributs nécessitant une valeur unique)</p>
+<ul>
+<li><code>ref</code></li>
+<li><code>key</code></li>
+</ul>
+</li>
+<li><p><strong>Liaison bidirectionnelle</strong> (combiner les liaisons descendantes et les évènements montants)</p>
+<ul>
+<li><code>v-model</code></li>
+</ul>
+</li>
+<li><p><strong>Autres attributs</strong> (tous les attributs qui sont liés ou non liés)</p>
+</li>
+<li><p><strong>Évènements</strong> (gestionnaire d’évènement de composant)</p>
+<ul>
+<li><code>v-on</code></li>
+</ul>
+</li>
+<li><p><strong>Contenu</strong> (écrase le contenu d’un élément)</p>
+<ul>
+<li><code>v-html</code></li>
+<li><code>v-text</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="Ligne-vide-dans-les-options-d’instance-de-composant-recommande"><a href="#Ligne-vide-dans-les-options-d’instance-de-composant-recommande" class="headerlink" title="Ligne vide dans les options d’instance / de composant recommandé"></a>Ligne vide dans les options d’instance / de composant <sup data-p="c">recommandé</sup></h3><p><strong>Vous pourriez ajouter une ligne vide entre de multiples propriétés, en particulier si la longueur de votre option dépasse la taille de l’écran.</strong></p>
+<p>Quand les composants commencent à devenir difficile à lire, ajouter des espaces entre des propriétés sur plusieurs lignes peut les rendre de nouveau simple à lire. Dans divers éditeurs, comme Vim, formater les options ainsi peut rendre la navigation plus simple avec le clavier.</p>
+<div class="style-example example-good">
+<h4 id="Recommande-23"><a href="#Recommande-23" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs js">props: &#123;
+  <span class="hljs-attr">value</span>: &#123;
+    <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,
+    <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+  &#125;,
+
+  <span class="hljs-attr">focused</span>: &#123;
+    <span class="hljs-attr">type</span>: <span class="hljs-built_in">Boolean</span>,
+    <span class="hljs-attr">default</span>: <span class="hljs-literal">false</span>
+  &#125;,
+
+  <span class="hljs-attr">label</span>: <span class="hljs-built_in">String</span>,
+  <span class="hljs-attr">icon</span>: <span class="hljs-built_in">String</span>
+&#125;,
+
+<span class="hljs-attr">computed</span>: &#123;
+  <span class="hljs-attr">formattedValue</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+
+  <span class="hljs-attr">inputClasses</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// Sans espaces, c'est bien aussi, du moment que le composant</span>
+<span class="hljs-comment">// reste simple à lire et à parcourir.</span>
+props: &#123;
+  <span class="hljs-attr">value</span>: &#123;
+    <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,
+    <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+  &#125;,
+  <span class="hljs-attr">focused</span>: &#123;
+    <span class="hljs-attr">type</span>: <span class="hljs-built_in">Boolean</span>,
+    <span class="hljs-attr">default</span>: <span class="hljs-literal">false</span>
+  &#125;,
+  <span class="hljs-attr">label</span>: <span class="hljs-built_in">String</span>,
+  <span class="hljs-attr">icon</span>: <span class="hljs-built_in">String</span>
+&#125;,
+<span class="hljs-attr">computed</span>: &#123;
+  <span class="hljs-attr">formattedValue</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+  <span class="hljs-attr">inputClasses</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;
+&#125;</code></pre>
+</div>
+<h3 id="Ordre-des-balises-principales-des-composants-monofichiers-recommande"><a href="#Ordre-des-balises-principales-des-composants-monofichiers-recommande" class="headerlink" title="Ordre des balises principales des composants monofichiers recommandé"></a>Ordre des balises principales des composants monofichiers <sup data-p="c">recommandé</sup></h3><p><strong><a href="../guide/single-file-components.html">Les composants monofichiers</a> devraient toujours ordonner de manière consistante les balises <code>&lt;script&gt;</code>, <code>&lt;template&gt;</code>, et <code>&lt;style&gt;</code>, avec <code>&lt;style&gt;</code> en dernier, car au moins l’un des deux autres est toujours nécessaire.</strong></p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-23"><a href="#A-eviter-23" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-24"><a href="#Recommande-24" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- ComponentA.vue --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- ComponentB.vue --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* ... */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+</div>
+<h2 id="Regles-de-priorite-D-faire-attention-potentiellement-dangereux"><a href="#Regles-de-priorite-D-faire-attention-potentiellement-dangereux" class="headerlink" title="Règles de priorité D : faire attention (potentiellement dangereux)"></a>Règles de priorité D : faire attention (potentiellement dangereux)</h2><h3 id="v-if-v-else-if-v-else-sans-key-faire-attention"><a href="#v-if-v-else-if-v-else-sans-key-faire-attention" class="headerlink" title="v-if / v-else-if/ v-else sans key faire attention"></a><code>v-if</code> / <code>v-else-if</code>/ <code>v-else</code> sans <code>key</code> <sup data-p="d">faire attention</sup></h3><p><strong>Il est généralement préférable d’utiliser <code>key</code> avec <code>v-if</code> + <code>v-else</code>, si les éléments sont de même type (c.-à-d. avec deux éléments <code>&lt;div&gt;</code> par ex.).</strong></p>
+<p>Par défaut, Vue met à jour le DOM aussi efficacement que possible. Cela signifie que quand il commute entre deux éléments de même type, il va simplement modifier l’élément existant, plutôt que de l’enlever et d’en ajouter un nouveau à la place. Cela peut avoir des <a href="https://codesandbox.io/s/github/vuejs/v2.vuejs.org/tree/master/src/v2/examples/vue-20-priority-d-rules-unintended-consequences" target="_blank" rel="noopener">effets non souhaités</a> si ces éléments ne doivent pas être considérés comme les mêmes.</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-24"><a href="#A-eviter-24" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"error"</span>&gt;</span>
+  Error: &#123;&#123; error &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else</span>&gt;</span>
+  &#123;&#123; results &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-25"><a href="#Recommande-25" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">v-if</span>=<span class="hljs-string">"error"</span>
+  <span class="hljs-attr">key</span>=<span class="hljs-string">"search-status"</span>
+&gt;</span>
+  Error: &#123;&#123; error &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+  <span class="hljs-attr">v-else</span>
+  <span class="hljs-attr">key</span>=<span class="hljs-string">"search-results"</span>
+&gt;</span>
+  &#123;&#123; results &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</div>
+<h3 id="Selecteurs-par-nom-de-balise-avec-scoped-faire-attention"><a href="#Selecteurs-par-nom-de-balise-avec-scoped-faire-attention" class="headerlink" title="Sélecteurs par nom de balise avec scoped faire attention"></a>Sélecteurs par nom de balise avec <code>scoped</code> <sup data-p="d">faire attention</sup></h3><p><strong>Les sélecteurs par nom de balise devraient être évités avec <code>scoped</code>.</strong></p>
+<p>Préférez les sélecteurs de classes plutôt que les sélecteurs de nom dans des styles <code>scoped</code> car utiliser un nombre important de sélecteurs par nom de balise est lent.</p>
+
+<details>
+<summary>
+  <h4>Explication détaillée</h4>
+</summary>
+
+<p>Dans les styles avec portée, Vue ajoute un attribut unique à l’élément du composant, comme <code>data-v-f3f3eg9</code>. Les sélecteurs sont ainsi modifiés afin qu’ils ne concordent qu’avec les éléments dont l’attribut est sélectionné (par ex. <code>button[data-v-f3f3eg9]</code>).</p>
+<p>Le problème est qu’utiliser un grand nombre de <a href="(http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&amp;sel=a%5Bhref%5D&amp;body=background%3A+%23CFD&amp;ne=1000">sélecteur par nom</a> (par ex. <code>button[data-v-f3f3eg9]</code>) va être considérablement plus lent que <a href="http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&amp;sel=.class%5Bhref%5D&amp;body=background%3A+%23CFD&amp;ne=1000" target="_blank" rel="noopener">par attribut classe</a> (par ex. <code>.btn-close[data-v-f3f3eg9]</code>) et donc les sélecteurs par classes devraient être préférés autant que possible.</p>
+</details>
+<div class="style-example example-bad">
+<h4 id="A-eviter-25"><a href="#A-eviter-25" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<span class="hljs-selector-tag">button</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
+&#125;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-26"><a href="#Recommande-26" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-close"</span>&gt;</span>X<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.btn-close</span> &#123;
+  <span class="hljs-attribute">background-color</span>: red;
+&#125;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+</div>
+<h3 id="Communication-parent-enfant-implicite-faire-attention"><a href="#Communication-parent-enfant-implicite-faire-attention" class="headerlink" title="Communication parent-enfant implicite faire attention"></a>Communication parent-enfant implicite <sup data-p="d">faire attention</sup></h3><p><strong>Les évènements et props devraient être préférés pour la communication entre composants parent-enfant, au lieu de l’utilisation de <code>this.$parent</code> ou la mutation des props.</strong></p>
+<p>Une application Vue idéale est une application où les props descendent et où les évènements remontent. Rester dans cette convention rend vos composants plus simples à comprendre. Cependant, il y a quelques cas où la mutation des props ou <code>this.$parent</code> peut simplifier l’utilisation de deux composants qui sont fortement couplés.</p>
+<p>Le problème est qu’il y a beaucoup de <em>cas simples</em> où leur utilisation offre de la facilité. Attention : ne vous laissez pas séduire par une apparente simplicité (être capable de comprendre le flux de votre état) pour une vision court-termiste (écrire moins de code).</p>
+<div class="style-example example-bad">
+<h4 id="A-eviter-26"><a href="#A-eviter-26" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js">Vue.component(<span class="hljs-string">'TodoItem'</span>, &#123;
+  <span class="hljs-attr">props</span>: &#123;
+    <span class="hljs-attr">todo</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Object</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    &#125;
+  &#125;,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;input v-model="todo.text"&gt;'</span>
+&#125;)</code></pre>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'TodoItem'</span>, &#123;
+  <span class="hljs-attr">props</span>: &#123;
+    <span class="hljs-attr">todo</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Object</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    &#125;
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    removeTodo () &#123;
+      <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">this</span>
+      vm.$parent.todos = vm.$parent.todos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todo</span>) </span>&#123;
+        <span class="hljs-keyword">return</span> todo.id !== vm.todo.id
+      &#125;)
+    &#125;
+  &#125;,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">`
+    &lt;span&gt;
+      &#123;&#123; todo.text &#125;&#125;
+      &lt;button @click="removeTodo"&gt;
+        X
+      &lt;/button&gt;
+    &lt;/span&gt;
+  `</span>
+&#125;)</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-27"><a href="#Recommande-27" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs js">Vue.component(<span class="hljs-string">'TodoItem'</span>, &#123;
+  <span class="hljs-attr">props</span>: &#123;
+    <span class="hljs-attr">todo</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Object</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    &#125;
+  &#125;,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">`
+    &lt;input
+      :value="todo.text"
+      @input="$emit('input', $event.target.value)"
+    &gt;
+  `</span>
+&#125;)</code></pre>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'TodoItem'</span>, &#123;
+  <span class="hljs-attr">props</span>: &#123;
+    <span class="hljs-attr">todo</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Object</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    &#125;
+  &#125;,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">`
+    &lt;span&gt;
+      &#123;&#123; todo.text &#125;&#125;
+      &lt;button @click="$emit('delete')"&gt;
+        X
+      &lt;/button&gt;
+    &lt;/span&gt;
+  `</span>
+&#125;)</code></pre>
+</div>
+<h3 id="Non-gestion-de-l’etat-par-flux-faire-attention"><a href="#Non-gestion-de-l’etat-par-flux-faire-attention" class="headerlink" title="Non-gestion de l’état par flux faire attention"></a>Non-gestion de l’état par flux <sup data-p="d">faire attention</sup></h3><p><strong><a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a> devrait être préféré pour une gestion globale d’état à la place de <code>this.$root</code> ou d’un canal global d’évènement.</strong></p>
+<p>Gérer l’état avec <code>this.$root</code> et/ou utiliser un <a href="https://fr.vuejs.org/v2/guide/migration.html#dispatch-et-broadcast-remplaces">canal d’évènement global</a> peut faciliter la tâche dans des cas vraiment simples. Cependant cela n’est pas approprié pour la plupart des applications.</p>
+<p>Vuex est <a href="https://fr.vuejs.org/v2/guide/state-management.html#Implementation-officielle-semblable-a-Flux">l’implémentation flux officielle</a> pour Vue. Elle n’offre pas seulement une place centrale pour gérer l’état mais également des outils pour organiser, tracer et déboguer les changements d’états. Il s’intègre bien dans l’écosystème de Vue (incluant un support complet par <a href="https://fr.vuejs.org/v2/guide/installation.html#Vue-Devtools">Vue DevTools</a> également).</p>
+
+<div class="style-example example-bad">
+<h4 id="A-eviter-27"><a href="#A-eviter-27" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js"><span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">todos</span>: []
+  &#125;,
+  <span class="hljs-attr">created</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.$on(<span class="hljs-string">'remove-todo'</span>, <span class="hljs-keyword">this</span>.removeTodo)
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">removeTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todo</span>) </span>&#123;
+      <span class="hljs-keyword">var</span> todoIdToRemove = todo.id
+      <span class="hljs-keyword">this</span>.todos = <span class="hljs-keyword">this</span>.todos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todo</span>) </span>&#123;
+        <span class="hljs-keyword">return</span> todo.id !== todoIdToRemove
+      &#125;)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+</div>
+<div class="style-example example-good">
+<h4 id="Recommande-28"><a href="#Recommande-28" class="headerlink" title="Recommandé"></a>Recommandé</h4><pre><code class="hljs js"><span class="hljs-comment">// store/modules/todos.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">state</span>: &#123;
+    <span class="hljs-attr">list</span>: []
+  &#125;,
+  <span class="hljs-attr">mutations</span>: &#123;
+    REMOVE_TODO (state, todoId) &#123;
+      state.list = state.list.filter(<span class="hljs-function"><span class="hljs-params">todo</span> =&gt;</span> todo.id !== todoId)
+    &#125;
+  &#125;,
+  <span class="hljs-attr">actions</span>: &#123;
+    removeTodo (&#123; commit, state &#125;, todo) &#123;
+      commit(<span class="hljs-string">'REMOVE_TODO'</span>, todo.id)
+    &#125;
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- TodoItem.vue --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+    &#123;&#123; todo.text &#125;&#125;
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"removeTodo(todo)"</span>&gt;</span>
+      X
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">import</span> &#123; mapActions &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'vuex'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-attr">props</span>: &#123;
+    <span class="hljs-attr">todo</span>: &#123;
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Object</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    &#125;
+  &#125;,
+  <span class="hljs-attr">methods</span>: mapActions([<span class="hljs-string">'removeTodo'</span>])
+&#125;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+</div>
+
+<script>
+(function () {
+  var enforcementTypes = {
+    none: '<span title="Il n\'y a malheureusement aucun moyen de forcer ces règles.">auto discipline</span>',
+    runtime: 'runtime error',
+    linter: '<a href="https://github.com/vuejs/eslint-plugin-vue#eslint-plugin-vue" target="_blank" rel="noopener noreferrer">plugin:vue/recommended</a>'
+  }
+  Vue.component('sg-enforcement', {
+    template: '\
+      <span>\
+        <strong>Forçage</strong>:\
+        <span class="style-rule-tag" v-html="humanType"/>\
+      </span>\
+    ',
+    props: {
+      type: {
+        type: String,
+        required: true,
+        validate: function (value) {
+          Object.keys(enforcementTypes).indexOf(value) !== -1
+        }
+      }
+    },
+    computed: {
+      humanType: function () {
+        return enforcementTypes[this.type]
+      }
+    }
+  })
+
+  // new Vue({
+  //  el: '#main'
+  // })
+})()
+</script>
+
+
+  
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    Une erreur dans cette page ou une envie de contribuer à la traduction ?
+    <a href="https://github.com/vuejs-fr/vuejs.org/blob/master/src/v2/style-guide/index.md" rel="noopener" target="_blank">
+      Éditez cette page sur GitHub !
+    </a>
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+        appId: 'ML0LEBN7FQ',
+        apiKey: 'f49cbd92a74532cc55cfbffa5e5a7d01',
+        indexName: 'vuejs',
+        inputSelector: selector,
+        algoliaOptions: { facetFilters: ["version:" + version] },
+        autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+
+    // unregister service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+          registration.unregister()
+        }
+      })
+    }
+    </script>
+    <script src="/js/v3-notice.js"></script>
+  </body>
+</html>
