@@ -1,15 +1,25 @@
 site_description: Vue.js - Le Framework JavaScript Évolutif
 google_analytics: UA-46852172-1
 root_domain: vuejs.org
-vue_version: 2.6.11
-platinum_sponsors_china:
-  - url: 'http://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci='
-    img: dcloud.gif
+vue_version: 2.6.14
 special_sponsors:
-  - url: 'https://autocode.com/'
-    img: autocode.svg
-    name: Autocode
-    description: 'Webhooks, scripts et API instantanés'
+  - url: 'https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci='
+    img: hbuilder.png
+    name: HBuilder
+    description: Un IDE pour Vue
+platinum_sponsors_china:
+  - url: 'https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci='
+    img: hbuilder.png
+    name: HBuilder
+    description: Un IDE pour Vue
+  - name: authing
+    url: >-
+      https://www.authing.cn/welcome?utm_source=Vuejs&utm_medium=CPT&utm_campaign=EN&utm_term=page-EN
+    img: authing.svg
+  - name: qingfuwu
+    url: >-
+      https://qingfuwu.cn?utm_campaign=TR_eSJH7nqW&utm_content=&utm_medium=Web&utm_source=CH_53OxwryD&utm_term=
+    img: qingfuwu-v2.svg
 platinum_sponsors:
   - url: >-
       https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1
@@ -18,9 +28,6 @@ platinum_sponsors:
   - url: 'https://vehikl.com/'
     img: vehikl.png
     name: Vehikl
-  - url: 'https://retool.com/?utm_source=sponsor&utm_campaign=vue'
-    img: retool.png
-    name: Retool
   - url: 'https://passionatepeople.io/'
     img: passionate_people.png
     name: Passionate People
@@ -34,6 +41,9 @@ platinum_sponsors:
   - url: 'https://nuxtjs.org/'
     img: nuxt.png
     name: Nuxt
+  - url: 'https://www.refurbed.org/?utm_source=vuejs'
+    img: refurbed.png
+    name: Refurbed
 gold_sponsors:
   - url: 'https://www.vuemastery.com/'
     img: vuemastery.png
@@ -95,9 +105,9 @@ gold_sponsors:
   - url: 'https://flatlogic.com/templates'
     img: flatlogic_templates.svg
     name: Flatlogic Templates
-  - url: 'http://moovweb.com/'
-    img: moovweb.png
-    name: Moovweb
+  - url: 'https://www.layer0.co'
+    img: layer0.png
+    name: Layer0
   - url: 'https://vpn-review.com/netflix-vpn'
     img: vpn_review.png
     name: VPN Review
@@ -131,6 +141,42 @@ gold_sponsors:
   - url: 'https://exmax.it/'
     img: exmax.png
     name: Exmax
+  - url: 'https://plaid.co.jp/'
+    img: plaid__inc_.svg
+    name: 'PLAID, Inc.'
+  - url: 'https://troypoint.com'
+    img: troypoint.png
+    name: TROYPOINT
+  - url: >-
+      https://webreinvent.com?utm_source=vuejs.org&utm_medium=logo&utm_campaign=patreon-sponsors
+    img: webreinvent_technologies_pvt_ltd.svg
+    name: WebReinvent Technologies Pvt Ltd
+  - url: 'https://www.dronahq.com/?ref=github_Vuejs'
+    img: dronahq.png
+    name: DronaHQ
+  - url: 'https://www.emqx.com'
+    img: emq.png
+    name: EMQ
+  - url: >-
+      https://www.tatvasoft.com/software-development-technology/vue-js-development-services
+    img: tatvasoft.png
+    name: TatvaSoft
+  - url: 'https://www.aceonlinecasino.co.uk'
+    img: onyx_gaming_limited.svg
+    name: Onyx Gaming Limited
+  - url: 'http://www.lendio.com'
+    img: lendio.png
+    name: Lendio
+  - url: >-
+      https://flowdash.com/?utm_source=vue&utm_medium=sponsor&utm_campaign=open-source
+    img: flowdash.png
+    name: Flowdash
+  - url: 'https://www.fenetre.nl/'
+    img: fen_tre_online_solutions.svg
+    name: Fenêtre Online Solutions
+  - url: 'https://finclip.com/?from=vue'
+    img: finclip.png
+    name: FinClip
 silver_sponsors:
   - url: 'https://roadster.com'
     img: roadster.png
@@ -150,6 +196,15 @@ silver_sponsors:
   - url: 'https://betting.bet'
     img: betting_bet.png
     name: betting.bet
+  - url: 'https://www.takt.io'
+    img: takt.png
+    name: Takt
+  - url: 'https://technology.doximity.com/'
+    img: doximity.png
+    name: Doximity
+  - url: 'https://www.empiricus.com.br/'
+    img: empiricus.png
+    name: Empiricus
 bronze_sponsors:
   - url: 'https://www.accelebrate.com/'
     img: accelebrate.png
@@ -166,3 +221,35 @@ bronze_sponsors:
   - url: 'https://memberful.com/'
     img: memberful.png
     name: Memberful
+redirects:
+  '/v2/api/index.html': '/api/'
+  '/v2/guide/index.html': '/guide/introduction.html'
+  '/v2/guide/installation.html': '/guide/quick-start.html'
+  '/v2/guide/instance.html': '/guide/essentials/application.html' # has page redirects
+  '/v2/guide/syntax.html': '/guide/essentials/template-syntax.html'
+  '/v2/guide/computed.html': '/guide/essentials/computed.html' # has page redirects
+  '/v2/guide/class-and-style.html': '/guide/essentials/class-and-style.html'
+  '/v2/guide/conditional.html': '/guide/essentials/conditional.html'
+  '/v2/guide/list.html': '/guide/essentials/list.html'
+  '/v2/guide/events.html': '/guide/essentials/event-handling.html'
+  '/v2/guide/forms.html': '/guide/essentials/forms.html'
+  '/v2/guide/components.html': '/guide/essentials/component-basics.html'
+  '/v2/guide/components-registration.html': '/guide/components/registration.html'
+  '/v2/guide/components-props.html': '/guide/components/props.html' # has page redirects
+  '/v2/guide/components-custom-events.html': '/guide/components/events.html'
+  '/v2/guide/components-slots.html': '/guide/components/slots.html'
+  '/v2/guide/components-dynamic-async.html': '/guide/built-ins/keep-alive.html' # has page redirects
+  '/v2/guide/transitions.html': '/guide/built-ins/transition.html' # has page redirects
+  '/v2/guide/transitioning-state.html': '/guide/extras/animation.html'
+  '/v2/guide/custom-directive.html': '/guide/reusability/custom-directives.html'
+  '/v2/guide/render-function.html': '/guide/extras/render-function.html'
+  '/v2/guide/plugins.html': '/guide/reusability/plugins.html'
+  '/v2/guide/single-file-components.html': '/guide/scaling-up/sfc.html'
+  '/v2/guide/testing.html': '/guide/scaling-up/testing.html'
+  '/v2/guide/typescript.html': '/guide/typescript/overview.html'
+  '/v2/guide/deployment.html': '/guide/best-practices/production-deployment.html'
+  '/v2/guide/routing.html': '/guide/scaling-up/routing.html'
+  '/v2/guide/state-management.html': '/guide/scaling-up/state-management.html'
+  '/v2/guide/ssr.html': '/guide/scaling-up/ssr.html'
+  '/v2/guide/security.html': '/guide/best-practices/security.html'
+  '/v2/guide/reactivity.html': '/guide/extras/reactivity-in-depth.html'

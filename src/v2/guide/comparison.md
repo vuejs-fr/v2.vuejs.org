@@ -8,7 +8,7 @@ C'est définitivement la page du guide la plus difficile à écrire, mais nous a
 
 Nous voudrions également essayer d'être objectif. En tant que mainteneurs, nous aimons énormément Vue. Il y a certains problèmes que nous pensons pouvoir être résolus avec Vue. Nous travaillons dessus car nous y croyons. Cependant nous voulons être juste et précis. Les autres bibliothèques offrent des avantages significatifs, comme React et son vaste écosystème de rendu alternatif ou pour Knockout le support des navigateurs jusqu'à IE6 ; nous allons essayer de prendre en compte cela correctement.
 
-Nous apprécierions également **votre** aide pour garder ce document à jour car le monde de JavaScript bouge rapidement ! Si vous remarquez une imprécision ou quelque chose qui ne semble pas tout à fait être juste, faites-le nous savoir en [ouvrant un ticket](https://github.com/vuejs/vuejs.org/issues/new?title=Inaccuracy+in+comparisons+guide).
+Nous apprécierions également **votre** aide pour garder ce document à jour car le monde de JavaScript bouge rapidement ! Si vous remarquez une imprécision ou quelque chose qui ne semble pas tout à fait être juste, faites-le nous savoir en [ouvrant un ticket](https://github.com/vuejs/v2.vuejs.org/issues/new?title=Inaccuracy+in+comparisons+guide).
 
 ## React
 

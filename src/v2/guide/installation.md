@@ -2,8 +2,8 @@
 title: Installation
 type: guide
 order: 1
-vue_version: 2.5.16
-gz_size: "30.90"
+vue_version: 2.6.14
+gz_size: "33.46"
 ---
 
 ### Compatibilité
@@ -41,20 +41,20 @@ Il suffit de télécharger et de l'inclure avec une balise script. `Vue` sera d�
 Pour du prototypage ou de l'apprentissage, vous pouvez utiliser la dernière version avec :
 
 ``` html
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 ```
 
 Pour la production, nous vous recommandons de vous figer à une version et un build défini pour éviter les changements non compatibles des nouvelles versions :
 
 ``` html
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 ```
 
 Si vous utilisez des Modules ES natifs, il y a également un build compatible avec les Modules ES :
 
 ``` html
 <script type="module">
-  import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.esm.browser.js'
+  import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.esm.browser.js'
 </script>
 ```
 
@@ -83,7 +83,7 @@ Vue.js offre une [CLI officielle](https://github.com/vuejs/vue-cli) (« interfac
 
 ## Explication des différents builds
 
-Dans le [dossier `dist/` du package npm](https://cdn.jsdelivr.net/npm/vue@2/dist/) vous trouverez plusieurs builds différents de Vue.js. Voici un aperçu des différences entre chacun d'eux :
+Dans le [dossier `dist/` du package npm](https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/) vous trouverez plusieurs builds différents de Vue.js. Voici un aperçu des différences entre chacun d'eux :
 
 | | UMD | CommonJS | ES Module (pour empaqueteurs) | ES Module (pour navigateurs) |
 | --- | --- | --- | --- | --- |
@@ -100,7 +100,7 @@ Dans le [dossier `dist/` du package npm](https://cdn.jsdelivr.net/npm/vue@2/dist
 
 - **Runtime**: le code qui est responsable de la création des instances de Vue, de faire le rendu et les modifications du DOM virtuel. C'est à dire tout, sauf ce que fait la partie Compiler.
 
-- **[UMD](https://github.com/umdjs/umd)** : les builds UMD peuvent être utilisés directement dans un navigateur avec la balise `<script>`. Le fichier par défaut du CDN jsDelivr à l'adresse [https://cdn.jsdelivr.net/npm/vue@2](https://cdn.jsdelivr.net/npm/vue@2) est le build UMD Runtime + Compiler (`vue.js`).
+- **[UMD](https://github.com/umdjs/umd)** : les builds UMD peuvent être utilisés directement dans un navigateur avec la balise `<script>`. Le fichier par défaut du CDN jsDelivr à l'adresse [https://cdn.jsdelivr.net/npm/vue@2.6.14](https://cdn.jsdelivr.net/npm/vue@2.6.14) est le build UMD Runtime + Compiler (`vue.js`).
 
 - **[CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1)**: Les builds CommonJS sont prévus pour une utilisation avec les vieux outils de paquetage (« bundle ») comme [browserify](http://browserify.org/) ou [webpack 1](https://webpack.github.io). Le fichier par défaut pour ces outils (`pkg.main`) est le build CommonJS Runtime (`vue.runtime.common.js`).
 

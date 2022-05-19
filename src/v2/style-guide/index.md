@@ -771,22 +771,6 @@ Plusieurs avantages à ces conventions :
 
 - Comme un nom de composant devrait toujours être un nom multiple, cette convention vous aide à ne pas choisir un préfixe arbitraire comme nom de composant encapsulant (par ex. `MyButton`, `VueButton`).
 
-- Et parce que ces composants sont très fréquemment utilisés, vous pourriez vouloir simplement tous les importer pour y avoir accès partout. Un préfixe rend cela possible avec webpack :
-
-  ``` js
-  var requireComponent = require.context("./src", true, /Base[A-Z]\w+\.(vue|js)$/)
-  requireComponent.keys().forEach(function (fileName) {
-    var baseComponentConfig = requireComponent(fileName)
-    baseComponentConfig = baseComponentConfig.default || baseComponentConfig
-    var baseComponentName = baseComponentConfig.name || (
-      fileName
-        .replace(/^.+\//, '')
-        .replace(/\.\w+$/, '')
-    )
-    Vue.component(baseComponentName, baseComponentConfig)
-  })
-  ```
-
 {% raw %}</details>{% endraw %}
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
@@ -1755,7 +1739,7 @@ computed: {
 
 **Il est généralement préférable d'utiliser `key` avec `v-if` + `v-else`, si les éléments sont de même type (c.-à-d. avec deux éléments `<div>` par ex.).**
 
-Par défaut, Vue met à jour le DOM aussi efficacement que possible. Cela signifie que quand il commute entre deux éléments de même type, il va simplement modifier l'élément existant, plutôt que de l'enlever et d'en ajouter un nouveau à la place. Cela peut avoir des [effets non souhaités](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-priority-d-rules-unintended-consequences) si ces éléments ne doivent pas être considérés comme les mêmes.
+Par défaut, Vue met à jour le DOM aussi efficacement que possible. Cela signifie que quand il commute entre deux éléments de même type, il va simplement modifier l'élément existant, plutôt que de l'enlever et d'en ajouter un nouveau à la place. Cela peut avoir des [effets non souhaités](https://codesandbox.io/s/github/vuejs/v2.vuejs.org/tree/master/src/v2/examples/vue-20-priority-d-rules-unintended-consequences) si ces éléments ne doivent pas être considérés comme les mêmes.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### À éviter

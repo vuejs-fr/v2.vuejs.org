@@ -53,7 +53,7 @@ Vue s'est déjà répandu à travers le monde avec l'équipe principale présent
 
 Nous espérons qu'en ce moment, vous êtes en train de lire cette phrase dans votre langue préférée. Si ce n'est pas le cas, que diriez-vous de nous aider à changer cela en répliquant le [dépôt international](https://github.com/vuejs/vuejs.org/) ?
 
-Et si maintenir la traduction que vous êtes en train de lire vous intéresse (ou toutes les autres traductions officielles d'ailleurs), n'hésitez pas à répliquer le [dépôt français](https://github.com/vuejs-fr/vuejs.org/) et à proposer vos traductions ou corrections en propositions de fusion (« pull request »).
+Et si maintenir la traduction que vous êtes en train de lire vous intéresse (ou toutes les autres traductions officielles d'ailleurs), n'hésitez pas à répliquer le [dépôt français](https://github.com/vuejs/v2.vuejs.org/) et à proposer vos traductions ou corrections en propositions de fusion (« pull request »).
 
 ### Devenir un leader de communauté
 

@@ -4,6 +4,12 @@ type: guide
 order: 105
 ---
 
+<script>
+const __pageRedirects = {
+  '#Async-Components': '/guide/components/async.html'
+}
+</script>
+
 > Cette page suppose que vous avez déjà lu les principes de base des [composants](components.html). Lisez-les en premier si les composants sont quelque chose de nouveau pour vous.
 
 ## `keep-alive` avec les composants dynamiques
@@ -194,7 +200,7 @@ new Vue({
 </script>
 {% endraw %}
 
-Désormais, l'onglet _Posts_ conserve son état (le post sélectionné) même lorsqu'il n'est pas dessiné. Consultez [ce fiddle](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-keep-alive-with-dynamic-components) pour le code complet.
+Désormais, l'onglet _Posts_ conserve son état (le post sélectionné) même lorsqu'il n'est pas dessiné. Consultez [ce fiddle](https://codesandbox.io/s/github/vuejs/v2.vuejs.org/tree/master/src/v2/examples/vue-20-keep-alive-with-dynamic-components) pour le code complet.
 
 <p class="tip">Notez que `<keep-alive>` requiert que tous les sous-composants aient un nom, soit via l'option `name` des composants, soit via une inscription locale/globale de ces composants.</p>
 
@@ -249,7 +255,11 @@ new Vue({
 })
 ```
 
+<<<<<<< HEAD
 <p class="tip">Si vous êtes un utilisateur de <strong>Browserify</strong> et souhaitez utiliser les composants asynchrones, son créateur a malheureusement [été très clair](https://github.com/substack/node-browserify/issues/58#issuecomment-21978224) sur le fait que le chargement asynchrone n'est pas quelque-chose que Browserify supportera un jour. Officiellement du moins. La communauté Browserify a trouvé [quelques solutions de contournement](https://github.com/vuejs/vuejs.org/issues/620), qui peuvent s'avérer utiles pour les applications complexes existantes. Pour tous les autres scénarios, nous recommandons d'utiliser webpack pour un support natif et de première classe de l'asynchrone.</p>
+=======
+<p class="tip">If you're a <strong>Browserify</strong> user that would like to use async components, its creator has unfortunately [made it clear](https://github.com/substack/node-browserify/issues/58#issuecomment-21978224) that async loading "is not something that Browserify will ever support." Officially, at least. The Browserify community has found [some workarounds](https://github.com/vuejs/v2.vuejs.org/issues/620), which may be helpful for existing and complex applications. For all other scenarios, we recommend using Webpack for built-in, first-class async support.</p>
+>>>>>>> upstream/master
 
 ### Gérer l'état de chargement
 

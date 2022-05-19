@@ -6,7 +6,7 @@ order: 502
 
 ## Implémentation officielle semblable à Flux
 
-Les grosses applications peuvent souvent augmenter en complexité du fait des multiples parties d'état disséminées à travers divers composants et les interactions entre eux. Pour résoudre ce problème, Vue offre [vuex](https://github.com/vuejs/vuex) : notre propre bibliothèque de gestion d'état inspiré par Elm. Il est même intégré à [vue-devtools](https://github.com/vuejs/vue-devtools), permettant [le voyage dans le temps](https://raw.githubusercontent.com/vuejs/vue-devtools/master/media/demo.gif) sans aucune configuration préalable.
+Les grosses applications peuvent souvent augmenter en complexité du fait des multiples parties d'état disséminées à travers divers composants et les interactions entre eux. Pour résoudre ce problème, Vue offre [vuex](https://github.com/vuejs/vuex) : notre propre bibliothèque de gestion d'état inspiré par Elm. Il est même intégré à [vue-devtools](https://github.com/vuejs/vue-devtools), permettant [le voyage dans le temps](https://raw.githubusercontent.com/vuejs/v2.vuejs.org/master/src/images/devtools-timetravel.gif) sans aucune configuration préalable.
 
 <div class="vue-mastery"><a href="https://www.vuemastery.com/courses/mastering-vuex/intro-to-vuex/" target="_blank" rel="sponsored noopener" title="Vuex Tutorial">Regardez une vidéo de cours gratuite sur Vue Mastery (EN)</a></div>
 

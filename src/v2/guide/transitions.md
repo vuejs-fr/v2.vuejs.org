@@ -4,6 +4,12 @@ type: guide
 order: 201
 ---
 
+<script>
+const __pageRedirects = {
+  '#List-Transitions': '/guide/built-ins/transition-group.html'
+}
+</script>
+
 ## Vue d'ensemble
 
 Vue fournit plusieurs façons d'appliquer des effets de transition lorsque des éléments sont insérés, mis à jour ou supprimés du DOM. Cela inclut des outils pour :
@@ -1245,7 +1251,7 @@ new Vue({
 
 <p class="tip">Un point important est a noter : ces transitions FLIP ne fonctionnent pas si des éléments sont configurés avec `display: inline`. Comme alternative, vous pouvez utiliser `display: inline-block` où placer des éléments dans un contexte flexible.</p>
 
-Ces animations FLIP ne se limitent pas à un seul axe. Les éléments dans une grille multidimensionnelle peuvent être transitionnés [aussi facilement](https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-list-move-transitions) :
+Ces animations FLIP ne se limitent pas à un seul axe. Les éléments dans une grille multidimensionnelle peuvent être transitionnés [aussi facilement](https://codesandbox.io/s/github/vuejs/v2.vuejs.org/tree/master/src/v2/examples/vue-20-list-move-transitions) :
 
 {% raw %}
 <div id="sudoku-demo" class="demo">

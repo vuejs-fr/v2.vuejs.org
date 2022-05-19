@@ -4,6 +4,12 @@ type: guide
 order: 102
 ---
 
+<script>
+const __pageRedirects = {
+  '#Non-Prop-Attributes': '/guide/components/attrs.html'
+}
+</script>
+
 > Cette page suppose que vous avez déjà lu les principes de base des [composants](components.html). Lisez-les en premier si les composants sont quelque chose de nouveau pour vous.
 
 <div class="vueschool"><a href="https://vueschool.io/lessons/reusable-components-with-props?friend=vuejs" target="_blank" rel="sponsored noopener" title="Cours Vue.js gratuit sur les props">Regarder le cours gratuit sur Vue School (EN)</a></div>
@@ -219,7 +225,7 @@ Vue.component('my-component', {
     propF: {
       validator: function (value) {
         // La valeur passée doit être l'une de ces chaines de caractères
-        return ['success', 'warning', 'danger'].indexOf(value) !== -1
+        return ['success', 'warning', 'danger'].includes(value)
       }
     }
   }

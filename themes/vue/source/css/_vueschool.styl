@@ -52,9 +52,14 @@ body.has-vs-banner
   font-family "Roboto", sans-serif
   z-index: 8
   box-sizing: border-box
-  color: #FFF
-  background: #202A5A
+  color: #fff
+  background-size: cover
+  background-color: #1E204D
+  background-repeat: no-repeat
+  background-position: top right
+  background-image: url(../images/banners/vs-fw-bg-small.svg)
   display: flex
+  justify-content: center
   align-items: center
   position: fixed
   left: 0
@@ -62,10 +67,12 @@ body.has-vs-banner
   padding: 0 10px
   min-height: $vs-banner-height-mobile
   top: 0
+  background-position: bottom right
   @media (min-width: 680px)
-    justify-content: center
     min-height: $vs-banner-height-desktop
+    background-image: url(../images/banners/vs-fw-bg.svg)
   @media (min-width: 900px)
+    background-position: top right
     position: static
 
   &.vs-hidden
@@ -74,17 +81,17 @@ body.has-vs-banner
   &:hover
     .vs-core
       .vs-button
-        background: #f22606
+        .vs-button-inside
+          background: linear-gradient(257deg, #e19b09 99%, #ffca24 6%)
 
   .vs-iso
-      display: none
       position: absolute
       left: 20px
       height: 26px
       img
         height: 26px
       @media (min-width: 680px)
-        display: inline-block
+        left: 40px
         height: 40px
         img
           height: 40px
@@ -102,44 +109,47 @@ body.has-vs-banner
     display: flex
     align-items: center
 
-    .vs-backpack
-      margin-right: 14px
-      img
-        height: 50px
-        @media (min-width: 680px)
-          height: 74px
-
     .vs-slogan
-      color: #FFF
-      font-weight: bold
-      font-size: 14px
-      width: 150px
       text-align: center
-      margin-left: 40px
-      @media (min-width: 400px)
-        margin-left: 60px
-      @media (min-width: 680px)
-        margin-left: 0
-        width: auto
-        text-align: left
-        font-size: 18px
-      > .vs-slogan-light
-        color: #ff5338
-        text-align: left
-        @media (min-width: 900px)
-          text-align: center
-          display: inline
+
+      .vs-slogan-up
+        color: #FFF
+        font-size: 14px
+        font-weight: bold
+        width: 170px
+        @media (min-width: 680px)
+          font-size: 18px
+          width: 220px
+        @media (min-width: 1024px)
+          width: auto
+          font-size: 24px
+        strong
+          color: #fdc722
+
+      .vs-slogan-down
+        color: #cdc5dc
+        font-size: 12px
+        @media (min-width: 680px)
+          font-size: 16px
 
     .vs-button
       margin-left: 43px
-      color: #FFF
-      padding: 13px 24px
+      color: #fff
+      padding: 2px
       border-radius: 40px
       display: none
-      background: #ff5338
-      font-weight: bold
+      background: linear-gradient(0deg, #ffdf4c, #e29d0a)
       @media (min-width: 680px)
         display: inline-block
+      .vs-button-inside
+        color: #000
+        border-radius: 40px
+        background: linear-gradient(90deg, #FFC828, #E19C0E)
+        padding: 8px 24px
+        font-size: 22px
+        white-space: nowrap
+        border-radius: 30px
+        font-weight: bold
 
   .vs-close
       right: 10px
