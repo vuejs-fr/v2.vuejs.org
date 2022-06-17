@@ -71,7 +71,7 @@ Pour un formulaire avec trois champs, considérons que deux sont obligatoires. R
 </form>
 ```
 
-Analysons cela à partir en partant du haut. La balise `<form>` a un id que nous utiliserons pour le composant Vue. Il y a un gestionnaire d'évènement à la soumission du formulaire que vous verrez dans un moment, et l'attribut `action` correspond a une URL temporaire qui devrait pointer vers quelque chose de réel sur un serveur (sur lequel vous avez une validation côté serveur bien entendu).
+Analysons cela à partir en partant du haut. La balise `<form>` a un id que nous utiliserons pour le composant Vue. Il y a un gestionnaire d'évènement à la soumission du formulaire que vous verrez dans un moment, et l'attribut `action` correspond à une URL temporaire qui devrait pointer vers quelque chose de réel sur un serveur (sur lequel vous avez une validation côté serveur bien entendu).
 
 En dessous il y a un paragraphe qui s'affiche ou non en fonction de la présence d'erreurs. C'est une simple liste d'erreurs au-dessus du formulaire. Notez aussi que l'on déclenche la validation à la soumission du formulaire plutôt qu'a la modification de chaque champ.
 
