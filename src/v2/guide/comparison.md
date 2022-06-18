@@ -26,7 +26,7 @@ Plusieurs des sections plus bas peuvent être incorrectes du fait de la récente
 
 ### Performance à l'exécution
 
-Vue comme React offrent des performances similairement rapide, tellement rapide que ce n'est pas un facteur de décision entre les deux. Pour le détail exacte des chiffres, vous pouvez regarder ce [benchmark tier](http://www.stefankrause.net/js-frameworks-benchmark8/table.html) se focalisant sur les performances brutes de rendu et de mise à jour avec de simples arbres de composant.
+Vue comme React offrent des performances similairement rapide, tellement rapide que ce n'est pas un facteur de décision entre les deux. Pour le détail exact des chiffres, vous pouvez regarder ce [benchmark tier](http://www.stefankrause.net/js-frameworks-benchmark8/table.html) se focalisant sur les performances brutes de rendu et de mise à jour avec de simples arbres de composant.
 
 #### Efforts d'optimisation
 
