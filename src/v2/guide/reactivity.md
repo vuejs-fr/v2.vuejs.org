@@ -87,7 +87,7 @@ Vue.set(vm.items, indexOfItem, newValue)
 vm.items.splice(indexOfItem, 1, newValue)
 ```
 
-You can also use the [`vm.$set`](/v2/api/#vm-set) instance method, which is an alias for the global `Vue.set`:
+Vous pouvez également utiliser le [`vm.$set`](/v2/api/#vm-set) d'instance, qui est un alias de la méthode `Vue.set`:
 
 ``` js
 vm.$set(vm.items, indexOfItem, newValue)
