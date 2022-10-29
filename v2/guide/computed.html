@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/computed.html">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/computed.html">
+    <link rel="alternate" hreflang="zh" href="https://v2.cn.vuejs.org/v2/guide/computed.html">
     <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/computed.html">
     <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/computed.html">
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/computed.html">
@@ -90,32 +90,25 @@
   <body class="docs" data-v3-url="/guide/essentials/computed.html">
 
     
-      <!-- <a id="vs" class="vs-hidden" href="https://vueschool.io/sales/price-increase-22?friend=vuejs" target="_blank" rel="noreferrer">
-  <div class="vs-iso">
-    <img src="/images/banners/vs-iso.svg">
-  </div>
-  <div class="vs-logo">
-    <img src="/images/banners/vs-logo.svg">
-  </div>
-  <div class="vs-core">
-    <div class="vs-slogan">
-      <div class="vs-slogan-up">
-        Get up to <strong>40% off</strong> your Vue School Subscription
+      <a id="vs-top" class="vs-hidden" href="#" target="_blank">
+  <div class="vs-background-wrapper">
+    <div class="vs-logo"></div>
+    <div class="vs-core">
+      <div class="vs-slogan-wrapper">
+        <div id="vs-slogan" class="vs-slogan"></div>
+        <div id="vs-subline" class="vs-subline"></div>
       </div>
-      <div class="vs-slogan-down">
-        Time Limited Offer
+      <div class="vs-button-wrapper">
+        <div id="vs-button" class="vs-button"></div>
       </div>
     </div>
-    <div class="vs-button">
-      <div class="vs-button-inside">
-        GET OFFER
-      </div>
+    <div
+      id="vs-close"
+      class="vs-close">
+      <img src="https://vueschool.io/images/close.svg" alt="Close">
     </div>
   </div>
-  <div id="vs-close" class="vs-close">
-    <img src="/images/banners/close.svg" alt="Close">
-  </div>
-</a> -->
+</a>
 
     
 
@@ -196,7 +189,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+      <li><a href="https://v2.ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
@@ -239,7 +232,7 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/guide/computed.html" class="nav-link">中文</a></li>
+    <li><a href="https://v2.cn.vuejs.org/v2/guide/computed.html" class="nav-link">中文</a></li>
     <li><a href="https://jp.vuejs.org/v2/guide/computed.html" class="nav-link">日本語</a></li>
     <li><a href="https://ru.vuejs.org/v2/guide/computed.html" class="nav-link">Русский</a></li>
     <li><a href="https://kr.vuejs.org/v2/guide/computed.html" class="nav-link">한국어</a></li>
@@ -266,12 +259,14 @@
   <div class="sidebar-inner">
     
     <div class="list">
-      <div id="sidebar-sponsors-special">
+      
+
+<div id="sidebar-sponsors-special">
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/hbuilder.png" alt="HBuilder">
+    <a href="https://appwrite.io" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/appwrite.svg" alt="appwrite">
     </a>
     </div>
   </div>
@@ -280,26 +275,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>
@@ -978,26 +988,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>

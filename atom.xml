@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://fr.vuejs.org/"/>
+  <link href="https://v2.vuejs.org/"/>
   <updated>2017-12-21T14:59:10.000Z</updated>
-  <id>http://fr.vuejs.org/</id>
+  <id>https://v2.vuejs.org/</id>
   
   <author>
     <name>Evan You</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Announcing Vue.js 2.0</title>
-    <link href="http://fr.vuejs.org/2016/04/27/announcing-2.0/"/>
-    <id>http://fr.vuejs.org/2016/04/27/announcing-2.0/</id>
+    <link href="https://v2.vuejs.org/2016/04/27/announcing-2.0/"/>
+    <id>https://v2.vuejs.org/2016/04/27/announcing-2.0/</id>
     <published>2016-04-27T11:33:00.000Z</published>
     <updated>2017-12-21T14:59:10.000Z</updated>
     
@@ -36,8 +36,8 @@
   
   <entry>
     <title>March 2016 Update</title>
-    <link href="http://fr.vuejs.org/2016/03/14/march-update/"/>
-    <id>http://fr.vuejs.org/2016/03/14/march-update/</id>
+    <link href="https://v2.vuejs.org/2016/03/14/march-update/"/>
+    <id>https://v2.vuejs.org/2016/03/14/march-update/</id>
     <published>2016-03-14T17:45:00.000Z</published>
     <updated>2017-12-21T14:59:10.000Z</updated>
     
@@ -54,12 +54,12 @@
   
   <entry>
     <title>Common Beginner Gotchas</title>
-    <link href="http://fr.vuejs.org/2016/02/06/common-gotchas/"/>
-    <id>http://fr.vuejs.org/2016/02/06/common-gotchas/</id>
+    <link href="https://v2.vuejs.org/2016/02/06/common-gotchas/"/>
+    <id>https://v2.vuejs.org/2016/02/06/common-gotchas/</id>
     <published>2016-02-06T09:00:00.000Z</published>
-    <updated>2017-12-21T14:59:10.000Z</updated>
+    <updated>2022-10-29T07:58:11.860Z</updated>
     
-    <content type="html"><![CDATA[<p>There are few types of questions that we frequently see from users who are new to Vue.js. Although they are all mentioned somewhere in the guide, they are easy to miss and can be hard to find when you do get bitten by the gotchas. Therefore we are aggregating them in this post and hopefully it can save you some time!</p><a id="more"></a><h3 id="Why-isn’t-the-DOM-updating"><a href="#Why-isn’t-the-DOM-updating" class="headerlink" title="Why isn’t the DOM updating?"></a>Why isn’t the DOM updating?</h3><p>Most of the time, when you change a Vue instance’s data, the view updates. But there are two edge cases:</p><ol><li><p>When you are <strong>adding a new property</strong> that wasn’t present when the data was observed. Due to the limitation of ES5 and to ensure consistent behavior across browsers, Vue.js cannot detect property addition/deletions. The best practice is to always declare properties that need to be reactive upfront. In cases where you absolutely need to add or delete properties at runtime, use the global <a href="/api/#Vue-set"><code>Vue.set</code></a> or <a href="/api/#Vue-delete"><code>Vue.delete</code></a> methods.</p></li><li><p>When you modify an Array by directly setting an index (e.g. <code>arr[0] = val</code>) or modifying its <code>length</code> property. Similarly, Vue.js cannot pickup these changes. Always modify arrays by using an Array instance method, or replacing it entirely. Vue provides a convenience method <code>arr.$set(index, value)</code> which is syntax sugar for <code>arr.splice(index, 1, value)</code>.</p></li></ol><p>Further reading: <a href="/guide/reactivity.html">Reactivity in Depth</a> and <a href="http://vuejs.org/guide/list.html#Array-Change-Detection" target="_blank" rel="noopener">Array Change Detection</a>.</p><h3 id="When-is-the-DOM-updated"><a href="#When-is-the-DOM-updated" class="headerlink" title="When is the DOM updated?"></a>When is the DOM updated?</h3><p>Vue.js uses an asynchronous queue to batch DOM updates. This means when you modify some data, the DOM updates do not happen instantly: they are applied asynchronously when the queue is flushed. So how do you know when the DOM has been updated? Use <code>Vue.nextTick</code> right after you modify the data. The callback function you pass to it will be called once the queue has been flushed.</p><p>Further reading: <a href="/guide/reactivity.html#Async-Update-Queue">Async Update Queue</a>.</p><h3 id="Why-does-data-need-to-be-a-function"><a href="#Why-does-data-need-to-be-a-function" class="headerlink" title="Why does data need to be a function?"></a>Why does <code>data</code> need to be a function?</h3><p>In the basic examples, we declare the <code>data</code> directly as a plain object. This is because we are creating only a single instance with <code>new Vue()</code>. However, when defining a <strong>component</strong>, <code>data</code> must be declared as a function that returns the initial data object. Why? Because there will be many instances created using the same definition. If we still use a plain object for <code>data</code>, that same object will be <strong>shared by reference</strong> across all instance created! By providing a <code>data</code> function, every time a new instance is created we can call it to return a fresh copy of the initial data.</p><p>Further reading: <a href="/guide/components.html#Component-Option-Caveats">Component Option Caveats</a>.</p><h3 id="HTML-case-insensitivity"><a href="#HTML-case-insensitivity" class="headerlink" title="HTML case insensitivity"></a>HTML case insensitivity</h3><p>All Vue.js templates are valid, parsable HTML markup, and Vue.js relies on spec-compliant parsers to process its templates. However, as specified in the standard, HTML is case-insensitive when matching tag and attribute names. This means camelCase attributes like <code>:myProp=&quot;123&quot;</code> will be matched as <code>:myprop=&quot;123&quot;</code>. As a rule of thumb, you should use camelCase in JavaScript and kebab-case in templates. For example a prop defined in JavaScript as <code>myProp</code> should be bound in templates as <code>:my-prop</code>.</p><p>Further reading: <a href="http://vuejs.org/guide/components.html#camelCase-vs-kebab-case" target="_blank" rel="noopener">camelCase vs. kebab-case</a>.</p><p>We are also discussing the possibility of eliminating this inconsistency by resolving props and components in a case-insensitive manner. Join the conversation <a href="https://github.com/vuejs/vue/issues/2308" target="_blank" rel="noopener">here</a>.</p>]]></content>
+    <content type="html"><![CDATA[<p>There are few types of questions that we frequently see from users who are new to Vue.js. Although they are all mentioned somewhere in the guide, they are easy to miss and can be hard to find when you do get bitten by the gotchas. Therefore we are aggregating them in this post and hopefully it can save you some time!</p><a id="more"></a><h3 id="Why-isn’t-the-DOM-updating"><a href="#Why-isn’t-the-DOM-updating" class="headerlink" title="Why isn’t the DOM updating?"></a>Why isn’t the DOM updating?</h3><p>Most of the time, when you change a Vue instance’s data, the view updates. But there are two edge cases:</p><ol><li><p>When you are <strong>adding a new property</strong> that wasn’t present when the data was observed. Due to the limitation of ES5 and to ensure consistent behavior across browsers, Vue.js cannot detect property addition/deletions. The best practice is to always declare properties that need to be reactive upfront. In cases where you absolutely need to add or delete properties at runtime, use the global <a href="/api/#Vue-set"><code>Vue.set</code></a> or <a href="/api/#Vue-delete"><code>Vue.delete</code></a> methods.</p></li><li><p>When you modify an Array by directly setting an index (e.g. <code>arr[0] = val</code>) or modifying its <code>length</code> property. Similarly, Vue.js cannot pickup these changes. Always modify arrays by using an Array instance method, or replacing it entirely. Vue provides a convenience method <code>arr.$set(index, value)</code> which is syntax sugar for <code>arr.splice(index, 1, value)</code>.</p></li></ol><p>Further reading: <a href="/guide/reactivity.html">Reactivity in Depth</a> and <a href="/guide/list.html#Array-Change-Detection">Array Change Detection</a>.</p><h3 id="When-is-the-DOM-updated"><a href="#When-is-the-DOM-updated" class="headerlink" title="When is the DOM updated?"></a>When is the DOM updated?</h3><p>Vue.js uses an asynchronous queue to batch DOM updates. This means when you modify some data, the DOM updates do not happen instantly: they are applied asynchronously when the queue is flushed. So how do you know when the DOM has been updated? Use <code>Vue.nextTick</code> right after you modify the data. The callback function you pass to it will be called once the queue has been flushed.</p><p>Further reading: <a href="/guide/reactivity.html#Async-Update-Queue">Async Update Queue</a>.</p><h3 id="Why-does-data-need-to-be-a-function"><a href="#Why-does-data-need-to-be-a-function" class="headerlink" title="Why does data need to be a function?"></a>Why does <code>data</code> need to be a function?</h3><p>In the basic examples, we declare the <code>data</code> directly as a plain object. This is because we are creating only a single instance with <code>new Vue()</code>. However, when defining a <strong>component</strong>, <code>data</code> must be declared as a function that returns the initial data object. Why? Because there will be many instances created using the same definition. If we still use a plain object for <code>data</code>, that same object will be <strong>shared by reference</strong> across all instance created! By providing a <code>data</code> function, every time a new instance is created we can call it to return a fresh copy of the initial data.</p><p>Further reading: <a href="/guide/components.html#Component-Option-Caveats">Component Option Caveats</a>.</p><h3 id="HTML-case-insensitivity"><a href="#HTML-case-insensitivity" class="headerlink" title="HTML case insensitivity"></a>HTML case insensitivity</h3><p>All Vue.js templates are valid, parsable HTML markup, and Vue.js relies on spec-compliant parsers to process its templates. However, as specified in the standard, HTML is case-insensitive when matching tag and attribute names. This means camelCase attributes like <code>:myProp=&quot;123&quot;</code> will be matched as <code>:myprop=&quot;123&quot;</code>. As a rule of thumb, you should use camelCase in JavaScript and kebab-case in templates. For example a prop defined in JavaScript as <code>myProp</code> should be bound in templates as <code>:my-prop</code>.</p><p>Further reading: <a href="/guide/components.html#camelCase-vs-kebab-case">camelCase vs. kebab-case</a>.</p><p>We are also discussing the possibility of eliminating this inconsistency by resolving props and components in a case-insensitive manner. Join the conversation <a href="https://github.com/vuejs/vue/issues/2308" target="_blank" rel="noopener">here</a>.</p>]]></content>
     
     <summary type="html">
     
@@ -72,8 +72,8 @@
   
   <entry>
     <title>Announcing vue-cli</title>
-    <link href="http://fr.vuejs.org/2015/12/28/vue-cli/"/>
-    <id>http://fr.vuejs.org/2015/12/28/vue-cli/</id>
+    <link href="https://v2.vuejs.org/2015/12/28/vue-cli/"/>
+    <id>https://v2.vuejs.org/2015/12/28/vue-cli/</id>
     <published>2015-12-27T23:00:00.000Z</published>
     <updated>2017-12-21T14:59:10.000Z</updated>
     
@@ -90,12 +90,12 @@
   
   <entry>
     <title>Why Vue.js doesn&#39;t support templateURL</title>
-    <link href="http://fr.vuejs.org/2015/10/28/why-no-template-url/"/>
-    <id>http://fr.vuejs.org/2015/10/28/why-no-template-url/</id>
+    <link href="https://v2.vuejs.org/2015/10/28/why-no-template-url/"/>
+    <id>https://v2.vuejs.org/2015/10/28/why-no-template-url/</id>
     <published>2015-10-28T09:56:00.000Z</published>
-    <updated>2017-12-21T14:59:10.000Z</updated>
+    <updated>2022-10-29T07:58:11.861Z</updated>
     
-    <content type="html"><![CDATA[<p>A very common question from new Vue users, especially those who used Angular before, is “can I have <code>templateURL</code>?”. I have answered this so many times and I figure it’s better to write something about it.</p><a id="more"></a><p>In Angular, <code>templateURL</code> or <code>ng-include</code> allows the user to dynamically load a remote template file at runtime. This seems pretty convenient as a built-in feature, but let’s rethink what problem it solves.</p><p>First, it allows us to write our template in a separate HTML file. This gives us proper syntax highlighting in editors, which is probably why many prefer to do so. But is splitting your JavaScript code and the template really the best way? For a Vue.js component, its template and its JavaScript is tightly coupled by nature - it’s in fact much simpler if things are just in the same file. The context switching of jumping back and forth between two files actually makes the development experience much worse. Conceptually, components are the basic building block of a Vue.js app, not templates. Every Vue.js template is coupled to an accompanying JavaScript context - there’s no point in splitting them further apart.</p><p>Second, because <code>templateURL</code> loads the template via Ajax at runtime, you don’t need a build step in order to split up your files. This is convenient during development, but comes at a serious cost when you want to deploy it to production. Before HTTP/2 is universally supported, the number of HTTP requests is still probably the most critical factor in your app’s initial load performance. Now imagine you use <code>templateURL</code> for every component in your app - the browser needs to perform dozens of HTTP requests before even being able to display anything! In case you don’t know, most browsers limit the number of parallel requests it can perform to a single server. When you exceed that limit, your app’s initial rendering will suffer for every extra round trip the browser has to wait for. Sure, there are build tools that can help you pre-register all those templates in <code>$templateCache</code> - but that shows us a build step is, in fact, inevitable for any serious frontend development.</p><p>So, without <code>templateURL</code>, how do we deal with the development experience problem? Writing templates as inline JavaScript strings is terrible, faking templates with <code>&lt;script type=&quot;x/template&quot;&gt;</code> also feels like a hack. Well, maybe it’s time to up the game a bit and use a proper module bundler like <a href="http://webpack.github.io/" target="_blank" rel="noopener">Webpack</a> or <a href="http://browserify.org/" target="_blank" rel="noopener">Browserify</a>. It might seem daunting if you’ve never dealt with them before, but trust me it’s worth it to take the leap. Proper modularization is a necessity if you want to build anything large and maintainable. More importantly, you get to write your <a href="http://vuejs.org/guide/single-file-components.html" target="_blank" rel="noopener">Vue components in a single file</a>, with proper syntax highlighting and the extra benefits of custom pre-processors, hot-reloading, ES2015 by default, autoprefixing and scoped CSS, which makes the development experience 10 times better.</p><p>Finally, Vue does allow you to <a href="http://vuejs.org/guide/components.html#Async-Components" target="_blank" rel="noopener">lazy load your components</a>, and with Webpack it is trivially easy. Although this is only a concern when your initial bundle is so large that you are better off splitting it apart.</p><p>Think in components, not templates.</p>]]></content>
+    <content type="html"><![CDATA[<p>A very common question from new Vue users, especially those who used Angular before, is “can I have <code>templateURL</code>?”. I have answered this so many times and I figure it’s better to write something about it.</p><a id="more"></a><p>In Angular, <code>templateURL</code> or <code>ng-include</code> allows the user to dynamically load a remote template file at runtime. This seems pretty convenient as a built-in feature, but let’s rethink what problem it solves.</p><p>First, it allows us to write our template in a separate HTML file. This gives us proper syntax highlighting in editors, which is probably why many prefer to do so. But is splitting your JavaScript code and the template really the best way? For a Vue.js component, its template and its JavaScript is tightly coupled by nature - it’s in fact much simpler if things are just in the same file. The context switching of jumping back and forth between two files actually makes the development experience much worse. Conceptually, components are the basic building block of a Vue.js app, not templates. Every Vue.js template is coupled to an accompanying JavaScript context - there’s no point in splitting them further apart.</p><p>Second, because <code>templateURL</code> loads the template via Ajax at runtime, you don’t need a build step in order to split up your files. This is convenient during development, but comes at a serious cost when you want to deploy it to production. Before HTTP/2 is universally supported, the number of HTTP requests is still probably the most critical factor in your app’s initial load performance. Now imagine you use <code>templateURL</code> for every component in your app - the browser needs to perform dozens of HTTP requests before even being able to display anything! In case you don’t know, most browsers limit the number of parallel requests it can perform to a single server. When you exceed that limit, your app’s initial rendering will suffer for every extra round trip the browser has to wait for. Sure, there are build tools that can help you pre-register all those templates in <code>$templateCache</code> - but that shows us a build step is, in fact, inevitable for any serious frontend development.</p><p>So, without <code>templateURL</code>, how do we deal with the development experience problem? Writing templates as inline JavaScript strings is terrible, faking templates with <code>&lt;script type=&quot;x/template&quot;&gt;</code> also feels like a hack. Well, maybe it’s time to up the game a bit and use a proper module bundler like <a href="http://webpack.github.io/" target="_blank" rel="noopener">Webpack</a> or <a href="http://browserify.org/" target="_blank" rel="noopener">Browserify</a>. It might seem daunting if you’ve never dealt with them before, but trust me it’s worth it to take the leap. Proper modularization is a necessity if you want to build anything large and maintainable. More importantly, you get to write your <a href="/guide/single-file-components.html">Vue components in a single file</a>, with proper syntax highlighting and the extra benefits of custom pre-processors, hot-reloading, ES2015 by default, autoprefixing and scoped CSS, which makes the development experience 10 times better.</p><p>Finally, Vue does allow you to <a href="/guide/components.html#Async-Components">lazy load your components</a>, and with Webpack it is trivially easy. Although this is only a concern when your initial bundle is so large that you are better off splitting it apart.</p><p>Think in components, not templates.</p>]]></content>
     
     <summary type="html">
     
@@ -108,8 +108,8 @@
   
   <entry>
     <title>Vue.js 1.0.0 Released</title>
-    <link href="http://fr.vuejs.org/2015/10/26/1.0.0-release/"/>
-    <id>http://fr.vuejs.org/2015/10/26/1.0.0-release/</id>
+    <link href="https://v2.vuejs.org/2015/10/26/1.0.0-release/"/>
+    <id>https://v2.vuejs.org/2015/10/26/1.0.0-release/</id>
     <published>2015-10-26T09:00:00.000Z</published>
     <updated>2017-12-21T14:59:10.000Z</updated>
     
@@ -129,8 +129,8 @@
   
   <entry>
     <title>Vue.js 0.12 released!</title>
-    <link href="http://fr.vuejs.org/2015/06/11/012-release/"/>
-    <id>http://fr.vuejs.org/2015/06/11/012-release/</id>
+    <link href="https://v2.vuejs.org/2015/06/11/012-release/"/>
+    <id>https://v2.vuejs.org/2015/06/11/012-release/</id>
     <published>2015-06-11T15:37:30.000Z</published>
     <updated>2018-03-23T12:32:48.000Z</updated>
     
@@ -148,8 +148,8 @@
   
   <entry>
     <title>0.11 Component Tips</title>
-    <link href="http://fr.vuejs.org/2014/12/08/011-component/"/>
-    <id>http://fr.vuejs.org/2014/12/08/011-component/</id>
+    <link href="https://v2.vuejs.org/2014/12/08/011-component/"/>
+    <id>https://v2.vuejs.org/2014/12/08/011-component/</id>
     <published>2014-12-08T14:02:14.000Z</published>
     <updated>2017-12-21T14:59:10.000Z</updated>
     
@@ -168,8 +168,8 @@
   
   <entry>
     <title>Vue.js 0.11 released!</title>
-    <link href="http://fr.vuejs.org/2014/11/09/vue-011-release/"/>
-    <id>http://fr.vuejs.org/2014/11/09/vue-011-release/</id>
+    <link href="https://v2.vuejs.org/2014/11/09/vue-011-release/"/>
+    <id>https://v2.vuejs.org/2014/11/09/vue-011-release/</id>
     <published>2014-11-09T08:23:40.000Z</published>
     <updated>2017-12-21T14:59:10.000Z</updated>
     
@@ -186,8 +186,8 @@
   
   <entry>
     <title>Vue.js 0.10.6, and what&#39;s next</title>
-    <link href="http://fr.vuejs.org/2014/07/29/vue-next/"/>
-    <id>http://fr.vuejs.org/2014/07/29/vue-next/</id>
+    <link href="https://v2.vuejs.org/2014/07/29/vue-next/"/>
+    <id>https://v2.vuejs.org/2014/07/29/vue-next/</id>
     <published>2014-07-28T22:04:55.000Z</published>
     <updated>2017-12-21T14:59:10.000Z</updated>
     
@@ -204,8 +204,8 @@
   
   <entry>
     <title>Vue.js 0.10 is here!</title>
-    <link href="http://fr.vuejs.org/2014/03/22/vuejs-010-release/"/>
-    <id>http://fr.vuejs.org/2014/03/22/vuejs-010-release/</id>
+    <link href="https://v2.vuejs.org/2014/03/22/vuejs-010-release/"/>
+    <id>https://v2.vuejs.org/2014/03/22/vuejs-010-release/</id>
     <published>2014-03-22T18:00:13.000Z</published>
     <updated>2017-12-21T14:59:10.000Z</updated>
     

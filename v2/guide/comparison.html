@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/comparison.html">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/comparison.html">
+    <link rel="alternate" hreflang="zh" href="https://v2.cn.vuejs.org/v2/guide/comparison.html">
     <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/comparison.html">
     <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/comparison.html">
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/comparison.html">
@@ -90,32 +90,25 @@
   <body class="docs" data-v3-url="">
 
     
-      <!-- <a id="vs" class="vs-hidden" href="https://vueschool.io/sales/price-increase-22?friend=vuejs" target="_blank" rel="noreferrer">
-  <div class="vs-iso">
-    <img src="/images/banners/vs-iso.svg">
-  </div>
-  <div class="vs-logo">
-    <img src="/images/banners/vs-logo.svg">
-  </div>
-  <div class="vs-core">
-    <div class="vs-slogan">
-      <div class="vs-slogan-up">
-        Get up to <strong>40% off</strong> your Vue School Subscription
+      <a id="vs-top" class="vs-hidden" href="#" target="_blank">
+  <div class="vs-background-wrapper">
+    <div class="vs-logo"></div>
+    <div class="vs-core">
+      <div class="vs-slogan-wrapper">
+        <div id="vs-slogan" class="vs-slogan"></div>
+        <div id="vs-subline" class="vs-subline"></div>
       </div>
-      <div class="vs-slogan-down">
-        Time Limited Offer
+      <div class="vs-button-wrapper">
+        <div id="vs-button" class="vs-button"></div>
       </div>
     </div>
-    <div class="vs-button">
-      <div class="vs-button-inside">
-        GET OFFER
-      </div>
+    <div
+      id="vs-close"
+      class="vs-close">
+      <img src="https://vueschool.io/images/close.svg" alt="Close">
     </div>
   </div>
-  <div id="vs-close" class="vs-close">
-    <img src="/images/banners/close.svg" alt="Close">
-  </div>
-</a> -->
+</a>
 
     
 
@@ -196,7 +189,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+      <li><a href="https://v2.ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
@@ -239,7 +232,7 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/guide/comparison.html" class="nav-link">中文</a></li>
+    <li><a href="https://v2.cn.vuejs.org/v2/guide/comparison.html" class="nav-link">中文</a></li>
     <li><a href="https://jp.vuejs.org/v2/guide/comparison.html" class="nav-link">日本語</a></li>
     <li><a href="https://ru.vuejs.org/v2/guide/comparison.html" class="nav-link">Русский</a></li>
     <li><a href="https://kr.vuejs.org/v2/guide/comparison.html" class="nav-link">한국어</a></li>
@@ -266,12 +259,14 @@
   <div class="sidebar-inner">
     
     <div class="list">
-      <div id="sidebar-sponsors-special">
+      
+
+<div id="sidebar-sponsors-special">
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/hbuilder.png" alt="HBuilder">
+    <a href="https://appwrite.io" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/appwrite.svg" alt="appwrite">
     </a>
     </div>
   </div>
@@ -280,26 +275,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>
@@ -978,26 +988,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>
@@ -1046,7 +1071,7 @@
 <p>Ayant un champ d’action similaire, nous avons passé plus de temps à affiner cette comparaison que les autres. Nous voulons être sûr non seulement de nos précisions techniques, mais aussi de leur neutralité. Nous soulignons là où React brille par rapport à Vue, par exemple dans la richesse de son écosystème et l’abondance de ses moteurs de rendu personnalisés.</p>
 <p>Ceci étant dit, il est inévitable que la comparaison puisse paraitre biaisée en faveur de Vue pour certains utilisateurs de React, puisque beaucoup des sujets explorés sont subjectifs dans une certaine mesure. Nous reconnaissons l’existence de préférences techniques différentes, et cette comparaison va avoir pour principal but de décrire pourquoi vous pourriez potentiellement préférer Vue s’il s’avère que vos préférences coïncident avec les nôtres.</p>
 <p>Plusieurs des sections plus bas peuvent être incorrectes du fait de la récente mise à jour de React 16+. Nous avons planifié de travailler avec la communauté React pour retravailler ces sections dans un futur proche.</p>
-<h3 id="Performance-a-l’execution"><a href="#Performance-a-l’execution" class="headerlink" title="Performance à l’exécution"></a>Performance à l’exécution</h3><p>Vue comme React offrent des performances similairement rapide, tellement rapide que ce n’est pas un facteur de décision entre les deux. Pour le détail exacte des chiffres, vous pouvez regarder ce <a href="http://www.stefankrause.net/js-frameworks-benchmark8/table.html" target="_blank" rel="noopener">benchmark tier</a> se focalisant sur les performances brutes de rendu et de mise à jour avec de simples arbres de composant.</p>
+<h3 id="Performance-a-l’execution"><a href="#Performance-a-l’execution" class="headerlink" title="Performance à l’exécution"></a>Performance à l’exécution</h3><p>Vue comme React offrent des performances similairement rapide, tellement rapide que ce n’est pas un facteur de décision entre les deux. Pour le détail exact des chiffres, vous pouvez regarder ce <a href="http://www.stefankrause.net/js-frameworks-benchmark8/table.html" target="_blank" rel="noopener">benchmark tier</a> se focalisant sur les performances brutes de rendu et de mise à jour avec de simples arbres de composant.</p>
 <h4 id="Efforts-d’optimisation"><a href="#Efforts-d’optimisation" class="headerlink" title="Efforts d’optimisation"></a>Efforts d’optimisation</h4><p>Avec React, quand l’état d’un composant change, cela enclenche de nouveau le rendu de tous ses sous-composants, en partant de ce composant comme racine. Pour éviter les rendus inutiles de composants enfants, vous avez besoin d’un <code>PureComponent</code> ou d’implémenter <code>shouldComponentUpdate</code> chaque fois que possible. Vous pouvez également utiliser des structures de données immuables pour rendre vos changements d’état facilement optimisés. Cependant, dans certains cas, vous ne pourrez pas faire de telles optimisations car l’utilisation de <code>PureComponent</code> ou <code>shouldComponentUpdate</code> présuppose que la sortie de votre arbre de rendu complet soit déterminée par l’utilisation des props. Si cela n’est pas pris en compte, certaines optimisations mèneront à un état inconsistant du DOM.</p>
 <p>Avec Vue, les dépendances d’un composant sont automatiquement tracées durant le rendu, ainsi le système sait précisément quels composants ont besoin d’être rafraichis. Chaque composant peut être considéré comme ayant déjà <code>shouldComponentUpdate</code> d’implémenté automatiquement pour vous, sans se soucier des exceptions pour les composants imbriqués.</p>
 <p>Au final cela permet d’éviter l’utilisation d’un large éventail d’optimisation de la part du développeur, et lui permet de se concentrer davantage sur l’architecture de l’application pièce par pièce.</p>

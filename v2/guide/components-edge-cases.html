@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/components-edge-cases.html">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="zh" href="https://v2.cn.vuejs.org/v2/guide/components-edge-cases.html">
     <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/components-edge-cases.html">
     <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/components-edge-cases.html">
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/components-edge-cases.html">
@@ -90,32 +90,25 @@
   <body class="docs" data-v3-url="">
 
     
-      <!-- <a id="vs" class="vs-hidden" href="https://vueschool.io/sales/price-increase-22?friend=vuejs" target="_blank" rel="noreferrer">
-  <div class="vs-iso">
-    <img src="/images/banners/vs-iso.svg">
-  </div>
-  <div class="vs-logo">
-    <img src="/images/banners/vs-logo.svg">
-  </div>
-  <div class="vs-core">
-    <div class="vs-slogan">
-      <div class="vs-slogan-up">
-        Get up to <strong>40% off</strong> your Vue School Subscription
+      <a id="vs-top" class="vs-hidden" href="#" target="_blank">
+  <div class="vs-background-wrapper">
+    <div class="vs-logo"></div>
+    <div class="vs-core">
+      <div class="vs-slogan-wrapper">
+        <div id="vs-slogan" class="vs-slogan"></div>
+        <div id="vs-subline" class="vs-subline"></div>
       </div>
-      <div class="vs-slogan-down">
-        Time Limited Offer
+      <div class="vs-button-wrapper">
+        <div id="vs-button" class="vs-button"></div>
       </div>
     </div>
-    <div class="vs-button">
-      <div class="vs-button-inside">
-        GET OFFER
-      </div>
+    <div
+      id="vs-close"
+      class="vs-close">
+      <img src="https://vueschool.io/images/close.svg" alt="Close">
     </div>
   </div>
-  <div id="vs-close" class="vs-close">
-    <img src="/images/banners/close.svg" alt="Close">
-  </div>
-</a> -->
+</a>
 
     
 
@@ -196,7 +189,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+      <li><a href="https://v2.ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
@@ -239,7 +232,7 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">中文</a></li>
+    <li><a href="https://v2.cn.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">中文</a></li>
     <li><a href="https://jp.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">日本語</a></li>
     <li><a href="https://ru.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">Русский</a></li>
     <li><a href="https://kr.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">한국어</a></li>
@@ -266,12 +259,14 @@
   <div class="sidebar-inner">
     
     <div class="list">
-      <div id="sidebar-sponsors-special">
+      
+
+<div id="sidebar-sponsors-special">
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/hbuilder.png" alt="HBuilder">
+    <a href="https://appwrite.io" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/appwrite.svg" alt="appwrite">
     </a>
     </div>
   </div>
@@ -280,26 +275,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>
@@ -978,26 +988,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>
@@ -1125,7 +1150,7 @@
 </ul>
 <p class="tip">Cependant, il y a des inconvénients à l’injection de dépendances. Cela vient entériner la manière dont les composants sont actuellement organisés dans votre application, rendant plus difficile le remaniement de code. De plus, les propriétés fournies avec <code>provide</code> ne sont pas réactives. Cela a été intentionnellement conçu de cette façon, car les utiliser pour créer un espace de stockage global est tout aussi peu évolutif que <a href="#Acceder-a-l’instance-de-composant-parente">d’utiliser <code>$root</code></a> dans le même but. Si les propriétés que vous voulez partager sont spécifiques à votre application et non génériques, ou si jamais vous voulez mettre à jour des données fournies par des ancêtres, alors c’est un signe que vous avez probablement besoin d’une réelle solution de gestion d’état telle que <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a> à la place.</p>
 
-<p>Apprenez-en plus sur l’injection de dépendances dans <a href="https://vuejs.org/v2/api/#provide-inject" target="_blank" rel="noopener">la documentation de l’API</a>.</p>
+<p>Apprenez-en plus sur l’injection de dépendances dans <a href="/v2/api/#provide-inject">la documentation de l’API</a>.</p>
 <h2 id="Ecouteurs-d’evenements-programmatiques"><a href="#Ecouteurs-d’evenements-programmatiques" class="headerlink" title="Écouteurs d’événements programmatiques"></a>Écouteurs d’événements programmatiques</h2><p>Jusqu’à présent, vous avez vu des utilisations de <code>$emit</code>, écoutés avec <code>v-on</code>, mais les instances de Vue proposent aussi d’autres méthodes dans leur interface d’événements. Nous pouvons :</p>
 <ul>
 <li>Écouter un événement avec <code>$on(eventName, eventHandler)</code></li>
@@ -1181,7 +1206,7 @@ beforeDestroy: <span class="hljs-function"><span class="hljs-keyword">function</
   &#125;
 &#125;</code></pre>
 <p>Consultez <a href="https://codesandbox.io/s/github/vuejs/v2.vuejs.org/tree/master/src/v2/examples/vue-20-programmatic-event-listeners" target="_blank" rel="noopener">ce fiddle</a> pour le code complet. Notez cependant que si vous vous trouvez à devoir faire beaucoup de code de montage et de nettoyage au sein d’un seul composant, la meilleure solution sera souvent de créer des composants plus modulaires. Dans le cas présent, nous recommanderions de créer un composant réutilisable <code>&lt;input-datepicker&gt;</code>.</p>
-<p>Pour en apprendre plus sur les écouteurs programmatiques, allez voir l’API des <a href="https://vuejs.org/v2/api/#Instance-Methods-Events" target="_blank" rel="noopener">méthodes d’événements d’une instance</a>.</p>
+<p>Pour en apprendre plus sur les écouteurs programmatiques, allez voir l’API des <a href="/v2/api/#Instance-Methods-Events">méthodes d’événements d’une instance</a>.</p>
 <p class="tip">Notez que le système d’événements de Vue est différent de celui de <a href="https://developer.mozilla.org/fr/docs/Web/API/EventTarget" target="_blank" rel="noopener">l’API EventTarget</a> du navigateur. Bien qu’ils fonctionnent de façon similaire, <code>$emit</code>, <code>$on</code>, et <code>$off</code> ne sont <strong>pas</strong> des alias pour <code>dispatchEvent</code>, <code>addEventListener</code>, et <code>removeEventListener</code>.</p>
 
 <h2 id="References-circulaires"><a href="#References-circulaires" class="headerlink" title="Références circulaires"></a>Références circulaires</h2><h3 id="Composants-recursifs"><a href="#Composants-recursifs" class="headerlink" title="Composants récursifs"></a>Composants récursifs</h3><p>Les composants peuvent récursivement s’invoquer eux-mêmes dans leur propre template. Cependant, ils peuvent seulement le faire avec l’option <code>name</code> :</p>
@@ -1242,7 +1267,7 @@ beforeDestroy: <span class="hljs-function"><span class="hljs-keyword">function</
 <h2 id="Controler-les-mises-a-jour"><a href="#Controler-les-mises-a-jour" class="headerlink" title="Contrôler les mises à jour"></a>Contrôler les mises à jour</h2><p>Grâce au système de réactivité de Vue, le framework sait toujours quand mettre à jour la vue (si vous l’utilisez correctement). Il y a des cas particuliers, cependant, où vous pouvez vouloir forcer une mise à jour, malgré le fait qu’aucune donnée réactive n’a changé. De plus, il y a d’autres cas où vous voudrez empêcher des mises à jour non nécessaires.</p>
 <h3 id="Forcer-une-mise-a-jour"><a href="#Forcer-une-mise-a-jour" class="headerlink" title="Forcer une mise à jour"></a>Forcer une mise à jour</h3><p class="tip">Si vous vous trouvez à vouloir forcer une mise à jour dans Vue, dans 99,99% des cas, vous avez fait une erreur quelque-part.</p>
 
-<p>Vous n’avez peut-être pas pris en compte les avertissements pour la détection des changements <a href="https://vuejs.org/v2/guide/list.html#Caveats" target="_blank" rel="noopener">avec des <code>Array</code></a> ou <a href="https://vuejs.org/v2/guide/list.html#Object-Change-Detection-Caveats" target="_blank" rel="noopener">des objets</a>, ou alors vous vous reposez sur des propriétés d’état qui ne sont pas traquées par le système de réactivité de Vue, c-à-d. dans <code>data</code>.</p>
+<p>Vous n’avez peut-être pas pris en compte les avertissements pour la détection des changements <a href="/v2/guide/list.html#Limitations">avec des <code>Array</code></a> ou <a href="/v2/guide/list.html#Detection-de-changement-dans-un-tableau">des objets</a>, ou alors vous vous reposez sur des propriétés d’état qui ne sont pas traquées par le système de réactivité de Vue, c-à-d. dans <code>data</code>.</p>
 <p>Cependant, si vous avez exclu toutes les options précédentes et que vous vous trouvez dans cette situation extrêmement rare où vous avez à forcer manuellement une mise à jour, vous pouvez le faire avec <a href="../api/#vm-forceUpdate"><code>$forceUpdate</code></a>.</p>
 <h3 id="Composants-statiques-economes-avec-v-once"><a href="#Composants-statiques-economes-avec-v-once" class="headerlink" title="Composants statiques économes avec v-once"></a>Composants statiques économes avec <code>v-once</code></h3><p>Faire le rendu d’éléments HTML statiques est très rapide dans Vue, mais parfois vous pouvez avoir un composant qui contient <strong>une grande quantité</strong> de contenu statique. Dans ces cas, vous pouvez vous assurer qu’il ne sera évalué qu’une seule fois puis mis en cache en ajoutant la directive <code>v-once</code> à l’élément racine, comme ceci :</p>
 <pre><code class="hljs js">Vue.component(<span class="hljs-string">'conditions-d-utilisation'</span>, &#123;

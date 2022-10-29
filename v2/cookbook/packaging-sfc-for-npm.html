@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html">
+    <link rel="alternate" hreflang="zh" href="https://v2.cn.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html">
     <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html">
     <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html">
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html">
@@ -90,32 +90,25 @@
   <body class="docs" data-v3-url="">
 
     
-      <!-- <a id="vs" class="vs-hidden" href="https://vueschool.io/sales/price-increase-22?friend=vuejs" target="_blank" rel="noreferrer">
-  <div class="vs-iso">
-    <img src="/images/banners/vs-iso.svg">
-  </div>
-  <div class="vs-logo">
-    <img src="/images/banners/vs-logo.svg">
-  </div>
-  <div class="vs-core">
-    <div class="vs-slogan">
-      <div class="vs-slogan-up">
-        Get up to <strong>40% off</strong> your Vue School Subscription
+      <a id="vs-top" class="vs-hidden" href="#" target="_blank">
+  <div class="vs-background-wrapper">
+    <div class="vs-logo"></div>
+    <div class="vs-core">
+      <div class="vs-slogan-wrapper">
+        <div id="vs-slogan" class="vs-slogan"></div>
+        <div id="vs-subline" class="vs-subline"></div>
       </div>
-      <div class="vs-slogan-down">
-        Time Limited Offer
+      <div class="vs-button-wrapper">
+        <div id="vs-button" class="vs-button"></div>
       </div>
     </div>
-    <div class="vs-button">
-      <div class="vs-button-inside">
-        GET OFFER
-      </div>
+    <div
+      id="vs-close"
+      class="vs-close">
+      <img src="https://vueschool.io/images/close.svg" alt="Close">
     </div>
   </div>
-  <div id="vs-close" class="vs-close">
-    <img src="/images/banners/close.svg" alt="Close">
-  </div>
-</a> -->
+</a>
 
     
 
@@ -196,7 +189,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+      <li><a href="https://v2.ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
@@ -239,7 +232,7 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">中文</a></li>
+    <li><a href="https://v2.cn.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">中文</a></li>
     <li><a href="https://jp.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">日本語</a></li>
     <li><a href="https://ru.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">Русский</a></li>
     <li><a href="https://kr.vuejs.org/v2/cookbook/packaging-sfc-for-npm.html" class="nav-link">한국어</a></li>
@@ -266,12 +259,14 @@
   <div class="sidebar-inner">
     
     <div class="list">
-      <div id="sidebar-sponsors-special">
+      
+
+<div id="sidebar-sponsors-special">
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/hbuilder.png" alt="HBuilder">
+    <a href="https://appwrite.io" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/appwrite.svg" alt="appwrite">
     </a>
     </div>
   </div>
@@ -280,26 +275,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>
@@ -412,26 +422,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>
@@ -485,12 +510,12 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span>
 ...</code></pre>
 <p>Non seulement cela vous évite de copier/coller des composants, mais cela vous permet aussi de les partager avec la communauté Vue ! </p>
-<h2 id="Puis-je-partager-directement-les-fichiers-vue"><a href="#Puis-je-partager-directement-les-fichiers-vue" class="headerlink" title="Puis-je partager directement les fichiers .vue ?"></a>Puis-je partager directement les fichiers <code>.vue</code> ?</h2><p>Vue autorise déjà l’écriture des composants dans un fichier unique. Du fait qu’un (<a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> soit déjà un fichier unique, vous pourriez donc vous poser la question suivante :</p>
+<h2 id="Puis-je-partager-directement-les-fichiers-vue"><a href="#Puis-je-partager-directement-les-fichiers-vue" class="headerlink" title="Puis-je partager directement les fichiers .vue ?"></a>Puis-je partager directement les fichiers <code>.vue</code> ?</h2><p>Vue autorise déjà l’écriture des composants dans un fichier unique. Du fait qu’un (<a href="https://fr.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">Composant</a> soit déjà un fichier unique, vous pourriez donc vous poser la question suivante :</p>
 <blockquote>
 <p>Pourquoi les gens ne peuvent-ils pas utiliser mon fichier <code>.vue</code> directement ? N’est-ce pas la façon la plus simple de partager des composants ?</p>
 </blockquote>
-<p>C’est vrai, vous pouvez partager vos fichiers <code>.vue</code> directement, et n’importe qui utilisant <a href="https://fr.vuejs.org/v2/guide/installation.html#Explication-des-differents-builds">Un build Vue</a> contenant le compilateur Vue peut utiliser votre composant directement. Aussi, les builds déstinés aux applications SSR utilisent la concaténation de chaînes de caractères comme une optimisation, l’utilisation de composants <code>.vue</code> partagés directement est donc préférable dans cette situation (lire la section <a href="#Rendu-cote-serveur">Rendu côté serveur</a> pour plus de détails). Cependant, cela exclut les personnes souhaitant utiliser le composant directement dans un navigateur via la balise <code>&lt;script&gt;</code>, mais aussi les personnes souhaitant utiliser une compilation à l’exécution ou encore une application contenant des processus de compilation incapables de lire des fichiers <code>.vue</code>.</p>
-<p>Un package approprié de votre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> pour une distribution via npm permet de le partager de manière à ce qu’il soit prêt à être utilisé partout !</p>
+<p>C’est vrai, vous pouvez partager vos fichiers <code>.vue</code> directement, et n’importe qui utilisant <a href="(/v2/guide/installation.html#Explication-des-differents-builds">Un build Vue</a> contenant le compilateur Vue peut utiliser votre composant directement. Aussi, les builds déstinés aux applications SSR utilisent la concaténation de chaînes de caractères comme une optimisation, l’utilisation de composants <code>.vue</code> partagés directement est donc préférable dans cette situation (lire la section <a href="#Rendu-cote-serveur">Rendu côté serveur</a> pour plus de détails). Cependant, cela exclut les personnes souhaitant utiliser le composant directement dans un navigateur via la balise <code>&lt;script&gt;</code>, mais aussi les personnes souhaitant utiliser une compilation à l’exécution ou encore une application contenant des processus de compilation incapables de lire des fichiers <code>.vue</code>.</p>
+<p>Un package approprié de votre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">Composant</a> pour une distribution via npm permet de le partager de manière à ce qu’il soit prêt à être utilisé partout !</p>
 <h2 id="Realiser-un-package-de-votre-composant-pour-npm"><a href="#Realiser-un-package-de-votre-composant-pour-npm" class="headerlink" title="Réaliser un package de votre composant pour npm"></a>Réaliser un package de votre composant pour npm</h2><p>Pour les besoins de ce document, nous allons utiliser la structure suivante :</p>
 <pre><code class="hljs undefined">package.json
 build/
@@ -517,7 +542,7 @@ dist/</code></pre>
 <h3 id="Rendu-cote-serveur-SSR"><a href="#Rendu-cote-serveur-SSR" class="headerlink" title="Rendu côté serveur (SSR)"></a>Rendu côté serveur (SSR)</h3><p>Vous aurez peut-être remarqué que les navigateurs n’utilisent pas la version <code>browser</code>. C’est parce que ce champ est destiné pour que l’auteur du package fournisse <a href="https://github.com/defunctzombie/package-browser-field-spec#spec" target="_blank" rel="noopener">quelque chose aux bundlers</a> qui, à leur tour, créent leurs propres paquets pour une utilisation côté client. Avec un peu d’imagination ce champ nous permet de faire correspondre un alias au fichier <code>.vue</code> lui-même. Par exemple :</p>
 <pre><code class="hljs js"><span class="hljs-keyword">import</span> MyComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'my-component/sfc'</span>; <span class="hljs-comment">// Notons le '/sfc'</span></code></pre>
 <p>Les bundlers compatibles peuvent lire l’option <code>browser</code> dans le fichier package.json et traduire les requêtes de <code>my-component/sfc</code> en <code>my-component/src/my-component.vue</code>, ce qui permet d’utiliser le fichier <code>.vue</code> original à la place. Maintenant, le processus SSR peut utiliser les optimisations de concaténation de chaînes de caractères dont il a besoin pour un gain de performances.</p>
-<p class="tip">Note: Lorsque vous utilisez un fichier <code>.vue</code> directement, faites attention à tout type de prétraitement sur les balises <code>script</code> et <code>style</code>. Ces dépendances seront transmises aux utilisateurs. Envisagez donc de fournir des <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> « simples » pour alléger au maximum les choses.</p>
+<p class="tip">Note: Lorsque vous utilisez un fichier <code>.vue</code> directement, faites attention à tout type de prétraitement sur les balises <code>script</code> et <code>style</code>. Ces dépendances seront transmises aux utilisateurs. Envisagez donc de fournir des <a href="https://fr.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">Composant</a> « simples » pour alléger au maximum les choses.</p>
 
 <h3 id="Comment-puis-je-realiser-plusieurs-versions-de-mon-composant"><a href="#Comment-puis-je-realiser-plusieurs-versions-de-mon-composant" class="headerlink" title="Comment puis-je réaliser plusieurs versions de mon composant ?"></a>Comment puis-je réaliser plusieurs versions de mon composant ?</h3><p>Vous n’avez pas besoin de réecrire votre module plusieurs fois car il est tout à fait possible de préparer 3 versions de votre module en une seule étape, en quelques secondes seulement. L’exemple ci-dessous utilise <a href="https://rollupjs.org" target="_blank" rel="noopener">Rollup</a> en raison de sa configuration minimaliste, mais une configuration similaire est possible avec d’autres outils de builds (plus de détails sur <a href="https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c" target="_blank" rel="noopener">ce post (EN)</a>). La section <code>scripts</code> de notre package.json peut être mise à jour avec une seule entrée pour chaque cible de compilation, et un script <code>build</code> plus générique qui les exécute tous en un seul passage. Notre fichier package.json ressemble désormais à ceci :</p>
 <pre><code class="hljs json">&#123;
@@ -548,7 +573,7 @@ dist/</code></pre>
 &#125;</code></pre>
 <p class="tip">N’oubliez pas que si un fichier package.json est déjà présent sur votre projet, il sera probablement beaucoup plus long que celui présenté ici. Ceci n’illustre qu’un point de départ. De plus, les <em>paquets</em> listés dans devDependencies (et non leurs versions) sont les exigences minimales pour que Rollup puisse créer les trois builds séparées (umd, es, et unpkg). Au fur et à mesure que des versions plus récentes sont disponibles, elles doivent être mises à jour si nécessaire.</p>
 
-<p>Nos changements effectués sur notre package.json sont désormais terminés. Ensuite, nous aurons besoin d’un petit fichier pour exporter/installer automatiquement le (<a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> actuel, d’une configuration minimale de Rollup, et c’est parti !</p>
+<p>Nos changements effectués sur notre package.json sont désormais terminés. Ensuite, nous aurons besoin d’un petit fichier pour exporter/installer automatiquement le (<a href="https://fr.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">Composant</a> actuel, d’une configuration minimale de Rollup, et c’est parti !</p>
 <h3 id="A-quoi-va-ressembler-mon-composant"><a href="#A-quoi-va-ressembler-mon-composant" class="headerlink" title="À quoi va ressembler mon composant ?"></a>À quoi va ressembler mon composant ?</h3><p>En fonction de la manière dont votre composant est utilisé, il doit être exposé soit comme un module JavaScript (<a href="https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#c33a" target="_blank" rel="noopener">CommonJS/UMD</a>), un module <a href="https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#4f5e" target="_blank" rel="noopener">ES6</a> ou bien dans le cas d’une utilisation via <code>script</code>, ce composant sera automatiquement chargé dans Vue via <code>Vue.use(...)</code> et donc directement disponible. Ce fichier wrapper.js qui gère l’exportation et l’installation automatique du module ressemble à ceci:</p>
 <pre><code class="hljs js"><span class="hljs-comment">// Importation de notre composant Vue</span>
 <span class="hljs-keyword">import</span> component <span class="hljs-keyword">from</span> <span class="hljs-string">'./my-component.vue'</span>;
@@ -582,8 +607,8 @@ dist/</code></pre>
 
 <span class="hljs-comment">// Exporter en tant que module (pour npm/webpack/etc.)</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> component;</code></pre>
-<p>On peut remarquer que la première ligne importe directement notre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> et que la dernière ligne l’exporte tel quel. Comme indiqué dans les commentaires, ce fichier de configuration fourni une méthode “d’installation” déstinée à Vue puis tente de détecter Vue afin de s’installer automatiquement. Avec 90% du travail effectué, il est temps de sprinter jusqu’à l’arrivée !</p>
-<h3 id="Comment-configurer-un-build-avec-Rollup"><a href="#Comment-configurer-un-build-avec-Rollup" class="headerlink" title="Comment configurer un build avec Rollup ?"></a>Comment configurer un build avec Rollup ?</h3><p>Avec notre package.json contenant la section <code>scripts</code> prête à démarrer et la configuration de notre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> mise en place via notre wrapper, il ne reste plus qu’à s’assurer que Rollup est correctement configuré. Heureusement, cela peut être fait avec un petit fichier rollup.config.js de 19 lignes déjà prêt :</p>
+<p>On peut remarquer que la première ligne importe directement notre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">Composant</a> et que la dernière ligne l’exporte tel quel. Comme indiqué dans les commentaires, ce fichier de configuration fourni une méthode “d’installation” déstinée à Vue puis tente de détecter Vue afin de s’installer automatiquement. Avec 90% du travail effectué, il est temps de sprinter jusqu’à l’arrivée !</p>
+<h3 id="Comment-configurer-un-build-avec-Rollup"><a href="#Comment-configurer-un-build-avec-Rollup" class="headerlink" title="Comment configurer un build avec Rollup ?"></a>Comment configurer un build avec Rollup ?</h3><p>Avec notre package.json contenant la section <code>scripts</code> prête à démarrer et la configuration de notre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">Composant</a> mise en place via notre wrapper, il ne reste plus qu’à s’assurer que Rollup est correctement configuré. Heureusement, cela peut être fait avec un petit fichier rollup.config.js de 19 lignes déjà prêt :</p>
 <pre><code class="hljs js"><span class="hljs-keyword">import</span> commonjs <span class="hljs-keyword">from</span> <span class="hljs-string">'@rollup/plugin-commonjs'</span>; <span class="hljs-comment">// Converti les modules CommonJS en ES6</span>
 <span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>; <span class="hljs-comment">// Gère les composants .vue</span>
 <span class="hljs-keyword">import</span> buble <span class="hljs-keyword">from</span> <span class="hljs-string">'@rollup/plugin-buble'</span>; <span class="hljs-comment">// Permet un polyfill de notre code pour un meilleur support sur les navigateurs</span>
@@ -603,15 +628,15 @@ dist/</code></pre>
     buble(), <span class="hljs-comment">// Traduit en ES5</span>
   ],
 &#125;;</code></pre>
-<p>Cet exemple de configuration contient les paramètres minimums pour empaqueter votre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> à destination de npm. Il est possible de le personnaliser, par exemple en extrayant le CSS dans un fichier séparé, en utilisant un préprocesseur CSS, en masquant la sortie JS, etc.</p>
+<p>Cet exemple de configuration contient les paramètres minimums pour empaqueter votre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">Composant</a> à destination de npm. Il est possible de le personnaliser, par exemple en extrayant le CSS dans un fichier séparé, en utilisant un préprocesseur CSS, en masquant la sortie JS, etc.</p>
 <p>Il convient également de noter le « nom » donné au composant ici qui est en PascalCase, et qui devrait correspondre au nom en kebab-case utilisé ailleurs dans ce projet.</p>
 <h3 id="Cela-remplacera-t-il-mon-processus-de-developpement-actuel"><a href="#Cela-remplacera-t-il-mon-processus-de-developpement-actuel" class="headerlink" title="Cela remplacera-t-il mon processus de développement actuel ?"></a>Cela remplacera-t-il mon processus de développement actuel ?</h3><p>La configuration ici n’est pas destinée à remplacer le processus de développement que vous utilisez actuellement. Si, actuellement, vous avez une configuration webpack avec hot-reload, continuez à l’utiliser ! Si vous partez de zéro, n’hésitez pas à installer <a href="https://github.com/vuejs/vue-cli/" target="_blank" rel="noopener">Vue CLI 3</a>, qui vous donnera la configuration complète d’un hot-reload avec la commande suivante :</p>
 <pre><code class="hljs bash">vue serve --open src/my-component.vue</code></pre>
 <p>En d’autres termes, développez de la manière qui vous convient le mieux. Les éléments décrits sur cette page ressemblent plus à des « touches finales » qu’à un processus de développement complet.</p>
-<h2 id="Quand-eviter-ce-schema"><a href="#Quand-eviter-ce-schema" class="headerlink" title="Quand éviter ce schéma ?"></a>Quand éviter ce schéma ?</h2><p>Conditionner les <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> de cette manière n’est pas forcément une bonne idée dans certains cas. Cette page n’entre pas dans le détail de la manière dont les composants eux-mêmes sont écrits. Certains composants peuvent avoir des effets secondaires comme des directives, ou étendre d’autres bibliothèques avec des fonctionnalités supplémentaires. Dans ces cas, vous devrez évaluer si les changements nécessaires décrits sur cette page sont trop importants ou non.</p>
-<p>En outre, faites attention à toute dépendance supplémentaire que votre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> pourrait avoir. Par exemple, si vous avez besoin d’une bibliothèque tierce pour le tri ou la communication avec une API, Rollup peut ommetre ces différents packages dans le code final s’il n’est pas correctement configuré. Pour continuer à utiliser ceci, vous devrez configurer Rollup et exclure ces fichiers de la sortie puis mettre à jour votre documentation pour informer vos utilisateurs de la présence ces dépendances.</p>
+<h2 id="Quand-eviter-ce-schema"><a href="#Quand-eviter-ce-schema" class="headerlink" title="Quand éviter ce schéma ?"></a>Quand éviter ce schéma ?</h2><p>Conditionner les <a href="https://fr.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">Composant</a> de cette manière n’est pas forcément une bonne idée dans certains cas. Cette page n’entre pas dans le détail de la manière dont les composants eux-mêmes sont écrits. Certains composants peuvent avoir des effets secondaires comme des directives, ou étendre d’autres bibliothèques avec des fonctionnalités supplémentaires. Dans ces cas, vous devrez évaluer si les changements nécessaires décrits sur cette page sont trop importants ou non.</p>
+<p>En outre, faites attention à toute dépendance supplémentaire que votre <a href="https://fr.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">Composant</a> pourrait avoir. Par exemple, si vous avez besoin d’une bibliothèque tierce pour le tri ou la communication avec une API, Rollup peut ommetre ces différents packages dans le code final s’il n’est pas correctement configuré. Pour continuer à utiliser ceci, vous devrez configurer Rollup et exclure ces fichiers de la sortie puis mettre à jour votre documentation pour informer vos utilisateurs de la présence ces dépendances.</p>
 <h2 id="Patterns-alternatifs"><a href="#Patterns-alternatifs" class="headerlink" title="Patterns alternatifs"></a>Patterns alternatifs</h2><p>Au moment où cette recette est écrite, Vue CLI 3 est elle-même en version bêta. Cette version de la CLI est dotée d’un mode de construction <code>library</code> intégré, qui crée des versions CommonJS et UMD d’un composant. Cela peut être adéquat pour vos cas d’utilisation, mais vous devrez quand même vous assurer que votre fichier package.json pointe correctement vers <code>main</code> and <code>unpkg</code>. De plus, il n’y aura pas de sortie de <code>module</code> ES6 à moins que cette fonctionnalité ne soit ajoutée au CLI avant sa sortie ou via un plugin.</p>
-<h2 id="Remerciements"><a href="#Remerciements" class="headerlink" title="Remerciements"></a>Remerciements</h2><p>Cette page est le résultat d’une conférence éclair donnée par <a href="https://twitter.com/webdevdodge" target="_blank" rel="noopener">Mike Dodge</a> à VueConf.us en mars 2018. Il a publié un utilitaire pour npm qui permettra d’échafauder rapidement un échantillon de <a href="https://fr.vuejs.org/v2/guide/single-file-components.html">Composant</a> en utilisant cette recette. Vous pouvez télécharger l’utilitaire, <a href="https://www.npmjs.com/package/vue-sfc-rollup" target="_blank" rel="noopener">vue-sfc-rollup</a>, sur npm. Vous pouvez également <a href="https://github.com/team-innovation/vue-sfc-rollup" target="_blank" rel="noopener">cloner le repo</a> et le personnaliser.</p>
+<h2 id="Remerciements"><a href="#Remerciements" class="headerlink" title="Remerciements"></a>Remerciements</h2><p>Cette page est le résultat d’une conférence éclair donnée par <a href="https://twitter.com/webdevdodge" target="_blank" rel="noopener">Mike Dodge</a> à VueConf.us en mars 2018. Il a publié un utilitaire pour npm qui permettra d’échafauder rapidement un échantillon de <a href="https://fr.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">Composant</a> en utilisant cette recette. Vous pouvez télécharger l’utilitaire, <a href="https://www.npmjs.com/package/vue-sfc-rollup" target="_blank" rel="noopener">vue-sfc-rollup</a>, sur npm. Vous pouvez également <a href="https://github.com/team-innovation/vue-sfc-rollup" target="_blank" rel="noopener">cloner le repo</a> et le personnaliser.</p>
 
   
   

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/style-guide/index.html">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/style-guide/index.html">
+    <link rel="alternate" hreflang="zh" href="https://v2.cn.vuejs.org/v2/style-guide/index.html">
     <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/style-guide/index.html">
     <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/style-guide/index.html">
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/style-guide/index.html">
@@ -90,32 +90,25 @@
   <body class="docs" data-v3-url="">
 
     
-      <!-- <a id="vs" class="vs-hidden" href="https://vueschool.io/sales/price-increase-22?friend=vuejs" target="_blank" rel="noreferrer">
-  <div class="vs-iso">
-    <img src="/images/banners/vs-iso.svg">
-  </div>
-  <div class="vs-logo">
-    <img src="/images/banners/vs-logo.svg">
-  </div>
-  <div class="vs-core">
-    <div class="vs-slogan">
-      <div class="vs-slogan-up">
-        Get up to <strong>40% off</strong> your Vue School Subscription
+      <a id="vs-top" class="vs-hidden" href="#" target="_blank">
+  <div class="vs-background-wrapper">
+    <div class="vs-logo"></div>
+    <div class="vs-core">
+      <div class="vs-slogan-wrapper">
+        <div id="vs-slogan" class="vs-slogan"></div>
+        <div id="vs-subline" class="vs-subline"></div>
       </div>
-      <div class="vs-slogan-down">
-        Time Limited Offer
+      <div class="vs-button-wrapper">
+        <div id="vs-button" class="vs-button"></div>
       </div>
     </div>
-    <div class="vs-button">
-      <div class="vs-button-inside">
-        GET OFFER
-      </div>
+    <div
+      id="vs-close"
+      class="vs-close">
+      <img src="https://vueschool.io/images/close.svg" alt="Close">
     </div>
   </div>
-  <div id="vs-close" class="vs-close">
-    <img src="/images/banners/close.svg" alt="Close">
-  </div>
-</a> -->
+</a>
 
     
 
@@ -196,7 +189,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+      <li><a href="https://v2.ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
@@ -239,7 +232,7 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/style-guide/index.html" class="nav-link">中文</a></li>
+    <li><a href="https://v2.cn.vuejs.org/v2/style-guide/index.html" class="nav-link">中文</a></li>
     <li><a href="https://jp.vuejs.org/v2/style-guide/index.html" class="nav-link">日本語</a></li>
     <li><a href="https://ru.vuejs.org/v2/style-guide/index.html" class="nav-link">Русский</a></li>
     <li><a href="https://kr.vuejs.org/v2/style-guide/index.html" class="nav-link">한국어</a></li>
@@ -266,12 +259,14 @@
   <div class="sidebar-inner">
     
     <div class="list">
-      <div id="sidebar-sponsors-special">
+      
+
+<div id="sidebar-sponsors-special">
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/hbuilder.png" alt="HBuilder">
+    <a href="https://appwrite.io" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/appwrite.svg" alt="appwrite">
     </a>
     </div>
   </div>
@@ -280,26 +275,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>
@@ -328,26 +338,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>
@@ -486,7 +511,7 @@
   <h4>Explication détaillée</h4>
 </summary>
 
-<p>Les <a href="https://vuejs.org/v2/guide/components.html#Prop-Validation" target="_blank" rel="noopener">définitions de prop</a> détaillées ont deux avantages :</p>
+<p>Les <a href="/v2/guide/components.html#Prop-Validation">définitions de prop</a> détaillées ont deux avantages :</p>
 <ul>
 <li>Elles documentent l’API du composant, il est ainsi possible de voir comment le composant est prévu d’être utilisé.</li>
 <li>En développement, Vue vous avertira si le composant fournit un type de prop incorrectement formaté, vous aidant ainsi à trouver des sources potentielles d’erreur.</li>
@@ -1516,7 +1541,7 @@ props: &#123;
 </summary>
 
 <p>Dans les styles avec portée, Vue ajoute un attribut unique à l’élément du composant, comme <code>data-v-f3f3eg9</code>. Les sélecteurs sont ainsi modifiés afin qu’ils ne concordent qu’avec les éléments dont l’attribut est sélectionné (par ex. <code>button[data-v-f3f3eg9]</code>).</p>
-<p>Le problème est qu’utiliser un grand nombre de <a href="(http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&amp;sel=a%5Bhref%5D&amp;body=background%3A+%23CFD&amp;ne=1000">sélecteur par nom</a> (par ex. <code>button[data-v-f3f3eg9]</code>) va être considérablement plus lent que <a href="http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&amp;sel=.class%5Bhref%5D&amp;body=background%3A+%23CFD&amp;ne=1000" target="_blank" rel="noopener">par attribut classe</a> (par ex. <code>.btn-close[data-v-f3f3eg9]</code>) et donc les sélecteurs par classes devraient être préférés autant que possible.</p>
+<p>Le problème est qu’utiliser un grand nombre de sélecteurs par attributs (par ex. <code>button[data-v-f3f3eg9]</code>) est que cela va être considérablement plus long que d’utiliser des sélecteurs par classes et donc les sélecteurs par classes devraient être préférés autant que possible.</p>
 </details>
 <div class="style-example example-bad">
 <h4 id="A-eviter-25"><a href="#A-eviter-25" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
@@ -1611,8 +1636,8 @@ props: &#123;
 &#125;)</code></pre>
 </div>
 <h3 id="Non-gestion-de-l’etat-par-flux-faire-attention"><a href="#Non-gestion-de-l’etat-par-flux-faire-attention" class="headerlink" title="Non-gestion de l’état par flux faire attention"></a>Non-gestion de l’état par flux <sup data-p="d">faire attention</sup></h3><p><strong><a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a> devrait être préféré pour une gestion globale d’état à la place de <code>this.$root</code> ou d’un canal global d’évènement.</strong></p>
-<p>Gérer l’état avec <code>this.$root</code> et/ou utiliser un <a href="https://fr.vuejs.org/v2/guide/migration.html#dispatch-et-broadcast-remplaces">canal d’évènement global</a> peut faciliter la tâche dans des cas vraiment simples. Cependant cela n’est pas approprié pour la plupart des applications.</p>
-<p>Vuex est <a href="https://fr.vuejs.org/v2/guide/state-management.html#Implementation-officielle-semblable-a-Flux">l’implémentation flux officielle</a> pour Vue. Elle n’offre pas seulement une place centrale pour gérer l’état mais également des outils pour organiser, tracer et déboguer les changements d’états. Il s’intègre bien dans l’écosystème de Vue (incluant un support complet par <a href="https://fr.vuejs.org/v2/guide/installation.html#Vue-Devtools">Vue DevTools</a> également).</p>
+<p>Gérer l’état avec <code>this.$root</code> et/ou utiliser un <a href="/v2/guide/migration.html#dispatch-et-broadcast-remplaces">canal d’évènement global</a> peut faciliter la tâche dans des cas vraiment simples. Cependant cela n’est pas approprié pour la plupart des applications.</p>
+<p>Vuex est <a href="/v2/guide/state-management.html#Implementation-officielle-semblable-a-Flux">l’implémentation flux officielle</a> pour Vue. Elle n’offre pas seulement une place centrale pour gérer l’état mais également des outils pour organiser, tracer et déboguer les changements d’états. Il s’intègre bien dans l’écosystème de Vue (incluant un support complet par <a href="/v2/guide/installation.html#Vue-Devtools">Vue DevTools</a> également).</p>
 
 <div class="style-example example-bad">
 <h4 id="A-eviter-27"><a href="#A-eviter-27" class="headerlink" title="À éviter"></a>À éviter</h4><pre><code class="hljs js"><span class="hljs-comment">// main.js</span>

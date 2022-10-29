@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/installation.html">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="zh" href="https://v2.cn.vuejs.org/v2/guide/installation.html">
     <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/installation.html">
     <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/installation.html">
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/installation.html">
@@ -90,32 +90,25 @@
   <body class="docs" data-v3-url="/guide/quick-start.html">
 
     
-      <!-- <a id="vs" class="vs-hidden" href="https://vueschool.io/sales/price-increase-22?friend=vuejs" target="_blank" rel="noreferrer">
-  <div class="vs-iso">
-    <img src="/images/banners/vs-iso.svg">
-  </div>
-  <div class="vs-logo">
-    <img src="/images/banners/vs-logo.svg">
-  </div>
-  <div class="vs-core">
-    <div class="vs-slogan">
-      <div class="vs-slogan-up">
-        Get up to <strong>40% off</strong> your Vue School Subscription
+      <a id="vs-top" class="vs-hidden" href="#" target="_blank">
+  <div class="vs-background-wrapper">
+    <div class="vs-logo"></div>
+    <div class="vs-core">
+      <div class="vs-slogan-wrapper">
+        <div id="vs-slogan" class="vs-slogan"></div>
+        <div id="vs-subline" class="vs-subline"></div>
       </div>
-      <div class="vs-slogan-down">
-        Time Limited Offer
+      <div class="vs-button-wrapper">
+        <div id="vs-button" class="vs-button"></div>
       </div>
     </div>
-    <div class="vs-button">
-      <div class="vs-button-inside">
-        GET OFFER
-      </div>
+    <div
+      id="vs-close"
+      class="vs-close">
+      <img src="https://vueschool.io/images/close.svg" alt="Close">
     </div>
   </div>
-  <div id="vs-close" class="vs-close">
-    <img src="/images/banners/close.svg" alt="Close">
-  </div>
-</a> -->
+</a>
 
     
 
@@ -196,7 +189,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
-      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+      <li><a href="https://v2.ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Infos</h4></li>
     <li><ul>
@@ -239,7 +232,7 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">Langues</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://cn.vuejs.org/v2/guide/installation.html" class="nav-link">中文</a></li>
+    <li><a href="https://v2.cn.vuejs.org/v2/guide/installation.html" class="nav-link">中文</a></li>
     <li><a href="https://jp.vuejs.org/v2/guide/installation.html" class="nav-link">日本語</a></li>
     <li><a href="https://ru.vuejs.org/v2/guide/installation.html" class="nav-link">Русский</a></li>
     <li><a href="https://kr.vuejs.org/v2/guide/installation.html" class="nav-link">한국어</a></li>
@@ -266,12 +259,14 @@
   <div class="sidebar-inner">
     
     <div class="list">
-      <div id="sidebar-sponsors-special">
+      
+
+<div id="sidebar-sponsors-special">
   <div class="main-sponsor">
     <span>Special Sponsor</span>
     <div>
-    <a href="https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/hbuilder.png" alt="HBuilder">
+    <a href="https://appwrite.io" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/appwrite.svg" alt="appwrite">
     </a>
     </div>
   </div>
@@ -280,26 +275,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>
@@ -978,26 +988,41 @@
   <div class="main-sponsor">
     <span>Sponsors de platine</span>
     <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
     <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vueschool.png" alt="VueSchool">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
     </a>
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vehikl.png" alt="Vehikl">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
     <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/passionate_people.png" alt="Passionate People">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/storyblok.png" alt="Storyblok">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
     <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/ionic.png" alt="Ionic">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
     </a>
     <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nuxt.png" alt="Nuxt">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/refurbed.png" alt="Refurbed">
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
+    </a>
+    <a href="https://marker.io/?utm_source=vuejs&utm_medium=sponsor&utm_campaign=dev-community" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/marker_io.svg" alt="Marker.io">
     </a>
     </div>
   </div>
@@ -1036,24 +1061,24 @@
   
     <h3 id="Compatibilite"><a href="#Compatibilite" class="headerlink" title="Compatibilité"></a>Compatibilité</h3><p>Vue <strong>ne</strong> supporte <strong>pas</strong> IE8 et les versions antérieures, car il utilise des fonctionnalités ECMAScript 5 qui ne peuvent pas être émulées sur IE8. Cela dit, Vue supporte tous les <a href="https://caniuse.com/#feat=es5" target="_blank" rel="noopener">navigateurs compatibles ECMAScript 5</a>.</p>
 <h3 id="Gestion-semantique-de-version"><a href="#Gestion-semantique-de-version" class="headerlink" title="Gestion sémantique de version"></a>Gestion sémantique de version</h3><p>Vue suit la <a href="https://semver.org/lang/fr/" target="_blank" rel="noopener">gestion sémantique de version</a> dans tous ses projets officiels pour les fonctionnalités et les comportements documentés. Les changements concernant les comportements non documentés et les fonctionnalités internes exposées sont décrits dans les <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">notes de version</a>.</p>
-<h3 id="Notes-de-version"><a href="#Notes-de-version" class="headerlink" title="Notes de version"></a>Notes de version</h3><p>Dernière version stable : 2.6.14</p>
+<h3 id="Notes-de-version"><a href="#Notes-de-version" class="headerlink" title="Notes de version"></a>Notes de version</h3><p>Dernière version stable : 2.7.8</p>
 <p>Les notes de version détaillées pour chaque version sont disponibles sur <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Vue-Devtools"><a href="#Vue-Devtools" class="headerlink" title="Vue Devtools"></a>Vue Devtools</h2><p>Quand vous utilisez Vue, nous vous recommandons également d’installer <a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">Vue Devtools</a> dans votre navigateur. Cela vous permettra d’inspecter et de déboguer vos applications Vue dans une interface dédiée et intuitive.</p>
 <h2 id="Inclusion-directe-lt-script-gt"><a href="#Inclusion-directe-lt-script-gt" class="headerlink" title="Inclusion directe &lt;script&gt;"></a>Inclusion directe <code>&lt;script&gt;</code></h2><p>Il suffit de télécharger et de l’inclure avec une balise script. <code>Vue</code> sera déclaré comme une variable globale.</p>
 <p class="tip">N’utilisez pas la version minifiée pendant le développement. Vous ne bénéficieriez alors pas des avertissements pour les erreurs courantes !</p>
 
-<div id="downloads"><br>  <a class="button" href="/js/vue.js" download="">Version de développement</a><span class="light info">Avec tous les avertissements et le mode de débogage</span><br><br>  <a class="button" href="/js/vue.min.js" download="">Version de production</a><span class="light info">Avertissements retirés, 33.46ko min+gzip</span><br></div>
+<div id="downloads"><br>  <a class="button" href="/js/vue.js" download="">Version de développement</a><span class="light info">Avec tous les avertissements et le mode de débogage</span><br><br>  <a class="button" href="/js/vue.min.js" download="">Version de production</a><span class="light info">Avertissements retirés, 37.32ko min+gzip</span><br></div>
 
 <h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>Pour du prototypage ou de l’apprentissage, vous pouvez utiliser la dernière version avec :</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>Pour la production, nous vous recommandons de vous figer à une version et un build défini pour éviter les changements non compatibles des nouvelles versions :</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.6.14"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.7.8"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>Si vous utilisez des Modules ES natifs, il y a également un build compatible avec les Modules ES :</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.esm.browser.js'</span>
+  <span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.esm.browser.js'</span>
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>Vous pouvez parcourir la source du package npm à l’adresse : <a href="https://cdn.jsdelivr.net/npm/vue/" target="_blank" rel="noopener">cdn.jsdelivr.net/npm/vue</a>.</p>
-<p>Vue est également disponible sur <a href="https://unpkg.com/vue@2.6.14/dist/vue.js" target="_blank" rel="noopener">unpkg</a> et <a href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js" target="_blank" rel="noopener">cdnjs</a> (cdnjs met du temps à se synchroniser ce qui signifie que la dernière version peut ne pas être encore disponible).</p>
+<p>Vue est également disponible sur <a href="https://unpkg.com/vue@2.7.8/dist/vue.js" target="_blank" rel="noopener">unpkg</a> et <a href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.8/vue.js" target="_blank" rel="noopener">cdnjs</a> (cdnjs met du temps à se synchroniser ce qui signifie que la dernière version peut ne pas être encore disponible).</p>
 <p>Assurez vous de lire la partie dédiée <a href="#Explication-des-differents-builds">aux différents builds de Vue</a> et d’utiliser la <strong>version de production</strong> dans vos sites publiés, en remplaçant <code>vue.js</code> par <code>vue.min.js</code>. C’est un build plus léger optimisé pour la rapidité plutôt que l’expérience de développement.</p>
 <h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><p>npm est la méthode d’installation recommandée lors du développement de grosses applications avec Vue. Il s’associe bien avec des empaqueteurs de modules comme <a href="https://webpack.js.org/" target="_blank" rel="noopener">webpack</a> ou <a href="http://browserify.org/" target="_blank" rel="noopener">Browserify</a>. Vue fournit également des outils d’accompagnement pour la rédaction de <a href="single-file-components.html">Composants Mono-fichier</a>.</p>
 <pre><code class="hljs bash"><span class="hljs-comment"># dernière version stable</span>
@@ -1063,7 +1088,7 @@ $ npm install vue</code></pre>
 
 <div class="vue-mastery"><a href="https://www.vuemastery.com/courses/real-world-vue-js/vue-cli" target="_blank" rel="sponsored noopener" title="Vue CLI">Regardez une vidéo de cours gratuite sur Vue Mastery (EN)</a></div>
 
-<h2 id="Explication-des-differents-builds"><a href="#Explication-des-differents-builds" class="headerlink" title="Explication des différents builds"></a>Explication des différents builds</h2><p>Dans le <a href="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/" target="_blank" rel="noopener">dossier <code>dist/</code> du package npm</a> vous trouverez plusieurs builds différents de Vue.js. Voici un aperçu des différences entre chacun d’eux :</p>
+<h2 id="Explication-des-differents-builds"><a href="#Explication-des-differents-builds" class="headerlink" title="Explication des différents builds"></a>Explication des différents builds</h2><p>Dans le <a href="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/" target="_blank" rel="noopener">dossier <code>dist/</code> du package npm</a> vous trouverez plusieurs builds différents de Vue.js. Voici un aperçu des différences entre chacun d’eux :</p>
 <table>
 <thead>
 <tr>
@@ -1112,7 +1137,7 @@ $ npm install vue</code></pre>
 </li>
 <li><p><strong>Runtime</strong>: le code qui est responsable de la création des instances de Vue, de faire le rendu et les modifications du DOM virtuel. C’est à dire tout, sauf ce que fait la partie Compiler.</p>
 </li>
-<li><p><strong><a href="https://github.com/umdjs/umd" target="_blank" rel="noopener">UMD</a></strong> : les builds UMD peuvent être utilisés directement dans un navigateur avec la balise <code>&lt;script&gt;</code>. Le fichier par défaut du CDN jsDelivr à l’adresse <a href="https://cdn.jsdelivr.net/npm/vue@2.6.14" target="_blank" rel="noopener">https://cdn.jsdelivr.net/npm/vue@2.6.14</a> est le build UMD Runtime + Compiler (<code>vue.js</code>).</p>
+<li><p><strong><a href="https://github.com/umdjs/umd" target="_blank" rel="noopener">UMD</a></strong> : les builds UMD peuvent être utilisés directement dans un navigateur avec la balise <code>&lt;script&gt;</code>. Le fichier par défaut du CDN jsDelivr à l’adresse <a href="https://cdn.jsdelivr.net/npm/vue@2.7.8" target="_blank" rel="noopener">https://cdn.jsdelivr.net/npm/vue@2.7.8</a> est le build UMD Runtime + Compiler (<code>vue.js</code>).</p>
 </li>
 <li><p><strong><a href="http://wiki.commonjs.org/wiki/Modules/1.1" target="_blank" rel="noopener">CommonJS</a></strong>: Les builds CommonJS sont prévus pour une utilisation avec les vieux outils de paquetage (« bundle ») comme <a href="http://browserify.org/" target="_blank" rel="noopener">browserify</a> ou <a href="https://webpack.github.io" target="_blank" rel="noopener">webpack 1</a>. Le fichier par défaut pour ces outils (<code>pkg.main</code>) est le build CommonJS Runtime (<code>vue.runtime.common.js</code>).</p>
 </li>
