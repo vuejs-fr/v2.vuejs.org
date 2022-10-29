@@ -6,7 +6,7 @@ order: 7
 
 ## Exemple de base
 
-Plus d'une fois nous avons besoin d'introduire un comportement, en particulier d'animation, lors du défilement d'un site. Il y a plusieurs façons d'y parvenir mais le plus simple, en évitant d'accumuler les dépendances, est d'utiliser une [Directive personnalisée](https://fr.vuejs.org/v2/guide/custom-directive.html) pour créer un « hook » qui sera déclenché lors du défilement.
+Plus d'une fois nous avons besoin d'introduire un comportement, en particulier d'animation, lors du défilement d'un site. Il y a plusieurs façons d'y parvenir mais le plus simple, en évitant d'accumuler les dépendances, est d'utiliser une [Directive personnalisée](/v2/guide/custom-directive.html) pour créer un « hook » qui sera déclenché lors du défilement.
 
 ```js
 Vue.directive('scroll', {

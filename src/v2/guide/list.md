@@ -207,7 +207,7 @@ new Vue({
 
 <p class="tip">Quand vous itérez sur un objet, l'ordre est basé sur l'ordre d'énumération de `Object.keys()` et il **n'**y a **aucune** garantie de cohérence à travers toutes les implémentations des moteurs JavaScript.</p>
 
-## Maintaining State
+## Maintien d'état
 
 Quand Vue met à jour une liste d'éléments rendus avec `v-for`, il utilise par défaut une stratégie de « modification localisée » (*in-place patch*). Si l'ordre des éléments d'un tableau dans `data` a changé, plutôt que de déplacer les éléments du DOM pour concorder avec le nouvel ordre des éléments, Vue va simplement modifier chaque élément déjà en place et s'assurer que cela reflète ce qui aurait dû être rendu à cet index en particulier. C'est un comportement similaire au `track-by="$index"` de Vue 1.x.
 
@@ -227,7 +227,7 @@ Comme c'est un mécanisme générique pour Vue permettant d’identifier les nœ
 
 <p class="tip">N'utilisez pas des valeurs non primitive comme des objets ou des tableaux comme clés pour `v-for`. Utilisez des chaines de caractères ou des nombres à la place.</p>
 
-Pour une utilisation détaillée de l'attribut `key`, consultez la [documentation d'API `key`](https://vuejs.org/v2/api/#key).
+Pour une utilisation détaillée de l'attribut `key`, consultez la [documentation d'API `key`](/v2/api/#key).
 
 ## Détection de changement dans un tableau
 

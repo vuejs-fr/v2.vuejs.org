@@ -2200,7 +2200,7 @@ type: api
   <!-- liaison de classes -->
   <div :class="{ red: isRed }"></div>
   <div :class="[classA, classB]"></div>
-  <div :class="[classA, { classB: isB, classC: isC }]">
+  <div :class="[classA, { classB: isB, classC: isC }]"></div>
 
   <!-- liaison de styles -->
   <div :style="{ fontSize: size + 'px' }"></div>

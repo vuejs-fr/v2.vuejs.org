@@ -189,7 +189,7 @@ Dans du code acté, les définitions de prop devraient être toujours aussi dét
 </summary>
 {% endraw %}
 
-Les [définitions de prop](https://vuejs.org/v2/guide/components.html#Prop-Validation) détaillées ont deux avantages :
+Les [définitions de prop](/v2/guide/components.html#Prop-Validation) détaillées ont deux avantages :
 
 - Elles documentent l'API du composant, il est ainsi possible de voir comment le composant est prévu d'être utilisé.
 - En développement, Vue vous avertira si le composant fournit un type de prop incorrectement formaté, vous aidant ainsi à trouver des sources potentielles d'erreur.
@@ -1790,7 +1790,7 @@ Préférez les sélecteurs de classes plutôt que les sélecteurs de nom dans de
 
 Dans les styles avec portée, Vue ajoute un attribut unique à l'élément du composant, comme `data-v-f3f3eg9`. Les sélecteurs sont ainsi modifiés afin qu'ils ne concordent qu'avec les éléments dont l'attribut est sélectionné (par ex. `button[data-v-f3f3eg9]`).
 
-Le problème est qu'utiliser un grand nombre de [sélecteur par nom]((http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&sel=a%5Bhref%5D&body=background%3A+%23CFD&ne=1000) (par ex. `button[data-v-f3f3eg9]`) va être considérablement plus lent que [par attribut classe](http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&sel=.class%5Bhref%5D&body=background%3A+%23CFD&ne=1000) (par ex. `.btn-close[data-v-f3f3eg9]`) et donc les sélecteurs par classes devraient être préférés autant que possible.
+Le problème est qu'utiliser un grand nombre de sélecteurs par attributs (par ex. `button[data-v-f3f3eg9]`) est que cela va être considérablement plus long que d'utiliser des sélecteurs par classes et donc les sélecteurs par classes devraient être préférés autant que possible.
 
 {% raw %}</details>{% endraw %}
 
@@ -1925,13 +1925,14 @@ Vue.component('TodoItem', {
 
 **[Vuex](https://github.com/vuejs/vuex) devrait être préféré pour une gestion globale d'état à la place de `this.$root` ou d'un canal global d'évènement.**
 
-Gérer l'état avec `this.$root` et/ou utiliser un [canal d'évènement global](https://fr.vuejs.org/v2/guide/migration.html#dispatch-et-broadcast-remplaces) peut faciliter la tâche dans des cas vraiment simples. Cependant cela n'est pas approprié pour la plupart des applications.
+Gérer l'état avec `this.$root` et/ou utiliser un [canal d'évènement global](/v2/guide/migration.html#dispatch-et-broadcast-remplaces) peut faciliter la tâche dans des cas vraiment simples. Cependant cela n'est pas approprié pour la plupart des applications.
 
-Vuex est [l'implémentation flux officielle](https://fr.vuejs.org/v2/guide/state-management.html#Implementation-officielle-semblable-a-Flux) pour Vue. Elle n'offre pas seulement une place centrale pour gérer l'état mais également des outils pour organiser, tracer et déboguer les changements d'états. Il s'intègre bien dans l'écosystème de Vue (incluant un support complet par [Vue DevTools](https://fr.vuejs.org/v2/guide/installation.html#Vue-Devtools) également).
+Vuex est [l'implémentation flux officielle](/v2/guide/state-management.html#Implementation-officielle-semblable-a-Flux) pour Vue. Elle n'offre pas seulement une place centrale pour gérer l'état mais également des outils pour organiser, tracer et déboguer les changements d'états. Il s'intègre bien dans l'écosystème de Vue (incluant un support complet par [Vue DevTools](/v2/guide/installation.html#Vue-Devtools) également).
 
 {% raw %}</details>{% endraw %}
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
+  
 #### À éviter
 
 ``` js

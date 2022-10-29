@@ -12,7 +12,7 @@ language:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://fr.vuejs.org
+url: https://v2.vuejs.org
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
@@ -29,7 +29,8 @@ new_post_name: :title.md # File name of new posts
 default_layout: post
 auto_spacing: false # Add spaces between asian characters and western characters
 titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+external_link:
+  enable: true # Open external links in new tab
 max_open_file: 100
 multi_thread: true
 filename_case: 0
@@ -144,7 +145,7 @@ markdown:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: git@github.com:vuejs-fr/vuejs.org.git
+  repository: git@github.com:vuejs-fr/v2.vuejs.org.git
 
 feed:
   type: atom

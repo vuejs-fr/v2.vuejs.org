@@ -1,4 +1,4 @@
-# fr.vuejs.org
+# v2.vuejs.org
 
 > Important: Ce dépôt est pour Vue 1.x et 2.x uniquement. Les problèmes (*issues*) et propositions de fusion (*pull request*) concernant Vue 3.x sont gérés dans le [dépôt de la documentation v3](https://github.com/vuejs/docs-next) (EN).
 

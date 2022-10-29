@@ -163,7 +163,7 @@ En fait, vous pouvez vous représenter l'injection de dépendances comme une sor
 
 <p class="tip">Cependant, il y a des inconvénients à l'injection de dépendances. Cela vient entériner la manière dont les composants sont actuellement organisés dans votre application, rendant plus difficile le remaniement de code. De plus, les propriétés fournies avec `provide` ne sont pas réactives. Cela a été intentionnellement conçu de cette façon, car les utiliser pour créer un espace de stockage global est tout aussi peu évolutif que <a href="#Acceder-a-l’instance-de-composant-parente">d'utiliser <code>$root</code></a> dans le même but. Si les propriétés que vous voulez partager sont spécifiques à votre application et non génériques, ou si jamais vous voulez mettre à jour des données fournies par des ancêtres, alors c'est un signe que vous avez probablement besoin d'une réelle solution de gestion d'état telle que <a href="https://github.com/vuejs/vuex">Vuex</a> à la place.</p>
 
-Apprenez-en plus sur l'injection de dépendances dans [la documentation de l'API](https://vuejs.org/v2/api/#provide-inject).
+Apprenez-en plus sur l'injection de dépendances dans [la documentation de l'API](/v2/api/#provide-inject).
 
 ## Écouteurs d'événements programmatiques
 
@@ -235,7 +235,7 @@ methods: {
 
 Consultez [ce fiddle](https://codesandbox.io/s/github/vuejs/v2.vuejs.org/tree/master/src/v2/examples/vue-20-programmatic-event-listeners) pour le code complet. Notez cependant que si vous vous trouvez à devoir faire beaucoup de code de montage et de nettoyage au sein d'un seul composant, la meilleure solution sera souvent de créer des composants plus modulaires. Dans le cas présent, nous recommanderions de créer un composant réutilisable `<input-datepicker>`.
 
-Pour en apprendre plus sur les écouteurs programmatiques, allez voir l'API des [méthodes d'événements d'une instance](https://vuejs.org/v2/api/#Instance-Methods-Events).
+Pour en apprendre plus sur les écouteurs programmatiques, allez voir l'API des [méthodes d'événements d'une instance](/v2/api/#Instance-Methods-Events).
 
 <p class="tip">Notez que le système d'événements de Vue est différent de celui de <a href="https://developer.mozilla.org/fr/docs/Web/API/EventTarget">l'API EventTarget</a> du navigateur. Bien qu'ils fonctionnent de façon similaire, <code>$emit</code>, <code>$on</code>, et <code>$off</code> ne sont <strong>pas</strong> des alias pour <code>dispatchEvent</code>, <code>addEventListener</code>, et <code>removeEventListener</code>.</p>
 
@@ -363,7 +363,7 @@ Grâce au système de réactivité de Vue, le framework sait toujours quand mett
 
 <p class="tip">Si vous vous trouvez à vouloir forcer une mise à jour dans Vue, dans 99,99% des cas, vous avez fait une erreur quelque-part.</p>
 
-Vous n'avez peut-être pas pris en compte les avertissements pour la détection des changements [avec des `Array`](https://vuejs.org/v2/guide/list.html#Caveats) ou [des objets](https://vuejs.org/v2/guide/list.html#Object-Change-Detection-Caveats), ou alors vous vous reposez sur des propriétés d'état qui ne sont pas traquées par le système de réactivité de Vue, c-à-d. dans `data`.
+Vous n'avez peut-être pas pris en compte les avertissements pour la détection des changements [avec des `Array`](/v2/guide/list.html#Limitations) ou [des objets](/v2/guide/list.html#Detection-de-changement-dans-un-tableau), ou alors vous vous reposez sur des propriétés d'état qui ne sont pas traquées par le système de réactivité de Vue, c-à-d. dans `data`.
 
 Cependant, si vous avez exclu toutes les options précédentes et que vous vous trouvez dans cette situation extrêmement rare où vous avez à forcer manuellement une mise à jour, vous pouvez le faire avec [`$forceUpdate`](../api/#vm-forceUpdate).
 
